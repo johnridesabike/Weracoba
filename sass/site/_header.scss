@@ -1,12 +1,13 @@
 .site-header {
     background: $color__background-header;
-    color: $color__text-header;
+    color: $color__header-dark;
     /*margin-left: -1em;
     margin-right: -1em;*/
     text-align: center;
+    border-bottom: 1px solid $color__header-light;
 
     a {
-        color: $color__text-header;
+        color: $color__link;
         text-decoration: none;
 
         &:hover,
@@ -26,15 +27,12 @@
 /* Header Media Queries */
 @media screen and (min-width: 768px) {
     .site-header {
-        /*margin-left: -2em;
-        margin-right: -2em;*/
         margin-bottom: 0;
         padding-top: .67em;
         padding-bottom: .67em;
-        /*padding-left: 1em;*/
     }
     .site-header-wrapper {
-        max-width: 1080px;
+        max-width: $size__max-width;
         margin: auto;
         padding: 0 1em;
     }

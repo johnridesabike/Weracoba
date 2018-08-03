@@ -99,22 +99,23 @@ object {
 }
 
 /* Single Post Featured Images */
-.full-bleed img {
-    display: block;
-    margin: 0 auto;
-}
+
 .full-bleed {
     /*width: 100vw;*/
-    max-height: 1200px;
+    max-height: $size__max-width;
     margin-top: 0;
     margin-bottom: 0;
     margin-left: -1em;
     margin-right: -1em;
     overflow: hidden;
-}
-@media screen and (min-width: 768px) {
-    .full-bleed {
+
+    img {
+        display: block;
+        margin: 0 auto;
+    }
+
+    /*@media screen and (min-width: 768px) {
         margin-left: -2em;
         margin-right: -2em;
-    }
+    }*/
 }

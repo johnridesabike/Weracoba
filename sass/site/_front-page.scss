@@ -64,7 +64,7 @@
 
         &:hover,
         &:focus {
-            color: $color__background-body;
+            color: $color__background-body-dark;
             text-decoration: none;
         }
     }
@@ -121,17 +121,7 @@
     text-align: right;
 
     a {
-        font-family: 'Open Sans', sans-serif;
-        padding: .25em .5em;
-        text-align: center;
-        font-size: 1.25em;
-        font-weight: 600;
-        text-decoration: none;
-        color: $color__text-main;
-        border: 1px solid $color__border-button;
-        background: $color__link;
-        border-radius: 5px;
-        display: block;
+        @include button-light;
     }
 }
 .blog-link a:after {
@@ -139,17 +129,11 @@
 }
 @media screen and (min-width: 768px) {
     .blog-link {
-        margin-top: .5em;
+        margin-top: 1em;
 
         a {
             display: inline;
             font-size: 1.5em;
-
-            &:hover,
-            &:focus {
-                color: $color__text-main;
-                background: $color__link-hover;
-            }
         }
     }
 }

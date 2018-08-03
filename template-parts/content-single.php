@@ -30,9 +30,7 @@
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 	<?php if ( has_post_thumbnail() ) :?>
-		<figure class="full-bleed featured-image">
-			<?php weracoba_post_thumbnail(); ?>
-		</figure>
+        <?php weracoba_post_thumbnail(); ?>
 	<?php endif; ?>
 	<section class="post-content">
 		<?php if ( ! is_active_sidebar( 'sidebar-1') ) : ?>

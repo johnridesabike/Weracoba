@@ -1,15 +1,21 @@
 .site-footer {
     text-align:center;
     background: $color__background-header;
-    color: $color__text-header;
+    color: $color__header-dark;
     font-family: $font__headers;
     position: relative;
     padding: 0.5em 1em 0.5em 1em;
+    border-top: 1px solid $color__header-light;
 
     ul a {
         display: block;
         padding: 0.25em 1em;
     }
+}
+
+.footer-wrapper {
+    max-width: $size__max-width;
+    margin: auto;
 }
 
 .social-media {

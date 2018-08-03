@@ -83,22 +83,25 @@ if ( ! function_exists( 'weracoba_post_thumbnail' ) ) :
 		if ( is_singular() && ! is_front_page() ) :
 			?>
 
-			<div class="post-thumbnail">
-				<?php the_post_thumbnail(); ?>
-			</div><!-- .post-thumbnail -->
+            <figure class="full-bleed featured-image">
+                <div class="post-thumbnail">
+                    <?php the_post_thumbnail(); ?>
+                </div><!-- .post-thumbnail -->
+            </figure> <!--.full-bleed .featured-image -->
 
 		<?php else : ?>
 
-		<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
-			<?php
-			the_post_thumbnail( 'post-thumbnail', array(
-				'alt' => the_title_attribute( array(
-					'echo' => false,
-				) ),
-			) );
-			?>
-		</a>
-
+        <figure class="full-bleed featured-image">
+            <a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
+                <?php
+                the_post_thumbnail( 'post-thumbnail', array(
+                    'alt' => the_title_attribute( array(
+                        'echo' => false,
+                    ) ),
+                ) );
+                ?>
+            </a>
+        </figure> <!--.full-bleed .featured-image -->
 		<?php
 		endif; // End is_singular().
 	}

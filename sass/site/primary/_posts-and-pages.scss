@@ -30,25 +30,26 @@
 .entry-header {
     font-family: $font__main;
     margin-bottom: 1em;
+    color: $color__header-dark;
 }
 .entry-title {
     margin: 0;
     font-family: $font__headers;
     font-size: 1.5em;
-    color: $color__background-header;
     font-weight: 600;
+    color: $color__link;
 }
 @media screen and (min-width: 768px){
     .entry-title {
-        font-size: 2em;
+        font-size: 2.5em;
     }
 }
 .entry-meta {
-    color: $color__background-header;
+    //color: $color__background-header;
     font-size: 0.9em;
 }
 .entry-header a {
-    color: $color__border-menu;
+    //color: $color__border-menu;
     text-decoration: none;
 
     &:hover,
@@ -58,11 +59,11 @@
 }
 
 .entry-title a {
-    color: $color__background-header;
+    //color: $color__background-header;
 
     &:hover,
     &:focus {
-        color: $color__border-menu;
+        //color: $color__border-menu;
     }
 }
 

@@ -2,12 +2,12 @@
     .post,
     .page {
         position: relative;
-        background: white;
-        border: 1px solid $color__text-header;
+        //border: 1px solid $color__text-header;
         border-radius: 5px;
+        padding-bottom: 1.5em;
     }
 
-    .post_content {
+    /*.post_content {
         padding-top: 1em;
         padding-bottom: 2em;
         padding-left: 1em;
@@ -17,25 +17,25 @@
             padding-left: 2em;
             padding-right: 2em;
         }
-    }
+    }*/
 
-    .site-content {
-        background: $color__background-body-light;
-    }
 }
 .continue-reading {
-	position: absolute;
 	right: 5px;
 	bottom: 5px;
+    text-align: center;
 
     a {
         display: block;
-        padding: .5em 1em;
         @include button-light
 
         &:after {
             content: $glyph__arrow-next;
         }
+    }
+
+    @media screen and (min-width: 768px) {
+        position: absolute;
     }
 }
 @media screen and (min-width: 900px) {
