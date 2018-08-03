@@ -104,7 +104,7 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	border: 1px solid;
+	/*border: 1px solid;
 	border-color: $color__border-button;
 	border-radius: 3px;
 	background: $color__background-button;
@@ -120,7 +120,8 @@ input[type="submit"] {
 	&:active,
 	&:focus {
 		border-color: $color__border-button-focus;
-	}
+	}*/
+    @include button-light;
 }
 
 /*--------------------------------------------------------------

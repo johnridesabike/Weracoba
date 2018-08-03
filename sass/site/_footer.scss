@@ -19,31 +19,11 @@
         list-style-type: none;
         margin: 0;
         padding: 0;
-    }
-}
 
-.address {
-    padding: 0.5em 0 0.5em 0;
-}
-
-.site-info {
-    display: flex;
-    justify-content: space-between;
-
-    p {
-      margin: 0 0;
-    }
-}
-
-@media screen and (min-width: 480px) {
-    .social-media ul {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    .site-info {
-      margin-left: 1em;
-      margin-right: 1em;
+        @media screen and (min-width: 480px) {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
     }
 }

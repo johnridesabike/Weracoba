@@ -76,10 +76,12 @@
     align-items: center;
     flex-flow: column;
 }
+
 @media screen and (min-width: 1024px) {
     .site-header-wrapper {
         align-items: flex-end;
         flex-flow: row;
+        justify-content: space-between;
     }
     .site-branding {
         flex-shrink: 1;

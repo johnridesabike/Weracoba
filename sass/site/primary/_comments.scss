@@ -22,7 +22,6 @@
 	list-style-type: none;
     border-top: 1px solid $color__border-button;
     border-bottom: 1px solid $color__border-button;
-    background: white;
 
     ol {
         list-style-type: none;
@@ -31,8 +30,6 @@
 @media screen and (min-width: 768px) {
     .comment-list {
     	margin: 0;
-        border: 1px solid $color__border-button;
-        border-radius: 5px;
     }
 }
 .comment-body {
@@ -90,13 +87,7 @@
 }
 .reply a {
 	display: inline-block;
-	padding: .5em 1.4em;
     @include button-light
-}
-.reply a:hover,
-.reply a:focus {
-    color: $color__text-main;
-    background: $color__link-hover;
 }
 .comment-content a {
 	word-wrap: break-word;
@@ -116,19 +107,7 @@
     .form-submit {
         text-align: right;
         input {
-            padding: .5em 1.4em;
-            font-size: .875em;
-            line-height: 1.3em;
-            text-decoration: none;
-            color: $color__background-header;
-            border: 1px solid $color__border-button;
-            background: $color__background-button;
-
-            &:hover,
-            &:focus {
-            color: rgba(47, 47, 48, 1); /* Tricorn Black */
-            background: rgba(1, 145, 150, 1); /* Splashy */
-            }
+            @include button-light;
         }
     }
 
