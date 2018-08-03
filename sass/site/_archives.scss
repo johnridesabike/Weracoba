@@ -18,6 +18,10 @@
             padding-right: 2em;
         }
     }
+
+    .site-content {
+        background: $color__background-body-light;
+    }
 }
 .continue-reading {
 	position: absolute;
@@ -31,12 +35,6 @@
 
         &:after {
             content: $glyph__arrow-next;
-        }
-
-        &:hover,
-        &:focus {
-            color: $color__text-main;
-            background: $color__link-hover;
         }
     }
 }

@@ -22,14 +22,9 @@
 			) );
 			?>
 		</nav>
-    	<div class="site-info">
-			<p class="copyright">
-				Copyright &copy; <?php echo date("Y"); ?> John Jackson
-			</p>
-			<p class="address">
-				Columbus, GA
-			</p>
-		</div><!-- .site-info -->
+        <div class="footer-widgets">
+            <?php dynamic_sidebar('Footer') ?>
+        </div> <!-- .footer-widgets -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

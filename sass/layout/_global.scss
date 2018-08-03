@@ -2,7 +2,7 @@
     padding: 1em;
     margin: 0 auto;
     max-width: 1080px;
-    background: $color__background-body;
+    background: white;
 }
 
 .single .entry-content {
@@ -19,6 +19,7 @@
     .site-content {
         padding: 2em;
     }
+    /*
     .single .entry-content {
         border: 1px solid $color__border-button;
         border-radius: 5px;
@@ -29,7 +30,7 @@
         border-top-width: 0;
         border-top-left-radius: 0;
         border-top-right-radius: 0;
-    }
+    }*/
 }
 @media screen and (min-width: 900px) {
     .has-sidebar {
@@ -45,11 +46,10 @@
             }
 
             .post-content,
-
             &.page .entry-content {
                 width: 65%;/*720px;*/
-                padding-left: 2em;
-                padding-right: 2em;
+                /*padding-left: 2em;
+                padding-right: 2em;*/
             }
 
             .widget-area {

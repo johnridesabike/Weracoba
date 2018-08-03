@@ -63,11 +63,11 @@ if ( ! function_exists( 'weracoba_setup' ) ) :
 		) );
 
 		// Set up the WordPress core custom background feature.
-		add_theme_support( 'custom-background', apply_filters( 'weracoba_custom_background_args', array(
+		/*add_theme_support( 'custom-background', apply_filters( 'weracoba_custom_background_args', array(
 			'default-color' => 'ffffff',
 			'default-image' => '',
 		) ) );
-
+        */
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
 
@@ -116,6 +116,17 @@ function weracoba_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Footer', 'weracoba' ),
+		'id'            => 'footer-1',
+		'description'   => esc_html__( 'Widgets here will be shown on all pages.', 'weracoba' ),
+        'class'         => '',
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
 }
 add_action( 'widgets_init', 'weracoba_widgets_init' );
 
@@ -142,7 +153,7 @@ add_action( 'wp_enqueue_scripts', 'weracoba_scripts' );
 /**
  * Implement the Custom Header feature.
  */
-require get_template_directory() . '/inc/custom-header.php';
+// require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.

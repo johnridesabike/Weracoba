@@ -30,11 +30,18 @@
 
 // Buttons
 @mixin button-light {
+    padding: .5em 1.4em;
 	font-family: $font__headers;
 	font-size: .875em;
 	line-height: 1.3em;
 	text-decoration: none;
     color: $color__text-main;
     border: 1px solid $color__border-button;
+    border-radius: 5px;
     background: $color__background-button;
+
+    &:hover,
+    &:focus {
+        background: $color__link-hover;
+    }
 }
