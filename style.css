@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /*!
 Theme Name: Weracoba
-Theme URI: https://johnridesa.bike/
+Theme URI: https://github.com/johnridesabike/Weracoba
 Author: John
 Author URI: https://johnridesa.bike/
 Description: Description
@@ -414,7 +414,7 @@ html {
   box-sizing: inherit; }
 
 body {
-  background: #f7f7f1;
+  background: #edece6;
   /* Fallback for when there is no custom background color defined. */ }
 
 hr {
@@ -510,28 +510,23 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-  border: 1px solid;
-  border-color: #c2cfcf;
-  border-radius: 3px;
-  background: #01b0bb;
-  color: rgba(0, 0, 0, 0.8);
-  font-size: 12px;
-  font-size: 0.75rem;
-  line-height: 1;
-  padding: .6em 1em .4em; }
-  button:hover,
+  padding: .5em 1.4em;
+  font-family: "Open Sans", sans-serif;
+  font-size: .875em;
+  line-height: 1.3em;
+  text-decoration: none;
+  color: #2f2f30;
+  border: 1px solid #c2cfcf;
+  border-radius: 5px;
+  background: #01b0bb; }
+  button:hover, button:focus,
   input[type="button"]:hover,
-  input[type="reset"]:hover,
-  input[type="submit"]:hover {
-    border-color: #c2cfcf; }
-  button:active, button:focus,
-  input[type="button"]:active,
   input[type="button"]:focus,
-  input[type="reset"]:active,
+  input[type="reset"]:hover,
   input[type="reset"]:focus,
-  input[type="submit"]:active,
+  input[type="submit"]:hover,
   input[type="submit"]:focus {
-    border-color: #c2cfcf; }
+    background: #019196; }
 
 /*--------------------------------------------------------------
 ## Links
@@ -555,7 +550,7 @@ a {
   padding: 1em;
   margin: 0 auto;
   max-width: 1080px;
-  background: #f7f7f1; }
+  background: white; }
 
 .single .entry-content {
   background: white;
@@ -569,16 +564,7 @@ a {
 
 @media screen and (min-width: 768px) {
   .site-content {
-    padding: 2em; }
-  .single .entry-content {
-    border: 1px solid #c2cfcf;
-    border-radius: 5px;
-    margin: 0;
-    padding: 0 2em; }
-  .has-post-thumbnail .entry-content {
-    border-top-width: 0;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0; } }
+    padding: 2em; } }
 
 @media screen and (min-width: 900px) {
   .has-sidebar .hentry {
@@ -592,8 +578,8 @@ a {
     .has-sidebar .hentry.page .entry-content {
       width: 65%;
       /*720px;*/
-      padding-left: 2em;
-      padding-right: 2em; }
+      /*padding-left: 2em;
+                padding-right: 2em;*/ }
     .has-sidebar .hentry .widget-area {
       width: 30%; }
   .no-sidebar .post-content-wrap {
@@ -672,7 +658,8 @@ a {
 @media screen and (min-width: 1024px) {
   .site-header-wrapper {
     align-items: flex-end;
-    flex-flow: row; }
+    flex-flow: row;
+    justify-content: space-between; }
   .site-branding {
     flex-shrink: 1; }
   .main-navigation {
@@ -700,24 +687,11 @@ a {
     list-style-type: none;
     margin: 0;
     padding: 0; }
-
-.address {
-  padding: 0.5em 0 0.5em 0; }
-
-.site-info {
-  display: flex;
-  justify-content: space-between; }
-  .site-info p {
-    margin: 0 0; }
-
-@media screen and (min-width: 480px) {
-  .social-media ul {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap; }
-  .site-info {
-    margin-left: 1em;
-    margin-right: 1em; } }
+    @media screen and (min-width: 480px) {
+      .social-media ul {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap; } }
 
 /*--------------------------------------------------------------
 # Archives
@@ -739,6 +713,9 @@ a {
       padding-left: 2em;
       padding-right: 2em; } }
 
+.archive-view .site-content {
+  background: #f7f7f1; }
+
 .continue-reading {
   position: absolute;
   right: 5px;
@@ -746,18 +723,19 @@ a {
   .continue-reading a {
     display: block;
     padding: .5em 1em;
+    padding: .5em 1.4em;
     font-family: "Open Sans", sans-serif;
     font-size: .875em;
     line-height: 1.3em;
     text-decoration: none;
     color: #2f2f30;
     border: 1px solid #c2cfcf;
+    border-radius: 5px;
     background: #01b0bb; }
+    .continue-reading a:hover, .continue-reading a:focus {
+      background: #019196; }
     .continue-reading a:after {
       content: "❯"; }
-    .continue-reading a:hover, .continue-reading a:focus {
-      color: #2f2f30;
-      background: #019196; }
 
 @media screen and (min-width: 900px) {
   .archive-view.has-sidebar .site-content {
@@ -827,7 +805,7 @@ a {
     color: #c2cfcf;
     text-decoration: none; }
     .fp-blocks a:hover, .fp-blocks a:focus {
-      color: #f7f7f1;
+      color: #edece6;
       text-decoration: none; }
 
 .latest-post {
@@ -901,57 +879,6 @@ a {
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
-.main-navigation {
-  clear: both;
-  display: block;
-  float: left;
-  width: 100%;
-  position: relative;
-  font-family: "Open Sans", sans-serif;
-  font-size: 1em;
-  text-transform: uppercase;
-  text-align: center; }
-  .main-navigation .sub-menu {
-    /* I'm not sure why this is here? */
-    border: 1px solid #7f8486;
-    display: block; }
-  .main-navigation ul {
-    display: none;
-    list-style: none;
-    margin: 0;
-    padding: 0 1em;
-    position: relative; }
-    .main-navigation ul ul {
-      box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-      float: left;
-      position: absolute;
-      top: 100%;
-      left: -999em;
-      z-index: 99999;
-      background: #44484d; }
-      .main-navigation ul ul ul {
-        left: -999em;
-        top: 0; }
-      .main-navigation ul ul li:hover > ul,
-      .main-navigation ul ul li.focus > ul {
-        left: 100%; }
-      .main-navigation ul ul a {
-        width: 200px; }
-    .main-navigation ul li:hover > ul,
-    .main-navigation ul li.focus > ul {
-      left: auto;
-      right: 0; }
-  .main-navigation li {
-    float: none;
-    position: relative; }
-  .main-navigation a {
-    display: block;
-    text-decoration: none;
-    padding: .5em 0 .5em 0;
-    color: #01b0bb; }
-    .main-navigation a:hover, .main-navigation a.focus {
-      color: #019196; }
-
 /* Small menu. */
 .menu-toggle,
 .main-navigation.toggled ul {
@@ -963,25 +890,6 @@ a {
   .main-navigation ul {
     display: block;
     text-align: left; } }
-
-.site-main .comment-navigation, .site-main
-.posts-navigation, .site-main
-.post-navigation {
-  margin: 0 0 1.5em;
-  overflow: hidden; }
-
-.comment-navigation .nav-previous,
-.posts-navigation .nav-previous,
-.post-navigation .nav-previous {
-  float: left;
-  width: 50%; }
-
-.comment-navigation .nav-next,
-.posts-navigation .nav-next,
-.post-navigation .nav-next {
-  float: right;
-  text-align: right;
-  width: 50%; }
 
 .menu-button {
   text-align: right;
@@ -1013,25 +921,96 @@ a {
 .menu-item-has-children ul a:after {
   content: ""; }
 
-@media screen and (min-width: 600px) {
+.main-navigation {
+  clear: both;
+  display: block;
+  float: left;
+  position: relative;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1em;
+  text-transform: uppercase;
+  text-align: center;
+  width: 100%; }
   .main-navigation ul {
-    display: flex;
-    justify-content: space-around; }
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding: 0 1em;
+    position: relative; }
     .main-navigation ul ul {
-      margin-left: 0;
-      width: intrinsic; }
-      .main-navigation ul ul:before {
-        border-color: #7f8486 transparent;
-        border-width: 0 10px 10px;
-        right: 9px;
-        top: -10px;
-        border-style: solid;
-        content: "";
-        position: absolute; }
-      .main-navigation ul ul li a {
-        font-size: 1em; }
+      box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+      float: left;
+      position: absolute;
+      top: 100%;
+      left: -999em;
+      z-index: 99999;
+      background: #44484d;
+      border: 1px solid #7f8486;
+      display: block; }
+      .main-navigation ul ul ul {
+        left: -999em;
+        top: 0; }
+      .main-navigation ul ul li:hover > ul,
+      .main-navigation ul ul li.focus > ul {
+        left: 100%; }
+      .main-navigation ul ul a {
+        width: 200px; }
+    .main-navigation ul li:hover > ul,
+    .main-navigation ul li.focus > ul {
+      left: auto;
+      right: 0; }
+  .main-navigation li {
+    float: none;
+    position: relative;
+    padding: 0 1em; }
+    .main-navigation li li {
+      padding: 0; }
   .main-navigation a {
-    letter-spacing: 0.075em; } }
+    display: block;
+    text-decoration: none;
+    padding: .5em 0 .5em 0;
+    color: #01b0bb; }
+    .main-navigation a:hover, .main-navigation a.focus {
+      color: #019196; }
+  @media screen and (min-width: 600px) {
+    .main-navigation {
+      width: intrinsic; }
+      .main-navigation ul {
+        display: flex;
+        justify-content: space-around; }
+        .main-navigation ul ul {
+          margin-left: 0;
+          width: intrinsic; }
+          .main-navigation ul ul:before {
+            content: "▲";
+            font-size: .7em;
+            position: absolute;
+            right: 1.4em;
+            top: -1.1em;
+            color: #7f8486; }
+          .main-navigation ul ul li a {
+            font-size: 1em; }
+      .main-navigation a {
+        letter-spacing: 0.075em; } }
+
+.site-main .comment-navigation, .site-main
+.posts-navigation, .site-main
+.post-navigation {
+  margin: 0 0 1.5em;
+  overflow: hidden; }
+
+.comment-navigation .nav-previous,
+.posts-navigation .nav-previous,
+.post-navigation .nav-previous {
+  float: left;
+  width: 50%; }
+
+.comment-navigation .nav-next,
+.posts-navigation .nav-next,
+.post-navigation .nav-next {
+  float: right;
+  text-align: right;
+  width: 50%; }
 
 /*--------------------------------------------------------------
 ## Content navigation
@@ -1322,66 +1301,55 @@ a {
 
 /* Text widget */
 .textwidget {
-  font-size: 80%;
-  line-height: 1.3em; }
+  /*font-size: 80%;
+	line-height: 1.3em;*/ }
 
 /* Footer widget stylings */
 .footer-widgets {
-  margin: 2em 0 0;
-  padding: 1em 0;
-  background-color: #1a1a1a; }
+  /*margin: 2em 0 0;
+	padding: 1em 0;*/ }
+  .footer-widgets .widget {
+    padding: 0;
+    margin: 1em; }
+    .footer-widgets .widget .original-title {
+      color: rgba(255, 255, 255, 0.5); }
+  .footer-widgets .widget,
+  .footer-widgets .widget-title,
+  .footer-widgets .widget a,
+  .footer-widgets .widget_calendar thead,
+  .footer-widgets .rss-date,
+  .footer-widgets .widget_rss cite {
+    color: #c2cfcf; }
+  .footer-widgets .widget_calendar td,
+  .footer-widgets .footer-widgets .widget_calendar a {
+    color: black; }
+  @media screen and (min-width: 900px) {
+    .footer-widgets {
+      /* Use flex to create a responsive layout */
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      /* If only one widget is displayed, make it full width. */
+      /* If 2 or 3 widgets are displayed, make the second one twice as wide. */
+      /* If 4 or more widgets are displayed, show three across when available. */ }
+      .footer-widgets .widget {
+        /*
+            &:nth-last-child(n+2):nth-last-child(-n+3):first-child ~ .widget:nth-child(2) {
+                flex: 2;
+            }
+
+            &:nth-last-child(n+4),
+            &:nth-last-child(n+4) ~ .widget {
+                width: 30%;
+                flex: 1 1 30%;
+            }*/ }
+        .footer-widgets .widget:only-of-type {
+          width: 100%; } }
 
 @media screen and (min-width: 600px) {
-  .footer-widgets {
-    padding: 2em 1em; } }
-
-.footer-widgets .widget {
-  -webkit-box-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  margin: 0 1em 2em;
-  padding-top: 1em; }
-
-.footer-widgets .widget .original-title {
-  color: rgba(255, 255, 255, 0.5); }
-
-.footer-widgets .widget,
-.footer-widgets .widget-title,
-.footer-widgets .widget a,
-.footer-widgets .widget_calendar thead,
-.footer-widgets .rss-date,
-.footer-widgets .widget_rss cite {
-  color: white; }
-
-.footer-widgets .widget_calendar td,
-.footer-widgets .widget_calendar a {
-  color: black; }
-
-@media screen and (min-width: 900px) {
-  .footer-widgets {
-    /* Use flex to create a responsive layout */
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -ms-flex-pack: distribute;
-    justify-content: space-around;
-    /* If only one widget is displayed, make it full width. */
-    /* If 2 or 3 widgets are displayed, make the second one twice as wide. */
-    /* If 4 or more widgets are displayed, show three across when available. */ }
-  .footer-widgets .widget:only-of-type {
-    width: 100%; }
-  .footer-widgets .widget:nth-last-child(n+2):nth-last-child(-n+3):first-child ~ .widget:nth-child(2) {
-    -webkit-box-flex: 2;
-    -ms-flex: 2;
-    flex: 2; }
-  .footer-widgets .widget:nth-last-child(n+4),
-  .footer-widgets .widget:nth-last-child(n+4) ~ .widget {
-    width: 30%;
-    -webkit-box-flex: 1;
-    -ms-flex: 1 1 30%;
-    flex: 1 1 30%; } }
+  /*.footer-widgets {
+		padding: 2em 1em;
+	}*/ }
 
 /*--------------------------------------------------------------
 # Content
@@ -1514,16 +1482,13 @@ a {
   margin: -1em;
   list-style-type: none;
   border-top: 1px solid #c2cfcf;
-  border-bottom: 1px solid #c2cfcf;
-  background: white; }
+  border-bottom: 1px solid #c2cfcf; }
   .comment-list ol {
     list-style-type: none; }
 
 @media screen and (min-width: 768px) {
   .comment-list {
-    margin: 0;
-    border: 1px solid #c2cfcf;
-    border-radius: 5px; } }
+    margin: 0; } }
 
 .comment-body {
   border-bottom: 1px solid #44484d;
@@ -1586,12 +1551,10 @@ a {
   text-decoration: none;
   color: #2f2f30;
   border: 1px solid #c2cfcf;
+  border-radius: 5px;
   background: #01b0bb; }
-
-.reply a:hover,
-.reply a:focus {
-  color: #2f2f30;
-  background: #019196; }
+  .reply a:hover, .reply a:focus {
+    background: #019196; }
 
 .comment-content a {
   word-wrap: break-word; }
@@ -1611,17 +1574,16 @@ a {
     text-align: right; }
     .comment-form .form-submit input {
       padding: .5em 1.4em;
+      font-family: "Open Sans", sans-serif;
       font-size: .875em;
       line-height: 1.3em;
       text-decoration: none;
-      color: #44484d;
+      color: #2f2f30;
       border: 1px solid #c2cfcf;
+      border-radius: 5px;
       background: #01b0bb; }
       .comment-form .form-submit input:hover, .comment-form .form-submit input:focus {
-        color: #2f2f30;
-        /* Tricorn Black */
-        background: #019196;
-        /* Splashy */ }
+        background: #019196; }
   .comment-form label {
     width: 33%;
     display: block;
