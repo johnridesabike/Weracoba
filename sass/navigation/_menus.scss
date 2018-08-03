@@ -171,13 +171,6 @@
                 width: intrinsic;
 
                 &:before {
-                    /*border-color: $color__border-menu transparent;
-                    border-width: 0 10px 10px;
-                    right: 9px;
-                    top: -10px;
-                    border-style: solid;
-                    content: "";
-                    position: absolute;*/
                     content: $glyph__arrow-up;
                     font-size: .7em;
                     position: absolute;
