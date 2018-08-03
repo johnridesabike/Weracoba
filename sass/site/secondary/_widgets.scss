@@ -1,0 +1,260 @@
+.widget-area {
+	margin-top: 1.5em;
+}
+
+.widget {
+	margin: 0 0 2em;
+	padding: 0 0 2em;
+	font-family: $font__headers;
+	/* Make sure select elements fit in widgets. */
+
+    ul,
+    ol {
+        padding: .7em 0 0;
+        margin-bottom: 0;
+        list-style-type: none;
+
+        li {
+            display: block;
+            line-height: 2em;
+
+            ul,
+            ol {
+	           margin-left: .5em;
+            }
+        }
+    }
+
+    a {
+        font-weight: 300;
+        text-decoration: none;
+    }
+
+
+    select {
+        width: 100%;
+        height: 2.5em;
+        padding: 10px;
+        font-family: $font__headers;
+        border: 1px solid #ccc;
+    }
+}
+.widget-title {
+	margin-top: 0;
+	margin-bottom: .5em;
+	font-size: 1.4em;
+	color: rgba(0, 29, 19, 1);
+    font-weight: 600;
+}
+/* Search widget. */
+.widget_search {
+    .search-submit {
+	   display: none;
+    }
+
+    input[type="search"] {
+        box-sizing: border-box;
+        width: 100%;
+        padding: .5em 1em;
+        border: 1px solid #c3c3c3;
+        border-radius: 0;
+    }
+}
+
+/* Archive and Categories widgets */
+.widget_archive li {
+	color: #7D7D7D;
+}
+
+.widget_categories .children {
+	padding-top: 0;
+}
+/* Pages and Menu widgets */
+
+.widget_pages,
+.widget_nav_menu {
+
+    .children,
+    .sub-menu {
+        padding-top: 0;
+        padding-bottom: .5em;
+    }
+
+    a {
+        display: block;
+        padding: 1em 0;
+        text-decoration: none;
+        border-bottom: 1px dashed gray;
+
+        &:hover,
+        &:focus {
+            text-decoration: none;
+            border-bottom: 1px dashed gray;
+        }
+    }
+
+    li {
+	   padding: 0;
+    }
+}
+
+/* Meta widget */
+.widget_meta li {
+	padding: 0;
+}
+
+/* Recent comments */
+.widget_recent_comments {
+    li {
+	   line-height: 1.3em;
+	   padding-bottom: .5em;
+    }
+
+    a:hover,
+    a:focus {
+	padding-left: 0;
+}
+}
+
+/* RSS widget */
+.widget_rss li {
+	margin-bottom: 1em;
+}
+
+.widget li a.rsswidget {
+	padding-right: .5em;
+	font-size: 1em;
+	line-height: 1.4em;
+}
+
+.rss-date,
+.widget_rss cite {
+	color: #333;
+	font-size: .8em;
+}
+
+.rssSummary {
+	padding: .5em 0;
+	font-family: "PT Serif", Georgia, Cambria, "Times New Roman", Times, serif;
+	font-size: .8em;
+	line-height: 1.4em;
+}
+
+/* Calendar widget */
+.widget_calendar {
+	font-weight: 400;
+    max-width: 250px;
+
+    caption {
+        padding: .5em 0;
+        font-size: 1em;
+        font-weight: 500;
+        text-align: left;
+    }
+
+    thead {
+        background: transparent;
+        color: black;
+        th {
+            border-bottom-width: 2px;
+        }
+    }
+
+    td {
+        padding: .2em;
+        font-size: .8em;
+        text-align: center;
+        background: white;
+        border: 1px solid #cccccc;
+    }
+
+    th {
+        border: none;
+        text-align: center;
+    }
+
+    .pad {
+        background: #eaeaea;
+    }
+
+    a {
+        font-weight: 900;
+        text-decoration: none;
+    }
+}
+
+/* Text widget */
+.textwidget {
+	font-size: 80%;
+	line-height: 1.3em;
+}
+
+/* Footer widget stylings */
+.footer-widgets {
+	margin: 2em 0 0;
+	padding: 1em 0;
+	background-color: #1a1a1a;
+}
+
+@media screen and (min-width: 600px) {
+	.footer-widgets {
+		padding: 2em 1em;
+	}
+}
+
+.footer-widgets .widget {
+	-webkit-box-flex: 1;
+	    -ms-flex: 1;
+	        flex: 1;
+	margin: 0 1em 2em;
+	padding-top: 1em;
+}
+
+.footer-widgets .widget .original-title {
+	color: rgba(255, 255, 255, 0.5);
+}
+
+.footer-widgets .widget,
+.footer-widgets .widget-title,
+.footer-widgets .widget a,
+.footer-widgets .widget_calendar thead,
+.footer-widgets .rss-date,
+.footer-widgets .widget_rss cite {
+	color: white;
+}
+
+.footer-widgets .widget_calendar td,
+.footer-widgets .widget_calendar a {
+	color: black;
+}
+
+@media screen and (min-width: 900px) {
+	.footer-widgets {
+		/* Use flex to create a responsive layout */
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-ms-flex-wrap: wrap;
+		    flex-wrap: wrap;
+		-ms-flex-pack: distribute;
+		    justify-content: space-around;
+		/* If only one widget is displayed, make it full width. */
+		/* If 2 or 3 widgets are displayed, make the second one twice as wide. */
+		/* If 4 or more widgets are displayed, show three across when available. */
+	}
+	.footer-widgets .widget:only-of-type {
+		width: 100%;
+	}
+	.footer-widgets .widget:nth-last-child(n+2):nth-last-child(-n+3):first-child ~ .widget:nth-child(2) {
+		-webkit-box-flex: 2;
+		    -ms-flex: 2;
+		        flex: 2;
+	}
+	.footer-widgets .widget:nth-last-child(n+4),
+	.footer-widgets .widget:nth-last-child(n+4) ~ .widget {
+		width: 30%;
+		-webkit-box-flex: 1;
+		    -ms-flex: 1 1 30%;
+		        flex: 1 1 30%;
+	}
+}

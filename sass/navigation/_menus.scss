@@ -1,0 +1,210 @@
+.main-navigation {
+	clear: both;
+	display: block;
+	float: left;
+	width: 100%;
+    position: relative;
+    font-family: $font__headers;
+    font-size: 1em;
+    text-transform: uppercase;
+    text-align: center;
+
+    .sub-menu { /* I'm not sure why this is here? */
+        border: 1px solid $color__border-menu;
+        display: block;
+    }
+
+	ul {
+        display: none;
+        list-style: none;
+        margin: 0;
+        padding: 0 1em;
+        position: relative;
+
+		ul {
+            box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+            float: left;
+            position: absolute;
+            top: 100%;
+            left: -999em;
+            z-index: 99999;
+            background: $color__background-header;
+
+			ul {
+				left: -999em;
+				top: 0;
+			}
+
+			li {
+				&:hover > ul,
+				&.focus > ul {
+					left: 100%;
+				}
+			}
+
+			a {
+				width: 200px;
+			}
+
+			:hover > a,
+			.focus > a {
+			}
+
+			a:hover,
+			a.focus {
+			}
+		}
+
+		li:hover > ul,
+		li.focus > ul {
+			left: auto;
+            right: 0;
+		}
+	}
+
+	li {
+		float: none;
+		position: relative;
+
+		&:hover > a,
+		&.focus > a {
+		}
+	}
+
+	a {
+        display: block;
+        text-decoration: none;
+        padding: .5em 0 .5em 0;
+        color: $color__link;
+
+        &:hover,
+        &.focus {
+            color: $color__link-hover;
+        }
+	}
+
+	.current_page_item > a,
+	.current-menu-item > a,
+	.current_page_ancestor > a,
+	.current-menu-ancestor > a {
+	}
+}
+
+/* Small menu. */
+.menu-toggle,
+.main-navigation.toggled ul {
+	display: block;
+}
+
+@media screen and (min-width: 37.5em) {
+	.menu-toggle {
+		display: none;
+	}
+	.main-navigation ul {
+		display: block;
+        text-align: left;
+	}
+}
+
+.comment-navigation,
+.posts-navigation,
+.post-navigation {
+
+	.site-main & {
+		margin: 0 0 1.5em;
+		overflow: hidden;
+	}
+
+	.nav-previous {
+		float: left;
+		width: 50%;
+	}
+
+	.nav-next {
+		float: right;
+		text-align: right;
+		width: 50%;
+	}
+}
+
+.menu-button {
+    text-align: right;
+    position: relative;
+
+    @media screen and (min-width: $screen__full-menu) {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: inline;
+        text-transform: uppercase;
+        font-size: 1em;
+        margin-right: 0.5em;
+
+        &:hover,
+        &:focus {
+            color: $color__text-main;
+            background: $color__link-hover;
+        }
+
+        &::before {
+            content: $glyph__arrow-down;
+            padding-right: .5em;
+            font-size: .7em;
+        }
+    }
+}
+
+.toggled {
+    .menu-toggle {
+        &:before {
+            content: $glyph__arrow-up;
+        }
+    }
+}
+
+
+.menu-item-has-children {
+    a:after {
+        content: $glyph__arrow-down;
+        font-size: .7em;
+        padding-left: .5em;
+    }
+    ul a:after {
+        content: "";
+    }
+}
+
+@media screen and (min-width: $screen__full-menu) {
+    .main-navigation {
+        ul {
+            display: flex;
+            justify-content: space-around;
+
+            ul {
+                margin-left: 0;
+                width: intrinsic;
+
+                &:before {
+                    border-color: $color__border-menu transparent;
+                    border-width: 0 10px 10px;
+                    right: 9px;
+                    top: -10px;
+                    border-style: solid;
+                    content: "";
+                    position: absolute;
+                }
+
+                li {
+                    a {
+                        font-size: 1em;
+                    }
+                }
+            }
+        }
+
+        a {
+            letter-spacing: 0.075em;
+        }
+    }
+}

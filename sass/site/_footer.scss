@@ -1,0 +1,49 @@
+.site-footer {
+    text-align:center;
+    background: $color__background-header;
+    color: $color__text-header;
+    font-family: $font__headers;
+    position: relative;
+    padding: 0.5em 1em 0.5em 1em;
+
+    ul a {
+        display: block;
+        padding: 0.25em 1em;
+    }
+}
+
+.social-media {
+    margin: 0.25em 1em .5em 1em;
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.address {
+    padding: 0.5em 0 0.5em 0;
+}
+
+.site-info {
+    display: flex;
+    justify-content: space-between;
+
+    p {
+      margin: 0 0;
+    }
+}
+
+@media screen and (min-width: 480px) {
+    .social-media ul {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .site-info {
+      margin-left: 1em;
+      margin-right: 1em;
+    }
+}

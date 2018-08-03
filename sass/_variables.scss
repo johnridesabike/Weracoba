@@ -1,0 +1,70 @@
+// Colors
+// Inspired by Mr. Shirwin Williams
+
+// High Reflective White
+$color__background-body: rgba(247, 247, 241, 1);
+// Pure White
+$color__background-body-light: rgba(237, 236, 230, 1);
+$color__background-screen: #f1f1f1;
+$color__background-hr: #ccc;
+// Cyberspace
+$color__background-header: rgba(68, 72, 77, 1);
+// Calypso
+$color__background-button: rgba(1, 176, 187, 1);
+$color__background-pre: #eee;
+$color__background-ins: #fff9c0;
+
+$color__text-screen: #21759b;
+$color__text-input: #666;
+$color__text-input-focus: #111;
+// Tradewind
+$color__text-header: rgba(194, 207, 207, 1);
+// Calypso
+$color__link: rgba(1, 176, 187, 1);
+$color__link-visited: $color__link;
+// Splashy
+$color__link-hover: rgba(1, 145, 150, 1);
+// Tricorn Black
+$color__text-main: rgba(47, 47, 48, 1);
+
+// Tradewind
+$color__border-button: rgba(194, 207, 207, 1);
+$color__border-button-hover: rgba(194, 207, 207, 1);
+$color__border-button-focus: rgba(194, 207, 207, 1);
+$color__border-input: #ccc;
+$color__border-abbr: #666;
+// Software
+$color__border-menu: rgba(127, 132,134, 1);
+
+
+// Typography
+$font__main: 'Lato', sans-serif;
+$font__headers: 'Open Sans', sans-serif;
+$font__code: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+$font__pre: "Courier 10 Pitch", Courier, monospace;
+$font__line-height-body: 1.5;
+$font__line-height-pre: 1.6;
+$glyph__arrow-down: "\25BC";
+$glyph__arrow-up: "\25B2";
+$glyph__arrow-next: "\276F";
+
+// Structure
+$size__site-main: 100%;
+$size__site-sidebar: 25%;
+$screen__full-menu: 600px;
+
+// Columns
+$columns: (
+	1: 100%,
+	2: 50%,
+	3: 33.33%,
+	4: 25%,
+	5: 20%,
+	6: 16.66%,
+	7: 14.28%,
+	8: 12.5%,
+	9: 11.11%
+);
+
+$columns__margin: 3.8%;
+

@@ -1,0 +1,80 @@
+/*--------------------------------------------------------------
+## Menus
+--------------------------------------------------------------*/
+@import "menus";
+
+/*--------------------------------------------------------------
+## Content navigation
+--------------------------------------------------------------*/
+.comment-navigation,
+.post-navigation,
+.posts-navigation,
+.paging-navigation {
+    padding: 2em 0;
+    font-family: $font__headers;
+    text-align: left;
+    overflow: hidden;
+
+    a {
+        display: block;
+        width: 100%;
+        text-decoration: none;
+        padding: 1em;
+        color: $color__background-button;
+        border: 1px solid $color__text-header;
+        background: $color__background-header;
+        &:hover,
+        &:focus {
+            color: $color__link-hover;
+        }
+    }
+}
+.nav-links {
+    margin: 0 auto;
+    padding: 0 0.4em; /* ? */
+}
+.nav-previous {
+    padding-bottom: 1em;
+}
+.meta-nav:after {
+    content: ":";
+}
+@media screen and (min-width: 768px) {
+    .nav-links {
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch;
+        padding: 0;
+    }
+    .comment-navigation,
+    .post-navigation,
+    .posts-navigation {
+        .nav-previous,
+        .nav-next {
+            width: 45%;
+            display: flex;
+            align-items: stretch;
+        }
+    }
+
+    .comment-navigation .nav-next,
+    .posts-navigation .nav-next,
+    .post-navigation .nav-next {
+        text-align: right;
+    }
+    .nav-previous {
+        padding-bottom: 0;
+    }
+    .post-navigation .meta-nav {
+        display: block;
+    }
+    .meta-nav:after {
+        content: "";
+    }
+}
+@media screen and (min-width: 1024px) {
+    .post-navigation .post-title {
+        font-size: 18px;
+        font-size: 1.125em;
+    }
+}
