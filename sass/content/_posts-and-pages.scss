@@ -36,8 +36,9 @@
     margin: 0;
     font-family: $font__headers;
     font-size: 1.5em;
+    line-height: 1.2em;
     font-weight: 600;
-    color: $color__link;
+    color: $color__tint;
 }
 @media screen and (min-width: 768px){
     .entry-title {
@@ -51,11 +52,6 @@
 .entry-header a {
     //color: $color__border-menu;
     text-decoration: none;
-
-    &:hover,
-    &:focus {
-        color: $color__link-hover;
-    }
 }
 
 .entry-title a {

@@ -1,12 +1,4 @@
 <?php
-/**
- * This is the front-page.php template.  It will be used to display our static
- * home page.  If we do not wish to have a static homepage then we will need to
- * remove this file from the theme directory.
- *
- *
- * @package weracoba
- */
 
 get_header();
 ?>

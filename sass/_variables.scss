@@ -1,22 +1,29 @@
 // Colors
 // Inspired by Mr. Shirwin Williams
 
+// Tricorn Black
+//$color__text-main: rgba(47, 47, 48, 1);
+$color__text-main: black;
+$color__background-body: white;
+// Intense Teal
+$color__tint: rgba(1, 118, 128, 1);
+
 // Cyberspace
 $color__header-dark: rgba(68, 72, 77, 1);
 // Tradewind
 $color__header-light: rgba(194, 207, 207, 1);
-$color__background-header: white;
+$color__background-header: $color__background-body;
+$color__headings-text: $color__tint;
 
-// Intense Teal
-$color__link: rgba(1, 118, 128, 1);
+$color__link: $color__tint;
 
 $color__border-menu: $color__header-light;
 
 
 // High Reflective White
-$color__background-body-light: rgba(247, 247, 241, 1);
+//$color__background-body-light: rgba(247, 247, 241, 1);
 // Pure White
-$color__background-body-dark: rgba(237, 236, 230, 1);
+//$color__background-body-dark: rgba(237, 236, 230, 1);
 $color__background-screen: #f1f1f1;
 $color__background-hr: #ccc;
 // Calypso
@@ -34,8 +41,6 @@ $color__link-hover: rgba(1, 176, 187, 1);
 $color__link-visited: $color__link;
 // Splashy
 //$color__link-hover: rgba(1, 145, 150, 1);
-// Tricorn Black
-$color__text-main: rgba(47, 47, 48, 1);
 
 // Tradewind
 $color__border-button: rgba(194, 207, 207, 1);
@@ -49,7 +54,8 @@ $color__border-abbr: #666;
 
 // Typography
 $font__main: 'Lato', sans-serif;
-$font__headers: 'Open Sans', sans-serif;
+$font__headers: Georgia, serif;
+$font__UI: 'Work Sans', sans-serif;
 $font__code: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 $font__pre: "Courier 10 Pitch", Courier, monospace;
 $font__line-height-body: 1.5;
@@ -79,3 +85,50 @@ $columns: (
 
 $columns__margin: 3.8%;
 
+// Rem output with px fallback
+@mixin font-size($sizeValue: 1) {
+	font-size: ($sizeValue * 16) * 1px;
+	font-size: $sizeValue * 1rem;
+}
+
+// Center block
+@mixin center-block {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+// Clearfix
+@mixin clearfix() {
+	content: "";
+	display: table;
+	table-layout: fixed;
+}
+
+// Clear after (not all clearfix need this also)
+@mixin clearfix-after() {
+	clear: both;
+}
+
+// Column width with margin
+@mixin column-width($numberColumns: 3) {
+	width: map-get( $columns, $numberColumns ) - ( ( $columns__margin * ( $numberColumns - 1 ) ) / $numberColumns );
+}
+
+// Buttons
+@mixin button-light {
+    padding: .5em 1.4em;
+	font-family: $font__UI;
+	font-size: .875em;
+	line-height: 1.3em;
+	text-decoration: none;
+    color: $color__text-main;
+    border: 1px solid $color__border-button;
+    border-radius: 5px;
+    background: $color__background-button;
+
+    &:hover,
+    &:focus {
+        background: $color__link;
+    }
+}

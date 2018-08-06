@@ -1,3 +1,10 @@
+.home.page {
+    .entry-header {
+        display: none;
+    }
+}
+
+/* old */
 .fp-blurb {
     font-family: $font__headers;
     font-size: 1.5em;
@@ -8,6 +15,7 @@
     font-size: 2em;
     font-family: $font__headers;
     font-weight: 600;
+    color: $color__tint;
 }
 @media screen and (min-width: 768px) {
     .fp-blurb {
@@ -64,7 +72,7 @@
 
         &:hover,
         &:focus {
-            color: $color__background-body-dark;
+            color: $color__link-hover;
             text-decoration: none;
         }
     }
@@ -89,7 +97,6 @@
     background: white;
     border: 1px solid rgba(194, 207, 207, 1); /* Tradewind */
     border-radius: 5px;
-    padding-bottom: 1.5em;
     margin: .5em 0;
 }
 .fp-figure {
@@ -119,9 +126,12 @@
 
 .blog-link {
     text-align: right;
+    font-size: 1.5em;
 
     a {
         @include button-light;
+        display: block;
+        text-align: center;
     }
 }
 .blog-link a:after {
@@ -133,7 +143,6 @@
 
         a {
             display: inline;
-            font-size: 1.5em;
         }
     }
 }
