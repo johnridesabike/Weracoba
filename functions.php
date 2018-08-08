@@ -69,7 +69,7 @@ if ( ! function_exists( 'weracoba_setup' ) ) :
 		) ) );
         */
 		// Add theme support for selective refresh for widgets.
-		add_theme_support( 'customize-selective-refresh-widgets' );
+		//add_theme_support( 'customize-selective-refresh-widgets' );
 
 		/**
 		 * Add support for core custom logo.
@@ -82,9 +82,37 @@ if ( ! function_exists( 'weracoba_setup' ) ) :
 			'flex-width'  => true,
 			'flex-height' => true,
 		) );
+
+        /**
+        * Add support for Gutenberg wide blocks.
+        *
+        * @link https://wordpress.org/gutenberg/handbook/extensibility/theme-support/#opt-in-features
+        */
+        add_theme_support( 'align-wide' );
 	}
 endif;
 add_action( 'after_setup_theme', 'weracoba_setup' );
+
+/**
+ * Exclude a category from all WordPress loops
+ *
+ * @link https://github.com/taniarascia/wp-functions#exclude-a-category-from-wordpress-loops
+ */
+/*
+add_action( 'pre_get_posts', function( $query ) { // anonymous callback
+
+    global $wp_query;
+
+    // Hard coded category ID, but can be dynamic: esc_attr(get_option('your-cat-id'));
+    $excluded_cat_id = 25;
+
+    // add category ID to existing, avoid overwritting it
+    $cat[] = $query->get( 'cat' );
+    $cat[] = "-" . $excluded_cat_id;
+
+    $query->set( 'cat', $cat );
+    }
+});*/
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -110,6 +138,16 @@ function weracoba_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Sidebar', 'weracoba' ),
 		'id'            => 'sidebar-1',
+		'description'   => esc_html__( 'Add widgets here.', 'weracoba' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Post Sidebar', 'weracoba' ),
+		'id'            => 'sidebar-post',
 		'description'   => esc_html__( 'Add widgets here.', 'weracoba' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',

@@ -165,25 +165,46 @@ endif;
 if ( ! function_exists( 'weracoba_post_navigation' ) ) :
 	function weracoba_post_navigation() {
 		the_post_navigation( array(
-			'next_text' => '<span class="meta-nav" aria-hidden="true">' . __('Next', 'weracoba') . '</span> <span class="screen-reader-text">' . __('Next Post:', 'weracoba') . '</span> <span class="post-title">%title</span>',
-			'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __('Previous', 'weracoba') . '</span> <span class="screen-reader-text">' . __('Previous Post:', 'weracoba') . '</span> <span class="post-title">%title</span>',
+			'next_text' => '<span class="meta-nav" aria-hidden="true">' . __('Next post', 'weracoba') . '</span> <span class="screen-reader-text">' . __('Next Post:', 'weracoba') . '</span> <span class="post-title">%title</span>',
+			'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __('Previous post', 'weracoba') . '</span> <span class="screen-reader-text">' . __('Previous Post:', 'weracoba') . '</span> <span class="post-title">%title</span>',
 		));
 	}
 endif;
 
-/**
- * Get the posts page URL in WordPress
- *
- * @link   https://www.winwar.co.uk/2015/10/get-the-posts-page-url-dynamically-in-wordpress/?utm_source=codesnippet
- *
- * @return string
- */
-if ( ! function_exists( 'wereacoba_get_post_page_url' ) ) :
-    function wereacoba_get_post_page_url() {
+if ( ! function_exists( 'weracoba_get_post_page_url' ) ) :
+    /**
+     * Get the posts page URL in WordPress
+     *
+     * @link   https://www.winwar.co.uk/2015/10/get-the-posts-page-url-dynamically-in-wordpress/?utm_source=codesnippet
+     *
+     * @return string
+     */
+    function weracoba_get_post_page_url() {
         if( 'page' == get_option( 'show_on_front' ) ) {
             return get_permalink( get_option('page_for_posts' ) );
         } else {
             return home_url();
+        }
+    }
+endif;
+
+if ( ! function_exists( 'weracoba_reading_time' ) ) :
+    /*
+    * Output the reading time. Used in conjunction with "Reading Time WP" plugin.
+    *
+    * @link https://jasonyingling.me/reading-time-wp/
+    *
+    * Prints the HTML for a post's reading time.
+    */
+    function weracoba_reading_time($label = 'Reading time:', $postfix = 'minutes') {
+        $reading_time = do_shortcode( sprintf(
+            '[rt_reading_time label="%s" postfix="%s"]', $label, $postfix ) );
+        if( substr($reading_time, 0, 1) === '[' ) {
+            ?>
+            <!-- Reading Time WP is not active https://jasonyingling.me/reading-time-wp/ -->
+            <?php
+        } else {
+            echo $reading_time;
         }
     }
 endif;

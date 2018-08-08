@@ -10,7 +10,7 @@
 .post-navigation,
 .posts-navigation,
 .paging-navigation {
-    padding: 2em 0;
+    /*padding: 2em 0;*/
     font-family: $font__headers;
     text-align: left;
     overflow: hidden;
@@ -20,15 +20,15 @@
         width: 100%;
         text-decoration: none;
         padding: 1em;
-        color: $color__background-button;
-        border: 1px solid $color__text-header;
-        background: $color__background-header;
+        border: 1px solid $color__border-menu;
+        font-family: $font__UI;
         &:hover,
         &:focus {
             color: $color__link-hover;
         }
     }
 }
+
 .nav-links {
     margin: 0 auto;
     padding: 0 0.4em; /* ? */
@@ -39,16 +39,28 @@
 .meta-nav:after {
     content: ":";
 }
-@media screen and (min-width: 768px) {
-    .nav-links {
-        display: flex;
-        justify-content: space-between;
-        align-items: stretch;
-        padding: 0;
-    }
+
+@media screen and (min-width: $breakpoint__1) {
+
     .comment-navigation,
-    .post-navigation,
-    .posts-navigation {
+    .posts-navigation,
+    .post-navigation {
+        /*
+        .site-main & {
+            /*margin: 0 0 1.5em;*
+            overflow: hidden;
+        }*/
+
+        .nav-previous {
+            float: left;
+            padding-bottom: 0;
+        }
+
+        .nav-next {
+            float: right;
+            text-align: right;
+        }
+
         .nav-previous,
         .nav-next {
             width: 45%;
@@ -57,19 +69,15 @@
         }
     }
 
-    .comment-navigation .nav-next,
-    .posts-navigation .nav-next,
-    .post-navigation .nav-next {
-        text-align: right;
+    .nav-links {
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch;
+        padding: 0;
     }
-    .nav-previous {
-        padding-bottom: 0;
-    }
+
     .post-navigation .meta-nav {
         display: block;
-    }
-    .meta-nav:after {
-        content: "";
     }
 }
 @media screen and (min-width: 1024px) {

@@ -53,9 +53,10 @@ $color__border-abbr: #666;
 
 
 // Typography
-$font__main: 'Lato', sans-serif;
+$font__main: Georgia, serif;//'Lato', sans-serif;
 $font__headers: Georgia, serif;
-$font__UI: 'Work Sans', sans-serif;
+$font__UI: 'Lato', sans-serif;
+$font__widget: 'Lato', sans-serif;
 $font__code: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 $font__pre: "Courier 10 Pitch", Courier, monospace;
 $font__line-height-body: 1.5;
@@ -67,8 +68,14 @@ $glyph__arrow-next: "\276F";
 // Structure
 $size__site-main: 100%;
 $size__site-sidebar: 25%;
-$screen__full-menu: 600px;
+
 $size__max-width: 1200px;
+$size__content: 700px;
+
+$breakpoint__1: 600px;
+$breakpoint__2: 1023px;
+//$screen__breakpoint-2: 900px;
+//$screen__breakpoint-menu: 600px;
 
 // Columns
 $columns: (

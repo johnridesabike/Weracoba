@@ -1,65 +1,17 @@
 .site-content {
     padding: 0 1em;
+    @media screen and (min-width: 768px) {
+        padding: 0 2em;
+    }
 }
 
 
 
 @media screen and (min-width: 768px) {
     .content-area {
-        padding: 0 2em;
-        max-width: 1200px;
+        /*padding: 0 2em;
+        max-width: 1200px;*/
         margin: auto;
-    }
-}
-
-.single .entry-content {
-    margin: 0 -1em;
-    padding: 0 1em;
-    border-bottom: 1px solid $color__border-button;
-    border-top: 1px solid $color__border-button;
-}
-.has-post-thumbnail .post-content {
-    border-top: 0;
-}
-@media screen and (min-width: 900px) {
-    .has-sidebar {
-
-        .hentry {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-
-            .entry-header {
-                width: 100%;
-                flex: 1 0 100%;
-            }
-
-            .post-content,
-            &.page .entry-content {
-                width: 65%;/*720px;*/
-                /*padding-left: 2em;
-                padding-right: 2em;*/
-            }
-
-            .widget-area {
-                width: 30%;
-            }
-        }
-    }
-    .no-sidebar {
-        .post-content-wrap {
-            display: flex;
-            justify-content: flex-start;
-
-            .entry-meta {
-                width: 20%;
-            }
-
-            .post-content-body {
-                width: 70%;/*720px;*/
-                margin-left: 1em;
-            }
-        }
     }
 }
 

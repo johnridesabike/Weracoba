@@ -4,23 +4,11 @@
 	display: block;
 }
 
-@media screen and (min-width: 37.5em) {
-	.menu-toggle {
-		display: none;
-	}
-	.main-navigation ul {
-		display: block;
-        text-align: right;
-	}
-}
-
-
-
 .menu-button {
     text-align: right;
     position: relative;
 
-    @media screen and (min-width: $screen__full-menu) {
+    @media screen and (min-width: $breakpoint__1) {
         display: none;
     }
 
@@ -71,10 +59,9 @@
 	float: left;
     position: relative;
     font-family: $font__UI;
-    font-size: 1em;
+    font-size: 1.1em;
     text-align: center;
     width: 100%;
-    font-weight: 600;
 
 	ul {
         display: none;
@@ -100,7 +87,13 @@
 				top: 0;
 			}
 
-			li {
+            li {
+                border-bottom: 1px solid $color__border-menu;
+
+                &:last-child {
+                    border-bottom: none;
+                }
+
 				&:hover > ul,
 				&.focus > ul {
 					left: 100%;
@@ -156,8 +149,9 @@
 	}
 
 
-    @media screen and (min-width: $screen__full-menu) {
+    @media screen and (min-width: $breakpoint__1) {
         width: intrinsic;
+        line-height: 1.1em;
 
         ul {
             display: flex;
@@ -165,7 +159,8 @@
 
             ul {
                 margin-left: 0;
-                width: 200px;
+                width: intrinsic;
+                text-align: left;
 
                 &:before {
                     content: $glyph__arrow-up;
@@ -185,28 +180,13 @@
         }
 
         a {
-            letter-spacing: 0.075em;
+            letter-spacing: 0.025em;
         }
     }
 }
 
-.comment-navigation,
-.posts-navigation,
-.post-navigation {
-
-	.site-main & {
-		margin: 0 0 1.5em;
-		overflow: hidden;
-	}
-
-	.nav-previous {
-		float: left;
-		width: 50%;
-	}
-
-	.nav-next {
-		float: right;
-		text-align: right;
-		width: 50%;
+@media screen and (min-width: $breakpoint__1) {
+	.menu-toggle {
+		display: none;
 	}
 }

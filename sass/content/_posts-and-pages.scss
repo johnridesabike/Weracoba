@@ -22,14 +22,13 @@
 }
 
 @media screen and (min-width: 900px) {
-    .no-sidebar .post-content-wrap .entry-content {
+    .post-content-wrap .entry-content {
         margin-top: 0;
     }
 }
 /************************** Entry Header Styles *****************************/
 .entry-header {
     font-family: $font__main;
-    margin-bottom: 1em;
     color: $color__header-dark;
 }
 .entry-title {
@@ -37,10 +36,10 @@
     font-family: $font__headers;
     font-size: 1.5em;
     line-height: 1.2em;
-    font-weight: 600;
+    font-weight: normal;
     color: $color__tint;
 }
-@media screen and (min-width: 768px){
+@media screen and (min-width: $breakpoint__1){
     .entry-title {
         font-size: 2.5em;
     }
@@ -48,19 +47,11 @@
 .entry-meta {
     //color: $color__background-header;
     font-size: 0.9em;
+    font-family: $font__UI;
 }
 .entry-header a {
     //color: $color__border-menu;
     text-decoration: none;
-}
-
-.entry-title a {
-    //color: $color__background-header;
-
-    &:hover,
-    &:focus {
-        //color: $color__border-menu;
-    }
 }
 
 .entry-meta .byline,
@@ -69,7 +60,22 @@
 .entry-meta .edit-link {
     display: block;
 }
-@media screen and (min-width: 768px) {
+
+.post-content,
+.entry-header-wrap {
+    max-width: $size__max-width;
+    margin: auto;
+}
+.post-content-body {
+    max-width: $size__content;
+    margin: auto;
+}
+.post-content-body {
+    border-bottom: 1px solid $color__header-light;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+}
+@media screen and (min-width: $breakpoint__1) {
     .entry-meta {
         font-size: 1em;
 
@@ -82,43 +88,85 @@
 
         .posted-on:before,
         .comments-link:before,
-        .edit-link:before {
+        .edit-link:before,
+        .span-reading-time:before {
             content: "| ";
             margin: 0 0.5em;
             color: $color__border-menu;
         }
     }
 }
-@media screen and (min-width: 900px) {
-    .no-sidebar .post-content-wrap  {
 
-        .entry-meta {
-            margin-top: 1em;
-            font-size: .9em;
+.cat-links {
+    font-family: 'Open Sans', sans-serif;
+}
+/*.single .entry-content {
+    margin: 0 -1em;
+    padding: 0 1em;
+    border-bottom: 1px solid $color__border-button;
+    /*border-top: 1px solid $color__border-button;*//*
+}*/
+.has-post-thumbnail .post-content {
+    border-top: 0;
+}
+@media screen and (min-width: $breakpoint__2) {
+    .post-content-wrap {
+        display: flex;
+        justify-content: space-around;
+    }
+    .post-content-body {
+        margin: 0;
+    }
+    /*
+    .entry-header-wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .entry-title {
+    }
+    .entry-meta {
+        margin-left: 1em;
+        display: flex;
+        flex-flow: column;
+        flex-shrink: 0;
 
-            a {
-                display: block;
-                font-size: 1.1em;
-            }
-
-            .byline,
-            .posted-on,
-            .comments-link,
-            .edit-link {
-                display: block;
-                margin-bottom: 1em;
-            }
-
-            .posted-on:before,
-            .comments-link:before,
-            .edit-link:before {
-                content: "";
-                margin: 0;
-            }
+        .posted-on:before,
+        .comments-link:before,
+        .edit-link:before {
+            content: "";
+            margin: 0;
         }
     }
+
+    /*
+    .entry-meta {
+        font-size: .9em;
+        max-width: 155px;
+
+        a {
+            display: block;
+            font-size: 1.1em;
+        }
+
+        .byline,
+        .posted-on,
+        .comments-link,
+        .edit-link {
+            display: block;
+            margin-bottom: 1em;
+        }
+
+        .posted-on:before,
+        .comments-link:before,
+        .edit-link:before {
+            content: "";
+            margin: 0;
+        }
+    }
+    */
 }
-.cat-links {
-    text-transform: uppercase;
-    font-family: 'Open Sans', sans-serif;
+
+@media screen and (min-width: 768px) {
+
 }
