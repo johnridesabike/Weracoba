@@ -21,9 +21,9 @@ $color__border-menu: $color__header-light;
 
 
 // High Reflective White
-//$color__background-body-light: rgba(247, 247, 241, 1);
+$color__background-body-light: rgba(247, 247, 241, 1);
 // Pure White
-//$color__background-body-dark: rgba(237, 236, 230, 1);
+$color__background-body-dark: rgba(237, 236, 230, 1);
 $color__background-screen: #f1f1f1;
 $color__background-hr: #ccc;
 // Calypso
@@ -72,7 +72,7 @@ $size__site-sidebar: 25%;
 $size__max-width: 1200px;
 $size__content: 700px;
 
-$breakpoint__1: 600px;
+$breakpoint__1: 767px;
 $breakpoint__2: 1023px;
 //$screen__breakpoint-2: 900px;
 //$screen__breakpoint-menu: 600px;

@@ -5,63 +5,61 @@
 	display: block;
 }
 .comments-area {
-    width: 100%;
     /*margin: 3em 0;*/
-    padding: 1.5em 0;
-    border-top: 1px solid $color__background-header;
+    /*padding: 1.5em 0;*/
+    max-width: $size__max-width;
+    margin-right: auto;
+    margin-left: auto;
 }
 .comments-title {
-	margin-bottom: 2em;
 	font-size: 2em;
-	font-weight: 300;
-    font-family: $font__headers;
+	font-weight: normal;
+    font-family: $font__UI;
+    color: $color__tint;
 }
 .comment-list {
 	padding: 1em;
 	margin: -1em;
 	list-style-type: none;
-    border-top: 1px solid $color__border-button;
-    border-bottom: 1px solid $color__border-button;
+    max-width: $size__content;
+    margin: auto;
 
     ol {
         list-style-type: none;
     }
 }
-@media screen and (min-width: 768px) {
-    .comment-list {
-    	margin: 0;
-    }
-}
 .comment-body {
-	border-bottom: 1px solid $color__background-header;
+	border-bottom: 1px solid $color__border-menu;
 	margin-bottom: 3em;
 }
 .comment-meta {
 	position: relative;
 	margin-left: 70px;
-	font-family: $font__headers;
+	font-family: $font__UI;
 	font-size: .9em;
-	font-weight: 300;
 }
-.comment .avatar {
-	position: absolute;
-	top: -5px;
-	left: -70px;
-	width: 50px;
-	height: 50px;
-	border-radius: 50px;
-}
-.comment-metadata a,
-.comment-form a {
-	border: none;
-	text-decoration: none;
-    color: $color__border-menu;
-}
-.comment-metadata a:hover,
-.comment-metadata a:focus,
-.comment-form a:hover,
-.comment-form a:focus {
-    color: $color__link-hover;
+.comment{
+    .avatar {
+        position: absolute;
+        top: -5px;
+        left: -70px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50px;
+    }
+    .edit-link {
+        display: block;
+
+        @media screen and (min-width: $breakpoint__1) {
+            display: inline;
+
+            &:before {
+                content: "| ";
+                margin: 0 0.5em;
+                color: $color__border-menu;
+            }
+        }
+    }
 }
 .children {
 	margin-left: 1.5em;
@@ -70,12 +68,10 @@
 .comment-metadata {
     margin-top: .2em;
     padding-bottom: .5em;
-    line-height: 1em;
 }
 .comment-author {
     line-height: 1.3em;
     font-size-adjust: 1.125em;
-    font-weight: 400;
 }
 .says {
     font-size: .8em;
@@ -95,14 +91,17 @@
 /******************* Comment Form **********************/
 .comment-reply-title {
 	line-height: 1.3em;
-	font-family: $font__headers;
+	font-family: $font__UI;
+    color: $color__tint;
 }
 .comment-list .comment-reply-title {
 	text-align: left;
 }
-.comment-form {
+.comment-respond {
 	line-height: 1.3em;
 	font-family: $font__headers;
+    max-width: $size__content;
+    margin: auto;
 
     .form-submit {
         text-align: right;
@@ -127,42 +126,4 @@
 	.children {
 		margin-left: 2em;
 	}
-	.no-sidebar .children {
-		margin-left: 2.4em;
-
-        .comment-meta {
-            font-size: .875em;
-            margin-left: 80px;
-        }
-
-        .avatar {
-            top: -7px;
-            left: -80px;
-            width: 60px;
-            height: 60px;
-        }
-
-        .comment-content {
-            margin-left: 80px;
-        }
-	}
-}
-@media screen and (min-width: 1080px) {
-    .no-sidebar {
-        .children {
-            margin-left: 3em;
-        }
-        .comment-meta {
-            margin-left: 90px;
-        }
-        .comment .avatar {
-            top: -8px;
-            left: -90px;
-            width: 70px;
-            height: 70px;
-        }
-        .comment-content {
-            margin-left: 90px;
-        }
-    }
 }

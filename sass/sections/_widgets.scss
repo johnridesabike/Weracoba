@@ -1,22 +1,27 @@
 .widget-area {
-	margin-top: 1.5em;
+	margin-top: 1em;
+
+    @media screen and (min-width: $breakpoint__1) {
+        margin-left: 1em;
+    }
 }
 
 .widget {
-	margin: 0 0 2em;
-	padding: 0 0 2em;
-	font-family: $font__headers;
+	margin: 0;
+    padding: 0 .5em .5em .5em;
+	font-family: $font__widget;
 	/* Make sure select elements fit in widgets. */
 
     ul,
     ol {
-        padding: .7em 0 0;
-        margin-bottom: 0;
+        padding: 0;
+        margin: 0;
         list-style-type: none;
 
         li {
             display: block;
-            line-height: 2em;
+            line-height: 1.2em;
+            margin-bottom: .5em;
 
             ul,
             ol {
@@ -27,7 +32,7 @@
 
     a {
         //font-weight: 300;
-        text-decoration: none;
+        font-family: $font__UI;
     }
 
 
@@ -40,14 +45,14 @@
     }
 }
 .widget-title {
-	margin-top: 0;
-	margin-bottom: .5em;
+    margin: 0 0 .5em;
 	font-size: 1.4em;
 	color: $color__tint;
     font-weight: 600;
 }
 /* Search widget. */
 .widget_search {
+
     .search-submit {
 	   display: none;
     }
@@ -244,31 +249,13 @@
     }
 }
 
-.single-post .widget-area {
-    margin-top: 1em;
-
-    .widget {
-        margin: 0;
-        font-family: $font__widget;
-        padding: 0 .5em .5em .5em;
-
-        ul {
-            margin: 0;
-            padding: 0;
-        }
-
-        a {
-            font-family: $font__UI;
-        }
-    }
-    .widget-title {
-        margin: 0 -.5em;
-    }
-
+.post {
     @media screen and (min-width: $breakpoint__1) {
-        display: flex;
-        flex-flow: row;
-        flex-wrap: wrap;
+        .widget-area {
+            display: flex;
+            flex-flow: row;
+            flex-wrap: wrap;
+        }
 
         .widget {
             max-width: map-get( $columns, 3 );
@@ -276,12 +263,29 @@
     }
 
     @media screen and (min-width: $breakpoint__2) {
-        flex-flow: column;
-        flex-wrap: nowrap;
-        margin-left: 1em;
+        .widget-area {
+            flex-flow: column;
+            flex-wrap: nowrap;
+            margin-left: 1em;
+        }
 
         .widget {
+            margin: 0 0 2em;
+            padding: 0 0 2em;
             max-width: 200px;
+        }
+    }
+}
+
+.archive-view {
+    @media screen and (min-width: $breakpoint__2) {
+        .widget-area {
+            margin-left: 2em;
+        }
+    }
+
+    @media screen and (min-width: $breakpoint__2) {
+        .widget {
             margin: 0 0 2em;
             padding: 0 0 2em;
         }

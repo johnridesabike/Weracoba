@@ -91,7 +91,7 @@ if ( ! function_exists( 'weracoba_post_thumbnail' ) ) :
 
 		<?php else : ?>
 
-        <figure class="full-bleed featured-image">
+        <figure class="featured-image">
             <a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
                 <?php
                 the_post_thumbnail( 'post-thumbnail', array(
@@ -140,11 +140,11 @@ if ( ! function_exists( 'weracoba_comments' ) ) :
 			);
 			echo '</span> ';
 		}
-
+        /*
 		edit_post_link(
 			sprintf(
 				wp_kses(
-					/* translators: %s: Name of current post. Only visible to screen readers */
+					/* translators: %s: Name of current post. Only visible to screen readers *//*
 					__( 'Edit <span class="screen-reader-text">%s</span>', 'weracoba' ),
 					array(
 						'span' => array(
@@ -156,7 +156,7 @@ if ( ! function_exists( 'weracoba_comments' ) ) :
 			),
 			'<span class="edit-link">',
 			'</span>'
-		);
+		);*/
 	}
 endif;
 
@@ -196,7 +196,7 @@ if ( ! function_exists( 'weracoba_reading_time' ) ) :
     *
     * Prints the HTML for a post's reading time.
     */
-    function weracoba_reading_time($label = 'Reading time:', $postfix = 'minutes') {
+    function weracoba_reading_time($label = 'Reading time: about ', $postfix = 'minutes') {
         $reading_time = do_shortcode( sprintf(
             '[rt_reading_time label="%s" postfix="%s"]', $label, $postfix ) );
         if( substr($reading_time, 0, 1) === '[' ) {
