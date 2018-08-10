@@ -189,6 +189,16 @@ function weracoba_scripts() {
 add_action( 'wp_enqueue_scripts', 'weracoba_scripts' );
 
 /**
+ * Registers an editor stylesheet for the theme.
+ */
+function weracoba_editor_styles() {
+    wp_enqueue_style( 'mytheme-block-editor-styles', get_theme_file_uri( '/style-editor.css' ), false, '1.0', 'all' );
+}
+
+add_action( 'enqueue_block_editor_assets', 'weracoba_editor_styles' );
+
+
+/**
  * Implement the Custom Header feature.
  */
 // require get_template_directory() . '/inc/custom-header.php';

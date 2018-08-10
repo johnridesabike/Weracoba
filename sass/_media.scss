@@ -100,30 +100,45 @@ object {
 
 /* Single Post Featured Images */
 
-.full-bleed {
-    /*width: 100vw;*/
-    max-height: $size__max-width;
-    margin-top: 0;
-    margin-bottom: 0;
-    margin-left: -1em;
-    margin-right: -1em;
-    overflow: hidden;
-
+.featured-image {
+    position: relative;
+    background-size: cover;
+    background-position: 50%;
+    height: 16em;
+    
     img {
-        display: block;
-        margin: 0 auto;
+        position: absolute;
+        left: -999em;
     }
+    
+    a {
+        @include link-overlay;
+    }
+    
+    &.full-bleed {
+        min-height: 430px;
+        width: 100vw;
+        margin: 0 -1em;
+        
+        @media screen and (min-width: $breakpoint__2) {
+            margin-left: -2em;
+            margin-right: -2em;
+        }
 
-    @media screen and (min-width: 768px) {
-        margin-left: -2em;
-        margin-right: -2em;
+        @media screen and (min-width: $breakpoint__3) {
+            /* we stop full-bleeding at this point */
+            position: static;
+            width: 50%;
+            margin: 0;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
     }
 }
-
+/*
 .wp-block-cover-image {
     margin-left: -1em;
     margin-right: -1em;
-    /*width:100vw;*/
     width: initial;
 
     @media screen and (min-width: 768px) {
@@ -161,3 +176,4 @@ object {
         z-index: 1;
     }
 }
+*/

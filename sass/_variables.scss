@@ -1,21 +1,24 @@
 // Colors
 // Inspired by Mr. Shirwin Williams
 
-// Tricorn Black
-//$color__text-main: rgba(47, 47, 48, 1);
-$color__text-main: black;
-$color__background-body: white;
-// Intense Teal
-$color__tint: rgba(1, 118, 128, 1);
+$color-text-main: black;
+$color-bg-body: white;
+$color-tint: rgba(1, 118, 128, 1); // Intense Teal
+$color-border: rgba(194, 207, 207, 1); // Tradewind
+$color-bg-header: $color-bg-body;
+$color-link: $color-tint;
+$color-link-visited: $color-tint;
+$color-headings: $color-tint;
+
+$color-background-pre: #eee;
+$color-border-abbr: #666;
+$color-background-ins: #fff9c0;
 
 // Cyberspace
 $color__header-dark: rgba(68, 72, 77, 1);
 // Tradewind
 $color__header-light: rgba(194, 207, 207, 1);
-$color__background-header: $color__background-body;
-$color__headings-text: $color__tint;
 
-$color__link: $color__tint;
 
 $color__border-menu: $color__header-light;
 
@@ -28,8 +31,6 @@ $color__background-screen: #f1f1f1;
 $color__background-hr: #ccc;
 // Calypso
 $color__background-button: rgba(1, 176, 187, 1);
-$color__background-pre: #eee;
-$color__background-ins: #fff9c0;
 
 $color__text-screen: #21759b;
 $color__text-input: #666;
@@ -38,7 +39,6 @@ $color__text-input-focus: #111;
 $color__text-header: rgba(194, 207, 207, 1);
 // Calypso
 $color__link-hover: rgba(1, 176, 187, 1);
-$color__link-visited: $color__link;
 // Splashy
 //$color__link-hover: rgba(1, 145, 150, 1);
 
@@ -47,20 +47,20 @@ $color__border-button: rgba(194, 207, 207, 1);
 $color__border-button-hover: rgba(194, 207, 207, 1);
 $color__border-button-focus: rgba(194, 207, 207, 1);
 $color__border-input: #ccc;
-$color__border-abbr: #666;
 // Software
 //$color__border-menu: rgba(127, 132,134, 1);
 
 
 // Typography
-$font__main: Georgia, serif;//'Lato', sans-serif;
-$font__UI: 'Lato', sans-serif;
-$font__headers: $font__UI;
+$font-reading: Georgia, serif;
+$font-UI: "Lato", sans-serif;
+$font-headers: $font-UI;
+$font-line-height-body: 1.5;
+$font-pre: "Courier 10 Pitch", Courier, monospace;
+$font-line-height-pre: 1.6;
+$font-code: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+
 $font__widget: 'Lato', sans-serif;
-$font__code: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
-$font__pre: "Courier 10 Pitch", Courier, monospace;
-$font__line-height-body: 1.5;
-$font__line-height-pre: 1.6;
 $glyph__arrow-down: "\25BC";
 $glyph__arrow-up: "\25B2";
 $glyph__arrow-next: "\276F";
@@ -72,8 +72,9 @@ $size__site-sidebar: 25%;
 $size__max-width: 1200px;
 $size__content: 700px;
 
-$breakpoint__1: 767px;
-$breakpoint__2: 1023px;
+$breakpoint-1: 767px; // iPad portrait
+$breakpoint-2: 1023px; // iPad landscape
+$breakpoint-3: 1365px; // iPad pro landscape
 //$screen__breakpoint-2: 900px;
 //$screen__breakpoint-menu: 600px;
 
@@ -138,4 +139,35 @@ $columns__margin: 3.8%;
     &:focus {
         background: $color__link;
     }
+}
+
+@mixin max-site-width {
+    @media screen and (min-width: $size__max-width) {
+        max-width: $size__max-width;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+}
+
+@mixin max-content-width {
+    max-width: $size__content;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@mixin link-overlay {
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: rgba(255, 255, 255, 0);
+    z-index: 999;
+
+    &:hover,
+    &:focus {
+        background: rgba(255, 255, 255, .1)
+    }
+    
 }

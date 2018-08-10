@@ -196,12 +196,10 @@
 
 .post-widgets, .archive-widgets {
     @media screen and (min-width: $breakpoint__1) {
-        .widget-area {
-            display: flex;
-            flex-flow: row;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
+        display: flex;
+        flex-flow: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
 
         .widget {
             width: map-get( $columns, 3 );
@@ -209,12 +207,9 @@
     }
 
     @media screen and (min-width: $breakpoint__2) {
-        .widget-area {
-            flex-flow: column;
-            flex-wrap: nowrap;
-            justify-content: flex-start;
-            margin-left: 1em;
-        }
+        display: block;
+        margin-left: 1em;
+        margin-top: 4em;
 
         .widget {
             margin: 0 0 2em;

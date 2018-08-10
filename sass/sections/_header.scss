@@ -1,6 +1,5 @@
 .site-header {
     background: $color__background-header;
-    color: $color__header-dark;
     /*margin-left: -1em;
     margin-right: -1em;*/
     text-align: center;
@@ -9,18 +8,13 @@
     a {
         color: $color__link;
         text-decoration: none;
-
-        &:hover,
-        &:focus {
-            text-decoration: none;
-        }
     }
 
     .search-form {
         display: none;
         text-align: right;
 
-        @media screen and (min-width: $breakpoint__1) {
+        @media screen and (min-width: $breakpoint__2) {
             display: block;
         }
     }
@@ -35,14 +29,11 @@
     }
 }
 .site-title {
-    font-weight: normal;
-    font-size: 2em;
     margin-bottom: 0;
     margin-top: .5em;
 }
 .site-description {
     margin: 0 1em .5em 1em;
-    font-family: $font__headers;
 }
 .site-header-wrapper {
     display: flex;
@@ -58,9 +49,7 @@
         padding-bottom: .67em;
     }
     .site-header-wrapper {
-        max-width: $size__max-width;
-        margin: auto;
-        padding: 0 1em;
+        @include max-site-width;
     }
     .site-title{
         margin: 0;

@@ -1,5 +1,10 @@
-// @import "../layout/content-sidebar";
-// @import "../layout/sidebar-content";
+.site-content {
+    padding: 0 1em;
+
+    @media screen and (min-width: $breakpoint__1) {
+        padding: 0 2em;
+    }
+}
 
 /*--------------------------------------------------------------
 ## Posts and pages

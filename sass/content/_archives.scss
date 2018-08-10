@@ -1,19 +1,19 @@
 .archive-view {
     .site-content {
-        max-width: $size__max-width;
-        margin: 1em auto;
+        @include max-site-width;
+        margin-top: 1em;
     }
 
     .content-area {
-        max-width: $size__content;
+        @include max-content-width;
     }
 
     .post,
     .page {
         position: relative;
         border-bottom: 1px solid $color__border-menu;
-        border-radius: 5px;
         padding-bottom: 2em;
+        margin-bottom: 3em;
     }
 
     @media screen and (min-width: $breakpoint__2) {
@@ -46,7 +46,7 @@
         }
     }
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: $breakpoint) {
         position: absolute;
     }
 }
