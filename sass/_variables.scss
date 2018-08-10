@@ -54,8 +54,8 @@ $color__border-abbr: #666;
 
 // Typography
 $font__main: Georgia, serif;//'Lato', sans-serif;
-$font__headers: Georgia, serif;
 $font__UI: 'Lato', sans-serif;
+$font__headers: $font__UI;
 $font__widget: 'Lato', sans-serif;
 $font__code: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 $font__pre: "Courier 10 Pitch", Courier, monospace;

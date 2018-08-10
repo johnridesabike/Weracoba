@@ -61,10 +61,19 @@
 }
 
 .post-content,
-.entry-header-wrap {
+.entry-header-wrap,
+.content-wrap {
     max-width: $size__max-width;
     margin: .5em auto 0 auto;
 }
+.page {
+    .entry-content,
+    .entry-header-wrap {
+        max-width: $size__content;
+        margin: auto;
+    }
+}
+
 .post-content-body {
     max-width: $size__content;
     margin: auto;
@@ -109,11 +118,15 @@
     border-top: 0;
 }
 @media screen and (min-width: $breakpoint__2) {
-    .post-content-wrap {
+    .post-content {
         display: flex;
         justify-content: space-around;
     }
     .post-content-body {
         margin: 0;
     }
+}
+
+.page .entry-title {
+    font-family: $font__UI;
 }

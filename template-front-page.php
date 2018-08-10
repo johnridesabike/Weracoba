@@ -34,32 +34,6 @@ get_header();
 		) );
 		?>
 	</div><!-- .entry-content -->
-
-	<?php if ( get_edit_post_link() ) : ?>
-		<footer class="entry-footer">
-			<?php
-			edit_post_link(
-				sprintf(
-					wp_kses(
-						/* translators: %s: Name of current post. Only visible to screen readers */
-						__( 'Edit <span class="screen-reader-text">%s</span>', 'weracoba' ),
-						array(
-							'span' => array(
-								'class' => array(),
-							),
-						)
-					),
-					get_the_title()
-				),
-				'<span class="edit-link">',
-				'</span>'
-			);
-			?>
-		</footer><!-- .entry-footer -->
-	<?php
-    endif;
-    get_sidebar();
-    ?>
 </article><!-- #post-<?php the_ID(); ?> -->
 <!-- end content-page.php -->
 
@@ -104,7 +78,7 @@ get_header();
             ?>
         </div> <!-- .latest-post -->
         <div class="blog-link">
-            <a href="<?php echo esc_url( wereacoba_get_post_page_url() ) ?>" rel="bookmark">
+            <a href="<?php echo esc_url( weracoba_get_post_page_url() ) ?>" rel="bookmark">
                 More blog posts
             </a>
         </div>

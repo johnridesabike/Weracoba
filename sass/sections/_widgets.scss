@@ -194,6 +194,66 @@
 	line-height: 1.3em;*/
 }
 
+.post-widgets, .archive-widgets {
+    @media screen and (min-width: $breakpoint__1) {
+        .widget-area {
+            display: flex;
+            flex-flow: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .widget {
+            width: map-get( $columns, 3 );
+        }
+    }
+
+    @media screen and (min-width: $breakpoint__2) {
+        .widget-area {
+            flex-flow: column;
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+            margin-left: 1em;
+        }
+
+        .widget {
+            margin: 0 0 2em;
+            padding: 0 0 2em;
+        }
+    }
+}
+
+.post-widgets {
+    @media screen and (min-width: $breakpoint__2) {
+        &.widget-area {
+            max-width: 200px;
+        }
+        .widget {
+            width: 100%;
+        }
+    }
+}
+
+.archive-widgets {
+    @media screen and (min-width: $breakpoint__1) {
+        .widget_search {
+            flex: 1 0 100%;
+        }
+    }
+    @media screen and (min-width: $breakpoint__2) {
+        .widget_search {
+            flex: initial;
+        }
+        &.widget-area {
+            margin-left: 2em;
+        }
+
+        .widget {
+            width: 100%;
+        }
+    }
+}
+
 /* Footer widget stylings */
 .footer-widgets {
 	/*margin: 2em 0 0;
@@ -222,7 +282,7 @@
         color: black;
     }
 
-    @media screen and (min-width: 900px) {
+    @media screen and (min-width: $breakpoint__1) {
         /* Use flex to create a responsive layout */
         display: flex;
         flex-wrap: wrap;
@@ -245,49 +305,6 @@
                 width: 30%;
                 flex: 1 1 30%;
             }*/
-        }
-    }
-}
-
-.post {
-    @media screen and (min-width: $breakpoint__1) {
-        .widget-area {
-            display: flex;
-            flex-flow: row;
-            flex-wrap: wrap;
-        }
-
-        .widget {
-            max-width: map-get( $columns, 3 );
-        }
-    }
-
-    @media screen and (min-width: $breakpoint__2) {
-        .widget-area {
-            flex-flow: column;
-            flex-wrap: nowrap;
-            margin-left: 1em;
-        }
-
-        .widget {
-            margin: 0 0 2em;
-            padding: 0 0 2em;
-            max-width: 200px;
-        }
-    }
-}
-
-.archive-view {
-    @media screen and (min-width: $breakpoint__2) {
-        .widget-area {
-            margin-left: 2em;
-        }
-    }
-
-    @media screen and (min-width: $breakpoint__2) {
-        .widget {
-            margin: 0 0 2em;
-            padding: 0 0 2em;
         }
     }
 }

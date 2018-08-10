@@ -15,9 +15,26 @@
             text-decoration: none;
         }
     }
+
+    .search-form {
+        display: none;
+        text-align: right;
+
+        @media screen and (min-width: $breakpoint__1) {
+            display: block;
+        }
+    }
+
+    .search-field {
+        font-size: .8em;
+        width: 300px;
+    }
+
+    .search-submit {
+        display: none;
+    }
 }
 .site-title {
-    font-family: $font__headers;
     font-weight: normal;
     font-size: 2em;
     margin-bottom: 0;
@@ -25,7 +42,7 @@
 }
 .site-description {
     margin: 0 1em .5em 1em;
-    font-family: $font__UI;
+    font-family: $font__headers;
 }
 .site-header-wrapper {
     display: flex;

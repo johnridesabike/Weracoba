@@ -164,6 +164,9 @@ endif;
 /***** Post navigation for single post ****/
 if ( ! function_exists( 'weracoba_post_navigation' ) ) :
 	function weracoba_post_navigation() {
+        ?>
+        <h2 class="post-navigation-title">Read more posts</h2>
+        <?php
 		the_post_navigation( array(
 			'next_text' => '<span class="meta-nav" aria-hidden="true">' . __('Next post', 'weracoba') . '</span> <span class="screen-reader-text">' . __('Next Post:', 'weracoba') . '</span> <span class="post-title">%title</span>',
 			'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __('Previous post', 'weracoba') . '</span> <span class="screen-reader-text">' . __('Previous Post:', 'weracoba') . '</span> <span class="post-title">%title</span>',

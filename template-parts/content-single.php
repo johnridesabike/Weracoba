@@ -28,44 +28,44 @@
         </div> <!-- .entry-header-wrap -->
 	</header><!-- .entry-header -->
 	<section class="post-content">
-		<div class="post-content-wrap">
-			<div class="post-content-body">
-                <div class="entry-content">
-                <?php
-                the_content( sprintf(
-                    wp_kses(
-                        /* translators: %s: Name of current post. Only visible to screen readers */
-                        __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'weracoba' ),
-                        array(
-                            'span' => array(
-                                'class' => array(),
-                            ),
-                        )
-                    ),
-                    get_the_title()
-                ) );
+        <div class="post-content-body">
+            <div class="entry-content">
+            <?php
+            the_content( sprintf(
+                wp_kses(
+                    /* translators: %s: Name of current post. Only visible to screen readers */
+                    __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'weracoba' ),
+                    array(
+                        'span' => array(
+                            'class' => array(),
+                        ),
+                    )
+                ),
+                get_the_title()
+            ) );
 
-                wp_link_pages( array(
-                    'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'weracoba' ),
-                    'after'  => '</div>',
-                ) );
-                ?>
-                </div><!-- .entry-content -->
-                <footer class="entry-footer">
-                    <?php weracoba_entry_footer(); ?>
-                </footer><!-- .entry-footer -->
-			</div><!-- .post-content-body -->
-            <?php get_sidebar( 'post' ); ?>
-        </div><!-- .post-content-wrap -->
-        <h2 class="post-navigation-title">Read more posts</h2>
-        <?php
-		weracoba_post_navigation();
-		?>
+            wp_link_pages( array(
+                'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'weracoba' ),
+                'after'  => '</div>',
+            ) );
+            ?>
+            </div><!-- .entry-content -->
+            <footer class="entry-footer">
+                <?php weracoba_entry_footer(); ?>
+            </footer><!-- .entry-footer -->
+        </div><!-- .post-content-body -->
+        <?php get_sidebar( 'post' ); ?>
 	</section> <!-- .post-content -->
+</article><!-- #post-<?php the_ID(); ?> -->
+<div class="content-wrap">
+    <?php
+    weracoba_post_navigation();
+    ?>
+
     <?php
     // If comments are open or we have at least one comment, load up the comment template.
     if ( comments_open() || get_comments_number() ) :
         comments_template();
     endif;
     ?>
-</article><!-- #post-<?php the_ID(); ?> -->
+</div>

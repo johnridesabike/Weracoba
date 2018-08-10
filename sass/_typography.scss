@@ -12,6 +12,14 @@ textarea {
 
 h1, h2, h3, h4, h5, h6 {
 	clear: both;
+    font-family: $font__headers;
+    color: $color__tint;
+    font-weight: normal;
+}
+
+.site-title,
+.post .entry-title {
+    font-family: $font__main;
 }
 
 p {
