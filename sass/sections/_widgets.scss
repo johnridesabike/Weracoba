@@ -1,7 +1,7 @@
 .widget-area {
 	margin-top: 1em;
 
-    @media screen and (min-width: $breakpoint__1) {
+    @media screen and (min-width: $breakpoint-1) {
         margin-left: 1em;
     }
 }
@@ -9,7 +9,7 @@
 .widget {
 	margin: 0;
     padding: 0 .5em .5em .5em;
-	font-family: $font__widget;
+	font-family: $font-widget;
 	/* Make sure select elements fit in widgets. */
 
     ul,
@@ -30,24 +30,17 @@
         }
     }
 
-    a {
-        //font-weight: 300;
-        font-family: $font__UI;
-    }
-
-
     select {
         width: 100%;
         height: 2.5em;
         padding: 10px;
-        font-family: $font__headers;
         border: 1px solid #ccc;
     }
 }
 .widget-title {
     margin: 0 0 .5em;
 	font-size: 1.4em;
-	color: $color__tint;
+	color: $color-tint;
     font-weight: 600;
 }
 /* Search widget. */
@@ -195,18 +188,18 @@
 }
 
 .post-widgets, .archive-widgets {
-    @media screen and (min-width: $breakpoint__1) {
+    @media screen and (min-width: $breakpoint-1) {
         display: flex;
         flex-flow: row;
         flex-wrap: wrap;
         justify-content: space-between;
 
         .widget {
-            width: map-get( $columns, 3 );
+            @include column-width(3);
         }
     }
 
-    @media screen and (min-width: $breakpoint__2) {
+    @media screen and (min-width: $breakpoint-2) {
         display: block;
         margin-left: 1em;
         margin-top: 4em;
@@ -219,7 +212,7 @@
 }
 
 .post-widgets {
-    @media screen and (min-width: $breakpoint__2) {
+    @media screen and (min-width: $breakpoint-2) {
         &.widget-area {
             max-width: 200px;
         }
@@ -230,12 +223,12 @@
 }
 
 .archive-widgets {
-    @media screen and (min-width: $breakpoint__1) {
+    @media screen and (min-width: $breakpoint-1) {
         .widget_search {
             flex: 1 0 100%;
         }
     }
-    @media screen and (min-width: $breakpoint__2) {
+    @media screen and (min-width: $breakpoint-2) {
         .widget_search {
             flex: initial;
         }
@@ -269,7 +262,7 @@
     .widget_calendar thead,
     .rss-date,
     .widget_rss cite {
-        color: $color__header-dark;
+        color: $color-text-secondary;
     }
 
     .widget_calendar td,
@@ -277,7 +270,7 @@
         color: black;
     }
 
-    @media screen and (min-width: $breakpoint__1) {
+    @media screen and (min-width: $breakpoint-1) {
         /* Use flex to create a responsive layout */
         display: flex;
         flex-wrap: wrap;

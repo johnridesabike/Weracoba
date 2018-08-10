@@ -8,7 +8,7 @@
     text-align: right;
     position: relative;
 
-    @media screen and (min-width: $breakpoint__1) {
+    @media screen and (min-width: $breakpoint-1) {
         display: none;
     }
 
@@ -20,12 +20,12 @@
 
         &:hover,
         &:focus {
-            color: $color__text-main;
-            background: $color__link-hover;
+            color: $color-text-main;
+            background: $color-link;
         }
 
         &::before {
-            content: $glyph__arrow-down;
+            content: $glyph-arrow-down;
             padding-right: .5em;
             font-size: .7em;
         }
@@ -35,7 +35,7 @@
 .toggled {
     .menu-toggle {
         &:before {
-            content: $glyph__arrow-up;
+            content: $glyph-arrow-up;
         }
     }
 }
@@ -43,7 +43,7 @@
 
 .menu-item-has-children {
     a:after {
-        content: $glyph__arrow-down;
+        content: $glyph-arrow-down;
         font-size: .7em;
         padding-left: .5em;
     }
@@ -58,7 +58,7 @@
 	display: block;
 	float: left;
     position: relative;
-    font-family: $font__UI;
+    font-family: $font-UI;
     font-size: 1.1em;
     text-align: center;
     width: 100%;
@@ -77,8 +77,8 @@
             top: 100%;
             left: -999em;
             z-index: 99999;
-            background: $color__background-header;
-            border: 1px solid $color__border-menu;
+            background: $color-bg-header;
+            border: 1px solid $color-border;
             display: block;
             width: 100%;
 
@@ -88,7 +88,7 @@
 			}
 
             li {
-                border-bottom: 1px solid $color__border-menu;
+                border-bottom: 1px solid $color-border;
 
                 &:last-child {
                     border-bottom: none;
@@ -102,10 +102,12 @@
 
 			:hover > a,
 			.focus > a {
+                color: $color-link-hover;
 			}
 
 			a:hover,
 			a.focus {
+                color: $color-link-hover;
 			}
 		}
 
@@ -126,6 +128,7 @@
 
 		&:hover > a,
 		&.focus > a {
+            color: $color-link-hover;
 		}
 	}
 
@@ -133,12 +136,7 @@
         display: block;
         text-decoration: none;
         padding: .5em 0 .5em 0;
-        color: $color__link;
-
-        &:hover,
-        &.focus {
-            color: $color__link-hover;
-        }
+        color: $color-link;
 	}
 
 	.current_page_item > a,
@@ -148,7 +146,7 @@
 	}
 
 
-    @media screen and (min-width: $breakpoint__1) {
+    @media screen and (min-width: $breakpoint-1) {
         width: intrinsic;
         line-height: 1.1em;
 
@@ -163,12 +161,12 @@
                 padding: 0 1em;
 
                 &:before {
-                    content: $glyph__arrow-up;
+                    content: $glyph-arrow-up;
                     font-size: .7em;
                     position: absolute;
                     right: 0;
                     top: -14px;
-                    color: $color__border-menu;
+                    color: $color-border;
                 }
 
                 li {
@@ -189,7 +187,7 @@
     }
 }
 
-@media screen and (min-width: $breakpoint__1) {
+@media screen and (min-width: $breakpoint-1) {
 	.menu-toggle {
 		display: none;
 	}

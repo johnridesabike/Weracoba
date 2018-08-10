@@ -38,7 +38,7 @@ address {
 }
 
 pre {
-	background: $color-background-pre;
+	background: $color-bg-pre;
 	font-family: $font-pre;
 	@include font-size(0.9375);
 	line-height: $font-line-height-pre;
@@ -82,7 +82,9 @@ big {
         }
     }
 }
-
+.post-content {
+    font-family: $font-reading;
+}
 .entry-meta,
 .comment-meta {
     font-size: 0.9em;
@@ -98,7 +100,7 @@ big {
 }
 
 @media screen and (min-width: $breakpoint-3) {
-    .entry-title {
+    .single .post .entry-title {
         font-size: 3em;
     }
     .entry-meta {
@@ -113,7 +115,9 @@ big {
 	font-weight: normal;
     color: $color-tint;
 }
-
+.comment-content {
+    font-family: $font-reading;
+}
 /* editor styles */
 
 .editor-post-title textarea {

@@ -1,3 +1,6 @@
+//
+// MARKED FOR REDO
+//
 .home.page {
     .entry-header {
         display: none;
@@ -6,18 +9,15 @@
 
 /* old */
 .fp-blurb {
-    font-family: $font__headers;
     font-size: 1.5em;
     line-height: 1.5em;
     text-align: center;
 }
 .fp-header {
     font-size: 2em;
-    font-family: $font__headers;
-    font-weight: 600;
-    color: $color__tint;
+    color: $color-tint;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: $breakpoint-1) {
     .fp-blurb {
         font-size: 2em;
     }
@@ -32,19 +32,17 @@
 
     h3 {
         text-align: center;
-        font-family: $font__headers;
         font-size: 2em;
     }
 
     figcaption {
         text-align: center;
-        font-family: $font__headers;
         font-size: 1.2em;
         padding: 0 .5em;
     }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: $breakpoint-1) {
     .fp-services {
         flex-flow: row;
     }
@@ -54,9 +52,8 @@
 }
 .fp-blocks {
     margin: 0 .5em 2em .5em;
-    color: $color__text-header;
-    background: $color__background-header;
-    border: 1px solid $color__background-header;
+    background: $color-bg-header;
+    border: 1px solid $color-bg-header;
     border-radius: 5px;
     box-shadow: 3px 3px 5px grey;
     position: relative;
@@ -64,17 +61,6 @@
     img {
         border-top-left-radius: 5px;
         border-top-right-radius: 5px;
-    }
-
-    a {
-        color: $color__text-header;
-        text-decoration: none;
-
-        &:hover,
-        &:focus {
-            color: $color__link-hover;
-            text-decoration: none;
-        }
     }
 }
 
@@ -95,14 +81,14 @@
 .fp-post {
 	position: relative;
     background: white;
-    border: 1px solid rgba(194, 207, 207, 1); /* Tradewind */
+    border: 1px solid $color-border;
     border-radius: 5px;
     margin: .5em 0;
 }
 .fp-figure {
     margin: .5em;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: $breakpoint-1) {
     .latest-post {
         flex-flow: row;
     }
@@ -111,17 +97,7 @@
     }
 }
 .overlay-link {
-    display: block;
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background: rgba(0, 0, 0, 0);
-    z-index: 999;
-
-    &:hover,
-    &:focus {
-        background: rgba(0, 0, 0, .1)
-    }
+    @include link-overlay;
 }
 
 .blog-link {
@@ -135,9 +111,9 @@
     }
 }
 .blog-link a:after {
-    content: $glyph__arrow-next;
+    content: $glyph-arrow-next;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: $breakpoint-1) {
     .blog-link {
         margin-top: 1em;
 

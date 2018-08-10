@@ -1,11 +1,10 @@
 .site-footer {
-    text-align:center;
-    background: $color__background-body-dark;
-    font-family: $font__headers;
+    text-align: center;
+    background: $color-bg-dark;
     position: relative;
     padding: 0.5em 1em 0.5em 1em;
     margin-top: 1em;
-    border-top: 1px solid $color__header-light;
+    border-top: 1px solid $color-border;
 
     ul a {
         display: block;
@@ -25,7 +24,7 @@
         margin: 0;
         padding: 0;
 
-        @media screen and (min-width: 480px) {
+        @media screen and (min-width: $breakpoint-1) {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;

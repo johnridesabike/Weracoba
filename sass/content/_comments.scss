@@ -11,8 +11,7 @@
 	padding: 1em;
 	margin: -1em;
 	list-style-type: none;
-    max-width: $size__content;
-    margin: auto;
+    @include max-content-width;
 
     ol {
         list-style-type: none;
@@ -38,7 +37,7 @@
     .edit-link {
         display: block;
 
-        @media screen and (min-width: $breakpoint__1) {
+        @media screen and (min-width: $breakpoint-1) {
             display: inline;
 
             &:before {

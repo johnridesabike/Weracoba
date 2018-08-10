@@ -1,82 +1,54 @@
 // Colors
 // Inspired by Mr. Shirwin Williams
-
 $color-text-main: black;
+$color-text-secondary: rgba(68, 72, 77, 1); // Cyberspace
 $color-bg-body: white;
+$color-bg-dark: rgba(237, 236, 230, 1); // Pure White
+$color-bg-light: rgba(247, 247, 241, 1); // High Reflective White
 $color-tint: rgba(1, 118, 128, 1); // Intense Teal
 $color-border: rgba(194, 207, 207, 1); // Tradewind
-$color-bg-header: $color-bg-body;
+$color-border-button: $color-border;
+$color-border-button-hover: $color-border;
+$color-border-button-focus: $color-border;
+$color-bg-header: $color-bg-light;
 $color-link: $color-tint;
 $color-link-visited: $color-tint;
+$color-link-hover: rgba(1, 176, 187, 1); // Calypso
 $color-headings: $color-tint;
+$color-bg-button: rgba(1, 176, 187, 1); // Calypso
 
-$color-background-pre: #eee;
+// colors that came with Underscores
+$color-bg-pre: #eee;
 $color-border-abbr: #666;
 $color-background-ins: #fff9c0;
-
-// Cyberspace
-$color__header-dark: rgba(68, 72, 77, 1);
-// Tradewind
-$color__header-light: rgba(194, 207, 207, 1);
-
-
-$color__border-menu: $color__header-light;
-
-
-// High Reflective White
-$color__background-body-light: rgba(247, 247, 241, 1);
-// Pure White
-$color__background-body-dark: rgba(237, 236, 230, 1);
-$color__background-screen: #f1f1f1;
-$color__background-hr: #ccc;
-// Calypso
-$color__background-button: rgba(1, 176, 187, 1);
-
-$color__text-screen: #21759b;
-$color__text-input: #666;
-$color__text-input-focus: #111;
-// Tradewind
-$color__text-header: rgba(194, 207, 207, 1);
-// Calypso
-$color__link-hover: rgba(1, 176, 187, 1);
-// Splashy
-//$color__link-hover: rgba(1, 145, 150, 1);
-
-// Tradewind
-$color__border-button: rgba(194, 207, 207, 1);
-$color__border-button-hover: rgba(194, 207, 207, 1);
-$color__border-button-focus: rgba(194, 207, 207, 1);
-$color__border-input: #ccc;
-// Software
-//$color__border-menu: rgba(127, 132,134, 1);
-
+$color-text-input: #666;
+$color-border-input: #ccc;
+$color-text-input-focus: #111;
+$color-bg-hr: #ccc;
+$color-bg-screen: #f1f1f1;
+$color-text-screen: #21759b;
 
 // Typography
 $font-reading: Georgia, serif;
 $font-UI: "Lato", sans-serif;
 $font-headers: $font-UI;
+$font-widget: $font-UI;
 $font-line-height-body: 1.5;
 $font-pre: "Courier 10 Pitch", Courier, monospace;
 $font-line-height-pre: 1.6;
 $font-code: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+$glyph-arrow-down: "\25BC";
+$glyph-arrow-up: "\25B2";
+$glyph-arrow-next: "\276F";
 
-$font__widget: 'Lato', sans-serif;
-$glyph__arrow-down: "\25BC";
-$glyph__arrow-up: "\25B2";
-$glyph__arrow-next: "\276F";
-
-// Structure
-$size__site-main: 100%;
-$size__site-sidebar: 25%;
-
-$size__max-width: 1200px;
-$size__content: 700px;
-
+// Breakpoints 
 $breakpoint-1: 767px; // iPad portrait
 $breakpoint-2: 1023px; // iPad landscape
 $breakpoint-3: 1365px; // iPad pro landscape
-//$screen__breakpoint-2: 900px;
-//$screen__breakpoint-menu: 600px;
+
+// Structure
+$size-max-width: 1200px;
+$size-content: 700px;
 
 // Columns
 $columns: (
@@ -91,7 +63,7 @@ $columns: (
 	9: 11.11%
 );
 
-$columns__margin: 3.8%;
+$columns-margin: 3.8%;
 
 // Rem output with px fallback
 @mixin font-size($sizeValue: 1) {
@@ -99,14 +71,12 @@ $columns__margin: 3.8%;
 	font-size: $sizeValue * 1rem;
 }
 
-// Center block
 @mixin center-block {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
 }
 
-// Clearfix
 @mixin clearfix() {
 	content: "";
 	display: table;
@@ -120,30 +90,30 @@ $columns__margin: 3.8%;
 
 // Column width with margin
 @mixin column-width($numberColumns: 3) {
-	width: map-get( $columns, $numberColumns ) - ( ( $columns__margin * ( $numberColumns - 1 ) ) / $numberColumns );
+	width: map-get( $columns, $numberColumns ) - ( ( $columns-margin * ( $numberColumns - 1 ) ) / $numberColumns );
 }
 
 // Buttons
 @mixin button-light {
     padding: .5em 1.4em;
-	font-family: $font__UI;
+	font-family: $font-UI;
 	font-size: .875em;
 	line-height: 1.3em;
 	text-decoration: none;
-    color: $color__text-main;
-    border: 1px solid $color__border-button;
+    color: $color-text-main;
+    border: 1px solid $color-border-button;
     border-radius: 5px;
-    background: $color__background-button;
+    background: $color-bg-button;
 
     &:hover,
     &:focus {
-        background: $color__link;
+        background: $color-link;
     }
 }
 
 @mixin max-site-width {
-    @media screen and (min-width: $size__max-width) {
-        max-width: $size__max-width;
+    @media screen and (min-width: $size-max-width) {
+        max-width: $size-max-width;
         margin-left: auto;
         margin-right: auto;
         padding-left: 1em;
@@ -152,7 +122,7 @@ $columns__margin: 3.8%;
 }
 
 @mixin max-content-width {
-    max-width: $size__content;
+    max-width: $size-content;
     margin-right: auto;
     margin-left: auto;
 }
@@ -171,3 +141,21 @@ $columns__margin: 3.8%;
     }
     
 }
+/////////////////////////////////////////////////////////////
+
+// Tradewind
+//$color__header-light: rgba(194, 207, 207, 1);
+
+// Tradewind
+//$color__text-header: rgba(194, 207, 207, 1);
+// Splashy
+//$color__link-hover: rgba(1, 145, 150, 1);
+// Software
+//$color__border-menu: rgba(127, 132,134, 1);
+
+// Structure
+//$size__site-main: 100%;
+//$size__site-sidebar: 25%;
+/////////////////////////////////////////////////////////////
+//$screen__breakpoint-2: 900px;
+//$screen__breakpoint-menu: 600px;
