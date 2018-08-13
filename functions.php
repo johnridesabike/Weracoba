@@ -136,9 +136,9 @@ add_action( 'after_setup_theme', 'weracoba_content_width', 0 );
  */
 function weracoba_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'weracoba' ),
+		'name'          => esc_html__( 'Blog Sidebar', 'weracoba' ),
 		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Add widgets here.', 'weracoba' ),
+		'description'   => esc_html__( 'A sidebar to be displayed alongside the blog posts.', 'weracoba' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
@@ -147,8 +147,8 @@ function weracoba_widgets_init() {
 
 	register_sidebar( array(
 		'name'          => esc_html__( 'Post Sidebar', 'weracoba' ),
-		'id'            => 'sidebar-post',
-		'description'   => esc_html__( 'Add widgets here.', 'weracoba' ),
+		'id'            => 'sidebar-2',
+		'description'   => esc_html__( 'A minimal sidebar that appears alongside posts.', 'weracoba' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',

@@ -1,5 +1,5 @@
 .site-footer {
-    text-align: center;
+    /*text-align: center;*/
     background: $color-bg-dark;
     position: relative;
     padding: 0.5em 1em 0.5em 1em;
@@ -12,9 +12,9 @@
     }
 }
 
-.footer-wrapper {
+/*.footer-wrapper {
     @include max-site-width;
-}
+}*/
 
 .social-media {
     margin: 0.25em 1em .5em 1em;

@@ -51,6 +51,8 @@
     }
     .site-header-wrapper {
         @include max-site-width;
+        padding-left: 1em;
+        padding-right: 1em;
     }
     .site-title{
         margin: 0;

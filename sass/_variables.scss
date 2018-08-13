@@ -17,7 +17,6 @@ $color-link-hover: rgba(1, 176, 187, 1); // Calypso
 $color-headings: $color-tint;
 $color-bg-button: rgba(1, 176, 187, 1); // Calypso
 
-// colors that came with Underscores
 $color-bg-pre: #eee;
 $color-border-abbr: #666;
 $color-background-ins: #fff9c0;
@@ -49,6 +48,7 @@ $breakpoint-3: 1365px; // iPad pro landscape
 // Structure
 $size-max-width: 1200px;
 $size-content: 700px;
+$size-content-page: 900px;
 
 // Columns
 $columns: (
@@ -91,14 +91,15 @@ $columns-margin: 3.8%;
 // Column width with margin
 @mixin column-width($numberColumns: 3) {
 	width: map-get( $columns, $numberColumns ) - ( ( $columns-margin * ( $numberColumns - 1 ) ) / $numberColumns );
+	//flex: 1 1 map-get( $columns, $numberColumns ) - ( ( $columns-margin * ( $numberColumns - 1 ) ) / $numberColumns );
 }
 
 // Buttons
 @mixin button-light {
     padding: .5em 1.4em;
 	font-family: $font-UI;
-	font-size: .875em;
-	line-height: 1.3em;
+	//font-size: .875em;
+	//line-height: 1.3em;
 	text-decoration: none;
     color: $color-text-main;
     border: 1px solid $color-border-button;
@@ -116,8 +117,6 @@ $columns-margin: 3.8%;
         max-width: $size-max-width;
         margin-left: auto;
         margin-right: auto;
-        padding-left: 1em;
-        padding-right: 1em;
     }
 }
 
@@ -127,35 +126,24 @@ $columns-margin: 3.8%;
     margin-left: auto;
 }
 
+@mixin max-page-width {
+    max-width: $size-content-page;
+    margin-right: auto;
+    margin-left: auto;
+}
+
 @mixin link-overlay {
     display: block;
     position: absolute;
     height: 100%;
     width: 100%;
-    background: rgba(255, 255, 255, 0);
+    background: $color-link-hover;
+    opacity: 0;
     z-index: 999;
 
     &:hover,
     &:focus {
-        background: rgba(255, 255, 255, .1)
+        opacity: .1;
     }
     
 }
-/////////////////////////////////////////////////////////////
-
-// Tradewind
-//$color__header-light: rgba(194, 207, 207, 1);
-
-// Tradewind
-//$color__text-header: rgba(194, 207, 207, 1);
-// Splashy
-//$color__link-hover: rgba(1, 145, 150, 1);
-// Software
-//$color__border-menu: rgba(127, 132,134, 1);
-
-// Structure
-//$size__site-main: 100%;
-//$size__site-sidebar: 25%;
-/////////////////////////////////////////////////////////////
-//$screen__breakpoint-2: 900px;
-//$screen__breakpoint-menu: 600px;

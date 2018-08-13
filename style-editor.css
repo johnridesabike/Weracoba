@@ -15,7 +15,10 @@
     font-size: 1rem;
     line-height: 1.5; }
   .gutenberg-editor-page .edit-post-visual-editor textarea {
-    font-family: Georgia, serif; }
+    font-family: Georgia, serif;
+    max-width: 700px;
+    margin-right: auto;
+    margin-left: auto; }
   .gutenberg-editor-page .edit-post-visual-editor h1, .gutenberg-editor-page .edit-post-visual-editor .editor-post-title textarea, .gutenberg-editor-page .edit-post-visual-editor h2, .gutenberg-editor-page .edit-post-visual-editor h3, .gutenberg-editor-page .edit-post-visual-editor h4, .gutenberg-editor-page .edit-post-visual-editor h5, .gutenberg-editor-page .edit-post-visual-editor h6 {
     clear: both;
     font-family: "Lato", sans-serif;
@@ -62,6 +65,7 @@
   .gutenberg-editor-page .edit-post-visual-editor .post .entry-content h5,
   .gutenberg-editor-page .edit-post-visual-editor .post .entry-content h6 {
     font-family: Georgia, serif; }
+  .gutenberg-editor-page .edit-post-visual-editor .post .entry-content,
   .gutenberg-editor-page .edit-post-visual-editor .post-content {
     font-family: Georgia, serif; }
   .gutenberg-editor-page .edit-post-visual-editor .entry-meta,
@@ -95,5 +99,18 @@
         font-size: 3em; } }
   .gutenberg-editor-page .edit-post-visual-editor .wp-block-cover-image-text {
     font-family: "Lato", sans-serif; }
+  .gutenberg-editor-page .edit-post-visual-editor .wp-block-button__link,
+  .gutenberg-editor-page .edit-post-visual-editor .wp-block-button__link:not(.has-text-color) {
+    padding: .5em 1.4em;
+    font-family: "Lato", sans-serif;
+    text-decoration: none;
+    color: black;
+    border: 1px solid #c2cfcf;
+    border-radius: 5px;
+    background: #01b0bb; }
+    .gutenberg-editor-page .edit-post-visual-editor .wp-block-button__link:hover, .gutenberg-editor-page .edit-post-visual-editor .wp-block-button__link:focus,
+    .gutenberg-editor-page .edit-post-visual-editor .wp-block-button__link:not(.has-text-color):hover,
+    .gutenberg-editor-page .edit-post-visual-editor .wp-block-button__link:not(.has-text-color):focus {
+      background: #017680; }
 
 /*# sourceMappingURL=style-editor.css.map */

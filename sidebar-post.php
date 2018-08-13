@@ -7,11 +7,11 @@
  * @package Weracoba
  */
 
-if ( ! is_active_sidebar( 'sidebar-post' ) ) {
+if ( ! is_active_sidebar( 'sidebar-2' ) ) {
 	return;
 }
 ?>
 
 <aside id="secondary" class="widget-area post-widgets">
-	<?php dynamic_sidebar( 'sidebar-post' ); ?>
+	<?php dynamic_sidebar( 'sidebar-2' ); ?>
 </aside><!-- #secondary -->

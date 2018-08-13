@@ -40,8 +40,6 @@
 .widget-title {
     margin: 0 0 .5em;
 	font-size: 1.4em;
-	color: $color-tint;
-    font-weight: 600;
 }
 /* Search widget. */
 .widget_search {
@@ -82,12 +80,12 @@
         display: block;
         padding: 1em 0;
         text-decoration: none;
-        border-bottom: 1px dashed gray;
+        border-bottom: 1px dashed $color-border;
 
         &:hover,
         &:focus {
             text-decoration: none;
-            border-bottom: 1px dashed gray;
+            border-bottom: 1px dashed $color-border;
         }
     }
 
@@ -187,8 +185,9 @@
 	line-height: 1.3em;*/
 }
 
-.post-widgets, .archive-widgets {
-    @media screen and (min-width: $breakpoint-1) {
+/* Post & blog widgets */
+@media screen and (min-width: $breakpoint-1) {
+    .post-widgets, .archive-widgets {
         display: flex;
         flex-flow: row;
         flex-wrap: wrap;
@@ -198,21 +197,26 @@
             @include column-width(3);
         }
     }
-
-    @media screen and (min-width: $breakpoint-2) {
-        display: block;
-        margin-left: 1em;
-        margin-top: 4em;
-
-        .widget {
-            margin: 0 0 2em;
-            padding: 0 0 2em;
-        }
+    
+    .archive-widgets .widget_search {
+        flex: 1 0 100%;
     }
 }
 
-.post-widgets {
-    @media screen and (min-width: $breakpoint-2) {
+
+@media screen and (min-width: $breakpoint-2) {
+    .widget {
+        margin: 0 0 2em;
+        padding: 0 0 2em;
+    }
+    
+    .post-widgets, .archive-widgets {
+        display: block;
+        margin-left: 1em;
+        margin-top: 4em;
+    }
+    
+    .post-widgets {
         &.widget-area {
             max-width: 200px;
         }
@@ -220,36 +224,27 @@
             width: 100%;
         }
     }
-}
-
-.archive-widgets {
-    @media screen and (min-width: $breakpoint-1) {
-        .widget_search {
-            flex: 1 0 100%;
-        }
-    }
-    @media screen and (min-width: $breakpoint-2) {
-        .widget_search {
-            flex: initial;
-        }
+    
+    .archive-widgets {
         &.widget-area {
             margin-left: 2em;
         }
-
+        .widget_search {
+            flex: initial;
+        }
         .widget {
             width: 100%;
         }
     }
 }
-
 /* Footer widget stylings */
 .footer-widgets {
-	/*margin: 2em 0 0;
-	padding: 1em 0;*/
+    @include max-site-width;
+    color: $color-text-secondary;
 
     .widget {
-        padding: 0;
-        margin: 1em;
+        margin: 0 0 1em;
+        padding: 0 0 1em;
 
         .original-title {
             color: rgba(255, 255, 255, 0.5);
@@ -262,7 +257,7 @@
     .widget_calendar thead,
     .rss-date,
     .widget_rss cite {
-        color: $color-text-secondary;
+        //color: $color-text-secondary;
     }
 
     .widget_calendar td,
@@ -278,20 +273,32 @@
         /* If only one widget is displayed, make it full width. */
         /* If 2 or 3 widgets are displayed, make the second one twice as wide. */
         /* If 4 or more widgets are displayed, show three across when available. */
+        /* If more than 4 widgets are displayed, the last one takes up the full width. */
         .widget {
-
             &:only-of-type {
                 width: 100%;
             }
-            /*
             &:nth-last-child(n+2):nth-last-child(-n+3):first-child ~ .widget:nth-child(2) {
                 flex: 2;
             }
-
+            
             &:nth-last-child(n+4),
             &:nth-last-child(n+4) ~ .widget {
-                width: 30%;
-                flex: 1 1 30%;
+                @include column-width(3);
+            }
+            /*&:nth-last-child(n+4) ~ .widget:last-child {
+                flex-grow: 1;
+                flex-shrink: 1;
+            
+                &.widget_nav_menu {
+                    ul {
+                        display: flex;
+                        flex-wrap: wrap;
+                    }
+                    a {
+                        border: 0;
+                    }
+                }
             }*/
         }
     }

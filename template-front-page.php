@@ -10,7 +10,7 @@ get_header();
 
 	<?php /*weracoba_post_thumbnail();*/ ?>
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main front-page">
+		<main id="main" class="site-main front-page narrow-width">
 
 		<?php
 		while ( have_posts() ) :

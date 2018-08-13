@@ -12,6 +12,7 @@ textarea {
 
 textarea {
     font-family: $font-reading;
+    @include max-content-width;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -82,6 +83,7 @@ big {
         }
     }
 }
+.post .entry-content, 
 .post-content {
     font-family: $font-reading;
 }
@@ -143,4 +145,9 @@ big {
 
 .wp-block-cover-image-text {
     font-family: $font-headers;
+}
+
+.wp-block-button__link,
+.wp-block-button__link:not(.has-text-color) {
+    @include button-light;
 }
