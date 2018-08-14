@@ -96,20 +96,31 @@ $columns-margin: 3.8%;
 
 // Buttons
 @mixin button-light {
-    padding: .5em 1.4em;
+    padding: .2em 1em;
 	font-family: $font-UI;
 	//font-size: .875em;
 	//line-height: 1.3em;
 	text-decoration: none;
     color: $color-text-main;
     border: 1px solid $color-border-button;
-    border-radius: 5px;
+    //border-radius: 5px;
+    border-radius: 23px; // from Gutenberg style
     background: $color-bg-button;
 
     &:hover,
     &:focus {
+        color: $color-bg-light;
         background: $color-link;
     }
+}
+
+@mixin gutenberg-button {
+    padding: .6em 1.4em;
+	font-family: $font-UI;
+	//font-size: .875em;
+	//line-height: 1.3em;
+	text-decoration: none;
+    border: 1px solid $color-border-button;
 }
 
 @mixin max-site-width {

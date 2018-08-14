@@ -1,6 +1,7 @@
 .gutenberg-editor-page .edit-post-visual-editor {
   /* Posts & Pages */
   /* comments */
+  /* Front Page */
   /* editor styles */
   /* Gutenberg custom CSS */ }
   .gutenberg-editor-page .edit-post-visual-editor body,
@@ -88,6 +89,9 @@
     color: #017680; }
   .gutenberg-editor-page .edit-post-visual-editor .comment-content {
     font-family: Georgia, serif; }
+  .gutenberg-editor-page .edit-post-visual-editor .fp-post,
+  .gutenberg-editor-page .edit-post-visual-editor .fp-post .entry-title, .gutenberg-editor-page .edit-post-visual-editor .fp-post .editor-post-title textarea, .gutenberg-editor-page .edit-post-visual-editor .editor-post-title .fp-post textarea {
+    font-family: Georgia, serif; }
   .gutenberg-editor-page .edit-post-visual-editor .editor-post-title textarea {
     font-family: Georgia, serif; }
   .gutenberg-editor-page .edit-post-visual-editor .weracoba-big {
@@ -97,20 +101,33 @@
     @media screen and (min-width: 1023px) {
       .gutenberg-editor-page .edit-post-visual-editor .weracoba-big {
         font-size: 3em; } }
-  .gutenberg-editor-page .edit-post-visual-editor .wp-block-cover-image-text {
-    font-family: "Lato", sans-serif; }
-  .gutenberg-editor-page .edit-post-visual-editor .wp-block-button__link,
-  .gutenberg-editor-page .edit-post-visual-editor .wp-block-button__link:not(.has-text-color) {
-    padding: .5em 1.4em;
+  .gutenberg-editor-page .edit-post-visual-editor .wp-block-cover-image .wp-block-cover-image-text {
+    font-family: "Lato", sans-serif;
+    color: #f7f7f1; }
+    @media screen and (min-width: 1365px) {
+      .gutenberg-editor-page .edit-post-visual-editor .wp-block-cover-image .wp-block-cover-image-text {
+        font-size: 2.75em; } }
+  .gutenberg-editor-page .edit-post-visual-editor .wp-block-button .wp-block-button__link {
+    padding: .6em 1.4em;
     font-family: "Lato", sans-serif;
     text-decoration: none;
-    color: black;
-    border: 1px solid #c2cfcf;
-    border-radius: 5px;
-    background: #01b0bb; }
-    .gutenberg-editor-page .edit-post-visual-editor .wp-block-button__link:hover, .gutenberg-editor-page .edit-post-visual-editor .wp-block-button__link:focus,
-    .gutenberg-editor-page .edit-post-visual-editor .wp-block-button__link:not(.has-text-color):hover,
-    .gutenberg-editor-page .edit-post-visual-editor .wp-block-button__link:not(.has-text-color):focus {
-      background: #017680; }
+    border: 1px solid #c2cfcf; }
+    .gutenberg-editor-page .edit-post-visual-editor .wp-block-button .wp-block-button__link:not(.has-text-color) {
+      color: black; }
+      .gutenberg-editor-page .edit-post-visual-editor .wp-block-button .wp-block-button__link:not(.has-text-color):hover, .gutenberg-editor-page .edit-post-visual-editor .wp-block-button .wp-block-button__link:not(.has-text-color):focus {
+        color: #f7f7f1; }
+    .gutenberg-editor-page .edit-post-visual-editor .wp-block-button .wp-block-button__link:not(.has-background) {
+      background: #01b0bb; }
+      .gutenberg-editor-page .edit-post-visual-editor .wp-block-button .wp-block-button__link:not(.has-background):hover, .gutenberg-editor-page .edit-post-visual-editor .wp-block-button .wp-block-button__link:not(.has-background):focus {
+        background: #017680; }
+  .gutenberg-editor-page .edit-post-visual-editor .wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color) {
+    color: #017680; }
+    .gutenberg-editor-page .edit-post-visual-editor .wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color):hover, .gutenberg-editor-page .edit-post-visual-editor .wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color):focus {
+      color: #01b0bb; }
+  .gutenberg-editor-page .edit-post-visual-editor .wp-block-button.is-style-outline .wp-block-button__link:not(.has-background) {
+    background: transparent;
+    border-color: #017680; }
+    .gutenberg-editor-page .edit-post-visual-editor .wp-block-button.is-style-outline .wp-block-button__link:not(.has-background):hover, .gutenberg-editor-page .edit-post-visual-editor .wp-block-button.is-style-outline .wp-block-button__link:not(.has-background):focus {
+      border-color: #01b0bb; }
 
 /*# sourceMappingURL=style-editor.css.map */

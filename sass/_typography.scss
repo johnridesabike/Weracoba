@@ -120,6 +120,13 @@ big {
 .comment-content {
     font-family: $font-reading;
 }
+
+/* Front Page */
+
+.fp-post,
+.fp-post .entry-title {
+    font-family: $font-reading;
+}
 /* editor styles */
 
 .editor-post-title textarea {
@@ -143,11 +150,56 @@ big {
     }
 }
 
-.wp-block-cover-image-text {
+.wp-block-cover-image .wp-block-cover-image-text {
     font-family: $font-headers;
+    color: $color-bg-light;
+    
+    @media screen and (min-width: $breakpoint-3) {
+        font-size: 2.75em;
+    }
 }
 
-.wp-block-button__link,
-.wp-block-button__link:not(.has-text-color) {
-    @include button-light;
+.wp-block-button .wp-block-button__link {
+    @include gutenberg-button;
+
+    &:not(.has-text-color) {
+        color: $color-text-main;
+
+        &:hover,
+        &:focus {
+            color: $color-bg-light;
+        }
+    }
+
+    &:not(.has-background) {
+        background: $color-bg-button;
+
+        &:hover,
+        &:focus {
+            background: $color-link;
+        }
+    }
+}
+
+
+.wp-block-button.is-style-outline .wp-block-button__link {
+    
+    &:not(.has-text-color) {
+        color: $color-tint;
+        
+        &:hover,
+        &:focus {
+            color: $color-link-hover;
+        }
+    }
+    
+    &:not(.has-background) {
+        background: transparent;
+        border-color: $color-tint;
+        
+        &:hover,
+        &:focus {
+            border-color: $color-link-hover;
+        }
+    }
 }

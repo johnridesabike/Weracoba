@@ -38,7 +38,7 @@ get_header();
 <!-- end content-page.php -->
 
 
-        <h3 class="fp-header">Recent posts</h3>
+        <h2 class="fp-header">Recent posts</h2>
         <div class="latest-post">
             <?php
             // this will display the most recent 3 posts
