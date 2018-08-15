@@ -360,7 +360,7 @@ textarea {
   line-height: 1.5; }
 
 textarea {
-  font-family: Georgia, serif;
+  font-family: "Libre Baskerville", Georgia, serif;
   max-width: 700px;
   margin-right: auto;
   margin-left: auto; }
@@ -376,7 +376,6 @@ p {
 
 .entry-content,
 .archive-description {
-  font-size: 1.2em;
   line-height: 1.6; }
 
 dfn, cite, em, i {
@@ -417,7 +416,7 @@ big {
 
 /* Posts & Pages */
 .site-title {
-  font-family: Georgia, serif;
+  font-family: "Libre Baskerville", Georgia, serif;
   font-size: 2em; }
 
 .post .entry-header h1, .post .entry-header .editor-post-title textarea, .editor-post-title .post .entry-header textarea, .post .entry-header h2, .post .entry-header h3, .post .entry-header h4, .post .entry-header h5, .post .entry-header h6,
@@ -429,11 +428,11 @@ big {
 .post .entry-content h4,
 .post .entry-content h5,
 .post .entry-content h6 {
-  font-family: Georgia, serif; }
+  font-family: "Libre Baskerville", Georgia, serif; }
 
 .post .entry-content,
 .post-content {
-  font-family: Georgia, serif; }
+  font-family: "Libre Baskerville", Georgia, serif; }
 
 .entry-footer {
   font-family: "Lato", sans-serif; }
@@ -464,18 +463,18 @@ big {
   color: #017680; }
 
 .comment-content {
-  font-family: Georgia, serif; }
+  font-family: "Libre Baskerville", Georgia, serif; }
 
 /* Front Page */
 .fp-post,
 .fp-post .entry-title,
 .fp-post .editor-post-title textarea, .editor-post-title
 .fp-post textarea {
-  font-family: Georgia, serif; }
+  font-family: "Libre Baskerville", Georgia, serif; }
 
 /* editor styles */
 .editor-post-title textarea {
-  font-family: Georgia, serif; }
+  font-family: "Libre Baskerville", Georgia, serif; }
 
 /* Gutenberg custom CSS */
 .weracoba-big,

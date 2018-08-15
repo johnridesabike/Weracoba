@@ -16,7 +16,7 @@
     font-size: 1rem;
     line-height: 1.5; }
   .gutenberg-editor-page .edit-post-visual-editor textarea {
-    font-family: Georgia, serif;
+    font-family: "Libre Baskerville", Georgia, serif;
     max-width: 700px;
     margin-right: auto;
     margin-left: auto; }
@@ -29,7 +29,6 @@
     margin-bottom: 1em; }
   .gutenberg-editor-page .edit-post-visual-editor .entry-content,
   .gutenberg-editor-page .edit-post-visual-editor .archive-description {
-    font-size: 1.2em;
     line-height: 1.6; }
   .gutenberg-editor-page .edit-post-visual-editor dfn, .gutenberg-editor-page .edit-post-visual-editor cite, .gutenberg-editor-page .edit-post-visual-editor em, .gutenberg-editor-page .edit-post-visual-editor i {
     font-style: italic; }
@@ -60,7 +59,7 @@
   .gutenberg-editor-page .edit-post-visual-editor big {
     font-size: 125%; }
   .gutenberg-editor-page .edit-post-visual-editor .site-title {
-    font-family: Georgia, serif;
+    font-family: "Libre Baskerville", Georgia, serif;
     font-size: 2em; }
   .gutenberg-editor-page .edit-post-visual-editor .post .entry-header h1, .gutenberg-editor-page .edit-post-visual-editor .post .entry-header .editor-post-title textarea, .gutenberg-editor-page .edit-post-visual-editor .editor-post-title .post .entry-header textarea, .gutenberg-editor-page .edit-post-visual-editor .post .entry-header h2, .gutenberg-editor-page .edit-post-visual-editor .post .entry-header h3, .gutenberg-editor-page .edit-post-visual-editor .post .entry-header h4, .gutenberg-editor-page .edit-post-visual-editor .post .entry-header h5, .gutenberg-editor-page .edit-post-visual-editor .post .entry-header h6,
   .gutenberg-editor-page .edit-post-visual-editor .post .entry-content h1, .gutenberg-editor-page .edit-post-visual-editor .post .entry-content .editor-post-title textarea, .gutenberg-editor-page .edit-post-visual-editor .editor-post-title .post .entry-content textarea,
@@ -69,10 +68,10 @@
   .gutenberg-editor-page .edit-post-visual-editor .post .entry-content h4,
   .gutenberg-editor-page .edit-post-visual-editor .post .entry-content h5,
   .gutenberg-editor-page .edit-post-visual-editor .post .entry-content h6 {
-    font-family: Georgia, serif; }
+    font-family: "Libre Baskerville", Georgia, serif; }
   .gutenberg-editor-page .edit-post-visual-editor .post .entry-content,
   .gutenberg-editor-page .edit-post-visual-editor .post-content {
-    font-family: Georgia, serif; }
+    font-family: "Libre Baskerville", Georgia, serif; }
   .gutenberg-editor-page .edit-post-visual-editor .entry-footer {
     font-family: "Lato", sans-serif; }
   .gutenberg-editor-page .edit-post-visual-editor .entry-meta,
@@ -96,12 +95,12 @@
     font-weight: normal;
     color: #017680; }
   .gutenberg-editor-page .edit-post-visual-editor .comment-content {
-    font-family: Georgia, serif; }
+    font-family: "Libre Baskerville", Georgia, serif; }
   .gutenberg-editor-page .edit-post-visual-editor .fp-post,
   .gutenberg-editor-page .edit-post-visual-editor .fp-post .entry-title, .gutenberg-editor-page .edit-post-visual-editor .fp-post .editor-post-title textarea, .gutenberg-editor-page .edit-post-visual-editor .editor-post-title .fp-post textarea {
-    font-family: Georgia, serif; }
+    font-family: "Libre Baskerville", Georgia, serif; }
   .gutenberg-editor-page .edit-post-visual-editor .editor-post-title textarea {
-    font-family: Georgia, serif; }
+    font-family: "Libre Baskerville", Georgia, serif; }
   .gutenberg-editor-page .edit-post-visual-editor .weracoba-big,
   .gutenberg-editor-page .edit-post-visual-editor p.wp-block-subhead {
     font-size: 1.25em;

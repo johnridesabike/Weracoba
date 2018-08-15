@@ -173,7 +173,7 @@ add_action( 'widgets_init', 'weracoba_widgets_init' );
 function weracoba_scripts() {
 	wp_enqueue_style( 'weracoba-style', get_stylesheet_uri() );
 
-    wp_enqueue_style( 'google-fonts', "https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i|Work+Sans:400,600");
+    wp_enqueue_style( 'google-fonts', "https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700,700i|Lato");
 
 	wp_enqueue_script( 'weracoba-functions', get_template_directory_uri() . '/js/functions.js', array('jquery'), '20180711', true );
 
