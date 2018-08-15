@@ -52,15 +52,15 @@
             </div><!-- .entry-content -->
             <footer class="entry-footer">
                 <?php weracoba_entry_footer(); ?>
+                <?php
+                weracoba_post_navigation();
+                ?>
             </footer><!-- .entry-footer -->
         </div><!-- .post-content-body -->
         <?php get_sidebar( 'post' ); ?>
 	</section> <!-- .post-content -->
 </article><!-- #post-<?php the_ID(); ?> -->
 <div class="content-wrap">
-    <?php
-    weracoba_post_navigation();
-    ?>
 
     <?php
     // If comments are open or we have at least one comment, load up the comment template.

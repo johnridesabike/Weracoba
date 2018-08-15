@@ -26,7 +26,7 @@ if ( ! function_exists( 'weracoba_posted_on' ) ) :
 
 		$posted_on = sprintf(
 			/* translators: %s: post date. */
-			esc_html_x( 'Published on %s', 'post date', 'weracoba' ),
+			esc_html_x( '%s', 'post date', 'weracoba' ),
 			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 		);
 
@@ -41,8 +41,8 @@ if ( ! function_exists( 'weracoba_posted_by' ) ) :
 	function weracoba_posted_by() {
 		$byline = sprintf(
 			/* translators: %s: post author. */
-			esc_html_x( 'Written by %s', 'post author', 'weracoba' ),
-			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+			esc_html_x( '%s', 'post author', 'weracoba' ),
+			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . get_avatar( get_the_author_meta( 'ID' ), 144 ) . esc_html( get_the_author() ) . '</a></span>'
 		);
 
 		echo '<span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
@@ -162,11 +162,12 @@ endif;
 if ( ! function_exists( 'weracoba_post_navigation' ) ) :
 	function weracoba_post_navigation() {
         ?>
-        <h2 class="post-navigation-title">Read more posts</h2>
+        <h2 class="post-navigation-title">Read more <?php echo get_the_category_list( esc_html__( ', ', 'weracoba' ) );?> posts</h2>
         <?php
 		the_post_navigation( array(
 			'next_text' => '<span class="meta-nav" aria-hidden="true">' . __('Next post', 'weracoba') . '</span> <span class="screen-reader-text">' . __('Next Post:', 'weracoba') . '</span> <span class="post-title">%title</span>',
 			'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __('Previous post', 'weracoba') . '</span> <span class="screen-reader-text">' . __('Previous Post:', 'weracoba') . '</span> <span class="post-title">%title</span>',
+            'in_same_term' => true
 		));
 	}
 endif;
@@ -205,6 +206,44 @@ if ( ! function_exists( 'weracoba_reading_time' ) ) :
             <?php
         } else {
             echo $reading_time;
+        }
+    }
+endif;
+
+if ( ! function_exists( 'weracoba_cat_block' ) ) :
+    /*
+    *
+    */
+    function weracoba_cat_block($cats) {
+        
+        foreach( $cats as $key => $cat ) {
+            $cat_query = new WP_Query( array( 'cat' => $cat->term_id,
+                                      'meta_query' => array( array( 'key' => '_thumbnail_id') ) ) );
+            $cat_query->the_post();
+            $cat_link = esc_url( get_category_link( $cat->cat_ID ) );
+            ?>
+            <div class="cat-block-wrap">
+                <div class="cat-block">
+                <a class="overlay-link" href="<?php echo esc_url( get_category_link( $cat->cat_ID ) );?>"></a>
+                    <a href="<?php echo $cat_link; ?>">
+                        <?php the_post_thumbnail( 'weracoba-fp-thumb' ); ?>
+                    </a>
+                    <h5 class="cat-title wp-block-cover-image-text">
+                        <a href="<?php echo $cat_link; ?>">
+                            <?php echo esc_html__($cat->cat_name);?>
+                        </a>
+                    </h5>
+                    <?php
+                    if ( $cat->description ):?>
+                        <p>
+                            <?php echo esc_html__($cat->description);?>
+                        </p>
+                    <?php 
+                    endif; ?>
+                </div>
+            </div>
+            <?php
+            wp_reset_postdata(); // reset the query
         }
     }
 endif;

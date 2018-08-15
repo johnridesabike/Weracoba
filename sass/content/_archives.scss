@@ -5,7 +5,8 @@
     }
 
     .content-area {
-        @include max-content-width;
+        //@include max-content-width;
+        width: 100%;
     }
 
     .post,
@@ -14,23 +15,29 @@
         border-bottom: 1px solid $color-border;
         padding-bottom: 2em;
         margin-bottom: 3em;
+        @include max-content-width;
     }
 
+    @media screen and (min-width: $breakpoint-1) {
+        .entry-meta {
+            @include entry-meta-inline;
+        }
+    }
+    
     @media screen and (min-width: $breakpoint-2) {
         .site-content {
             display: flex;
             justify-content: space-between;
-        }
-
-        .content-area {
-            flex-shrink: 0;
         }
     }
 	.site-main .page-header {
 		width: 100%;
 		flex: 1 0 100%;
 	}
-
+}
+.archive-description {
+    border-bottom: 1px solid $color-border;
+    margin-bottom: 1em;
 }
 .continue-reading {
 	right: 5px;
@@ -39,7 +46,7 @@
 
     a {
         display: block;
-        @include button-light
+        @include button;
 
         &:after {
             content: $glyph-arrow-next;

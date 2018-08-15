@@ -17,12 +17,7 @@
         text-transform: uppercase;
         font-size: 1em;
         margin-right: 0.5em;
-
-        &:hover,
-        &:focus {
-            color: $color-text-main;
-            background: $color-link;
-        }
+        @include button;
 
         &::before {
             content: $glyph-arrow-down;

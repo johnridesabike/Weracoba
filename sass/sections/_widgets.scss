@@ -199,10 +199,6 @@
             @include column-width(3);
         }
     }
-    
-    .archive-widgets .widget_search {
-        flex: 1 0 100%;
-    }
 }
 
 
@@ -236,7 +232,7 @@
             flex: initial;
         }
         .widget {
-            width: 100%;
+            width: 200px;
         }
     }
 }
@@ -278,6 +274,8 @@
         /* If 4 or more widgets are displayed, show three across when available. */
         /* If more than 4 widgets are displayed, the last one takes up the full width. */
         .widget {
+            @include column-width(3);
+            /*
             &:only-of-type {
                 width: 100%;
             }

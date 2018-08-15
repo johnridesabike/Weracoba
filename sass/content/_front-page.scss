@@ -8,16 +8,17 @@
 }
 
 .latest-post,
-.fp-blocks {
+.cat-blocks {
     display: flex;
     flex-flow: column;
     justify-content: space-around;
 
     .entry-title,
     .cat-title {
-        font-size: 2em;
+        font-size: 1.5em;
         text-align: center;
         margin: 0;
+        color: $color-link-hover;
         
         a:hover,
         a:focus {
@@ -25,51 +26,54 @@
         }
     }
 
-    .entry-content,
     p {
         font-size: .9em;
+        &.wp-block-cover-image-text {
+            font-size: 1.2em;
+        }
     }
 }
 
-.fp-block-wrap {
+.cat-block-wrap {
     border: 1px solid $color-border;
-    border-radius: 23px;
+    border-radius: 5px;
     margin-bottom: 1.5em;
     overflow:hidden;
+    background: $color-bg-header-alt;
 }
 
 .fp-post,
-.fp-block {
+.cat-block {
 	position: relative;
-    background: white;
     background-size: cover;
     background-position: center;
     flex-direction: column;
-    min-height: 15em;
+    min-height: 20em;
     margin: 0;
     height: 100%;
+    
     
     p {
         margin-left: .5em;
         margin-right: .5em;
         font-size: 1.2em;
-        color: $color-bg-light;
+        color: $color-text-secondary;
         z-index: 1;
     }
 }
 @media screen and (min-width: $breakpoint-1) {
     .latest-post,
-    .fp-blocks {
+    .cat-blocks {
         flex-flow: row;
         flex-wrap: wrap;
     }
     
-    .fp-block-wrap {
+    .cat-block-wrap {
         @include column-width(3);
         //width: map-get( $columns, 3);
     }
     .latest-post .fp-post,
-    .fp-blocks .fp-block {
+    .cat-blocks .cat-block {
     }
 }
 
@@ -78,7 +82,7 @@
     font-size: 1.5em;
 
     a {
-        @include button-light;
+        @include button;
         display: block;
         text-align: center;
         

@@ -35,23 +35,31 @@ function weracoba_customize_register( $wp_customize ) {
     * Sets the portfolio category options
     */
 
-    $wp_customize->add_setting( 'cat_1', array(
-        'default'        => 'uncategorized',
+    $wp_customize->add_setting( 'fp_cats', array(
+        'default'        => 1,
         'capability'     => 'edit_theme_options',
     ));
-    $wp_customize->add_control( 'cat_1', array(
-        'settings' => 'cat_1',
-        'label'   => __( 'Portfolio Category', 'weracoba' ),
-        'section' => 'weracoba_options',
-        'type'    => 'select',
-        'choices' => get_categories_select()
+    $wp_customize->add_control( 'fp_cats', array(
+        'settings'    => 'fp_cats',
+        'label'       => __( 'Front Page Categories', 'weracoba' ),
+        'description' => __('Input the IDs of the categories, separated by commmas.') . '<br/> <br/>(' . get_categories_cheat_sheet() . ')',
+        'section'     => 'weracoba_options',
+        'type'        => 'textarea',
     ));
 }
 add_action( 'customize_register', 'weracoba_customize_register' );
-
+function get_categories_cheat_sheet() {
+    $cats = get_categories();
+    $results = '';
+    foreach ( $cats as $key => $cat ) {
+        $results .= sprintf('%s: %s, ', $cat->name, $cat->cat_ID);
+    }
+    return $results;
+}
 /* 
 * @link https://josephfitzsimmons.com/adding-a-select-box-with-categories-into-wordpress-theme-customizer/
 */
+/*
 function get_categories_select() {
     $teh_cats = get_categories();
     $results;
@@ -64,7 +72,7 @@ function get_categories_select() {
     }
     return $results;
 }
-
+*/
 /**
  * Render the site title for the selective refresh partial.
  *

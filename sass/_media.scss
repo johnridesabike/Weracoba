@@ -131,7 +131,7 @@ object {
 @media screen and (min-width: $breakpoint-3) {
     .post .featured-image.full-bleed {
         position: static;
-        width: 50%;
+        width: 765px;
         margin: 0;
     }
 }
@@ -171,6 +171,7 @@ object {
         margin-right: -50vw !important;
     }
 }
+
 /*
 .wp-block-cover-image {
     margin-left: -1em;

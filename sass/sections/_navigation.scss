@@ -16,16 +16,17 @@
     a {
         display: block;
         width: 100%;
-        text-decoration: none;
-        padding: 1em;
-        border: 1px solid $color-border;
+        @include button-outline;
     }
 }
 
 .post-navigation-title {
     font-family: $font-UI;
     font-weight: normal;
-    color: $color-tint;
+    color: $color-text-secondary;
+    
+    a[rel~='category'] {
+    }
 }
 
 .nav-links {

@@ -22,18 +22,13 @@
 	margin-bottom: 3em;
 }
 .comment-meta {
-	position: relative;
-	margin-left: 70px;
+	@include avatar(48px);
+    
+    .avatar {
+        top: 0;
+    }
 }
 .comment{
-    .avatar {
-        position: absolute;
-        top: -5px;
-        left: -70px;
-        width: 50px;
-        height: 50px;
-        border-radius: 50px;
-    }
     .edit-link {
         display: block;
 
@@ -70,7 +65,7 @@
 }
 .reply a {
 	display: inline-block;
-    @include button-light
+    @include button;
 }
 .comment-content a {
 	word-wrap: break-word;
@@ -91,7 +86,7 @@
     .form-submit {
         text-align: right;
         input {
-            @include button-light;
+            @include button;
         }
     }
 

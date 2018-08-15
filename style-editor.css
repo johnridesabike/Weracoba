@@ -10,7 +10,7 @@
   .gutenberg-editor-page .edit-post-visual-editor select,
   .gutenberg-editor-page .edit-post-visual-editor optgroup,
   .gutenberg-editor-page .edit-post-visual-editor textarea {
-    color: black;
+    color: #2f2f30;
     font-family: "Lato", sans-serif;
     font-size: 16px;
     font-size: 1rem;
@@ -27,7 +27,8 @@
     font-weight: normal; }
   .gutenberg-editor-page .edit-post-visual-editor p {
     margin-bottom: 1em; }
-  .gutenberg-editor-page .edit-post-visual-editor .entry-content {
+  .gutenberg-editor-page .edit-post-visual-editor .entry-content,
+  .gutenberg-editor-page .edit-post-visual-editor .archive-description {
     font-size: 1.2em;
     line-height: 1.6; }
   .gutenberg-editor-page .edit-post-visual-editor dfn, .gutenberg-editor-page .edit-post-visual-editor cite, .gutenberg-editor-page .edit-post-visual-editor em, .gutenberg-editor-page .edit-post-visual-editor i {
@@ -72,18 +73,22 @@
   .gutenberg-editor-page .edit-post-visual-editor .post .entry-content,
   .gutenberg-editor-page .edit-post-visual-editor .post-content {
     font-family: Georgia, serif; }
+  .gutenberg-editor-page .edit-post-visual-editor .entry-footer {
+    font-family: "Lato", sans-serif; }
   .gutenberg-editor-page .edit-post-visual-editor .entry-meta,
   .gutenberg-editor-page .edit-post-visual-editor .comment-meta {
     font-size: 0.9em; }
-  .gutenberg-editor-page .edit-post-visual-editor .entry-title, .gutenberg-editor-page .edit-post-visual-editor .editor-post-title textarea {
+  .gutenberg-editor-page .edit-post-visual-editor .entry-title, .gutenberg-editor-page .edit-post-visual-editor .editor-post-title textarea,
+  .gutenberg-editor-page .edit-post-visual-editor .page-title {
     font-size: 2em;
     line-height: 1.2em; }
     @media screen and (min-width: 767px) {
-      .gutenberg-editor-page .edit-post-visual-editor .entry-title, .gutenberg-editor-page .edit-post-visual-editor .editor-post-title textarea {
+      .gutenberg-editor-page .edit-post-visual-editor .entry-title, .gutenberg-editor-page .edit-post-visual-editor .editor-post-title textarea,
+      .gutenberg-editor-page .edit-post-visual-editor .page-title {
         font-size: 2.5em; } }
   @media screen and (min-width: 1365px) {
-    .gutenberg-editor-page .edit-post-visual-editor .single .post .entry-title, .gutenberg-editor-page .edit-post-visual-editor .single .post .editor-post-title textarea, .gutenberg-editor-page .edit-post-visual-editor .editor-post-title .single .post textarea {
-      font-size: 3em; }
+    .gutenberg-editor-page .edit-post-visual-editor .single .post .entry-title .page-title, .gutenberg-editor-page .edit-post-visual-editor .single .post .editor-post-title textarea .page-title, .gutenberg-editor-page .edit-post-visual-editor .editor-post-title .single .post textarea .page-title {
+      font-size: 2.5em; }
     .gutenberg-editor-page .edit-post-visual-editor .entry-meta {
       font-size: 1em; } }
   .gutenberg-editor-page .edit-post-visual-editor .comments-title {
@@ -97,13 +102,16 @@
     font-family: Georgia, serif; }
   .gutenberg-editor-page .edit-post-visual-editor .editor-post-title textarea {
     font-family: Georgia, serif; }
-  .gutenberg-editor-page .edit-post-visual-editor .weracoba-big {
-    font-size: 2em;
+  .gutenberg-editor-page .edit-post-visual-editor .weracoba-big,
+  .gutenberg-editor-page .edit-post-visual-editor p.wp-block-subhead {
+    font-size: 1.25em;
     text-align: center;
-    color: #017680; }
-    @media screen and (min-width: 1023px) {
-      .gutenberg-editor-page .edit-post-visual-editor .weracoba-big {
-        font-size: 3em; } }
+    color: #44484d;
+    opacity: 1; }
+    @media screen and (min-width: 767px) {
+      .gutenberg-editor-page .edit-post-visual-editor .weracoba-big,
+      .gutenberg-editor-page .edit-post-visual-editor p.wp-block-subhead {
+        font-size: 1.75em; } }
   .gutenberg-editor-page .edit-post-visual-editor .wp-block-cover-image .wp-block-cover-image-text {
     font-family: "Lato", sans-serif;
     color: #f7f7f1; }
@@ -116,13 +124,13 @@
     text-decoration: none;
     border: 1px solid #c2cfcf; }
     .gutenberg-editor-page .edit-post-visual-editor .wp-block-button .wp-block-button__link:not(.has-text-color) {
-      color: black; }
+      color: #f7f7f1; }
       .gutenberg-editor-page .edit-post-visual-editor .wp-block-button .wp-block-button__link:not(.has-text-color):hover, .gutenberg-editor-page .edit-post-visual-editor .wp-block-button .wp-block-button__link:not(.has-text-color):focus {
         color: #f7f7f1; }
     .gutenberg-editor-page .edit-post-visual-editor .wp-block-button .wp-block-button__link:not(.has-background) {
-      background: #01b0bb; }
+      background: #017680; }
       .gutenberg-editor-page .edit-post-visual-editor .wp-block-button .wp-block-button__link:not(.has-background):hover, .gutenberg-editor-page .edit-post-visual-editor .wp-block-button .wp-block-button__link:not(.has-background):focus {
-        background: #017680; }
+        background: #01b0bb; }
   .gutenberg-editor-page .edit-post-visual-editor .wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color) {
     color: #017680; }
     .gutenberg-editor-page .edit-post-visual-editor .wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color):hover, .gutenberg-editor-page .edit-post-visual-editor .wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color):focus {

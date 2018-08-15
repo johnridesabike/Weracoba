@@ -26,7 +26,8 @@ p {
 	margin-bottom: 1em;
 }
 
-.entry-content {
+.entry-content,
+.archive-description {
     font-size: 1.2em;
     line-height: 1.6;
 }
@@ -92,12 +93,16 @@ big {
 .post-content {
     font-family: $font-reading;
 }
+.entry-footer {
+    font-family: $font-UI;
+}
 .entry-meta,
 .comment-meta {
     font-size: 0.9em;
 }
 
-.entry-title {
+.entry-title,
+.page-title {
     font-size: 2em;
     line-height: 1.2em;
 
@@ -107,8 +112,9 @@ big {
 }
 
 @media screen and (min-width: $breakpoint-3) {
-    .single .post .entry-title {
-        font-size: 3em;
+    .single .post .entry-title
+    .page-title {
+        font-size: 2.5em;
     }
     .entry-meta {
         font-size: 1em;
@@ -142,16 +148,15 @@ big {
 
 /* Gutenberg custom CSS */
 
-.weracoba-big {
-    font-size: 2em;
+.weracoba-big,
+p.wp-block-subhead {
+    font-size: 1.25em;
     text-align: center;
-    color: $color-tint;
+    color: $color-text-secondary;
+    opacity: 1;
     
     @media screen and (min-width: $breakpoint-1) {
-    }
-    
-    @media screen and (min-width: $breakpoint-2) {
-        font-size: 3em;
+        font-size: 1.75em;
     }
 }
 
@@ -166,24 +171,6 @@ big {
 
 .wp-block-button .wp-block-button__link {
     @include gutenberg-button;
-
-    &:not(.has-text-color) {
-        color: $color-text-main;
-
-        &:hover,
-        &:focus {
-            color: $color-bg-light;
-        }
-    }
-
-    &:not(.has-background) {
-        background: $color-bg-button;
-
-        &:hover,
-        &:focus {
-            background: $color-link;
-        }
-    }
 }
 
 
