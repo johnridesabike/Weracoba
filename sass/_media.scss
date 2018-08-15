@@ -92,29 +92,125 @@ object {
     border: none;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: $breakpoint-1) {
     .centered-image {
         margin: 0 -2em;
     }
 }
 
 /* Single Post Featured Images */
-.full-bleed img {
-    display: block;
-    margin: 0 auto;
+
+.featured-image {
+    position: relative;
+    background-size: cover;
+    background-position: 50%;
+    height: 16em;
+    
+    img {
+        position: absolute;
+        left: -999em;
+    }
+    
+    a {
+        @include link-overlay;
+    }
+    
+    &.full-bleed {
+        margin: 0 -1em;
+        
+        @media screen and (min-width: $breakpoint-1) {
+            min-height: 430px;
+            width: 100vw;
+            margin-left: -2em;
+            margin-right: -2em;
+        }
+    }
 }
-.full-bleed {
-    /*width: 100vw;*/
-    max-height: 1200px;
-    margin-top: 0;
-    margin-bottom: 0;
+
+/* we stop full-bleeding on wide screens, but only on posts */
+@media screen and (min-width: $breakpoint-3) {
+    .post .featured-image.full-bleed {
+        position: static;
+        width: 765px;
+        margin: 0;
+    }
+}
+
+.alignwide {
+    /* displays as alignfull on small screens */
+    max-width: 100vw !important;
+    width: auto !important;
+    margin-right: -1em !important;
+    margin-left: -1em !important;
+    @media screen and (min-width: $breakpoint-1) {
+        margin-left: calc(25% - 25vw) !important;
+        margin-right: calc(25% - 25vw) !important;
+    }
+}
+@media screen and (min-width: $breakpoint-1) {
+    /* posts have their own special code */
+    .has-sidebar .post .alignwide {
+        width: 85% !important;
+        margin-right: auto !important;
+        margin-left: auto !important;
+    }
+    .has-sidebar .post .alignfull {
+        max-width: 100% !important;
+        margin-right: auto !important;
+        margin-left: auto !important;
+    }
+}
+.no-sidebar {
+    .alignfull {
+        width: 100vw !important;
+        max-width: 100vw !important;
+        position: relative !important;
+        left: 50% !important;
+        right: 50% !important;
+        margin-left: -50vw !important;
+        margin-right: -50vw !important;
+    }
+}
+
+/*
+.wp-block-cover-image {
     margin-left: -1em;
     margin-right: -1em;
-    overflow: hidden;
-}
-@media screen and (min-width: 768px) {
-    .full-bleed {
+    width: initial;
+
+    @media screen and (min-width: 768px) {
         margin-left: -2em;
         margin-right: -2em;
     }
 }
+
+.wide-cover-image {
+    position: relative;
+    background-size: cover;
+    background-position: 50%;
+    min-height: 430px;
+    width: 100vw;
+    margin: 0 -1em 1.5em -1em;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0),
+                                               rgba(255, 255, 255, 0),
+                                               rgba(255, 255, 255, 0),
+                                               rgba(255, 255, 255, 0),
+                                               rgba(255, 255, 255, 1) );
+    }
+
+    h1, span {
+        z-index: 1;
+    }
+}
+*/

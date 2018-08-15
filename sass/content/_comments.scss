@@ -1,0 +1,109 @@
+.comment-content a {
+	word-wrap: break-word;
+}
+.bypostauthor {
+	display: block;
+}
+.comments-area {
+    @include max-content-width;
+}
+.comment-list {
+	padding: 1em;
+	margin: -1em;
+	list-style-type: none;
+    @include max-content-width;
+
+    ol {
+        list-style-type: none;
+    }
+}
+.comment-body {
+	border-bottom: 1px solid $color-border;
+	margin-bottom: 3em;
+}
+.comment-meta {
+	@include avatar(48px);
+    
+    .avatar {
+        top: 0;
+    }
+}
+.comment{
+    .edit-link {
+        display: block;
+
+        @media screen and (min-width: $breakpoint-1) {
+            display: inline;
+
+            &:before {
+                content: "| ";
+                margin: 0 0.5em;
+                color: $color-border;
+            }
+        }
+    }
+}
+.children {
+	margin-left: 1.5em;
+	padding-left: 0;
+}
+.comment-metadata {
+    margin-top: .2em;
+    padding-bottom: .5em;
+}
+.comment-author {
+    line-height: 1.3em;
+    font-size-adjust: 1.125em;
+}
+.says {
+    font-size: .8em;
+}
+
+.reply {
+	margin-bottom: 1.5em;
+	text-align: right;
+}
+.reply a {
+	display: inline-block;
+    @include button;
+}
+.comment-content a {
+	word-wrap: break-word;
+}
+/******************* Comment Form **********************/
+.comment-reply-title {
+	line-height: 1.3em;
+    color: $color-tint;
+}
+.comment-list .comment-reply-title {
+	text-align: left;
+}
+.comment-respond {
+	line-height: 1.3em;
+	font-family: $font-headers;
+    @include max-content-width;
+
+    .form-submit {
+        text-align: right;
+        input {
+            @include button;
+        }
+    }
+
+    label {
+        width: 33%;
+        display: block;
+        font-style: italic;
+        padding-bottom: .4em;
+    }
+
+    .required {
+        color: red;
+    }
+}
+
+@media screen and (min-width: $breakpoint-1) {
+	.children {
+		margin-left: 2em;
+	}
+}

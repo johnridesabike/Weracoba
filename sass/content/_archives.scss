@@ -1,0 +1,59 @@
+.archive-view {
+    .site-content {
+        @include max-site-width;
+        margin-top: 1em;
+    }
+
+    .content-area {
+        //@include max-content-width;
+        width: 100%;
+    }
+
+    .post,
+    .page {
+        position: relative;
+        border-bottom: 1px solid $color-border;
+        padding-bottom: 2em;
+        margin-bottom: 3em;
+        @include max-content-width;
+    }
+
+    @media screen and (min-width: $breakpoint-1) {
+        .entry-meta {
+            @include entry-meta-inline;
+        }
+    }
+    
+    @media screen and (min-width: $breakpoint-2) {
+        .site-content {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+	.site-main .page-header {
+		width: 100%;
+		flex: 1 0 100%;
+	}
+}
+.archive-description {
+    border-bottom: 1px solid $color-border;
+    margin-bottom: 1em;
+}
+.continue-reading {
+	right: 5px;
+	bottom: .5em;
+    text-align: center;
+
+    a {
+        display: block;
+        @include button;
+
+        &:after {
+            content: $glyph-arrow-next;
+        }
+    }
+
+    @media screen and (min-width: $breakpoint-1) {
+        position: absolute;
+    }
+}

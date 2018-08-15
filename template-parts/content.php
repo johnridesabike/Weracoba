@@ -10,7 +10,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<div class="post_content">
+	<!--<div class="post_content">-->
 		<header class="entry-header">
 	    	<?php weracoba_category_list(); ?>
 			<?php
@@ -48,5 +48,5 @@
 				<?php echo $read_more_link ?>
 			</a>
 		</div>
-	</div><!-- .post_content -->
+	<!--</div> .post_content -->
 </article><!-- #post-<?php the_ID(); ?> -->

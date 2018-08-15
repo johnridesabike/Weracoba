@@ -42,7 +42,7 @@ if ( ! function_exists( 'weracoba_setup' ) ) :
 		 */
 		add_theme_support( 'post-thumbnails' );
         add_image_size( 'weracoba-index-image', 500, 220, true );
-        add_image_size( 'fp-thumb', 480, 270, true );
+        add_image_size( 'weracoba-fp-thumb', 480, 270, true );
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
@@ -69,7 +69,7 @@ if ( ! function_exists( 'weracoba_setup' ) ) :
 		) ) );
         */
 		// Add theme support for selective refresh for widgets.
-		add_theme_support( 'customize-selective-refresh-widgets' );
+		//add_theme_support( 'customize-selective-refresh-widgets' );
 
 		/**
 		 * Add support for core custom logo.
@@ -82,9 +82,36 @@ if ( ! function_exists( 'weracoba_setup' ) ) :
 			'flex-width'  => true,
 			'flex-height' => true,
 		) );
+
+        /**
+        * Add support for Gutenberg wide blocks.
+        *
+        * @link https://wordpress.org/gutenberg/handbook/extensibility/theme-support/#opt-in-features
+        */
+        add_theme_support( 'align-wide' );
 	}
 endif;
 add_action( 'after_setup_theme', 'weracoba_setup' );
+
+/**
+ * Exclude a category from all WordPress loops
+ *
+ * @link https://github.com/taniarascia/wp-functions#exclude-a-category-from-wordpress-loops
+ */
+
+function weracoba_exclude_posts( $query ) {
+    global $wp_query;
+
+    // Hard coded category ID, but can be dynamic: esc_attr(get_option('your-cat-id'));
+    $excluded_cat_id = 25;
+
+    // add category ID to existing, avoid overwritting it
+    $cat[] = $query->get( 'cat' );
+    $cat[] = "-" . $excluded_cat_id;
+
+    $query->set( 'cat', $cat );
+}
+//add_action( 'pre_get_posts', 'weracoba_exclude_posts' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -108,9 +135,19 @@ add_action( 'after_setup_theme', 'weracoba_content_width', 0 );
  */
 function weracoba_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'weracoba' ),
+		'name'          => esc_html__( 'Blog Sidebar', 'weracoba' ),
 		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Add widgets here.', 'weracoba' ),
+		'description'   => esc_html__( 'A sidebar to be displayed alongside the blog posts.', 'weracoba' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Post Sidebar', 'weracoba' ),
+		'id'            => 'sidebar-2',
+		'description'   => esc_html__( 'A minimal sidebar that appears alongside posts.', 'weracoba' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
@@ -136,7 +173,7 @@ add_action( 'widgets_init', 'weracoba_widgets_init' );
 function weracoba_scripts() {
 	wp_enqueue_style( 'weracoba-style', get_stylesheet_uri() );
 
-    wp_enqueue_style( 'google-fonts', "https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i|Open+Sans:400,600");
+    wp_enqueue_style( 'google-fonts', "https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i|Work+Sans:400,600");
 
 	wp_enqueue_script( 'weracoba-functions', get_template_directory_uri() . '/js/functions.js', array('jquery'), '20180711', true );
 
@@ -149,6 +186,16 @@ function weracoba_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'weracoba_scripts' );
+
+/**
+ * Registers an editor stylesheet for the theme.
+ */
+function weracoba_editor_styles() {
+    wp_enqueue_style( 'mytheme-block-editor-styles', get_theme_file_uri( '/style-editor.css' ), false, '1.0', 'all' );
+}
+
+add_action( 'enqueue_block_editor_assets', 'weracoba_editor_styles' );
+
 
 /**
  * Implement the Custom Header feature.

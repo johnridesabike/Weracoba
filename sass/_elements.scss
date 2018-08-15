@@ -9,11 +9,11 @@ html {
 }
 
 body {
-	background: $color__background-body; /* Fallback for when there is no custom background color defined. */
+	background: $color-bg-body; /* Fallback for when there is no custom background color defined. */
 }
 
 hr {
-	background-color: $color__background-hr;
+	background-color: $color-bg-hr;
 	border: 0;
 	height: 1px;
 	margin-bottom: 1.5em;
@@ -82,18 +82,18 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
 textarea {
-	color: $color__text-input;
-	border: 1px solid $color__border-input;
+	color: $color-text-input;
+	border: 1px solid $color-border-input;
 	border-radius: 3px;
 	padding: 3px;
 
 	&:focus {
-		color: $color__text-input-focus;
+		color: $color-text-input-focus;
 	}
 }
 
 select {
-	border: 1px solid $color__border-input;
+	border: 1px solid $color-border-input;
 }
 
 textarea {
@@ -104,23 +104,23 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-    @include button-light;
+    @include button;
 }
 
 /*--------------------------------------------------------------
 ## Links
 --------------------------------------------------------------*/
 a {
-	color: $color__link;
+	color: $color-link;
     text-decoration: none;
 
 	&:visited {
-		color: $color__link-visited;
+		color: $color-link-visited;
 	}
 	&:hover,
 	&:focus,
 	&:active {
-		color: $color__link-hover;
+		color: $color-link-hover;
 	}
 	&:focus {
 		outline: thin dotted;

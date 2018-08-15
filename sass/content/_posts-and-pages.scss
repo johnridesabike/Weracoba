@@ -1,0 +1,117 @@
+/*************** General ***************/
+.sticky {
+	display: block;
+}
+.updated:not(.published) {
+	display: none;
+}
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}
+.post-content,
+.entry-header-wrap,
+.content-wrap {
+    @include max-site-width;
+}
+/*************** Entry header ***************/
+.entry-header-wrap {
+    margin-top: 1em;
+}
+.entry-title {
+    margin: 0;
+}
+.cat-links {
+    font-size: 1.3em;
+    margin-bottom: .5em;
+    display: block;
+}
+.entry-meta {
+    color: $color-text-secondary;
+    
+    @include avatar(48px);
+    
+    .byline {
+        font-size: 1.2em;
+    }
+    
+    > * {
+        display: block;
+    }
+}
+.posted-on a {
+    color: $color-text-secondary;
+    
+    &:hover,
+    &:focus {
+        color: $color-link-hover;
+    }
+}
+@media screen and (min-width: $breakpoint-1) and (max-width: $breakpoint-3) {
+    .single .entry-meta {
+        @include entry-meta-inline;
+    }
+}
+@media screen and (min-width: $breakpoint-3) {
+    .single .entry-meta {
+        @include avatar(72px);
+    }
+    .single .has-post-thumbnail {
+        .entry-header {
+            @include max-site-width;
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .entry-header-wrap {
+            margin: 0 0 1em 0;
+            width: 45%;
+        }
+    }
+    .single .entry-title {
+        margin: .5em 0;
+    }
+}
+
+
+.entry-footer {
+    border-top: 1px solid $color-border;
+    padding-top: 1em;
+}
+/*************** Post body ***************/
+.post-content-body {
+    width: 100%;
+    //border-bottom: 1px solid $color-border;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.post .entry-content {
+    & > *:not(.alignwide):not(.alignfull) {
+        @include max-content-width;
+    }
+}
+@media screen and (min-width: $breakpoint-2) {
+    .post-content {
+        display: flex;
+        justify-content: space-around;
+    }
+    .post-content-body {
+        margin: 0;
+    }
+}
+/*************** Page body ***************/
+.page {
+    .entry-title {
+        text-align: center;
+    }
+    .narrow-width .entry-content {
+        @include max-page-width;
+        h2 {
+            margin-top: 2em;
+        }
+    }
+}

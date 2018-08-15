@@ -1,7 +1,7 @@
 /*!
 Theme Name: Weracoba
 Theme URI: https://github.com/johnridesabike/Weracoba
-Author: John
+Author: John Jackson
 Author URI: https://johnridesa.bike/
 Description: Description
 Version: 0.1
@@ -43,12 +43,11 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	## Galleries
 --------------------------------------------------------------*/
 @import "sass/variables";
-@import "sass/mixins";
 
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
-@import "sass/normalize";
+@import "sass/modules/normalize";
 
 /*--------------------------------------------------------------
 # Typography
@@ -61,34 +60,19 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @import "sass/elements";
 
 /*--------------------------------------------------------------
-# Global Layouts
---------------------------------------------------------------*/
-@import "sass/layout/global";
-
-/*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
-@import "sass/site/header";
+@import "sass/sections/header";
 
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
-@import "sass/site/footer";
-
-/*--------------------------------------------------------------
-# Archives
---------------------------------------------------------------*/
-@import "sass/site/archives";
-
-/*--------------------------------------------------------------
-# Front Page
---------------------------------------------------------------*/
-@import "sass/site/front-page";
+@import "sass/sections/footer";
 
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
-@import "sass/navigation/navigation";
+@import "sass/sections/navigation";
 
 /*--------------------------------------------------------------
 # Accessibility
@@ -103,12 +87,12 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
-@import "sass/site/secondary/widgets";
+@import "sass/sections/widgets";
 
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
-@import "sass/site/site";
+@import "sass/content/site";
 
 /*--------------------------------------------------------------
 # Infinite scroll

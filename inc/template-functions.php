@@ -18,9 +18,13 @@ function weracoba_body_classes( $classes ) {
 		$classes[] = 'archive-view';
 	}
 
-	// Adds a class of no-sidebar when there is no sidebar present.
-	if ( is_active_sidebar( 'sidebar-1' ) ) {
+    // Adds a class of no-sidebar when there is no sidebar present.
+    if ( is_page() ) {
+		$classes[] = 'no-sidebar';
+    } elseif ( is_active_sidebar( 'sidebar-1' ) && ! is_singular() ) {
 		$classes[] = 'has-sidebar';
+    } elseif ( is_active_sidebar( 'sidebar-2' ) && is_singular() ) {
+        $classes[] = 'has-sidebar';
 	} else {
 		$classes[] = 'no-sidebar';
 	}

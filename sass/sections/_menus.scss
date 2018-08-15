@@ -4,23 +4,11 @@
 	display: block;
 }
 
-@media screen and (min-width: 37.5em) {
-	.menu-toggle {
-		display: none;
-	}
-	.main-navigation ul {
-		display: block;
-        text-align: left;
-	}
-}
-
-
-
 .menu-button {
     text-align: right;
     position: relative;
 
-    @media screen and (min-width: $screen__full-menu) {
+    @media screen and (min-width: $breakpoint-1) {
         display: none;
     }
 
@@ -29,15 +17,10 @@
         text-transform: uppercase;
         font-size: 1em;
         margin-right: 0.5em;
-
-        &:hover,
-        &:focus {
-            color: $color__text-main;
-            background: $color__link-hover;
-        }
+        @include button;
 
         &::before {
-            content: $glyph__arrow-down;
+            content: $glyph-arrow-down;
             padding-right: .5em;
             font-size: .7em;
         }
@@ -47,7 +30,7 @@
 .toggled {
     .menu-toggle {
         &:before {
-            content: $glyph__arrow-up;
+            content: $glyph-arrow-up;
         }
     }
 }
@@ -55,7 +38,7 @@
 
 .menu-item-has-children {
     a:after {
-        content: $glyph__arrow-down;
+        content: $glyph-arrow-down;
         font-size: .7em;
         padding-left: .5em;
     }
@@ -70,9 +53,8 @@
 	display: block;
 	float: left;
     position: relative;
-    font-family: $font__headers;
-    font-size: 1em;
-    text-transform: uppercase;
+    font-family: $font-UI;
+    font-size: 1.1em;
     text-align: center;
     width: 100%;
 
@@ -80,8 +62,8 @@
         display: none;
         list-style: none;
         margin: 0;
-        padding: 0 1em;
         position: relative;
+        padding: 0;
 
 		ul {
             box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
@@ -90,32 +72,37 @@
             top: 100%;
             left: -999em;
             z-index: 99999;
-            background: $color__background-header;
-            border: 1px solid $color__border-menu;
+            background: $color-bg-header;
+            border: 1px solid $color-border;
             display: block;
+            width: 100%;
 
 			ul {
 				left: -999em;
 				top: 0;
 			}
 
-			li {
+            li {
+                border-bottom: 1px solid $color-border;
+
+                &:last-child {
+                    border-bottom: none;
+                }
+
 				&:hover > ul,
 				&.focus > ul {
 					left: 100%;
 				}
 			}
 
-			a {
-				width: 200px;
-			}
-
 			:hover > a,
 			.focus > a {
+                color: $color-link-hover;
 			}
 
 			a:hover,
 			a.focus {
+                color: $color-link-hover;
 			}
 		}
 
@@ -129,7 +116,6 @@
 	li {
 		float: none;
 		position: relative;
-        padding: 0 1em;
 
         li {
             padding: 0;
@@ -137,6 +123,7 @@
 
 		&:hover > a,
 		&.focus > a {
+            color: $color-link-hover;
 		}
 	}
 
@@ -144,12 +131,7 @@
         display: block;
         text-decoration: none;
         padding: .5em 0 .5em 0;
-        color: $color__link;
-
-        &:hover,
-        &.focus {
-            color: $color__link-hover;
-        }
+        color: $color-link;
 	}
 
 	.current_page_item > a,
@@ -159,8 +141,9 @@
 	}
 
 
-    @media screen and (min-width: $screen__full-menu) {
+    @media screen and (min-width: $breakpoint-1) {
         width: intrinsic;
+        line-height: 1.1em;
 
         ul {
             display: flex;
@@ -169,14 +152,16 @@
             ul {
                 margin-left: 0;
                 width: intrinsic;
+                text-align: left;
+                padding: 0 1em;
 
                 &:before {
-                    content: $glyph__arrow-up;
+                    content: $glyph-arrow-up;
                     font-size: .7em;
                     position: absolute;
-                    right: 1.4em;
-                    top: -1.1em;
-                    color: $color__border-menu;
+                    right: 0;
+                    top: -14px;
+                    color: $color-border;
                 }
 
                 li {
@@ -188,28 +173,17 @@
         }
 
         a {
-            letter-spacing: 0.075em;
+            letter-spacing: 0.025em;
+        }
+        
+        li {
+            padding-left: 1.2em;
         }
     }
 }
 
-.comment-navigation,
-.posts-navigation,
-.post-navigation {
-
-	.site-main & {
-		margin: 0 0 1.5em;
-		overflow: hidden;
-	}
-
-	.nav-previous {
-		float: left;
-		width: 50%;
-	}
-
-	.nav-next {
-		float: right;
-		text-align: right;
-		width: 50%;
+@media screen and (min-width: $breakpoint-1) {
+	.menu-toggle {
+		display: none;
 	}
 }

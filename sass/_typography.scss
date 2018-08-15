@@ -4,18 +4,32 @@ input,
 select,
 optgroup,
 textarea {
-	color: $color__text-main;
-	font-family: $font__main;
-	@include font-size(1);
-	line-height: $font__line-height-body;
+    color: $color-text-main;
+    font-family: $font-UI;
+    @include font-size(1);
+    line-height: $font-line-height-body;
+}
+
+textarea {
+    font-family: $font-reading;
+    @include max-content-width;
 }
 
 h1, h2, h3, h4, h5, h6 {
 	clear: both;
+    font-family: $font-headers;
+    color: $color-tint;
+    font-weight: normal;
 }
 
 p {
-	margin-bottom: 1.5em;
+	margin-bottom: 1em;
+}
+
+.entry-content,
+.archive-description {
+    font-size: 1.2em;
+    line-height: 1.6;
 }
 
 dfn, cite, em, i {
@@ -31,10 +45,10 @@ address {
 }
 
 pre {
-	background: $color__background-pre;
-	font-family: $font__pre;
+	background: $color-bg-pre;
+	font-family: $font-pre;
 	@include font-size(0.9375);
-	line-height: $font__line-height-pre;
+	line-height: $font-line-height-pre;
 	margin-bottom: 1.6em;
 	max-width: 100%;
 	overflow: auto;
@@ -42,17 +56,17 @@ pre {
 }
 
 code, kbd, tt, var {
-	font-family: $font__code;
+	font-family: $font-code;
 	@include font-size(0.9375);
 }
 
 abbr, acronym {
-	border-bottom: 1px dotted $color__border-abbr;
+	border-bottom: 1px dotted $color-border-abbr;
 	cursor: help;
 }
 
 mark, ins {
-	background: $color__background-ins;
+	background: $color-background-ins;
 	text-decoration: none;
 }
 
@@ -60,3 +74,124 @@ big {
 	font-size: 125%;
 }
 
+/* Posts & Pages */
+
+.site-title {
+    font-family: $font-reading;
+    font-size: 2em;
+}
+
+.post {
+    .entry-header,
+    .entry-content {
+        h1, h2, h3, h4, h5, h6 {
+            font-family: $font-reading;
+        }
+    }
+}
+.post .entry-content, 
+.post-content {
+    font-family: $font-reading;
+}
+.entry-footer {
+    font-family: $font-UI;
+}
+.entry-meta,
+.comment-meta {
+    font-size: 0.9em;
+}
+
+.entry-title,
+.page-title {
+    font-size: 2em;
+    line-height: 1.2em;
+
+    @media screen and (min-width: $breakpoint-1){
+        font-size: 2.5em;
+    }
+}
+
+@media screen and (min-width: $breakpoint-3) {
+    .single .post .entry-title
+    .page-title {
+        font-size: 2.5em;
+    }
+    .entry-meta {
+        font-size: 1em;
+    }
+}
+
+/* comments */
+
+.comments-title {
+	font-size: 2em;
+	font-weight: normal;
+    color: $color-tint;
+}
+.comment-content {
+    font-family: $font-reading;
+}
+
+/* Front Page */
+
+.fp-post,
+.fp-post .entry-title {
+    font-family: $font-reading;
+}
+/* editor styles */
+
+.editor-post-title textarea {
+    @extend h1;
+    @extend .entry-title;
+    font-family: $font-reading;
+}
+
+/* Gutenberg custom CSS */
+
+.weracoba-big,
+p.wp-block-subhead {
+    font-size: 1.25em;
+    text-align: center;
+    color: $color-text-secondary;
+    opacity: 1;
+    
+    @media screen and (min-width: $breakpoint-1) {
+        font-size: 1.75em;
+    }
+}
+
+.wp-block-cover-image .wp-block-cover-image-text {
+    font-family: $font-headers;
+    color: $color-bg-light;
+    
+    @media screen and (min-width: $breakpoint-3) {
+        font-size: 2.75em;
+    }
+}
+
+.wp-block-button .wp-block-button__link {
+    @include gutenberg-button;
+}
+
+
+.wp-block-button.is-style-outline .wp-block-button__link {
+    
+    &:not(.has-text-color) {
+        color: $color-tint;
+        
+        &:hover,
+        &:focus {
+            color: $color-link-hover;
+        }
+    }
+    
+    &:not(.has-background) {
+        background: transparent;
+        border-color: $color-tint;
+        
+        &:hover,
+        &:focus {
+            border-color: $color-link-hover;
+        }
+    }
+}

@@ -26,7 +26,7 @@ if ( ! function_exists( 'weracoba_posted_on' ) ) :
 
 		$posted_on = sprintf(
 			/* translators: %s: post date. */
-			esc_html_x( 'Published on %s', 'post date', 'weracoba' ),
+			esc_html_x( '%s', 'post date', 'weracoba' ),
 			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 		);
 
@@ -41,8 +41,8 @@ if ( ! function_exists( 'weracoba_posted_by' ) ) :
 	function weracoba_posted_by() {
 		$byline = sprintf(
 			/* translators: %s: post author. */
-			esc_html_x( 'Written by %s', 'post author', 'weracoba' ),
-			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+			esc_html_x( '%s', 'post author', 'weracoba' ),
+			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . get_avatar( get_the_author_meta( 'ID' ), 144 ) . esc_html( get_the_author() ) . '</a></span>'
 		);
 
 		echo '<span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
@@ -80,25 +80,25 @@ if ( ! function_exists( 'weracoba_post_thumbnail' ) ) :
 			return;
 		}
 
-		if ( is_singular() && ! is_front_page() ) :
-			?>
-
-			<div class="post-thumbnail">
-				<?php the_post_thumbnail(); ?>
-			</div><!-- .post-thumbnail -->
-
+		if ( is_singular() && ! is_front_page() ) : ?>
+            <figure class="full-bleed featured-image" style="background-image: url( <?php the_post_thumbnail_url(); ?>)">
+                <div class="post-thumbnail">
+                    <?php the_post_thumbnail(); ?>
+                </div><!-- .post-thumbnail -->
+            </figure> <!--.full-bleed .featured-image -->
 		<?php else : ?>
 
-		<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
-			<?php
-			the_post_thumbnail( 'post-thumbnail', array(
-				'alt' => the_title_attribute( array(
-					'echo' => false,
-				) ),
-			) );
-			?>
-		</a>
-
+        <figure class="featured-image" style="background-image: url( <?php the_post_thumbnail_url(); ?>)">
+            <a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
+                <?php
+                the_post_thumbnail( 'post-thumbnail', array(
+                    'alt' => the_title_attribute( array(
+                        'echo' => false,
+                    ) ),
+                ) );
+                ?>
+            </a>
+        </figure> <!--.full-bleed .featured-image -->
 		<?php
 		endif; // End is_singular().
 	}
@@ -137,11 +137,11 @@ if ( ! function_exists( 'weracoba_comments' ) ) :
 			);
 			echo '</span> ';
 		}
-
+        /*
 		edit_post_link(
 			sprintf(
 				wp_kses(
-					/* translators: %s: Name of current post. Only visible to screen readers */
+					/* translators: %s: Name of current post. Only visible to screen readers *//*
 					__( 'Edit <span class="screen-reader-text">%s</span>', 'weracoba' ),
 					array(
 						'span' => array(
@@ -153,7 +153,7 @@ if ( ! function_exists( 'weracoba_comments' ) ) :
 			),
 			'<span class="edit-link">',
 			'</span>'
-		);
+		);*/
 	}
 endif;
 
@@ -161,26 +161,89 @@ endif;
 /***** Post navigation for single post ****/
 if ( ! function_exists( 'weracoba_post_navigation' ) ) :
 	function weracoba_post_navigation() {
+        ?>
+        <h2 class="post-navigation-title">Read more <?php echo get_the_category_list( esc_html__( ', ', 'weracoba' ) );?> posts</h2>
+        <?php
 		the_post_navigation( array(
-			'next_text' => '<span class="meta-nav" aria-hidden="true">' . __('Next', 'weracoba') . '</span> <span class="screen-reader-text">' . __('Next Post:', 'weracoba') . '</span> <span class="post-title">%title</span>',
-			'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __('Previous', 'weracoba') . '</span> <span class="screen-reader-text">' . __('Previous Post:', 'weracoba') . '</span> <span class="post-title">%title</span>',
+			'next_text' => '<span class="meta-nav" aria-hidden="true">' . __('Next post', 'weracoba') . '</span> <span class="screen-reader-text">' . __('Next Post:', 'weracoba') . '</span> <span class="post-title">%title</span>',
+			'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __('Previous post', 'weracoba') . '</span> <span class="screen-reader-text">' . __('Previous Post:', 'weracoba') . '</span> <span class="post-title">%title</span>',
+            'in_same_term' => true
 		));
 	}
 endif;
 
-/**
- * Get the posts page URL in WordPress
- *
- * @link   https://www.winwar.co.uk/2015/10/get-the-posts-page-url-dynamically-in-wordpress/?utm_source=codesnippet
- *
- * @return string
- */
-if ( ! function_exists( 'wereacoba_get_post_page_url' ) ) :
-    function wereacoba_get_post_page_url() {
+if ( ! function_exists( 'weracoba_get_post_page_url' ) ) :
+    /**
+     * Get the posts page URL in WordPress
+     *
+     * @link   https://www.winwar.co.uk/2015/10/get-the-posts-page-url-dynamically-in-wordpress/?utm_source=codesnippet
+     *
+     * @return string
+     */
+    function weracoba_get_post_page_url() {
         if( 'page' == get_option( 'show_on_front' ) ) {
             return get_permalink( get_option('page_for_posts' ) );
         } else {
             return home_url();
+        }
+    }
+endif;
+
+if ( ! function_exists( 'weracoba_reading_time' ) ) :
+    /*
+    * Output the reading time. Used in conjunction with "Reading Time WP" plugin.
+    *
+    * @link https://jasonyingling.me/reading-time-wp/
+    *
+    * Prints the HTML for a post's reading time.
+    */
+    function weracoba_reading_time($label = 'Reading time: about ', $postfix = 'minutes') {
+        $reading_time = do_shortcode( sprintf(
+            '[rt_reading_time label="%s" postfix="%s"]', $label, $postfix ) );
+        if( substr($reading_time, 0, 1) === '[' ) {
+            ?>
+            <!-- Reading Time WP is not active https://jasonyingling.me/reading-time-wp/ -->
+            <?php
+        } else {
+            echo $reading_time;
+        }
+    }
+endif;
+
+if ( ! function_exists( 'weracoba_cat_block' ) ) :
+    /*
+    *
+    */
+    function weracoba_cat_block($cats) {
+        
+        foreach( $cats as $key => $cat ) {
+            $cat_query = new WP_Query( array( 'cat' => $cat->term_id,
+                                      'meta_query' => array( array( 'key' => '_thumbnail_id') ) ) );
+            $cat_query->the_post();
+            $cat_link = esc_url( get_category_link( $cat->cat_ID ) );
+            ?>
+            <div class="cat-block-wrap">
+                <div class="cat-block">
+                <a class="overlay-link" href="<?php echo esc_url( get_category_link( $cat->cat_ID ) );?>"></a>
+                    <a href="<?php echo $cat_link; ?>">
+                        <?php the_post_thumbnail( 'weracoba-fp-thumb' ); ?>
+                    </a>
+                    <h5 class="cat-title wp-block-cover-image-text">
+                        <a href="<?php echo $cat_link; ?>">
+                            <?php echo esc_html__($cat->cat_name);?>
+                        </a>
+                    </h5>
+                    <?php
+                    if ( $cat->description ):?>
+                        <p>
+                            <?php echo esc_html__($cat->description);?>
+                        </p>
+                    <?php 
+                    endif; ?>
+                </div>
+            </div>
+            <?php
+            wp_reset_postdata(); // reset the query
         }
     }
 endif;

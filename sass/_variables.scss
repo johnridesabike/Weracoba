@@ -1,57 +1,54 @@
 // Colors
 // Inspired by Mr. Shirwin Williams
+$color-text-main: rgba(47, 47, 48, 1); // Tricorn Black
+$color-text-secondary: rgba(68, 72, 77, 1); // Cyberspace
+$color-bg-body: white;
+$color-bg-light: rgba(247, 247, 241, 1); // High Reflective White
+$color-tint: rgba(1, 118, 128, 1); // Intense Teal
+$color-border: rgba(194, 207, 207, 1); // Tradewind
+$color-border-button: $color-border;
+$color-border-button-hover: $color-border;
+$color-border-button-focus: $color-border;
+$color-bg-header: $color-bg-light;
+$color-bg-header-alt: rgba(224, 232, 231, 1); // Snowdrop
+$color-link: $color-tint;
+$color-link-visited: $color-tint;
+$color-link-hover: rgba(1, 176, 187, 1); // Calypso
+$color-headings: $color-tint;
+$color-bg-button: rgba(1, 176, 187, 1); // Calypso
 
-// High Reflective White
-$color__background-body-light: rgba(247, 247, 241, 1);
-// Pure White
-$color__background-body: rgba(237, 236, 230, 1);
-$color__background-screen: #f1f1f1;
-$color__background-hr: #ccc;
-// Cyberspace
-$color__background-header: rgba(68, 72, 77, 1);
-// Calypso
-$color__background-button: rgba(1, 176, 187, 1);
-$color__background-pre: #eee;
-$color__background-ins: #fff9c0;
-
-$color__text-screen: #21759b;
-$color__text-input: #666;
-$color__text-input-focus: #111;
-// Tradewind
-$color__text-header: rgba(194, 207, 207, 1);
-// Calypso
-$color__link: rgba(1, 176, 187, 1);
-$color__link-visited: $color__link;
-// Splashy
-$color__link-hover: rgba(1, 145, 150, 1);
-// Tricorn Black
-$color__text-main: rgba(47, 47, 48, 1);
-
-// Tradewind
-$color__border-button: rgba(194, 207, 207, 1);
-$color__border-button-hover: rgba(194, 207, 207, 1);
-$color__border-button-focus: rgba(194, 207, 207, 1);
-$color__border-input: #ccc;
-$color__border-abbr: #666;
-// Software
-$color__border-menu: rgba(127, 132,134, 1);
-
+$color-bg-pre: #eee;
+$color-border-abbr: #666;
+$color-background-ins: #fff9c0;
+$color-text-input: #666;
+$color-border-input: #ccc;
+$color-text-input-focus: #111;
+$color-bg-hr: #ccc;
+$color-bg-screen: #f1f1f1;
+$color-text-screen: #21759b;
 
 // Typography
-$font__main: 'Lato', sans-serif;
-$font__headers: 'Open Sans', sans-serif;
-$font__code: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
-$font__pre: "Courier 10 Pitch", Courier, monospace;
-$font__line-height-body: 1.5;
-$font__line-height-pre: 1.6;
-$glyph__arrow-down: "\25BC";
-$glyph__arrow-up: "\25B2";
-$glyph__arrow-next: "\276F";
+$font-reading: Georgia, serif;
+$font-UI: "Lato", sans-serif;
+$font-headers: $font-UI;
+$font-widget: $font-UI;
+$font-line-height-body: 1.5;
+$font-pre: "Courier 10 Pitch", Courier, monospace;
+$font-line-height-pre: 1.6;
+$font-code: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+$glyph-arrow-down: "\25BC";
+$glyph-arrow-up: "\25B2";
+$glyph-arrow-next: "\276F";
+
+// Breakpoints 
+$breakpoint-1: 767px; // iPad portrait
+$breakpoint-2: 1023px; // iPad landscape
+$breakpoint-3: 1365px; // iPad pro landscape
 
 // Structure
-$size__site-main: 100%;
-$size__site-sidebar: 25%;
-$screen__full-menu: 600px;
+$size-max-width: 1200px;
+$size-content: 700px;
+$size-content-page: 900px;
 
 // Columns
 $columns: (
@@ -66,5 +63,159 @@ $columns: (
 	9: 11.11%
 );
 
-$columns__margin: 3.8%;
+$columns-margin: 3.8%;
 
+// Rem output with px fallback
+@mixin font-size($sizeValue: 1) {
+	font-size: ($sizeValue * 16) * 1px;
+	font-size: $sizeValue * 1rem;
+}
+
+@mixin center-block {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@mixin clearfix() {
+	content: "";
+	display: table;
+	table-layout: fixed;
+}
+
+// Clear after (not all clearfix need this also)
+@mixin clearfix-after() {
+	clear: both;
+}
+
+// Column width with margin
+@mixin column-width($numberColumns: 3) {
+	width: map-get( $columns, $numberColumns ) - ( ( $columns-margin * ( $numberColumns - 1 ) ) / $numberColumns );
+	//flex: 1 1 map-get( $columns, $numberColumns ) - ( ( $columns-margin * ( $numberColumns - 1 ) ) / $numberColumns );
+}
+
+// Buttons
+@mixin button {
+    padding: .2em 1em;
+	font-family: $font-UI;
+	//font-size: .875em;
+	//line-height: 1.3em;
+	text-decoration: none;
+    border: 1px solid $color-border-button;
+    //border-radius: 5px;
+    border-radius: 23px; // from Gutenberg style
+    color: $color-bg-light;
+    background: $color-link;
+
+    &:hover,
+    &:focus {
+        background: $color-link-hover;
+    }
+}
+
+@mixin button-outline {
+    padding: 1em;
+    font-family: $font-UI;
+    text-decoration: none;
+    border-radius: 23px;
+    border: 1px solid $color-border-button;
+}
+
+@mixin gutenberg-button {
+    padding: .6em 1.4em;
+	font-family: $font-UI;
+	//font-size: .875em;
+	//line-height: 1.3em;
+	text-decoration: none;
+    border: 1px solid $color-border-button;
+
+    &:not(.has-text-color) {
+        color: $color-bg-light;
+
+        &:hover,
+        &:focus {
+            color: $color-bg-light;
+        }
+    }
+
+    &:not(.has-background) {
+        background: $color-link;
+
+        &:hover,
+        &:focus {
+            background: $color-link-hover;
+        }
+    }
+}
+
+@mixin max-site-width {
+    @media screen and (min-width: $size-max-width) {
+        max-width: $size-max-width;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@mixin max-content-width {
+    max-width: $size-content;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@mixin max-page-width {
+    max-width: $size-content-page;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@mixin link-overlay {
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: $color-link-hover;
+    opacity: 0;
+    z-index: 999;
+
+    &:hover,
+    &:focus {
+        opacity: .1;
+    }
+    
+}
+
+@mixin avatar($size: 48px) {
+	position: relative;
+    margin-left: $size + 12px;
+    //margin-top: 5px;
+    min-height: $size - 5px;
+    
+    .avatar {
+        position: absolute;
+        //top: -5px;
+        top: 5px;
+        left: - $size - 12px;
+        width: $size;
+        height: $size;
+        border-radius: $size;
+    }
+}
+
+
+@mixin entry-meta-inline {
+    padding-top: 1em;
+    & > * {
+        display: inline-block;
+    }
+
+    > *:after {
+        content: " |";
+        margin: 0 0.5em;
+        color: $color-border;
+    }
+
+    > *:last-child:after {
+        content: "";
+        display: none;
+    }
+}
