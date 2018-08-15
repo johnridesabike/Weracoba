@@ -27,6 +27,9 @@
     font-weight: normal; }
   .gutenberg-editor-page .edit-post-visual-editor p {
     margin-bottom: 1em; }
+  .gutenberg-editor-page .edit-post-visual-editor .entry-content {
+    font-size: 1.2em;
+    line-height: 1.6; }
   .gutenberg-editor-page .edit-post-visual-editor dfn, .gutenberg-editor-page .edit-post-visual-editor cite, .gutenberg-editor-page .edit-post-visual-editor em, .gutenberg-editor-page .edit-post-visual-editor i {
     font-style: italic; }
   .gutenberg-editor-page .edit-post-visual-editor blockquote {

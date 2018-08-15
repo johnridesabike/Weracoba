@@ -25,8 +25,45 @@ function weracoba_customize_register( $wp_customize ) {
 			'render_callback' => 'weracoba_customize_partial_blogdescription',
 		) );
 	}
+
+    $wp_customize->add_section('weracoba_options', array(
+        'title'    => __( 'Weracoba Options', 'weracoba' ),
+        'priority' => 120,
+    ));
+    
+    /*
+    * Sets the portfolio category options
+    */
+
+    $wp_customize->add_setting( 'cat_1', array(
+        'default'        => 'uncategorized',
+        'capability'     => 'edit_theme_options',
+    ));
+    $wp_customize->add_control( 'cat_1', array(
+        'settings' => 'cat_1',
+        'label'   => __( 'Portfolio Category', 'weracoba' ),
+        'section' => 'weracoba_options',
+        'type'    => 'select',
+        'choices' => get_categories_select()
+    ));
 }
 add_action( 'customize_register', 'weracoba_customize_register' );
+
+/* 
+* @link https://josephfitzsimmons.com/adding-a-select-box-with-categories-into-wordpress-theme-customizer/
+*/
+function get_categories_select() {
+    $teh_cats = get_categories();
+    $results;
+    $count = count($teh_cats);
+    for ($i=0; $i < $count; $i++) {
+        if (isset($teh_cats[$i]))
+            $results[$teh_cats[$i]->slug] = $teh_cats[$i]->name;
+        else
+            $count++;
+    }
+    return $results;
+}
 
 /**
  * Render the site title for the selective refresh partial.

@@ -48,5 +48,5 @@
 				<?php echo $read_more_link ?>
 			</a>
 		</div>
-	<!--</div><!-- .post_content -->
+	<!--</div> .post_content -->
 </article><!-- #post-<?php the_ID(); ?> -->

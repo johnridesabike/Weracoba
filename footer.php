@@ -15,7 +15,7 @@
 
 	<footer id="colophon" class="site-footer">
         <!--<div class="footer-wrapper">
-            <!--<nav class="social-media">
+            <nav class="social-media">
                 <?php
                 wp_nav_menu( array(
                     'theme_location' => 'menu-2',
@@ -25,7 +25,7 @@
             </nav>-->
             <div class="footer-widgets">
                 <?php dynamic_sidebar('Footer') ?>
-            </div> <!-- .footer-widgets --
+            </div> <!-- .footer-widgets
         </div>-->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

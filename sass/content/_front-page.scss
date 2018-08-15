@@ -7,39 +7,69 @@
     }
 }
 
-.latest-post {
+.latest-post,
+.fp-blocks {
     display: flex;
     flex-flow: column;
-    justify-content: space-between;
+    justify-content: space-around;
 
-    .entry-title {
-        font-size: 1.2em;
+    .entry-title,
+    .cat-title {
+        font-size: 2em;
+        text-align: center;
+        margin: 0;
+        
+        a:hover,
+        a:focus {
+            color: $color-tint;
+        }
     }
 
-    .entry-content {
+    .entry-content,
+    p {
         font-size: .9em;
     }
 }
 
-.fp-post {
+.fp-block-wrap {
+    border: 1px solid $color-border;
+    border-radius: 23px;
+    margin-bottom: 1.5em;
+    overflow:hidden;
+}
+
+.fp-post,
+.fp-block {
 	position: relative;
     background: white;
-    border: 1px solid $color-border;
-    border-radius: 5px;
-    margin: .5em 0;
-    padding-bottom: 1.5em;
+    background-size: cover;
+    background-position: center;
+    flex-direction: column;
+    min-height: 15em;
+    margin: 0;
+    height: 100%;
     
     p {
         margin-left: .5em;
         margin-right: .5em;
+        font-size: 1.2em;
+        color: $color-bg-light;
+        z-index: 1;
     }
 }
 @media screen and (min-width: $breakpoint-1) {
-    .latest-post {
+    .latest-post,
+    .fp-blocks {
         flex-flow: row;
+        flex-wrap: wrap;
     }
-    .latest-post .fp-post {
-        width: 32%;
+    
+    .fp-block-wrap {
+        @include column-width(3);
+        //width: map-get( $columns, 3);
+    }
+    .latest-post .fp-post,
+    .fp-blocks .fp-block {
     }
 }
 

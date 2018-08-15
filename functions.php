@@ -42,7 +42,7 @@ if ( ! function_exists( 'weracoba_setup' ) ) :
 		 */
 		add_theme_support( 'post-thumbnails' );
         add_image_size( 'weracoba-index-image', 500, 220, true );
-        add_image_size( 'fp-thumb', 480, 270, true );
+        add_image_size( 'weracoba-fp-thumb', 480, 270, true );
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
@@ -98,9 +98,8 @@ add_action( 'after_setup_theme', 'weracoba_setup' );
  *
  * @link https://github.com/taniarascia/wp-functions#exclude-a-category-from-wordpress-loops
  */
-/*
-add_action( 'pre_get_posts', function( $query ) { // anonymous callback
 
+function weracoba_exclude_posts( $query ) {
     global $wp_query;
 
     // Hard coded category ID, but can be dynamic: esc_attr(get_option('your-cat-id'));
@@ -111,8 +110,8 @@ add_action( 'pre_get_posts', function( $query ) { // anonymous callback
     $cat[] = "-" . $excluded_cat_id;
 
     $query->set( 'cat', $cat );
-    }
-});*/
+}
+//add_action( 'pre_get_posts', 'weracoba_exclude_posts' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
