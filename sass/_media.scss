@@ -86,6 +86,16 @@ object {
 	@include center-block;
 }
 
+@media screen and (max-width: $breakpoint-1) {
+    /* On small screens, display left and right alignments as if they were centered */
+    .alignleft,
+    .alignright {
+        float: none;
+        clear: both;
+        @include center-block;
+    }
+}
+
 .centered-image {
     max-width: 100vw;
     margin: 0 -1em;
@@ -171,46 +181,3 @@ object {
         margin-right: -50vw !important;
     }
 }
-
-/*
-.wp-block-cover-image {
-    margin-left: -1em;
-    margin-right: -1em;
-    width: initial;
-
-    @media screen and (min-width: 768px) {
-        margin-left: -2em;
-        margin-right: -2em;
-    }
-}
-
-.wide-cover-image {
-    position: relative;
-    background-size: cover;
-    background-position: 50%;
-    min-height: 430px;
-    width: 100vw;
-    margin: 0 -1em 1.5em -1em;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-
-    &:before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        background: linear-gradient(to bottom, rgba(255, 255, 255, 0),
-                                               rgba(255, 255, 255, 0),
-                                               rgba(255, 255, 255, 0),
-                                               rgba(255, 255, 255, 0),
-                                               rgba(255, 255, 255, 1) );
-    }
-
-    h1, span {
-        z-index: 1;
-    }
-}
-*/

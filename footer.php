@@ -14,19 +14,9 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer">
-        <!--<div class="footer-wrapper">
-            <nav class="social-media">
-                <?php
-                wp_nav_menu( array(
-                    'theme_location' => 'menu-2',
-                    'menu_id'        => 'Social',
-                ) );
-                ?>
-            </nav>-->
             <div class="footer-widgets">
                 <?php dynamic_sidebar('Footer') ?>
-            </div> <!-- .footer-widgets
-        </div>-->
+            </div> <!-- .footer-widgets -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

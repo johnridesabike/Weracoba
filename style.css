@@ -360,7 +360,7 @@ textarea {
   line-height: 1.5; }
 
 textarea {
-  font-family: Georgia, serif;
+  font-family: "Libre Baskerville", Georgia, serif;
   max-width: 700px;
   margin-right: auto;
   margin-left: auto; }
@@ -376,7 +376,6 @@ p {
 
 .entry-content,
 .archive-description {
-  font-size: 1.2em;
   line-height: 1.6; }
 
 dfn, cite, em, i {
@@ -417,7 +416,7 @@ big {
 
 /* Posts & Pages */
 .site-title {
-  font-family: Georgia, serif;
+  font-family: "Libre Baskerville", Georgia, serif;
   font-size: 2em; }
 
 .post .entry-header h1, .post .entry-header .editor-post-title textarea, .editor-post-title .post .entry-header textarea, .post .entry-header h2, .post .entry-header h3, .post .entry-header h4, .post .entry-header h5, .post .entry-header h6,
@@ -429,11 +428,11 @@ big {
 .post .entry-content h4,
 .post .entry-content h5,
 .post .entry-content h6 {
-  font-family: Georgia, serif; }
+  font-family: "Libre Baskerville", Georgia, serif; }
 
 .post .entry-content,
 .post-content {
-  font-family: Georgia, serif; }
+  font-family: "Libre Baskerville", Georgia, serif; }
 
 .entry-footer {
   font-family: "Lato", sans-serif; }
@@ -464,18 +463,18 @@ big {
   color: #017680; }
 
 .comment-content {
-  font-family: Georgia, serif; }
+  font-family: "Libre Baskerville", Georgia, serif; }
 
 /* Front Page */
 .fp-post,
 .fp-post .entry-title,
 .fp-post .editor-post-title textarea, .editor-post-title
 .fp-post textarea {
-  font-family: Georgia, serif; }
+  font-family: "Libre Baskerville", Georgia, serif; }
 
 /* editor styles */
 .editor-post-title textarea {
-  font-family: Georgia, serif; }
+  font-family: "Libre Baskerville", Georgia, serif; }
 
 /* Gutenberg custom CSS */
 .weracoba-big,
@@ -725,7 +724,7 @@ a {
     flex-flow: row;
     justify-content: space-between; }
   .site-branding {
-    flex-shrink: 1; }
+    flex-shrink: 0; }
   .main-navigation {
     display: block;
     flex-shrink: 2;
@@ -872,7 +871,7 @@ a {
       line-height: 1.1em; }
       .main-navigation ul {
         display: flex;
-        justify-content: space-around; }
+        justify-content: flex-end; }
         .main-navigation ul ul {
           margin-left: 0;
           width: intrinsic;
@@ -890,7 +889,9 @@ a {
       .main-navigation a {
         letter-spacing: 0.025em; }
       .main-navigation li {
-        padding-left: 1.2em; } }
+        padding-left: 1.2em; }
+        .main-navigation li:first-child {
+          padding-left: 0; } }
 
 @media screen and (min-width: 767px) {
   .menu-toggle {
@@ -1627,40 +1628,25 @@ a {
 .home.page .entry-header {
   display: none; }
 
-.latest-post,
 .cat-blocks {
   display: flex;
   flex-flow: column;
   justify-content: space-around; }
-  .latest-post .entry-title, .latest-post .editor-post-title textarea, .editor-post-title .latest-post textarea,
-  .latest-post .cat-title,
-  .cat-blocks .entry-title,
-  .cat-blocks .editor-post-title textarea, .editor-post-title
-  .cat-blocks textarea,
+  .cat-blocks .entry-title, .cat-blocks .editor-post-title textarea, .editor-post-title .cat-blocks textarea,
   .cat-blocks .cat-title {
     font-size: 1.5em;
     text-align: center;
     margin: 0;
     color: #01b0bb; }
-    .latest-post .entry-title a:hover, .latest-post .editor-post-title textarea a:hover, .editor-post-title .latest-post textarea a:hover,
-    .latest-post .entry-title a:focus,
-    .latest-post .editor-post-title textarea a:focus, .editor-post-title
-    .latest-post textarea a:focus,
-    .latest-post .cat-title a:hover,
-    .latest-post .cat-title a:focus,
-    .cat-blocks .entry-title a:hover,
-    .cat-blocks .editor-post-title textarea a:hover, .editor-post-title
-    .cat-blocks textarea a:hover,
+    .cat-blocks .entry-title a:hover, .cat-blocks .editor-post-title textarea a:hover, .editor-post-title .cat-blocks textarea a:hover,
     .cat-blocks .entry-title a:focus,
     .cat-blocks .editor-post-title textarea a:focus, .editor-post-title
     .cat-blocks textarea a:focus,
     .cat-blocks .cat-title a:hover,
     .cat-blocks .cat-title a:focus {
       color: #017680; }
-  .latest-post p,
   .cat-blocks p {
     font-size: .9em; }
-    .latest-post p.wp-block-cover-image-text,
     .cat-blocks p.wp-block-cover-image-text {
       font-size: 1.2em; }
 
@@ -1671,16 +1657,13 @@ a {
   overflow: hidden;
   background: #e0e8e7; }
 
-.fp-post,
 .cat-block {
   position: relative;
-  background-size: cover;
-  background-position: center;
-  flex-direction: column;
   min-height: 20em;
   margin: 0;
-  height: 100%; }
-  .fp-post p,
+  height: 100%;
+  padding-bottom: 1px;
+  /* fixes the overlay link in Firefox */ }
   .cat-block p {
     margin-left: .5em;
     margin-right: .5em;
@@ -1689,36 +1672,11 @@ a {
     z-index: 1; }
 
 @media screen and (min-width: 767px) {
-  .latest-post,
   .cat-blocks {
     flex-flow: row;
     flex-wrap: wrap; }
   .cat-block-wrap {
     width: 30.79667%; } }
-
-.blog-link {
-  text-align: right;
-  font-size: 1.5em; }
-  .blog-link a {
-    padding: .2em 1em;
-    font-family: "Lato", sans-serif;
-    text-decoration: none;
-    border: 1px solid #c2cfcf;
-    border-radius: 23px;
-    color: #f7f7f1;
-    background: #017680;
-    display: block;
-    text-align: center; }
-    .blog-link a:hover, .blog-link a:focus {
-      background: #01b0bb; }
-    .blog-link a:after {
-      content: "❯"; }
-
-@media screen and (min-width: 767px) {
-  .blog-link {
-    margin-top: 1em; }
-    .blog-link a {
-      display: inline; } }
 
 .overlay-link {
   display: block;
@@ -1831,6 +1789,16 @@ object {
   margin-left: auto;
   margin-right: auto; }
 
+@media screen and (max-width: 767px) {
+  /* On small screens, display left and right alignments as if they were centered */
+  .alignleft,
+  .alignright {
+    float: none;
+    clear: both;
+    display: block;
+    margin-left: auto;
+    margin-right: auto; } }
+
 .centered-image {
   max-width: 100vw;
   margin: 0 -1em;
@@ -1905,48 +1873,5 @@ object {
   right: 50% !important;
   margin-left: -50vw !important;
   margin-right: -50vw !important; }
-
-/*
-.wp-block-cover-image {
-    margin-left: -1em;
-    margin-right: -1em;
-    width: initial;
-
-    @media screen and (min-width: 768px) {
-        margin-left: -2em;
-        margin-right: -2em;
-    }
-}
-
-.wide-cover-image {
-    position: relative;
-    background-size: cover;
-    background-position: 50%;
-    min-height: 430px;
-    width: 100vw;
-    margin: 0 -1em 1.5em -1em;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-
-    &:before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        background: linear-gradient(to bottom, rgba(255, 255, 255, 0),
-                                               rgba(255, 255, 255, 0),
-                                               rgba(255, 255, 255, 0),
-                                               rgba(255, 255, 255, 0),
-                                               rgba(255, 255, 255, 1) );
-    }
-
-    h1, span {
-        z-index: 1;
-    }
-}
-*/
 
 /*# sourceMappingURL=style.css.map */

@@ -7,7 +7,6 @@
     }
 }
 
-.latest-post,
 .cat-blocks {
     display: flex;
     flex-flow: column;
@@ -42,16 +41,12 @@
     background: $color-bg-header-alt;
 }
 
-.fp-post,
 .cat-block {
 	position: relative;
-    background-size: cover;
-    background-position: center;
-    flex-direction: column;
     min-height: 20em;
     margin: 0;
     height: 100%;
-    
+    padding-bottom: 1px; /* fixes the overlay link in Firefox */
     
     p {
         margin-left: .5em;
@@ -62,7 +57,6 @@
     }
 }
 @media screen and (min-width: $breakpoint-1) {
-    .latest-post,
     .cat-blocks {
         flex-flow: row;
         flex-wrap: wrap;
@@ -72,32 +66,8 @@
         @include column-width(3);
         //width: map-get( $columns, 3);
     }
-    .latest-post .fp-post,
+    
     .cat-blocks .cat-block {
-    }
-}
-
-.blog-link {
-    text-align: right;
-    font-size: 1.5em;
-
-    a {
-        @include button;
-        display: block;
-        text-align: center;
-        
-        &:after {
-            content: $glyph-arrow-next;
-        }
-    }
-}
-@media screen and (min-width: $breakpoint-1) {
-    .blog-link {
-        margin-top: 1em;
-
-        a {
-            display: inline;
-        }
     }
 }
 
