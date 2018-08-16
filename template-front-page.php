@@ -80,8 +80,39 @@ get_header();
             foreach ( $cats_raw as $key => $cat ) {
                 $cats[] = get_category($cat);
             }
+            foreach( $cats as $key => $cat ) :
+                $cat_query = new WP_Query( 
+                    array( 'cat' => $cat->term_id,
+                           'meta_query' => array( array( 'key' => '_thumbnail_id') ) 
+                         ) 
+                );
+                $cat_query->the_post();
+                $cat_link = esc_url( get_category_link( $cat->cat_ID ) );
+                ?>
+                <div class="cat-block-wrap">
+                    <div class="cat-block">
+                        <a class="overlay-link" href="<?php echo esc_url( get_category_link( $cat->cat_ID ) );?>"></a>
+                        <a href="<?php echo $cat_link; ?>">
+                            <?php the_post_thumbnail( 'weracoba-fp-thumb' ); ?>
+                        </a>
+                        <h5 class="cat-title wp-block-cover-image-text">
+                            <a href="<?php echo $cat_link; ?>">
+                                <?php echo esc_html__($cat->cat_name);?>
+                            </a>
+                        </h5>
+                        <?php
+                        if ( $cat->description ):?>
+                            <p>
+                                <?php echo esc_html__($cat->description);?>
+                            </p>
+                        <?php 
+                        endif; ?>
+                    </div>
+                </div>
+                <?php
+                wp_reset_postdata(); // reset the query
+            endforeach;
             ?>
-        <?php weracoba_cat_block( $cats ); ?>
         </div> <!-- .fp-blocks -->
 
 		</main><!-- #main -->

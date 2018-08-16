@@ -147,7 +147,7 @@
 
         ul {
             display: flex;
-            justify-content: space-around;
+            justify-content: flex-end;
 
             ul {
                 margin-left: 0;
@@ -178,6 +178,10 @@
         
         li {
             padding-left: 1.2em;
+            
+            &:first-child {
+                padding-left: 0;
+            }
         }
     }
 }
