@@ -26,19 +26,26 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Normalize
 # Typography
 # Elements
-# Forms
-# Navigation
-	## Links
-	## Menus
+    ## Forms
+    ## Links
+# Sections
+    ## Header
+    ## Footer
+    ## Navigation
+        ### Menus
+        ### Content Navigation
+    ## Widgets
 # Accessibility
 # Alignments
 # Clearings
-# Widgets
 # Content
 	## Posts and pages
+    ## Archives
 	## Comments
+    ## Front Page
 # Infinite scroll
 # Media
+    ## Alignments and Images
 	## Captions
 	## Galleries
 --------------------------------------------------------------*/
@@ -60,19 +67,9 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @import "sass/elements";
 
 /*--------------------------------------------------------------
-# Header
+# Sections
 --------------------------------------------------------------*/
-@import "sass/sections/header";
-
-/*--------------------------------------------------------------
-# Footer
---------------------------------------------------------------*/
-@import "sass/sections/footer";
-
-/*--------------------------------------------------------------
-# Navigation
---------------------------------------------------------------*/
-@import "sass/sections/navigation";
+@import "sass/sections/sections";
 
 /*--------------------------------------------------------------
 # Accessibility
@@ -85,14 +82,9 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @import "sass/modules/clearings";
 
 /*--------------------------------------------------------------
-# Widgets
---------------------------------------------------------------*/
-@import "sass/sections/widgets";
-
-/*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
-@import "sass/content/site";
+@import "sass/content/content";
 
 /*--------------------------------------------------------------
 # Infinite scroll
