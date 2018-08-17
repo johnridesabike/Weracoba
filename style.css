@@ -414,11 +414,20 @@ mark, ins {
 big {
   font-size: 125%; }
 
-/* Posts & Pages */
 .site-title {
   font-family: "Libre Baskerville", Georgia, serif;
-  font-size: 2em; }
+  font-size: 1.5em; }
+  @media screen and (min-width: 767px) {
+    .site-title {
+      font-size: 2em; } }
 
+.site-description {
+  font-size: .9em; }
+  @media screen and (min-width: 767px) {
+    .site-description {
+      font-size: 1em; } }
+
+/* Posts & Pages */
 .post .entry-header h1, .post .entry-header .editor-post-title textarea, .editor-post-title .post .entry-header textarea, .post .entry-header h2, .post .entry-header h3, .post .entry-header h4, .post .entry-header h5, .post .entry-header h6,
 .post .entry-content h1,
 .post .entry-content .editor-post-title textarea, .editor-post-title
@@ -672,7 +681,7 @@ a {
   .site-header .search-form {
     display: none;
     text-align: right; }
-    @media screen and (min-width: 1023px) {
+    @media screen and (min-width: 767px) {
       .site-header .search-form {
         display: block; } }
   .site-header .search-field {
@@ -686,29 +695,29 @@ a {
   margin-top: .5em; }
 
 .site-description {
-  margin: 0 1em .5em 1em; }
+  margin: 0 0 .5em 0; }
   .site-description a {
     color: #44484d; }
 
 .site-header-wrapper {
   display: flex;
   align-items: center;
-  flex-flow: column; }
+  flex-flow: column;
+  padding-left: 1em;
+  padding-right: 1em; }
 
 /* Header Media Queries */
 @media screen and (min-width: 767px) {
   .site-header {
     margin-bottom: 0;
     padding-top: .67em;
-    padding-bottom: .67em; }
+    padding-bottom: .67em; } }
+
+@media screen and (min-width: 767px) and (min-width: 1200px) {
   .site-header-wrapper {
-    padding-left: 1em;
-    padding-right: 1em; } }
-  @media screen and (min-width: 767px) and (min-width: 1200px) {
-    .site-header-wrapper {
-      max-width: 1200px;
-      margin-left: auto;
-      margin-right: auto; } }
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto; } }
 
 @media screen and (min-width: 767px) {
   .site-title {
@@ -716,7 +725,7 @@ a {
   .site-description {
     margin: 0; } }
 
-@media screen and (min-width: 1023px) {
+@media screen and (min-width: 767px) {
   .site-header {
     text-align: left; }
   .site-header-wrapper {
@@ -780,7 +789,6 @@ a {
     display: inline;
     text-transform: uppercase;
     font-size: 1em;
-    margin-right: 0.5em;
     padding: .2em 1em;
     font-family: "Lato", sans-serif;
     text-decoration: none;
@@ -1404,10 +1412,12 @@ a {
   flex-direction: column;
   justify-content: space-between; }
 
-.post .entry-content > *:not(.alignwide):not(.alignfull) {
-  max-width: 700px;
-  margin-right: auto;
-  margin-left: auto; }
+.post .entry-content {
+  margin-top: 1em; }
+  .post .entry-content > *:not(.alignwide):not(.alignfull) {
+    max-width: 700px;
+    margin-right: auto;
+    margin-left: auto; }
 
 @media screen and (min-width: 1023px) {
   .post-content {
@@ -1670,6 +1680,8 @@ a {
     font-size: 1.2em;
     color: #44484d;
     z-index: 1; }
+  .cat-block img {
+    width: 100%; }
 
 @media screen and (min-width: 767px) {
   .cat-blocks {

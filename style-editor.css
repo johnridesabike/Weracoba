@@ -60,7 +60,15 @@
     font-size: 125%; }
   .gutenberg-editor-page .edit-post-visual-editor .site-title {
     font-family: "Libre Baskerville", Georgia, serif;
-    font-size: 2em; }
+    font-size: 1.5em; }
+    @media screen and (min-width: 767px) {
+      .gutenberg-editor-page .edit-post-visual-editor .site-title {
+        font-size: 2em; } }
+  .gutenberg-editor-page .edit-post-visual-editor .site-description {
+    font-size: .9em; }
+    @media screen and (min-width: 767px) {
+      .gutenberg-editor-page .edit-post-visual-editor .site-description {
+        font-size: 1em; } }
   .gutenberg-editor-page .edit-post-visual-editor .post .entry-header h1, .gutenberg-editor-page .edit-post-visual-editor .post .entry-header .editor-post-title textarea, .gutenberg-editor-page .edit-post-visual-editor .editor-post-title .post .entry-header textarea, .gutenberg-editor-page .edit-post-visual-editor .post .entry-header h2, .gutenberg-editor-page .edit-post-visual-editor .post .entry-header h3, .gutenberg-editor-page .edit-post-visual-editor .post .entry-header h4, .gutenberg-editor-page .edit-post-visual-editor .post .entry-header h5, .gutenberg-editor-page .edit-post-visual-editor .post .entry-header h6,
   .gutenberg-editor-page .edit-post-visual-editor .post .entry-content h1, .gutenberg-editor-page .edit-post-visual-editor .post .entry-content .editor-post-title textarea, .gutenberg-editor-page .edit-post-visual-editor .editor-post-title .post .entry-content textarea,
   .gutenberg-editor-page .edit-post-visual-editor .post .entry-content h2,

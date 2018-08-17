@@ -11,7 +11,7 @@
         display: none;
         text-align: right;
 
-        @media screen and (min-width: $breakpoint-2) {
+        @media screen and (min-width: $breakpoint-1) {
             display: block;
         }
     }
@@ -30,7 +30,7 @@
     margin-top: .5em;
 }
 .site-description {
-    margin: 0 1em .5em 1em;
+    margin: 0 0 .5em 0;
     
     a {
         color: $color-text-secondary;
@@ -40,6 +40,8 @@
     display: flex;
     align-items: center;
     flex-flow: column;
+    padding-left: 1em;
+    padding-right: 1em;
 }
 
 /* Header Media Queries */
@@ -51,8 +53,6 @@
     }
     .site-header-wrapper {
         @include max-site-width;
-        padding-left: 1em;
-        padding-right: 1em;
     }
     .site-title{
         margin: 0;
@@ -61,7 +61,7 @@
         margin: 0;
     }
 }
-@media screen and (min-width: $breakpoint-2) {
+@media screen and (min-width: $breakpoint-1) {
     .site-header {
         text-align: left;
     }

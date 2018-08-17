@@ -16,7 +16,6 @@
         display: inline;
         text-transform: uppercase;
         font-size: 1em;
-        margin-right: 0.5em;
         @include button;
 
         &::before {
