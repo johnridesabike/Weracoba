@@ -72,13 +72,23 @@ mark, ins {
 big {
 	font-size: 125%;
 }
-
-/* Posts & Pages */
-
 .site-title {
     font-family: $font-reading;
-    font-size: 2em;
+    font-size: 1.5em;
+    
+    @media screen and (min-width: $breakpoint-1) {
+        font-size: 2em;
+    }
 }
+.site-description {
+    font-size: .8em;
+    
+    @media screen and (min-width: $breakpoint-1) {
+        font-size: 1em;
+    }
+}
+
+/* Posts & Pages */
 
 .post {
     .entry-header,
