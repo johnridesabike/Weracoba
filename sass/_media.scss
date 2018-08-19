@@ -63,11 +63,10 @@ object {
 
 /* Single Post Featured Images */
 
-.featured-image {
+%featured-image {
     position: relative;
     background-size: cover;
     background-position: 50%;
-    height: 16em;
     
     img {
         position: absolute;
@@ -77,6 +76,11 @@ object {
     a {
         @include link-overlay;
     }
+}
+
+.single .featured-image {
+    @extend %featured-image;
+    height: 16em;
     
     &.full-bleed {
         margin: 0 -1em;
@@ -96,6 +100,21 @@ object {
         position: static;
         width: 765px;
         margin: 0;
+    }
+}
+
+/* Archive view featured images */
+
+.archive-view .featured-image {
+    @extend %featured-image;
+    height: 8em;
+    margin: 0;
+
+    @media screen and (min-width: $breakpoint-1) {
+        width: 33%;
+        flex-shrink: 0;
+        height: auto;
+        margin-right: 1em;
     }
 }
 

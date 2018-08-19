@@ -1,6 +1,7 @@
 .edit-post-visual-editor {
   /* Posts & Pages */
   /* comments */
+  /* Archive view */
   /* Front Page */
   /* editor styles */
   /* Gutenberg custom CSS */ }
@@ -104,6 +105,12 @@
     color: #017680; }
   .edit-post-visual-editor .comment-content {
     font-family: "Libre Baskerville", Georgia, serif; }
+  .edit-post-visual-editor .archive-view .entry-title, .edit-post-visual-editor .archive-view .editor-post-title textarea, .edit-post-visual-editor .editor-post-title .archive-view textarea {
+    font-size: 1.4em; }
+  .edit-post-visual-editor .archive-view .cat-links {
+    font-size: 1.1em; }
+  .edit-post-visual-editor .archive-view .entry-content {
+    font-size: .9em; }
   .edit-post-visual-editor .fp-post,
   .edit-post-visual-editor .fp-post .entry-title, .edit-post-visual-editor .fp-post .editor-post-title textarea, .edit-post-visual-editor .editor-post-title .fp-post textarea {
     font-family: "Libre Baskerville", Georgia, serif; }

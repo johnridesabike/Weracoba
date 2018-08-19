@@ -141,6 +141,20 @@ big {
     font-family: $font-reading;
 }
 
+/* Archive view */
+.archive-view {
+    .entry-title {
+        font-size: 1.4em;
+    }
+    .cat-links {
+        font-size: 1.1em;
+    }
+
+    .entry-content {
+        font-size: .9em;
+    }
+}
+
 /* Front Page */
 
 .fp-post,

@@ -74,8 +74,7 @@
     }
 }
 
-
-.entry-footer {
+.single .entry-footer {
     border-top: 1px solid $color-border;
     padding-top: 1em;
 }
@@ -89,7 +88,7 @@
     flex-direction: column;
     justify-content: space-between;
 }
-.post .entry-content {
+.single .post .entry-content {
     margin-top: 1em;
     
     & > *:not(.alignwide):not(.alignfull) {
