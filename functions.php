@@ -196,6 +196,13 @@ function weracoba_editor_styles() {
 
 add_action( 'enqueue_block_editor_assets', 'weracoba_editor_styles' );
 
+/**
+ *
+ */
+function custom_excerpt_more( $more ) {
+	return '... <a href="' . esc_url( get_permalink() ) . '" rel="bookmark" class="excerpt-more">' . __( 'read more', 'weracoba' ) . '</a>';
+}
+add_filter( 'excerpt_more', 'custom_excerpt_more' );
 
 /**
  * Implement the Custom Header feature.

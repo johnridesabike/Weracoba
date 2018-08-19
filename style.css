@@ -1479,8 +1479,11 @@ a {
 .archive-view .page {
   position: relative;
   border-bottom: 1px solid #c2cfcf;
-  padding-bottom: 1em;
-  margin-bottom: 3em; }
+  padding-bottom: 2em;
+  margin-bottom: 2em; }
+  .archive-view .post:last-child,
+  .archive-view .page:last-child {
+    border: 0; }
 
 .archive-view .entry-meta {
   padding-top: 1em;
@@ -1533,6 +1536,11 @@ a {
       background: #01b0bb; }
     .continue-reading a:after {
       content: "❯"; }
+
+.excerpt-more {
+  font-style: oblique; }
+  .excerpt-more:after {
+    content: "❯"; }
 
 /*--------------------------------------------------------------
 ## Comments
