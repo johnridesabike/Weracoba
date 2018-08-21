@@ -1,4 +1,8 @@
 .archive-view {
+	.site-main .page-header {
+		width: 100%;
+		flex: 1 0 100%;
+	}
     .site-content {
         @include max-site-width;
         margin-top: 1em;
@@ -14,13 +18,33 @@
         position: relative;
         border-bottom: 1px solid $color-border;
         padding-bottom: 2em;
-        margin-bottom: 3em;
-        @include max-content-width;
-    }
+        margin-bottom: 2em;
 
+        &:last-child {
+            border: 0;
+        }
+    }
+    .entry-meta {
+        @include entry-meta-inline;
+        padding-top: 0;
+        margin: 0 0 .5em 0;
+        min-height: 0;
+    }
     @media screen and (min-width: $breakpoint-1) {
         .entry-meta {
-            @include entry-meta-inline;
+            //@include entry-meta-inline;
+        }
+        .entry-footer {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .post,
+        .page {
+            display: flex;
+            flex-direction: row;
         }
     }
     
@@ -30,19 +54,14 @@
             justify-content: space-between;
         }
     }
-	.site-main .page-header {
-		width: 100%;
-		flex: 1 0 100%;
-	}
 }
 .archive-description {
     border-bottom: 1px solid $color-border;
     margin-bottom: 1em;
 }
 .continue-reading {
-	right: 5px;
-	bottom: .5em;
     text-align: center;
+    flex-shrink: 0;
 
     a {
         display: block;
@@ -52,8 +71,34 @@
             content: $glyph-arrow-next;
         }
     }
+}
 
-    @media screen and (min-width: $breakpoint-1) {
-        position: absolute;
+.excerpt-more {
+    display: inline-block;
+    font-family: $font-UI;
+    font-size: 1rem;
+
+    &:after {
+        content: " " + $glyph-arrow-next;
+        vertical-align: middle;
+    }
+}
+
+.archive-cat-list {
+    list-style: none;
+    .categories > ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        font-size: 1.1em;
+
+        > li {
+            width: $size-widget;
+            margin: 0 1em 0 1em;
+        }
+
+        li ul {
+            font-size: .8em;
+        }
     }
 }

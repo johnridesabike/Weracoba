@@ -42,37 +42,6 @@ get_header();
 		endwhile; // End of the loop.
         ?>
         <!-- end content-page.php -->
-        <?php /*    
-        <div class="fp-blocks">
-        <?php 
-        $categories = get_categories(); 
-        foreach( $categories as $key => $value ) :
-            $cat_query = new WP_Query( array( 'cat' => $value->term_id,
-                                              'meta_query' => array( array( 'key' => '_thumbnail_id') ) ) );
-            $cat_query->the_post();
-            $cat_link = esc_url( get_category_link( $value->cat_ID ) );
-            ?>
-            <div class="fp-block-wrap">
-                <div class="fp-block wp-block-cover-image has-background-dim" style="background-image: url(<?php the_post_thumbnail_url( 'weracoba-fp-thumb' ); ?>);">
-                <a class="overlay-link" href="<?php echo esc_url( get_category_link( $value->cat_ID ) );?>"></a>
-                    <h5 class="cat-title wp-block-cover-image-text">
-                        <a href="<?php echo esc_url( get_category_link( $value->cat_ID ) );?>">
-                            <?php echo esc_html__($value->cat_name);?>
-                        </a>
-                    </h5>
-                    <?php
-                    if ( $value->description ):?>
-                        <p class="wp-block-cover-image-text">
-                            <?php echo esc_html__($value->description);?>
-                        </p>
-                    <?php 
-                    endif; ?>
-                </div>
-            </div>
-            <?php
-            wp_reset_postdata(); // reset the query
-        endforeach; ?>
-        </div> <!-- .fp-blocks -->*/?>
         <div class="cat-blocks">
             <?php 
             $cats_raw = explode( ',' , get_theme_mod('fp_cats') );
@@ -92,10 +61,18 @@ get_header();
                 <div class="cat-block-wrap">
                     <div class="cat-block">
                         <a class="overlay-link" href="<?php echo esc_url( get_category_link( $cat->cat_ID ) );?>"></a>
-                        <a href="<?php echo $cat_link; ?>">
-                            <?php the_post_thumbnail( 'weracoba-fp-thumb' ); ?>
-                        </a>
-                        <h5 class="cat-title wp-block-cover-image-text">
+                        <figure class="featured-image">
+                            <a class="post-thumbnail" href="<?php echo $cat_link; ?>" aria-hidden="true" tabindex="-1">
+                                <?php
+                                the_post_thumbnail( 'post-thumbnail', array(
+                                    'alt' => the_title_attribute( array(
+                                        'echo' => false,
+                                    ) ),
+                                ) );
+                                ?>
+                            </a>
+                        </figure>
+                        <h5 class="cat-title">
                             <a href="<?php echo $cat_link; ?>">
                                 <?php echo esc_html__($cat->cat_name);?>
                             </a>
