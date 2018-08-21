@@ -105,16 +105,38 @@ object {
 
 /* Archive view featured images */
 
-.archive-view .featured-image {
-    @extend %featured-image;
-    height: 8em;
+.featured-image {
+    position: relative;
     margin: 0;
 
-    @media screen and (min-width: $breakpoint-1) {
+    .post-thumbnail {
+        display: block;
+        line-height: 0;
+
+        &:hover,
+        &:focus {
+            &:before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                background: $color-link-hover;
+                opacity: .25;
+            }
+        }
+    }
+}
+@media screen and (min-width: $breakpoint-1) {
+    .archive-view .featured-image {
         width: 33%;
         flex-shrink: 0;
-        height: auto;
         margin-right: 1em;
+
+        .post-thumbnail {
+            position: absolute; /* this fixes a visual quirk that keeps the link from overflowing */
+        }
     }
 }
 

@@ -60,8 +60,6 @@
     margin-bottom: 1em;
 }
 .continue-reading {
-	//right: 5px;
-	//bottom: .5em;
     text-align: center;
     flex-shrink: 0;
 
@@ -73,16 +71,15 @@
             content: $glyph-arrow-next;
         }
     }
-
-    @media screen and (min-width: $breakpoint-1) {
-        //position: absolute;
-    }
 }
 
 .excerpt-more {
-    font-style: oblique;
+    display: inline-block;
+    font-family: $font-UI;
+    font-size: 1rem;
 
     &:after {
-        content: $glyph-arrow-next;
+        content: " " + $glyph-arrow-next;
+        vertical-align: middle;
     }
 }

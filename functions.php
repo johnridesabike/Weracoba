@@ -41,8 +41,9 @@ if ( ! function_exists( 'weracoba_setup' ) ) :
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */
 		add_theme_support( 'post-thumbnails' );
-        add_image_size( 'weracoba-index-image', 500, 220, true );
-        add_image_size( 'weracoba-fp-thumb', 480, 270, true );
+        set_post_thumbnail_size( 640, 480, true); // 320 x 240, times 2 for retina displays
+        //add_image_size( 'weracoba-index-image', 500, 220, true );
+        //add_image_size( 'weracoba-fp-thumb', 480, 270, true );
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
@@ -173,7 +174,8 @@ add_action( 'widgets_init', 'weracoba_widgets_init' );
 function weracoba_scripts() {
 	wp_enqueue_style( 'weracoba-style', get_stylesheet_uri() );
 
-    wp_enqueue_style( 'google-fonts', "https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700,700i|Lato");
+    // I decided to avoid Google and use web-safe fonts instead.
+    //wp_enqueue_style( 'google-fonts', "https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700,700i|Lato");
 
 	wp_enqueue_script( 'weracoba-functions', get_template_directory_uri() . '/js/functions.js', array('jquery'), '20180711', true );
 

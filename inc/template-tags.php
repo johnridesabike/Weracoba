@@ -86,14 +86,13 @@ if ( ! function_exists( 'weracoba_post_thumbnail' ) ) :
 		}
 
 		if ( is_singular() && ! is_front_page() ) : ?>
-            <figure class="full-bleed featured-image" style="background-image: url( <?php the_post_thumbnail_url(); ?>)">
+            <figure class="full-bleed featured-image" style="background-image: url( <?php the_post_thumbnail_url( 'full' ); ?>)">
                 <div class="post-thumbnail">
-                    <?php the_post_thumbnail(); ?>
+                    <?php the_post_thumbnail( 'full' ); ?>
                 </div><!-- .post-thumbnail -->
             </figure> <!--.full-bleed .featured-image -->
 		<?php else : ?>
-
-        <figure class="featured-image" style="background-image: url( <?php the_post_thumbnail_url(); ?>)">
+        <figure class="featured-image">
             <a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
                 <?php
                 the_post_thumbnail( 'post-thumbnail', array(

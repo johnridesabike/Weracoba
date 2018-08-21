@@ -9,20 +9,15 @@
 
 .cat-blocks {
     display: flex;
-    flex-flow: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    flex-flow: row;
+    flex-wrap: wrap;
 
     .entry-title,
     .cat-title {
         font-size: 1.5em;
         text-align: center;
         margin: 0;
-        color: $color-link-hover;
-        
-        a:hover,
-        a:focus {
-            color: $color-tint;
-        }
     }
 
     p {
@@ -36,9 +31,10 @@
 .cat-block-wrap {
     border: 1px solid $color-border;
     border-radius: 5px;
-    margin-bottom: 1.5em;
+    margin: 0 .5em 1.5em .5em;
     overflow:hidden;
     background: $color-bg-header-alt;
+    max-width: 320px;
 }
 
 .cat-block {
@@ -58,20 +54,6 @@
     
     img {
         width: 100%;
-    }
-}
-@media screen and (min-width: $breakpoint-1) {
-    .cat-blocks {
-        flex-flow: row;
-        flex-wrap: wrap;
-    }
-    
-    .cat-block-wrap {
-        @include column-width(3);
-        //width: map-get( $columns, 3);
-    }
-    
-    .cat-blocks .cat-block {
     }
 }
 

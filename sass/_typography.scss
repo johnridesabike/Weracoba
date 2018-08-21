@@ -73,11 +73,11 @@ big {
 	font-size: 125%;
 }
 .site-title {
-    font-family: $font-reading;
-    font-size: 1.5em;
+    font-family: $font-site-title;
+    font-size: 1.9em;
     
     @media screen and (min-width: $breakpoint-1) {
-        font-size: 2em;
+        font-size: 2.3em;
     }
 }
 .site-description {
@@ -98,9 +98,9 @@ big {
         }
     }
 }
-.post .entry-content, 
-.post-content {
+.post .entry-content {
     font-family: $font-reading;
+    font-size: $font-reading-size;
 }
 .entry-footer {
     font-family: $font-UI;
@@ -116,17 +116,18 @@ big {
     line-height: 1.2em;
 
     @media screen and (min-width: $breakpoint-1){
-        font-size: 2.5em;
+        font-size: 2.7em;
     }
 }
-
+@media screen and (min-width: $breakpoint-1) {
+    .entry-meta {
+        font-size: 1em;
+    }
+}
 @media screen and (min-width: $breakpoint-3) {
     .single .post .entry-title
     .page-title {
         font-size: 2.5em;
-    }
-    .entry-meta {
-        font-size: 1em;
     }
 }
 
@@ -144,14 +145,14 @@ big {
 /* Archive view */
 .archive-view {
     .entry-title {
-        font-size: 1.4em;
+        font-size: 1.8em;
     }
     .cat-links {
-        font-size: 1.1em;
+        font-size: 1em;
     }
 
     .entry-content {
-        font-size: .9em;
+        font-size: 1.2em;
     }
 }
 

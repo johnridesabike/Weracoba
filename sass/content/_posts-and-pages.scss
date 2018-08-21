@@ -88,11 +88,12 @@
     flex-direction: column;
     justify-content: space-between;
 }
-.single .post .entry-content {
-    margin-top: 1em;
-    
-    & > *:not(.alignwide):not(.alignfull) {
-        @include max-content-width;
+.single .post .entry-content > *:not(.alignwide):not(.alignfull) {
+    @include max-content-width;
+}
+@media screen and (min-width: $breakpoint-1) {
+    .single .post .entry-content {
+        margin-top: 1em;
     }
 }
 @media screen and (min-width: $breakpoint-2) {

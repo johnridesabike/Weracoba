@@ -12,18 +12,18 @@
   .edit-post-visual-editor optgroup,
   .edit-post-visual-editor textarea {
     color: #2f2f30;
-    font-family: "Lato", sans-serif;
+    font-family: Helvetica, Tahoma, sans-serif;
     font-size: 16px;
     font-size: 1rem;
     line-height: 1.5; }
   .edit-post-visual-editor textarea {
-    font-family: "Libre Baskerville", Georgia, serif;
+    font-family: Times, "Times New Roman", serif;
     max-width: 700px;
     margin-right: auto;
     margin-left: auto; }
   .edit-post-visual-editor h1, .edit-post-visual-editor .editor-post-title textarea, .edit-post-visual-editor h2, .edit-post-visual-editor h3, .edit-post-visual-editor h4, .edit-post-visual-editor h5, .edit-post-visual-editor h6 {
     clear: both;
-    font-family: "Lato", sans-serif;
+    font-family: Helvetica, Tahoma, sans-serif;
     color: #017680;
     font-weight: normal; }
   .edit-post-visual-editor p {
@@ -60,11 +60,11 @@
   .edit-post-visual-editor big {
     font-size: 125%; }
   .edit-post-visual-editor .site-title {
-    font-family: "Libre Baskerville", Georgia, serif;
-    font-size: 1.5em; }
+    font-family: Baskerville, Times, "Times New Roman", serif;
+    font-size: 1.9em; }
     @media screen and (min-width: 735px) {
       .edit-post-visual-editor .site-title {
-        font-size: 2em; } }
+        font-size: 2.3em; } }
   .edit-post-visual-editor .site-description {
     font-size: .8em; }
     @media screen and (min-width: 735px) {
@@ -77,12 +77,12 @@
   .edit-post-visual-editor .post .entry-content h4,
   .edit-post-visual-editor .post .entry-content h5,
   .edit-post-visual-editor .post .entry-content h6 {
-    font-family: "Libre Baskerville", Georgia, serif; }
-  .edit-post-visual-editor .post .entry-content,
-  .edit-post-visual-editor .post-content {
-    font-family: "Libre Baskerville", Georgia, serif; }
+    font-family: Times, "Times New Roman", serif; }
+  .edit-post-visual-editor .post .entry-content {
+    font-family: Times, "Times New Roman", serif;
+    font-size: 1.3em; }
   .edit-post-visual-editor .entry-footer {
-    font-family: "Lato", sans-serif; }
+    font-family: Helvetica, Tahoma, sans-serif; }
   .edit-post-visual-editor .entry-meta,
   .edit-post-visual-editor .comment-meta {
     font-size: 0.9em; }
@@ -93,29 +93,30 @@
     @media screen and (min-width: 735px) {
       .edit-post-visual-editor .entry-title, .edit-post-visual-editor .editor-post-title textarea,
       .edit-post-visual-editor .page-title {
-        font-size: 2.5em; } }
-  @media screen and (min-width: 1365px) {
-    .edit-post-visual-editor .single .post .entry-title .page-title, .edit-post-visual-editor .single .post .editor-post-title textarea .page-title, .edit-post-visual-editor .editor-post-title .single .post textarea .page-title {
-      font-size: 2.5em; }
+        font-size: 2.7em; } }
+  @media screen and (min-width: 735px) {
     .edit-post-visual-editor .entry-meta {
       font-size: 1em; } }
+  @media screen and (min-width: 1365px) {
+    .edit-post-visual-editor .single .post .entry-title .page-title, .edit-post-visual-editor .single .post .editor-post-title textarea .page-title, .edit-post-visual-editor .editor-post-title .single .post textarea .page-title {
+      font-size: 2.5em; } }
   .edit-post-visual-editor .comments-title {
     font-size: 2em;
     font-weight: normal;
     color: #017680; }
   .edit-post-visual-editor .comment-content {
-    font-family: "Libre Baskerville", Georgia, serif; }
+    font-family: Times, "Times New Roman", serif; }
   .edit-post-visual-editor .archive-view .entry-title, .edit-post-visual-editor .archive-view .editor-post-title textarea, .edit-post-visual-editor .editor-post-title .archive-view textarea {
-    font-size: 1.4em; }
+    font-size: 1.8em; }
   .edit-post-visual-editor .archive-view .cat-links {
-    font-size: 1.1em; }
+    font-size: 1em; }
   .edit-post-visual-editor .archive-view .entry-content {
-    font-size: .9em; }
+    font-size: 1.2em; }
   .edit-post-visual-editor .fp-post,
   .edit-post-visual-editor .fp-post .entry-title, .edit-post-visual-editor .fp-post .editor-post-title textarea, .edit-post-visual-editor .editor-post-title .fp-post textarea {
-    font-family: "Libre Baskerville", Georgia, serif; }
+    font-family: Times, "Times New Roman", serif; }
   .edit-post-visual-editor .editor-post-title textarea {
-    font-family: "Libre Baskerville", Georgia, serif; }
+    font-family: Times, "Times New Roman", serif; }
   .edit-post-visual-editor .weracoba-big,
   .edit-post-visual-editor p.wp-block-subhead {
     font-size: 1.25em;
@@ -127,14 +128,14 @@
       .edit-post-visual-editor p.wp-block-subhead {
         font-size: 1.75em; } }
   .edit-post-visual-editor .wp-block-cover-image .wp-block-cover-image-text {
-    font-family: "Lato", sans-serif;
+    font-family: Helvetica, Tahoma, sans-serif;
     color: #f7f7f1; }
     @media screen and (min-width: 1365px) {
       .edit-post-visual-editor .wp-block-cover-image .wp-block-cover-image-text {
         font-size: 2.75em; } }
   .edit-post-visual-editor .wp-block-button .wp-block-button__link {
     padding: .6em 1.4em;
-    font-family: "Lato", sans-serif;
+    font-family: Helvetica, Tahoma, sans-serif;
     text-decoration: none;
     border: 1px solid #c2cfcf; }
     .edit-post-visual-editor .wp-block-button .wp-block-button__link:not(.has-text-color) {
