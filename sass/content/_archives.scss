@@ -83,3 +83,22 @@
         vertical-align: middle;
     }
 }
+
+.archive-cat-list {
+    list-style: none;
+    .categories > ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        font-size: 1.1em;
+
+        > li {
+            width: $size-widget;
+            margin: 0 1em 0 1em;
+        }
+
+        li ul {
+            font-size: .8em;
+        }
+    }
+}

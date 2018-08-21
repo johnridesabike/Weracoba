@@ -25,7 +25,8 @@
 
             ul,
             ol {
-	           margin-left: .5em;
+                margin-left: .5em;
+                font-size: .9em;
             }
         }
     }
@@ -76,11 +77,15 @@
     .sub-menu {
         padding-top: 0;
         padding-bottom: .5em;
+
+        a:before {
+            content: $glyph-arrow-down-right + " ";
+        }
     }
 
     a {
         display: block;
-        padding: 1em 0;
+        padding: .75em 0;
         text-decoration: none;
         border-bottom: 1px dashed $color-border;
 
@@ -216,7 +221,7 @@
     
     .post-widgets {
         &.widget-area {
-            max-width: 200px;
+            max-width: $size-widget;
         }
         .widget {
             width: 100%;
@@ -226,13 +231,13 @@
     .archive-widgets {
         &.widget-area {
             margin-left: 2em;
-            max-width: 200px;
+            max-width: $size-widget;
         }
         .widget_search {
             flex: initial;
         }
         .widget {
-            width: 200px;
+            width: $size-widget;
         }
     }
 }

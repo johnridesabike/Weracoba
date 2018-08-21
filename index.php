@@ -25,6 +25,12 @@ get_header();
 				?>
 				<header>
 					<h1 class="page-title"><?php single_post_title(); ?></h1>
+                    <ul class="archive-cat-list widget widget_categories">
+                        <?php wp_list_categories( array(
+                                'title_li' => __("The Archive is a chronological list of all the content from ") . get_bloginfo('name') . __(". You can also explore a specific category:"),
+                                'orderby' => 'count'
+                                ) ); ?>
+                    </ul>
 				</header>
 				<?php
 			endif;

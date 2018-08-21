@@ -41,6 +41,7 @@ $font-code: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 $glyph-arrow-down: "\25BC";
 $glyph-arrow-up: "\25B2";
 $glyph-arrow-next: "\276F";
+$glyph-arrow-down-right: "\21B3";
 
 // Breakpoints 
 $breakpoint-1: 735px; // big phone landscape
@@ -51,6 +52,7 @@ $breakpoint-3: 1365px; // iPad pro landscape
 $size-max-width: 1200px;
 $size-content: 700px;
 $size-content-page: 900px;
+$size-widget: 200px;
 
 // Columns
 $columns: (
