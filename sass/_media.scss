@@ -106,28 +106,34 @@ object {
 /* Archive view featured images */
 
 .featured-image {
-    position: relative;
     margin: 0;
+}
+
+.archive-view .featured-image {
+    position: relative;
 
     .post-thumbnail {
         display: block;
         line-height: 0;
 
+        &:before {
+            content: "";
+            @include link-overlay;
+        }
+
         &:hover,
         &:focus {
             &:before {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                bottom: 0;
-                right: 0;
-                background: $color-link-hover;
-                opacity: .25;
+                opacity: $opacity-overlay;
             }
         }
     }
+
+    img {
+        width: 100%; // fix for IE11
+    }
 }
+
 @media screen and (min-width: $breakpoint-1) {
     .archive-view .featured-image {
         width: 33%;

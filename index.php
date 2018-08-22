@@ -28,7 +28,8 @@ get_header();
                     <ul class="archive-cat-list widget widget_categories">
                         <?php wp_list_categories( array(
                                 'title_li' => __("The Archive is a chronological list of all the content from ") . get_bloginfo('name') . __(". You can also explore a specific category:"),
-                                'orderby' => 'count'
+                                'orderby' => 'count',
+                                'order' => 'DESC'
                                 ) ); ?>
                     </ul>
 				</header>

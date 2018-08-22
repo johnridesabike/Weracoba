@@ -1,3 +1,36 @@
+/**
+ * Calculates numbers to the mathmatical power (exponent)
+ *
+ * @since	1.0.0
+ * @link https://jeremyhixon.com/golden-ratio-typography-in-sass/
+ *
+ * @param	int		$number		The number to increase
+ * @param	int		$exponent	The power to increase the number by
+ *
+ * @return	int					The new number
+ */
+/**
+ * Removes units from values for easier modification
+ *
+ * @since	1.0.0
+ * @link https://jeremyhixon.com/golden-ratio-typography-in-sass/
+ *
+ * @param	int		$number		The number to strip units from
+ *
+ * @return	int					The number without the unit
+ */
+/**
+ * Calculates the line height based on multiple parameters
+ *
+ * @since	1.0.0
+ * @link https://jeremyhixon.com/golden-ratio-typography-in-sass/
+ *
+ * @param	int		$font-size			The font size
+ * @param	int		$content-width		The width of the content area
+ * @param	int		$ratio				The ratio. Default 1.61803398875 (golden ratio)
+ *
+ * @return	int							The calculated line height
+ */
 .edit-post-visual-editor {
   /* Posts & Pages */
   /* comments */
@@ -28,9 +61,6 @@
     font-weight: normal; }
   .edit-post-visual-editor p {
     margin-bottom: 1em; }
-  .edit-post-visual-editor .entry-content,
-  .edit-post-visual-editor .archive-description {
-    line-height: 1.6; }
   .edit-post-visual-editor dfn, .edit-post-visual-editor cite, .edit-post-visual-editor em, .edit-post-visual-editor i {
     font-style: italic; }
   .edit-post-visual-editor blockquote {
@@ -60,7 +90,7 @@
   .edit-post-visual-editor big {
     font-size: 125%; }
   .edit-post-visual-editor .site-title {
-    font-family: Baskerville, Times, "Times New Roman", serif;
+    font-family: Baskerville, Garamond, Times, "Times New Roman", serif;
     font-size: 1.9em; }
     @media screen and (min-width: 735px) {
       .edit-post-visual-editor .site-title {
@@ -80,7 +110,8 @@
     font-family: Times, "Times New Roman", serif; }
   .edit-post-visual-editor .post .entry-content {
     font-family: Times, "Times New Roman", serif;
-    font-size: 1.3em; }
+    font-size: 19px;
+    line-height: 1.53789; }
   .edit-post-visual-editor .entry-footer {
     font-family: Helvetica, Tahoma, sans-serif; }
   .edit-post-visual-editor .entry-meta,

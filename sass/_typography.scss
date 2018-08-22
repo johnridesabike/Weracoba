@@ -26,11 +26,6 @@ p {
 	margin-bottom: 1em;
 }
 
-.entry-content,
-.archive-description {
-    line-height: 1.6;
-}
-
 dfn, cite, em, i {
 	font-style: italic;
 }
@@ -101,6 +96,7 @@ big {
 .post .entry-content {
     font-family: $font-reading;
     font-size: $font-reading-size;
+    line-height: calculate-line-height($font-reading-size, $size-content);
 }
 .entry-footer {
     font-family: $font-UI;
