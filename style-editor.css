@@ -35,6 +35,7 @@
   /* Posts & Pages */
   /* comments */
   /* Archive view */
+  /* Widgets */
   /* Front Page */
   /* editor styles */
   /* Gutenberg custom CSS */ }
@@ -48,7 +49,7 @@
     font-family: Helvetica, Tahoma, sans-serif;
     font-size: 16px;
     font-size: 1rem;
-    line-height: 1.5; }
+    line-height: 1.63177; }
   .edit-post-visual-editor textarea {
     font-family: Times, "Times New Roman", serif;
     max-width: 700px;
@@ -112,6 +113,8 @@
     font-family: Times, "Times New Roman", serif;
     font-size: 19px;
     line-height: 1.53789; }
+  .edit-post-visual-editor .page .entry-content {
+    line-height: 1.72398; }
   .edit-post-visual-editor .entry-footer {
     font-family: Helvetica, Tahoma, sans-serif; }
   .edit-post-visual-editor .entry-meta,
@@ -143,6 +146,8 @@
     font-size: 1em; }
   .edit-post-visual-editor .archive-view .entry-content {
     font-size: 1.2em; }
+  .edit-post-visual-editor .widget {
+    line-height: 1.40123; }
   .edit-post-visual-editor .fp-post,
   .edit-post-visual-editor .fp-post .entry-title, .edit-post-visual-editor .fp-post .editor-post-title textarea, .edit-post-visual-editor .editor-post-title .fp-post textarea {
     font-family: Times, "Times New Roman", serif; }

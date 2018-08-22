@@ -397,7 +397,7 @@ textarea {
   font-family: Helvetica, Tahoma, sans-serif;
   font-size: 16px;
   font-size: 1rem;
-  line-height: 1.5; }
+  line-height: 1.63177; }
 
 textarea {
   font-family: Times, "Times New Roman", serif;
@@ -480,6 +480,9 @@ big {
   font-size: 19px;
   line-height: 1.53789; }
 
+.page .entry-content {
+  line-height: 1.72398; }
+
 .entry-footer {
   font-family: Helvetica, Tahoma, sans-serif; }
 
@@ -522,6 +525,10 @@ big {
 
 .archive-view .entry-content {
   font-size: 1.2em; }
+
+/* Widgets */
+.widget {
+  line-height: 1.40123; }
 
 /* Front Page */
 .fp-post,
