@@ -151,7 +151,18 @@ $columns-margin: 3.8%;
 // Column width with margin
 @mixin column-width($numberColumns: 3) {
 	width: map-get( $columns, $numberColumns ) - ( ( $columns-margin * ( $numberColumns - 1 ) ) / $numberColumns );
-	//flex: 1 1 map-get( $columns, $numberColumns ) - ( ( $columns-margin * ( $numberColumns - 1 ) ) / $numberColumns );
+}
+
+@mixin widget-columns {
+    @include column-width(1);
+    margin-right: $columns-margin;
+
+    @media screen and (min-width: $breakpoint-1) {
+        @include column-width(3);
+        &:nth-child(3n+3) {
+            margin-right: 0;
+        }
+    }
 }
 
 // Buttons
