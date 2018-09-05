@@ -38,7 +38,7 @@
                 <?php
                 $read_more_link = sprintf(
                     /* translators: %s: Name of current post. Only visible to screen readers */
-                    wp_kses( __( 'Open %s', 'weracoba' ), array( 'span' => array( 'class' => array() ) ) ),
+                    wp_kses( __( 'View %s', 'weracoba' ), array( 'span' => array( 'class' => array() ) ) ),
                     the_title( '<span class="screen-reader-text">"', '"</span>', false)
                 );
                  ?>

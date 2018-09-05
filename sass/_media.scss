@@ -82,6 +82,17 @@ object {
     @extend %featured-image;
     height: 16em;
     
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+
+    figcaption {
+        background: rgba(0, 0, 0, .5);
+        color: $color-text-light;
+        padding: .2em .5em;
+        font-size: .9em;
+    }
+
     &.full-bleed {
         margin: 0 -1em;
         
@@ -106,28 +117,34 @@ object {
 /* Archive view featured images */
 
 .featured-image {
-    position: relative;
     margin: 0;
+}
+
+.archive-view .featured-image {
+    position: relative;
 
     .post-thumbnail {
         display: block;
         line-height: 0;
 
+        &:before {
+            content: "";
+            @include link-overlay;
+        }
+
         &:hover,
         &:focus {
             &:before {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                bottom: 0;
-                right: 0;
-                background: $color-link-hover;
-                opacity: .25;
+                opacity: $opacity-overlay;
             }
         }
     }
+
+    img {
+        width: 100%; // fix for IE11
+    }
 }
+
 @media screen and (min-width: $breakpoint-1) {
     .archive-view .featured-image {
         width: 33%;

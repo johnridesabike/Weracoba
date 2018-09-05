@@ -90,6 +90,11 @@ if ( ! function_exists( 'weracoba_post_thumbnail' ) ) :
                 <div class="post-thumbnail">
                     <?php the_post_thumbnail( 'full' ); ?>
                 </div><!-- .post-thumbnail -->
+                <?php if ( get_the_post_thumbnail_caption() ) : ?>
+                    <figcaption>
+                        <?php the_post_thumbnail_caption(); ?>
+                    </figcaption>
+                <?php endif; ?>
             </figure> <!--.full-bleed .featured-image -->
 		<?php else : ?>
         <figure class="featured-image">

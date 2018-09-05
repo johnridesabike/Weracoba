@@ -63,8 +63,8 @@
 	color: #7D7D7D;
 }
 
-/*.widget_categories .children {
-	padding-top: 0;
+.widget_categories a:before {
+    @include dashicon($glyph-categories);
 }
 /* Pages and Menu widgets */
 
@@ -193,19 +193,15 @@
 }
 
 /* Post & blog widgets */
-@media screen and (min-width: $breakpoint-1) {
-    .post-widgets, .archive-widgets {
-        display: flex;
-        flex-flow: row;
-        flex-wrap: wrap;
-        justify-content: space-between;
+.post-widgets, .archive-widgets {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
 
-        .widget {
-            @include column-width(3);
-        }
+    .widget {
+        @include widget-columns;
     }
 }
-
 
 @media screen and (min-width: $breakpoint-2) {
     .widget {

@@ -50,11 +50,8 @@ get_header();
                 $cats[] = get_category($cat);
             }
             foreach( $cats as $key => $cat ) :
-                $cat_query = new WP_Query( 
-                    array( 'cat' => $cat->term_id,
-                           'meta_query' => array( array( 'key' => '_thumbnail_id') ) 
-                         ) 
-                );
+                $cat_query = new WP_Query( array( 'cat' => $cat->term_id,
+                                                  'meta_query' => array( 'key' => '_thumbnail_id' ) ) );
                 $cat_query->the_post();
                 $cat_link = esc_url( get_category_link( $cat->cat_ID ) );
                 ?>

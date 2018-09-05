@@ -6,6 +6,7 @@ $color-bg-body: white;
 $color-bg-light: rgba(247, 247, 241, 1); // High Reflective White
 $color-tint: rgba(1, 118, 128, 1); // Intense Teal
 $color-border: rgba(194, 207, 207, 1); // Tradewind
+$color-text-light: $color-border;
 $color-border-button: $color-border;
 $color-border-button-hover: $color-border;
 $color-border-button-focus: $color-border;
@@ -28,10 +29,10 @@ $color-bg-screen: #f1f1f1;
 $color-text-screen: #21759b;
 
 // Typography
-$font-reading:  Times, "Times New Roman", serif; //"Libre Baskerville", Georgia, serif;
-$font-reading-size: 1.3em;
-$font-UI: Helvetica, Tahoma, sans-serif; //"Lato", sans-serif;
-$font-site-title: Baskerville, $font-reading;
+$font-reading: Times, "Times New Roman", serif;
+$font-reading-size: 19px;
+$font-UI: Helvetica, Tahoma, sans-serif;
+$font-site-title: Baskerville, Garamond, $font-reading;
 $font-headers: $font-UI;
 $font-widget: $font-UI;
 $font-line-height-body: 1.5;
@@ -42,6 +43,9 @@ $glyph-arrow-down: "\25BC";
 $glyph-arrow-up: "\25B2";
 $glyph-arrow-next: "\276F";
 $glyph-arrow-down-right: "\21B3";
+$glyph-categories: "\f318"; // Dashicon
+$glyph-tags: "\f323"; // Dashicon
+$glyph-menu: "\f333"; // Dashicon
 
 // Breakpoints 
 $breakpoint-1: 735px; // big phone landscape
@@ -54,20 +58,66 @@ $size-content: 700px;
 $size-content-page: 900px;
 $size-widget: 200px;
 
-// Columns
-$columns: (
-	1: 100%,
-	2: 50%,
-	3: 33.33%,
-	4: 25%,
-	5: 20%,
-	6: 16.66%,
-	7: 14.28%,
-	8: 12.5%,
-	9: 11.11%
-);
+@mixin dashicon($glyph) {
+    font-family: dashicons;
+    content: $glyph + " ";
+    vertical-align: middle;
+}
 
-$columns-margin: 3.8%;
+///**
+// * Calculates numbers to the mathmatical power (exponent)
+// *
+// * @since	1.0.0
+// * @link https://jeremyhixon.com/golden-ratio-typography-in-sass/
+// *
+// * @param	int		$number		The number to increase
+// * @param	int		$exponent	The power to increase the number by
+// *
+// * @return	int					The new number
+// */
+@function pow( $number, $exponent ) {
+	$value: 1;
+	@if $exponent > 0 {
+		@for $i from 1 through $exponent {
+			$value: $value * $number;
+		}
+	}
+	@return $value;
+}
+///**
+// * Removes units from values for easier modification
+// *
+// * @since	1.0.0
+// * @link https://jeremyhixon.com/golden-ratio-typography-in-sass/
+// *
+// * @param	int		$number		The number to strip units from
+// *
+// * @return	int					The number without the unit
+// */
+@function strip-unit( $number ) {
+	@if type-of( $number ) == 'number' and not unitless( $number ) {
+		@return $number / ( $number * 0 + 1 );
+	}
+	@return $number;
+}
+///**
+// * Calculates the line height based on multiple parameters
+// *
+// * @since	1.0.0
+// * @link https://jeremyhixon.com/golden-ratio-typography-in-sass/
+// *
+// * @param	int		$font-size			The font size
+// * @param	int		$content-width		The width of the content area
+// * @param	int		$ratio				The ratio. Default 1.61803398875 (golden ratio)
+// *
+// * @return	int							The calculated line height
+// */
+@function calculate-line-height( $font-size, $content-width, $ratio: 1.61803398875 ) {
+	$font-size: strip-unit( $font-size );
+	$content-width: strip-unit( $content-width );
+	@return $ratio - ( ( 1 / ( 2 * $ratio ) ) * ( 1 - ( $content-width / ( pow( ( $font-size * $ratio ), 2 ) ) ) ) );
+}
+
 
 // Rem output with px fallback
 @mixin font-size($sizeValue: 1) {
@@ -92,10 +142,36 @@ $columns-margin: 3.8%;
 	clear: both;
 }
 
+// Columns
+$columns: (
+	1: 100%,
+	2: 50%,
+	3: 33.33%,
+	4: 25%,
+	5: 20%,
+	6: 16.66%,
+	7: 14.28%,
+	8: 12.5%,
+	9: 11.11%
+);
+
+$columns-margin: 3.8%;
+
 // Column width with margin
 @mixin column-width($numberColumns: 3) {
 	width: map-get( $columns, $numberColumns ) - ( ( $columns-margin * ( $numberColumns - 1 ) ) / $numberColumns );
-	//flex: 1 1 map-get( $columns, $numberColumns ) - ( ( $columns-margin * ( $numberColumns - 1 ) ) / $numberColumns );
+}
+
+@mixin widget-columns {
+    @include column-width(1);
+
+    @media screen and (min-width: $breakpoint-1) {
+        @include column-width(3);
+        margin-right: $columns-margin;
+        &:nth-child(3n+3) {
+            margin-right: 0;
+        }
+    }
 }
 
 // Buttons
@@ -172,6 +248,8 @@ $columns-margin: 3.8%;
     margin-left: auto;
 }
 
+$opacity-overlay: .25;
+
 @mixin link-overlay {
     display: block;
     position: absolute;
@@ -185,7 +263,7 @@ $columns-margin: 3.8%;
 
     &:hover,
     &:focus {
-        opacity: .25;
+        opacity: $opacity-overlay;
     }
 }
 

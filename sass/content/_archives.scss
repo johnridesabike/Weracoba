@@ -86,18 +86,19 @@
 
 .archive-cat-list {
     list-style: none;
+    margin: 0 0 2em;
+
     .categories > ul {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         font-size: 1.1em;
 
-        > li {
-            width: $size-widget;
-            margin: 0 1em 0 1em;
+        > .cat-item {
+            @include widget-columns;
         }
 
-        li ul {
+        .cat-item ul {
             font-size: .8em;
         }
     }

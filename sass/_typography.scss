@@ -7,7 +7,8 @@ textarea {
     color: $color-text-main;
     font-family: $font-UI;
     @include font-size(1);
-    line-height: $font-line-height-body;
+    //line-height: $font-line-height-body;
+    line-height: calculate-line-height(16, $size-content);
 }
 
 textarea {
@@ -24,11 +25,6 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
 	margin-bottom: 1em;
-}
-
-.entry-content,
-.archive-description {
-    line-height: 1.6;
 }
 
 dfn, cite, em, i {
@@ -101,6 +97,10 @@ big {
 .post .entry-content {
     font-family: $font-reading;
     font-size: $font-reading-size;
+    line-height: calculate-line-height($font-reading-size, $size-content);
+}
+.page .entry-content {
+    line-height: calculate-line-height(16, $size-content-page);
 }
 .entry-footer {
     font-family: $font-UI;
@@ -156,6 +156,12 @@ big {
     }
 }
 
+/* Widgets */
+
+.widget {
+    line-height: calculate-line-height(16, $size-widget);
+}
+
 /* Front Page */
 
 .fp-post,
@@ -196,7 +202,6 @@ p.wp-block-subhead {
 .wp-block-button .wp-block-button__link {
     @include gutenberg-button;
 }
-
 
 .wp-block-button.is-style-outline .wp-block-button__link {
     
