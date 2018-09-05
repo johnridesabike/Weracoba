@@ -24,6 +24,10 @@
     }
 }
 
+.toggled .menu-toggle:after {
+    @include dashicon($glyph-x);
+ }
+
 .menu-item-has-children {
     a:after {
         content: $glyph-arrow-down;

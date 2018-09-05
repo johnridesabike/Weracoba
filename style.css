@@ -808,6 +808,11 @@ a {
       content: " ";
       vertical-align: middle; }
 
+.toggled .menu-toggle:after {
+  font-family: dashicons;
+  content: " ";
+  vertical-align: middle; }
+
 .menu-item-has-children a:after {
   content: "▼";
   font-size: .7em;
