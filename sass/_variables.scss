@@ -43,6 +43,9 @@ $glyph-arrow-down: "\25BC";
 $glyph-arrow-up: "\25B2";
 $glyph-arrow-next: "\276F";
 $glyph-arrow-down-right: "\21B3";
+$glyph-categories: "\f318"; // Dashicon
+$glyph-tags: "\f323"; // Dashicon
+$glyph-menu: "\f333"; // Dashicon
 
 // Breakpoints 
 $breakpoint-1: 735px; // big phone landscape
@@ -55,32 +58,23 @@ $size-content: 700px;
 $size-content-page: 900px;
 $size-widget: 200px;
 
-// Columns
-$columns: (
-	1: 100%,
-	2: 50%,
-	3: 33.33%,
-	4: 25%,
-	5: 20%,
-	6: 16.66%,
-	7: 14.28%,
-	8: 12.5%,
-	9: 11.11%
-);
+@mixin dashicon($glyph) {
+    font-family: dashicons;
+    content: $glyph + " ";
+    vertical-align: middle;
+}
 
-$columns-margin: 3.8%;
-
-/**
- * Calculates numbers to the mathmatical power (exponent)
- *
- * @since	1.0.0
- * @link https://jeremyhixon.com/golden-ratio-typography-in-sass/
- *
- * @param	int		$number		The number to increase
- * @param	int		$exponent	The power to increase the number by
- *
- * @return	int					The new number
- */
+///**
+// * Calculates numbers to the mathmatical power (exponent)
+// *
+// * @since	1.0.0
+// * @link https://jeremyhixon.com/golden-ratio-typography-in-sass/
+// *
+// * @param	int		$number		The number to increase
+// * @param	int		$exponent	The power to increase the number by
+// *
+// * @return	int					The new number
+// */
 @function pow( $number, $exponent ) {
 	$value: 1;
 	@if $exponent > 0 {
@@ -90,34 +84,34 @@ $columns-margin: 3.8%;
 	}
 	@return $value;
 }
-/**
- * Removes units from values for easier modification
- *
- * @since	1.0.0
- * @link https://jeremyhixon.com/golden-ratio-typography-in-sass/
- *
- * @param	int		$number		The number to strip units from
- *
- * @return	int					The number without the unit
- */
+///**
+// * Removes units from values for easier modification
+// *
+// * @since	1.0.0
+// * @link https://jeremyhixon.com/golden-ratio-typography-in-sass/
+// *
+// * @param	int		$number		The number to strip units from
+// *
+// * @return	int					The number without the unit
+// */
 @function strip-unit( $number ) {
 	@if type-of( $number ) == 'number' and not unitless( $number ) {
 		@return $number / ( $number * 0 + 1 );
 	}
 	@return $number;
 }
-/**
- * Calculates the line height based on multiple parameters
- *
- * @since	1.0.0
- * @link https://jeremyhixon.com/golden-ratio-typography-in-sass/
- *
- * @param	int		$font-size			The font size
- * @param	int		$content-width		The width of the content area
- * @param	int		$ratio				The ratio. Default 1.61803398875 (golden ratio)
- *
- * @return	int							The calculated line height
- */
+///**
+// * Calculates the line height based on multiple parameters
+// *
+// * @since	1.0.0
+// * @link https://jeremyhixon.com/golden-ratio-typography-in-sass/
+// *
+// * @param	int		$font-size			The font size
+// * @param	int		$content-width		The width of the content area
+// * @param	int		$ratio				The ratio. Default 1.61803398875 (golden ratio)
+// *
+// * @return	int							The calculated line height
+// */
 @function calculate-line-height( $font-size, $content-width, $ratio: 1.61803398875 ) {
 	$font-size: strip-unit( $font-size );
 	$content-width: strip-unit( $content-width );
@@ -148,6 +142,21 @@ $columns-margin: 3.8%;
 	clear: both;
 }
 
+// Columns
+$columns: (
+	1: 100%,
+	2: 50%,
+	3: 33.33%,
+	4: 25%,
+	5: 20%,
+	6: 16.66%,
+	7: 14.28%,
+	8: 12.5%,
+	9: 11.11%
+);
+
+$columns-margin: 3.8%;
+
 // Column width with margin
 @mixin column-width($numberColumns: 3) {
 	width: map-get( $columns, $numberColumns ) - ( ( $columns-margin * ( $numberColumns - 1 ) ) / $numberColumns );
@@ -155,10 +164,10 @@ $columns-margin: 3.8%;
 
 @mixin widget-columns {
     @include column-width(1);
-    margin-right: $columns-margin;
 
     @media screen and (min-width: $breakpoint-1) {
         @include column-width(3);
+        margin-right: $columns-margin;
         &:nth-child(3n+3) {
             margin-right: 0;
         }

@@ -25,6 +25,13 @@
     font-size: 1.3em;
     margin-bottom: .5em;
     display: block;
+
+    a:before {
+        @include dashicon($glyph-categories);
+    }
+}
+.tags-links:before {
+    @include dashicon($glyph-tags);
 }
 .entry-meta {
     color: $color-text-secondary;

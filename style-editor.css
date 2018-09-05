@@ -1,36 +1,3 @@
-/**
- * Calculates numbers to the mathmatical power (exponent)
- *
- * @since	1.0.0
- * @link https://jeremyhixon.com/golden-ratio-typography-in-sass/
- *
- * @param	int		$number		The number to increase
- * @param	int		$exponent	The power to increase the number by
- *
- * @return	int					The new number
- */
-/**
- * Removes units from values for easier modification
- *
- * @since	1.0.0
- * @link https://jeremyhixon.com/golden-ratio-typography-in-sass/
- *
- * @param	int		$number		The number to strip units from
- *
- * @return	int					The number without the unit
- */
-/**
- * Calculates the line height based on multiple parameters
- *
- * @since	1.0.0
- * @link https://jeremyhixon.com/golden-ratio-typography-in-sass/
- *
- * @param	int		$font-size			The font size
- * @param	int		$content-width		The width of the content area
- * @param	int		$ratio				The ratio. Default 1.61803398875 (golden ratio)
- *
- * @return	int							The calculated line height
- */
 .edit-post-visual-editor {
   /* Posts & Pages */
   /* comments */

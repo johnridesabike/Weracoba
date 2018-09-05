@@ -63,8 +63,8 @@
 	color: #7D7D7D;
 }
 
-/*.widget_categories .children {
-	padding-top: 0;
+.widget_categories a:before {
+    @include dashicon($glyph-categories);
 }
 /* Pages and Menu widgets */
 

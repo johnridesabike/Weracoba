@@ -173,6 +173,7 @@ add_action( 'widgets_init', 'weracoba_widgets_init' );
  */
 function weracoba_scripts() {
 	wp_enqueue_style( 'weracoba-style', get_stylesheet_uri() );
+    wp_enqueue_style( 'dashicons' );
 
     // I decided to avoid Google and use web-safe fonts instead.
     //wp_enqueue_style( 'google-fonts', "https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700,700i|Lato");

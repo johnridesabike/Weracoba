@@ -49,39 +49,6 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	## Captions
 	## Galleries
 --------------------------------------------------------------*/
-/**
- * Calculates numbers to the mathmatical power (exponent)
- *
- * @since	1.0.0
- * @link https://jeremyhixon.com/golden-ratio-typography-in-sass/
- *
- * @param	int		$number		The number to increase
- * @param	int		$exponent	The power to increase the number by
- *
- * @return	int					The new number
- */
-/**
- * Removes units from values for easier modification
- *
- * @since	1.0.0
- * @link https://jeremyhixon.com/golden-ratio-typography-in-sass/
- *
- * @param	int		$number		The number to strip units from
- *
- * @return	int					The number without the unit
- */
-/**
- * Calculates the line height based on multiple parameters
- *
- * @since	1.0.0
- * @link https://jeremyhixon.com/golden-ratio-typography-in-sass/
- *
- * @param	int		$font-size			The font size
- * @param	int		$content-width		The width of the content area
- * @param	int		$ratio				The ratio. Default 1.61803398875 (golden ratio)
- *
- * @return	int							The calculated line height
- */
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
@@ -837,12 +804,9 @@ a {
     .menu-button .menu-toggle:hover, .menu-button .menu-toggle:focus {
       background: #01b0bb; }
     .menu-button .menu-toggle::after {
-      content: "▼";
-      padding-left: .5em;
-      font-size: .5em; }
-
-.toggled .menu-toggle:after {
-  content: "▲"; }
+      font-family: dashicons;
+      content: " ";
+      vertical-align: middle; }
 
 .menu-item-has-children a:after {
   content: "▼";
@@ -869,6 +833,7 @@ a {
     padding: 0; }
     .main-navigation ul ul {
       box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
       float: left;
       position: absolute;
       top: 100%;
@@ -923,13 +888,6 @@ a {
           width: auto;
           text-align: left;
           padding: 0 1em; }
-          .main-navigation ul ul:before {
-            content: "▲";
-            font-size: .7em;
-            position: absolute;
-            right: 0;
-            top: -14px;
-            color: #c2cfcf; }
           .main-navigation ul ul li a {
             font-size: 1em; }
       .main-navigation a {
@@ -1068,9 +1026,11 @@ a {
 .widget_archive li {
   color: #7D7D7D; }
 
-/*.widget_categories .children {
-	padding-top: 0;
-}
+.widget_categories a:before {
+  font-family: dashicons;
+  content: " ";
+  vertical-align: middle; }
+
 /* Pages and Menu widgets */
 .widget_pages .children,
 .widget_pages .sub-menu,
@@ -1189,11 +1149,11 @@ a {
   flex-flow: row;
   flex-wrap: wrap; }
   .post-widgets .widget, .archive-widgets .widget {
-    width: 100%;
-    margin-right: 3.8%; }
+    width: 100%; }
     @media screen and (min-width: 735px) {
       .post-widgets .widget, .archive-widgets .widget {
-        width: 30.79667%; }
+        width: 30.79667%;
+        margin-right: 3.8%; }
         .post-widgets .widget:nth-child(3n+3), .archive-widgets .widget:nth-child(3n+3) {
           margin-right: 0; } }
 
@@ -1385,6 +1345,15 @@ a {
   font-size: 1.3em;
   margin-bottom: .5em;
   display: block; }
+  .cat-links a:before {
+    font-family: dashicons;
+    content: " ";
+    vertical-align: middle; }
+
+.tags-links:before {
+  font-family: dashicons;
+  content: " ";
+  vertical-align: middle; }
 
 .entry-meta {
   color: #44484d;
@@ -1587,15 +1556,15 @@ a {
     flex-direction: row;
     flex-wrap: wrap;
     font-size: 1.1em; }
-    .archive-cat-list .categories > ul > li {
-      width: 100%;
-      margin-right: 3.8%; }
+    .archive-cat-list .categories > ul > .cat-item {
+      width: 100%; }
       @media screen and (min-width: 735px) {
-        .archive-cat-list .categories > ul > li {
-          width: 30.79667%; }
-          .archive-cat-list .categories > ul > li:nth-child(3n+3) {
+        .archive-cat-list .categories > ul > .cat-item {
+          width: 30.79667%;
+          margin-right: 3.8%; }
+          .archive-cat-list .categories > ul > .cat-item:nth-child(3n+3) {
             margin-right: 0; } }
-    .archive-cat-list .categories > ul li ul {
+    .archive-cat-list .categories > ul .cat-item ul {
       font-size: .8em; }
 
 /*--------------------------------------------------------------

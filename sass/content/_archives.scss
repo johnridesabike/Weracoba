@@ -94,11 +94,11 @@
         flex-wrap: wrap;
         font-size: 1.1em;
 
-        > li {
+        > .cat-item {
             @include widget-columns;
         }
 
-        li ul {
+        .cat-item ul {
             font-size: .8em;
         }
     }
