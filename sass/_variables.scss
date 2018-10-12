@@ -3,15 +3,15 @@
 $color-text-main: rgba(47, 47, 48, 1); // Tricorn Black
 $color-text-secondary: rgba(68, 72, 77, 1); // Cyberspace
 $color-bg-body: white;
-$color-bg-light: rgba(247, 247, 241, 1); // High Reflective White
+$color-bg-body-alt: rgba(224, 232, 231, 1); // Snowdrop
 $color-tint: rgba(1, 118, 128, 1); // Intense Teal
 $color-border: rgba(194, 207, 207, 1); // Tradewind
 $color-text-light: $color-border;
 $color-border-button: $color-border;
 $color-border-button-hover: $color-border;
 $color-border-button-focus: $color-border;
-$color-bg-header: $color-bg-light;
-$color-bg-header-alt: rgba(224, 232, 231, 1); // Snowdrop
+$color-bg-header: rgba(247, 247, 241, 1); // High Reflective White;
+$color-bg-footer: $color-bg-header;
 $color-link: $color-tint;
 $color-link-visited: $color-tint;
 $color-link-hover: rgba(1, 176, 187, 1); // Calypso
@@ -43,10 +43,10 @@ $glyph-arrow-down: "\25BC";
 $glyph-arrow-up: "\25B2";
 $glyph-arrow-next: "\276F";
 $glyph-arrow-down-right: "\21B3";
-$glyph-categories: "\f318"; // Dashicon
+$glyph-category: "\f318"; // Dashicon
 $glyph-tags: "\f323"; // Dashicon
 $glyph-menu: "\f333"; // Dashicon
-$glyph-x: "\f158"; // Dashicon
+$glyph-x: "\f153"; // Dashicon
 
 // Breakpoints 
 $breakpoint-1: 735px; // big phone landscape
@@ -61,7 +61,8 @@ $size-widget: 200px;
 
 @mixin dashicon($glyph) {
     font-family: dashicons;
-    content: $glyph + " ";
+    content: $glyph;
+    padding-right: 6px;
     vertical-align: middle;
 }
 
@@ -185,7 +186,7 @@ $columns-margin: 3.8%;
     border: 1px solid $color-border-button;
     //border-radius: 5px;
     border-radius: 23px; // from Gutenberg style
-    color: $color-bg-light;
+    color: $color-bg-body-alt;
     background: $color-link;
 
     &:hover,
@@ -211,11 +212,11 @@ $columns-margin: 3.8%;
     border: 1px solid $color-border-button;
 
     &:not(.has-text-color) {
-        color: $color-bg-light;
+        color: $color-bg-body;
 
         &:hover,
         &:focus {
-            color: $color-bg-light;
+            color: $color-bg-body;
         }
     }
 
@@ -302,4 +303,18 @@ $opacity-overlay: .25;
         content: "";
         display: none;
     }
+}
+
+@mixin drop-shadow {
+    background: $color-bg-body;
+    border-radius: 5px;
+    box-shadow: 0 0 .5em rgba(0, 0, 0, 0.2);
+}
+
+@mixin drop-shadow-bottom {
+    box-shadow: 0 0 .5em rgba(0, 0, 0, 0.2);
+}
+
+@mixin drop-shadow-top {
+    box-shadow: inset 0 1em 1.5em -1em rgba(0, 0, 0, 0.2);
 }

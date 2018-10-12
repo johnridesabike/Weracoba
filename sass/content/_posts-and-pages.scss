@@ -27,7 +27,7 @@
     display: block;
 
     a:before {
-        @include dashicon($glyph-categories);
+        @include dashicon($glyph-category);
     }
 }
 .tags-links:before {

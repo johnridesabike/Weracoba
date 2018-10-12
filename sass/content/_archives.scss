@@ -17,8 +17,9 @@
     .page {
         position: relative;
         border-bottom: 1px solid $color-border;
-        padding-bottom: 2em;
+        padding: .5em;
         margin-bottom: 2em;
+        @include drop-shadow;
 
         &:last-child {
             border: 0;

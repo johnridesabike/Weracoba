@@ -2,6 +2,7 @@
     background: $color-bg-header;
     text-align: center;
     border-bottom: 1px solid $color-border;
+    @include drop-shadow-bottom;
 
     a {
         color: $color-link;

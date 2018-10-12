@@ -12,6 +12,10 @@ body {
 	background: $color-bg-body; /* Fallback for when there is no custom background color defined. */
 }
 
+body.archive-view {
+    background: $color-bg-body-alt;
+}
+
 hr {
 	background-color: $color-bg-hr;
 	border: 0;
