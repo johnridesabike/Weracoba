@@ -61,5 +61,6 @@
 			</nav><!-- #site-navigation -->
 		</div><!-- .site-header-wrapper -->
 	</header><!-- #masthead -->
-
+    <?php get_template_part('breadcrumbs')?>
 	<div id="content" class="site-content">
+

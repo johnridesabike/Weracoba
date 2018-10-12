@@ -165,6 +165,17 @@ function weracoba_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Breadcrumbs', 'weracoba' ),
+		'id'            => 'breadcrumbs-1',
+		'description'   => esc_html__( 'Widgets here will be shown on all pages.', 'weracoba' ),
+        'class'         => '',
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
 }
 add_action( 'widgets_init', 'weracoba_widgets_init' );
 

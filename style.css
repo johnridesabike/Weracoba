@@ -812,13 +812,17 @@ a {
       font-family: dashicons;
       content: "";
       padding-right: 6px;
-      vertical-align: middle; }
+      vertical-align: middle;
+      padding-right: 0;
+      padding-left: 6px; }
 
 .toggled .menu-toggle:after {
   font-family: dashicons;
   content: "";
   padding-right: 6px;
-  vertical-align: middle; }
+  vertical-align: middle;
+  padding-right: 0;
+  padding-left: 6px; }
 
 .menu-item-has-children a:after {
   content: "▼";
@@ -992,6 +996,17 @@ a {
   .post-navigation .post-title {
     font-size: 18px;
     font-size: 1.125em; } }
+
+.breadcrumbs {
+  margin-top: .5em; }
+  @media screen and (min-width: 1200px) {
+    .breadcrumbs {
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto; } }
+  .breadcrumbs .widget {
+    margin: 0;
+    font-size: .9em; }
 
 /*--------------------------------------------------------------
 ## Widgets
@@ -1497,7 +1512,7 @@ a {
   flex: 1 0 100%; }
 
 .archive-view .site-content {
-  margin-top: 1em; }
+  /* margin-top: 1em; */ }
   @media screen and (min-width: 1200px) {
     .archive-view .site-content {
       max-width: 1200px;
@@ -1507,8 +1522,8 @@ a {
 .archive-view .content-area {
   width: 100%; }
 
-.archive-view .post,
-.archive-view .page {
+.archive-view .content-area .post,
+.archive-view .content-area .page {
   position: relative;
   border-bottom: 1px solid #c2cfcf;
   padding: .5em;
@@ -1516,8 +1531,8 @@ a {
   background: white;
   border-radius: 5px;
   box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.2); }
-  .archive-view .post:last-child,
-  .archive-view .page:last-child {
+  .archive-view .content-area .post:last-child,
+  .archive-view .content-area .page:last-child {
     border: 0; }
 
 .archive-view .entry-meta {
@@ -1541,8 +1556,8 @@ a {
     flex-direction: row;
     justify-content: space-between;
     align-items: center; }
-  .archive-view .post,
-  .archive-view .page {
+  .archive-view .content-area .post,
+  .archive-view .content-area .page {
     display: flex;
     flex-direction: row; } }
 

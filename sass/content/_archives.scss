@@ -5,7 +5,7 @@
 	}
     .site-content {
         @include max-site-width;
-        margin-top: 1em;
+        /* margin-top: 1em; */
     }
 
     .content-area {
@@ -13,8 +13,8 @@
         width: 100%;
     }
 
-    .post,
-    .page {
+    .content-area .post,
+    .content-area .page {
         position: relative;
         border-bottom: 1px solid $color-border;
         padding: .5em;
@@ -42,8 +42,8 @@
             align-items: center;
         }
 
-        .post,
-        .page {
+        .content-area .post,
+        .content-area .page {
             display: flex;
             flex-direction: row;
         }

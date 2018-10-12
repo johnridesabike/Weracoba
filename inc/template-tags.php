@@ -222,7 +222,7 @@ endif;
 /**
  * @link https://www.thewebtaylor.com/articles/wordpress-creating-breadcrumbs-without-a-plugin
  */
-
+/*
 // Breadcrumbs
 function weracoba_breadcrumbs() {
     // Settings
@@ -367,3 +367,4 @@ function weracoba_breadcrumbs() {
         echo '</ul>';  
     }
 }
+*/

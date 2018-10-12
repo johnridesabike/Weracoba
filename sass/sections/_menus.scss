@@ -20,12 +20,16 @@
 
         &::after {
             @include dashicon($glyph-menu);
+            padding-right: 0;
+            padding-left: 6px;
         }
     }
 }
 
 .toggled .menu-toggle:after {
     @include dashicon($glyph-x);
+    padding-right: 0;
+    padding-left: 6px;
  }
 
 .menu-item-has-children {
