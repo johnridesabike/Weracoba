@@ -224,3 +224,8 @@ p.wp-block-subhead {
         }
     }
 }
+
+// Custom CSS attribute in Gutenberg
+.wp-block-button.download .wp-block-button__link:before {
+    @include dashicon($glyph-download);
+}

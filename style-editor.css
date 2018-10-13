@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .edit-post-visual-editor {
   /* Posts & Pages */
   /* comments */
@@ -158,5 +159,10 @@
     border-color: #017680; }
     .edit-post-visual-editor .wp-block-button.is-style-outline .wp-block-button__link:not(.has-background):hover, .edit-post-visual-editor .wp-block-button.is-style-outline .wp-block-button__link:not(.has-background):focus {
       border-color: #01b0bb; }
+  .edit-post-visual-editor .wp-block-button.download .wp-block-button__link:before {
+    font-family: dashicons;
+    content: "";
+    padding-right: 6px;
+    vertical-align: middle; }
 
 /*# sourceMappingURL=style-editor.css.map */
