@@ -22,15 +22,18 @@ get_header();
 
 			if ( is_home() && ! is_front_page() ) :
 				?>
-				<header>
+				<header class="archive-header">
 					<h1 class="page-title"><?php single_post_title(); ?></h1>
+                    <p class="archive-description">Select a category:</p>
                     <ul class="archive-cat-list widget widget_categories">
                         <?php wp_list_categories( array(
-                                'title_li' => __("The Archive is a chronological list of all the content from ") . get_bloginfo('name') . __(". You can also explore a specific category:"),
+                                'title_li' => '',
+                                //'title_li' => __("The Archive is a chronological list of all the content from ") . get_bloginfo('name') . __(". You can also explore a specific category:"),
                                 'orderby' => 'count',
                                 'order' => 'DESC'
                                 ) ); ?>
                     </ul>
+                    <p class="archive-description">Or browse the recent entries:</p>
 				</header>
 				<?php
 			endif;

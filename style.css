@@ -1027,6 +1027,9 @@ a {
   background: white;
   border-radius: 5px;
   box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.2); }
+  @media screen and (max-width: 1023px) {
+    .archive-view .site-content .widget {
+      margin-bottom: 1em; } }
 
 .widget {
   margin: 0;
@@ -1565,7 +1568,8 @@ a {
   .archive-view .content-area .post,
   .archive-view .content-area .page {
     display: flex;
-    flex-direction: row; } }
+    flex-direction: row;
+    overflow: hidden; } }
 
 @media screen and (min-width: 1023px) {
   .archive-view .site-content {
@@ -1573,8 +1577,9 @@ a {
     justify-content: space-between; } }
 
 .archive-description {
-  border-bottom: 1px solid #c2cfcf;
-  margin-bottom: 1em; }
+  /*border-bottom: 1px solid $color-border;
+    margin-bottom: 1em;*/
+  font-size: 1.2em; }
 
 .continue-reading {
   text-align: center;
@@ -1601,24 +1606,42 @@ a {
     content: " ❯";
     vertical-align: middle; }
 
+/*.archive-cat-list {
+    list-style: none;
+    margin: 0 0 2em;
+    font-size: 1.1em;
+
+    .categories > ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        > .cat-item {
+            @include widget-columns;
+        }
+
+        .cat-item ul {
+            font-size: .8em;
+        }
+    }
+}*/
 .archive-cat-list {
   list-style: none;
-  margin: 0 0 2em; }
-  .archive-cat-list .categories > ul {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    font-size: 1.1em; }
-    .archive-cat-list .categories > ul > .cat-item {
-      width: 100%; }
-      @media screen and (min-width: 735px) {
-        .archive-cat-list .categories > ul > .cat-item {
-          width: 30.79667%;
-          margin-right: 3.8%; }
-          .archive-cat-list .categories > ul > .cat-item:nth-child(3n+3) {
-            margin-right: 0; } }
-    .archive-cat-list .categories > ul .cat-item ul {
-      font-size: .8em; }
+  margin: 0 0 2em;
+  font-size: 1.1em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; }
+  .archive-cat-list > .cat-item {
+    width: 100%; }
+    @media screen and (min-width: 735px) {
+      .archive-cat-list > .cat-item {
+        width: 30.79667%;
+        margin-right: 3.8%; }
+        .archive-cat-list > .cat-item:nth-child(3n+3) {
+          margin-right: 0; } }
+  .archive-cat-list .cat-item ul {
+    font-size: .8em; }
 
 /*--------------------------------------------------------------
 ## Comments

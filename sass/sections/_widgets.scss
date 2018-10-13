@@ -8,6 +8,10 @@
 
 .archive-view .site-content .widget {
     @include drop-shadow;
+    
+    @media screen and (max-width: $breakpoint-2) {
+        margin-bottom: 1em;
+    }
 }
 
 .widget {
