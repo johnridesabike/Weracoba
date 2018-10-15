@@ -12,6 +12,10 @@ body {
 	background: $color-bg-body; /* Fallback for when there is no custom background color defined. */
 }
 
+body.archive-view {
+    background: $color-bg-body-alt;
+}
+
 hr {
 	background-color: $color-bg-hr;
 	border: 0;
@@ -86,6 +90,7 @@ textarea {
 	border: 1px solid $color-border-input;
 	border-radius: 3px;
 	padding: 3px;
+    max-width: 100%;
 
 	&:focus {
 		color: $color-text-input-focus;

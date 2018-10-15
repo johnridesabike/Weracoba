@@ -61,5 +61,11 @@
 			</nav><!-- #site-navigation -->
 		</div><!-- .site-header-wrapper -->
 	</header><!-- #masthead -->
-
+    <?php
+    if ( is_active_sidebar( 'breadcrumbs-1' ) && !is_front_page() && !is_single() ) : ?> 
+        <nav class="breadcrumbs">
+            <?php dynamic_sidebar( 'breadcrumbs-1' ); ?>
+        </nav>
+    <?php endif;?>
 	<div id="content" class="site-content">
+

@@ -6,9 +6,17 @@
     }
 }
 
+.archive-view .site-content .widget {
+    @include drop-shadow;
+    
+    @media screen and (max-width: $breakpoint-2) {
+        margin-bottom: 1em;
+    }
+}
+
 .widget {
 	margin: 0;
-    padding: 0 .5em .5em .5em;
+    padding: .5em .5em .5em .5em;
 	font-family: $font-widget;
 	/* Make sure select elements fit in widgets. */
 
@@ -64,7 +72,7 @@
 }
 
 .widget_categories a:before {
-    @include dashicon($glyph-categories);
+    @include dashicon($glyph-category);
 }
 /* Pages and Menu widgets */
 
@@ -205,8 +213,7 @@
 
 @media screen and (min-width: $breakpoint-2) {
     .widget {
-        margin: 0 0 2em;
-        padding: 0 0 2em;
+        margin: 0 0 4em;
     }
     
     .post-widgets, .archive-widgets {

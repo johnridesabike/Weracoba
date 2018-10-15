@@ -522,7 +522,7 @@ p.wp-block-subhead {
 
 .wp-block-cover-image .wp-block-cover-image-text {
   font-family: Helvetica, Tahoma, sans-serif;
-  color: #f7f7f1; }
+  color: #e0e8e7; }
   @media screen and (min-width: 1365px) {
     .wp-block-cover-image .wp-block-cover-image-text {
       font-size: 2.75em; } }
@@ -533,9 +533,9 @@ p.wp-block-subhead {
   text-decoration: none;
   border: 1px solid #c2cfcf; }
   .wp-block-button .wp-block-button__link:not(.has-text-color) {
-    color: #f7f7f1; }
+    color: white; }
     .wp-block-button .wp-block-button__link:not(.has-text-color):hover, .wp-block-button .wp-block-button__link:not(.has-text-color):focus {
-      color: #f7f7f1; }
+      color: white; }
   .wp-block-button .wp-block-button__link:not(.has-background) {
     background: #017680; }
     .wp-block-button .wp-block-button__link:not(.has-background):hover, .wp-block-button .wp-block-button__link:not(.has-background):focus {
@@ -552,6 +552,12 @@ p.wp-block-subhead {
   .wp-block-button.is-style-outline .wp-block-button__link:not(.has-background):hover, .wp-block-button.is-style-outline .wp-block-button__link:not(.has-background):focus {
     border-color: #01b0bb; }
 
+.wp-block-button.download .wp-block-button__link:before {
+  font-family: dashicons;
+  content: "";
+  padding-right: 6px;
+  vertical-align: middle; }
+
 /*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
@@ -567,6 +573,9 @@ html {
 body {
   background: white;
   /* Fallback for when there is no custom background color defined. */ }
+
+body.archive-view {
+  background: #e0e8e7; }
 
 hr {
   background-color: #ccc;
@@ -632,7 +641,8 @@ textarea {
   color: #666;
   border: 1px solid #ccc;
   border-radius: 3px;
-  padding: 3px; }
+  padding: 3px;
+  max-width: 100%; }
   input[type="text"]:focus,
   input[type="email"]:focus,
   input[type="url"]:focus,
@@ -666,7 +676,7 @@ input[type="submit"] {
   text-decoration: none;
   border: 1px solid #c2cfcf;
   border-radius: 23px;
-  color: #f7f7f1;
+  color: #e0e8e7;
   background: #017680; }
   button:hover, button:focus,
   input[type="button"]:hover,
@@ -701,7 +711,8 @@ a {
 .site-header {
   background: #f7f7f1;
   text-align: center;
-  border-bottom: 1px solid #c2cfcf; }
+  border-bottom: 1px solid #c2cfcf;
+  box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.2); }
   .site-header a {
     color: #017680; }
   .site-header .search-form {
@@ -771,7 +782,8 @@ a {
   position: relative;
   padding: 0.5em 1em 0.5em 1em;
   margin-top: 1em;
-  border-top: 1px solid #c2cfcf; }
+  border-top: 1px solid #c2cfcf;
+  box-shadow: inset 0 1em 1.5em -1em rgba(0, 0, 0, 0.2); }
 
 /*--------------------------------------------------------------
 ## Navigation
@@ -798,15 +810,26 @@ a {
     text-decoration: none;
     border: 1px solid #c2cfcf;
     border-radius: 23px;
-    color: #f7f7f1;
+    color: #e0e8e7;
     background: #017680;
     width: 100%; }
     .menu-button .menu-toggle:hover, .menu-button .menu-toggle:focus {
       background: #01b0bb; }
     .menu-button .menu-toggle::after {
       font-family: dashicons;
-      content: " ";
-      vertical-align: middle; }
+      content: "";
+      padding-right: 6px;
+      vertical-align: middle;
+      padding-right: 0;
+      padding-left: 6px; }
+
+.toggled .menu-toggle:after {
+  font-family: dashicons;
+  content: "";
+  padding-right: 6px;
+  vertical-align: middle;
+  padding-right: 0;
+  padding-left: 6px; }
 
 .menu-item-has-children a:after {
   content: "▼";
@@ -832,8 +855,9 @@ a {
     position: relative;
     padding: 0; }
     .main-navigation ul ul {
-      box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-      box-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
+      background: white;
+      border-radius: 5px;
+      box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.2);
       float: left;
       position: absolute;
       top: 100%;
@@ -900,6 +924,15 @@ a {
 @media screen and (min-width: 735px) {
   .menu-toggle {
     display: none; } }
+
+.menu-item-object-category a {
+  text-indent: -24px;
+  padding-left: 16px; }
+  .menu-item-object-category a:before {
+    font-family: dashicons;
+    content: "";
+    padding-right: 6px;
+    vertical-align: middle; }
 
 /*--------------------------------------------------------------
 ### Content navigation
@@ -971,6 +1004,17 @@ a {
     font-size: 18px;
     font-size: 1.125em; } }
 
+.breadcrumbs {
+  margin-top: .5em; }
+  @media screen and (min-width: 1200px) {
+    .breadcrumbs {
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto; } }
+  .breadcrumbs .widget {
+    margin: 0;
+    font-size: .9em; }
+
 /*--------------------------------------------------------------
 ## Widgets
 --------------------------------------------------------------*/
@@ -980,9 +1024,17 @@ a {
     .widget-area {
       margin-left: 1em; } }
 
+.archive-view .site-content .widget {
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.2); }
+  @media screen and (max-width: 1023px) {
+    .archive-view .site-content .widget {
+      margin-bottom: 1em; } }
+
 .widget {
   margin: 0;
-  padding: 0 .5em .5em .5em;
+  padding: .5em .5em .5em .5em;
   font-family: Helvetica, Tahoma, sans-serif;
   /* Make sure select elements fit in widgets. */ }
   .widget ul,
@@ -1028,7 +1080,8 @@ a {
 
 .widget_categories a:before {
   font-family: dashicons;
-  content: " ";
+  content: "";
+  padding-right: 6px;
   vertical-align: middle; }
 
 /* Pages and Menu widgets */
@@ -1159,8 +1212,7 @@ a {
 
 @media screen and (min-width: 1023px) {
   .widget {
-    margin: 0 0 2em;
-    padding: 0 0 2em; }
+    margin: 0 0 4em; }
   .post-widgets, .archive-widgets {
     display: block;
     margin-left: 1em;
@@ -1347,12 +1399,14 @@ a {
   display: block; }
   .cat-links a:before {
     font-family: dashicons;
-    content: " ";
+    content: "";
+    padding-right: 6px;
     vertical-align: middle; }
 
 .tags-links:before {
   font-family: dashicons;
-  content: " ";
+  content: "";
+  padding-right: 6px;
   vertical-align: middle; }
 
 .entry-meta {
@@ -1468,7 +1522,7 @@ a {
   flex: 1 0 100%; }
 
 .archive-view .site-content {
-  margin-top: 1em; }
+  /* margin-top: 1em; */ }
   @media screen and (min-width: 1200px) {
     .archive-view .site-content {
       max-width: 1200px;
@@ -1478,14 +1532,17 @@ a {
 .archive-view .content-area {
   width: 100%; }
 
-.archive-view .post,
-.archive-view .page {
+.archive-view .content-area .post,
+.archive-view .content-area .page {
   position: relative;
   border-bottom: 1px solid #c2cfcf;
-  padding-bottom: 2em;
-  margin-bottom: 2em; }
-  .archive-view .post:last-child,
-  .archive-view .page:last-child {
+  padding: .5em;
+  margin-bottom: 2em;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.2); }
+  .archive-view .content-area .post:last-child,
+  .archive-view .content-area .page:last-child {
     border: 0; }
 
 .archive-view .entry-meta {
@@ -1509,10 +1566,11 @@ a {
     flex-direction: row;
     justify-content: space-between;
     align-items: center; }
-  .archive-view .post,
-  .archive-view .page {
+  .archive-view .content-area .post,
+  .archive-view .content-area .page {
     display: flex;
-    flex-direction: row; } }
+    flex-direction: row;
+    overflow: hidden; } }
 
 @media screen and (min-width: 1023px) {
   .archive-view .site-content {
@@ -1520,8 +1578,9 @@ a {
     justify-content: space-between; } }
 
 .archive-description {
-  border-bottom: 1px solid #c2cfcf;
-  margin-bottom: 1em; }
+  /*border-bottom: 1px solid $color-border;
+    margin-bottom: 1em;*/
+  font-size: 1.2em; }
 
 .continue-reading {
   text-align: center;
@@ -1533,7 +1592,7 @@ a {
     text-decoration: none;
     border: 1px solid #c2cfcf;
     border-radius: 23px;
-    color: #f7f7f1;
+    color: #e0e8e7;
     background: #017680; }
     .continue-reading a:hover, .continue-reading a:focus {
       background: #01b0bb; }
@@ -1548,24 +1607,42 @@ a {
     content: " ❯";
     vertical-align: middle; }
 
+/*.archive-cat-list {
+    list-style: none;
+    margin: 0 0 2em;
+    font-size: 1.1em;
+
+    .categories > ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        > .cat-item {
+            @include widget-columns;
+        }
+
+        .cat-item ul {
+            font-size: .8em;
+        }
+    }
+}*/
 .archive-cat-list {
   list-style: none;
-  margin: 0 0 2em; }
-  .archive-cat-list .categories > ul {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    font-size: 1.1em; }
-    .archive-cat-list .categories > ul > .cat-item {
-      width: 100%; }
-      @media screen and (min-width: 735px) {
-        .archive-cat-list .categories > ul > .cat-item {
-          width: 30.79667%;
-          margin-right: 3.8%; }
-          .archive-cat-list .categories > ul > .cat-item:nth-child(3n+3) {
-            margin-right: 0; } }
-    .archive-cat-list .categories > ul .cat-item ul {
-      font-size: .8em; }
+  margin: 0 0 2em;
+  font-size: 1.1em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; }
+  .archive-cat-list > .cat-item {
+    width: 100%; }
+    @media screen and (min-width: 735px) {
+      .archive-cat-list > .cat-item {
+        width: 30.79667%;
+        margin-right: 3.8%; }
+        .archive-cat-list > .cat-item:nth-child(3n+3) {
+          margin-right: 0; } }
+  .archive-cat-list .cat-item ul {
+    font-size: .8em; }
 
 /*--------------------------------------------------------------
 ## Comments
@@ -1645,7 +1722,7 @@ a {
   text-decoration: none;
   border: 1px solid #c2cfcf;
   border-radius: 23px;
-  color: #f7f7f1;
+  color: #e0e8e7;
   background: #017680; }
   .reply a:hover, .reply a:focus {
     background: #01b0bb; }
@@ -1675,7 +1752,7 @@ a {
       text-decoration: none;
       border: 1px solid #c2cfcf;
       border-radius: 23px;
-      color: #f7f7f1;
+      color: #e0e8e7;
       background: #017680; }
       .comment-respond .form-submit input:hover, .comment-respond .form-submit input:focus {
         background: #01b0bb; }
@@ -1714,10 +1791,12 @@ a {
 
 .cat-block-wrap {
   border: 1px solid #c2cfcf;
-  border-radius: 5px;
   margin: 0 .5em 1.5em .5em;
   overflow: hidden;
-  background: #e0e8e7;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.2);
+  background: #f7f7f1;
   max-width: 320px; }
 
 .cat-block {

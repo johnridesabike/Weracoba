@@ -20,9 +20,17 @@
 
         &::after {
             @include dashicon($glyph-menu);
+            padding-right: 0;
+            padding-left: 6px;
         }
     }
 }
+
+.toggled .menu-toggle:after {
+    @include dashicon($glyph-x);
+    padding-right: 0;
+    padding-left: 6px;
+ }
 
 .menu-item-has-children {
     a:after {
@@ -54,8 +62,8 @@
         padding: 0;
 
 		ul {
-            box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-            box-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
+            //box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+            @include drop-shadow;
             float: left;
             position: absolute;
             top: 100%;
@@ -170,4 +178,15 @@
 	.menu-toggle {
 		display: none;
 	}
+}
+
+.menu-item-object-category {
+    a {
+        text-indent: -24px;
+        padding-left: 16px;
+        
+        &:before {
+            @include dashicon($glyph-category);
+        }
+    }
 }
