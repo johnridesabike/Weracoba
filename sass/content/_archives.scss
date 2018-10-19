@@ -12,6 +12,10 @@
         //@include max-content-width;
         width: 100%;
     }
+    
+    .entry-wrap {
+        width: 100%;
+    }
 
     .content-area .post,
     .content-area .page {
@@ -42,8 +46,8 @@
             align-items: center;
         }
 
-        .content-area .post,
-        .content-area .page {
+        .content-area .post.has-post-thumbnail,
+        .content-area .page.has-post-thumbnail {
             display: flex;
             flex-direction: row;
             overflow: hidden;
@@ -124,3 +128,15 @@
     }
 }
 
+.post.format-aside {
+    width: 90%;
+    margin: auto;
+    
+    .entry-wrap {
+        margin: 0 1em;
+    }
+    
+    .entry-content {
+        font-size: 1.3em;
+    }
+}

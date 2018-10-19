@@ -124,3 +124,13 @@
         }
     }
 }
+
+/*************** Attachments ***************/
+
+.entry-attachment {
+    text-align: center;
+    
+    img {
+        max-height: 90vh;
+    }
+}

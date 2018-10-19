@@ -11,12 +11,27 @@
 .posts-navigation,
 .paging-navigation {
     text-align: left;
-    overflow: hidden;
+    //overflow: hidden;
 
     a {
         display: block;
         width: 100%;
+        background: $color-bg-body;
         @include button-outline;
+        //@include drop-shadow;
+        //padding: 0 .5em;
+    }
+}
+
+.attachment {
+    .comment-navigation,
+    .post-navigation,
+    .posts-navigation,
+    .paging-navigation {
+        a {
+            @include drop-shadow;
+            @include button-outline;
+        }
     }
 }
 
@@ -87,6 +102,5 @@
     
     .widget {
         margin: 0;
-        font-size: .9em;
     }
 }
