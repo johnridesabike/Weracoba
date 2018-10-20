@@ -32,6 +32,7 @@
                     <?php weracoba_posted_by(false); ?>
                     <?php weracoba_posted_on(); ?>
                     <?php weracoba_comments(); ?>
+                    <?php weracoba_tag_list( '%1$s' ); ?>
                 </div><!-- .entry-meta -->
             <?php endif; ?>
             <div class="continue-reading">

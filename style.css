@@ -1581,6 +1581,13 @@ a {
     content: "";
     display: none; }
 
+.archive-view .format-aside .entry-meta .avatar {
+  position: static;
+  top: auto;
+  left: auto;
+  margin-right: 1em;
+  vertical-align: middle; }
+
 @media screen and (min-width: 735px) {
   .archive-view .entry-footer {
     display: flex;

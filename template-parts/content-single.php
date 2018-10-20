@@ -23,7 +23,6 @@
                 <?php weracoba_posted_by(); ?>
                 <?php weracoba_posted_on(); ?>
                 <?php weracoba_comments(); ?>
-                <?php weracoba_reading_time(); ?>
             </div><!-- .entry-meta -->
         </div> <!-- .entry-header-wrap -->
 	</header><!-- .entry-header -->
