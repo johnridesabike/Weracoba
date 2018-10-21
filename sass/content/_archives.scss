@@ -128,24 +128,13 @@
     }
 }
 
-.post.format-aside {
+.archive-view .post.format-aside {
     width: 90%;
-    margin: auto;
+    margin: 0 auto 2em auto;
+    border-radius: 23px;
     
-    .entry-content {
-        font-size: 1.3em;
-    }
-    .entry-meta .avatar {
-        position: static;
-        top: auto;
-        left: auto;
-        margin-right: 1em;
-        vertical-align: middle;
-        
-        @media screen and (max-width: $breakpoint-1) {
-            margin-right: .5em;
-            height: 32px;
-            width: 32px;
-        }
+    @media screen and (min-width: $breakpoint-1) {
+        padding-left: 1em;
+        padding-right: 1em;
     }
 }

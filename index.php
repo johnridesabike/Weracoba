@@ -25,7 +25,7 @@ get_header();
 					<h1 class="page-title"><?php single_post_title(); ?></h1>
 				</header>
                 <section>
-                    <h2>Select a category</h2>
+                    <h2>Browse by category</h2>
                     <ul class="archive-cat-list widget widget_categories">
                         <?php wp_list_categories( array(
                                 'title_li' => '',
@@ -34,6 +34,14 @@ get_header();
                                 'order' => 'DESC'
                                 ) ); ?>
                     </ul>
+                </section>
+                <section>
+                    <h2>Browse by tag</h2>
+                    <div class="widget">
+                        <?php wp_tag_cloud( array( 'smallest' => 12, 
+                                                   'largest' => 24,
+                                                   'separator' => ', ' ) );?>
+                    </div>
                 </section>
                 <section>
                     <h2>Browse the recent updates</h2>
@@ -48,7 +56,8 @@ get_header();
                  * called content-___.php (where ___ is the Post Type name) and that will be used instead.
                  */
                 //get_template_part( 'template-parts/content', get_post_type() );
-                get_template_part( 'template-parts/content', get_post_format() );
+                $format = get_post_format() ? : 'standard';
+                get_template_part( 'template-parts/content', $format );
 
             endwhile;
             the_posts_navigation();

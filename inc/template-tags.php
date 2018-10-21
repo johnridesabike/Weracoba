@@ -111,7 +111,7 @@ endif;
 if ( ! function_exists( 'weracoba_category_list' ) ) :
 	function weracoba_category_list() {
 		/* translators: used between list items, there is a space after the comma */
-		$categories_list = get_the_category_list( esc_html__( ', ', 'weracoba' ) );
+		$categories_list = get_the_category_list( esc_html_x( ', ', 'list item separator', 'weracoba' ), esc_html('>') );
 		if ( $categories_list ) {
 			/* translators: 1: list of categories. */
 			printf( '<span class="cat-links">' . esc_html__( '%1$s', 'weracoba' ) . '</span>', $categories_list ); // WPCS: XSS OK.

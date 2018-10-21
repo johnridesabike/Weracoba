@@ -85,6 +85,7 @@
     .sub-menu {
         padding-top: 0;
         padding-bottom: .5em;
+        margin-left: 1em;
 
         a:before {
             content: $glyph-arrow-down-right + " ";

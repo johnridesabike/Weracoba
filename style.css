@@ -585,7 +585,7 @@ hr {
 
 /* Lists */
 ul, ol {
-  margin: 0 0 1.5em 3em; }
+  margin: 0 0 1.5em 0; }
 
 ul {
   list-style: disc; }
@@ -1106,7 +1106,8 @@ a {
 .widget_recent_entries .children,
 .widget_recent_entries .sub-menu {
   padding-top: 0;
-  padding-bottom: .5em; }
+  padding-bottom: .5em;
+  margin-left: 1em; }
   .widget_pages .children a:before,
   .widget_pages .sub-menu a:before,
   .widget_nav_menu .children a:before,
@@ -1409,11 +1410,12 @@ a {
   font-size: 1.3em;
   margin-bottom: .5em;
   display: block; }
-  .cat-links a:before {
+  .cat-links:before {
     font-family: dashicons;
     content: "";
     padding-right: 6px;
-    vertical-align: middle; }
+    vertical-align: middle;
+    color: #017680; }
 
 .tags-links:before {
   font-family: dashicons;
@@ -1535,6 +1537,39 @@ a {
   text-align: center; }
   .entry-attachment img {
     max-height: 90vh; }
+
+.format-aside .entry-content {
+  font-size: 1.3em; }
+
+.format-aside .entry-meta {
+  margin: 0; }
+  .format-aside .entry-meta .avatar {
+    position: static;
+    top: auto;
+    left: auto;
+    margin-right: .5em;
+    vertical-align: middle; }
+
+@media screen and (min-width: 735px) {
+  .single-format-aside .site-content .content-wrap {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around; }
+  .single-format-aside .site-content .post {
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    margin-bottom: 3em; }
+  .single-format-aside .site-content .entry-content {
+    max-width: 700px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-left: 2em; }
+  .single-format-aside .site-content .entry-footer {
+    border: 0; }
+  .aside-body {
+    width: 100%; } }
 
 /*--------------------------------------------------------------
 ## Archives
@@ -1671,22 +1706,14 @@ a {
   .archive-cat-list .cat-item ul {
     font-size: .8em; }
 
-.post.format-aside {
+.archive-view .post.format-aside {
   width: 90%;
-  margin: auto; }
-  .post.format-aside .entry-content {
-    font-size: 1.3em; }
-  .post.format-aside .entry-meta .avatar {
-    position: static;
-    top: auto;
-    left: auto;
-    margin-right: 1em;
-    vertical-align: middle; }
-    @media screen and (max-width: 735px) {
-      .post.format-aside .entry-meta .avatar {
-        margin-right: .5em;
-        height: 32px;
-        width: 32px; } }
+  margin: 0 auto 2em auto;
+  border-radius: 23px; }
+  @media screen and (min-width: 735px) {
+    .archive-view .post.format-aside {
+      padding-left: 1em;
+      padding-right: 1em; } }
 
 /*--------------------------------------------------------------
 ## Comments
