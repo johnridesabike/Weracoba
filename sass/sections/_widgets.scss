@@ -85,6 +85,7 @@
     .sub-menu {
         padding-top: 0;
         padding-bottom: .5em;
+        margin-left: 1em;
 
         a:before {
             content: $glyph-arrow-down-right + " ";
@@ -209,6 +210,10 @@
     .widget {
         @include widget-columns;
     }
+}
+
+.widget_contextual_feed .feed-description {
+    //font-size: .9em;
 }
 
 @media screen and (min-width: $breakpoint-2) {

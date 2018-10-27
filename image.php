@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying all single posts
+ * The template for displaying all attachments
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
@@ -16,8 +16,7 @@ get_header();
 		<?php
 		while ( have_posts() ) :
 			the_post();
-            $format = get_post_format() ? : 'single';
-			get_template_part( 'template-parts/content', $format );
+			get_template_part( 'template-parts/content', 'image' );
 		endwhile; // End of the loop.
 		?>
 

@@ -296,8 +296,10 @@ $opacity-overlay: .25;
 
     > *:after {
         content: " |";
-        margin: 0 0.5em;
         color: $color-border;
+        @media screen and (min-width: $breakpoint-1) {
+            margin: 0 0.5em;
+        }
     }
 
     > *:last-child:after {

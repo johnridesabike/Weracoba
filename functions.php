@@ -90,6 +90,13 @@ if ( ! function_exists( 'weracoba_setup' ) ) :
         * @link https://wordpress.org/gutenberg/handbook/extensibility/theme-support/#opt-in-features
         */
         add_theme_support( 'align-wide' );
+        
+        /**
+        * Add support for post formats.
+        * 
+        * @link https://codex.wordpress.org/Post_Formats
+        */
+        add_theme_support( 'post-formats', array( 'aside' ) );
 	}
 endif;
 add_action( 'after_setup_theme', 'weracoba_setup' );

@@ -12,6 +12,10 @@
         //@include max-content-width;
         width: 100%;
     }
+    
+    .entry-wrap {
+        width: 100%;
+    }
 
     .content-area .post,
     .content-area .page {
@@ -42,8 +46,8 @@
             align-items: center;
         }
 
-        .content-area .post,
-        .content-area .page {
+        .content-area .post.has-post-thumbnail,
+        .content-area .page.has-post-thumbnail {
             display: flex;
             flex-direction: row;
             overflow: hidden;
@@ -124,3 +128,13 @@
     }
 }
 
+.archive-view .post.format-aside {
+    width: 90%;
+    margin: 0 auto 2em auto;
+    border-radius: 23px;
+    
+    @media screen and (min-width: $breakpoint-1) {
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+}
