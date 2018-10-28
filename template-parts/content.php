@@ -8,7 +8,7 @@
  */
 
 ?>
-
+TEST
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <?php weracoba_post_thumbnail(); ?>
     <div class="entry-wrap">

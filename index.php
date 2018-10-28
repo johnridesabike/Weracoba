@@ -21,9 +21,9 @@ get_header();
 		if ( have_posts() ) :
 
 			if ( is_home() && ! is_front_page() ) : ?>
-				<header class="archive-header">
+				<!--<header class="archive-header">
 					<h1 class="page-title"><?php single_post_title(); ?></h1>
-				</header>
+				</header>-->
                 <section>
                     <h2>Browse by category</h2>
                     <ul class="archive-cat-list widget widget_categories">

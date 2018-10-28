@@ -105,9 +105,9 @@ object {
     }
 }
 
-/* we stop full-bleeding on wide screens, but only on posts */
+/* we stop full-bleeding on wide screens, but only on single posts */
 @media screen and (min-width: $breakpoint-3) {
-    .post .featured-image.full-bleed {
+    .single .featured-image.full-bleed {
         position: static;
         width: 765px;
         margin: 0;

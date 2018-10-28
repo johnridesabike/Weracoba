@@ -9,12 +9,16 @@
 	clear: both;
 	margin: 0 0 1.5em;
 }
-.post-content,
+.content-area,
 .entry-header-wrap,
 .content-wrap {
     @include max-site-width;
 }
 /*************** Entry header ***************/
+.single .entry-header {
+    @extend .site-content;
+}
+
 .entry-header-wrap {
     margin-top: 1em;
 }
@@ -87,7 +91,7 @@
     padding-top: 1em;
 }
 /*************** Post body ***************/
-.post-content-body {
+/*.post-content-body {
     width: 100%;
     //border-bottom: 1px solid $color-border;
     padding-bottom: 1em;
@@ -95,6 +99,25 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}*/
+
+@media screen and (min-width: $breakpoint-2) {
+    .single .content-area {
+        display: flex;
+        flex-flow: row;
+        justify-content: space-around;
+        
+        .site-main {
+            width: 100%;
+        }
+    }
+    /*.post-content {
+        display: flex;
+        justify-content: space-around;
+    }
+    /*.post-content-body {
+        margin: 0;
+    }*/
 }
 .single .post .entry-content > *:not(.alignwide):not(.alignfull) {
     @include max-content-width;
@@ -105,20 +128,24 @@
     }
 }
 @media screen and (min-width: $breakpoint-2) {
-    .post-content {
+    /*.post-content {
         display: flex;
         justify-content: space-around;
     }
-    .post-content-body {
+    /*.post-content-body {
         margin: 0;
-    }
+    }*/
+}
+/*************** Page header ***************/
+.page .entry-header {
+    @include max-site-width;
 }
 /*************** Page body ***************/
 .page {
     .entry-title {
         text-align: center;
     }
-    .narrow-width .entry-content {
+    .entry-content {
         @include max-page-width;
         h2 {
             margin-top: 2em;

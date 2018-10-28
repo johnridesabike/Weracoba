@@ -708,23 +708,23 @@ a {
 /*--------------------------------------------------------------
 ## Header
 --------------------------------------------------------------*/
-.site-header {
+.global-header {
   background: #f7f7f1;
   text-align: center;
   border-bottom: 1px solid #c2cfcf;
   box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.2); }
-  .site-header a {
+  .global-header a {
     color: #017680; }
-  .site-header .search-form {
+  .global-header .search-form {
     display: none;
     text-align: right; }
     @media screen and (min-width: 735px) {
-      .site-header .search-form {
+      .global-header .search-form {
         display: block; } }
-  .site-header .search-field {
+  .global-header .search-field {
     font-size: .8em;
     width: 300px; }
-  .site-header .search-submit {
+  .global-header .search-submit {
     display: none; }
 
 .site-title {
@@ -743,7 +743,7 @@ a {
 
 /* Header Media Queries */
 @media screen and (min-width: 735px) {
-  .site-header {
+  .global-header {
     margin-bottom: 0;
     padding-top: .67em;
     padding-bottom: .67em; } }
@@ -773,6 +773,15 @@ a {
     display: block;
     flex-shrink: 2;
     font-size: 1.2em; } }
+
+.archive-view .entry-header {
+  margin-left: 1em;
+  margin-right: 1em; }
+  @media screen and (min-width: 1200px) {
+    .archive-view .entry-header {
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto; } }
 
 /*--------------------------------------------------------------
 ## Footer
@@ -1019,11 +1028,6 @@ a {
 
 .breadcrumbs {
   margin-top: .5em; }
-  @media screen and (min-width: 1200px) {
-    .breadcrumbs {
-      max-width: 1200px;
-      margin-left: auto;
-      margin-right: auto; } }
   .breadcrumbs .widget {
     margin: 0; }
 
@@ -1036,12 +1040,12 @@ a {
     .widget-area {
       margin-left: 1em; } }
 
-.archive-view .site-content .widget {
+.archive-view .site-content .widget, .archive-view .single .entry-header .widget, .single .archive-view .entry-header .widget {
   background: white;
   border-radius: 5px;
   box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.2); }
   @media screen and (max-width: 1023px) {
-    .archive-view .site-content .widget {
+    .archive-view .site-content .widget, .archive-view .single .entry-header .widget, .single .archive-view .entry-header .widget {
       margin-bottom: 1em; } }
 
 .widget {
@@ -1350,7 +1354,9 @@ a {
 .site-header:before,
 .site-header:after,
 .site-content:before,
+.single .entry-header:before,
 .site-content:after,
+.single .entry-header:after,
 .site-footer:before,
 .site-footer:after {
   content: "";
@@ -1362,6 +1368,7 @@ a {
 .comment-content:after,
 .site-header:after,
 .site-content:after,
+.single .entry-header:after,
 .site-footer:after {
   clear: both; }
 
@@ -1371,10 +1378,10 @@ a {
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
-.site-content {
+.site-content, .single .entry-header {
   padding: 0 1em; }
   @media screen and (min-width: 735px) {
-    .site-content {
+    .site-content, .single .entry-header {
       padding: 0 2em; } }
 
 /*--------------------------------------------------------------
@@ -1392,7 +1399,7 @@ a {
   margin: 0 0 1.5em; }
 
 @media screen and (min-width: 1200px) {
-  .post-content,
+  .content-area,
   .entry-header-wrap,
   .content-wrap {
     max-width: 1200px;
@@ -1497,13 +1504,29 @@ a {
   padding-top: 1em; }
 
 /*************** Post body ***************/
-.post-content-body {
-  width: 100%;
-  padding-bottom: 1em;
-  margin-bottom: 1em;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; }
+/*.post-content-body {
+    width: 100%;
+    //border-bottom: 1px solid $color-border;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}*/
+@media screen and (min-width: 1023px) {
+  .single .content-area {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around; }
+    .single .content-area .site-main {
+      width: 100%; }
+  /*.post-content {
+        display: flex;
+        justify-content: space-around;
+    }
+    /*.post-content-body {
+        margin: 0;
+    }*/ }
 
 .single .post .entry-content > *:not(.alignwide):not(.alignfull) {
   max-width: 700px;
@@ -1515,21 +1538,30 @@ a {
     margin-top: 1em; } }
 
 @media screen and (min-width: 1023px) {
-  .post-content {
-    display: flex;
-    justify-content: space-around; }
-  .post-content-body {
-    margin: 0; } }
+  /*.post-content {
+        display: flex;
+        justify-content: space-around;
+    }
+    /*.post-content-body {
+        margin: 0;
+    }*/ }
+
+/*************** Page header ***************/
+@media screen and (min-width: 1200px) {
+  .page .entry-header {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto; } }
 
 /*************** Page body ***************/
 .page .entry-title, .page .editor-post-title textarea, .editor-post-title .page textarea {
   text-align: center; }
 
-.page .narrow-width .entry-content {
+.page .entry-content {
   max-width: 900px;
   margin-right: auto;
   margin-left: auto; }
-  .page .narrow-width .entry-content h2 {
+  .page .entry-content h2 {
     margin-top: 2em; }
 
 /*************** Attachments ***************/
@@ -1551,22 +1583,22 @@ a {
     vertical-align: middle; }
 
 @media screen and (min-width: 735px) {
-  .single-format-aside .site-content .content-wrap {
+  .single-format-aside .site-content .content-wrap, .single-format-aside .single .entry-header .content-wrap, .single .single-format-aside .entry-header .content-wrap {
     display: flex;
     flex-flow: row;
     justify-content: space-around; }
-  .single-format-aside .site-content .post {
+  .single-format-aside .site-content .post, .single-format-aside .single .entry-header .post, .single .single-format-aside .entry-header .post {
     width: 100%;
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
     margin-bottom: 3em; }
-  .single-format-aside .site-content .entry-content {
+  .single-format-aside .site-content .entry-content, .single-format-aside .single .entry-header .entry-content, .single .single-format-aside .entry-header .entry-content {
     max-width: 700px;
     margin-right: auto;
     margin-left: auto;
     margin-left: 2em; }
-  .single-format-aside .site-content .entry-footer {
+  .single-format-aside .site-content .entry-footer, .single-format-aside .single .entry-header .entry-footer, .single .single-format-aside .entry-header .entry-footer {
     border: 0; }
   .aside-body {
     width: 100%; } }
@@ -1574,14 +1606,10 @@ a {
 /*--------------------------------------------------------------
 ## Archives
 --------------------------------------------------------------*/
-.archive-view .site-main .page-header {
-  width: 100%;
-  flex: 1 0 100%; }
-
-.archive-view .site-content {
+.archive-view .site-content, .archive-view .single .entry-header, .single .archive-view .entry-header {
   /* margin-top: 1em; */ }
   @media screen and (min-width: 1200px) {
-    .archive-view .site-content {
+    .archive-view .site-content, .archive-view .single .entry-header, .single .archive-view .entry-header {
       max-width: 1200px;
       margin-left: auto;
       margin-right: auto; } }
@@ -1635,14 +1663,16 @@ a {
     overflow: hidden; } }
 
 @media screen and (min-width: 1023px) {
-  .archive-view .site-content {
+  .archive-view .site-content, .archive-view .single .entry-header, .single .archive-view .entry-header {
     display: flex;
     justify-content: space-between; } }
 
 .archive-description {
   /*border-bottom: 1px solid $color-border;
     margin-bottom: 1em;*/
-  font-size: 1.2em; }
+  font-size: 1.2em;
+  width: 100%;
+  flex: 1 0 100%; }
 
 .continue-reading {
   text-align: center;
@@ -2017,9 +2047,9 @@ object {
         margin-left: -2em;
         margin-right: -2em; } }
 
-/* we stop full-bleeding on wide screens, but only on posts */
+/* we stop full-bleeding on wide screens, but only on single posts */
 @media screen and (min-width: 1365px) {
-  .post .featured-image.full-bleed {
+  .single .featured-image.full-bleed {
     position: static;
     width: 765px;
     margin: 0; } }

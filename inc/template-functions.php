@@ -42,3 +42,26 @@ function weracoba_pingback_header() {
 	}
 }
 add_action( 'wp_head', 'weracoba_pingback_header' );
+
+/**
+ * Determines if post thumbnail can be displayed.
+ * Copied from Twenty Nineteen
+ * @link https://github.com/WordPress/twentynineteen/blob/master/inc/template-functions.php#L124
+ */
+function weracoba_can_show_post_thumbnail() {
+	return apply_filters( 'weracoba_can_show_post_thumbnail', 
+                         ! post_password_required() && ! is_attachment() && has_post_thumbnail() );
+}
+
+/**
+ * Filters the default archive titles.
+ */
+function weracoba_get_the_archive_title($title) {
+    $asploded = explode(":", $title);
+    if ( count($asploded) > 1 ) {
+        return $asploded[1];
+    } else {
+        return $title;
+    }
+}
+add_filter( 'get_the_archive_title', 'weracoba_get_the_archive_title' );
