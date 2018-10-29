@@ -86,7 +86,8 @@ big {
 
 /* Posts & Pages */
 
-.post {
+.post,
+.archive-entry {
     .entry-header,
     .entry-content {
         h1, h2, h3, h4, h5, h6 {
@@ -94,10 +95,13 @@ big {
         }
     }
 }
-.post .entry-content {
-    font-family: $font-reading;
-    font-size: $font-reading-size;
-    line-height: calculate-line-height($font-reading-size, $size-content);
+.post,
+.archive-entry {
+    .entry-content {
+        font-family: $font-reading;
+        font-size: $font-reading-size;
+        line-height: calculate-line-height($font-reading-size, $size-content);
+    }
 }
 .page .entry-content {
     line-height: calculate-line-height(16, $size-content-page);

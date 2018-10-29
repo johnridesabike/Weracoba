@@ -56,10 +56,13 @@ function weracoba_can_show_post_thumbnail() {
 /**
  * Filters the default archive titles.
  */
-function weracoba_get_the_archive_title($title) {
-    $asploded = explode(":", $title);
-    if ( count($asploded) > 1 ) {
+function weracoba_get_the_archive_title( $title ) {
+    $asploded = explode( ":", $title );
+    if ( count( $asploded ) > 1 ) {
         return $asploded[1];
+    } elseif ( is_search() ) {
+        /* translators: %s: search phrase */
+        return sprintf( __( 'Search Results for &#8220;%s&#8221;' ), get_search_query() );
     } else {
         return $title;
     }

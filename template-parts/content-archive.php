@@ -6,10 +6,8 @@
  *
  * @package Weracoba
  */
-
 ?>
-TEST
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'archive-entry' ); ?>>
     <?php weracoba_post_thumbnail(); ?>
     <div class="entry-wrap">
         <header class="entry-header">

@@ -1,9 +1,14 @@
-.site-content {
+%site-content {
     padding: 0 1em;
 
     @media screen and (min-width: $breakpoint-1) {
         padding: 0 2em;
     }
+}
+
+.site-content {
+    @extend %site-content;
+    // so when site-content gets extended elsewhere, it isn't affected by later changes
 }
 
 /*--------------------------------------------------------------

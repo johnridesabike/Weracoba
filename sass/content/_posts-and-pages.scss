@@ -9,14 +9,14 @@
 	clear: both;
 	margin: 0 0 1.5em;
 }
-.content-area,
+.site-content,
 .entry-header-wrap,
 .content-wrap {
     @include max-site-width;
 }
 /*************** Entry header ***************/
 .single .entry-header {
-    @extend .site-content;
+    @extend %site-content;
 }
 
 .entry-header-wrap {
@@ -102,12 +102,12 @@
 }*/
 
 @media screen and (min-width: $breakpoint-2) {
-    .single .content-area {
+    .site-content {
         display: flex;
         flex-flow: row;
         justify-content: space-around;
         
-        .site-main {
+        .content-area {
             width: 100%;
         }
     }
@@ -184,6 +184,7 @@
         }
     }
 }
+/*
 @media screen and (min-width: $breakpoint-1) {
     .single-format-aside .site-content {
         .content-wrap {
@@ -215,4 +216,4 @@
     .aside-body {
         width: 100%;
     }
-}
+}*/
