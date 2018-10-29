@@ -727,7 +727,6 @@ a {
 --------------------------------------------------------------*/
 .global-header {
   background: #f7f7f1;
-  text-align: center;
   border-bottom: 1px solid #c2cfcf;
   box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.2); }
   .global-header a {

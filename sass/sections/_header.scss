@@ -1,6 +1,6 @@
 .global-header {
     background: $color-bg-header;
-    text-align: center;
+    //text-align: center;
     border-bottom: 1px solid $color-border;
     @include drop-shadow-bottom;
 
