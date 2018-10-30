@@ -431,35 +431,35 @@ big {
       font-size: 1em; } }
 
 /* Posts & Pages */
-.post .entry-header h1, .post .entry-header .editor-post-title textarea, .editor-post-title .post .entry-header textarea, .post .entry-header h2, .post .entry-header h3, .post .entry-header h4, .post .entry-header h5, .post .entry-header h6,
-.post .entry-content h1,
-.post .entry-content .editor-post-title textarea, .editor-post-title
-.post .entry-content textarea,
-.post .entry-content h2,
-.post .entry-content h3,
-.post .entry-content h4,
-.post .entry-content h5,
-.post .entry-content h6,
-.archive-entry .entry-header h1,
-.archive-entry .entry-header .editor-post-title textarea, .editor-post-title
-.archive-entry .entry-header textarea,
-.archive-entry .entry-header h2,
-.archive-entry .entry-header h3,
-.archive-entry .entry-header h4,
-.archive-entry .entry-header h5,
-.archive-entry .entry-header h6,
-.archive-entry .entry-content h1,
-.archive-entry .entry-content .editor-post-title textarea, .editor-post-title
-.archive-entry .entry-content textarea,
-.archive-entry .entry-content h2,
-.archive-entry .entry-content h3,
-.archive-entry .entry-content h4,
-.archive-entry .entry-content h5,
-.archive-entry .entry-content h6 {
+.excerpt-entry .entry-header h1, .excerpt-entry .entry-header .editor-post-title textarea, .editor-post-title .excerpt-entry .entry-header textarea, .excerpt-entry .entry-header h2, .excerpt-entry .entry-header h3, .excerpt-entry .entry-header h4, .excerpt-entry .entry-header h5, .excerpt-entry .entry-header h6,
+.excerpt-entry .entry-content h1,
+.excerpt-entry .entry-content .editor-post-title textarea, .editor-post-title
+.excerpt-entry .entry-content textarea,
+.excerpt-entry .entry-content h2,
+.excerpt-entry .entry-content h3,
+.excerpt-entry .entry-content h4,
+.excerpt-entry .entry-content h5,
+.excerpt-entry .entry-content h6,
+.single-post .entry-header h1,
+.single-post .entry-header .editor-post-title textarea, .editor-post-title
+.single-post .entry-header textarea,
+.single-post .entry-header h2,
+.single-post .entry-header h3,
+.single-post .entry-header h4,
+.single-post .entry-header h5,
+.single-post .entry-header h6,
+.single-post .entry-content h1,
+.single-post .entry-content .editor-post-title textarea, .editor-post-title
+.single-post .entry-content textarea,
+.single-post .entry-content h2,
+.single-post .entry-content h3,
+.single-post .entry-content h4,
+.single-post .entry-content h5,
+.single-post .entry-content h6 {
   font-family: Times, "Times New Roman", serif; }
 
-.post .entry-content,
-.archive-entry .entry-content {
+.excerpt-entry .entry-content,
+.single-post .entry-content {
   font-family: Times, "Times New Roman", serif;
   font-size: 19px;
   line-height: 1.53789; }
@@ -790,11 +790,11 @@ a {
     flex-shrink: 2;
     font-size: 1.2em; } }
 
-.archive-view .entry-header {
+.archive-view .site-header .entry-header {
   margin-left: 1em;
   margin-right: 1em; }
   @media screen and (min-width: 1200px) {
-    .archive-view .entry-header {
+    .archive-view .site-header .entry-header {
       max-width: 1200px;
       margin-left: auto;
       margin-right: auto; } }
@@ -1634,7 +1634,7 @@ a {
 .archive-view .entry-wrap {
   width: 100%; }
 
-.archive-view .content-area .archive-entry,
+.archive-view .content-area .excerpt-entry,
 .archive-view .content-area .format-aside {
   position: relative;
   border-bottom: 1px solid #c2cfcf;
@@ -1643,7 +1643,7 @@ a {
   background: white;
   border-radius: 5px;
   box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.2); }
-  .archive-view .content-area .archive-entry:last-child,
+  .archive-view .content-area .excerpt-entry:last-child,
   .archive-view .content-area .format-aside:last-child {
     border: 0; }
 

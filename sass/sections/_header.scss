@@ -1,6 +1,5 @@
 .global-header {
     background: $color-bg-header;
-    //text-align: center;
     border-bottom: 1px solid $color-border;
     @include drop-shadow-bottom;
 
@@ -76,7 +75,7 @@
         font-size: 1.2em;
     }
 }
-.archive-view .entry-header {
+.archive-view .site-header .entry-header {
     margin-left: 1em;
     margin-right: 1em;
     @include max-site-width;

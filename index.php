@@ -21,11 +21,8 @@ get_header();
 		if ( have_posts() ) :
 
 			if ( is_home() && ! is_front_page() ) : ?>
-				<!--<header class="archive-header">
-					<h1 class="page-title"><?php single_post_title(); ?></h1>
-				</header>-->
                 <section>
-                    <h2>Browse by category</h2>
+                    <h2><?php esc_html_e( 'Browse by category', 'weracoba' ); ?></h2>
                     <ul class="archive-cat-list widget widget_categories">
                         <?php wp_list_categories( array(
                                 'title_li' => '',
@@ -36,7 +33,7 @@ get_header();
                     </ul>
                 </section>
                 <section>
-                    <h2>Browse by tag</h2>
+                    <h2><?php esc_html_e( 'Browse by tag', 'weracoba' ); ?></h2>
                     <div class="widget">
                         <?php wp_tag_cloud( array( 'smallest' => 12, 
                                                    'largest' => 24,
@@ -44,7 +41,7 @@ get_header();
                     </div>
                 </section>
                 <section>
-                    <h2>Browse the recent updates</h2>
+                    <h2><?php esc_html_e( 'Browse the recent updates', 'weracoba' ); ?></h2>
             <?php
             endif;
             /* Start the Loop */
@@ -56,7 +53,7 @@ get_header();
                  * called content-___.php (where ___ is the Post Type name) and that will be used instead.
                  */
                 //get_template_part( 'template-parts/content', get_post_type() );
-                $format = get_post_format() ? : 'archive';
+                $format = get_post_format() ? : 'excerpt';
                 get_template_part( 'template-parts/content', $format );
 
             endwhile;
