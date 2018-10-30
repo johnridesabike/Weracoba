@@ -68,6 +68,9 @@
     .single .entry-meta {
         @include avatar(72px);
     }
+    .single .entry-header {
+        padding: 0;
+    }
     .single .has-post-thumbnail {
         .entry-header {
             @include max-site-width;
