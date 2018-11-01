@@ -77,21 +77,12 @@ object {
         @include link-overlay;
     }
 }
-
 .single .featured-image {
     @extend %featured-image;
     height: 16em;
-    
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
-
-    figcaption {
-        background: rgba(0, 0, 0, .5);
-        color: $color-text-light;
-        padding: .2em .5em;
-        font-size: .9em;
-    }
 
     &.full-bleed {
         margin: 0 -1em;
@@ -195,8 +186,37 @@ object {
 }
 
 /*--------------------------------------------------------------
+## Attachment pages
+--------------------------------------------------------------*/
+.single-attachment {
+    .entry-title {
+        text-align: center;
+    }
+    .comments-area {
+        margin-top: 1em;
+    }
+}
+
+/*--------------------------------------------------------------
 ## Captions
 --------------------------------------------------------------*/
+%figcaption {
+    background: rgba(0, 0, 0, .5);
+    color: $color-text-light;
+    padding: .2em .5em;
+    font-family: $font-UI;
+}
+.wp-block-gallery .blocks-gallery-item figcaption {
+    @extend %figcaption;
+    font-size: .7em;
+}
+.single .featured-image figcaption {
+    @extend %figcaption;
+    font-size: .9em;
+}
+.entry-caption {
+    font-size: 1.3em;
+}
 .wp-caption {
 	margin-bottom: 1.5em;
 	max-width: 100%;

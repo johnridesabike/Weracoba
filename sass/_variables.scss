@@ -57,7 +57,7 @@ $breakpoint-3: 1365px; // iPad pro landscape
 // Structure
 $size-max-width: 1200px;
 $size-content: 700px;
-$size-content-page: 900px;
+$size-content-page: 700px; //900px;
 $size-widget: 250px;
 
 @mixin dashicon($glyph) {
@@ -74,7 +74,7 @@ $size-widget: 250px;
 // * @link https://jeremyhixon.com/golden-ratio-typography-in-sass/
 // *
 // * @param	int		$number		The number to increase
-// * @param	int		$exponent	The power to increase the number by
+// * @param int		$exponent	The power to increase the number by
 // *
 // * @return	int					The new number
 // */

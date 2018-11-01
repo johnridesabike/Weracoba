@@ -200,7 +200,7 @@
 }
 
 /* Post & blog widgets */
-#secondary.widget-area {
+.widget-area {
     display: flex;
     flex-flow: row;
     flex-wrap: wrap;
@@ -211,7 +211,8 @@
     }
 }
 
-.page #secondary.widget-area {
+.page .widget-area,
+.single-attachment .widget-area {
     border-top: 1px solid $color-border;
     margin-top: 2em;
 }
@@ -221,27 +222,24 @@
 }
 
 @media screen and (min-width: $breakpoint-2) {
-    .widget {
-        margin: 0 0 4em;
-    }
-    #secondary.widget-area {
+    .widget-area {
         margin-top: 0;
     }
-    .single-post #secondary.widget-area {
+    .single-post .widget-area {
         margin-top: 4em;
     }
     .single-post,
     .archive-view {
-        #secondary.widget-area {
+        .site-content .widget {
+            margin-bottom: 4em;
+        }
+        .widget-area {
             display: block;
             margin-left: 1em;
             max-width: $size-widget;
-            .widget_search {
-                flex: initial;
-            }
             .widget {
                 width: $size-widget;
-                margin-right: 0;
+                margin: 0 0 4em;
             }
         }
     }
