@@ -150,18 +150,25 @@
     @media screen and (min-width: 1365px) {
       .edit-post-visual-editor .wp-block-cover-image .wp-block-cover-image-text {
         font-size: 2.75em; } }
-  .edit-post-visual-editor .wp-block-button .wp-block-button__link {
+  .edit-post-visual-editor .wp-block-button .wp-block-button__link,
+  .edit-post-visual-editor .wp-block-file a.wp-block-file__button {
     padding: .6em 1.4em;
     font-family: Helvetica, Tahoma, sans-serif;
     text-decoration: none;
     border: 1px solid #c2cfcf; }
-    .edit-post-visual-editor .wp-block-button .wp-block-button__link:not(.has-text-color) {
+    .edit-post-visual-editor .wp-block-button .wp-block-button__link:not(.has-text-color),
+    .edit-post-visual-editor .wp-block-file a.wp-block-file__button:not(.has-text-color) {
       color: white; }
-      .edit-post-visual-editor .wp-block-button .wp-block-button__link:not(.has-text-color):hover, .edit-post-visual-editor .wp-block-button .wp-block-button__link:not(.has-text-color):focus {
+      .edit-post-visual-editor .wp-block-button .wp-block-button__link:not(.has-text-color):hover, .edit-post-visual-editor .wp-block-button .wp-block-button__link:not(.has-text-color):focus,
+      .edit-post-visual-editor .wp-block-file a.wp-block-file__button:not(.has-text-color):hover,
+      .edit-post-visual-editor .wp-block-file a.wp-block-file__button:not(.has-text-color):focus {
         color: white; }
-    .edit-post-visual-editor .wp-block-button .wp-block-button__link:not(.has-background) {
+    .edit-post-visual-editor .wp-block-button .wp-block-button__link:not(.has-background),
+    .edit-post-visual-editor .wp-block-file a.wp-block-file__button:not(.has-background) {
       background: #017680; }
-      .edit-post-visual-editor .wp-block-button .wp-block-button__link:not(.has-background):hover, .edit-post-visual-editor .wp-block-button .wp-block-button__link:not(.has-background):focus {
+      .edit-post-visual-editor .wp-block-button .wp-block-button__link:not(.has-background):hover, .edit-post-visual-editor .wp-block-button .wp-block-button__link:not(.has-background):focus,
+      .edit-post-visual-editor .wp-block-file a.wp-block-file__button:not(.has-background):hover,
+      .edit-post-visual-editor .wp-block-file a.wp-block-file__button:not(.has-background):focus {
         background: #01b0bb; }
   .edit-post-visual-editor .wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color) {
     color: #017680; }

@@ -21,27 +21,9 @@ get_header();
 		if ( have_posts() ) :
 
 			if ( is_home() && ! is_front_page() ) : ?>
-                <section>
-                    <h2><?php esc_html_e( 'Browse by category', 'weracoba' ); ?></h2>
-                    <ul class="archive-cat-list widget widget_categories">
-                        <?php wp_list_categories( array(
-                                'title_li' => '',
-                                //'title_li' => __("The Archive is a chronological list of all the content from ") . get_bloginfo('name') . __(". You can also explore a specific category:"),
-                                'orderby' => 'count',
-                                'order' => 'DESC'
-                                ) ); ?>
-                    </ul>
-                </section>
-                <section>
-                    <h2><?php esc_html_e( 'Browse by tag', 'weracoba' ); ?></h2>
-                    <div class="widget">
-                        <?php wp_tag_cloud( array( 'smallest' => 12, 
-                                                   'largest' => 24,
-                                                   'separator' => ', ' ) );?>
-                    </div>
-                </section>
-                <section>
-                    <h2><?php esc_html_e( 'Browse the recent updates', 'weracoba' ); ?></h2>
+                <?php the_widget( 'WP_Widget_Categories', array( 'title' => __( 'Browse by category', 'weracoba' ) ) ); ?>
+                <?php the_widget( 'WP_Widget_Tag_Cloud', array( 'title' => __( 'Browse by tag', 'weracoba' ) ) ); ?>
+                <h2><?php esc_html_e( 'Or browse the recent updates', 'weracoba' ); ?></h2>
             <?php
             endif;
             /* Start the Loop */
@@ -60,14 +42,9 @@ get_header();
             the_posts_navigation();
         else :
             get_template_part( 'template-parts/content', 'none' );
-        endif; 
-        
-        if (have_posts() ) : ?>
-            </section>
-        <?php endif; ?>
+        endif; ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
 <?php
-get_sidebar();
 get_footer();

@@ -14,3 +14,4 @@ if ( is_active_sidebar( 'breadcrumbs-1' ) ) : ?>
     </nav>
 <?php endif;?>
 <h1 class="page-title"><?php the_archive_title(); ?></h1>
+<?php the_archive_description( '<div class="archive-description">', '</div>' ); ?>

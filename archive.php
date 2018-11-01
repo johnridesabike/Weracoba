@@ -13,9 +13,6 @@ get_header();
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 		<?php if ( have_posts() ) : ?>
-
-            <?php the_archive_description( '<div class="archive-description">', '</div>' ); ?>
-
 			<?php
 			/* Start the Loop */
 			while ( have_posts() ) :
@@ -40,9 +37,9 @@ get_header();
 		endif;
 		?>
 
+        <?php the_widget( 'WP_Widget_Categories', array( 'title' => __( 'Browse another category', 'weracoba' ) ) ); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
 <?php
-get_sidebar();
 get_footer();

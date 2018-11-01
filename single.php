@@ -27,5 +27,4 @@ get_header();
 		</main><!-- #main -->
 	</div><!-- #primary -->
 <?php 
-get_sidebar( 'post' );
 get_footer();

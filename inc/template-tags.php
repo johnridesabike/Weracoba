@@ -203,25 +203,82 @@ if ( ! function_exists( 'weracoba_get_post_page_url' ) ) :
         }
     }
 endif;
-/*
-if ( ! function_exists( 'weracoba_reading_time' ) ) :
-    /*
-    * Output the reading time. Used in conjunction with "Reading Time WP" plugin.
-    *
-    * @link https://jasonyingling.me/reading-time-wp/
-    *
-    * Prints the HTML for a post's reading time.
-    *//*
-    function weracoba_reading_time($label = 'Reading time: about ', $postfix = 'minutes') {
-        $reading_time = do_shortcode( sprintf(
-            '[rt_reading_time label="%s" postfix="%s"]', $label, $postfix ) );
-        if( substr($reading_time, 0, 1) === '[' ) {
-            ?>
-            <!-- Reading Time WP is not active https://jasonyingling.me/reading-time-wp/ -->
-            <?php
+
+if ( ! function_exists( 'weracoba_citation' ) ) :
+    /**
+     * Display a citation for the current page. APA format, for no particular reason.
+     * This could be changed to support other formats too.
+     */
+    function weracoba_citation() {
+        if ( is_singular() ) {
+            $first_name = get_the_author_meta( 'first_name' );
+            $last_name  = get_the_author_meta( 'last_name' );
+            if ( $first_name && $last_name ) {
+                $author = $last_name . ', ' . $first_name[0]; // APA
+            } else {
+                $author = get_the_author(); // fallback
+            }
+            $date       = '<time datetime="' . get_the_date( DATE_W3C ) . '">' . get_the_date( 'Y, M j' ) . '</time>'; // APA
+            $title      = get_the_title();
+            $permalink  = get_permalink();
         } else {
-            echo $reading_time;
+            $author     = get_bloginfo( 'name' );
+            $date       = __( 'n.d.', 'weracoba' );
+            $title      = get_the_archive_title();
+            $permalink  = home_url( $_SERVER['REQUEST_URI'] );
         }
+        
+        $title = $title ? : get_bloginfo( 'name' );
+        $title = ucfirst( strtolower( trim( $title ) ) );
+        $permalink = __( 'Retrieved from <code>', 'weracoba' ) . $permalink . '</code>';
+        
+        echo sprintf(
+            wp_kses(
+                '%1$s. (%2$s). <em>%3$s</em>. %4$s',
+                array(
+                    'code' => array(),
+                    'em' => array(),
+                    'time' => array(
+                        'datetime' => array(),
+                    ),
+                    'span' => array(
+                        'class' => array(), 
+                    ),
+                )
+            ),
+        $author, $date, $title, $permalink
+        );
     }
 endif;
-*/
+
+if ( ! function_exists( 'weracoba_categories' ) ) :
+    function weracoba_categories( $header = '' ) {
+        ?>
+        <section>
+            <h2><?php echo $header ?></h2>
+            <ul class="archive-cat-list widget widget_categories">
+                <?php wp_list_categories( array(
+                        'title_li' => '',
+                        'orderby' => 'count',
+                        'order' => 'DESC'
+                        ) ); ?>
+            </ul>
+        </section>
+        <?php
+    }
+endif;
+
+if ( ! function_exists( 'weracoba_tags' ) ) :
+    function weracoba_tags( $header = '' ) {
+        ?>
+        <section>
+            <h2><?php echo $header ?></h2>
+            <div class="widget">
+                <?php wp_tag_cloud( array( 'smallest' => 12, 
+                                           'largest' => 24,
+                                           'separator' => ', ' ) );?>
+            </div>
+        </section>
+        <?php
+    }
+endif;

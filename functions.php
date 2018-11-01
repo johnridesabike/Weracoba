@@ -251,3 +251,22 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
+/**
+ * Modifies tag cloud widget arguments to display all tags in the same font size
+ * and use list format for better accessibility.
+ *
+ * @param   array $args Arguments for tag cloud widget.
+ * @return  array The filtered arguments for tag cloud widget.
+ */
+function prefix_widget_tag_cloud_args( $args ) {
+    $args['largest']  = 1.4;
+    $args['smallest'] = 0.9;
+    $args['unit']     = 'em';
+    $args['format']   = 'flat';
+    $args['separator'] = ', ';
+ 
+    return $args;
+}
+ 
+add_filter( 'widget_tag_cloud_args',    'prefix_widget_tag_cloud_args' );

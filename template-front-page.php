@@ -50,6 +50,8 @@ get_header();
                 $cats[] = get_category($cat);
             }
             foreach( $cats as $key => $cat ) :
+                if ( ! property_exists( $cat, 'term_id' ) )
+                    continue;
                 $cat_query = new WP_Query( array( 'cat' => $cat->term_id,
                                                   //'meta_query' => array( 'key' => '_thumbnail_id' ) ) );
                                                   'meta_key' => '_thumbnail_id' ) );

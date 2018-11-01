@@ -33,10 +33,8 @@
         ?>
         </div><!-- .entry-content -->
         <footer class="entry-footer">
-            <?php 
-            weracoba_entry_footer();
-            weracoba_post_navigation();
-            ?>
+            <?php weracoba_entry_footer(); ?>
+            <?php weracoba_post_navigation(); ?>
         </footer><!-- .entry-footer -->
 	</div> <!-- .post-content -->
 </article><!-- #post-<?php the_ID(); ?> -->
