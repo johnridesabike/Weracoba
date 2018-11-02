@@ -16,7 +16,6 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
-
 	<?php wp_head(); ?>
 </head>
 
@@ -25,8 +24,7 @@
 	<a class="skip-link screen-reader-text" href="#content">
         <?php esc_html_e( 'Skip to content', 'weracoba' ); ?>
     </a>
-	<header id="masthead" 
-            class="<?php echo is_singular() && weracoba_can_show_post_thumbnail() ? 'site-header has-post-thumbnail' : 'site-header'; ?>">
+	<header id="masthead" <?php is_singular() ? post_class( "site-header" ) : print( 'class="site-header"' ); ?>>
         <div class="global-header">
             <div class="site-header-wrapper">
                 <div class="site-branding">

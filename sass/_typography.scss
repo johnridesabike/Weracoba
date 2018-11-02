@@ -107,6 +107,32 @@ big {
 .page .entry-content {
     line-height: calculate-line-height(16, $size-content-page);
 }
+.format-aside {
+    .cat-links {
+        font-size: 1em;
+    }
+    .entry-header a {
+        color: $color-text-secondary;
+        &:hover,
+        &:focus {
+            color: $color-link-hover;
+        }
+    }
+    h2.entry-title {
+        color: $color-text-secondary;
+        font-family: $font-UI;
+        font-size: 1.4em !important;
+        margin-top: .5em;
+        &:before {
+            @include dashicon($glyph-aside);
+            color: $color-text-secondary;
+        }
+    }
+    .entry-content {
+        font-family: $font-UI;
+        font-size: 1.3em;
+    }
+}
 .entry-footer {
     font-family: $font-UI;
 }

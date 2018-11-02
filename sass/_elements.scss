@@ -12,7 +12,9 @@ body {
 	background: $color-bg-body; /* Fallback for when there is no custom background color defined. */
 }
 
-body.archive-view, body.attachment {
+body.archive-view,
+body.attachment,
+body.single-format-aside {
     background: $color-bg-body-alt;
 }
 

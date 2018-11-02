@@ -49,7 +49,7 @@ add_action( 'wp_head', 'weracoba_pingback_header' );
  * Copied from Twenty Nineteen
  * @link https://github.com/WordPress/twentynineteen/blob/master/inc/template-functions.php#L124
  */
-function weracoba_can_show_post_thumbnail() {
+/*function weracoba_can_show_post_thumbnail() {
 	return apply_filters( 'weracoba_can_show_post_thumbnail', 
                          ! post_password_required() && ! is_attachment() && has_post_thumbnail() );
 }

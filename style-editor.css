@@ -96,6 +96,26 @@
     line-height: 1.53789; }
   .edit-post-visual-editor .page .entry-content {
     line-height: 1.63177; }
+  .edit-post-visual-editor .format-aside .cat-links {
+    font-size: 1em; }
+  .edit-post-visual-editor .format-aside .entry-header a {
+    color: #44484d; }
+    .edit-post-visual-editor .format-aside .entry-header a:hover, .edit-post-visual-editor .format-aside .entry-header a:focus {
+      color: #01b0bb; }
+  .edit-post-visual-editor .format-aside h2.entry-title {
+    color: #44484d;
+    font-family: Helvetica, Tahoma, sans-serif;
+    font-size: 1.4em !important;
+    margin-top: .5em; }
+    .edit-post-visual-editor .format-aside h2.entry-title:before {
+      font-family: dashicons;
+      content: "";
+      padding-right: 6px;
+      vertical-align: middle;
+      color: #44484d; }
+  .edit-post-visual-editor .format-aside .entry-content {
+    font-family: Helvetica, Tahoma, sans-serif;
+    font-size: 1.3em; }
   .edit-post-visual-editor .entry-footer {
     font-family: Helvetica, Tahoma, sans-serif; }
   .edit-post-visual-editor .entry-meta,

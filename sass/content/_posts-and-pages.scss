@@ -141,17 +141,36 @@
     }
 }
 
-.format-aside {
-    .entry-content {
-        font-size: 1.3em;
+/*************** Asides ***************/
+
+.single-format-aside .site-header .entry-header {
+    display: none;
+}
+.single article.format-aside {
+    @include max-content-width;
+    .entry-header {
+        padding: 0;
+    }
+    .entry-footer {
+        padding: 0;
     }
     .entry-meta {
         margin: 0;
-        
-        & > * {
-            //display: inline-block;
-        }
-        
+    }
+}
+article.format-aside  {
+    @include drop-shadow;
+    width: 90%;
+    margin: 2em auto 2em auto;
+    border-radius: 23px;
+    background: white;
+    padding: .5em;
+    
+    .entry-footer {
+        border: none;
+    }
+    
+    .entry-meta {
         .avatar {
             // override the default avatar styling
             position: static;
@@ -160,6 +179,11 @@
             margin-right: .5em;
             vertical-align: middle;
         }
+    }
+    
+    @media screen and (min-width: $breakpoint-1) {
+        padding-left: 1em;
+        padding-right: 1em;
     }
 }
 /*

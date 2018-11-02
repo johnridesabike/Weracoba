@@ -10,11 +10,7 @@
 <?php weracoba_post_thumbnail(); ?>
 <div class="entry-header-wrap">
     <?php weracoba_category_list(); ?>
-    <?php if ( is_singular() ) :
-        the_title( '<h1 class="entry-title">', '</h1>' );
-    else :
-        the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-    endif; ?>
+    <?php the_title( '<h1 class="entry-title">', '</h1>' );?>
     <div class="entry-meta">
         <?php weracoba_posted_by(); ?>
         <?php weracoba_posted_on(); ?>

@@ -2,8 +2,7 @@
     .entry-wrap {
         width: 100%;
     }
-    .content-area .excerpt-entry,
-    .content-area .format-aside {
+    .content-area .excerpt-entry {
         position: relative;
         border-bottom: 1px solid $color-border;
         padding: .5em;
@@ -93,16 +92,5 @@
         .cat-item ul {
             font-size: .8em;
         }
-    }
-}
-
-.archive-view .post.format-aside {
-    width: 90%;
-    margin: 0 auto 2em auto;
-    border-radius: 23px;
-    
-    @media screen and (min-width: $breakpoint-1) {
-        padding-left: 1em;
-        padding-right: 1em;
     }
 }
