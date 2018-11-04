@@ -17,10 +17,10 @@
     font-family: Helvetica, Tahoma, sans-serif;
     font-size: 16px;
     font-size: 1rem;
-    line-height: 1.63177; }
+    line-height: 1.65482; }
   .edit-post-visual-editor textarea {
     font-family: Times, "Times New Roman", serif;
-    max-width: 700px;
+    max-width: 750px;
     margin-right: auto;
     margin-left: auto; }
   .edit-post-visual-editor h1, .edit-post-visual-editor .editor-post-title textarea, .edit-post-visual-editor h2, .edit-post-visual-editor h3, .edit-post-visual-editor h4, .edit-post-visual-editor h5, .edit-post-visual-editor h6 {
@@ -66,7 +66,7 @@
         font-size: 2.3em; } }
   .edit-post-visual-editor .site-description {
     font-size: .8em; }
-    @media screen and (min-width: 735px) {
+    @media screen and (min-width: 1023px) {
       .edit-post-visual-editor .site-description {
         font-size: 1em; } }
   .edit-post-visual-editor .excerpt-entry .entry-header h1, .edit-post-visual-editor .excerpt-entry .entry-header .editor-post-title textarea, .edit-post-visual-editor .editor-post-title .excerpt-entry .entry-header textarea, .edit-post-visual-editor .excerpt-entry .entry-header h2, .edit-post-visual-editor .excerpt-entry .entry-header h3, .edit-post-visual-editor .excerpt-entry .entry-header h4, .edit-post-visual-editor .excerpt-entry .entry-header h5, .edit-post-visual-editor .excerpt-entry .entry-header h6,
@@ -93,7 +93,7 @@
   .edit-post-visual-editor .single-post .entry-content {
     font-family: Times, "Times New Roman", serif;
     font-size: 19px;
-    line-height: 1.53789; }
+    line-height: 1.55424; }
   .edit-post-visual-editor .page .entry-content {
     line-height: 1.63177; }
   .edit-post-visual-editor .format-aside .cat-links {

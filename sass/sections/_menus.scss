@@ -15,8 +15,10 @@
     .menu-toggle {
         display: inline;
         font-size: 1em;
-        @include button;
+        //@include button;
         width: 100%;
+        background: $color-bg-body-alt;
+        color: $color-link;
 
         &::after {
             @include dashicon($glyph-menu);
@@ -139,7 +141,7 @@
 
 
     @media screen and (min-width: $breakpoint-1) {
-        width: intrinsic;
+        width: auto;
         line-height: 1.1em;
 
         ul {

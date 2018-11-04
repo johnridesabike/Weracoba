@@ -57,7 +57,7 @@ $breakpoint-3: 1365px; // iPad pro landscape
 
 // Structure
 $size-max-width: 1200px;
-$size-content: 700px;
+$size-content: 750px;
 $size-content-page: 700px; //900px;
 $size-widget: 250px;
 
@@ -182,14 +182,12 @@ $columns-margin: 3.8%;
 @mixin button {
     padding: .2em 1em;
 	font-family: $font-UI;
-	//font-size: .875em;
-	//line-height: 1.3em;
 	text-decoration: none;
     border: 1px solid $color-border-button;
-    //border-radius: 5px;
     border-radius: 23px; // from Gutenberg style
     color: $color-bg-body-alt;
     background: $color-link;
+    //color: $color-link;
 
     &:hover,
     &:focus {
@@ -263,7 +261,7 @@ $opacity-overlay: .25;
     right: 0;
     background: $color-link-hover;
     opacity: 0;
-    z-index: 999;
+    z-index: 2;
 
     &:hover,
     &:focus {
@@ -311,8 +309,11 @@ $opacity-overlay: .25;
 
 @mixin drop-shadow {
     background: $color-bg-body;
-    border-radius: 5px;
     box-shadow: 0 0 .5em rgba(0, 0, 0, 0.2);
+    
+    @media screen and (min-width: $breakpoint-1) {
+        border-radius: 5px;
+    }
 }
 
 @mixin drop-shadow-bottom {

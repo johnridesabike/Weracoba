@@ -13,6 +13,11 @@
             border: 0;
         }
     }
+    .content-area .excerpt-entry,
+    .format-aside {
+        margin-left: -1em;
+        margin-right: -1em;
+    }
     .entry-meta {
         @include entry-meta-inline;
         padding-top: 0;
@@ -41,6 +46,14 @@
             display: flex;
             flex-direction: row;
             overflow: hidden;
+        }
+    }
+    
+    @media screen and (min-width: $breakpoint-1) {
+        .content-area .excerpt-entry,
+        .format-aside {
+            margin-left: auto;
+            margin-right: auto;
         }
     }
 }

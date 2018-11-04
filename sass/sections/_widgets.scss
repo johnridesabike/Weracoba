@@ -4,6 +4,16 @@
     }
 }
 
+.archive-view .content-area .widget {
+    margin-left: -1em;
+    margin-right: -1em;
+    
+    @media screen and (min-width: $breakpoint-1) {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
 .archive-view .site-content .widget {
     @include drop-shadow;
     
@@ -14,7 +24,7 @@
 
 .widget {
 	margin: 0;
-    padding: .5em .5em .5em .5em;
+    padding: 1em;//.5em .5em .5em .5em;
 	font-family: $font-widget;
 	/* Make sure select elements fit in widgets. */
 
@@ -205,6 +215,8 @@
     flex-flow: row;
     flex-wrap: wrap;
     margin-top: 1em;
+    margin-left: -1em;
+    margin-right: -1em;
 
     .widget {
         @include widget-columns;
@@ -228,7 +240,7 @@
     .single-post .widget-area {
         margin-top: 4em;
     }
-    .single-post,
+    //.single-post,
     .archive-view {
         .site-content .widget {
             margin-bottom: 4em;

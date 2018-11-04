@@ -95,7 +95,7 @@
 }
 /*************** Post body ***************/
 @media screen and (min-width: $breakpoint-2) {
-    .single-post .site-content,
+    //.single-post .site-content,
     .archive-view .site-content {
         display: flex;
         flex-flow: row;
@@ -160,9 +160,7 @@
 }
 article.format-aside  {
     @include drop-shadow;
-    width: 90%;
     margin: 2em auto 2em auto;
-    border-radius: 23px;
     background: white;
     padding: .5em;
     
