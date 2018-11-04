@@ -200,6 +200,16 @@ object {
     .site-content {
         margin-top: 1em;
     }
+    .entry-content {
+        margin-left: -1em;
+        margin-right: -1em;
+    }
+    @media screen and (min-width: $breakpoint-1) {
+        .entry-content {
+            margin-left: -2em;
+            margin-right: -2em;
+        }
+    }
 }
 
 /*--------------------------------------------------------------

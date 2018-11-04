@@ -192,15 +192,9 @@ add_action( 'widgets_init', 'weracoba_widgets_init' );
 function weracoba_scripts() {
 	wp_enqueue_style( 'weracoba-style', get_stylesheet_uri() );
     wp_enqueue_style( 'dashicons' );
-
-    // I decided to avoid Google and use web-safe fonts instead.
-    //wp_enqueue_style( 'google-fonts', "https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700,700i|Lato");
-
-	wp_enqueue_script( 'weracoba-functions', get_template_directory_uri() . '/js/functions.js', array('jquery'), '20180711', true );
-
-	wp_enqueue_script( 'weracoba-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
-
-	wp_enqueue_script( 'weracoba-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+	wp_enqueue_script( 'weracoba-functions', get_template_directory_uri() . '/js/functions.js', array('jquery'), '20181105', true );
+	//wp_enqueue_script( 'weracoba-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+	//wp_enqueue_script( 'weracoba-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

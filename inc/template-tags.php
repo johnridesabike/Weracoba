@@ -250,7 +250,7 @@ if ( ! function_exists( 'weracoba_citation' ) ) :
         );
     }
 endif;
-
+/*
 if ( ! function_exists( 'weracoba_categories' ) ) :
     function weracoba_categories( $header = '' ) {
         ?>
@@ -281,4 +281,4 @@ if ( ! function_exists( 'weracoba_tags' ) ) :
         </section>
         <?php
     }
-endif;
+endif;*/

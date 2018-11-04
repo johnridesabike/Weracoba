@@ -1631,8 +1631,6 @@ a {
 /*************** Attachments ***************/
 .entry-attachment {
   text-align: center; }
-  .entry-attachment img {
-    max-height: 90vh; }
 
 /*************** Asides ***************/
 .single-format-aside .site-header .entry-header {
@@ -2263,6 +2261,15 @@ object {
 
 .single-attachment .site-content {
   margin-top: 1em; }
+
+.single-attachment .entry-content {
+  margin-left: -1em;
+  margin-right: -1em; }
+
+@media screen and (min-width: 735px) {
+  .single-attachment .entry-content {
+    margin-left: -2em;
+    margin-right: -2em; } }
 
 /*--------------------------------------------------------------
 ## Captions
