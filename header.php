@@ -44,7 +44,15 @@
                             </a>
                         </p>
                         <?php
-                    endif;
+                    endif; 
+                    ?>
+                    
+                    <div class="menu-button" id="toggle-button">
+                        <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+                            <?php esc_html_e( 'Menu', 'weracoba' ); ?>
+                        </button>
+                    </div>
+                    <?php 
                     $weracoba_description = get_bloginfo( 'description', 'display' );
                     if ( $weracoba_description || is_customize_preview() ) :
                         ?>
@@ -56,12 +64,6 @@
                     <?php endif; ?>
                 </div><!-- .site-branding -->
                 <nav id="site-navigation" class="main-navigation">
-                    <?php /*get_search_form();*/ ?>
-                    <div class="menu-button">
-                        <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
-                            <?php esc_html_e( 'Menu', 'weracoba' ); ?>
-                        </button>
-                    </div>
                     <?php
                     wp_nav_menu( array(
                         'theme_location' => 'menu-1',
@@ -70,7 +72,7 @@
                     ?>
                 </nav><!-- #site-navigation -->
             </div><!-- .site-header-wrapper -->
-        </div>
+        </div><!-- .global-header -->
         <div class="entry-header">
             <?php
             if ( is_singular() ) : 

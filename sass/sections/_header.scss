@@ -1,46 +1,33 @@
 .global-header {
     background: $color-bg-header;
     border-bottom: 1px solid $color-border;
+    display: flex; // this fixes a weird bug
+    flex-flow: column; // this fixes a weird bug
     @include drop-shadow-bottom;
 
     a {
         color: $color-link;
     }
-
-    .search-form {
-        display: none;
-        text-align: right;
-
-        @media screen and (min-width: $breakpoint-1) {
-            display: block;
-        }
-    }
-
-    .search-field {
-        font-size: .8em;
-        width: 300px;
-    }
-
-    .search-submit {
-        display: none;
-    }
+}
+.site-header-wrapper {
+    padding-left: 1em;
+    padding-right: 1em;
 }
 .site-branding {
     text-align: center;
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    align-content: center;
+    align-items: center;
+    margin: .5em 0;
 }
 .site-title {
-    margin-bottom: 0;
-    margin-top: .5em;
+    margin: 0;
 }
 .site-description {
     margin: 0 0 .5em 0;
-}
-.site-header-wrapper {
-    display: flex;
-    align-items: center;
-    flex-flow: column;
-    padding-left: 1em;
-    padding-right: 1em;
+    flex: 2 100%;
 }
 /** Fixed Header **/
 
@@ -51,6 +38,7 @@
         width: 100%;
         height: auto;
         z-index: 9;
+        display: block; // this fixes a weird bug
         .site-header-wrapper {
         }
         .site-branding {
@@ -61,7 +49,7 @@
         }
     }
     .sticky-top {
-        margin-top: 70px;
+        margin-top: 60px;
     }
 }
 
@@ -81,12 +69,20 @@
         margin-bottom: 0;
         padding-top: .67em;
         padding-bottom: .67em;
+        display: block; // this fixes a weird bug
     }
     .fixed-header {
         padding: 0;
     }
+    .sticky-top {
+        margin-top: 90px;
+    }
     .site-header-wrapper {
         @include max-site-width;
+        display: flex;
+        align-items: flex-end;
+        flex-flow: row;
+        justify-content: space-between;
     }
     .site-title{
         margin: 0;
@@ -100,23 +96,19 @@
     .site-header {
         text-align: left;
     }
-    .site-header-wrapper {
-        align-items: flex-end;
-        flex-flow: row;
-        justify-content: space-between;
-    }
     .site-branding {
-        //flex-shrink: 0;
         margin-right: 2em;
     }
     .main-navigation {
         display: block;
-        //flex-shrink: 2;
         font-size: 1.2em;
     }
 }
 @media screen and (min-width: $breakpoint-2) {
     .admin-bar .fixed-header {
         top: 32px;
+    }
+    .sticky-top {
+        margin-top: 110px;
     }
 }

@@ -5,18 +5,13 @@
 }
 
 .menu-button {
+    margin: .25em 0;
     text-align: right;
     position: relative;
-
-    @media screen and (min-width: $breakpoint-1) {
-        display: none;
-    }
 
     .menu-toggle {
         display: inline;
         font-size: 1em;
-        //@include button;
-        width: 100%;
         background: $color-bg-body-alt;
         color: $color-link;
 
@@ -180,6 +175,9 @@
 	.menu-toggle {
 		display: none;
 	}
+    .menu-button {
+        display: none;
+    }
 }
 
 .menu-item-object-category {
