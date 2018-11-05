@@ -21,8 +21,10 @@ get_header();
 		if ( have_posts() ) :
 
 			if ( is_home() && ! is_front_page() ) : ?>
-                <?php the_widget( 'WP_Widget_Categories', array( 'title' => __( 'Browse by category', 'weracoba' ) ) ); ?>
-                <?php the_widget( 'WP_Widget_Tag_Cloud', array( 'title' => __( 'Browse by tag', 'weracoba' ) ) ); ?>
+                <div class="archive-widget-area">
+                    <?php the_widget( 'WP_Widget_Categories', array( 'title' => __( 'Browse by category', 'weracoba' ) ) ); ?>
+                    <?php the_widget( 'WP_Widget_Tag_Cloud', array( 'title' => __( 'Browse by tag', 'weracoba' ) ) ); ?>
+                </div> <!-- .archive-widget-area -->
                 <h2><?php esc_html_e( 'Or browse the recent updates', 'weracoba' ); ?></h2>
             <?php
             endif;

@@ -54,9 +54,18 @@
 .meta-nav:after {
     content: ":";
 }
+.breadcrumbs-nav {
+    margin-top: .5em;
+    
+    .widget {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+/** Navigation Media Queries **/
 
 @media screen and (min-width: $breakpoint-1) {
-
     .comment-navigation,
     .posts-navigation,
     .post-navigation {
@@ -93,14 +102,5 @@
     .post-navigation .post-title {
         font-size: 18px;
         font-size: 1.125em;
-    }
-}
-
-.breadcrumbs {
-    margin-top: .5em;
-    //@include max-site-width;
-    
-    .widget {
-        margin: 0;
     }
 }

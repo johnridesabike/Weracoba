@@ -7,7 +7,6 @@ textarea {
     color: $color-text-main;
     font-family: $font-UI;
     @include font-size(1);
-    //line-height: $font-line-height-body;
     line-height: calculate-line-height(16, $size-content);
 }
 

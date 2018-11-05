@@ -323,3 +323,8 @@ $opacity-overlay: .25;
 @mixin drop-shadow-top {
     box-shadow: inset 0 1em 1.5em -1em rgba(0, 0, 0, 0.2);
 }
+
+@mixin full-bleed {
+    margin-left: -1rem;
+    margin-right: -1rem;
+}

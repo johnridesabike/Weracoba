@@ -42,6 +42,8 @@
     padding-left: 1em;
     padding-right: 1em;
 }
+/** Fixed Header **/
+
 @media screen {
     .fixed-header {
         position: fixed;
@@ -62,8 +64,10 @@
         margin-top: 70px;
     }
 }
-/* Header Media Queries */
-@media screen and (max-width: $breakpoint-2) {
+
+/** Header Media Queries **/
+
+@media screen and (max-width: $breakpoint-1) {
    .fixed-header .site-title {
         margin-top: 0;
         font-size: 1.5em;
@@ -115,9 +119,4 @@
     .admin-bar .fixed-header {
         top: 32px;
     }
-}
-.archive-view .site-header .entry-header {
-    margin-left: 1em;
-    margin-right: 1em;
-    @include max-site-width;
 }

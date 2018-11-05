@@ -9,7 +9,7 @@
 ?>
 <?php
 if ( is_active_sidebar( 'breadcrumbs-1' ) ) : ?> 
-    <nav class="breadcrumbs">
+    <nav class="breadcrumbs-nav">
         <?php dynamic_sidebar( 'breadcrumbs-1' ); ?>
     </nav>
 <?php endif;?>

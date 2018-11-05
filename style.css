@@ -46,6 +46,9 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Infinite scroll
 # Media
     ## Alignments and Images
+    ## Single Post Featured Images
+    ## Archive View Featured Images
+    ## Gutenberg Styles
 	## Captions
 	## Galleries
 --------------------------------------------------------------*/
@@ -793,6 +796,7 @@ a {
   padding-left: 1em;
   padding-right: 1em; }
 
+/** Fixed Header **/
 @media screen {
   .fixed-header {
     position: fixed;
@@ -807,8 +811,8 @@ a {
   .sticky-top {
     margin-top: 70px; } }
 
-/* Header Media Queries */
-@media screen and (max-width: 1023px) {
+/** Header Media Queries **/
+@media screen and (max-width: 735px) {
   .fixed-header .site-title {
     margin-top: 0;
     font-size: 1.5em; } }
@@ -851,15 +855,6 @@ a {
 @media screen and (min-width: 1023px) {
   .admin-bar .fixed-header {
     top: 32px; } }
-
-.archive-view .site-header .entry-header {
-  margin-left: 1em;
-  margin-right: 1em; }
-  @media screen and (min-width: 1200px) {
-    .archive-view .site-header .entry-header {
-      max-width: 1200px;
-      margin-left: auto;
-      margin-right: auto; } }
 
 /*--------------------------------------------------------------
 ## Footer
@@ -1071,6 +1066,13 @@ a {
 .meta-nav:after {
   content: ":"; }
 
+.breadcrumbs-nav {
+  margin-top: .5em; }
+  .breadcrumbs-nav .widget {
+    margin: 0;
+    padding: 0; }
+
+/** Navigation Media Queries **/
 @media screen and (min-width: 735px) {
   .comment-navigation .nav-previous,
   .posts-navigation .nav-previous,
@@ -1104,36 +1106,9 @@ a {
     font-size: 18px;
     font-size: 1.125em; } }
 
-.breadcrumbs {
-  margin-top: .5em; }
-  .breadcrumbs .widget {
-    margin: 0; }
-
 /*--------------------------------------------------------------
 ## Widgets
 --------------------------------------------------------------*/
-@media screen and (min-width: 1023px) {
-  .widget-area {
-    margin-left: 1em; } }
-
-.archive-view .content-area .widget {
-  margin-left: -1em;
-  margin-right: -1em; }
-  @media screen and (min-width: 735px) {
-    .archive-view .content-area .widget {
-      margin-left: auto;
-      margin-right: auto; } }
-
-.archive-view .site-content .widget {
-  background: white;
-  box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.2); }
-  @media screen and (min-width: 735px) {
-    .archive-view .site-content .widget {
-      border-radius: 5px; } }
-  @media screen and (max-width: 1023px) {
-    .archive-view .site-content .widget {
-      margin-bottom: 1em; } }
-
 .widget {
   margin: 0;
   padding: 1em;
@@ -1299,7 +1274,7 @@ a {
   /*font-size: 80%;
 	line-height: 1.3em;*/ }
 
-/* Post & blog widgets */
+/** Widget Area **/
 .widget-area {
   display: flex;
   flex-flow: row;
@@ -1316,27 +1291,44 @@ a {
         .widget-area .widget:nth-child(3n+3) {
           margin-right: 0; } }
 
+/* Page widgets */
 .page .widget-area,
 .single-attachment .widget-area {
   border-top: 1px solid #c2cfcf;
   margin-top: 2em; }
 
-@media screen and (min-width: 1023px) {
-  .widget-area {
-    margin-top: 0; }
-  .single-post .widget-area {
-    margin-top: 4em; }
-  .archive-view .site-content .widget {
-    margin-bottom: 4em; }
-  .archive-view .widget-area {
-    display: block;
-    margin-left: 1em;
-    max-width: 250px; }
-    .archive-view .widget-area .widget {
-      width: 250px;
-      margin: 0 0 4em; } }
+/** Archive View Widgets **/
+.archive-view .site-content .widget {
+  background: white;
+  box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.2);
+  margin-bottom: 1em; }
+  @media screen and (min-width: 735px) {
+    .archive-view .site-content .widget {
+      border-radius: 5px; } }
+  .archive-view .site-content .widget .widgettitle {
+    margin: 0 0 1em 0; }
 
-/* Footer widget stylings */
+.archive-widget-area {
+  margin-left: -1rem;
+  margin-right: -1rem; }
+  .archive-widget-area .widget ul {
+    list-style: none;
+    font-size: 1.1em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; }
+    .archive-widget-area .widget ul > .cat-item {
+      width: 100%; }
+      @media screen and (min-width: 735px) {
+        .archive-widget-area .widget ul > .cat-item {
+          width: 30.79667%;
+          margin-right: 3.8%; }
+          .archive-widget-area .widget ul > .cat-item:nth-child(3n+3) {
+            margin-right: 0; } }
+    .archive-widget-area .widget ul .cat-item ul {
+      font-size: .8em; }
+
+/** Footer Widgets **/
 .footer-widgets {
   color: #44484d; }
   @media screen and (min-width: 1200px) {
@@ -1352,44 +1344,36 @@ a {
   .footer-widgets .widget_calendar td,
   .footer-widgets .footer-widgets .widget_calendar a {
     color: black; }
-  @media screen and (min-width: 735px) {
-    .footer-widgets {
-      /* Use flex to create a responsive layout */
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      /* If only one widget is displayed, make it full width. */
-      /* If 2 or 3 widgets are displayed, make the second one twice as wide. */
-      /* If 4 or more widgets are displayed, show three across when available. */
-      /* If more than 4 widgets are displayed, the last one takes up the full width. */ }
-      .footer-widgets .widget {
-        width: 30.79667%;
-        /*
-            &:only-of-type {
-                width: 100%;
-            }
-            &:nth-last-child(n+2):nth-last-child(-n+3):first-child ~ .widget:nth-child(2) {
-                flex: 2;
-            }
-            
-            &:nth-last-child(n+4),
-            &:nth-last-child(n+4) ~ .widget {
-                @include column-width(3);
-            }
-            /*&:nth-last-child(n+4) ~ .widget:last-child {
-                flex-grow: 1;
-                flex-shrink: 1;
-            
-                &.widget_nav_menu {
-                    ul {
-                        display: flex;
-                        flex-wrap: wrap;
-                    }
-                    a {
-                        border: 0;
-                    }
-                }
-            }*/ } }
+
+/** Widget Media Queries **/
+@media screen and (min-width: 735px) {
+  .widget-area {
+    margin-left: 0;
+    margin-right: 0; }
+  .archive-widget-area {
+    margin-left: 0;
+    margin-right: 0; }
+  .footer-widgets {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; }
+    .footer-widgets .widget {
+      width: 30.79667%; } }
+
+@media screen and (min-width: 1023px) {
+  .widget-area {
+    margin-top: 0; }
+  .single-post .widget-area {
+    margin-top: 4em; }
+  .archive-view .site-content .widget {
+    margin-bottom: 4em; }
+  .archive-view .widget-area {
+    display: block;
+    margin-left: 1em;
+    max-width: 250px; }
+    .archive-view .widget-area .widget {
+      width: 250px;
+      margin: 0 0 4em; } }
 
 /*--------------------------------------------------------------
 # Accessibility
@@ -1466,15 +1450,12 @@ a {
 # Content
 --------------------------------------------------------------*/
 .site-content, .single .entry-header {
-  padding: 0 1em; }
-  @media screen and (min-width: 735px) {
-    .site-content, .single .entry-header {
-      padding: 0 2em; } }
+  padding: 0 1rem; }
 
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
-/*************** General ***************/
+/** General **/
 .sticky {
   display: block; }
 
@@ -1493,7 +1474,7 @@ a {
     margin-left: auto;
     margin-right: auto; } }
 
-/*************** Entry header ***************/
+/** Entry header **/
 .entry-header-wrap {
   margin-top: 1em; }
 
@@ -1510,12 +1491,6 @@ a {
     padding-right: 6px;
     vertical-align: middle;
     color: #017680; }
-
-.tags-links:before {
-  font-family: dashicons;
-  content: "";
-  padding-right: 6px;
-  vertical-align: middle; }
 
 .entry-meta {
   color: #44484d;
@@ -1539,6 +1514,7 @@ a {
   .posted-on a:hover, .posted-on a:focus {
     color: #01b0bb; }
 
+/** Entry Header Media Queries **/
 @media screen and (min-width: 735px) and (max-width: 1365px) {
   .single .entry-meta {
     padding-top: 1em; }
@@ -1588,19 +1564,18 @@ a {
   .single .entry-title, .single .editor-post-title textarea, .editor-post-title .single textarea {
     margin: .5em 0; } }
 
+/** Entry Footer **/
 .single .entry-footer {
   border-top: 1px solid #c2cfcf;
   padding-top: 1em; }
 
-/*************** Post body ***************/
-@media screen and (min-width: 1023px) {
-  .archive-view .site-content {
-    display: flex;
-    flex-flow: row;
-    justify-content: space-around; }
-    .archive-view .site-content .content-area {
-      width: 100%; } }
+.tags-links:before {
+  font-family: dashicons;
+  content: "";
+  padding-right: 6px;
+  vertical-align: middle; }
 
+/** Post body **/
 .single .post .entry-content > *:not(.alignwide):not(.alignfull) {
   max-width: 750px;
   margin-right: auto;
@@ -1610,14 +1585,14 @@ a {
   .single .post .entry-content {
     margin-top: 1em; } }
 
-/*************** Page header ***************/
+/** Page header **/
 @media screen and (min-width: 1200px) {
   .page .entry-header {
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto; } }
 
-/*************** Page body ***************/
+/** Page body **/
 .page .entry-title, .page .editor-post-title textarea, .editor-post-title .page textarea {
   text-align: center; }
 
@@ -1628,11 +1603,7 @@ a {
   .page .entry-content h2 {
     margin-top: 2em; }
 
-/*************** Attachments ***************/
-.entry-attachment {
-  text-align: center; }
-
-/*************** Asides ***************/
+/** Asides **/
 .single-format-aside .site-header .entry-header {
   display: none; }
 
@@ -1664,44 +1635,13 @@ article.format-aside {
     left: auto;
     margin-right: .5em;
     vertical-align: middle; }
-  @media screen and (min-width: 735px) {
-    article.format-aside {
-      padding-left: 1em;
-      padding-right: 1em; } }
 
-/*
-@media screen and (min-width: $breakpoint-1) {
-    .single-format-aside .site-content {
-        .content-wrap {
-            display: flex;
-            flex-flow: row;
-            justify-content: space-around;
-        }
+/** Asides Media Queries **/
+@media screen and (min-width: 735px) {
+  article.format-aside {
+    padding-left: 1em;
+    padding-right: 1em; } }
 
-        .post {
-            width: 100%;
-            display: flex;
-            flex-direction: row-reverse;
-            justify-content: space-between;
-            margin-bottom: 3em;
-        }
-        
-        .entry-content {
-            //width: 66%;
-            @include max-content-width;
-            margin-left: 2em;
-        }
-        
-        .entry-footer {
-            border: 0;
-        }
-        
-    }
-    
-    .aside-body {
-        width: 100%;
-    }
-}*/
 /*--------------------------------------------------------------
 ## Archives
 --------------------------------------------------------------*/
@@ -1712,7 +1652,7 @@ article.format-aside {
   position: relative;
   border-bottom: 1px solid #c2cfcf;
   padding: .5em;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
   background: white;
   box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.2); }
   @media screen and (min-width: 735px) {
@@ -1723,8 +1663,8 @@ article.format-aside {
 
 .archive-view .content-area .excerpt-entry,
 .archive-view .format-aside {
-  margin-left: -1em;
-  margin-right: -1em; }
+  margin-left: -1rem;
+  margin-right: -1rem; }
 
 .archive-view .entry-meta {
   padding-top: 1em;
@@ -1747,33 +1687,23 @@ article.format-aside {
   text-align: left; }
 
 .archive-view .page-title {
-  text-align: center;
-  margin: 0 0 1em 0; }
+  text-align: center; }
 
-@media screen and (min-width: 735px) {
-  .archive-view .entry-footer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center; }
-  .archive-view .page .entry-footer {
-    justify-content: flex-end; }
-  .archive-view .content-area .post.has-post-thumbnail,
-  .archive-view .content-area .page.has-post-thumbnail {
-    display: flex;
-    flex-direction: row;
-    overflow: hidden; } }
-
-@media screen and (min-width: 735px) {
-  .archive-view .content-area .excerpt-entry,
-  .archive-view .format-aside {
-    margin-left: auto;
-    margin-right: auto; } }
+.archive-view .site-header .entry-header {
+  margin-left: 1em;
+  margin-right: 1em; }
+  @media screen and (min-width: 1200px) {
+    .archive-view .site-header .entry-header {
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto; } }
 
 .archive-description {
   font-size: 1.2em;
-  width: 100%;
-  flex: 1 0 100%; }
+  max-width: 750px;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center; }
 
 .continue-reading {
   text-align: center;
@@ -1800,25 +1730,32 @@ article.format-aside {
     content: " ❯";
     vertical-align: middle; }
 
-.archive-view .site-main .widget .widgettitle {
-  margin: 0 0 1em 0; }
+/** Archive Media Queries **/
+@media screen and (min-width: 735px) {
+  .archive-view .entry-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; }
+  .archive-view .page .entry-footer {
+    justify-content: flex-end; }
+  .archive-view .content-area .post.has-post-thumbnail,
+  .archive-view .content-area .page.has-post-thumbnail {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden; }
+  .archive-view .content-area .excerpt-entry,
+  .archive-view .format-aside {
+    margin-left: auto;
+    margin-right: auto; } }
 
-.archive-view .site-main .widget ul {
-  list-style: none;
-  font-size: 1.1em;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap; }
-  .archive-view .site-main .widget ul > .cat-item {
-    width: 100%; }
-    @media screen and (min-width: 735px) {
-      .archive-view .site-main .widget ul > .cat-item {
-        width: 30.79667%;
-        margin-right: 3.8%; }
-        .archive-view .site-main .widget ul > .cat-item:nth-child(3n+3) {
-          margin-right: 0; } }
-  .archive-view .site-main .widget ul .cat-item ul {
-    font-size: .8em; }
+@media screen and (min-width: 1023px) {
+  .archive-view .site-content {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around; }
+    .archive-view .site-content .content-area {
+      width: 100%; } }
 
 /*--------------------------------------------------------------
 ## Comments
@@ -1914,7 +1851,7 @@ article.format-aside {
 .comment-content a {
   word-wrap: break-word; }
 
-/******************* Comment Form **********************/
+/** Comment Form **/
 .comment-reply-title {
   line-height: 1.3em; }
 
@@ -2057,7 +1994,8 @@ article.format-aside {
     left: auto; }
   .site-footer {
     box-shadow: none;
-    border: none; }
+    border: none;
+    background: none; }
   .site-footer .citation {
     font-size: 1em; }
   .widget {
@@ -2138,7 +2076,12 @@ object {
   .centered-image {
     margin: 0 -2em; } }
 
-/* Single Post Featured Images */
+/*--------------------------------------------------------------
+## Single Post Featured Images
+--------------------------------------------------------------*/
+.featured-image {
+  margin: 0; }
+
 .single .featured-image {
   position: relative;
   background-size: cover;
@@ -2165,13 +2108,14 @@ object {
   align-items: flex-end;
   justify-content: flex-end; }
   .single .featured-image.full-bleed {
-    margin: 0 -1em; }
-    @media screen and (min-width: 735px) {
-      .single .featured-image.full-bleed {
-        min-height: 430px;
-        width: 100vw;
-        margin-left: -2em;
-        margin-right: -2em; } }
+    margin-left: -1rem;
+    margin-right: -1rem; }
+
+/** Featured Images Media Queries **/
+@media screen and (min-width: 735px) {
+  .single .featured-image.full-bleed {
+    min-height: 430px;
+    width: 100vw; } }
 
 /* we stop full-bleeding on wide screens, but only on single posts */
 @media screen and (min-width: 1365px) {
@@ -2180,10 +2124,9 @@ object {
     width: 765px;
     margin: 0; } }
 
-/* Archive view featured images */
-.featured-image {
-  margin: 0; }
-
+/*--------------------------------------------------------------
+## Archive View Featured Images
+--------------------------------------------------------------*/
 .archive-view .featured-image {
   position: relative; }
   .archive-view .featured-image .post-thumbnail {
@@ -2207,6 +2150,7 @@ object {
   .archive-view .featured-image img {
     width: 100%; }
 
+/** Archive View Featured Images Media Queries **/
 @media screen and (min-width: 735px) {
   .archive-view .featured-image {
     width: 33%;
@@ -2216,14 +2160,13 @@ object {
       position: absolute;
       /* this fixes a visual quirk that keeps the link from overflowing */ } }
 
+/*--------------------------------------------------------------
+## Gutenberg Styles
+--------------------------------------------------------------*/
 .alignwide {
   /* displays as alignfull on small screens */
-  margin-right: -1rem;
-  margin-left: -1rem; }
-  @media screen and (min-width: 735px) {
-    .alignwide {
-      margin-left: 0;
-      margin-right: 0; } }
+  margin-left: -1rem;
+  margin-right: -1rem; }
 
 .alignfull {
   width: 100vw !important;
@@ -2234,21 +2177,11 @@ object {
   margin-left: -50vw !important;
   margin-right: -50vw !important; }
 
+/** Gutenberg Media Queries **/
 @media screen and (min-width: 1023px) {
-  /* posts have their own special code */
-  /*.post .alignwide {
-        width: 100% !important;
-        margin-right: auto !important;
-        margin-left: auto !important;
-    }
-    /*.post .alignfull {
-        width: 100% !important;
-        max-width: 100% !important;
-        margin-right: auto !important;
-        margin-left: auto !important;
-        left: auto !important;
-        right: auto !important;
-    }*/ }
+  .alignwide {
+    margin-left: 0;
+    margin-right: 0; } }
 
 /*--------------------------------------------------------------
 ## Attachment pages
@@ -2263,13 +2196,11 @@ object {
   margin-top: 1em; }
 
 .single-attachment .entry-content {
-  margin-left: -1em;
-  margin-right: -1em; }
+  margin-left: -1rem;
+  margin-right: -1rem; }
 
-@media screen and (min-width: 735px) {
-  .single-attachment .entry-content {
-    margin-left: -2em;
-    margin-right: -2em; } }
+.entry-attachment {
+  text-align: center; }
 
 /*--------------------------------------------------------------
 ## Captions
