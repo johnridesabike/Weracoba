@@ -57,9 +57,7 @@
                     if ( $weracoba_description || is_customize_preview() ) :
                         ?>
                         <p class="site-description">
-                            <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-                                <?php echo $weracoba_description; /* WPCS: xss ok. */ ?>
-                            </a>
+                            <?php echo $weracoba_description; /* WPCS: xss ok. */ ?>
                         </p>
                     <?php endif; ?>
                 </div><!-- .site-branding -->

@@ -113,21 +113,23 @@
 
 /** Page header **/
 
-.page .entry-header {
-    @include max-site-width;
+.page {
+    .entry-title {
+        text-align: center;
+    }
+    .entry-header {
+        @include max-site-width;
+    }
 }
 
 /** Page body **/
 
 .page {
-    .entry-title {
-        text-align: center;
-    }
-    .entry-content {
+    .entry-content > *:not(.alignwide):not(.alignfull) {
         @include max-page-width;
-        h2 {
-            margin-top: 2em;
-        }
+    }
+    .entry-content h2 {
+        margin-top: 2em;
     }
 }
 

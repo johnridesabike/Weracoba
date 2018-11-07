@@ -364,7 +364,7 @@ select,
 optgroup,
 textarea {
   color: #2f2f30;
-  font-family: Helvetica, Tahoma, sans-serif;
+  font-family: -apple-system, Helvetica, Tahoma, sans-serif;
   font-size: 16px;
   font-size: 1rem;
   line-height: 1.65482; }
@@ -377,7 +377,7 @@ textarea {
 
 h1, .editor-post-title textarea, h2, h3, h4, h5, h6 {
   clear: both;
-  font-family: Helvetica, Tahoma, sans-serif;
+  font-family: -apple-system, Helvetica, Tahoma, sans-serif;
   color: #017680;
   font-weight: normal; }
 
@@ -468,7 +468,7 @@ big {
   line-height: 1.55424; }
 
 .page .entry-content {
-  line-height: 1.63177; }
+  line-height: 1.65482; }
 
 .format-aside .cat-links {
   font-size: 1em; }
@@ -480,7 +480,7 @@ big {
 
 .format-aside h2.entry-title {
   color: #44484d;
-  font-family: Helvetica, Tahoma, sans-serif;
+  font-family: -apple-system, Helvetica, Tahoma, sans-serif;
   font-size: 1.4em !important;
   margin-top: .5em; }
   .format-aside h2.entry-title:before {
@@ -491,11 +491,11 @@ big {
     color: #44484d; }
 
 .format-aside .entry-content {
-  font-family: Helvetica, Tahoma, sans-serif;
+  font-family: -apple-system, Helvetica, Tahoma, sans-serif;
   font-size: 1.3em; }
 
 .entry-footer {
-  font-family: Helvetica, Tahoma, sans-serif; }
+  font-family: -apple-system, Helvetica, Tahoma, sans-serif; }
 
 .entry-meta,
 .comment-meta {
@@ -565,7 +565,7 @@ p.wp-block-subhead {
       font-size: 1.75em; } }
 
 .wp-block-cover-image .wp-block-cover-image-text {
-  font-family: Helvetica, Tahoma, sans-serif;
+  font-family: -apple-system, Helvetica, Tahoma, sans-serif;
   color: #e0e8e7; }
   @media screen and (min-width: 1365px) {
     .wp-block-cover-image .wp-block-cover-image-text {
@@ -574,7 +574,7 @@ p.wp-block-subhead {
 .wp-block-button .wp-block-button__link,
 .wp-block-file a.wp-block-file__button {
   padding: .6em 1.4em;
-  font-family: Helvetica, Tahoma, sans-serif;
+  font-family: -apple-system, Helvetica, Tahoma, sans-serif;
   text-decoration: none;
   border: 1px solid #c2cfcf; }
   .wp-block-button .wp-block-button__link:not(.has-text-color),
@@ -725,7 +725,7 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"] {
   padding: .2em 1em;
-  font-family: Helvetica, Tahoma, sans-serif;
+  font-family: -apple-system, Helvetica, Tahoma, sans-serif;
   text-decoration: none;
   border: 1px solid #c2cfcf;
   border-radius: 23px;
@@ -775,7 +775,6 @@ a {
   padding-right: 1em; }
 
 .site-branding {
-  text-align: center;
   display: flex;
   justify-content: space-between;
   flex-flow: row wrap;
@@ -916,7 +915,7 @@ a {
   display: block;
   float: left;
   position: relative;
-  font-family: Helvetica, Tahoma, sans-serif;
+  font-family: -apple-system, Helvetica, Tahoma, sans-serif;
   font-size: 1.1em;
   text-align: center;
   width: 100%; }
@@ -1026,7 +1025,7 @@ a {
     width: 100%;
     background: white;
     padding: 1em;
-    font-family: Helvetica, Tahoma, sans-serif;
+    font-family: -apple-system, Helvetica, Tahoma, sans-serif;
     text-decoration: none;
     border-radius: 23px;
     border: 1px solid #c2cfcf; }
@@ -1038,7 +1037,7 @@ a {
   background: white;
   box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.2);
   padding: 1em;
-  font-family: Helvetica, Tahoma, sans-serif;
+  font-family: -apple-system, Helvetica, Tahoma, sans-serif;
   text-decoration: none;
   border-radius: 23px;
   border: 1px solid #c2cfcf; }
@@ -1050,7 +1049,7 @@ a {
       border-radius: 5px; } }
 
 .post-navigation-title {
-  font-family: Helvetica, Tahoma, sans-serif;
+  font-family: -apple-system, Helvetica, Tahoma, sans-serif;
   font-weight: normal;
   color: #44484d; }
 
@@ -1066,7 +1065,8 @@ a {
   content: ":"; }
 
 .breadcrumbs-nav {
-  margin-top: .5em; }
+  margin-top: .5em;
+  margin-left: .5em; }
   .breadcrumbs-nav .widget {
     margin: 0;
     padding: 0; }
@@ -1111,7 +1111,7 @@ a {
 .widget {
   margin: 0;
   padding: 1em;
-  font-family: Helvetica, Tahoma, sans-serif;
+  font-family: -apple-system, Helvetica, Tahoma, sans-serif;
   /* Make sure select elements fit in widgets. */ }
   .widget ul,
   .widget ol {
@@ -1585,6 +1585,9 @@ a {
     margin-top: 1em; } }
 
 /** Page header **/
+.page .entry-title, .page .editor-post-title textarea, .editor-post-title .page textarea {
+  text-align: center; }
+
 @media screen and (min-width: 1200px) {
   .page .entry-header {
     max-width: 1200px;
@@ -1592,15 +1595,13 @@ a {
     margin-right: auto; } }
 
 /** Page body **/
-.page .entry-title, .page .editor-post-title textarea, .editor-post-title .page textarea {
-  text-align: center; }
-
-.page .entry-content {
-  max-width: 700px;
+.page .entry-content > *:not(.alignwide):not(.alignfull) {
+  max-width: 750px;
   margin-right: auto;
   margin-left: auto; }
-  .page .entry-content h2 {
-    margin-top: 2em; }
+
+.page .entry-content h2 {
+  margin-top: 2em; }
 
 /** Asides **/
 .single-format-aside .site-header .entry-header {
@@ -1710,7 +1711,7 @@ article.format-aside {
   .continue-reading a {
     display: block;
     padding: .2em 1em;
-    font-family: Helvetica, Tahoma, sans-serif;
+    font-family: -apple-system, Helvetica, Tahoma, sans-serif;
     text-decoration: none;
     border: 1px solid #c2cfcf;
     border-radius: 23px;
@@ -1723,7 +1724,7 @@ article.format-aside {
 
 .excerpt-more {
   display: inline-block;
-  font-family: Helvetica, Tahoma, sans-serif;
+  font-family: -apple-system, Helvetica, Tahoma, sans-serif;
   font-size: 1rem; }
   .excerpt-more:after {
     content: " ❯";
@@ -1838,7 +1839,7 @@ article.format-aside {
 .reply a {
   display: inline-block;
   padding: .2em 1em;
-  font-family: Helvetica, Tahoma, sans-serif;
+  font-family: -apple-system, Helvetica, Tahoma, sans-serif;
   text-decoration: none;
   border: 1px solid #c2cfcf;
   border-radius: 23px;
@@ -1859,7 +1860,7 @@ article.format-aside {
 
 .comment-respond {
   line-height: 1.3em;
-  font-family: Helvetica, Tahoma, sans-serif;
+  font-family: -apple-system, Helvetica, Tahoma, sans-serif;
   max-width: 750px;
   margin-right: auto;
   margin-left: auto; }
@@ -1867,7 +1868,7 @@ article.format-aside {
     text-align: right; }
     .comment-respond .form-submit input {
       padding: .2em 1em;
-      font-family: Helvetica, Tahoma, sans-serif;
+      font-family: -apple-system, Helvetica, Tahoma, sans-serif;
       text-decoration: none;
       border: 1px solid #c2cfcf;
       border-radius: 23px;
@@ -1982,7 +1983,8 @@ article.format-aside {
   .global-header,
   .post-navigation-title,
   .nav-links,
-  .comment-respond {
+  .comment-respond,
+  .akismet_comment_form_privacy_notice {
     display: none; }
   .single .featured-image {
     display: block !important;
@@ -2208,7 +2210,7 @@ object {
   background: rgba(0, 0, 0, 0.5);
   color: #c2cfcf;
   padding: .2em .5em;
-  font-family: Helvetica, Tahoma, sans-serif; }
+  font-family: -apple-system, Helvetica, Tahoma, sans-serif; }
 
 .wp-block-gallery .blocks-gallery-item figcaption {
   font-size: .7em; }

@@ -11,15 +11,12 @@
 .posts-navigation,
 .paging-navigation {
     text-align: left;
-    //overflow: hidden;
 
     a {
         display: block;
         width: 100%;
         background: $color-bg-body;
         @include button-outline;
-        //@include drop-shadow;
-        //padding: 0 .5em;
     }
 }
 
@@ -56,6 +53,7 @@
 }
 .breadcrumbs-nav {
     margin-top: .5em;
+    margin-left: .5em;
     
     .widget {
         margin: 0;

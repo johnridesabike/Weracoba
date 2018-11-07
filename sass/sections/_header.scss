@@ -14,7 +14,6 @@
     padding-right: 1em;
 }
 .site-branding {
-    text-align: center;
     display: flex;
     justify-content: space-between;
     flex-flow: row wrap;
@@ -29,8 +28,8 @@
     margin: 0 0 .5em 0;
     flex: 2 100%;
 }
-/** Fixed Header **/
 
+/** Fixed Header **/
 @media screen {
     .fixed-header {
         position: fixed;
@@ -54,7 +53,6 @@
 }
 
 /** Header Media Queries **/
-
 @media screen and (max-width: $breakpoint-1) {
    .fixed-header .site-title {
         margin-top: 0;

@@ -3,12 +3,10 @@
 .main-navigation.toggled ul {
 	display: block;
 }
-
 .menu-button {
     margin: .25em 0;
     text-align: right;
     position: relative;
-
     .menu-toggle {
         display: inline;
         font-size: 1em;
@@ -22,13 +20,11 @@
         }
     }
 }
-
 .toggled .menu-toggle:after {
     @include dashicon($glyph-x);
     padding-right: 0;
     padding-left: 6px;
  }
-
 .menu-item-has-children {
     a:after {
         content: $glyph-arrow-down;
@@ -39,8 +35,6 @@
         content: "";
     }
 }
-
-
 .main-navigation {
 	clear: both;
 	display: block;
@@ -50,16 +44,13 @@
     font-size: 1.1em;
     text-align: center;
     width: 100%;
-
 	ul {
         display: none;
         list-style: none;
         margin: 0;
         position: relative;
         padding: 0;
-
 		ul {
-            //box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
             @include drop-shadow;
             float: left;
             position: absolute;
@@ -70,85 +61,68 @@
             border: 1px solid $color-border;
             display: block;
             width: 100%;
-
 			ul {
 				left: -999em;
 				top: 0;
 			}
-
             li {
                 border-bottom: 1px solid $color-border;
-
                 &:last-child {
                     border-bottom: none;
                 }
-
 				&:hover > ul,
 				&.focus > ul {
 					left: 100%;
 				}
 			}
-
 			:hover > a,
 			.focus > a {
                 color: $color-link-hover;
 			}
-
 			a:hover,
 			a.focus {
                 color: $color-link-hover;
 			}
 		}
-
 		li:hover > ul,
 		li.focus > ul {
 			left: auto;
             right: 0;
 		}
 	}
-
 	li {
 		float: none;
 		position: relative;
-
         li {
             padding: 0;
         }
-
 		&:hover > a,
 		&.focus > a {
             color: $color-link-hover;
 		}
 	}
-
 	a {
         display: block;
         text-decoration: none;
         padding: .5em 0 .5em 0;
         color: $color-link;
 	}
-
 	.current_page_item > a,
 	.current-menu-item > a,
 	.current_page_ancestor > a,
 	.current-menu-ancestor > a {
 	}
-
-
     @media screen and (min-width: $breakpoint-1) {
         width: auto;
         line-height: 1.1em;
-
         ul {
             display: flex;
             justify-content: flex-end;
-
             ul {
                 margin-left: 0;
                 width: auto;
                 text-align: left;
                 padding: 0 1em;
-
                 li {
                     a {
                         font-size: 1em;
@@ -156,21 +130,17 @@
                 }
             }
         }
-
         a {
             letter-spacing: 0.025em;
         }
-        
         li {
             padding-left: 1.2em;
-            
             &:first-child {
                 padding-left: 0;
             }
         }
     }
 }
-
 @media screen and (min-width: $breakpoint-1) {
 	.menu-toggle {
 		display: none;
@@ -179,12 +149,10 @@
         display: none;
     }
 }
-
 .menu-item-object-category {
     a {
         text-indent: -24px;
         padding-left: 16px;
-        
         &:before {
             @include dashicon($glyph-category);
         }

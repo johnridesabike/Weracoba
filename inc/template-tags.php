@@ -232,12 +232,12 @@ if ( ! function_exists( 'weracoba_citation' ) ) :
         $title = ucfirst( strtolower( trim( $title ) ) );
         $permalink = __( 'Retrieved from <code>', 'weracoba' ) . $permalink . '</code>';
         
-        echo sprintf(
+        return sprintf(
             wp_kses(
-                '%1$s. (%2$s). <em>%3$s</em>. %4$s',
+                '%1$s. (%2$s). <cite>%3$s</cite>. %4$s',
                 array(
                     'code' => array(),
-                    'em' => array(),
+                    'cite' => array(),
                     'time' => array(
                         'datetime' => array(),
                     ),
