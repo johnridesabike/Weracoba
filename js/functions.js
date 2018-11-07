@@ -1,5 +1,5 @@
 /* makes the header fixed when scrolling */
-var lastScrollTop = jQuery(window).scrollTop();
+var lastScrollTop = jQuery( window ).scrollTop();
 jQuery( window ).scroll( function() {
     var st = jQuery( window ).scrollTop();
     if ( st >= 30 ) {

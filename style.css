@@ -553,6 +553,9 @@ big {
   font-family: Times, "Times New Roman", serif; }
 
 /* Gutenberg custom CSS */
+.wp-block-image figcaption {
+  font-size: 1em; }
+
 .weracoba-big,
 p.wp-block-subhead {
   font-size: 1.25em;
@@ -790,6 +793,7 @@ a {
   flex: 2 100%; }
 
 /** Fixed Header **/
+/* See also: the scrolling code in functions.js */
 @media screen {
   .fixed-header {
     position: fixed;
@@ -811,6 +815,7 @@ a {
     margin-top: 0; } }
 
 @media screen and (max-width: 735px) and (orientation: landscape) {
+  /* When a small screen is oriented in landscape, hide the header unless the scrolling js overrides it */
   .fixed-header:not(.header-visible) {
     position: relative; }
   .sticky-top:not(.header-visible) {

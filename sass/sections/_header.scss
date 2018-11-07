@@ -30,6 +30,7 @@
 }
 
 /** Fixed Header **/
+/* See also: the scrolling code in functions.js */
 @media screen {
     .fixed-header {
         position: fixed;
@@ -59,6 +60,7 @@
     }
 }
 @media screen and (max-width: $breakpoint-1) and (orientation: landscape) {
+    /* When a small screen is oriented in landscape, hide the header unless the scrolling js overrides it */
     .fixed-header:not(.header-visible) {
         position: relative;
     }
