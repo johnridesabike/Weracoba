@@ -808,8 +808,13 @@ a {
 /** Header Media Queries **/
 @media screen and (max-width: 735px) {
   .fixed-header .site-title {
-    margin-top: 0;
-    font-size: 1.5em; } }
+    margin-top: 0; } }
+
+@media screen and (max-width: 735px) and (orientation: landscape) {
+  .fixed-header:not(.header-visible) {
+    position: relative; }
+  .sticky-top:not(.header-visible) {
+    margin-top: 0; } }
 
 @media screen and (min-width: 735px) {
   .site-branding {
@@ -1450,6 +1455,10 @@ a {
 --------------------------------------------------------------*/
 .site-content, .single .entry-header {
   padding: 0 1rem; }
+
+.site {
+  /* fixes bug where full-bleed content creates horizontal scrollbar. May have undesireable side effects...? */
+  overflow-x: hidden; }
 
 /*--------------------------------------------------------------
 ## Posts and pages

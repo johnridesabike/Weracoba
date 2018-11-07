@@ -1,14 +1,15 @@
 %site-content {
     padding: 0 1rem;
-
-    //@media screen and (min-width: $breakpoint-1) {
-    //    padding: 0 2em;
-    //}
 }
 
 .site-content {
     @extend %site-content;
     // so when .site-content gets extended elsewhere, it isn't affected by later changes
+}
+
+.site {
+    /* fixes bug where full-bleed content creates horizontal scrollbar. May have undesireable side effects...? */
+    overflow-x: hidden;
 }
 
 /*--------------------------------------------------------------

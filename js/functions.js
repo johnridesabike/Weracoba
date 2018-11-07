@@ -1,14 +1,23 @@
 /* makes the header fixed when scrolling */
-jQuery(window).scroll(function() {
-    var topHead = jQuery(window).scrollTop();
-    if (topHead >= 30) {
-        jQuery(".global-header").addClass("fixed-header");
-        jQuery(".site").addClass("sticky-top");
+var lastScrollTop = jQuery(window).scrollTop();
+jQuery( window ).scroll( function() {
+    var st = jQuery( window ).scrollTop();
+    if ( st >= 30 ) {
+        jQuery( ".global-header" ).addClass( "fixed-header" );
+        jQuery( ".site" ).addClass( "sticky-top" );
     } else {
-        jQuery(".global-header").removeClass("fixed-header");
-        jQuery(".site").removeClass("sticky-top");
+        jQuery( ".global-header" ).removeClass( "fixed-header" );
+        jQuery( ".site" ).removeClass( "sticky-top" );
     }
-});
+    if ( st < lastScrollTop ) {
+        jQuery( ".global-header" ).addClass( "header-visible" );
+        jQuery( ".site" ).addClass( "header-visible" );
+    } else {
+        jQuery( ".global-header" ).removeClass( "header-visible" );
+        jQuery( ".site" ).removeClass( "header-visible" );
+    }
+    lastScrollTop = st;
+} );
 
 /**
  * Copied from file navigation.js.

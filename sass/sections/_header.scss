@@ -56,7 +56,14 @@
 @media screen and (max-width: $breakpoint-1) {
    .fixed-header .site-title {
         margin-top: 0;
-        font-size: 1.5em;
+    }
+}
+@media screen and (max-width: $breakpoint-1) and (orientation: landscape) {
+    .fixed-header:not(.header-visible) {
+        position: relative;
+    }
+    .sticky-top:not(.header-visible) {
+        margin-top: 0;
     }
 }
 @media screen and (min-width: $breakpoint-1) {
