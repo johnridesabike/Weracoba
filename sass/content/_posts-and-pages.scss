@@ -180,3 +180,30 @@ article.format-aside {
         padding-right: 1em;
     }
 }
+
+/** Error 404 **/
+.error404 .page-content {
+    .search-form {
+        margin-bottom: 1em;
+        text-align: center;
+        [type="search"] {
+            width: 100%;
+            margin-bottom: .5em;
+        }
+    }
+}
+
+/* Media queries */
+
+@media screen and (min-width: $breakpoint-1) {
+    .error404 .page-content {
+        .search-form {
+            display: flex;
+            flex-direction: row;
+            label {
+                width: 70%;
+                margin-right: .5em;
+            }
+        }
+    }
+}

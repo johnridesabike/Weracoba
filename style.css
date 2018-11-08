@@ -1656,6 +1656,23 @@ article.format-aside {
     padding-left: 1em;
     padding-right: 1em; } }
 
+/** Error 404 **/
+.error404 .page-content .search-form {
+  margin-bottom: 1em;
+  text-align: center; }
+  .error404 .page-content .search-form [type="search"] {
+    width: 100%;
+    margin-bottom: .5em; }
+
+/* Media queries */
+@media screen and (min-width: 735px) {
+  .error404 .page-content .search-form {
+    display: flex;
+    flex-direction: row; }
+    .error404 .page-content .search-form label {
+      width: 70%;
+      margin-right: .5em; } }
+
 /*--------------------------------------------------------------
 ## Archives
 --------------------------------------------------------------*/

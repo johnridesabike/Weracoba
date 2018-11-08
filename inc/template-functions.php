@@ -60,10 +60,12 @@ add_action( 'wp_head', 'weracoba_pingback_header' );
 function weracoba_get_the_archive_title( $title ) {
     $asploded = explode( ":", $title );
     if ( count( $asploded ) > 1 ) {
-        return $asploded[1];
+        return $asploded[1]; // Removes the "Category: " or "Tag: " from the title
     } elseif ( is_search() ) {
         /* translators: %s: search phrase */
         return sprintf( __( 'Search Results for &#8220;%s&#8221;' ), get_search_query() );
+    } elseif ( is_404() ) {
+        return __( 'Oops! That page can&rsquo;t be found.', 'weracoba' );
     } else {
         return $title;
     }
