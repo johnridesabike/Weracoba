@@ -25,7 +25,7 @@
         <?php esc_html_e( 'Skip to content', 'weracoba' ); ?>
     </a>
 	<header id="masthead" <?php is_singular() ? post_class( "site-header" ) : print( 'class="site-header"' ); ?>>
-        <div class="global-header">
+        <div id="global-header" class="global-header">
             <div class="site-header-wrapper">
                 <div class="site-branding">
                     <?php
