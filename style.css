@@ -423,15 +423,13 @@ big {
 .site-title {
   font-family: Baskerville, Garamond, Times, "Times New Roman", serif;
   font-size: 1.9em; }
-  @media screen and (min-width: 735px) {
-    .site-title {
-      font-size: 2.3em; } }
 
 .site-description {
   font-size: .8em; }
-  @media screen and (min-width: 1023px) {
-    .site-description {
-      font-size: 1em; } }
+
+.main-navigation {
+  font-family: -apple-system, Helvetica, Tahoma, sans-serif;
+  font-size: 1.1em; }
 
 /* Posts & Pages */
 .excerpt-entry .entry-header h1, .excerpt-entry .entry-header .editor-post-title textarea, .editor-post-title .excerpt-entry .entry-header textarea, .excerpt-entry .entry-header h2, .excerpt-entry .entry-header h3, .excerpt-entry .entry-header h4, .excerpt-entry .entry-header h5, .excerpt-entry .entry-header h6,
@@ -505,18 +503,6 @@ big {
 .page-title {
   font-size: 2em;
   line-height: 1.2em; }
-  @media screen and (min-width: 735px) {
-    .entry-title, .editor-post-title textarea,
-    .page-title {
-      font-size: 2.7em; } }
-
-@media screen and (min-width: 735px) {
-  .entry-meta {
-    font-size: 1em; } }
-
-@media screen and (min-width: 1365px) {
-  .single .post .entry-title .page-title, .single .post .editor-post-title textarea .page-title, .editor-post-title .single .post textarea .page-title {
-    font-size: 2.5em; } }
 
 /* comments */
 .comments-title {
@@ -562,17 +548,10 @@ p.wp-block-subhead {
   text-align: center;
   color: #44484d;
   opacity: 1; }
-  @media screen and (min-width: 735px) {
-    .weracoba-big,
-    p.wp-block-subhead {
-      font-size: 1.75em; } }
 
 .wp-block-cover-image .wp-block-cover-image-text {
   font-family: -apple-system, Helvetica, Tahoma, sans-serif;
   color: #e0e8e7; }
-  @media screen and (min-width: 1365px) {
-    .wp-block-cover-image .wp-block-cover-image-text {
-      font-size: 2.75em; } }
 
 .wp-block-button .wp-block-button__link,
 .wp-block-file a.wp-block-file__button {
@@ -611,6 +590,37 @@ p.wp-block-subhead {
   content: "";
   padding-right: 6px;
   vertical-align: middle; }
+
+/** Media queries **/
+@media screen and (min-width: 735px) {
+  /* Header */
+  .global-header:not(.fixed-header) .site-title {
+    font-size: 2.3em; }
+  .main-navigation {
+    font-size: 1.2em; }
+  /* Posts & Pages */
+  .entry-title, .editor-post-title textarea,
+  .page-title {
+    font-size: 2.7em; }
+  .entry-meta {
+    font-size: 1em; }
+  /* Gutenberg */
+  .weracoba-big,
+  p.wp-block-subhead {
+    font-size: 1.75em; } }
+
+@media screen and (min-width: 1023px) {
+  /* Header */
+  .site-description {
+    font-size: 1em; } }
+
+@media screen and (min-width: 1365px) {
+  /* Posts & Pages */
+  .single .post .entry-title .page-title, .single .post .editor-post-title textarea .page-title, .editor-post-title .single .post textarea .page-title {
+    font-size: 2.5em; }
+  /* Gutenberg */
+  .wp-block-cover-image .wp-block-cover-image-text {
+    font-size: 2.75em; } }
 
 /*--------------------------------------------------------------
 # Elements
@@ -856,8 +866,7 @@ a {
   .site-branding {
     margin-right: 2em; }
   .main-navigation {
-    display: block;
-    font-size: 1.2em; } }
+    display: block; } }
 
 @media screen and (min-width: 1023px) {
   .admin-bar .fixed-header {
@@ -925,8 +934,6 @@ a {
   display: block;
   float: left;
   position: relative;
-  font-family: -apple-system, Helvetica, Tahoma, sans-serif;
-  font-size: 1.1em;
   text-align: center;
   width: 100%; }
   .main-navigation ul {
