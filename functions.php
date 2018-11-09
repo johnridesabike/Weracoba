@@ -180,8 +180,7 @@ add_action( 'widgets_init', 'weracoba_widgets_init' );
  * Enqueue scripts and styles.
  */
 function weracoba_scripts() {
-	wp_enqueue_style( 'weracoba-style', get_stylesheet_uri() );
-    wp_enqueue_style( 'dashicons' );
+	wp_enqueue_style( 'weracoba-style', get_stylesheet_uri(), array( 'dashicons' ), '20181109', 'all' );
 	wp_enqueue_script( 'weracoba-functions', get_template_directory_uri() . '/js/functions.js', array(), '20181105', true );
 	wp_enqueue_script( 'weracoba-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 	wp_enqueue_script( 'weracoba-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
