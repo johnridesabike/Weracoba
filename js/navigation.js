@@ -13,7 +13,7 @@
 	}
     
     buttonContainer = document.getElementById( 'toggle-button' );
-	button = buttonContainer.getElementsByTagName( 'button' )[0]; /* weracoba */
+	button = buttonContainer.getElementsByTagName( 'button' )[0]; // Weracoba
 	if ( 'undefined' === typeof button ) {
 		return;
 	}
@@ -34,12 +34,12 @@
 	button.onclick = function() {
 		if ( -1 !== container.className.indexOf( 'toggled' ) ) {
 			container.className = container.className.replace( ' toggled', '' );
-			buttonContainer.className = buttonContainer.className.replace( ' toggled', '' ); /* weracoba */
+			buttonContainer.className = buttonContainer.className.replace( ' toggled', '' ); // Weracoba
 			button.setAttribute( 'aria-expanded', 'false' );
 			menu.setAttribute( 'aria-expanded', 'false' );
 		} else {
 			container.className += ' toggled';
-			buttonContainer.className += ' toggled'; /* weracoba */
+			buttonContainer.className += ' toggled'; // Weracoba
 			button.setAttribute( 'aria-expanded', 'true' );
 			menu.setAttribute( 'aria-expanded', 'true' );
 		}

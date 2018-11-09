@@ -14,7 +14,8 @@
     window.onscroll = function () {
         var newScrollTop = scrollTop(),
             header = document.getElementById("global-header"),
-            page = document.getElementById("page");
+            page = document.getElementById("page"),
+            nav = document.getElementById("site-navigation");
         if (newScrollTop >= 30) {
             header.classList.add('fixed-header');
             page.classList.add('sticky-top');
@@ -27,8 +28,11 @@
             header.classList.add('header-visible');
             page.classList.add('header-visible');
         } else {
-			header.classList.remove('header-visible');
-			page.classList.remove('header-visible');
+            // Don't hide the header if the menu is open on small screens
+            if (!nav.classList.contains('toggled')) {
+                header.classList.remove('header-visible');
+                page.classList.remove('header-visible');
+            }
         }
         lastScrollTop = newScrollTop;
     };

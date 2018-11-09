@@ -896,6 +896,10 @@ a {
 .main-navigation.toggled ul {
   display: block; }
 
+.main-navigation.toggled {
+  height: 100vh;
+  overflow: scroll; }
+
 .menu-button {
   margin: .25em 0;
   text-align: right;
