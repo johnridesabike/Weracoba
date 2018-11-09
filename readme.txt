@@ -4,7 +4,7 @@ Contributors: automattic, John Jackson
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 
 Requires at least: 4.5
-Tested up to: 4.8
+Tested up to: 5.0
 Stable tag: 0.1
 License: GNU General Public License v2 or later
 License URI: LICENSE
