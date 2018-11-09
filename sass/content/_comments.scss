@@ -82,8 +82,6 @@
 	text-align: left;
 }
 .comment-respond {
-	line-height: 1.3em;
-	font-family: $font-headers;
     @include max-content-width;
 
     .form-submit {

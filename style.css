@@ -364,7 +364,7 @@ select,
 optgroup,
 textarea {
   color: #2f2f30;
-  font-family: -apple-system, Helvetica, Tahoma, sans-serif;
+  font-family: -apple-system, "Segoe UI", Helvetica, Tahoma, sans-serif;
   font-size: 16px;
   font-size: 1rem;
   line-height: 1.65482; }
@@ -377,7 +377,7 @@ textarea {
 
 h1, .editor-post-title textarea, h2, h3, h4, h5, h6 {
   clear: both;
-  font-family: -apple-system, Helvetica, Tahoma, sans-serif;
+  font-family: -apple-system, "Segoe UI", Helvetica, Tahoma, sans-serif;
   color: #017680;
   font-weight: normal; }
 
@@ -421,42 +421,21 @@ big {
   font-size: 125%; }
 
 .site-title {
-  font-family: Baskerville, Garamond, Times, "Times New Roman", serif;
+  font-family: Baskerville, "Baskerville Old Face", Garamond, Times, "Times New Roman", serif;
   font-size: 1.9em; }
 
 .site-description {
   font-size: .8em; }
 
 .main-navigation {
-  font-family: -apple-system, Helvetica, Tahoma, sans-serif;
+  font-family: -apple-system, "Segoe UI", Helvetica, Tahoma, sans-serif;
   font-size: 1.1em; }
 
 /* Posts & Pages */
-.excerpt-entry .entry-header h1, .excerpt-entry .entry-header .editor-post-title textarea, .editor-post-title .excerpt-entry .entry-header textarea, .excerpt-entry .entry-header h2, .excerpt-entry .entry-header h3, .excerpt-entry .entry-header h4, .excerpt-entry .entry-header h5, .excerpt-entry .entry-header h6,
-.excerpt-entry .entry-content h1,
-.excerpt-entry .entry-content .editor-post-title textarea, .editor-post-title
-.excerpt-entry .entry-content textarea,
-.excerpt-entry .entry-content h2,
-.excerpt-entry .entry-content h3,
-.excerpt-entry .entry-content h4,
-.excerpt-entry .entry-content h5,
-.excerpt-entry .entry-content h6,
+.excerpt-entry .entry-header h1, .excerpt-entry .entry-header .editor-post-title textarea, .editor-post-title .excerpt-entry .entry-header textarea,
 .single-post .entry-header h1,
 .single-post .entry-header .editor-post-title textarea, .editor-post-title
-.single-post .entry-header textarea,
-.single-post .entry-header h2,
-.single-post .entry-header h3,
-.single-post .entry-header h4,
-.single-post .entry-header h5,
-.single-post .entry-header h6,
-.single-post .entry-content h1,
-.single-post .entry-content .editor-post-title textarea, .editor-post-title
-.single-post .entry-content textarea,
-.single-post .entry-content h2,
-.single-post .entry-content h3,
-.single-post .entry-content h4,
-.single-post .entry-content h5,
-.single-post .entry-content h6 {
+.single-post .entry-header textarea {
   font-family: Times, "Times New Roman", serif; }
 
 .excerpt-entry .entry-content,
@@ -464,9 +443,31 @@ big {
   font-family: Times, "Times New Roman", serif;
   font-size: 19px;
   line-height: 1.55424; }
+  .excerpt-entry .entry-content h1, .excerpt-entry .entry-content .editor-post-title textarea, .editor-post-title .excerpt-entry .entry-content textarea, .excerpt-entry .entry-content h2, .excerpt-entry .entry-content h3, .excerpt-entry .entry-content h4, .excerpt-entry .entry-content h5, .excerpt-entry .entry-content h6,
+  .single-post .entry-content h1,
+  .single-post .entry-content .editor-post-title textarea, .editor-post-title
+  .single-post .entry-content textarea,
+  .single-post .entry-content h2,
+  .single-post .entry-content h3,
+  .single-post .entry-content h4,
+  .single-post .entry-content h5,
+  .single-post .entry-content h6 {
+    font-family: Times, "Times New Roman", serif; }
 
 .page .entry-content {
   line-height: 1.65482; }
+
+.entry-meta,
+.comment-meta {
+  font-size: 0.9em; }
+
+.entry-title, .editor-post-title textarea,
+.page-title {
+  font-size: 2em;
+  line-height: 1.2em; }
+
+.entry-footer {
+  font-family: -apple-system, "Segoe UI", Helvetica, Tahoma, sans-serif; }
 
 .format-aside .cat-links {
   font-size: 1em; }
@@ -478,7 +479,7 @@ big {
 
 .format-aside h2.entry-title {
   color: #44484d;
-  font-family: -apple-system, Helvetica, Tahoma, sans-serif;
+  font-family: -apple-system, "Segoe UI", Helvetica, Tahoma, sans-serif;
   font-size: 1.4em !important;
   margin-top: .5em; }
   .format-aside h2.entry-title:before {
@@ -489,22 +490,10 @@ big {
     color: #44484d; }
 
 .format-aside .entry-content {
-  font-family: -apple-system, Helvetica, Tahoma, sans-serif;
+  font-family: -apple-system, "Segoe UI", Helvetica, Tahoma, sans-serif;
   font-size: 1.3em; }
 
-.entry-footer {
-  font-family: -apple-system, Helvetica, Tahoma, sans-serif; }
-
-.entry-meta,
-.comment-meta {
-  font-size: 0.9em; }
-
-.entry-title, .editor-post-title textarea,
-.page-title {
-  font-size: 2em;
-  line-height: 1.2em; }
-
-/* comments */
+/* Comments */
 .comments-title {
   font-size: 2em;
   font-weight: normal;
@@ -512,6 +501,10 @@ big {
 
 .comment-content {
   font-family: Times, "Times New Roman", serif; }
+
+.comment-respond {
+  line-height: 1.3em;
+  font-family: -apple-system, "Segoe UI", Helvetica, Tahoma, sans-serif; }
 
 /* Archive view */
 .archive-view .entry-title, .archive-view .editor-post-title textarea, .editor-post-title .archive-view textarea {
@@ -523,9 +516,34 @@ big {
 .archive-view .entry-content {
   font-size: 1.2em; }
 
+.excerpt-more {
+  font-family: -apple-system, "Segoe UI", Helvetica, Tahoma, sans-serif; }
+
 /* Widgets */
 .widget {
-  line-height: 1.42428; }
+  line-height: 1.42428;
+  font-family: -apple-system, "Segoe UI", Helvetica, Tahoma, sans-serif; }
+
+.rssSummary {
+  font-family: Times, "Times New Roman", serif;
+  font-size: .8em;
+  line-height: 1.4em; }
+
+/* Media captions */
+.wp-block-gallery .blocks-gallery-item figcaption, .single .featured-image figcaption {
+  background: rgba(0, 0, 0, 0.5);
+  color: #c2cfcf;
+  padding: .2em .5em;
+  font-family: -apple-system, "Segoe UI", Helvetica, Tahoma, sans-serif; }
+
+.wp-block-gallery .blocks-gallery-item figcaption {
+  font-size: .7em; }
+
+.single .featured-image figcaption {
+  font-size: .9em; }
+
+.entry-caption {
+  font-size: 1.3em; }
 
 /* Front Page */
 .fp-post,
@@ -550,13 +568,13 @@ p.wp-block-subhead {
   opacity: 1; }
 
 .wp-block-cover-image .wp-block-cover-image-text {
-  font-family: -apple-system, Helvetica, Tahoma, sans-serif;
+  font-family: -apple-system, "Segoe UI", Helvetica, Tahoma, sans-serif;
   color: #e0e8e7; }
 
 .wp-block-button .wp-block-button__link,
 .wp-block-file a.wp-block-file__button {
   padding: .6em 1.4em;
-  font-family: -apple-system, Helvetica, Tahoma, sans-serif;
+  font-family: -apple-system, "Segoe UI", Helvetica, Tahoma, sans-serif;
   text-decoration: none;
   border: 1px solid #c2cfcf; }
   .wp-block-button .wp-block-button__link:not(.has-text-color),
@@ -738,7 +756,7 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"] {
   padding: .2em 1em;
-  font-family: -apple-system, Helvetica, Tahoma, sans-serif;
+  font-family: -apple-system, "Segoe UI", Helvetica, Tahoma, sans-serif;
   text-decoration: none;
   border: 1px solid #c2cfcf;
   border-radius: 23px;
@@ -859,8 +877,6 @@ a {
     margin: 0; }
   .site-description {
     margin: 0; }
-  .admin-bar .fixed-header {
-    top: 46px; }
   .site-header {
     text-align: left; }
   .site-branding {
@@ -869,10 +885,21 @@ a {
     display: block; } }
 
 @media screen and (min-width: 1023px) {
-  .admin-bar .fixed-header {
-    top: 32px; }
   .sticky-top {
     margin-top: 110px; } }
+
+/* Offesets values from wp-includes/css/admin-bar.css */
+.admin-bar .fixed-header {
+  top: 32px;
+  /* admin-bar.css:84 */ }
+  @media screen and (max-width: 782px) {
+    .admin-bar .fixed-header {
+      top: 46px;
+      /* admin-bar.css:970 */ } }
+  @media screen and (max-width: 600px) {
+    .admin-bar .fixed-header {
+      top: 0;
+      /* admin-bar.css:1081 */ } }
 
 /*--------------------------------------------------------------
 ## Footer
@@ -1046,7 +1073,7 @@ a {
     width: 100%;
     background: white;
     padding: 1em;
-    font-family: -apple-system, Helvetica, Tahoma, sans-serif;
+    font-family: -apple-system, "Segoe UI", Helvetica, Tahoma, sans-serif;
     text-decoration: none;
     border-radius: 23px;
     border: 1px solid #c2cfcf; }
@@ -1058,7 +1085,7 @@ a {
   background: white;
   box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.2);
   padding: 1em;
-  font-family: -apple-system, Helvetica, Tahoma, sans-serif;
+  font-family: -apple-system, "Segoe UI", Helvetica, Tahoma, sans-serif;
   text-decoration: none;
   border-radius: 23px;
   border: 1px solid #c2cfcf; }
@@ -1070,7 +1097,6 @@ a {
       border-radius: 5px; } }
 
 .post-navigation-title {
-  font-family: -apple-system, Helvetica, Tahoma, sans-serif;
   font-weight: normal;
   color: #44484d; }
 
@@ -1132,7 +1158,6 @@ a {
 .widget {
   margin: 0;
   padding: 1em;
-  font-family: -apple-system, Helvetica, Tahoma, sans-serif;
   /* Make sure select elements fit in widgets. */ }
   .widget ul,
   .widget ol {
@@ -1255,10 +1280,7 @@ a {
   font-size: .8em; }
 
 .rssSummary {
-  padding: .5em 0;
-  font-family: "PT Serif", Georgia, Cambria, "Times New Roman", Times, serif;
-  font-size: .8em;
-  line-height: 1.4em; }
+  padding: .5em 0; }
 
 /* Calendar widget */
 .widget_calendar {
@@ -1753,7 +1775,7 @@ article.format-aside {
   .continue-reading a {
     display: block;
     padding: .2em 1em;
-    font-family: -apple-system, Helvetica, Tahoma, sans-serif;
+    font-family: -apple-system, "Segoe UI", Helvetica, Tahoma, sans-serif;
     text-decoration: none;
     border: 1px solid #c2cfcf;
     border-radius: 23px;
@@ -1766,7 +1788,6 @@ article.format-aside {
 
 .excerpt-more {
   display: inline-block;
-  font-family: -apple-system, Helvetica, Tahoma, sans-serif;
   font-size: 1rem; }
   .excerpt-more:after {
     content: " ❯";
@@ -1881,7 +1902,7 @@ article.format-aside {
 .reply a {
   display: inline-block;
   padding: .2em 1em;
-  font-family: -apple-system, Helvetica, Tahoma, sans-serif;
+  font-family: -apple-system, "Segoe UI", Helvetica, Tahoma, sans-serif;
   text-decoration: none;
   border: 1px solid #c2cfcf;
   border-radius: 23px;
@@ -1901,8 +1922,6 @@ article.format-aside {
   text-align: left; }
 
 .comment-respond {
-  line-height: 1.3em;
-  font-family: -apple-system, Helvetica, Tahoma, sans-serif;
   max-width: 750px;
   margin-right: auto;
   margin-left: auto; }
@@ -1910,7 +1929,7 @@ article.format-aside {
     text-align: right; }
     .comment-respond .form-submit input {
       padding: .2em 1em;
-      font-family: -apple-system, Helvetica, Tahoma, sans-serif;
+      font-family: -apple-system, "Segoe UI", Helvetica, Tahoma, sans-serif;
       text-decoration: none;
       border: 1px solid #c2cfcf;
       border-radius: 23px;
@@ -2248,21 +2267,6 @@ object {
 /*--------------------------------------------------------------
 ## Captions
 --------------------------------------------------------------*/
-.wp-block-gallery .blocks-gallery-item figcaption, .single .featured-image figcaption {
-  background: rgba(0, 0, 0, 0.5);
-  color: #c2cfcf;
-  padding: .2em .5em;
-  font-family: -apple-system, Helvetica, Tahoma, sans-serif; }
-
-.wp-block-gallery .blocks-gallery-item figcaption {
-  font-size: .7em; }
-
-.single .featured-image figcaption {
-  font-size: .9em; }
-
-.entry-caption {
-  font-size: 1.3em; }
-
 .wp-caption {
   margin-bottom: 1.5em;
   max-width: 100%; }

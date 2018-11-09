@@ -1,7 +1,6 @@
 .widget {
 	margin: 0;
     padding: 1em;//.5em .5em .5em .5em;
-	font-family: $font-widget;
 	/* Make sure select elements fit in widgets. */
 
     ul,
@@ -131,9 +130,6 @@
 
 .rssSummary {
 	padding: .5em 0;
-	font-family: "PT Serif", Georgia, Cambria, "Times New Roman", Times, serif;
-	font-size: .8em;
-	line-height: 1.4em;
 }
 
 /* Calendar widget */

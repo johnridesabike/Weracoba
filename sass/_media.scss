@@ -207,23 +207,6 @@ object {
 /*--------------------------------------------------------------
 ## Captions
 --------------------------------------------------------------*/
-%figcaption {
-    background: rgba(0, 0, 0, .5);
-    color: $color-text-light;
-    padding: .2em .5em;
-    font-family: $font-UI;
-}
-.wp-block-gallery .blocks-gallery-item figcaption {
-    @extend %figcaption;
-    font-size: .7em;
-}
-.single .featured-image figcaption {
-    @extend %figcaption;
-    font-size: .9em;
-}
-.entry-caption {
-    font-size: 1.3em;
-}
 .wp-caption {
 	margin-bottom: 1.5em;
 	max-width: 100%;

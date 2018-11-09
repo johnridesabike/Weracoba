@@ -83,24 +83,34 @@ big {
 
 .excerpt-entry,
 .single-post {
-    .entry-header,
+    .entry-header {
+        h1 {
+            font-family: $font-reading;
+        }
+    }
     .entry-content {
+        font-family: $font-reading;
+        font-size: $font-reading-size;
+        line-height: calculate-line-height($font-reading-size, $size-content);
         h1, h2, h3, h4, h5, h6 {
             font-family: $font-reading;
         }
     }
 }
-
-.excerpt-entry,
-.single-post {
-    .entry-content {
-        font-family: $font-reading;
-        font-size: $font-reading-size;
-        line-height: calculate-line-height($font-reading-size, $size-content);
-    }
-}
 .page .entry-content {
     line-height: calculate-line-height(16, $size-content-page);
+}
+.entry-meta,
+.comment-meta {
+    font-size: 0.9em;
+}
+.entry-title,
+.page-title {
+    font-size: 2em;
+    line-height: 1.2em;
+}
+.entry-footer {
+    font-family: $font-UI;
 }
 .format-aside {
     .cat-links {
@@ -128,21 +138,8 @@ big {
         font-size: 1.3em;
     }
 }
-.entry-footer {
-    font-family: $font-UI;
-}
-.entry-meta,
-.comment-meta {
-    font-size: 0.9em;
-}
 
-.entry-title,
-.page-title {
-    font-size: 2em;
-    line-height: 1.2em;
-}
-
-/* comments */
+/* Comments */
 
 .comments-title {
 	font-size: 2em;
@@ -152,8 +149,13 @@ big {
 .comment-content {
     font-family: $font-reading;
 }
+.comment-respond {
+	line-height: 1.3em;
+	font-family: $font-headers;
+}
 
 /* Archive view */
+
 .archive-view {
     .entry-title {
         font-size: 1.8em;
@@ -166,11 +168,42 @@ big {
         font-size: 1.2em;
     }
 }
+.excerpt-more {
+    font-family: $font-UI;
+}
+
 
 /* Widgets */
 
 .widget {
     line-height: calculate-line-height(16, $size-widget);
+	font-family: $font-widget;
+}
+
+.rssSummary {
+	font-family: $font-reading;
+	font-size: .8em;
+	line-height: 1.4em;
+}
+
+/* Media captions */
+
+%figcaption {
+    background: rgba(0, 0, 0, .5);
+    color: $color-text-light;
+    padding: .2em .5em;
+    font-family: $font-UI;
+}
+.wp-block-gallery .blocks-gallery-item figcaption {
+    @extend %figcaption;
+    font-size: .7em;
+}
+.single .featured-image figcaption {
+    @extend %figcaption;
+    font-size: .9em;
+}
+.entry-caption {
+    font-size: 1.3em;
 }
 
 /* Front Page */
