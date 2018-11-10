@@ -74,17 +74,14 @@
 .comment-content a {
 	word-wrap: break-word;
 }
-/******************* Comment Form **********************/
+/** Comment Form **/
 .comment-reply-title {
 	line-height: 1.3em;
-    color: $color-tint;
 }
 .comment-list .comment-reply-title {
 	text-align: left;
 }
 .comment-respond {
-	line-height: 1.3em;
-	font-family: $font-headers;
     @include max-content-width;
 
     .form-submit {

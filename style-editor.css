@@ -17,10 +17,10 @@
     font-family: Helvetica, Tahoma, sans-serif;
     font-size: 16px;
     font-size: 1rem;
-    line-height: 1.63177; }
+    line-height: 1.65482; }
   .edit-post-visual-editor textarea {
     font-family: Times, "Times New Roman", serif;
-    max-width: 700px;
+    max-width: 750px;
     margin-right: auto;
     margin-left: auto; }
   .edit-post-visual-editor h1, .edit-post-visual-editor .editor-post-title textarea, .edit-post-visual-editor h2, .edit-post-visual-editor h3, .edit-post-visual-editor h4, .edit-post-visual-editor h5, .edit-post-visual-editor h6 {
@@ -66,23 +66,56 @@
         font-size: 2.3em; } }
   .edit-post-visual-editor .site-description {
     font-size: .8em; }
-    @media screen and (min-width: 735px) {
+    @media screen and (min-width: 1023px) {
       .edit-post-visual-editor .site-description {
         font-size: 1em; } }
-  .edit-post-visual-editor .post .entry-header h1, .edit-post-visual-editor .post .entry-header .editor-post-title textarea, .edit-post-visual-editor .editor-post-title .post .entry-header textarea, .edit-post-visual-editor .post .entry-header h2, .edit-post-visual-editor .post .entry-header h3, .edit-post-visual-editor .post .entry-header h4, .edit-post-visual-editor .post .entry-header h5, .edit-post-visual-editor .post .entry-header h6,
-  .edit-post-visual-editor .post .entry-content h1, .edit-post-visual-editor .post .entry-content .editor-post-title textarea, .edit-post-visual-editor .editor-post-title .post .entry-content textarea,
-  .edit-post-visual-editor .post .entry-content h2,
-  .edit-post-visual-editor .post .entry-content h3,
-  .edit-post-visual-editor .post .entry-content h4,
-  .edit-post-visual-editor .post .entry-content h5,
-  .edit-post-visual-editor .post .entry-content h6 {
+  .edit-post-visual-editor .excerpt-entry .entry-header h1, .edit-post-visual-editor .excerpt-entry .entry-header .editor-post-title textarea, .edit-post-visual-editor .editor-post-title .excerpt-entry .entry-header textarea, .edit-post-visual-editor .excerpt-entry .entry-header h2, .edit-post-visual-editor .excerpt-entry .entry-header h3, .edit-post-visual-editor .excerpt-entry .entry-header h4, .edit-post-visual-editor .excerpt-entry .entry-header h5, .edit-post-visual-editor .excerpt-entry .entry-header h6,
+  .edit-post-visual-editor .excerpt-entry .entry-content h1, .edit-post-visual-editor .excerpt-entry .entry-content .editor-post-title textarea, .edit-post-visual-editor .editor-post-title .excerpt-entry .entry-content textarea,
+  .edit-post-visual-editor .excerpt-entry .entry-content h2,
+  .edit-post-visual-editor .excerpt-entry .entry-content h3,
+  .edit-post-visual-editor .excerpt-entry .entry-content h4,
+  .edit-post-visual-editor .excerpt-entry .entry-content h5,
+  .edit-post-visual-editor .excerpt-entry .entry-content h6,
+  .edit-post-visual-editor .single-post .entry-header h1, .edit-post-visual-editor .single-post .entry-header .editor-post-title textarea, .edit-post-visual-editor .editor-post-title .single-post .entry-header textarea,
+  .edit-post-visual-editor .single-post .entry-header h2,
+  .edit-post-visual-editor .single-post .entry-header h3,
+  .edit-post-visual-editor .single-post .entry-header h4,
+  .edit-post-visual-editor .single-post .entry-header h5,
+  .edit-post-visual-editor .single-post .entry-header h6,
+  .edit-post-visual-editor .single-post .entry-content h1, .edit-post-visual-editor .single-post .entry-content .editor-post-title textarea, .edit-post-visual-editor .editor-post-title .single-post .entry-content textarea,
+  .edit-post-visual-editor .single-post .entry-content h2,
+  .edit-post-visual-editor .single-post .entry-content h3,
+  .edit-post-visual-editor .single-post .entry-content h4,
+  .edit-post-visual-editor .single-post .entry-content h5,
+  .edit-post-visual-editor .single-post .entry-content h6 {
     font-family: Times, "Times New Roman", serif; }
-  .edit-post-visual-editor .post .entry-content {
+  .edit-post-visual-editor .excerpt-entry .entry-content,
+  .edit-post-visual-editor .single-post .entry-content {
     font-family: Times, "Times New Roman", serif;
     font-size: 19px;
-    line-height: 1.53789; }
+    line-height: 1.55424; }
   .edit-post-visual-editor .page .entry-content {
-    line-height: 1.72398; }
+    line-height: 1.63177; }
+  .edit-post-visual-editor .format-aside .cat-links {
+    font-size: 1em; }
+  .edit-post-visual-editor .format-aside .entry-header a {
+    color: #44484d; }
+    .edit-post-visual-editor .format-aside .entry-header a:hover, .edit-post-visual-editor .format-aside .entry-header a:focus {
+      color: #01b0bb; }
+  .edit-post-visual-editor .format-aside h2.entry-title {
+    color: #44484d;
+    font-family: Helvetica, Tahoma, sans-serif;
+    font-size: 1.4em !important;
+    margin-top: .5em; }
+    .edit-post-visual-editor .format-aside h2.entry-title:before {
+      font-family: dashicons;
+      content: "";
+      padding-right: 6px;
+      vertical-align: middle;
+      color: #44484d; }
+  .edit-post-visual-editor .format-aside .entry-content {
+    font-family: Helvetica, Tahoma, sans-serif;
+    font-size: 1.3em; }
   .edit-post-visual-editor .entry-footer {
     font-family: Helvetica, Tahoma, sans-serif; }
   .edit-post-visual-editor .entry-meta,
@@ -115,7 +148,7 @@
   .edit-post-visual-editor .archive-view .entry-content {
     font-size: 1.2em; }
   .edit-post-visual-editor .widget {
-    line-height: 1.40123; }
+    line-height: 1.42428; }
   .edit-post-visual-editor .fp-post,
   .edit-post-visual-editor .fp-post .entry-title, .edit-post-visual-editor .fp-post .editor-post-title textarea, .edit-post-visual-editor .editor-post-title .fp-post textarea {
     font-family: Times, "Times New Roman", serif; }
@@ -137,18 +170,25 @@
     @media screen and (min-width: 1365px) {
       .edit-post-visual-editor .wp-block-cover-image .wp-block-cover-image-text {
         font-size: 2.75em; } }
-  .edit-post-visual-editor .wp-block-button .wp-block-button__link {
+  .edit-post-visual-editor .wp-block-button .wp-block-button__link,
+  .edit-post-visual-editor .wp-block-file a.wp-block-file__button {
     padding: .6em 1.4em;
     font-family: Helvetica, Tahoma, sans-serif;
     text-decoration: none;
     border: 1px solid #c2cfcf; }
-    .edit-post-visual-editor .wp-block-button .wp-block-button__link:not(.has-text-color) {
+    .edit-post-visual-editor .wp-block-button .wp-block-button__link:not(.has-text-color),
+    .edit-post-visual-editor .wp-block-file a.wp-block-file__button:not(.has-text-color) {
       color: white; }
-      .edit-post-visual-editor .wp-block-button .wp-block-button__link:not(.has-text-color):hover, .edit-post-visual-editor .wp-block-button .wp-block-button__link:not(.has-text-color):focus {
+      .edit-post-visual-editor .wp-block-button .wp-block-button__link:not(.has-text-color):hover, .edit-post-visual-editor .wp-block-button .wp-block-button__link:not(.has-text-color):focus,
+      .edit-post-visual-editor .wp-block-file a.wp-block-file__button:not(.has-text-color):hover,
+      .edit-post-visual-editor .wp-block-file a.wp-block-file__button:not(.has-text-color):focus {
         color: white; }
-    .edit-post-visual-editor .wp-block-button .wp-block-button__link:not(.has-background) {
+    .edit-post-visual-editor .wp-block-button .wp-block-button__link:not(.has-background),
+    .edit-post-visual-editor .wp-block-file a.wp-block-file__button:not(.has-background) {
       background: #017680; }
-      .edit-post-visual-editor .wp-block-button .wp-block-button__link:not(.has-background):hover, .edit-post-visual-editor .wp-block-button .wp-block-button__link:not(.has-background):focus {
+      .edit-post-visual-editor .wp-block-button .wp-block-button__link:not(.has-background):hover, .edit-post-visual-editor .wp-block-button .wp-block-button__link:not(.has-background):focus,
+      .edit-post-visual-editor .wp-block-file a.wp-block-file__button:not(.has-background):hover,
+      .edit-post-visual-editor .wp-block-file a.wp-block-file__button:not(.has-background):focus {
         background: #01b0bb; }
   .edit-post-visual-editor .wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color) {
     color: #017680; }

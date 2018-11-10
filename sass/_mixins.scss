@@ -1,0 +1,267 @@
+@mixin dashicon($glyph) {
+    font-family: dashicons;
+    content: $glyph;
+    padding-right: 6px;
+    vertical-align: middle;
+}
+
+///**
+// * Calculates numbers to the mathmatical power (exponent)
+// *
+// * @since	1.0.0
+// * @link https://jeremyhixon.com/golden-ratio-typography-in-sass/
+// *
+// * @param	int		$number		The number to increase
+// * @param int		$exponent	The power to increase the number by
+// *
+// * @return	int					The new number
+// */
+@function pow( $number, $exponent ) {
+	$value: 1;
+	@if $exponent > 0 {
+		@for $i from 1 through $exponent {
+			$value: $value * $number;
+		}
+	}
+	@return $value;
+}
+///**
+// * Removes units from values for easier modification
+// *
+// * @since	1.0.0
+// * @link https://jeremyhixon.com/golden-ratio-typography-in-sass/
+// *
+// * @param	int		$number		The number to strip units from
+// *
+// * @return	int					The number without the unit
+// */
+@function strip-unit( $number ) {
+	@if type-of( $number ) == 'number' and not unitless( $number ) {
+		@return $number / ( $number * 0 + 1 );
+	}
+	@return $number;
+}
+///**
+// * Calculates the line height based on multiple parameters
+// *
+// * @since	1.0.0
+// * @link https://jeremyhixon.com/golden-ratio-typography-in-sass/
+// *
+// * @param	int		$font-size			The font size
+// * @param	int		$content-width		The width of the content area
+// * @param	int		$ratio				The ratio. Default 1.61803398875 (golden ratio)
+// *
+// * @return	int							The calculated line height
+// */
+@function calculate-line-height( $font-size, $content-width, $ratio: 1.61803398875 ) {
+	$font-size: strip-unit( $font-size );
+	$content-width: strip-unit( $content-width );
+	@return $ratio - ( ( 1 / ( 2 * $ratio ) ) * ( 1 - ( $content-width / ( pow( ( $font-size * $ratio ), 2 ) ) ) ) );
+}
+
+
+// Rem output with px fallback
+@mixin font-size($sizeValue: 1) {
+	font-size: ($sizeValue * 16) * 1px;
+	font-size: $sizeValue * 1rem;
+}
+
+@mixin center-block {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@mixin clearfix() {
+	content: "";
+	display: table;
+	table-layout: fixed;
+}
+
+// Clear after (not all clearfix need this also)
+@mixin clearfix-after() {
+	clear: both;
+}
+
+// Columns
+$columns: (
+	1: 100%,
+	2: 50%,
+	3: 33.33%,
+	4: 25%,
+	5: 20%,
+	6: 16.66%,
+	7: 14.28%,
+	8: 12.5%,
+	9: 11.11%
+);
+
+$columns-margin: 3.8%;
+
+// Column width with margin
+@mixin column-width($numberColumns: 3) {
+	width: map-get( $columns, $numberColumns ) - ( ( $columns-margin * ( $numberColumns - 1 ) ) / $numberColumns );
+}
+
+@mixin widget-columns {
+    @include column-width(1);
+
+    @media screen and (min-width: $breakpoint-1) {
+        @include column-width(3);
+        margin-right: $columns-margin;
+        &:nth-child(3n+3) {
+            margin-right: 0;
+        }
+    }
+}
+
+// Buttons
+@mixin button {
+    padding: .2em 1em;
+	font-family: $font-UI;
+	text-decoration: none;
+    border: 1px solid $color-border-button;
+    border-radius: 23px; // from Gutenberg style
+    color: $color-bg-body-alt;
+    background: $color-link;
+    //color: $color-link;
+
+    &:hover,
+    &:focus {
+        background: $color-link-hover;
+    }
+}
+
+@mixin button-outline {
+    padding: 1em;
+    font-family: $font-UI;
+    text-decoration: none;
+    border-radius: 23px;
+    border: 1px solid $color-border-button;
+}
+
+@mixin gutenberg-button {
+    padding: .6em 1.4em;
+	font-family: $font-UI;
+	//font-size: .875em;
+	//line-height: 1.3em;
+	text-decoration: none;
+    border: 1px solid $color-border-button;
+
+    &:not(.has-text-color) {
+        color: $color-bg-body;
+
+        &:hover,
+        &:focus {
+            color: $color-bg-body;
+        }
+    }
+
+    &:not(.has-background) {
+        background: $color-link;
+
+        &:hover,
+        &:focus {
+            background: $color-link-hover;
+        }
+    }
+}
+
+@mixin max-site-width {
+    @media screen and (min-width: $size-max-width) {
+        max-width: $size-max-width;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@mixin max-content-width {
+    max-width: $size-content;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@mixin max-page-width {
+    max-width: $size-content-page;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+$opacity-overlay: .25;
+
+@mixin link-overlay {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: $color-link-hover;
+    opacity: 0;
+    z-index: 2;
+
+    &:hover,
+    &:focus {
+        opacity: $opacity-overlay;
+    }
+}
+
+@mixin avatar($size: 48px) {
+	position: relative;
+    margin-left: $size + 12px;
+    //margin-top: 5px;
+    min-height: $size - 5px;
+    
+    .avatar {
+        position: absolute;
+        //top: -5px;
+        top: 5px;
+        left: - $size - 12px;
+        width: $size;
+        height: $size;
+        border-radius: $size;
+    }
+}
+
+
+@mixin entry-meta-inline {
+    padding-top: 1em;
+    & > * {
+        display: inline-block;
+    }
+
+    > *:after {
+        content: " |";
+        color: $color-border;
+        @media screen and (min-width: $breakpoint-1) {
+            margin: 0 0.5em;
+        }
+    }
+
+    > *:last-child:after {
+        content: "";
+        display: none;
+    }
+}
+
+@mixin drop-shadow {
+    background: $color-bg-body;
+    box-shadow: 0 0 .5em rgba(0, 0, 0, 0.2);
+    
+    @media screen and (min-width: $breakpoint-1) {
+        border-radius: 5px;
+    }
+}
+
+@mixin drop-shadow-bottom {
+    box-shadow: 0 0 .5em rgba(0, 0, 0, 0.2);
+}
+
+@mixin drop-shadow-top {
+    box-shadow: inset 0 1em 1.5em -1em rgba(0, 0, 0, 0.2);
+}
+
+@mixin full-bleed {
+    margin-left: -1rem;
+    margin-right: -1rem;
+}

@@ -107,7 +107,7 @@ add_action( 'after_setup_theme', 'weracoba_setup' );
  * @link https://github.com/taniarascia/wp-functions#exclude-a-category-from-wordpress-loops
  */
 
-function weracoba_exclude_posts( $query ) {
+/*function weracoba_exclude_posts( $query ) {
     global $wp_query;
 
     // Hard coded category ID, but can be dynamic: esc_attr(get_option('your-cat-id'));
@@ -143,9 +143,9 @@ add_action( 'after_setup_theme', 'weracoba_content_width', 0 );
  */
 function weracoba_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Blog Sidebar', 'weracoba' ),
+		'name'          => esc_html__( 'Footer / Sidebar', 'weracoba' ),
 		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'A sidebar to be displayed alongside the blog posts.', 'weracoba' ),
+		'description'   => esc_html__( 'This will display above the footer, or on the sidebar of the archives page.', 'weracoba' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
@@ -153,19 +153,9 @@ function weracoba_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => esc_html__( 'Post Sidebar', 'weracoba' ),
-		'id'            => 'sidebar-2',
-		'description'   => esc_html__( 'A minimal sidebar that appears alongside posts.', 'weracoba' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-
-	register_sidebar( array(
-		'name'          => esc_html__( 'Footer', 'weracoba' ),
+		'name'          => esc_html__( 'Bottom Footer', 'weracoba' ),
 		'id'            => 'footer-1',
-		'description'   => esc_html__( 'Widgets here will be shown on all pages.', 'weracoba' ),
+		'description'   => esc_html__( 'Widgets here will be shown at the very bottom of all pages.', 'weracoba' ),
         'class'         => '',
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
@@ -176,7 +166,7 @@ function weracoba_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Breadcrumbs', 'weracoba' ),
 		'id'            => 'breadcrumbs-1',
-		'description'   => esc_html__( 'Widgets here will be shown on all pages.', 'weracoba' ),
+		'description'   => esc_html__( 'This is for widgets from breadcrumb navigation plugins.', 'weracoba' ),
         'class'         => '',
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
@@ -190,16 +180,9 @@ add_action( 'widgets_init', 'weracoba_widgets_init' );
  * Enqueue scripts and styles.
  */
 function weracoba_scripts() {
-	wp_enqueue_style( 'weracoba-style', get_stylesheet_uri() );
-    wp_enqueue_style( 'dashicons' );
-
-    // I decided to avoid Google and use web-safe fonts instead.
-    //wp_enqueue_style( 'google-fonts', "https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700,700i|Lato");
-
-	wp_enqueue_script( 'weracoba-functions', get_template_directory_uri() . '/js/functions.js', array('jquery'), '20180711', true );
-
+	wp_enqueue_style( 'weracoba-style', get_stylesheet_uri(), array( 'dashicons' ), '20181109', 'all' );
+	wp_enqueue_script( 'weracoba-functions', get_template_directory_uri() . '/js/functions.js', array(), '20181105', true );
 	wp_enqueue_script( 'weracoba-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
-
 	wp_enqueue_script( 'weracoba-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -251,3 +234,22 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
+/**
+ * Modifies tag cloud widget arguments to display all tags in the same font size
+ * and use list format for better accessibility.
+ *
+ * @param   array $args Arguments for tag cloud widget.
+ * @return  array The filtered arguments for tag cloud widget.
+ */
+function prefix_widget_tag_cloud_args( $args ) {
+    $args['largest']   = 1.4;
+    $args['smallest']  = 0.9;
+    $args['unit']      = 'em';
+    $args['format']    = 'flat';
+    $args['separator'] = ', ';
+ 
+    return $args;
+}
+ 
+add_filter( 'widget_tag_cloud_args',    'prefix_widget_tag_cloud_args' );

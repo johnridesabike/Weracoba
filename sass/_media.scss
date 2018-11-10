@@ -61,7 +61,12 @@ object {
     }
 }
 
-/* Single Post Featured Images */
+/*--------------------------------------------------------------
+## Single Post Featured Images
+--------------------------------------------------------------*/
+.featured-image {
+    margin: 0;
+}
 
 %featured-image {
     position: relative;
@@ -77,48 +82,39 @@ object {
         @include link-overlay;
     }
 }
-
 .single .featured-image {
     @extend %featured-image;
     height: 16em;
-    
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
 
-    figcaption {
-        background: rgba(0, 0, 0, .5);
-        color: $color-text-light;
-        padding: .2em .5em;
-        font-size: .9em;
-    }
-
     &.full-bleed {
-        margin: 0 -1em;
-        
-        @media screen and (min-width: $breakpoint-1) {
-            min-height: 430px;
-            width: 100vw;
-            margin-left: -2em;
-            margin-right: -2em;
-        }
+        @include full-bleed;
     }
 }
 
-/* we stop full-bleeding on wide screens, but only on posts */
+/** Featured Images Media Queries **/
+
+@media screen and (min-width: $breakpoint-1) {
+    .single .featured-image.full-bleed {
+        min-height: 430px;
+        width: 100vw;
+    }
+}
+
+/* we stop full-bleeding on wide screens, but only on single posts */
 @media screen and (min-width: $breakpoint-3) {
-    .post .featured-image.full-bleed {
+    .single .featured-image.full-bleed {
         position: static;
         width: 765px;
         margin: 0;
     }
 }
 
-/* Archive view featured images */
-
-.featured-image {
-    margin: 0;
-}
+/*--------------------------------------------------------------
+## Archive View Featured Images
+--------------------------------------------------------------*/
 
 .archive-view .featured-image {
     position: relative;
@@ -145,6 +141,8 @@ object {
     }
 }
 
+/** Archive View Featured Images Media Queries **/
+
 @media screen and (min-width: $breakpoint-1) {
     .archive-view .featured-image {
         width: 33%;
@@ -157,40 +155,53 @@ object {
     }
 }
 
+/*--------------------------------------------------------------
+## Gutenberg Styles
+--------------------------------------------------------------*/
+
 .alignwide {
     /* displays as alignfull on small screens */
+    @include full-bleed;
+}
+.alignfull {
+    width: 100vw !important;
     max-width: 100vw !important;
-    width: auto !important;
-    margin-right: -1em !important;
-    margin-left: -1em !important;
-    @media screen and (min-width: $breakpoint-1) {
-        margin-left: calc(25% - 25vw) !important;
-        margin-right: calc(25% - 25vw) !important;
+    position: relative !important;
+    left: 50% !important;
+    right: 50% !important;
+    margin-left: -50vw !important;
+    margin-right: -50vw !important;
+}
+
+/** Gutenberg Media Queries **/
+
+@media screen and (min-width: $breakpoint-2) {
+    .alignwide {
+        // disables the full-bleed on large screens
+        margin-left: 0;
+        margin-right: 0;
     }
 }
-@media screen and (min-width: $breakpoint-1) {
-    /* posts have their own special code */
-    .has-sidebar .post .alignwide {
-        width: 85% !important;
-        margin-right: auto !important;
-        margin-left: auto !important;
+
+/*--------------------------------------------------------------
+## Attachment pages
+--------------------------------------------------------------*/
+.single-attachment {
+    .entry-title {
+        text-align: center;
     }
-    .has-sidebar .post .alignfull {
-        max-width: 100% !important;
-        margin-right: auto !important;
-        margin-left: auto !important;
+    .comments-area {
+        margin-top: 1em;
+    }
+    .site-content {
+        margin-top: 1em;
+    }
+    .entry-content {
+        @include full-bleed;
     }
 }
-.no-sidebar {
-    .alignfull {
-        width: 100vw !important;
-        max-width: 100vw !important;
-        position: relative !important;
-        left: 50% !important;
-        right: 50% !important;
-        margin-left: -50vw !important;
-        margin-right: -50vw !important;
-    }
+.entry-attachment {
+    text-align: center;
 }
 
 /*--------------------------------------------------------------

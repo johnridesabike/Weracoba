@@ -5,14 +5,15 @@
  * navigation support for dropdown menus.
  */
 ( function() {
-	var container, button, menu, links, i, len;
+	var container, buttonContainer, button, menu, links, i, len;
 
 	container = document.getElementById( 'site-navigation' );
 	if ( ! container ) {
 		return;
 	}
-
-	button = container.getElementsByTagName( 'button' )[0];
+    
+    buttonContainer = document.getElementById( 'toggle-button' );
+	button = buttonContainer.getElementsByTagName( 'button' )[0]; // Weracoba
 	if ( 'undefined' === typeof button ) {
 		return;
 	}
@@ -33,10 +34,12 @@
 	button.onclick = function() {
 		if ( -1 !== container.className.indexOf( 'toggled' ) ) {
 			container.className = container.className.replace( ' toggled', '' );
+			buttonContainer.className = buttonContainer.className.replace( ' toggled', '' ); // Weracoba
 			button.setAttribute( 'aria-expanded', 'false' );
 			menu.setAttribute( 'aria-expanded', 'false' );
 		} else {
 			container.className += ' toggled';
+			buttonContainer.className += ' toggled'; // Weracoba
 			button.setAttribute( 'aria-expanded', 'true' );
 			menu.setAttribute( 'aria-expanded', 'true' );
 		}

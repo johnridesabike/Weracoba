@@ -46,10 +46,14 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Infinite scroll
 # Media
     ## Alignments and Images
+    ## Single Post Featured Images
+    ## Archive View Featured Images
+    ## Gutenberg Styles
 	## Captions
 	## Galleries
 --------------------------------------------------------------*/
 @import "sass/variables";
+@import "sass/mixins";
 
 /*--------------------------------------------------------------
 # Normalize

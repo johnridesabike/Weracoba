@@ -21,30 +21,11 @@ get_header();
 		if ( have_posts() ) :
 
 			if ( is_home() && ! is_front_page() ) : ?>
-				<header class="archive-header">
-					<h1 class="page-title"><?php single_post_title(); ?></h1>
-				</header>
-                <section>
-                    <h2>Browse by category</h2>
-                    <ul class="archive-cat-list widget widget_categories">
-                        <?php wp_list_categories( array(
-                                'title_li' => '',
-                                //'title_li' => __("The Archive is a chronological list of all the content from ") . get_bloginfo('name') . __(". You can also explore a specific category:"),
-                                'orderby' => 'count',
-                                'order' => 'DESC'
-                                ) ); ?>
-                    </ul>
-                </section>
-                <section>
-                    <h2>Browse by tag</h2>
-                    <div class="widget">
-                        <?php wp_tag_cloud( array( 'smallest' => 12, 
-                                                   'largest' => 24,
-                                                   'separator' => ', ' ) );?>
-                    </div>
-                </section>
-                <section>
-                    <h2>Browse the recent updates</h2>
+                <div class="archive-widget-area">
+                    <?php the_widget( 'WP_Widget_Categories', array( 'title' => __( 'Browse by category', 'weracoba' ) ) ); ?>
+                    <?php the_widget( 'WP_Widget_Tag_Cloud', array( 'title' => __( 'Browse by tag', 'weracoba' ) ) ); ?>
+                </div> <!-- .archive-widget-area -->
+                <h2><?php esc_html_e( 'Or browse the recent updates', 'weracoba' ); ?></h2>
             <?php
             endif;
             /* Start the Loop */
@@ -56,21 +37,16 @@ get_header();
                  * called content-___.php (where ___ is the Post Type name) and that will be used instead.
                  */
                 //get_template_part( 'template-parts/content', get_post_type() );
-                $format = get_post_format() ? : 'standard';
+                $format = get_post_format() ? : 'excerpt';
                 get_template_part( 'template-parts/content', $format );
 
             endwhile;
             the_posts_navigation();
         else :
             get_template_part( 'template-parts/content', 'none' );
-        endif; 
-        
-        if (have_posts() ) : ?>
-            </section>
-        <?php endif; ?>
+        endif; ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
 <?php
-get_sidebar();
 get_footer();
