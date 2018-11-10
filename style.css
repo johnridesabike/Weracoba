@@ -432,10 +432,11 @@ big {
   font-size: 1.1em; }
 
 /* Posts & Pages */
-.excerpt-entry .entry-header h1, .excerpt-entry .entry-header .editor-post-title textarea, .editor-post-title .excerpt-entry .entry-header textarea,
+.excerpt-entry .entry-header h1, .excerpt-entry .entry-header .editor-post-title textarea, .editor-post-title .excerpt-entry .entry-header textarea, .excerpt-entry .entry-header h2,
 .single-post .entry-header h1,
 .single-post .entry-header .editor-post-title textarea, .editor-post-title
-.single-post .entry-header textarea {
+.single-post .entry-header textarea,
+.single-post .entry-header h2 {
   font-family: Times, "Times New Roman", serif; }
 
 .excerpt-entry .entry-content,
