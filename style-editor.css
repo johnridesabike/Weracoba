@@ -1,12 +1,15 @@
 @charset "UTF-8";
 .edit-post-visual-editor {
   /* Posts & Pages */
-  /* comments */
+  /* Comments */
   /* Archive view */
   /* Widgets */
+  /* Media captions */
   /* Front Page */
+  /* Accessibility */
   /* editor styles */
-  /* Gutenberg custom CSS */ }
+  /* Gutenberg custom CSS */
+  /** Media queries **/ }
   .edit-post-visual-editor body,
   .edit-post-visual-editor button,
   .edit-post-visual-editor input,
@@ -14,7 +17,7 @@
   .edit-post-visual-editor optgroup,
   .edit-post-visual-editor textarea {
     color: #2f2f30;
-    font-family: Helvetica, Tahoma, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
     font-size: 16px;
     font-size: 1rem;
     line-height: 1.65482; }
@@ -25,9 +28,9 @@
     margin-left: auto; }
   .edit-post-visual-editor h1, .edit-post-visual-editor .editor-post-title textarea, .edit-post-visual-editor h2, .edit-post-visual-editor h3, .edit-post-visual-editor h4, .edit-post-visual-editor h5, .edit-post-visual-editor h6 {
     clear: both;
-    font-family: Helvetica, Tahoma, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
     color: #017680;
-    font-weight: normal; }
+    font-weight: 400; }
   .edit-post-visual-editor p {
     margin-bottom: 1em; }
   .edit-post-visual-editor dfn, .edit-post-visual-editor cite, .edit-post-visual-editor em, .edit-post-visual-editor i {
@@ -59,43 +62,41 @@
   .edit-post-visual-editor big {
     font-size: 125%; }
   .edit-post-visual-editor .site-title {
-    font-family: Baskerville, Garamond, Times, "Times New Roman", serif;
+    font-family: Baskerville, "Baskerville Old Face", Garamond, Times, "Times New Roman", serif;
     font-size: 1.9em; }
-    @media screen and (min-width: 735px) {
-      .edit-post-visual-editor .site-title {
-        font-size: 2.3em; } }
   .edit-post-visual-editor .site-description {
     font-size: .8em; }
-    @media screen and (min-width: 1023px) {
-      .edit-post-visual-editor .site-description {
-        font-size: 1em; } }
-  .edit-post-visual-editor .excerpt-entry .entry-header h1, .edit-post-visual-editor .excerpt-entry .entry-header .editor-post-title textarea, .edit-post-visual-editor .editor-post-title .excerpt-entry .entry-header textarea, .edit-post-visual-editor .excerpt-entry .entry-header h2, .edit-post-visual-editor .excerpt-entry .entry-header h3, .edit-post-visual-editor .excerpt-entry .entry-header h4, .edit-post-visual-editor .excerpt-entry .entry-header h5, .edit-post-visual-editor .excerpt-entry .entry-header h6,
-  .edit-post-visual-editor .excerpt-entry .entry-content h1, .edit-post-visual-editor .excerpt-entry .entry-content .editor-post-title textarea, .edit-post-visual-editor .editor-post-title .excerpt-entry .entry-content textarea,
-  .edit-post-visual-editor .excerpt-entry .entry-content h2,
-  .edit-post-visual-editor .excerpt-entry .entry-content h3,
-  .edit-post-visual-editor .excerpt-entry .entry-content h4,
-  .edit-post-visual-editor .excerpt-entry .entry-content h5,
-  .edit-post-visual-editor .excerpt-entry .entry-content h6,
+  .edit-post-visual-editor .main-navigation {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    font-size: 1.1em; }
+  .edit-post-visual-editor .excerpt-entry .entry-header h1, .edit-post-visual-editor .excerpt-entry .entry-header .editor-post-title textarea, .edit-post-visual-editor .editor-post-title .excerpt-entry .entry-header textarea, .edit-post-visual-editor .excerpt-entry .entry-header h2,
   .edit-post-visual-editor .single-post .entry-header h1, .edit-post-visual-editor .single-post .entry-header .editor-post-title textarea, .edit-post-visual-editor .editor-post-title .single-post .entry-header textarea,
-  .edit-post-visual-editor .single-post .entry-header h2,
-  .edit-post-visual-editor .single-post .entry-header h3,
-  .edit-post-visual-editor .single-post .entry-header h4,
-  .edit-post-visual-editor .single-post .entry-header h5,
-  .edit-post-visual-editor .single-post .entry-header h6,
-  .edit-post-visual-editor .single-post .entry-content h1, .edit-post-visual-editor .single-post .entry-content .editor-post-title textarea, .edit-post-visual-editor .editor-post-title .single-post .entry-content textarea,
-  .edit-post-visual-editor .single-post .entry-content h2,
-  .edit-post-visual-editor .single-post .entry-content h3,
-  .edit-post-visual-editor .single-post .entry-content h4,
-  .edit-post-visual-editor .single-post .entry-content h5,
-  .edit-post-visual-editor .single-post .entry-content h6 {
+  .edit-post-visual-editor .single-post .entry-header h2 {
     font-family: Times, "Times New Roman", serif; }
   .edit-post-visual-editor .excerpt-entry .entry-content,
   .edit-post-visual-editor .single-post .entry-content {
     font-family: Times, "Times New Roman", serif;
     font-size: 19px;
     line-height: 1.55424; }
+    .edit-post-visual-editor .excerpt-entry .entry-content h1, .edit-post-visual-editor .excerpt-entry .entry-content .editor-post-title textarea, .edit-post-visual-editor .editor-post-title .excerpt-entry .entry-content textarea, .edit-post-visual-editor .excerpt-entry .entry-content h2, .edit-post-visual-editor .excerpt-entry .entry-content h3, .edit-post-visual-editor .excerpt-entry .entry-content h4, .edit-post-visual-editor .excerpt-entry .entry-content h5, .edit-post-visual-editor .excerpt-entry .entry-content h6,
+    .edit-post-visual-editor .single-post .entry-content h1, .edit-post-visual-editor .single-post .entry-content .editor-post-title textarea, .edit-post-visual-editor .editor-post-title .single-post .entry-content textarea,
+    .edit-post-visual-editor .single-post .entry-content h2,
+    .edit-post-visual-editor .single-post .entry-content h3,
+    .edit-post-visual-editor .single-post .entry-content h4,
+    .edit-post-visual-editor .single-post .entry-content h5,
+    .edit-post-visual-editor .single-post .entry-content h6 {
+      font-family: Times, "Times New Roman", serif; }
   .edit-post-visual-editor .page .entry-content {
-    line-height: 1.63177; }
+    line-height: 1.65482; }
+  .edit-post-visual-editor .entry-meta,
+  .edit-post-visual-editor .comment-meta {
+    font-size: 0.9em; }
+  .edit-post-visual-editor .entry-title, .edit-post-visual-editor .editor-post-title textarea,
+  .edit-post-visual-editor .page-title {
+    font-size: 2em;
+    line-height: 1.2em; }
+  .edit-post-visual-editor .entry-footer {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; }
   .edit-post-visual-editor .format-aside .cat-links {
     font-size: 1em; }
   .edit-post-visual-editor .format-aside .entry-header a {
@@ -104,7 +105,7 @@
       color: #01b0bb; }
   .edit-post-visual-editor .format-aside h2.entry-title {
     color: #44484d;
-    font-family: Helvetica, Tahoma, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
     font-size: 1.4em !important;
     margin-top: .5em; }
     .edit-post-visual-editor .format-aside h2.entry-title:before {
@@ -114,66 +115,67 @@
       vertical-align: middle;
       color: #44484d; }
   .edit-post-visual-editor .format-aside .entry-content {
-    font-family: Helvetica, Tahoma, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
     font-size: 1.3em; }
-  .edit-post-visual-editor .entry-footer {
-    font-family: Helvetica, Tahoma, sans-serif; }
-  .edit-post-visual-editor .entry-meta,
-  .edit-post-visual-editor .comment-meta {
-    font-size: 0.9em; }
-  .edit-post-visual-editor .entry-title, .edit-post-visual-editor .editor-post-title textarea,
-  .edit-post-visual-editor .page-title {
-    font-size: 2em;
-    line-height: 1.2em; }
-    @media screen and (min-width: 735px) {
-      .edit-post-visual-editor .entry-title, .edit-post-visual-editor .editor-post-title textarea,
-      .edit-post-visual-editor .page-title {
-        font-size: 2.7em; } }
-  @media screen and (min-width: 735px) {
-    .edit-post-visual-editor .entry-meta {
-      font-size: 1em; } }
-  @media screen and (min-width: 1365px) {
-    .edit-post-visual-editor .single .post .entry-title .page-title, .edit-post-visual-editor .single .post .editor-post-title textarea .page-title, .edit-post-visual-editor .editor-post-title .single .post textarea .page-title {
-      font-size: 2.5em; } }
   .edit-post-visual-editor .comments-title {
     font-size: 2em;
-    font-weight: normal;
+    font-weight: 400;
     color: #017680; }
   .edit-post-visual-editor .comment-content {
     font-family: Times, "Times New Roman", serif; }
+  .edit-post-visual-editor .comment-respond {
+    line-height: 1.3em;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; }
   .edit-post-visual-editor .archive-view .entry-title, .edit-post-visual-editor .archive-view .editor-post-title textarea, .edit-post-visual-editor .editor-post-title .archive-view textarea {
     font-size: 1.8em; }
   .edit-post-visual-editor .archive-view .cat-links {
     font-size: 1em; }
   .edit-post-visual-editor .archive-view .entry-content {
     font-size: 1.2em; }
+  .edit-post-visual-editor .excerpt-more {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; }
   .edit-post-visual-editor .widget {
-    line-height: 1.42428; }
+    line-height: 1.42428;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; }
+  .edit-post-visual-editor .rssSummary {
+    font-family: Times, "Times New Roman", serif;
+    font-size: .8em;
+    line-height: 1.4em; }
+  .edit-post-visual-editor .wp-block-gallery .blocks-gallery-item figcaption, .edit-post-visual-editor .single .featured-image figcaption {
+    background: rgba(0, 0, 0, 0.5);
+    color: #c2cfcf;
+    padding: .2em .5em;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; }
+  .edit-post-visual-editor .wp-block-gallery .blocks-gallery-item figcaption {
+    font-size: .7em; }
+  .edit-post-visual-editor .single .featured-image figcaption {
+    font-size: .9em; }
+  .edit-post-visual-editor .entry-caption {
+    font-size: 1.3em; }
   .edit-post-visual-editor .fp-post,
   .edit-post-visual-editor .fp-post .entry-title, .edit-post-visual-editor .fp-post .editor-post-title textarea, .edit-post-visual-editor .editor-post-title .fp-post textarea {
     font-family: Times, "Times New Roman", serif; }
+  .edit-post-visual-editor .widget p a,
+  .edit-post-visual-editor .entry-content p a,
+  .edit-post-visual-editor .comment-content p a {
+    text-decoration: underline; }
   .edit-post-visual-editor .editor-post-title textarea {
     font-family: Times, "Times New Roman", serif; }
+  .edit-post-visual-editor .wp-block-image figcaption {
+    font-size: 1em; }
   .edit-post-visual-editor .weracoba-big,
   .edit-post-visual-editor p.wp-block-subhead {
     font-size: 1.25em;
     text-align: center;
     color: #44484d;
     opacity: 1; }
-    @media screen and (min-width: 735px) {
-      .edit-post-visual-editor .weracoba-big,
-      .edit-post-visual-editor p.wp-block-subhead {
-        font-size: 1.75em; } }
   .edit-post-visual-editor .wp-block-cover-image .wp-block-cover-image-text {
-    font-family: Helvetica, Tahoma, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
     color: #e0e8e7; }
-    @media screen and (min-width: 1365px) {
-      .edit-post-visual-editor .wp-block-cover-image .wp-block-cover-image-text {
-        font-size: 2.75em; } }
   .edit-post-visual-editor .wp-block-button .wp-block-button__link,
   .edit-post-visual-editor .wp-block-file a.wp-block-file__button {
     padding: .6em 1.4em;
-    font-family: Helvetica, Tahoma, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
     text-decoration: none;
     border: 1px solid #c2cfcf; }
     .edit-post-visual-editor .wp-block-button .wp-block-button__link:not(.has-text-color),
@@ -204,5 +206,35 @@
     content: "";
     padding-right: 6px;
     vertical-align: middle; }
+  @media screen and (min-width: 735px) {
+    .edit-post-visual-editor {
+      /* Header */
+      /* Posts & Pages */
+      /* Gutenberg */ }
+      .edit-post-visual-editor .global-header:not(.fixed-header) .site-title {
+        font-size: 2.3em; }
+      .edit-post-visual-editor .main-navigation {
+        font-size: 1.2em; }
+      .edit-post-visual-editor .entry-title, .edit-post-visual-editor .editor-post-title textarea,
+      .edit-post-visual-editor .page-title {
+        font-size: 2.7em; }
+      .edit-post-visual-editor .entry-meta {
+        font-size: 1em; }
+      .edit-post-visual-editor .weracoba-big,
+      .edit-post-visual-editor p.wp-block-subhead {
+        font-size: 1.75em; } }
+  @media screen and (min-width: 1023px) {
+    .edit-post-visual-editor {
+      /* Header */ }
+      .edit-post-visual-editor .site-description {
+        font-size: 1em; } }
+  @media screen and (min-width: 1365px) {
+    .edit-post-visual-editor {
+      /* Posts & Pages */
+      /* Gutenberg */ }
+      .edit-post-visual-editor .single .post .entry-title .page-title, .edit-post-visual-editor .single .post .editor-post-title textarea .page-title, .edit-post-visual-editor .editor-post-title .single .post textarea .page-title {
+        font-size: 2.5em; }
+      .edit-post-visual-editor .wp-block-cover-image .wp-block-cover-image-text {
+        font-size: 2.75em; } }
 
 /*# sourceMappingURL=style-editor.css.map */

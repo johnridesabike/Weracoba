@@ -379,7 +379,7 @@ h1, .editor-post-title textarea, h2, h3, h4, h5, h6 {
   clear: both;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   color: #017680;
-  font-weight: normal; }
+  font-weight: 400; }
 
 p {
   margin-bottom: 1em; }
@@ -497,7 +497,7 @@ big {
 /* Comments */
 .comments-title {
   font-size: 2em;
-  font-weight: normal;
+  font-weight: 400;
   color: #017680; }
 
 .comment-content {
@@ -690,7 +690,7 @@ li > ol {
   margin-left: 1.5em; }
 
 dt {
-  font-weight: bold; }
+  font-weight: 700; }
 
 dd {
   margin: 0 1.5em 1.5em; }
@@ -1104,7 +1104,7 @@ a {
       border-radius: 5px; } }
 
 .post-navigation-title {
-  font-weight: normal;
+  font-weight: 400;
   color: #44484d; }
 
 .nav-links {
@@ -1450,7 +1450,7 @@ a {
     display: block;
     font-size: 14px;
     font-size: 0.875rem;
-    font-weight: bold;
+    font-weight: 700;
     height: auto;
     left: 5px;
     line-height: normal;
