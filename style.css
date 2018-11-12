@@ -553,6 +553,12 @@ big {
 .fp-post textarea {
   font-family: Times, "Times New Roman", serif; }
 
+/* Accessibility */
+.widget p a,
+.entry-content p a,
+.comment-content p a {
+  text-decoration: underline; }
+
 /* editor styles */
 .editor-post-title textarea {
   font-family: Times, "Times New Roman", serif; }

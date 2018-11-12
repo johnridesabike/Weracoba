@@ -213,6 +213,15 @@ big {
     font-family: $font-reading;
 }
 
+/* Accessibility */
+.widget,
+.entry-content,
+.comment-content{
+    p a {
+        text-decoration: underline;
+    }
+}
+
 /* editor styles */
 
 .editor-post-title textarea {
