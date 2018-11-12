@@ -555,8 +555,8 @@ big {
 
 /* Accessibility */
 .widget p a,
-.entry-content p a,
-.comment-content p a {
+.entry-content a,
+.comment-content a {
   text-decoration: underline; }
 
 /* editor styles */

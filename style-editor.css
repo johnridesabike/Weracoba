@@ -156,8 +156,8 @@
   .edit-post-visual-editor .fp-post .entry-title, .edit-post-visual-editor .fp-post .editor-post-title textarea, .edit-post-visual-editor .editor-post-title .fp-post textarea {
     font-family: Times, "Times New Roman", serif; }
   .edit-post-visual-editor .widget p a,
-  .edit-post-visual-editor .entry-content p a,
-  .edit-post-visual-editor .comment-content p a {
+  .edit-post-visual-editor .entry-content a,
+  .edit-post-visual-editor .comment-content a {
     text-decoration: underline; }
   .edit-post-visual-editor .editor-post-title textarea {
     font-family: Times, "Times New Roman", serif; }

@@ -214,10 +214,10 @@ big {
 }
 
 /* Accessibility */
-.widget,
+.widget p,
 .entry-content,
-.comment-content{
-    p a {
+.comment-content {
+    a {
         text-decoration: underline;
     }
 }
