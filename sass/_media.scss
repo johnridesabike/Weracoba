@@ -121,7 +121,7 @@ object {
 
     .post-thumbnail {
         display: block;
-        line-height: 0;
+        line-height: 0; /* fixes visual glitch with link overlay */
 
         &:before {
             content: "";
@@ -174,6 +174,16 @@ object {
 }
 
 /** Gutenberg Media Queries **/
+
+@media screen and (min-width: $breakpoint-1) {
+    .single .post,
+    .page {
+        .entry-content > .wp-block-image:not(.alignwide):not(.alignfull) {
+            /* Allow images to float outside of the reading area */
+            max-width: 90%;
+        }
+    }
+}
 
 @media screen and (min-width: $breakpoint-2) {
     .alignwide {

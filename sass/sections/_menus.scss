@@ -116,7 +116,7 @@
 	}
     @media screen and (min-width: $breakpoint-1) {
         width: auto;
-        line-height: 1.1em;
+        line-height: 1.1; /* fixes vertical dropdown menu spacing */
         ul {
             display: flex;
             justify-content: flex-end;

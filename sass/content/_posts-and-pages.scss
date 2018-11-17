@@ -2,9 +2,9 @@
 .sticky {
 	display: block;
 }
-.updated:not(.published) {
+/*.updated:not(.published) {
 	display: none;
-}
+}*/
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
@@ -49,14 +49,14 @@
         display: block;
     }
 }
-.posted-on a {
+/*.posted-on a {
     color: $color-text-secondary;
     
     &:hover,
     &:focus {
         color: $color-link-hover;
     }
-}
+}*/
 
 /** Entry Header Media Queries **/
 
