@@ -58,6 +58,12 @@ img {
 	max-width: 100%; /* Adhere to container width. */
 }
 
+
+svg {
+  transition: fill 120ms ease-in-out;
+  fill: currentColor;
+}
+
 figure {
 	margin: 1em 0; /* Extra wide images within figure tags don't overflow the content area. */
 }

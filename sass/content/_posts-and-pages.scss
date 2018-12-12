@@ -30,11 +30,13 @@
     font-size: 1.3em;
     margin-bottom: .5em;
     display: block;
+    color: $color-text-secondary;
 
+    /* Replaced by SVG
     &:before {
         @include dashicon($glyph-category);
         color: $color-link;
-    }
+    }*/
 }
 .entry-meta {
     color: $color-text-secondary;
@@ -96,9 +98,13 @@
     border-top: 1px solid $color-border;
     padding-top: 1em;
 }
+.tags-links {
+    color: $color-text-secondary;
+}
+/* Replaced by SVG
 .tags-links:before {
     @include dashicon($glyph-tags);
-}
+}*/
 
 /** Post body **/
 

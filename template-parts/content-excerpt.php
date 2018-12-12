@@ -30,7 +30,7 @@
                     <?php weracoba_posted_by(false); ?>
                     <?php weracoba_posted_on(); ?>
                     <?php weracoba_comments(); ?>
-                    <?php weracoba_tag_list( '%1$s' ); ?>
+                    <?php weracoba_tag_list( '%1$s %2$s' ); ?>
                 </div><!-- .entry-meta -->
             <?php endif; ?>
             <div class="continue-reading">
@@ -43,6 +43,7 @@
                  ?>
                 <a href="<?php echo esc_url( get_permalink() ) ?>" rel="bookmark">
                     <?php echo $read_more_link ?>
+                    <?php echo twentynineteen_get_icon_svg( 'chevron_right', 24); ?>
                 </a>
             </div>
         </footer>

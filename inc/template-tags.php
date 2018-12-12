@@ -125,20 +125,24 @@ if ( ! function_exists( 'weracoba_category_list' ) ) :
 		/* translators: used between list items, there is a space after the comma */
 		$categories_list = get_the_category_list( esc_html_x( ', ', 'list item separator', 'weracoba' ), esc_html('>') );
 		if ( $categories_list ) {
-			/* translators: 1: list of categories. */
-			printf( '<span class="cat-links">' . esc_html__( '%1$s', 'weracoba' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+			/* translators: 1: SVG icon
+                            2: list of categories. */
+			printf( '<span class="cat-links">' . esc_html__( '%1$s %2$s', 'weracoba' ) . '</span>',
+                    twentynineteen_get_icon_svg( 'archive', 16), $categories_list ); // WPCS: XSS OK.
 		}
 	}
 endif;
 
 /***** Display the tag list ****/
 if ( ! function_exists( 'weracoba_tag_list' ) ) :
-    /* translators: 1: list of tags. */
-	function weracoba_tag_list( $prefix = 'Tagged %1$s' ) {
+    /* translators: 1: SVG icon
+                    2: list of tags. */
+	function weracoba_tag_list( $prefix = '%1$s Tagged %2$s' ) {
         /* translators: used between list items, there is a space after the comma */
         $tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'weracoba' ) );
         if ( $tags_list ) {
-            printf( '<span class="tags-links">' . esc_html__( $prefix , 'weracoba' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+            printf( '<span class="tags-links">' . esc_html__( $prefix , 'weracoba' ) . '</span>',
+                    twentynineteen_get_icon_svg( 'tag', 16 ), $tags_list ); // WPCS: XSS OK.
         }
 	}
 endif;
@@ -148,6 +152,7 @@ if ( ! function_exists( 'weracoba_comments' ) ) :
 	function weracoba_comments() {
 		if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 			echo '<span class="comments-link">';
+            echo twentynineteen_get_icon_svg( 'comment', 16 ) . ' ';
 			comments_popup_link(
 				sprintf(
 					wp_kses(

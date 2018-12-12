@@ -103,6 +103,10 @@
     }
 }
 
+.comments-link {
+    color: $color-text-secondary;
+}
+
 @media screen and (min-width: $breakpoint-1) {
 	.children {
 		margin-left: 2em;

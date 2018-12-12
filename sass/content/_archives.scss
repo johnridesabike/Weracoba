@@ -48,21 +48,22 @@
     a {
         display: block;
         @include button;
-
+        padding: 0 .2em 0 1em; // testing...
+        /* replaced by SVG
         &:after {
             content: $glyph-arrow-next;
-        }
+        }*/
     }
 }
-.excerpt-more {
+/*.excerpt-more {
     display: inline-block;
     font-size: 1rem;
-
+    
     &:after {
         content: " " + $glyph-arrow-next;
         vertical-align: middle;
     }
-}
+}*/
 
 /** Archive Media Queries **/
 

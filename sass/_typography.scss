@@ -128,10 +128,11 @@ big {
         font-family: $font-UI;
         font-size: 1.4em !important;
         margin-top: .5em;
+        /* Replace with SVG
         &:before {
             @include dashicon($glyph-aside);
             color: $color-text-secondary;
-        }
+        }*/
     }
     .entry-content {
         font-family: $font-UI;
@@ -277,9 +278,10 @@ p.wp-block-subhead {
 }
 
 // Custom CSS attribute in Gutenberg
+/* Depreciating Dashicons
 .wp-block-button.download .wp-block-button__link:before {
     @include dashicon($glyph-download);
-}
+}*/
 
 /** Media queries **/
 

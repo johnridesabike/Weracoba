@@ -482,13 +482,12 @@ big {
   color: #44484d;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   font-size: 1.4em !important;
-  margin-top: .5em; }
-  .format-aside h2.entry-title:before {
-    font-family: dashicons;
-    content: "";
-    padding-right: 6px;
-    vertical-align: middle;
-    color: #44484d; }
+  margin-top: .5em;
+  /* Replace with SVG
+        &:before {
+            @include dashicon($glyph-aside);
+            color: $color-text-secondary;
+        }*/ }
 
 .format-aside .entry-content {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -610,12 +609,10 @@ p.wp-block-subhead {
   .wp-block-button.is-style-outline .wp-block-button__link:not(.has-background):hover, .wp-block-button.is-style-outline .wp-block-button__link:not(.has-background):focus {
     border-color: #01b0bb; }
 
+/* Depreciating Dashicons
 .wp-block-button.download .wp-block-button__link:before {
-  font-family: dashicons;
-  content: "";
-  padding-right: 6px;
-  vertical-align: middle; }
-
+    @include dashicon($glyph-download);
+}*/
 /** Media queries **/
 @media screen and (min-width: 735px) {
   /* Header */
@@ -700,6 +697,10 @@ img {
   /* Make sure images are scaled correctly. */
   max-width: 100%;
   /* Adhere to container width. */ }
+
+svg {
+  transition: fill 120ms ease-in-out;
+  fill: currentColor; }
 
 figure {
   margin: 1em 0;
@@ -942,23 +943,28 @@ a {
     display: inline;
     font-size: 1em;
     background: #e0e8e7;
-    color: #017680; }
-    .menu-button .menu-toggle::after {
-      font-family: dashicons;
-      content: "";
-      padding-right: 6px;
-      vertical-align: middle;
-      padding-right: 0;
-      padding-left: 6px; }
+    color: #017680;
+    /* Replaced by SVG
+        &::after {
+            @include dashicon($glyph-menu);
+            padding-right: 0;
+            padding-left: 6px;
+        }*/ }
+  .menu-button .dismiss-icon {
+    display: none; }
 
+.menu-button.toggled .menu-icon {
+  display: none; }
+
+.menu-button.toggled .dismiss-icon {
+  display: inline; }
+
+/* Replaced by SVG
 .toggled .menu-toggle:after {
-  font-family: dashicons;
-  content: "";
-  padding-right: 6px;
-  vertical-align: middle;
-  padding-right: 0;
-  padding-left: 6px; }
-
+    @include dashicon($glyph-x);
+    padding-right: 0;
+    padding-left: 6px;
+ }*/
 .menu-item-has-children a:after {
   content: "▼";
   font-size: .7em;
@@ -1056,15 +1062,16 @@ a {
   .menu-button {
     display: none; } }
 
-.menu-item-object-category a {
-  text-indent: -24px;
-  padding-left: 16px; }
-  .menu-item-object-category a:before {
-    font-family: dashicons;
-    content: "";
-    padding-right: 6px;
-    vertical-align: middle; }
-
+/* replaced by SVG
+.menu-item-object-category {
+    a {
+        text-indent: -24px;
+        padding-left: 16px;
+        &:before {
+            @include dashicon($glyph-category);
+        }
+    }
+}*/
 /*--------------------------------------------------------------
 ### Content navigation
 --------------------------------------------------------------*/
@@ -1208,12 +1215,10 @@ a {
 .widget_archive li {
   color: #7D7D7D; }
 
+/* replaced by SVG
 .widget_categories a:before {
-  font-family: dashicons;
-  content: "";
-  padding-right: 6px;
-  vertical-align: middle; }
-
+    @include dashicon($glyph-category);
+}*/
 /* Pages and Menu widgets */
 .widget_pages .children,
 .widget_pages .sub-menu,
@@ -1506,6 +1511,10 @@ a {
   /* fixes bug where full-bleed content creates horizontal scrollbar. May have undesireable side effects...? */
   overflow-x: hidden; }
 
+@media screen {
+  .print {
+    display: none; } }
+
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
@@ -1538,13 +1547,13 @@ a {
 .cat-links {
   font-size: 1.3em;
   margin-bottom: .5em;
-  display: block; }
-  .cat-links:before {
-    font-family: dashicons;
-    content: "";
-    padding-right: 6px;
-    vertical-align: middle;
-    color: #017680; }
+  display: block;
+  color: #44484d;
+  /* Replaced by SVG
+    &:before {
+        @include dashicon($glyph-category);
+        color: $color-link;
+    }*/ }
 
 .entry-meta {
   color: #44484d;
@@ -1626,12 +1635,13 @@ a {
   border-top: 1px solid #c2cfcf;
   padding-top: 1em; }
 
-.tags-links:before {
-  font-family: dashicons;
-  content: "";
-  padding-right: 6px;
-  vertical-align: middle; }
+.tags-links {
+  color: #44484d; }
 
+/* Replaced by SVG
+.tags-links:before {
+    @include dashicon($glyph-tags);
+}*/
 /** Post body **/
 .single .post .entry-content > *:not(.alignwide):not(.alignfull) {
   max-width: 750px;
@@ -1791,19 +1801,24 @@ article.format-aside {
     border: 1px solid #c2cfcf;
     border-radius: 23px;
     color: #e0e8e7;
-    background: #017680; }
+    background: #017680;
+    padding: 0 .2em 0 1em;
+    /* replaced by SVG
+        &:after {
+            content: $glyph-arrow-next;
+        }*/ }
     .continue-reading a:hover, .continue-reading a:focus {
       background: #01b0bb; }
-    .continue-reading a:after {
-      content: "❯"; }
 
-.excerpt-more {
-  display: inline-block;
-  font-size: 1rem; }
-  .excerpt-more:after {
-    content: " ❯";
-    vertical-align: middle; }
-
+/*.excerpt-more {
+    display: inline-block;
+    font-size: 1rem;
+    
+    &:after {
+        content: " " + $glyph-arrow-next;
+        vertical-align: middle;
+    }
+}*/
 /** Archive Media Queries **/
 @media screen and (min-width: 735px) {
   .archive-view .entry-footer {
@@ -1956,6 +1971,9 @@ article.format-aside {
   .comment-respond .required {
     color: red; }
 
+.comments-link {
+  color: #44484d; }
+
 @media screen and (min-width: 735px) {
   .children {
     margin-left: 2em; } }
@@ -2021,61 +2039,6 @@ article.format-aside {
   z-index: 2; }
   .overlay-link:hover, .overlay-link:focus {
     opacity: 0.25; }
-
-/*--------------------------------------------------------------
-## Print
---------------------------------------------------------------*/
-@media screen {
-  .print {
-    display: none; } }
-
-@media print {
-  body,
-  button,
-  input,
-  select,
-  optgroup,
-  textarea,
-  h1,
-  .editor-post-title textarea,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    color: black; }
-  a,
-  a:visited,
-  a:hover,
-  a:focus {
-    color: black;
-    text-decoration: underline; }
-  .print {
-    display: block; }
-  .global-header,
-  .post-navigation-title,
-  .nav-links,
-  .comment-respond,
-  .akismet_comment_form_privacy_notice {
-    display: none; }
-  .single .featured-image {
-    display: block !important;
-    height: auto !important;
-    min-height: inherit !important; }
-  .single .featured-image img {
-    position: static !important;
-    left: auto; }
-  .site-footer {
-    box-shadow: none;
-    border: none;
-    background: none; }
-  .site-footer .citation {
-    font-size: 1em; }
-  .widget {
-    display: none; }
-  .widget.widget_text,
-  .widget.widget_custom_html {
-    display: block; } }
 
 /*--------------------------------------------------------------
 # Infinite scroll
@@ -2328,5 +2291,11 @@ object {
 
 .gallery-caption {
   display: block; }
+
+/*--------------------------------------------------------------
+## SVG
+--------------------------------------------------------------*/
+.svg-icon {
+  vertical-align: middle; }
 
 /*# sourceMappingURL=style.css.map */

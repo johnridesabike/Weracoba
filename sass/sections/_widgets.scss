@@ -53,10 +53,10 @@
 .widget_archive li {
 	color: #7D7D7D;
 }
-
+/* replaced by SVG
 .widget_categories a:before {
     @include dashicon($glyph-category);
-}
+}*/
 /* Pages and Menu widgets */
 
 .widget_pages,
