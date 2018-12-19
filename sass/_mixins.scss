@@ -120,15 +120,14 @@ $columns-margin: 3.8%;
     padding: .2em 1em;
 	font-family: $font-UI;
 	text-decoration: none;
-    border: 1px solid $color-border-button;
+    border: 2px solid $color-border-button;
     border-radius: 23px; // from Gutenberg style
-    color: $color-bg-body-alt;
+    color: $color-bg-body;
     background: $color-link;
-    //color: $color-link;
 
     &:hover,
     &:focus {
-        background: $color-link-hover;
+        border-color: $color-link-hover;
     }
 }
 

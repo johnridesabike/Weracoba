@@ -163,6 +163,13 @@ object {
     /* displays as alignfull on small screens */
     @include full-bleed;
 }
+
+p.alignwide {
+    // don't full-bleed paragraphs
+    margin-left: 0;
+    margin-right: 0;
+}
+
 .alignfull {
     width: 100vw !important;
     max-width: 100vw !important;
@@ -178,9 +185,13 @@ object {
 @media screen and (min-width: $breakpoint-1) {
     .single .post,
     .page {
-        .entry-content > .wp-block-image:not(.alignwide):not(.alignfull) {
-            /* Allow images to float outside of the reading area */
-            max-width: 90%;
+        .entry-content > div.wp-block-image:not(.alignwide):not(.alignfull) {
+            /*
+            ** Allow images to float outside of the reading area.
+            ** We have to select the div because Gutenberg wraps floating image figures in div.
+            ** We have to target .alignwide and .alignfull because of CSS specificity.
+            */
+            max-width: 100%;
         }
     }
 }

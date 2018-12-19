@@ -14,8 +14,9 @@
     .menu-toggle {
         display: inline;
         font-size: 1em;
-        background: $color-bg-body-alt;
-        color: $color-link;
+        //background: $color-bg-body-alt;
+        //color: $color-link;
+        @include button;
 
         /* Replaced by SVG
         &::after {

@@ -378,8 +378,26 @@ textarea {
 h1, .editor-post-title textarea, h2, h3, h4, h5, h6 {
   clear: both;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  color: #017680;
+  color: #10474b;
   font-weight: 400; }
+
+h1, .editor-post-title textarea {
+  font-size: 2em; }
+
+h2 {
+  font-size: 1.5em; }
+
+h3 {
+  font-size: 1.4em; }
+
+h4 {
+  font-size: 1.2em; }
+
+h5 {
+  font-size: 1.1em; }
+
+h6 {
+  font-size: 1em; }
 
 p {
   margin-bottom: 1em; }
@@ -388,10 +406,7 @@ dfn, cite, em, i {
   font-style: italic; }
 
 blockquote {
-  margin: 0 1.5em; }
-
-address {
-  margin: 0 0 1.5em; }
+  font-size: .9em; }
 
 pre {
   background: #eee;
@@ -453,6 +468,11 @@ big {
   .single-post .entry-content h4,
   .single-post .entry-content h5,
   .single-post .entry-content h6 {
+    font-family: Times, "Times New Roman", serif; }
+
+.editor-writing-flow {
+  /* For the editor */ }
+  .editor-writing-flow h1, .editor-writing-flow .editor-post-title textarea, .editor-post-title .editor-writing-flow textarea, .editor-writing-flow h2, .editor-writing-flow h3, .editor-writing-flow h4, .editor-writing-flow h5, .editor-writing-flow h6 {
     font-family: Times, "Times New Roman", serif; }
 
 .page .entry-content {
@@ -692,6 +712,15 @@ dt {
 dd {
   margin: 0 1.5em 1.5em; }
 
+blockquote {
+  /* margin: 0 1.5em; */
+  padding: 0 1.5em;
+  /* use padding to avoid conflict with post content margins */
+  border-left: 4px solid #017680; }
+
+address {
+  margin: 0 0 1.5em; }
+
 img {
   height: auto;
   /* Make sure images are scaled correctly. */
@@ -709,7 +738,12 @@ figure {
 /* Tables */
 table {
   margin: 0 0 1.5em;
-  width: 100%; }
+  width: 100%;
+  border-collapse: collapse; }
+
+th, td {
+  border: 1px solid black;
+  padding: 0 6px; }
 
 /*--------------------------------------------------------------
 ## Forms
@@ -766,9 +800,9 @@ input[type="submit"] {
   padding: .2em 1em;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   text-decoration: none;
-  border: 1px solid #c2cfcf;
+  border: 2px solid #c2cfcf;
   border-radius: 23px;
-  color: #e0e8e7;
+  color: white;
   background: #017680; }
   button:hover, button:focus,
   input[type="button"]:hover,
@@ -777,7 +811,7 @@ input[type="submit"] {
   input[type="reset"]:focus,
   input[type="submit"]:hover,
   input[type="submit"]:focus {
-    background: #01b0bb; }
+    border-color: #01b0bb; }
 
 /*--------------------------------------------------------------
 ## Links
@@ -942,14 +976,21 @@ a {
   .menu-button .menu-toggle {
     display: inline;
     font-size: 1em;
-    background: #e0e8e7;
-    color: #017680;
+    padding: .2em 1em;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    text-decoration: none;
+    border: 2px solid #c2cfcf;
+    border-radius: 23px;
+    color: white;
+    background: #017680;
     /* Replaced by SVG
         &::after {
             @include dashicon($glyph-menu);
             padding-right: 0;
             padding-left: 6px;
         }*/ }
+    .menu-button .menu-toggle:hover, .menu-button .menu-toggle:focus {
+      border-color: #01b0bb; }
   .menu-button .dismiss-icon {
     display: none; }
 
@@ -1241,29 +1282,20 @@ a {
   .widget_recent_entries .sub-menu a:before {
     content: "↳ "; }
 
-.widget_pages a,
-.widget_nav_menu a,
-.widget_categories a,
-.widget_recent_entries a {
-  display: block;
-  padding: .75em 0;
-  text-decoration: none;
-  border-bottom: 1px dashed #c2cfcf; }
-  .widget_pages a:hover, .widget_pages a:focus,
-  .widget_nav_menu a:hover,
-  .widget_nav_menu a:focus,
-  .widget_categories a:hover,
-  .widget_categories a:focus,
-  .widget_recent_entries a:hover,
-  .widget_recent_entries a:focus {
-    text-decoration: none;
-    border-bottom: 1px dashed #c2cfcf; }
-
 .widget_pages li,
 .widget_nav_menu li,
 .widget_categories li,
 .widget_recent_entries li {
   padding: 0; }
+
+.widget li a {
+  display: block;
+  padding: .75em 0;
+  text-decoration: none;
+  border-bottom: 1px dashed #c2cfcf; }
+  .widget li a:hover, .widget li a:focus {
+    text-decoration: none;
+    border-bottom: 1px dashed #c2cfcf; }
 
 /* Meta widget */
 .widget_meta li {
@@ -1328,6 +1360,11 @@ a {
 .textwidget {
   /*font-size: 80%;
 	line-height: 1.3em;*/ }
+
+/* Tag cloud widget */
+.widget_tag_cloud .tagcloud a {
+  margin: 0 3px;
+  /* give them a bit of space */ }
 
 /** Widget Area **/
 .widget-area {
@@ -1798,9 +1835,9 @@ article.format-aside {
     padding: .2em 1em;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
     text-decoration: none;
-    border: 1px solid #c2cfcf;
+    border: 2px solid #c2cfcf;
     border-radius: 23px;
-    color: #e0e8e7;
+    color: white;
     background: #017680;
     padding: 0 .2em 0 1em;
     /* replaced by SVG
@@ -1808,7 +1845,7 @@ article.format-aside {
             content: $glyph-arrow-next;
         }*/ }
     .continue-reading a:hover, .continue-reading a:focus {
-      background: #01b0bb; }
+      border-color: #01b0bb; }
 
 /*.excerpt-more {
     display: inline-block;
@@ -1930,12 +1967,12 @@ article.format-aside {
   padding: .2em 1em;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   text-decoration: none;
-  border: 1px solid #c2cfcf;
+  border: 2px solid #c2cfcf;
   border-radius: 23px;
-  color: #e0e8e7;
+  color: white;
   background: #017680; }
   .reply a:hover, .reply a:focus {
-    background: #01b0bb; }
+    border-color: #01b0bb; }
 
 .comment-content a {
   word-wrap: break-word; }
@@ -1957,12 +1994,12 @@ article.format-aside {
       padding: .2em 1em;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
       text-decoration: none;
-      border: 1px solid #c2cfcf;
+      border: 2px solid #c2cfcf;
       border-radius: 23px;
-      color: #e0e8e7;
+      color: white;
       background: #017680; }
       .comment-respond .form-submit input:hover, .comment-respond .form-submit input:focus {
-        background: #01b0bb; }
+        border-color: #01b0bb; }
   .comment-respond label {
     width: 33%;
     display: block;
@@ -2205,6 +2242,10 @@ object {
   margin-left: -1rem;
   margin-right: -1rem; }
 
+p.alignwide {
+  margin-left: 0;
+  margin-right: 0; }
+
 .alignfull {
   width: 100vw !important;
   max-width: 100vw !important;
@@ -2216,10 +2257,14 @@ object {
 
 /** Gutenberg Media Queries **/
 @media screen and (min-width: 735px) {
-  .single .post .entry-content > .wp-block-image:not(.alignwide):not(.alignfull),
-  .page .entry-content > .wp-block-image:not(.alignwide):not(.alignfull) {
-    /* Allow images to float outside of the reading area */
-    max-width: 90%; } }
+  .single .post .entry-content > div.wp-block-image:not(.alignwide):not(.alignfull),
+  .page .entry-content > div.wp-block-image:not(.alignwide):not(.alignfull) {
+    /*
+            ** Allow images to float outside of the reading area.
+            ** We have to select the div because Gutenberg wraps floating image figures in div.
+            ** We have to target .alignwide and .alignfull because of CSS specificity.
+            */
+    max-width: 100%; } }
 
 @media screen and (min-width: 1023px) {
   .alignwide {
