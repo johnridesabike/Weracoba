@@ -50,6 +50,10 @@
     > * {
         display: block;
     }
+
+    .updated-on {
+        display: none !important;
+    }
 }
 /*.posted-on a {
     color: $color-text-secondary;
@@ -98,8 +102,9 @@
     border-top: 1px solid $color-border;
     padding-top: 1em;
 }
-.tags-links {
+.single .tags-links {
     color: $color-text-secondary;
+    font-size: 1.3em;
 }
 /* Replaced by SVG
 .tags-links:before {

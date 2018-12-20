@@ -531,7 +531,7 @@ big {
   font-size: 1.8em; }
 
 .archive-view .cat-links {
-  font-size: 1em; }
+  font-size: 1.2em; }
 
 .archive-view .entry-content {
   font-size: 1.2em; }
@@ -602,7 +602,7 @@ p.wp-block-subhead {
   padding: .6em 1.4em;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   text-decoration: none;
-  border: 1px solid #c2cfcf; }
+  border: 1px solid #017680; }
   .wp-block-button .wp-block-button__link:not(.has-text-color),
   .wp-block-file a.wp-block-file__button:not(.has-text-color) {
     color: white; }
@@ -797,10 +797,10 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-  padding: .2em 1em;
+  padding: .2rem .5rem;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   text-decoration: none;
-  border: 2px solid #c2cfcf;
+  border: 2px solid #017680;
   border-radius: 23px;
   color: white;
   background: #017680; }
@@ -976,10 +976,10 @@ a {
   .menu-button .menu-toggle {
     display: inline;
     font-size: 1em;
-    padding: .2em 1em;
+    padding: .2rem .5rem;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
     text-decoration: none;
-    border: 2px solid #c2cfcf;
+    border: 2px solid #017680;
     border-radius: 23px;
     color: white;
     background: #017680;
@@ -1128,11 +1128,20 @@ a {
     display: block;
     width: 100%;
     background: white;
-    padding: 1em;
+    font-size: 1.3em;
+    padding: .2rem .5rem;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
     text-decoration: none;
     border-radius: 23px;
-    border: 1px solid #c2cfcf; }
+    border: 2px solid #017680; }
+    .comment-navigation a:hover, .comment-navigation a:focus,
+    .post-navigation a:hover,
+    .post-navigation a:focus,
+    .posts-navigation a:hover,
+    .posts-navigation a:focus,
+    .paging-navigation a:hover,
+    .paging-navigation a:focus {
+      border-color: #01b0bb; }
 
 .attachment .comment-navigation a,
 .attachment .post-navigation a,
@@ -1140,21 +1149,31 @@ a {
 .attachment .paging-navigation a {
   background: white;
   box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.2);
-  padding: 1em;
+  padding: .2rem .5rem;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   text-decoration: none;
   border-radius: 23px;
-  border: 1px solid #c2cfcf; }
+  border: 2px solid #017680; }
   @media screen and (min-width: 735px) {
     .attachment .comment-navigation a,
     .attachment .post-navigation a,
     .attachment .posts-navigation a,
     .attachment .paging-navigation a {
       border-radius: 5px; } }
+  .attachment .comment-navigation a:hover, .attachment .comment-navigation a:focus,
+  .attachment .post-navigation a:hover,
+  .attachment .post-navigation a:focus,
+  .attachment .posts-navigation a:hover,
+  .attachment .posts-navigation a:focus,
+  .attachment .paging-navigation a:hover,
+  .attachment .paging-navigation a:focus {
+    border-color: #01b0bb; }
 
 .post-navigation-title {
   font-weight: 400;
   color: #44484d; }
+  .post-navigation-title a {
+    text-decoration: underline; }
 
 .nav-links {
   margin: 0 auto;
@@ -1163,9 +1182,6 @@ a {
 
 .nav-previous {
   padding-bottom: 1em; }
-
-.meta-nav:after {
-  content: ":"; }
 
 .breadcrumbs-nav {
   margin-top: .5em;
@@ -1608,6 +1624,8 @@ a {
     font-size: 1.2em; }
   .entry-meta > * {
     display: block; }
+  .entry-meta .updated-on {
+    display: none !important; }
 
 /*.posted-on a {
     color: $color-text-secondary;
@@ -1672,8 +1690,9 @@ a {
   border-top: 1px solid #c2cfcf;
   padding-top: 1em; }
 
-.tags-links {
-  color: #44484d; }
+.single .tags-links {
+  color: #44484d;
+  font-size: 1.3em; }
 
 /* Replaced by SVG
 .tags-links:before {
@@ -1773,7 +1792,7 @@ article.format-aside {
 .archive-view .content-area .excerpt-entry {
   position: relative;
   border-bottom: 1px solid #c2cfcf;
-  padding: .5em;
+  padding: 0 .5em .5em .5em;
   margin-bottom: 1em;
   background: white;
   box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.2); }
@@ -1832,14 +1851,14 @@ article.format-aside {
   flex-shrink: 0; }
   .continue-reading a {
     display: block;
-    padding: .2em 1em;
+    padding: .2rem .5rem;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
     text-decoration: none;
-    border: 2px solid #c2cfcf;
+    border: 2px solid #017680;
     border-radius: 23px;
     color: white;
     background: #017680;
-    padding: 0 .2em 0 1em;
+    font-size: 1.2em;
     /* replaced by SVG
         &:after {
             content: $glyph-arrow-next;
@@ -1865,8 +1884,8 @@ article.format-aside {
     align-items: center; }
   .archive-view .page .entry-footer {
     justify-content: flex-end; }
-  .archive-view .content-area .post.has-post-thumbnail,
-  .archive-view .content-area .page.has-post-thumbnail {
+  .archive-view .content-area .post.has-post-thumbnail .entry-wrap,
+  .archive-view .content-area .page.has-post-thumbnail .entry-wrap {
     display: flex;
     flex-direction: row;
     overflow: hidden; }
@@ -1964,10 +1983,10 @@ article.format-aside {
 
 .reply a {
   display: inline-block;
-  padding: .2em 1em;
+  padding: .2rem .5rem;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   text-decoration: none;
-  border: 2px solid #c2cfcf;
+  border: 2px solid #017680;
   border-radius: 23px;
   color: white;
   background: #017680; }
@@ -1991,10 +2010,10 @@ article.format-aside {
   .comment-respond .form-submit {
     text-align: right; }
     .comment-respond .form-submit input {
-      padding: .2em 1em;
+      padding: .2rem .5rem;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
       text-decoration: none;
-      border: 2px solid #c2cfcf;
+      border: 2px solid #017680;
       border-radius: 23px;
       color: white;
       background: #017680; }
@@ -2201,7 +2220,9 @@ object {
 ## Archive View Featured Images
 --------------------------------------------------------------*/
 .archive-view .featured-image {
-  position: relative; }
+  position: relative;
+  margin-left: -1em;
+  margin-right: -1em; }
   .archive-view .featured-image .post-thumbnail {
     display: block;
     line-height: 0;
@@ -2229,7 +2250,8 @@ object {
   .archive-view .featured-image {
     width: 33%;
     flex-shrink: 0;
-    margin-right: 1em; }
+    margin-right: 1em;
+    margin-left: 0; }
     .archive-view .featured-image .post-thumbnail {
       position: absolute;
       /* this fixes a visual quirk that keeps the link from overflowing */ } }

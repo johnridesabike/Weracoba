@@ -24,12 +24,18 @@ if ( ! function_exists( 'weracoba_posted_on' ) ) :
 			esc_attr( get_the_date( DATE_W3C ) ),
 			esc_html( get_the_date() )
 		);
+        
+        
 
 		$posted_on = sprintf(
 			/* translators: %s: post date. */
-			esc_html_x( 'Posted on %s', 'post date', 'weracoba' ), $time_string );
+			wp_kses( 
+                _x( '<span class="screen-reader-text">Posted on</span> %s', 'post date', 'weracoba' ), 
+                array( 'span' => array( 'class' => array() ) ) 
+            ),
+            $time_string );
 
-		echo '<span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
+		echo '<span class="posted-on">' . twentynineteen_get_icon_svg( 'watch', 16) . $posted_on . '</span>'; // WPCS: XSS OK.
         
         if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
             $time_string_updated = sprintf( $time_string_updated,
@@ -38,10 +44,14 @@ if ( ! function_exists( 'weracoba_posted_on' ) ) :
             );
 
             $updated_on = sprintf(
-                /* translators: %s: post date. */
-                esc_html_x( 'Updated on %s', 'updated date', 'weracoba' ), $time_string_updated );
+                /* translators: %s: update date. */
+                wp_kses( 
+                    _x( '<span class="screen-reader-text">Updated on</span> %s', 'update date', 'weracoba' ), 
+                    array( 'span' => array( 'class' => array() ) ) 
+                ),
+                $time_string_updated );
 
-		  echo '<span class="updated-on">' . $updated_on . '</span>'; // WPCS: XSS OK.
+		  echo '<span class="updated-on">' . twentynineteen_get_icon_svg( 'edit', 16) . $updated_on . '</span>'; // WPCS: XSS OK.
         }
 	}
 endif;
@@ -135,15 +145,14 @@ endif;
 
 /***** Display the tag list ****/
 if ( ! function_exists( 'weracoba_tag_list' ) ) :
-    /* translators: 1: SVG icon
-                    2: list of tags. */
-	function weracoba_tag_list( $prefix = '%1$s Tagged %2$s' ) {
-        /* translators: used between list items, there is a space after the comma */
-        $tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'weracoba' ) );
-        if ( $tags_list ) {
-            printf( '<span class="tags-links">' . esc_html__( $prefix , 'weracoba' ) . '</span>',
-                    twentynineteen_get_icon_svg( 'tag', 16 ), $tags_list ); // WPCS: XSS OK.
-        }
+	function weracoba_tag_list() {
+        /* translators: There is a space before and after the text. */
+        $tagged = esc_html__( ' Tagged ', 'weracoba' );
+        echo get_the_tag_list(
+            '<span class="tags-links"> '. twentynineteen_get_icon_svg( 'tag', 16 ) . ' <span class="screen-reader-text">' . $tagged . "</span>", 
+            /* translators: used between list items, there is a space after the comma */
+            esc_html_x( ', ', 'list item separator', 'weracoba' ),
+            '</span>' );
 	}
 endif;
 
@@ -193,12 +202,14 @@ endif;
 /***** Post navigation for single post ****/
 if ( ! function_exists( 'weracoba_post_navigation' ) ) :
 	function weracoba_post_navigation() {
+		$prev_icon = twentynineteen_get_icon_svg( 'chevron_left', 24 );
+		$next_icon = twentynineteen_get_icon_svg( 'chevron_right', 24 );
         ?>
-        <h2 class="post-navigation-title">Read more <?php echo get_the_category_list( esc_html__( ', ', 'weracoba' ) );?> posts</h2>
+        <h2 class="post-navigation-title">Read more <?php echo get_the_category_list( esc_html__( ', ', 'weracoba' ) );?> posts.</h2>
         <?php
 		the_post_navigation( array(
-			'next_text' => '<span class="meta-nav" aria-hidden="true">' . __('Next post', 'weracoba') . '</span> <span class="screen-reader-text">' . __('Next Post:', 'weracoba') . '</span> <span class="post-title">%title</span>',
-			'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __('Previous post', 'weracoba') . '</span> <span class="screen-reader-text">' . __('Previous Post:', 'weracoba') . '</span> <span class="post-title">%title</span>',
+			'next_text' => '<span class="meta-nav" aria-hidden="true">' . __('Next post', 'weracoba') . $next_icon . '</span> <span class="screen-reader-text">' . __('Next Post', 'weracoba') . '</span> <span class="post-title">%title</span>',
+			'prev_text' => '<span class="meta-nav" aria-hidden="true">' . $prev_icon . __('Previous post', 'weracoba') . '</span> <span class="screen-reader-text">' . __('Previous Post', 'weracoba') . '</span> <span class="post-title">%title</span>',
             'in_same_term' => true
 		));
 	}
@@ -267,35 +278,3 @@ if ( ! function_exists( 'weracoba_citation' ) ) :
         );
     }
 endif;
-/*
-if ( ! function_exists( 'weracoba_categories' ) ) :
-    function weracoba_categories( $header = '' ) {
-        ?>
-        <section>
-            <h2><?php echo $header ?></h2>
-            <ul class="archive-cat-list widget widget_categories">
-                <?php wp_list_categories( array(
-                        'title_li' => '',
-                        'orderby' => 'count',
-                        'order' => 'DESC'
-                        ) ); ?>
-            </ul>
-        </section>
-        <?php
-    }
-endif;
-
-if ( ! function_exists( 'weracoba_tags' ) ) :
-    function weracoba_tags( $header = '' ) {
-        ?>
-        <section>
-            <h2><?php echo $header ?></h2>
-            <div class="widget">
-                <?php wp_tag_cloud( array( 'smallest' => 12, 
-                                           'largest' => 24,
-                                           'separator' => ', ' ) );?>
-            </div>
-        </section>
-        <?php
-    }
-endif;*/

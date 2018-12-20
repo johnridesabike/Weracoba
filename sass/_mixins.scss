@@ -117,7 +117,7 @@ $columns-margin: 3.8%;
 
 // Buttons
 @mixin button {
-    padding: .2em 1em;
+    padding: .2rem .5rem;
 	font-family: $font-UI;
 	text-decoration: none;
     border: 2px solid $color-border-button;
@@ -127,16 +127,22 @@ $columns-margin: 3.8%;
 
     &:hover,
     &:focus {
-        border-color: $color-link-hover;
+        border-color: $color-border-button-hover;
     }
 }
 
 @mixin button-outline {
-    padding: 1em;
+    //padding: 1rem;
+    padding: .2rem .5rem; // testing...
     font-family: $font-UI;
     text-decoration: none;
     border-radius: 23px;
-    border: 1px solid $color-border-button;
+    border: 2px solid $color-border-button;
+
+    &:hover,
+    &:focus {
+        border-color: $color-border-button-hover;
+    }
 }
 
 @mixin gutenberg-button {

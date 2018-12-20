@@ -5,7 +5,7 @@
     .content-area .excerpt-entry {
         position: relative;
         border-bottom: 1px solid $color-border;
-        padding: .5em;
+        padding: 0 .5em .5em .5em;
         margin-bottom: 1em;
         @include drop-shadow;
 
@@ -48,7 +48,7 @@
     a {
         display: block;
         @include button;
-        padding: 0 .2em 0 1em; // testing...
+        font-size: 1.2em;
         /* replaced by SVG
         &:after {
             content: $glyph-arrow-next;
@@ -78,8 +78,8 @@
         .page .entry-footer {
             justify-content: flex-end;
         }
-        .content-area .post.has-post-thumbnail,
-        .content-area .page.has-post-thumbnail {
+        .content-area .post.has-post-thumbnail .entry-wrap,
+        .content-area .page.has-post-thumbnail .entry-wrap {
             display: flex;
             flex-direction: row;
             overflow: hidden;

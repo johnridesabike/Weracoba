@@ -16,7 +16,9 @@
         display: block;
         width: 100%;
         background: $color-bg-body;
+        font-size: 1.3em;
         @include button-outline;
+        
     }
 }
 
@@ -36,7 +38,8 @@
     font-weight: 400;
     color: $color-text-secondary;
     
-    a[rel~='category'] {
+    a {
+        text-decoration: underline;
     }
 }
 
@@ -48,7 +51,7 @@
     padding-bottom: 1em;
 }
 .meta-nav:after {
-    content: ":";
+    // content: ":";
 }
 .breadcrumbs-nav {
     margin-top: .5em;
