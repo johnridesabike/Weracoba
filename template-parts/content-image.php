@@ -28,12 +28,12 @@
             </div><!-- .entry-meta -->
             <?php 
             weracoba_entry_footer();
-            weracoba_post_navigation();
             ?>
         </footer><!-- .entry-footer -->
 	</div> <!-- .post-content -->
 </article><!-- #post-<?php the_ID(); ?> -->
 <?php
+weracoba_attachment_navigation();
 // If comments are open or we have at least one comment, load up the comment template.
 if ( comments_open() || get_comments_number() ) :
     comments_template();

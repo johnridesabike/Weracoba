@@ -205,11 +205,16 @@ add_action( 'enqueue_block_editor_assets', 'weracoba_editor_styles' );
 /**
  *
  */
-function custom_excerpt_more( $more ) {
+function weracoba_excerpt_more( $more ) {
 	//return '... <a href="' . esc_url( get_permalink() ) . '" rel="bookmark" class="excerpt-more">' . __( 'read more', 'weracoba' ) . '</a>';
     return '&hellip;';
 }
-add_filter( 'excerpt_more', 'custom_excerpt_more' );
+add_filter( 'excerpt_more', 'weracoba_excerpt_more' );
+
+function weracoba_private_title_format( $prepend ) {
+    return twentynineteen_get_icon_svg( 'lock', 28 ) . '<span class="screen-reader-text">' . __( 'Private', 'weracoba' ) . '</span> %s';
+}
+add_filter( 'private_title_format', 'weracoba_private_title_format' );
 
 /**
  * Implement the Custom Header feature.

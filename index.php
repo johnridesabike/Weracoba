@@ -41,7 +41,7 @@ get_header();
                 get_template_part( 'template-parts/content', $format );
 
             endwhile;
-            the_posts_navigation();
+            weracoba_the_posts_pagination();
         else :
             get_template_part( 'template-parts/content', 'none' );
         endif; ?>

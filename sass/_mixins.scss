@@ -122,12 +122,18 @@ $columns-margin: 3.8%;
 	text-decoration: none;
     border: 2px solid $color-border-button;
     border-radius: 23px; // from Gutenberg style
-    color: $color-bg-body;
-    background: $color-link;
 
     &:hover,
     &:focus {
         border-color: $color-border-button-hover;
+    }
+
+    &:not(.has-text-color) {
+        color: $color-bg-body;
+    }
+
+    &:not(.has-background) {
+        background: $color-link;
     }
 }
 

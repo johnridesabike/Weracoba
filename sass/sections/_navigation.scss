@@ -7,24 +7,40 @@
 ### Content navigation
 --------------------------------------------------------------*/
 .comment-navigation,
-.post-navigation,
+.single-post .post-navigation,
 .posts-navigation,
 .paging-navigation {
     text-align: left;
-
+    
     a {
         display: block;
         width: 100%;
         background: $color-bg-body;
         font-size: 1.3em;
         @include button-outline;
-        
+    }
+}
+
+.pagination {
+    text-align: center;
+    font-size: 1.3em;
+    .next {
+        display: block;
+        margin-top: .5em;
+    }
+    .prev {
+        display: block;
+        margin-bottom: .5em;
+    }
+    .page-numbers:not(.prev):not(.next) {
+        margin: 0 .5em;
+        padding-left: .8rem; // make them a bit rounder
+        padding-right: .8rem; // make them a bit rounder
     }
 }
 
 .attachment {
     .comment-navigation,
-    .post-navigation,
     .posts-navigation,
     .paging-navigation {
         a {
@@ -63,12 +79,41 @@
     }
 }
 
+.single-post .post-navigation {
+    .meta-nav {
+        color: $color-text-secondary;
+    }
+    .meta-nav,
+    .post-title {
+        display: block;
+    }
+    .nav-next {
+        text-align: right;
+    }
+    .nav-previous .post-title {
+        padding-left: 24px;
+    }
+    .nav-next .post-title {
+        padding-right: 24px;
+    }
+}
+
+.attachment .post-navigation {
+    font-size: 1.3em;
+    .meta-nav {
+        color: $color-text-secondary;
+    }
+    .post-title {
+        text-decoration: underline;
+    }
+}
+
 /** Navigation Media Queries **/
 
 @media screen and (min-width: $breakpoint-1) {
     .comment-navigation,
     .posts-navigation,
-    .post-navigation {
+    .single-post .post-navigation {
         .nav-previous {
             float: left;
             padding-bottom: 0;
@@ -76,7 +121,6 @@
 
         .nav-next {
             float: right;
-            text-align: right;
         }
 
         .nav-previous,
@@ -93,9 +137,21 @@
         align-items: stretch;
         padding: 0;
     }
-
-    .post-navigation .meta-nav {
-        display: block;
+    
+    .pagination {
+        .nav-links {
+            justify-content: center;
+        }
+        .page-numbers:not(.next):not(.prev) {
+            text-align: center;
+        }
+        .next {
+            text-align: right;
+        }
+        .next,
+        .prev {
+            margin: 0 1em;
+        }
     }
 }
 @media screen and (min-width: $breakpoint-2) {

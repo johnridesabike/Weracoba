@@ -35,7 +35,7 @@ if ( ! function_exists( 'weracoba_posted_on' ) ) :
             ),
             $time_string );
 
-		echo '<span class="posted-on">' . twentynineteen_get_icon_svg( 'watch', 16) . $posted_on . '</span>'; // WPCS: XSS OK.
+		echo '<span class="posted-on">' . twentynineteen_get_icon_svg( 'calendar', 16) . $posted_on . '</span>'; // WPCS: XSS OK.
         
         if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
             $time_string_updated = sprintf( $time_string_updated,
@@ -51,7 +51,7 @@ if ( ! function_exists( 'weracoba_posted_on' ) ) :
                 ),
                 $time_string_updated );
 
-		  echo '<span class="updated-on">' . twentynineteen_get_icon_svg( 'edit', 16) . $updated_on . '</span>'; // WPCS: XSS OK.
+		  echo '<span class="updated-on">' . twentynineteen_get_icon_svg( 'update', 16) . $updated_on . '</span>'; // WPCS: XSS OK.
         }
 	}
 endif;
@@ -200,6 +200,7 @@ endif;
 
 
 /***** Post navigation for single post ****/
+/*
 if ( ! function_exists( 'weracoba_post_navigation' ) ) :
 	function weracoba_post_navigation() {
 		$prev_icon = twentynineteen_get_icon_svg( 'chevron_left', 24 );
@@ -213,6 +214,34 @@ if ( ! function_exists( 'weracoba_post_navigation' ) ) :
             'in_same_term' => true
 		));
 	}
+endif;*/
+
+if ( ! function_exists( 'weracoba_the_posts_pagination' ) ) :
+	/**
+	 * Documentation for function.
+	 */
+	function weracoba_the_posts_pagination() {
+		$prev_icon = twentynineteen_get_icon_svg( 'chevron_left', 24 );
+		$next_icon = twentynineteen_get_icon_svg( 'chevron_right', 24 );
+		the_posts_pagination(
+			array(
+				'mid_size'  => 2,
+				'prev_text' => sprintf( '%s <span class="nav-prev-text">%s</span>', $prev_icon, __( 'Newer posts', 'weracoba' ) ),
+				'next_text' => sprintf( '<span class="nav-next-text">%s</span> %s', __( 'Older posts', 'weracoba' ), $next_icon ),
+			)
+		);
+	}
+endif;
+
+if ( ! function_exists( 'weracoba_attachment_navigation' ) ) :
+    function weracoba_attachment_navigation() {
+        // Parent post navigation.
+        the_post_navigation(
+            array(
+                'prev_text' => _x( '<span class="meta-nav">Published in</span> <span class="post-title">%title</span>', 'Parent post link', 'twentynineteen' ),
+            )
+        );
+    }
 endif;
 
 if ( ! function_exists( 'weracoba_get_post_page_url' ) ) :

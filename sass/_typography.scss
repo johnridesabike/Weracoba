@@ -280,7 +280,7 @@ p.wp-block-subhead {
 
 .wp-block-button .wp-block-button__link,
 .wp-block-file a.wp-block-file__button {
-    @include gutenberg-button;
+    @include button;
 }
 
 .wp-block-button.is-style-outline .wp-block-button__link {
