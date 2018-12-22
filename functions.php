@@ -212,7 +212,7 @@ function weracoba_excerpt_more( $more ) {
 add_filter( 'excerpt_more', 'weracoba_excerpt_more' );
 
 function weracoba_private_title_format( $prepend ) {
-    return twentynineteen_get_icon_svg( 'lock', 28 ) . '<span class="screen-reader-text">' . __( 'Private', 'weracoba' ) . '</span> %s';
+    return twentynineteen_get_icon_svg( 'lock', 28 ) . ' <span class="screen-reader-text">' . __( 'Private:', 'weracoba' ) . '</span> %s';
 }
 add_filter( 'private_title_format', 'weracoba_private_title_format' );
 

@@ -117,7 +117,7 @@ $columns-margin: 3.8%;
 
 // Buttons
 @mixin button {
-    padding: .2rem .5rem;
+    padding: .2rem .75rem;
 	font-family: $font-UI;
 	text-decoration: none;
     border: 2px solid $color-border-button;
@@ -239,15 +239,16 @@ $opacity-overlay: .25;
     padding-top: 1em;
     & > * {
         display: inline-block;
+        margin: 0 .5em;
     }
 
-    > *:after {
-        content: " |";
-        color: $color-border;
-        @media screen and (min-width: $breakpoint-1) {
-            margin: 0 0.5em;
-        }
-    }
+    //> *:after {
+    //    content: " |";
+    //    color: $color-border;
+    //    @media screen and (min-width: $breakpoint-1) {
+    //        margin: 0 0.5em;
+    //    }
+    //}
 
     > *:last-child:after {
         content: "";

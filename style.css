@@ -599,7 +599,7 @@ p.wp-block-subhead {
 
 .wp-block-button .wp-block-button__link,
 .wp-block-file a.wp-block-file__button {
-  padding: .2rem .5rem;
+  padding: .2rem .75rem;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   text-decoration: none;
   border: 2px solid #017680;
@@ -794,7 +794,7 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-  padding: .2rem .5rem;
+  padding: .2rem .75rem;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   text-decoration: none;
   border: 2px solid #017680;
@@ -862,6 +862,8 @@ a {
 
 .site-title {
   margin: 0; }
+  .site-title a {
+    color: #10474b; }
 
 .site-description {
   margin: 0 0 .5em 0;
@@ -981,7 +983,7 @@ a {
   .menu-button .menu-toggle {
     display: inline;
     font-size: 1em;
-    padding: .2rem .5rem;
+    padding: .2rem .75rem;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
     text-decoration: none;
     border: 2px solid #017680;
@@ -1135,20 +1137,7 @@ a {
     display: block;
     width: 100%;
     background: white;
-    font-size: 1.3em;
-    padding: .2rem .5rem;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-    text-decoration: none;
-    border-radius: 23px;
-    border: 2px solid #017680; }
-    .comment-navigation a:hover, .comment-navigation a:focus,
-    .single-post .post-navigation a:hover,
-    .single-post .post-navigation a:focus,
-    .posts-navigation a:hover,
-    .posts-navigation a:focus,
-    .paging-navigation a:hover,
-    .paging-navigation a:focus {
-      border-color: #01b0bb; }
+    font-size: 1.3em; }
 
 .pagination {
   text-align: center;
@@ -1507,6 +1496,9 @@ a {
   .archive-widget-area {
     margin-left: 0;
     margin-right: 0; }
+  .archive-widget-area-bottom {
+    margin-top: 4em;
+    margin-bottom: 4em; }
   .footer-widgets {
     display: flex;
     flex-wrap: wrap;
@@ -1686,15 +1678,8 @@ a {
   .single .entry-meta {
     padding-top: 1em; }
     .single .entry-meta > * {
-      display: inline-block; }
-    .single .entry-meta > *:after {
-      content: " |";
-      color: #c2cfcf; } }
-    @media screen and (min-width: 735px) and (max-width: 1365px) and (min-width: 735px) {
-      .single .entry-meta > *:after {
-        margin: 0 0.5em; } }
-
-@media screen and (min-width: 735px) and (max-width: 1365px) {
+      display: inline-block;
+      margin: 0 .5em; }
     .single .entry-meta > *:last-child:after {
       content: "";
       display: none; } }
@@ -1856,16 +1841,11 @@ article.format-aside {
 .archive-view .entry-meta {
   padding-top: 1em;
   padding-top: 0;
-  margin: 0 0 .5em 0;
+  margin: 0;
   min-height: 0; }
   .archive-view .entry-meta > * {
-    display: inline-block; }
-  .archive-view .entry-meta > *:after {
-    content: " |";
-    color: #c2cfcf; }
-    @media screen and (min-width: 735px) {
-      .archive-view .entry-meta > *:after {
-        margin: 0 0.5em; } }
+    display: inline-block;
+    margin: 0 .5em; }
   .archive-view .entry-meta > *:last-child:after {
     content: "";
     display: none; }
@@ -1897,7 +1877,7 @@ article.format-aside {
   flex-shrink: 0; }
   .continue-reading a {
     display: block;
-    padding: .2rem .5rem;
+    padding: .2rem .75rem;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
     text-decoration: none;
     border: 2px solid #017680;
@@ -2032,7 +2012,7 @@ article.format-aside {
 
 .reply a {
   display: inline-block;
-  padding: .2rem .5rem;
+  padding: .2rem .75rem;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   text-decoration: none;
   border: 2px solid #017680;
@@ -2061,7 +2041,7 @@ article.format-aside {
   .comment-respond .form-submit {
     text-align: right; }
     .comment-respond .form-submit input {
-      padding: .2rem .5rem;
+      padding: .2rem .75rem;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
       text-decoration: none;
       border: 2px solid #017680;

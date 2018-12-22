@@ -23,6 +23,9 @@
 }
 .site-title {
     margin: 0;
+    & a {
+        color: $color-headers;
+    }
 }
 .site-description {
     margin: 0 0 .5em 0;

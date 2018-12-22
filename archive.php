@@ -37,7 +37,7 @@ get_header();
 		endif;
 		?>
 
-        <div class="archive-widget-area">
+        <div class="archive-widget-area archive-widget-area-bottom">
             <?php the_widget( 'WP_Widget_Categories', array( 'title' => __( 'Browse another category', 'weracoba' ) ) ); ?>
         </div> <!-- .archive-widget-area -->
 		</main><!-- #main -->
