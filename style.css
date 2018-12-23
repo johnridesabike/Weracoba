@@ -2396,6 +2396,8 @@ p.alignwide {
 ## SVG
 --------------------------------------------------------------*/
 .svg-icon {
-  vertical-align: middle; }
+  vertical-align: middle;
+  height: 1em;
+  width: 1em; }
 
 /*# sourceMappingURL=style.css.map */

@@ -211,11 +211,6 @@ function weracoba_excerpt_more( $more ) {
 }
 add_filter( 'excerpt_more', 'weracoba_excerpt_more' );
 
-function weracoba_private_title_format( $prepend ) {
-    return twentynineteen_get_icon_svg( 'lock', 28 ) . ' <span class="screen-reader-text">' . __( 'Private:', 'weracoba' ) . '</span> %s';
-}
-add_filter( 'private_title_format', 'weracoba_private_title_format' );
-
 /**
  * Implement the Custom Header feature.
  */
@@ -271,3 +266,13 @@ require get_template_directory() . '/classes/class-weracoba-svg-icons.php';
  * SVG Icons related functions.
  */
 require get_template_directory() . '/inc/icon-functions.php';
+
+/**
+ * Custom Private post prefix.
+ * This is disabled because it conflicts with plugins that don't sanitize the title properly. 
+ */
+
+function weracoba_private_title_format( $prepend ) {
+    return twentynineteen_get_icon_svg( 'lock', 28 ) . ' <span class="screen-reader-text">' . __( 'Private:', 'weracoba' ) . '</span> %s';
+}
+//add_filter( 'private_title_format', 'weracoba_private_title_format' );
