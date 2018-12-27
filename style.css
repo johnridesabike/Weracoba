@@ -615,6 +615,9 @@ p.wp-block-subhead {
   .wp-block-file a.wp-block-file__button:not(.has-background) {
     background: #017680; }
 
+.wp-block-button.is-style-squared .wp-block-button__link {
+  border-radius: 0; }
+
 .wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color) {
   color: #017680; }
   .wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color):hover, .wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color):focus {
@@ -1161,8 +1164,8 @@ a {
   padding: .2rem .5rem;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   text-decoration: none;
-  border-radius: 23px;
-  border: 2px solid #017680; }
+  border: 2px solid #017680;
+  border-radius: 23px; }
   @media screen and (min-width: 735px) {
     .attachment .comment-navigation a,
     .attachment .posts-navigation a,
@@ -2128,6 +2131,30 @@ article.format-aside {
   z-index: 2; }
   .overlay-link:hover, .overlay-link:focus {
     opacity: 0.25; }
+
+/*
+ * Begin custom home page experiments
+*/
+.home .wp-block-columns h3 {
+  text-align: center;
+  margin-top: 0; }
+
+.home .wp-block-columns svg {
+  display: block;
+  margin: auto;
+  color: #10474b; }
+
+.home .wp-block-columns .wp-block-latest-posts {
+  padding: 0;
+  list-style: none; }
+  .home .wp-block-columns .wp-block-latest-posts li a {
+    display: block;
+    padding: .75em 0;
+    text-decoration: none;
+    border-bottom: 1px dashed #c2cfcf; }
+    .home .wp-block-columns .wp-block-latest-posts li a:hover, .home .wp-block-columns .wp-block-latest-posts li a:focus {
+      text-decoration: none;
+      border-bottom: 1px dashed #c2cfcf; }
 
 /*--------------------------------------------------------------
 # Infinite scroll

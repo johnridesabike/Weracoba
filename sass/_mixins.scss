@@ -142,9 +142,8 @@ $columns-margin: 3.8%;
     padding: .2rem .5rem; // testing...
     font-family: $font-UI;
     text-decoration: none;
-    border-radius: 23px;
     border: 2px solid $color-border-button;
-
+    border-radius: 23px;
     &:hover,
     &:focus {
         border-color: $color-border-button-hover;

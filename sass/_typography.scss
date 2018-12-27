@@ -283,6 +283,10 @@ p.wp-block-subhead {
     @include button;
 }
 
+.wp-block-button.is-style-squared .wp-block-button__link {
+    border-radius: 0;
+}
+
 .wp-block-button.is-style-outline .wp-block-button__link {
     
     &:not(.has-text-color) {

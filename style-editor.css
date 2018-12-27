@@ -205,6 +205,8 @@
     .edit-post-visual-editor .wp-block-button .wp-block-button__link:not(.has-background),
     .edit-post-visual-editor .wp-block-file a.wp-block-file__button:not(.has-background) {
       background: #017680; }
+  .edit-post-visual-editor .wp-block-button.is-style-squared .wp-block-button__link {
+    border-radius: 0; }
   .edit-post-visual-editor .wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color) {
     color: #017680; }
     .edit-post-visual-editor .wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color):hover, .edit-post-visual-editor .wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color):focus {
