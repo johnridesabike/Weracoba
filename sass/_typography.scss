@@ -290,17 +290,17 @@ p.wp-block-subhead {
 .wp-block-button.is-style-outline .wp-block-button__link {
     
     &:not(.has-text-color) {
-        color: $color-tint;
+        color: $color-link;
         
         &:hover,
         &:focus {
-            color: $color-link-hover;
+            color: $color-link;
         }
     }
     
     &:not(.has-background) {
         background: transparent;
-        border-color: $color-tint;
+        border-color: $color-link;
         
         &:hover,
         &:focus {

@@ -119,7 +119,7 @@
   .edit-post-visual-editor .format-aside .entry-header a {
     color: #44484d; }
     .edit-post-visual-editor .format-aside .entry-header a:hover, .edit-post-visual-editor .format-aside .entry-header a:focus {
-      color: #01b0bb; }
+      color: #758001; }
   .edit-post-visual-editor .format-aside h2.entry-title {
     color: #44484d;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -198,7 +198,7 @@
     .edit-post-visual-editor .wp-block-button .wp-block-button__link:hover, .edit-post-visual-editor .wp-block-button .wp-block-button__link:focus,
     .edit-post-visual-editor .wp-block-file a.wp-block-file__button:hover,
     .edit-post-visual-editor .wp-block-file a.wp-block-file__button:focus {
-      border-color: #01b0bb; }
+      border-color: #758001; }
     .edit-post-visual-editor .wp-block-button .wp-block-button__link:not(.has-text-color),
     .edit-post-visual-editor .wp-block-file a.wp-block-file__button:not(.has-text-color) {
       color: white; }
@@ -210,12 +210,12 @@
   .edit-post-visual-editor .wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color) {
     color: #017680; }
     .edit-post-visual-editor .wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color):hover, .edit-post-visual-editor .wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color):focus {
-      color: #01b0bb; }
+      color: #017680; }
   .edit-post-visual-editor .wp-block-button.is-style-outline .wp-block-button__link:not(.has-background) {
     background: transparent;
     border-color: #017680; }
     .edit-post-visual-editor .wp-block-button.is-style-outline .wp-block-button__link:not(.has-background):hover, .edit-post-visual-editor .wp-block-button.is-style-outline .wp-block-button__link:not(.has-background):focus {
-      border-color: #01b0bb; }
+      border-color: #758001; }
   @media screen and (min-width: 735px) {
     .edit-post-visual-editor {
       /* Header */

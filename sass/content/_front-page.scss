@@ -66,10 +66,7 @@
 */
 .home {
     .wp-block-columns {
-        h3 {
-            text-align: center;
-            margin-top: 0;
-        }
+        
         svg {
             display: block;
             margin: auto;
@@ -92,5 +89,11 @@
                 }
             }
         }
+    }
+}
+
+@media (min-width: $breakpoint-1) {
+    .wp-block-columns {
+        flex-wrap: nowrap; // replaces the built-in media query with something better
     }
 }

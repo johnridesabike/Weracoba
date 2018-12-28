@@ -146,6 +146,7 @@ $columns-margin: 3.8%;
     border-radius: 23px;
     &:hover,
     &:focus {
+        color: $color-link;
         border-color: $color-border-button-hover;
     }
 }

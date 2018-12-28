@@ -139,9 +139,9 @@
     .entry-content > *:not(.alignwide):not(.alignfull) {
         @include max-page-width;
     }
-    .entry-content h2 {
-        margin-top: 2em;
-    }
+    //.entry-content h2 {
+    //    margin-top: 2em;
+    //}
 }
 
 /** Asides **/
