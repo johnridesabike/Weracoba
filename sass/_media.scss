@@ -162,15 +162,9 @@ object {
 ## Gutenberg Styles
 --------------------------------------------------------------*/
 
-.alignwide {
+.alignwide:not(.wp-block-columns):not(p) {
     /* displays as alignfull on small screens */
     @include full-bleed;
-}
-
-p.alignwide {
-    // don't full-bleed paragraphs
-    margin-left: 0;
-    margin-right: 0;
 }
 
 .alignfull {

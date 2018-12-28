@@ -2317,14 +2317,10 @@ object {
 /*--------------------------------------------------------------
 ## Gutenberg Styles
 --------------------------------------------------------------*/
-.alignwide {
+.alignwide:not(.wp-block-columns):not(p) {
   /* displays as alignfull on small screens */
   margin-left: -1rem;
   margin-right: -1rem; }
-
-p.alignwide {
-  margin-left: 0;
-  margin-right: 0; }
 
 .alignfull {
   width: 100vw !important;
