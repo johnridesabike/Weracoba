@@ -10,9 +10,7 @@
  */
 
 ?>
-        <?php 
-        if ( ! is_front_page() )
-            get_sidebar(); ?>
+        <?php get_sidebar(); ?>
 	</div><!-- #content -->
 	<footer id="colophon" class="site-footer">
             <div class="footer-widgets">

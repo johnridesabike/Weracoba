@@ -60,3 +60,41 @@
 .overlay-link {
     @include link-overlay;
 }
+
+/*
+ * Begin custom home page experiments
+*/
+.home {
+    .wp-block-columns {
+        
+        svg {
+            display: block;
+            margin: auto;
+            color: $color-headers;
+        }
+        .wp-block-latest-posts {
+            // copied from _widgets.scss
+            padding: 0;
+            list-style: none;
+            li {
+                border-bottom: 1px dashed $color-border;
+                padding: .75em 0;
+                a {
+                    display: block;
+                    text-decoration: none;
+
+                    &:hover,
+                    &:focus {
+                        text-decoration: none;
+                    }
+                }
+            } 
+        }
+    }
+}
+
+@media (min-width: $breakpoint-1) {
+    .wp-block-columns {
+        flex-wrap: nowrap; // replaces the built-in media query with something better
+    }
+}

@@ -39,7 +39,7 @@ get_header();
                 <div class="cat-block-wrap">
                     <div class="cat-block">
                         <a href="<?php echo esc_url( get_category_link( $cat->cat_ID ) );?>"
-                           class="overlay-link" area-hidden="true" tabindex="-1"></a>
+                           class="overlay-link" aria-hidden="true" tabindex="-1"></a>
                         <figure class="featured-image">
                             <a class="post-thumbnail" aria-hidden="true" tabindex="-1"
                                 href="<?php echo $cat_link; ?>">

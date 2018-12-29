@@ -12,6 +12,12 @@
     overflow-x: hidden;
 }
 
+@media screen {
+    .print {
+        display: none;
+    }
+}
+
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
@@ -31,72 +37,3 @@
 ## Front Page
 --------------------------------------------------------------*/
 @import "front-page";
-
-/*--------------------------------------------------------------
-## Print
---------------------------------------------------------------*/
-
-@media screen {
-    .print {
-        display: none;
-    }
-}
-
-@media print {
-    body,
-    button,
-    input,
-    select,
-    optgroup,
-    textarea, 
-    h1, 
-    h2, 
-    h3, 
-    h4, 
-    h5, 
-    h6 { // elements copied from typography & elements files
-        color: black;
-    }
-    a,
-    a:visited,
-    a:hover,
-    a:focus {
-        color: black;
-        text-decoration: underline;
-    }
-    .print {
-        display: block;
-    }
-    .global-header,
-    .post-navigation-title,
-    .nav-links,
-    .comment-respond,
-    .akismet_comment_form_privacy_notice {
-        display: none;
-    }
-    .single .featured-image {
-        display: block !important;
-        height: auto !important;
-        min-height: inherit !important;
-    }
-    .single .featured-image img {
-        position: static !important;
-        left: auto;
-    }
-    .site-footer {
-        box-shadow: none;
-        border: none;
-        background: none;
-    }
-    .site-footer .citation {
-        font-size: 1em;
-    }
-    
-    .widget {
-        display: none;
-    }
-    .widget.widget_text,
-    .widget.widget_custom_html {
-        display: block;
-    }
-}

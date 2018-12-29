@@ -2,9 +2,9 @@
 .sticky {
 	display: block;
 }
-.updated:not(.published) {
+/*.updated:not(.published) {
 	display: none;
-}
+}*/
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
@@ -30,11 +30,13 @@
     font-size: 1.3em;
     margin-bottom: .5em;
     display: block;
+    color: $color-text-secondary;
 
+    /* Replaced by SVG
     &:before {
         @include dashicon($glyph-category);
         color: $color-link;
-    }
+    }*/
 }
 .entry-meta {
     color: $color-text-secondary;
@@ -48,15 +50,19 @@
     > * {
         display: block;
     }
+
+    .updated-on {
+        display: none !important;
+    }
 }
-.posted-on a {
+/*.posted-on a {
     color: $color-text-secondary;
     
     &:hover,
     &:focus {
         color: $color-link-hover;
     }
-}
+}*/
 
 /** Entry Header Media Queries **/
 
@@ -96,9 +102,14 @@
     border-top: 1px solid $color-border;
     padding-top: 1em;
 }
+.single .tags-links {
+    color: $color-text-secondary;
+    font-size: 1.3em;
+}
+/* Replaced by SVG
 .tags-links:before {
     @include dashicon($glyph-tags);
-}
+}*/
 
 /** Post body **/
 
@@ -128,9 +139,9 @@
     .entry-content > *:not(.alignwide):not(.alignfull) {
         @include max-page-width;
     }
-    .entry-content h2 {
-        margin-top: 2em;
-    }
+    //.entry-content h2 {
+    //    margin-top: 2em;
+    //}
 }
 
 /** Asides **/

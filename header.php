@@ -50,6 +50,12 @@
                     <div class="menu-button" id="toggle-button">
                         <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
                             <?php esc_html_e( 'Menu', 'weracoba' ); ?>
+                            <span class="menu-icon">
+                                <?php echo twentynineteen_get_icon_svg( 'menu', 20 ); ?>
+                            </span>
+                            <span class="dismiss-icon">
+                                <?php echo twentynineteen_get_icon_svg( 'dismiss', 20 ); ?>
+                            </span>
                         </button>
                     </div>
                     <?php 

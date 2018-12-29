@@ -5,7 +5,7 @@
     .content-area .excerpt-entry {
         position: relative;
         border-bottom: 1px solid $color-border;
-        padding: .5em;
+        padding: 0 .5em .5em .5em;
         margin-bottom: 1em;
         @include drop-shadow;
 
@@ -20,7 +20,7 @@
     .entry-meta {
         @include entry-meta-inline;
         padding-top: 0;
-        margin: 0 0 .5em 0;
+        margin: 0 0 1em 0;
         min-height: 0;
     }
     .entry-title {
@@ -48,21 +48,22 @@
     a {
         display: block;
         @include button;
-
+        font-size: 1.2em;
+        /* replaced by SVG
         &:after {
             content: $glyph-arrow-next;
-        }
+        }*/
     }
 }
-.excerpt-more {
+/*.excerpt-more {
     display: inline-block;
     font-size: 1rem;
-
+    
     &:after {
         content: " " + $glyph-arrow-next;
         vertical-align: middle;
     }
-}
+}*/
 
 /** Archive Media Queries **/
 
@@ -77,8 +78,8 @@
         .page .entry-footer {
             justify-content: flex-end;
         }
-        .content-area .post.has-post-thumbnail,
-        .content-area .page.has-post-thumbnail {
+        .content-area .post.has-post-thumbnail .entry-wrap,
+        .content-area .page.has-post-thumbnail .entry-wrap {
             display: flex;
             flex-direction: row;
             overflow: hidden;
@@ -87,6 +88,10 @@
         .format-aside {
             margin-left: auto;
             margin-right: auto;
+            padding-top: .5em; // to match the rest of the padding
+        }
+        .entry-meta {
+            margin-bottom: 0;
         }
     }
 }

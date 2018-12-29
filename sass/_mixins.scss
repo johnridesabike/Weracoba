@@ -117,27 +117,38 @@ $columns-margin: 3.8%;
 
 // Buttons
 @mixin button {
-    padding: .2em 1em;
+    padding: .2rem .75rem;
 	font-family: $font-UI;
 	text-decoration: none;
-    border: 1px solid $color-border-button;
+    border: 2px solid $color-border-button;
     border-radius: 23px; // from Gutenberg style
-    color: $color-bg-body-alt;
-    background: $color-link;
-    //color: $color-link;
 
     &:hover,
     &:focus {
-        background: $color-link-hover;
+        border-color: $color-border-button-hover;
+    }
+
+    &:not(.has-text-color) {
+        color: $color-bg-body;
+    }
+
+    &:not(.has-background) {
+        background: $color-link;
     }
 }
 
 @mixin button-outline {
-    padding: 1em;
+    //padding: 1rem;
+    padding: .2rem .5rem; // testing...
     font-family: $font-UI;
     text-decoration: none;
+    border: 2px solid $color-border-button;
     border-radius: 23px;
-    border: 1px solid $color-border-button;
+    &:hover,
+    &:focus {
+        color: $color-link;
+        border-color: $color-border-button-hover;
+    }
 }
 
 @mixin gutenberg-button {
@@ -228,15 +239,16 @@ $opacity-overlay: .25;
     padding-top: 1em;
     & > * {
         display: inline-block;
+        margin: 0 .5em;
     }
 
-    > *:after {
-        content: " |";
-        color: $color-border;
-        @media screen and (min-width: $breakpoint-1) {
-            margin: 0 0.5em;
-        }
-    }
+    //> *:after {
+    //    content: " |";
+    //    color: $color-border;
+    //    @media screen and (min-width: $breakpoint-1) {
+    //        margin: 0 0.5em;
+    //    }
+    //}
 
     > *:last-child:after {
         content: "";

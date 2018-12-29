@@ -14,21 +14,35 @@
     .menu-toggle {
         display: inline;
         font-size: 1em;
-        background: $color-bg-body-alt;
-        color: $color-link;
+        //background: $color-bg-body-alt;
+        //color: $color-link;
+        @include button;
 
+        /* Replaced by SVG
         &::after {
             @include dashicon($glyph-menu);
             padding-right: 0;
             padding-left: 6px;
-        }
+        }*/
+    }
+    .dismiss-icon {
+        display: none;
     }
 }
+.menu-button.toggled {
+    .menu-icon {
+        display: none;
+    }
+    .dismiss-icon {
+        display: inline;
+    }
+}
+/* Replaced by SVG
 .toggled .menu-toggle:after {
     @include dashicon($glyph-x);
     padding-right: 0;
     padding-left: 6px;
- }
+ }*/
 .menu-item-has-children {
     a:after {
         content: $glyph-arrow-down;
@@ -116,7 +130,7 @@
 	}
     @media screen and (min-width: $breakpoint-1) {
         width: auto;
-        line-height: 1.1em;
+        line-height: 1.1; /* fixes vertical dropdown menu spacing */
         ul {
             display: flex;
             justify-content: flex-end;
@@ -151,6 +165,7 @@
         display: none;
     }
 }
+/* replaced by SVG
 .menu-item-object-category {
     a {
         text-indent: -24px;
@@ -159,4 +174,4 @@
             @include dashicon($glyph-category);
         }
     }
-}
+}*/

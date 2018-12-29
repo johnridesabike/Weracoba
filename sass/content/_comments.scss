@@ -99,8 +99,12 @@
     }
 
     .required {
-        color: red;
+        color: darkred;
     }
+}
+
+.comments-link {
+    color: $color-text-secondary;
 }
 
 @media screen and (min-width: $breakpoint-1) {

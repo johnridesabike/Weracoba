@@ -132,7 +132,7 @@ function weracoba_content_width() {
 	// This variable is intended to be overruled from themes.
 	// Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
 	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
-	$GLOBALS['content_width'] = apply_filters( 'weracoba_content_width', 640 );
+	$GLOBALS['content_width'] = apply_filters( 'weracoba_content_width', 750 );
 }
 add_action( 'after_setup_theme', 'weracoba_content_width', 0 );
 
@@ -180,7 +180,9 @@ add_action( 'widgets_init', 'weracoba_widgets_init' );
  * Enqueue scripts and styles.
  */
 function weracoba_scripts() {
-	wp_enqueue_style( 'weracoba-style', get_stylesheet_uri(), array( 'dashicons' ), '20181109', 'all' );
+	//wp_enqueue_style( 'weracoba-style', get_stylesheet_uri(), array( 'dashicons' ), '20181109', 'all' );
+    wp_enqueue_style( 'weracoba-style', get_stylesheet_uri(), array(), '20181227', 'all' );
+	wp_enqueue_style( 'weracoba-print-style', get_template_directory_uri() . '/print.css', array(), '20181119', 'print' );
 	wp_enqueue_script( 'weracoba-functions', get_template_directory_uri() . '/js/functions.js', array(), '20181105', true );
 	wp_enqueue_script( 'weracoba-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 	wp_enqueue_script( 'weracoba-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
@@ -203,10 +205,11 @@ add_action( 'enqueue_block_editor_assets', 'weracoba_editor_styles' );
 /**
  *
  */
-function custom_excerpt_more( $more ) {
-	return '... <a href="' . esc_url( get_permalink() ) . '" rel="bookmark" class="excerpt-more">' . __( 'read more', 'weracoba' ) . '</a>';
+function weracoba_excerpt_more( $more ) {
+	//return '... <a href="' . esc_url( get_permalink() ) . '" rel="bookmark" class="excerpt-more">' . __( 'read more', 'weracoba' ) . '</a>';
+    return '&hellip;';
 }
-add_filter( 'excerpt_more', 'custom_excerpt_more' );
+add_filter( 'excerpt_more', 'weracoba_excerpt_more' );
 
 /**
  * Implement the Custom Header feature.
@@ -253,3 +256,23 @@ function prefix_widget_tag_cloud_args( $args ) {
 }
  
 add_filter( 'widget_tag_cloud_args',    'prefix_widget_tag_cloud_args' );
+
+/**
+ * SVG Icons class.
+ */
+require get_template_directory() . '/classes/class-weracoba-svg-icons.php';
+
+/**
+ * SVG Icons related functions.
+ */
+require get_template_directory() . '/inc/icon-functions.php';
+
+/**
+ * Custom Private post prefix.
+ * This is disabled because it conflicts with plugins that don't sanitize the title properly. 
+ */
+
+function weracoba_private_title_format( $prepend ) {
+    return twentynineteen_get_icon_svg( 'lock', 28 ) . ' <span class="screen-reader-text">' . __( 'Private:', 'weracoba' ) . '</span> %s';
+}
+//add_filter( 'private_title_format', 'weracoba_private_title_format' );
