@@ -25,6 +25,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 ----------------------------------------------------------------
 # Normalize
 # Typography
+# Colors
 # Elements
     ## Forms
     ## Links
@@ -64,6 +65,11 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Typography
 --------------------------------------------------------------*/
 @import "sass/typography";
+
+/*--------------------------------------------------------------
+# Colors
+--------------------------------------------------------------*/
+@import "sass/colors";
 
 /*--------------------------------------------------------------
 # Elements

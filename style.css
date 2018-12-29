@@ -25,6 +25,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 ----------------------------------------------------------------
 # Normalize
 # Typography
+# Colors
 # Elements
     ## Forms
     ## Links
@@ -664,6 +665,9 @@ p.wp-block-subhead {
   .wp-block-cover-image .wp-block-cover-image-text {
     font-size: 2.75em; } }
 
+/*--------------------------------------------------------------
+# Colors
+--------------------------------------------------------------*/
 /*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
@@ -1842,7 +1846,7 @@ article.format-aside {
 .archive-view .entry-meta {
   padding-top: 1em;
   padding-top: 0;
-  margin: 0;
+  margin: 0 0 1em 0;
   min-height: 0; }
   .archive-view .entry-meta > * {
     display: inline-block;
@@ -1922,7 +1926,9 @@ article.format-aside {
   .archive-view .format-aside {
     margin-left: auto;
     margin-right: auto;
-    padding-top: .5em; } }
+    padding-top: .5em; }
+  .archive-view .entry-meta {
+    margin-bottom: 0; } }
 
 @media screen and (min-width: 1023px) {
   .archive-view .site-content {
