@@ -290,21 +290,21 @@ p.wp-block-subhead {
 .wp-block-button.is-style-outline .wp-block-button__link {
     
     &:not(.has-text-color) {
-        color: $color-link;
+        color: $color-bg-button;
         
         &:hover,
         &:focus {
-            color: $color-link;
+            color: $color-bg-button;
         }
     }
     
     &:not(.has-background) {
         background: transparent;
-        border-color: $color-link;
+        border-color: $color-border-button;
         
         &:hover,
         &:focus {
-            border-color: $color-link-hover;
+            border-color: $color-border-button-hover;
         }
     }
 }
