@@ -76,18 +76,19 @@
             // copied from _widgets.scss
             padding: 0;
             list-style: none;
-            li a {
-                display: block;
-                padding: .75em 0;
-                text-decoration: none;
+            li {
                 border-bottom: 1px dashed $color-border;
-
-                &:hover,
-                &:focus {
+                padding: .75em 0;
+                a {
+                    display: block;
                     text-decoration: none;
-                    border-bottom: 1px dashed $color-border;
+
+                    &:hover,
+                    &:focus {
+                        text-decoration: none;
+                    }
                 }
-            }
+            } 
         }
     }
 }

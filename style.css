@@ -2141,14 +2141,14 @@ article.format-aside {
 .home .wp-block-columns .wp-block-latest-posts {
   padding: 0;
   list-style: none; }
-  .home .wp-block-columns .wp-block-latest-posts li a {
-    display: block;
-    padding: .75em 0;
-    text-decoration: none;
-    border-bottom: 1px dashed #c2cfcf; }
-    .home .wp-block-columns .wp-block-latest-posts li a:hover, .home .wp-block-columns .wp-block-latest-posts li a:focus {
-      text-decoration: none;
-      border-bottom: 1px dashed #c2cfcf; }
+  .home .wp-block-columns .wp-block-latest-posts li {
+    border-bottom: 1px dashed #c2cfcf;
+    padding: .75em 0; }
+    .home .wp-block-columns .wp-block-latest-posts li a {
+      display: block;
+      text-decoration: none; }
+      .home .wp-block-columns .wp-block-latest-posts li a:hover, .home .wp-block-columns .wp-block-latest-posts li a:focus {
+        text-decoration: none; }
 
 @media (min-width: 735px) {
   .wp-block-columns {
