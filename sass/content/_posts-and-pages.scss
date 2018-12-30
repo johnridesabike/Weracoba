@@ -204,6 +204,17 @@ article.format-aside {
     }
 }
 
+/* JetPack social stuff */
+
+.sharedaddy {
+    max-width: 100% !important;
+    font-family: $font-UI;
+
+    .sd-title {
+        font-family: $font-UI !important;
+    }
+}
+
 /* Media queries */
 
 @media screen and (min-width: $breakpoint-1) {
