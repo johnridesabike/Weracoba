@@ -70,8 +70,10 @@
     // content: ":";
 }
 .breadcrumbs-nav {
-    margin-top: .5em;
-    margin-left: .5em;
+    margin-top: .2em;
+    margin-bottom: 1em;
+    font-size: .9em;
+    color: $color-text-secondary;
     
     .widget {
         margin: 0;
