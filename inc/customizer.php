@@ -48,6 +48,7 @@ function weracoba_customize_register( $wp_customize ) {
     ));
 }
 add_action( 'customize_register', 'weracoba_customize_register' );
+
 function get_categories_cheat_sheet() {
     $cats = get_categories();
     $results = '';
