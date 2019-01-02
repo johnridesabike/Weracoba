@@ -66,29 +66,10 @@
 */
 .home {
     .wp-block-columns {
-        
         svg {
             display: block;
             margin: auto;
             color: $color-headers;
-        }
-        .wp-block-latest-posts {
-            // copied from _widgets.scss
-            padding: 0;
-            list-style: none;
-            li {
-                border-bottom: 1px dashed $color-border;
-                padding: .75em 0;
-                a {
-                    display: block;
-                    text-decoration: none;
-
-                    &:hover,
-                    &:focus {
-                        text-decoration: none;
-                    }
-                }
-            } 
         }
     }
 }

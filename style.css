@@ -630,6 +630,18 @@ p.wp-block-subhead {
   .wp-block-button.is-style-outline .wp-block-button__link:not(.has-background):hover, .wp-block-button.is-style-outline .wp-block-button__link:not(.has-background):focus {
     border-color: #01b0bb; }
 
+.wp-block-latest-posts {
+  padding: 0;
+  list-style: none; }
+  .wp-block-latest-posts li {
+    border-bottom: 1px dashed #c2cfcf;
+    padding: .75em 0; }
+    .wp-block-latest-posts li a {
+      display: block;
+      text-decoration: none; }
+      .wp-block-latest-posts li a:hover, .wp-block-latest-posts li a:focus {
+        text-decoration: none; }
+
 /* Depreciating Dashicons
 .wp-block-button.download .wp-block-button__link:before {
     @include dashicon($glyph-download);
@@ -701,9 +713,23 @@ ul, ol {
 
 ul {
   list-style: disc; }
+  ul ul {
+    list-style: circle; }
+    ul ul ul {
+      list-style: square; }
+      ul ul ul ul {
+        list-style: initial; }
 
 ol {
   list-style: decimal; }
+  ol ol {
+    list-style: upper-alpha; }
+    ol ol ol {
+      list-style: lower-roman; }
+      ol ol ol ol {
+        list-style: lower-alpha; }
+        ol ol ol ol ol {
+          list-style: initial; }
 
 li > ul,
 li > ol {
@@ -2149,18 +2175,6 @@ article.format-aside {
   display: block;
   margin: auto;
   color: #10474b; }
-
-.home .wp-block-columns .wp-block-latest-posts {
-  padding: 0;
-  list-style: none; }
-  .home .wp-block-columns .wp-block-latest-posts li {
-    border-bottom: 1px dashed #c2cfcf;
-    padding: .75em 0; }
-    .home .wp-block-columns .wp-block-latest-posts li a {
-      display: block;
-      text-decoration: none; }
-      .home .wp-block-columns .wp-block-latest-posts li a:hover, .home .wp-block-columns .wp-block-latest-posts li a:focus {
-        text-decoration: none; }
 
 @media (min-width: 735px) {
   .wp-block-columns {

@@ -216,6 +216,17 @@
     border-color: #017680; }
     .edit-post-visual-editor .wp-block-button.is-style-outline .wp-block-button__link:not(.has-background):hover, .edit-post-visual-editor .wp-block-button.is-style-outline .wp-block-button__link:not(.has-background):focus {
       border-color: #01b0bb; }
+  .edit-post-visual-editor .wp-block-latest-posts {
+    padding: 0;
+    list-style: none; }
+    .edit-post-visual-editor .wp-block-latest-posts li {
+      border-bottom: 1px dashed #c2cfcf;
+      padding: .75em 0; }
+      .edit-post-visual-editor .wp-block-latest-posts li a {
+        display: block;
+        text-decoration: none; }
+        .edit-post-visual-editor .wp-block-latest-posts li a:hover, .edit-post-visual-editor .wp-block-latest-posts li a:focus {
+          text-decoration: none; }
   @media screen and (min-width: 735px) {
     .edit-post-visual-editor {
       /* Header */
@@ -246,5 +257,166 @@
         font-size: 2.5em; }
       .edit-post-visual-editor .wp-block-cover-image .wp-block-cover-image-text {
         font-size: 2.75em; } }
+  .edit-post-visual-editor .editor-rich-text {
+    /* Lists */
+    /* Tables */
+    /*--------------------------------------------------------------
+## Forms
+--------------------------------------------------------------*/
+    /*--------------------------------------------------------------
+## Links
+--------------------------------------------------------------*/ }
+    .edit-post-visual-editor .editor-rich-text html {
+      box-sizing: border-box; }
+    .edit-post-visual-editor .editor-rich-text *,
+    .edit-post-visual-editor .editor-rich-text *:before,
+    .edit-post-visual-editor .editor-rich-text *:after {
+      /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+      box-sizing: inherit; }
+    .edit-post-visual-editor .editor-rich-text body {
+      background: white;
+      /* Fallback for when there is no custom background color defined. */ }
+    .edit-post-visual-editor .editor-rich-text body.archive-view,
+    .edit-post-visual-editor .editor-rich-text body.attachment,
+    .edit-post-visual-editor .editor-rich-text body.single-format-aside {
+      background: #e0e8e7; }
+    .edit-post-visual-editor .editor-rich-text hr {
+      background-color: #ccc;
+      border: 0;
+      height: 1px;
+      margin-bottom: 1.5em; }
+    .edit-post-visual-editor .editor-rich-text ul, .edit-post-visual-editor .editor-rich-text ol {
+      margin: 0 0 1.5em 0; }
+    .edit-post-visual-editor .editor-rich-text ul {
+      list-style: disc; }
+      .edit-post-visual-editor .editor-rich-text ul ul {
+        list-style: circle; }
+        .edit-post-visual-editor .editor-rich-text ul ul ul {
+          list-style: square; }
+          .edit-post-visual-editor .editor-rich-text ul ul ul ul {
+            list-style: initial; }
+    .edit-post-visual-editor .editor-rich-text ol {
+      list-style: decimal; }
+      .edit-post-visual-editor .editor-rich-text ol ol {
+        list-style: upper-alpha; }
+        .edit-post-visual-editor .editor-rich-text ol ol ol {
+          list-style: lower-roman; }
+          .edit-post-visual-editor .editor-rich-text ol ol ol ol {
+            list-style: lower-alpha; }
+            .edit-post-visual-editor .editor-rich-text ol ol ol ol ol {
+              list-style: initial; }
+    .edit-post-visual-editor .editor-rich-text li > ul,
+    .edit-post-visual-editor .editor-rich-text li > ol {
+      margin-bottom: 0;
+      margin-left: 1.5em; }
+    .edit-post-visual-editor .editor-rich-text dt {
+      font-weight: 700; }
+    .edit-post-visual-editor .editor-rich-text dd {
+      margin: 0 1.5em 1.5em; }
+    .edit-post-visual-editor .editor-rich-text blockquote {
+      /* margin: 0 1.5em; */
+      padding: 0 1.5em;
+      /* use padding to avoid conflict with post content margins */
+      border-left: 4px solid #017680; }
+    .edit-post-visual-editor .editor-rich-text address {
+      margin: 0 0 1.5em; }
+    .edit-post-visual-editor .editor-rich-text img {
+      height: auto;
+      /* Make sure images are scaled correctly. */
+      max-width: 100%;
+      /* Adhere to container width. */ }
+    .edit-post-visual-editor .editor-rich-text svg {
+      transition: fill 120ms ease-in-out;
+      fill: currentColor; }
+    .edit-post-visual-editor .editor-rich-text figure {
+      margin: 1em 0;
+      /* Extra wide images within figure tags don't overflow the content area. */ }
+    .edit-post-visual-editor .editor-rich-text table {
+      margin: 0 0 1.5em;
+      width: 100%;
+      border-collapse: collapse; }
+    .edit-post-visual-editor .editor-rich-text th, .edit-post-visual-editor .editor-rich-text td {
+      border: 1px solid black;
+      padding: 0 6px; }
+    .edit-post-visual-editor .editor-rich-text input[type="text"],
+    .edit-post-visual-editor .editor-rich-text input[type="email"],
+    .edit-post-visual-editor .editor-rich-text input[type="url"],
+    .edit-post-visual-editor .editor-rich-text input[type="password"],
+    .edit-post-visual-editor .editor-rich-text input[type="search"],
+    .edit-post-visual-editor .editor-rich-text input[type="number"],
+    .edit-post-visual-editor .editor-rich-text input[type="tel"],
+    .edit-post-visual-editor .editor-rich-text input[type="range"],
+    .edit-post-visual-editor .editor-rich-text input[type="date"],
+    .edit-post-visual-editor .editor-rich-text input[type="month"],
+    .edit-post-visual-editor .editor-rich-text input[type="week"],
+    .edit-post-visual-editor .editor-rich-text input[type="time"],
+    .edit-post-visual-editor .editor-rich-text input[type="datetime"],
+    .edit-post-visual-editor .editor-rich-text input[type="datetime-local"],
+    .edit-post-visual-editor .editor-rich-text input[type="color"],
+    .edit-post-visual-editor .editor-rich-text textarea {
+      color: #666;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      padding: 3px;
+      max-width: 100%; }
+      .edit-post-visual-editor .editor-rich-text input[type="text"]:focus,
+      .edit-post-visual-editor .editor-rich-text input[type="email"]:focus,
+      .edit-post-visual-editor .editor-rich-text input[type="url"]:focus,
+      .edit-post-visual-editor .editor-rich-text input[type="password"]:focus,
+      .edit-post-visual-editor .editor-rich-text input[type="search"]:focus,
+      .edit-post-visual-editor .editor-rich-text input[type="number"]:focus,
+      .edit-post-visual-editor .editor-rich-text input[type="tel"]:focus,
+      .edit-post-visual-editor .editor-rich-text input[type="range"]:focus,
+      .edit-post-visual-editor .editor-rich-text input[type="date"]:focus,
+      .edit-post-visual-editor .editor-rich-text input[type="month"]:focus,
+      .edit-post-visual-editor .editor-rich-text input[type="week"]:focus,
+      .edit-post-visual-editor .editor-rich-text input[type="time"]:focus,
+      .edit-post-visual-editor .editor-rich-text input[type="datetime"]:focus,
+      .edit-post-visual-editor .editor-rich-text input[type="datetime-local"]:focus,
+      .edit-post-visual-editor .editor-rich-text input[type="color"]:focus,
+      .edit-post-visual-editor .editor-rich-text textarea:focus {
+        color: #111; }
+    .edit-post-visual-editor .editor-rich-text select {
+      border: 1px solid #ccc; }
+    .edit-post-visual-editor .editor-rich-text textarea {
+      width: 100%; }
+    .edit-post-visual-editor .editor-rich-text button,
+    .edit-post-visual-editor .editor-rich-text input[type="button"],
+    .edit-post-visual-editor .editor-rich-text input[type="reset"],
+    .edit-post-visual-editor .editor-rich-text input[type="submit"] {
+      padding: .2rem .75rem;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+      text-decoration: none;
+      border: 2px solid #017680;
+      border-radius: 23px; }
+      .edit-post-visual-editor .editor-rich-text button:hover, .edit-post-visual-editor .editor-rich-text button:focus,
+      .edit-post-visual-editor .editor-rich-text input[type="button"]:hover,
+      .edit-post-visual-editor .editor-rich-text input[type="button"]:focus,
+      .edit-post-visual-editor .editor-rich-text input[type="reset"]:hover,
+      .edit-post-visual-editor .editor-rich-text input[type="reset"]:focus,
+      .edit-post-visual-editor .editor-rich-text input[type="submit"]:hover,
+      .edit-post-visual-editor .editor-rich-text input[type="submit"]:focus {
+        border-color: #01b0bb; }
+      .edit-post-visual-editor .editor-rich-text button:not(.has-text-color),
+      .edit-post-visual-editor .editor-rich-text input[type="button"]:not(.has-text-color),
+      .edit-post-visual-editor .editor-rich-text input[type="reset"]:not(.has-text-color),
+      .edit-post-visual-editor .editor-rich-text input[type="submit"]:not(.has-text-color) {
+        color: white; }
+      .edit-post-visual-editor .editor-rich-text button:not(.has-background),
+      .edit-post-visual-editor .editor-rich-text input[type="button"]:not(.has-background),
+      .edit-post-visual-editor .editor-rich-text input[type="reset"]:not(.has-background),
+      .edit-post-visual-editor .editor-rich-text input[type="submit"]:not(.has-background) {
+        background: #017680; }
+    .edit-post-visual-editor .editor-rich-text a {
+      color: #017680;
+      text-decoration: none; }
+      .edit-post-visual-editor .editor-rich-text a:visited {
+        color: #017680; }
+      .edit-post-visual-editor .editor-rich-text a:hover, .edit-post-visual-editor .editor-rich-text a:focus, .edit-post-visual-editor .editor-rich-text a:active {
+        color: #01b0bb; }
+      .edit-post-visual-editor .editor-rich-text a:focus {
+        outline: thin dotted; }
+      .edit-post-visual-editor .editor-rich-text a:hover, .edit-post-visual-editor .editor-rich-text a:active {
+        outline: 0; }
 
 /*# sourceMappingURL=style-editor.css.map */
