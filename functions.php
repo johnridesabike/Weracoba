@@ -153,7 +153,7 @@ function weracoba_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => esc_html__( 'Bottom Footer', 'weracoba' ),
+		'name'          => esc_html__( 'Colophon', 'weracoba' ),
 		'id'            => 'footer-1',
 		'description'   => esc_html__( 'Widgets here will be shown at the very bottom of all pages.', 'weracoba' ),
         'class'         => '',

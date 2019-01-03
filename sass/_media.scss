@@ -167,6 +167,10 @@ object {
     @include full-bleed;
 }
 
+.alignwide.wp-block-image {
+    max-width: inherit; //override this style for regular .wp-block-image
+}
+
 .alignfull {
     width: 100vw !important;
     max-width: 100vw !important;
