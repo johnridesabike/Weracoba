@@ -19,9 +19,7 @@
 
 .single .entry-header {
     @extend %site-content;
-}
-.entry-header-wrap {
-    //margin-top: 1em;
+    color: $color-text-secondary;
 }
 .entry-title {
     margin: 0;
@@ -30,17 +28,9 @@
     font-size: 1.3em;
     margin-bottom: .5em;
     display: block;
-    color: $color-text-secondary;
-
-    /* Replaced by SVG
-    &:before {
-        @include dashicon($glyph-category);
-        color: $color-link;
-    }*/
+    //color: $color-text-secondary;
 }
 .entry-meta {
-    color: $color-text-secondary;
-    
     @include avatar(48px);
     
     .byline {
@@ -55,14 +45,6 @@
         display: none !important;
     }
 }
-/*.posted-on a {
-    color: $color-text-secondary;
-    
-    &:hover,
-    &:focus {
-        color: $color-link-hover;
-    }
-}*/
 
 /** Entry Header Media Queries **/
 
@@ -109,10 +91,6 @@
     color: $color-text-secondary;
     font-size: 1.3em;
 }
-/* Replaced by SVG
-.tags-links:before {
-    @include dashicon($glyph-tags);
-}*/
 
 /** Post body **/
 

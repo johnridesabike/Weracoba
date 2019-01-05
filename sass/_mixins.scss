@@ -120,13 +120,8 @@ $columns-margin: 3.8%;
     padding: .2rem .75rem;
 	font-family: $font-UI;
 	text-decoration: none;
-    border: 2px solid $color-border-button;
-    border-radius: 23px; // from Gutenberg style
-
-    &:hover,
-    &:focus {
-        border-color: $color-border-button-hover;
-    }
+    border: 2px solid currentcolor;
+    border-radius: 8px;
 
     &:not(.has-text-color) {
         color: $color-bg-body;
@@ -135,6 +130,11 @@ $columns-margin: 3.8%;
     &:not(.has-background) {
         background: $color-bg-button;
     }
+
+    &:hover,
+    &:focus {
+        opacity: .9;
+    }
 }
 
 @mixin button-outline {
@@ -142,38 +142,11 @@ $columns-margin: 3.8%;
     padding: .2rem .5rem; // testing...
     font-family: $font-UI;
     text-decoration: none;
-    border: 2px solid $color-border-button;
-    border-radius: 23px;
+    border: 2px solid currentcolor;
+    border-radius: 8px;
     &:hover,
     &:focus {
-        border-color: $color-border-button-hover;
-    }
-}
-
-@mixin gutenberg-button {
-    padding: .6em 1.4em;
-	font-family: $font-UI;
-	//font-size: .875em;
-	//line-height: 1.3em;
-	text-decoration: none;
-    border: 1px solid $color-border-button;
-
-    &:not(.has-text-color) {
-        color: $color-bg-body;
-
-        &:hover,
-        &:focus {
-            color: $color-bg-body;
-        }
-    }
-
-    &:not(.has-background) {
-        background: $color-link;
-
-        &:hover,
-        &:focus {
-            background: $color-link-hover;
-        }
+        opacity: .9;
     }
 }
 
@@ -240,15 +213,6 @@ $opacity-overlay: .25;
         display: inline-block;
         margin: 0 .5em;
     }
-
-    //> *:after {
-    //    content: " |";
-    //    color: $color-border;
-    //    @media screen and (min-width: $breakpoint-1) {
-    //        margin: 0 0.5em;
-    //    }
-    //}
-
     > *:last-child:after {
         content: "";
         display: none;

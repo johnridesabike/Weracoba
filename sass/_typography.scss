@@ -294,17 +294,17 @@ p.wp-block-subhead {
         
         &:hover,
         &:focus {
-            color: $color-bg-button;
+            color: $color-link-hover;
         }
     }
     
     &:not(.has-background) {
         background: transparent;
-        border-color: $color-border-button;
+        border-color: currentcolor;
         
         &:hover,
         &:focus {
-            border-color: $color-border-button-hover;
+            border-color: currentcolor;
         }
     }
 }

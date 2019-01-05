@@ -4,10 +4,6 @@
     display: flex; // this fixes a weird bug
     flex-flow: column; // this fixes a weird bug
     @include drop-shadow-bottom;
-
-    a {
-        color: $color-link;
-    }
 }
 .site-header-wrapper {
     padding-left: 1em;

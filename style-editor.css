@@ -307,14 +307,8 @@
   padding: .2rem .75rem;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   text-decoration: none;
-  border: 2px solid #017680;
-  border-radius: 23px;
-}
-
-.edit-post-visual-editor .wp-block-button .wp-block-button__link:hover, .edit-post-visual-editor .wp-block-button .wp-block-button__link:focus,
-.edit-post-visual-editor .wp-block-file a.wp-block-file__button:hover,
-.edit-post-visual-editor .wp-block-file a.wp-block-file__button:focus {
-  border-color: #01b0bb;
+  border: 2px solid currentcolor;
+  border-radius: 8px;
 }
 
 .edit-post-visual-editor .wp-block-button .wp-block-button__link:not(.has-text-color),
@@ -327,6 +321,12 @@
   background: #017680;
 }
 
+.edit-post-visual-editor .wp-block-button .wp-block-button__link:hover, .edit-post-visual-editor .wp-block-button .wp-block-button__link:focus,
+.edit-post-visual-editor .wp-block-file a.wp-block-file__button:hover,
+.edit-post-visual-editor .wp-block-file a.wp-block-file__button:focus {
+  opacity: .9;
+}
+
 .edit-post-visual-editor .wp-block-button.is-style-squared .wp-block-button__link {
   border-radius: 0;
 }
@@ -336,16 +336,16 @@
 }
 
 .edit-post-visual-editor .wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color):hover, .edit-post-visual-editor .wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color):focus {
-  color: #017680;
+  color: #01b0bb;
 }
 
 .edit-post-visual-editor .wp-block-button.is-style-outline .wp-block-button__link:not(.has-background) {
   background: transparent;
-  border-color: #017680;
+  border-color: currentcolor;
 }
 
 .edit-post-visual-editor .wp-block-button.is-style-outline .wp-block-button__link:not(.has-background):hover, .edit-post-visual-editor .wp-block-button.is-style-outline .wp-block-button__link:not(.has-background):focus {
-  border-color: #01b0bb;
+  border-color: currentcolor;
 }
 
 .edit-post-visual-editor .wp-block-latest-posts {
@@ -607,18 +607,8 @@
   padding: .2rem .75rem;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   text-decoration: none;
-  border: 2px solid #017680;
-  border-radius: 23px;
-}
-
-.edit-post-visual-editor .editor-rich-text button:hover, .edit-post-visual-editor .editor-rich-text button:focus,
-.edit-post-visual-editor .editor-rich-text input[type="button"]:hover,
-.edit-post-visual-editor .editor-rich-text input[type="button"]:focus,
-.edit-post-visual-editor .editor-rich-text input[type="reset"]:hover,
-.edit-post-visual-editor .editor-rich-text input[type="reset"]:focus,
-.edit-post-visual-editor .editor-rich-text input[type="submit"]:hover,
-.edit-post-visual-editor .editor-rich-text input[type="submit"]:focus {
-  border-color: #01b0bb;
+  border: 2px solid currentcolor;
+  border-radius: 8px;
 }
 
 .edit-post-visual-editor .editor-rich-text button:not(.has-text-color),
@@ -633,6 +623,16 @@
 .edit-post-visual-editor .editor-rich-text input[type="reset"]:not(.has-background),
 .edit-post-visual-editor .editor-rich-text input[type="submit"]:not(.has-background) {
   background: #017680;
+}
+
+.edit-post-visual-editor .editor-rich-text button:hover, .edit-post-visual-editor .editor-rich-text button:focus,
+.edit-post-visual-editor .editor-rich-text input[type="button"]:hover,
+.edit-post-visual-editor .editor-rich-text input[type="button"]:focus,
+.edit-post-visual-editor .editor-rich-text input[type="reset"]:hover,
+.edit-post-visual-editor .editor-rich-text input[type="reset"]:focus,
+.edit-post-visual-editor .editor-rich-text input[type="submit"]:hover,
+.edit-post-visual-editor .editor-rich-text input[type="submit"]:focus {
+  opacity: .9;
 }
 
 .edit-post-visual-editor .editor-rich-text a {

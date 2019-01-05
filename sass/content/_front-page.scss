@@ -7,59 +7,59 @@
     }
 }
 
-.cat-blocks {
-    display: flex;
-    justify-content: center;
-    flex-flow: row;
-    flex-wrap: wrap;
+// .cat-blocks {
+//     display: flex;
+//     justify-content: center;
+//     flex-flow: row;
+//     flex-wrap: wrap;
 
-    .entry-title,
-    .cat-title {
-        font-size: 1.5em;
-        text-align: center;
-        margin: 0;
-    }
+//     .entry-title,
+//     .cat-title {
+//         font-size: 1.5em;
+//         text-align: center;
+//         margin: 0;
+//     }
 
-    p {
-        font-size: .9em;
-        &.wp-block-cover-image-text {
-            font-size: 1.2em;
-        }
-    }
-}
+//     p {
+//         font-size: .9em;
+//         &.wp-block-cover-image-text {
+//             font-size: 1.2em;
+//         }
+//     }
+// }
 
-.cat-block-wrap {
-    border: 1px solid $color-border;
-    margin: 0 .5em 1.5em .5em;
-    overflow:hidden;
-    @include drop-shadow;
-    background: $color-bg-header;
-    max-width: 320px;
-}
+// .cat-block-wrap {
+//     border: 1px solid $color-border;
+//     margin: 0 .5em 1.5em .5em;
+//     overflow:hidden;
+//     @include drop-shadow;
+//     background: $color-bg-header;
+//     max-width: 320px;
+// }
 
-.cat-block {
-	position: relative;
-    min-height: 20em;
-    margin: 0;
-    height: 100%;
-    padding-bottom: 1px; /* fixes the overlay link in Firefox */
+// .cat-block {
+// 	position: relative;
+//     min-height: 20em;
+//     margin: 0;
+//     height: 100%;
+//     padding-bottom: 1px; /* fixes the overlay link in Firefox */
     
-    p {
-        margin-left: .5em;
-        margin-right: .5em;
-        font-size: 1.2em;
-        color: $color-text-secondary;
-        z-index: 1;
-    }
+//     p {
+//         margin-left: .5em;
+//         margin-right: .5em;
+//         font-size: 1.2em;
+//         color: $color-text-secondary;
+//         z-index: 1;
+//     }
     
-    img {
-        width: 100%;
-    }
-}
+//     img {
+//         width: 100%;
+//     }
+// }
 
-.overlay-link {
-    @include link-overlay;
-}
+// .overlay-link {
+//     @include link-overlay;
+// }
 
 /*
  * Begin custom home page experiments
