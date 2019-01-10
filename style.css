@@ -988,7 +988,7 @@ textarea {
   width: 100%;
 }
 
-button,
+button:not(.components-button),
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
@@ -999,21 +999,21 @@ input[type="submit"] {
   border-radius: 8px;
 }
 
-button:not(.has-text-color),
+button:not(.components-button):not(.has-text-color),
 input[type="button"]:not(.has-text-color),
 input[type="reset"]:not(.has-text-color),
 input[type="submit"]:not(.has-text-color) {
   color: white;
 }
 
-button:not(.has-background),
+button:not(.components-button):not(.has-background),
 input[type="button"]:not(.has-background),
 input[type="reset"]:not(.has-background),
 input[type="submit"]:not(.has-background) {
   background: #017680;
 }
 
-button:hover, button:focus,
+button:not(.components-button):hover, button:not(.components-button):focus,
 input[type="button"]:hover,
 input[type="button"]:focus,
 input[type="reset"]:hover,
