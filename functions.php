@@ -7,6 +7,20 @@
  * @package Weracoba
  */
 
+ /**
+  * TODO
+  * - Change category and tag UI on single posts
+  * - Fix column CSS on small screens
+  * - CSS generic figcaption?
+  * - CSS figcaption gradient?
+  * - CSS editor underline <a>
+  * - Change comment form
+  * - Fix Jetpack infinite scroll
+  * - Customize Jetpack related posts https://jetpack.com/support/related-posts/customize-related-posts/
+  * - Customizer: colors
+  * - Customizer: header image
+  */
+
 if ( ! function_exists( 'weracoba_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -129,10 +143,12 @@ add_action( 'after_setup_theme', 'weracoba_setup' );
  * @global int $content_width
  */
 function weracoba_content_width() {
-	// This variable is intended to be overruled from themes.
+	// _variables.scss: $size-max-width
+	// Jetpack's CDN will resize images based on this setting.
+	// Gallery thumbnails will be sized based on this setting.
 	// Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
 	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
-	$GLOBALS['content_width'] = apply_filters( 'weracoba_content_width', 750 );
+	$GLOBALS['content_width'] = apply_filters( 'weracoba_content_width', 1200 );
 }
 add_action( 'after_setup_theme', 'weracoba_content_width', 0 );
 
@@ -181,7 +197,7 @@ add_action( 'widgets_init', 'weracoba_widgets_init' );
  */
 function weracoba_scripts() {
 	//wp_enqueue_style( 'weracoba-style', get_stylesheet_uri(), array( 'dashicons' ), '20181109', 'all' );
-    wp_enqueue_style( 'weracoba-style', get_stylesheet_uri(), array(), '20181230', 'all' );
+    wp_enqueue_style( 'weracoba-style', get_stylesheet_uri(), array(), '20190111', 'all' );
 	wp_enqueue_style( 'weracoba-print-style', get_template_directory_uri() . '/print.css', array(), '20181230', 'print' );
 	wp_enqueue_script( 'weracoba-functions', get_template_directory_uri() . '/js/functions.js', array(), '20181105', true );
 	wp_enqueue_script( 'weracoba-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );

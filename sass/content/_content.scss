@@ -1,3 +1,9 @@
+.site {
+    /* fixes bug where full-bleed content creates horizontal scrollbar. May have undesireable side effects...? */
+    overflow-x: hidden;
+}
+
+
 %site-content {
     padding: 0 1rem;
 }
@@ -5,13 +11,8 @@
 .site-content {
     @extend %site-content;
     // so when .site-content gets extended elsewhere, it isn't affected by later changes
+    //overflow-x: scroll;
 }
-
-.site {
-    /* fixes bug where full-bleed content creates horizontal scrollbar. May have undesireable side effects...? */
-    overflow-x: hidden;
-}
-
 @media screen {
     .print {
         display: none;

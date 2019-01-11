@@ -642,7 +642,7 @@ big {
 }
 
 .wp-block-gallery .blocks-gallery-item figcaption {
-  font-size: .7em;
+  font-size: .8em;
 }
 
 .single .featured-image figcaption {
@@ -2088,13 +2088,13 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
-.site-content, .single .entry-header {
-  padding: 0 1rem;
-}
-
 .site {
   /* fixes bug where full-bleed content creates horizontal scrollbar. May have undesireable side effects...? */
   overflow-x: hidden;
+}
+
+.site-content, .single .entry-header {
+  padding: 0 1rem;
 }
 
 @media screen {

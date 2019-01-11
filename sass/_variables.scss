@@ -60,7 +60,7 @@ $breakpoint-2: 1023px; // iPad landscape
 $breakpoint-3: 1365px; // iPad pro landscape
 
 // Structure
-$size-max-width: 1200px;
+$size-max-width: 1200px; // WordPress global: $content_width
 $size-content: 750px;
 $size-content-page: 750px; //900px;
 $size-widget: 250px;
