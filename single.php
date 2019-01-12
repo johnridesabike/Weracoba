@@ -22,7 +22,6 @@ get_header();
             } elseif ( is_singular( 'post' ) ) {
                 // Previous/next post navigation.
                 ?>
-                <h2 class="post-navigation-title">Read more <?php echo get_the_category_list( esc_html_x( ', ', 'category seperator', 'weracoba' ) );?> posts.</h2>
                 <?php
                 $prev_icon = twentynineteen_get_icon_svg( 'chevron_left', 24 );
                 $next_icon = twentynineteen_get_icon_svg( 'chevron_right', 24 );

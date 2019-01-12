@@ -1467,7 +1467,6 @@ a:hover, a:active {
 .paging-navigation a {
   display: block;
   width: 100%;
-  background: white;
   font-size: 1.3em;
 }
 
@@ -1519,10 +1518,6 @@ a:hover, a:active {
 .attachment .paging-navigation a:hover,
 .attachment .paging-navigation a:focus {
   opacity: .9;
-}
-
-.post-navigation-title a {
-  text-decoration: underline;
 }
 
 .nav-links {
@@ -1584,13 +1579,7 @@ a:hover, a:active {
   .comment-navigation .nav-previous,
   .posts-navigation .nav-previous,
   .single-post .post-navigation .nav-previous {
-    float: left;
     padding-bottom: 0;
-  }
-  .comment-navigation .nav-next,
-  .posts-navigation .nav-next,
-  .single-post .post-navigation .nav-next {
-    float: right;
   }
   .comment-navigation .nav-previous,
   .comment-navigation .nav-next,
@@ -2139,14 +2128,14 @@ a:hover, a:active {
   color: #44484d;
 }
 
-.entry-title, .editor-post-title textarea {
-  margin: 0;
-}
-
-.cat-links {
+.single .entry-header .cat-links {
   font-size: 1.3em;
   margin-bottom: .5em;
   display: block;
+}
+
+.entry-title, .editor-post-title textarea {
+  margin: 0;
 }
 
 .entry-meta {
@@ -2247,14 +2236,69 @@ a:hover, a:active {
 }
 
 /** Entry Footer **/
-.single .entry-footer {
-  border-top: 1px solid #c2cfcf;
-  padding-top: 1em;
+.single .entry-footer,
+.single-post .post-navigation {
+  background: #e0e8e7;
+  padding: 1em;
+  margin-left: -1rem;
+  margin-right: -1rem;
 }
 
-.single .tags-links {
+.single .entry-footer {
+  border-top: 1px solid #c2cfcf;
   color: #44484d;
   font-size: 1.3em;
+}
+
+.single .entry-footer h3 {
+  font-size: 1em;
+}
+
+.single .entry-footer div.sharedaddy h3.sd-title:before,
+.single .entry-footer #jp-relatedposts h3.jp-relatedposts-headline em:before {
+  content: none;
+}
+
+.single .entry-footer div.sharedaddy h3.sd-title,
+.single .entry-footer #jp-relatedposts h3.jp-relatedposts-headline,
+.single .entry-footer #jp-relatedposts h3.jp-relatedposts-headline em,
+.single .entry-footer #jp-relatedposts .jp-relatedposts-items-visual h4.jp-relatedposts-post-title {
+  font-size: 1em;
+  font-weight: 400;
+}
+
+.single .entry-footer #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-context,
+.single .entry-footer #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-date {
+  opacity: 1;
+}
+
+.single .entry-footer #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post-nothumbs p.jp-relatedposts-post-excerpt {
+  margin-bottom: .5em;
+}
+
+.single .post-navigation {
+  border-bottom: 1px solid #c2cfcf;
+}
+
+@media screen and (min-width: 735px) {
+  .single .entry-footer,
+  .single-post .post-navigation {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    position: relative !important;
+    left: 50% !important;
+    right: 50% !important;
+    margin-left: -50vw !important;
+    margin-right: -50vw !important;
+  }
+  .single .entry-footer > *,
+  .single-post .post-navigation > * {
+    width: 1200px;
+    margin: auto;
+  }
+  .entry-footer #jp-relatedposts {
+    margin: auto;
+  }
 }
 
 /** Post body **/

@@ -20,15 +20,16 @@
 .single .entry-header {
     @extend %site-content;
     color: $color-text-secondary;
+
+    .cat-links {
+        font-size: 1.3em;
+        margin-bottom: .5em;
+        display: block;
+        //color: $color-text-secondary;
+    }
 }
 .entry-title {
     margin: 0;
-}
-.cat-links {
-    font-size: 1.3em;
-    margin-bottom: .5em;
-    display: block;
-    //color: $color-text-secondary;
 }
 .entry-meta {
     @include avatar(48px);
@@ -82,14 +83,67 @@
 }
 
 /** Entry Footer **/
+.single .entry-footer,
+.single-post .post-navigation {
+    background: $color-bg-body-alt;
+    padding: 1em;
+    @include full-bleed;
+}
 
 .single .entry-footer {
     border-top: 1px solid $color-border;
-    padding-top: 1em;
-}
-.single .tags-links {
     color: $color-text-secondary;
     font-size: 1.3em;
+
+    h3 {
+        font-size: 1em;
+    }
+    
+    // Fix Jetpack stuff
+    div.sharedaddy h3.sd-title:before,
+    #jp-relatedposts h3.jp-relatedposts-headline em:before {
+        content: none;
+    }
+    div.sharedaddy h3.sd-title,
+    #jp-relatedposts h3.jp-relatedposts-headline,
+    #jp-relatedposts h3.jp-relatedposts-headline em,
+    #jp-relatedposts .jp-relatedposts-items-visual h4.jp-relatedposts-post-title {
+        font-size: 1em;
+        font-weight: 400;
+    }
+    #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-context, 
+    #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-date {
+        opacity: 1;
+    }
+    #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post-nothumbs p.jp-relatedposts-post-excerpt {
+        margin-bottom: .5em;
+    }
+}
+
+.single .post-navigation {
+    border-bottom: 1px solid $color-border;
+}
+
+@media screen and (min-width: $breakpoint-1) {
+    .single .entry-footer,
+    .single-post .post-navigation {
+        width: 100vw !important;
+        max-width: 100vw !important;
+        position: relative !important;
+        left: 50% !important;
+        right: 50% !important;
+        margin-left: -50vw !important;
+        margin-right: -50vw !important;
+
+        > * {
+            width: $size-max-width;
+            margin: auto;
+        }
+    }
+
+    .entry-footer #jp-relatedposts {
+        margin: auto;
+    }
 }
 
 /** Post body **/

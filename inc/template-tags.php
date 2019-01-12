@@ -82,11 +82,51 @@ if ( ! function_exists( 'weracoba_entry_footer' ) ) :
 	 * Prints HTML with meta information for the categories, tags and comments.
 	 */
 	function weracoba_entry_footer() {
+        if ( function_exists( 'sharing_display' ) ) {
+            sharing_display( '', true );
+        }
+         
+        if ( class_exists( 'Jetpack_Likes' ) ) {
+            $custom_likes = new Jetpack_Likes;
+            echo $custom_likes->post_likes( '' );
+        }
+
 		// Hide category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
+            ?>
+            <h3>
+                <?php esc_html_e( 'This entry is filed under:', 'weracoba' );?>
+            </h3>
+            <?php
+            weracoba_category_list();
             weracoba_tag_list();
-		}
-	}
+        }
+        if ( class_exists( 'Jetpack_RelatedPosts' ) ) {
+            echo do_shortcode( '[jetpack-related-posts]' );
+        }
+    }
+    
+    /* 
+    * Remove the standard Jetpack features that we just added
+    */
+    function jptweak_remove_share() {
+        remove_filter( 'the_content', 'sharing_display', 19 );
+        remove_filter( 'the_excerpt', 'sharing_display', 19 );
+        if ( class_exists( 'Jetpack_Likes' ) ) {
+            remove_filter( 'the_content', array( Jetpack_Likes::init(), 'post_likes' ), 30, 1 );
+        }
+    }
+    add_action( 'loop_start', 'jptweak_remove_share' );
+    
+    function jetpackme_remove_rp() {
+        if ( class_exists( 'Jetpack_RelatedPosts' ) ) {
+            $jprp = Jetpack_RelatedPosts::init();
+            $callback = array( $jprp, 'filter_add_target_to_dom' );
+            remove_filter( 'the_content', $callback, 40 );
+        }
+    }
+    add_filter( 'wp', 'jetpackme_remove_rp', 20 );
+
 endif;
 
 if ( ! function_exists( 'weracoba_post_thumbnail' ) ) :
@@ -137,7 +177,7 @@ if ( ! function_exists( 'weracoba_category_list' ) ) :
 		if ( $categories_list ) {
 			/* translators: 1: SVG icon
                             2: list of categories. */
-			printf( '<span class="cat-links">' . esc_html__( '%1$s %2$s', 'weracoba' ) . '</span>',
+			printf( '<div class="cat-links">' . esc_html__( '%1$s %2$s', 'weracoba' ) . '</div>',
                     twentynineteen_get_icon_svg( 'archive', 16), $categories_list ); // WPCS: XSS OK.
 		}
 	}
@@ -149,10 +189,10 @@ if ( ! function_exists( 'weracoba_tag_list' ) ) :
         /* translators: There is a space before and after the text. */
         $tagged = esc_html__( ' Tagged ', 'weracoba' );
         echo get_the_tag_list(
-            '<span class="tags-links"> '. twentynineteen_get_icon_svg( 'tag', 16 ) . ' <span class="screen-reader-text">' . $tagged . "</span>", 
+            '<div class="tags-links"> '. twentynineteen_get_icon_svg( 'tag', 16 ) . ' <span class="screen-reader-text">' . $tagged . "</span>", 
             /* translators: used between list items, there is a space after the comma */
             esc_html_x( ', ', 'list item separator', 'weracoba' ),
-            '</span>' );
+            '</div>' );
 	}
 endif;
 

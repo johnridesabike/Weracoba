@@ -15,7 +15,7 @@
     a {
         display: block;
         width: 100%;
-        background: $color-bg-body;
+        //background: $color-bg-body;
         font-size: 1.3em;
         //@include button-outline;
     }
@@ -50,21 +50,12 @@
     }
 }
 
-.post-navigation-title {
-    a {
-        text-decoration: underline;
-    }
-}
-
 .nav-links {
     margin: 0 auto;
     padding: 0 0.4em; /* ? */
 }
 .nav-previous {
     padding-bottom: 1em;
-}
-.meta-nav:after {
-    // content: ":";
 }
 .breadcrumbs-nav {
     margin-top: .2em;
@@ -113,12 +104,12 @@
     .posts-navigation,
     .single-post .post-navigation {
         .nav-previous {
-            float: left;
+            //float: left;
             padding-bottom: 0;
         }
 
         .nav-next {
-            float: right;
+            //float: right;
         }
 
         .nav-previous,
