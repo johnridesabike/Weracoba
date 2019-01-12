@@ -114,6 +114,7 @@ big {
         line-height: calculate-line-height($font-reading-size, $size-content);
         h1, h2, h3, h4, h5, h6 {
             font-family: $font-reading;
+            line-height: 1.2;
         }
     }
 }
@@ -218,7 +219,7 @@ big {
 /* Media captions */
 
 %figcaption {
-    background: rgba(0, 0, 0, .5);
+    background: linear-gradient(0deg,rgba(0,0,0,.7) 0,rgba(0,0,0,.3) 80%,transparent); // rgba(0, 0, 0, .5);
     color: $color-text-light;
     padding: .2em .5em;
     font-family: $font-UI;
@@ -230,6 +231,8 @@ big {
 .single .featured-image figcaption {
     @extend %figcaption;
     font-size: .9em;
+    width: 100%;
+    text-align: right;
 }
 .entry-caption {
     font-size: 1.3em;
