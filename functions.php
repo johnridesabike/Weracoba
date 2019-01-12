@@ -14,6 +14,7 @@
   * - CSS generic figcaption?
   * - CSS figcaption gradient?
   * - CSS editor underline <a>
+  * - CSS header line-height (multiline headers)
   * - Change comment form
   * - Fix Jetpack infinite scroll
   * - Customize Jetpack related posts https://jetpack.com/support/related-posts/customize-related-posts/
