@@ -83,20 +83,20 @@
 }
 
 /** Entry Footer **/
-.single .entry-footer,
-.single-post .post-navigation {
-    background: $color-bg-body-alt;
-    padding: 1em;
-    @include full-bleed;
-}
-
 .single .entry-footer {
     border-top: 1px solid $color-border;
+    border-bottom: 1px solid $color-border;
+    background: $color-bg-body-alt;
+    padding: 0 1em 1em 1em;
+    @include full-bleed;
+
     color: $color-text-secondary;
     font-size: 1.3em;
 
     h3 {
         font-size: 1em;
+        line-height: 1.2;
+        margin: 1em 0;
     }
     
     // Fix Jetpack stuff
@@ -110,6 +110,8 @@
     #jp-relatedposts .jp-relatedposts-items-visual h4.jp-relatedposts-post-title {
         font-size: 1em;
         font-weight: 400;
+        margin: 1em 0;
+        line-height: 1.2;
     }
     #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-context, 
     #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-date {
@@ -120,13 +122,8 @@
     }
 }
 
-.single .post-navigation {
-    border-bottom: 1px solid $color-border;
-}
-
 @media screen and (min-width: $breakpoint-1) {
-    .single .entry-footer,
-    .single-post .post-navigation {
+    .single .entry-footer {
         width: 100vw !important;
         max-width: 100vw !important;
         position: relative !important;
@@ -135,9 +132,21 @@
         margin-left: -50vw !important;
         margin-right: -50vw !important;
 
-        > * {
-            width: $size-max-width;
+        .entry-footer-wrapper {
+            max-width: $size-max-width;
             margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+
+            > * {
+                margin-right: 1em;
+            }
+        }
+
+        .jp-relatedposts,
+        .post-navigation {
+            flex: 0 0 100%;
+            margin-right: 0; // cancel default margin
         }
     }
 

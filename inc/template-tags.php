@@ -94,20 +94,30 @@ if ( ! function_exists( 'weracoba_entry_footer' ) ) :
 		// Hide category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
             ?>
-            <h3>
-                <?php esc_html_e( 'This entry is filed under:', 'weracoba' );?>
-            </h3>
+            <div class="post-taxonomy">
+                <h3>
+                    <?php esc_html_e( 'This entry is filed under:', 'weracoba' );?>
+                </h3>
+                <?php
+                weracoba_category_list();
+                weracoba_tag_list();
+                ?>
+            </div><!--.post-taxonomy-->
             <?php
-            weracoba_category_list();
-            weracoba_tag_list();
         }
         if ( class_exists( 'Jetpack_RelatedPosts' ) ) {
             echo do_shortcode( '[jetpack-related-posts]' );
         }
+
+        if ( is_singular( 'attachment' ) ) {
+            weracoba_attachment_navigation();
+        } elseif ( is_singular( 'post' ) ) {
+            weracoba_post_navigation();
+        }
     }
     
     /* 
-    * Remove the standard Jetpack features that we just added
+    * Remove the standard Jetpack features that we just added to the footer
     */
     function jptweak_remove_share() {
         remove_filter( 'the_content', 'sharing_display', 19 );
@@ -255,6 +265,25 @@ if ( ! function_exists( 'weracoba_post_navigation' ) ) :
 		));
 	}
 endif;*/
+
+if ( ! function_exists( 'weracoba_post_navigation' ) ) :
+    function weracoba_post_navigation() {
+        $prev_icon = twentynineteen_get_icon_svg( 'chevron_left', 24 );
+        $next_icon = twentynineteen_get_icon_svg( 'chevron_right', 24 );
+        the_post_navigation(
+            array(
+                'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next Post', 'twentynineteen' ) . $next_icon . '</span> ' .
+                    '<span class="screen-reader-text">' . __( 'Next post:', 'twentynineteen' ) . '</span>' .
+                    '<span class="post-title">%title</span>',
+                'prev_text' => '<span class="meta-nav" aria-hidden="true">' . $prev_icon . __( 'Previous Post', 'twentynineteen' ) . '</span> ' .
+                    '<span class="screen-reader-text">' . __( 'Previous post:', 'twentynineteen' ) . '</span>' .
+                    '<span class="post-title">%title</span>',
+                
+                'in_same_term' => true,
+            )
+        );
+    }
+endif;
 
 if ( ! function_exists( 'weracoba_the_posts_pagination' ) ) :
 	/**

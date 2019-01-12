@@ -9,12 +9,12 @@
 
  /**
   * TODO
-  * - Change category and tag UI on single posts
   * - CSS generic figcaption
   * - CSS editor underline <a>
+  * - Improve entry footer
+  * - Large screen entry header layout
   * - Change comment form
   * - Fix Jetpack infinite scroll
-  * - Customize Jetpack related posts https://jetpack.com/support/related-posts/customize-related-posts/
   * - Customizer: colors
   * - Customizer: header image
   */

@@ -33,7 +33,9 @@
         ?>
         </div><!-- .entry-content -->
         <footer class="entry-footer">
+            <div class="entry-footer-wrapper">
             <?php weracoba_entry_footer(); ?>
+            </div><!-- .entry-footer-wrapper -->
         </footer><!-- .entry-footer -->
 	</div> <!-- .post-content -->
 </article><!-- #post-<?php the_ID(); ?> -->

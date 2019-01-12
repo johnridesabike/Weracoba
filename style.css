@@ -1467,7 +1467,6 @@ a:hover, a:active {
 .paging-navigation a {
   display: block;
   width: 100%;
-  font-size: 1.3em;
 }
 
 .pagination {
@@ -2236,22 +2235,21 @@ a:hover, a:active {
 }
 
 /** Entry Footer **/
-.single .entry-footer,
-.single-post .post-navigation {
-  background: #e0e8e7;
-  padding: 1em;
-  margin-left: -1rem;
-  margin-right: -1rem;
-}
-
 .single .entry-footer {
   border-top: 1px solid #c2cfcf;
+  border-bottom: 1px solid #c2cfcf;
+  background: #e0e8e7;
+  padding: 0 1em 1em 1em;
+  margin-left: -1rem;
+  margin-right: -1rem;
   color: #44484d;
   font-size: 1.3em;
 }
 
 .single .entry-footer h3 {
   font-size: 1em;
+  line-height: 1.2;
+  margin: 1em 0;
 }
 
 .single .entry-footer div.sharedaddy h3.sd-title:before,
@@ -2265,6 +2263,8 @@ a:hover, a:active {
 .single .entry-footer #jp-relatedposts .jp-relatedposts-items-visual h4.jp-relatedposts-post-title {
   font-size: 1em;
   font-weight: 400;
+  margin: 1em 0;
+  line-height: 1.2;
 }
 
 .single .entry-footer #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-context,
@@ -2276,13 +2276,8 @@ a:hover, a:active {
   margin-bottom: .5em;
 }
 
-.single .post-navigation {
-  border-bottom: 1px solid #c2cfcf;
-}
-
 @media screen and (min-width: 735px) {
-  .single .entry-footer,
-  .single-post .post-navigation {
+  .single .entry-footer {
     width: 100vw !important;
     max-width: 100vw !important;
     position: relative !important;
@@ -2291,10 +2286,24 @@ a:hover, a:active {
     margin-left: -50vw !important;
     margin-right: -50vw !important;
   }
-  .single .entry-footer > *,
-  .single-post .post-navigation > * {
-    width: 1200px;
+  .single .entry-footer .entry-footer-wrapper {
+    max-width: 1200px;
     margin: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .single .entry-footer .entry-footer-wrapper > * {
+    margin-right: 1em;
+  }
+  .single .entry-footer .jp-relatedposts,
+  .single .entry-footer .post-navigation {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+    margin-right: 0;
   }
   .entry-footer #jp-relatedposts {
     margin: auto;
