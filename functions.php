@@ -271,6 +271,47 @@ function prefix_widget_tag_cloud_args( $args ) {
 add_filter( 'widget_tag_cloud_args',    'prefix_widget_tag_cloud_args' );
 
 /**
+ * Customize comments
+ */
+add_filter( 'comment_form_default_fields', 
+	function ( $fields ) {
+		// Replace the * in each field with plain language instead
+		foreach( $fields as &$field) {
+			$field = str_replace (
+				'<span class="required">*</span>',
+				'<span class="required">' . esc_html__( '(required)', 'weracoba' ) . '</span>',
+				$field
+			);
+		}
+		// Add some SVGs
+		$fields['author'] = str_replace (
+			'<p class="comment-form-author"><label for="author">',
+			'<p class="comment-form-author"><label for="author">' . twentynineteen_get_icon_svg( 'person' ) . ' ',
+			$fields['author']
+		);
+		$fields['email'] = str_replace (
+			'<p class="comment-form-email"><label for="email">',
+			'<p class="comment-form-email"><label for="email">' . twentynineteen_get_social_icon_svg( 'mail' ) . ' ',
+			$fields['email']
+		);
+		$fields['url'] = str_replace (
+			'<p class="comment-form-url"><label for="url">',
+			'<p class="comment-form-url"><label for="url">' . twentynineteen_get_icon_svg( 'link' ) . ' ',
+			$fields['url']
+		);
+		return $fields;
+	}
+);
+
+add_filter( 'comment_form_defaults',
+	function ( $fields ) {
+		// Remove the * warning at the top
+		$fields['comment_notes_before'] = '<p class="comment-notes"><span id="email-notes">' . __( 'Your email address will not be published.' ) . '</span></p>';
+		return $fields;
+	}
+);
+
+/**
  * SVG Icons class.
  */
 require get_template_directory() . '/classes/class-weracoba-svg-icons.php';

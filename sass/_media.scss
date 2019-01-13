@@ -24,13 +24,13 @@ object {
 --------------------------------------------------------------*/
 .alignleft {
 	display: inline;
-	float: left;
+	//float: left; // IDK why this was here originally
 	margin-right: 1.5em;
 }
 
 .alignright {
 	display: inline;
-	float: right;
+	//float: right; // IDK why this was here originally
 	margin-left: 1.5em;
 }
 

@@ -2817,14 +2817,42 @@ article.format-aside .entry-meta .avatar {
 }
 
 .comment-respond label {
-  width: 33%;
   display: block;
-  font-style: italic;
   padding-bottom: .4em;
 }
 
 .comment-respond .required {
   color: darkred;
+  font-size: smaller;
+}
+
+.comment-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.comment-form p {
+  margin-bottom: 0;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+}
+
+.comment-form .comment-form-author,
+.comment-form .comment-form-email,
+.comment-form .comment-form-url {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 33%;
+          flex: 0 1 33%;
 }
 
 .comments-link {
@@ -2945,13 +2973,11 @@ object {
 --------------------------------------------------------------*/
 .alignleft {
   display: inline;
-  float: left;
   margin-right: 1.5em;
 }
 
 .alignright {
   display: inline;
-  float: right;
   margin-left: 1.5em;
 }
 
