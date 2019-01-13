@@ -12,7 +12,6 @@
   * - CSS generic figcaption
   * - CSS editor underline <a>
   * - Improve entry footer
-  * - Large screen entry header layout
   * - Change comment form
   * - Fix Jetpack infinite scroll
   * - Customizer: colors

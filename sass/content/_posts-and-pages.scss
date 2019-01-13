@@ -62,20 +62,36 @@
         padding: 0;
     }
     .single .has-post-thumbnail {
-        // switch to grid layout
+        // on big screens, stop full-bleed image and switch to side-by-side layout
         .entry-header {
             @include max-site-width;
             display: flex;
             flex-direction: row-reverse;
-            align-items: flex-start;
+            align-items: stretch;
             justify-content: space-between;
         }
         .entry-header-wrap {
-            margin: 0 0 1em 0;
+            //margin: 0 1em 0 0;
             width: 45%;
+            display: grid;
+            grid-template-columns: auto;
+            grid-template-rows: auto auto auto auto;
         }
         .breadcrumbs-nav {
-            height: 143px;
+            //height: 20%;
+            grid-row-start: 1;
+            grid-row-end: 1;
+            align-self: start;
+        }
+        .entry-title {
+            grid-row-start: 2;
+            grid-row-end: 2;
+            align-self: end;
+        }
+        .entry-meta {
+            grid-row-start: 3;
+            grid-row-end: 3;
+            align-self: start;
         }
     }
     .single .entry-title {

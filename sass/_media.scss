@@ -107,7 +107,8 @@ object {
 @media screen and (min-width: $breakpoint-3) {
     .single .featured-image.full-bleed {
         position: static;
-        width: 765px;
+        //width: 765px;
+        width: 50%;
         margin: 0;
     }
 }
