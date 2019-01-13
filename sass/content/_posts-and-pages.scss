@@ -134,6 +134,12 @@
         margin: 0;
         line-height: 1.2;
     }
+    #jp-relatedposts h3.jp-relatedposts-headline {
+        display: block;
+        float: none;
+        margin-bottom: 1em;
+        text-align: center;
+    }
     #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-context, 
     #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-date {
         opacity: 1;
@@ -175,9 +181,10 @@
             margin: auto;
             display: flex;
             flex-wrap: wrap;
+            justify-content: space-between;
 
             > * {
-                margin-right: 2em;
+                //margin-right: 2em;
             }
         }
 

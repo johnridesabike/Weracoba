@@ -2301,6 +2301,13 @@ a:hover, a:active {
   line-height: 1.2;
 }
 
+.single .entry-footer #jp-relatedposts h3.jp-relatedposts-headline {
+  display: block;
+  float: none;
+  margin-bottom: 1em;
+  text-align: center;
+}
+
 .single .entry-footer #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-context,
 .single .entry-footer #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-date {
   opacity: 1;
@@ -2345,9 +2352,9 @@ a:hover, a:active {
     display: flex;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-  }
-  .single .entry-footer .entry-footer-wrapper > * {
-    margin-right: 2em;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
   .single .entry-footer .jp-relatedposts,
   .single .entry-footer .post-navigation {

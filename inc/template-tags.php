@@ -93,7 +93,9 @@ if ( ! function_exists( 'weracoba_entry_footer' ) ) :
             <?php
         }
         weracoba_comments();
-
+        /**
+         * https://jetpack.com/support/sharing/
+         */
         if ( function_exists( 'sharing_display' ) ) {
             sharing_display( '', true );
         }
@@ -102,6 +104,10 @@ if ( ! function_exists( 'weracoba_entry_footer' ) ) :
             $custom_likes = new Jetpack_Likes;
             echo $custom_likes->post_likes( '' );
         }
+
+        /**
+         * https://jetpack.com/support/related-posts/
+         */
 
         if ( class_exists( 'Jetpack_RelatedPosts' ) ) {
             echo do_shortcode( '[jetpack-related-posts]' );
