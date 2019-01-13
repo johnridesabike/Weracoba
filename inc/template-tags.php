@@ -82,6 +82,18 @@ if ( ! function_exists( 'weracoba_entry_footer' ) ) :
 	 * Prints HTML with meta information for the categories, tags and comments.
 	 */
 	function weracoba_entry_footer() {
+		if ( 'post' === get_post_type() ) {
+            ?>
+            <div class="post-taxonomy">
+                <?php
+                weracoba_category_list();
+                weracoba_tag_list();
+                ?>
+            </div><!--.post-taxonomy-->
+            <?php
+        }
+        weracoba_comments();
+
         if ( function_exists( 'sharing_display' ) ) {
             sharing_display( '', true );
         }
@@ -91,20 +103,6 @@ if ( ! function_exists( 'weracoba_entry_footer' ) ) :
             echo $custom_likes->post_likes( '' );
         }
 
-		// Hide category and tag text for pages.
-		if ( 'post' === get_post_type() ) {
-            ?>
-            <div class="post-taxonomy">
-                <h3>
-                    <?php esc_html_e( 'This entry is filed under:', 'weracoba' );?>
-                </h3>
-                <?php
-                weracoba_category_list();
-                weracoba_tag_list();
-                ?>
-            </div><!--.post-taxonomy-->
-            <?php
-        }
         if ( class_exists( 'Jetpack_RelatedPosts' ) ) {
             echo do_shortcode( '[jetpack-related-posts]' );
         }

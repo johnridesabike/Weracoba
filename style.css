@@ -1540,6 +1540,10 @@ a:hover, a:active {
   padding: 0;
 }
 
+.single-post .post-navigation {
+  margin-top: 1em;
+}
+
 .single-post .post-navigation .meta-nav {
   color: #44484d;
 }
@@ -2265,7 +2269,7 @@ a:hover, a:active {
   border-top: 1px solid #c2cfcf;
   border-bottom: 1px solid #c2cfcf;
   background: #f7f7f1;
-  padding: 0 1em 1em 1em;
+  padding: 1em;
   margin-left: -1rem;
   margin-right: -1rem;
   color: #44484d;
@@ -2275,7 +2279,11 @@ a:hover, a:active {
 .single .entry-footer h3 {
   font-size: 1em;
   line-height: 1.2;
-  margin: 1em 0;
+  margin: 0;
+}
+
+.single .entry-footer .comments-link {
+  display: block;
 }
 
 .single .entry-footer div.sharedaddy h3.sd-title:before,
@@ -2289,7 +2297,7 @@ a:hover, a:active {
 .single .entry-footer #jp-relatedposts .jp-relatedposts-items-visual h4.jp-relatedposts-post-title {
   font-size: 1em;
   font-weight: 400;
-  margin: 1em 0;
+  margin: 0;
   line-height: 1.2;
 }
 
@@ -2315,6 +2323,10 @@ a:hover, a:active {
   color: #44484d !important;
 }
 
+.single .entry-footer div.jetpack-likes-widget-wrapper {
+  width: initial;
+}
+
 @media screen and (min-width: 735px) {
   .single .entry-footer {
     width: 100vw !important;
@@ -2335,7 +2347,7 @@ a:hover, a:active {
         flex-wrap: wrap;
   }
   .single .entry-footer .entry-footer-wrapper > * {
-    margin-right: 1em;
+    margin-right: 2em;
   }
   .single .entry-footer .jp-relatedposts,
   .single .entry-footer .post-navigation {

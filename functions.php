@@ -11,8 +11,6 @@
   * TODO
   * - CSS generic figcaption
   * - CSS editor underline <a>
-  * - Improve entry footer
-  * - Change comment form
   * - Fix Jetpack infinite scroll
   * - Customizer: colors
   * - Customizer: header image
