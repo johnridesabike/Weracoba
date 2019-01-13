@@ -62,6 +62,7 @@
         padding: 0;
     }
     .single .has-post-thumbnail {
+        // switch to grid layout
         .entry-header {
             @include max-site-width;
             display: flex;
@@ -86,7 +87,7 @@
 .single .entry-footer {
     border-top: 1px solid $color-border;
     border-bottom: 1px solid $color-border;
-    background: $color-bg-body-alt;
+    background: $color-bg-header;
     padding: 0 1em 1em 1em;
     @include full-bleed;
 
@@ -119,6 +120,19 @@
     }
     #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post-nothumbs p.jp-relatedposts-post-excerpt {
         margin-bottom: .5em;
+    }
+    // fixes contrast for sharing buttons 
+    #sharing_email .sharing_send,
+    .sd-content ul li .option a.share-ustom,
+    .sd-content ul li a.sd-button,
+    .sd-content ul li.advanced a.share-more,
+    .sd-content ul li.preview-item div.option.option-smart-off a,
+    .sd-social-icon .sd-content ul li a.sd-button,
+    .sd-social-icon-text .sd-content ul li a.sd-button,
+    .sd-social-official .sd-content>ul>li .digg_button>a,
+    .sd-social-official .sd-content>ul>li>a.sd-button,
+    .sd-social-text .sd-content ul li a.sd-button {
+        color: $color-text-secondary !important;
     }
 }
 

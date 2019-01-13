@@ -2238,7 +2238,7 @@ a:hover, a:active {
 .single .entry-footer {
   border-top: 1px solid #c2cfcf;
   border-bottom: 1px solid #c2cfcf;
-  background: #e0e8e7;
+  background: #f7f7f1;
   padding: 0 1em 1em 1em;
   margin-left: -1rem;
   margin-right: -1rem;
@@ -2274,6 +2274,19 @@ a:hover, a:active {
 
 .single .entry-footer #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post-nothumbs p.jp-relatedposts-post-excerpt {
   margin-bottom: .5em;
+}
+
+.single .entry-footer #sharing_email .sharing_send,
+.single .entry-footer .sd-content ul li .option a.share-ustom,
+.single .entry-footer .sd-content ul li a.sd-button,
+.single .entry-footer .sd-content ul li.advanced a.share-more,
+.single .entry-footer .sd-content ul li.preview-item div.option.option-smart-off a,
+.single .entry-footer .sd-social-icon .sd-content ul li a.sd-button,
+.single .entry-footer .sd-social-icon-text .sd-content ul li a.sd-button,
+.single .entry-footer .sd-social-official .sd-content > ul > li .digg_button > a,
+.single .entry-footer .sd-social-official .sd-content > ul > li > a.sd-button,
+.single .entry-footer .sd-social-text .sd-content ul li a.sd-button {
+  color: #44484d !important;
 }
 
 @media screen and (min-width: 735px) {
