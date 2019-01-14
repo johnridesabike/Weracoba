@@ -19,28 +19,19 @@
 
 .single .entry-header {
     @extend %site-content;
-}
-.entry-header-wrap {
-    margin-top: 1em;
+    color: $color-text-secondary;
+
+    .cat-links {
+        font-size: 1.3em;
+        margin-bottom: .5em;
+        display: block;
+        //color: $color-text-secondary;
+    }
 }
 .entry-title {
     margin: 0;
 }
-.cat-links {
-    font-size: 1.3em;
-    margin-bottom: .5em;
-    display: block;
-    color: $color-text-secondary;
-
-    /* Replaced by SVG
-    &:before {
-        @include dashicon($glyph-category);
-        color: $color-link;
-    }*/
-}
 .entry-meta {
-    color: $color-text-secondary;
-    
     @include avatar(48px);
     
     .byline {
@@ -55,14 +46,6 @@
         display: none !important;
     }
 }
-/*.posted-on a {
-    color: $color-text-secondary;
-    
-    &:hover,
-    &:focus {
-        color: $color-link-hover;
-    }
-}*/
 
 /** Entry Header Media Queries **/
 
@@ -79,16 +62,36 @@
         padding: 0;
     }
     .single .has-post-thumbnail {
+        // on big screens, stop full-bleed image and switch to side-by-side layout
         .entry-header {
             @include max-site-width;
             display: flex;
             flex-direction: row-reverse;
-            align-items: center;
+            align-items: stretch;
             justify-content: space-between;
         }
         .entry-header-wrap {
-            margin: 0 0 1em 0;
+            //margin: 0 1em 0 0;
             width: 45%;
+            display: grid;
+            grid-template-columns: auto;
+            grid-template-rows: auto auto auto auto;
+        }
+        .breadcrumbs-nav {
+            //height: 20%;
+            grid-row-start: 1;
+            grid-row-end: 1;
+            align-self: start;
+        }
+        .entry-title {
+            grid-row-start: 2;
+            grid-row-end: 2;
+            align-self: end;
+        }
+        .entry-meta {
+            grid-row-start: 3;
+            grid-row-end: 3;
+            align-self: start;
         }
     }
     .single .entry-title {
@@ -97,19 +100,104 @@
 }
 
 /** Entry Footer **/
-
 .single .entry-footer {
     border-top: 1px solid $color-border;
-    padding-top: 1em;
-}
-.single .tags-links {
+    border-bottom: 1px solid $color-border;
+    background: $color-bg-header;
+    padding: .5em 1em;
+    @include full-bleed;
     color: $color-text-secondary;
     font-size: 1.3em;
+
+    h3 {
+        font-size: 1em;
+        line-height: 1.2;
+        margin: 0;
+    }
+
+    .comments-link {
+        display: block;
+    }
+    
+    // Fix Jetpack stuff
+    div.sharedaddy h3.sd-title:before,
+    #jp-relatedposts h3.jp-relatedposts-headline em:before {
+        content: none;
+    }
+    div.sharedaddy h3.sd-title,
+    #jp-relatedposts h3.jp-relatedposts-headline,
+    #jp-relatedposts h3.jp-relatedposts-headline em,
+    #jp-relatedposts .jp-relatedposts-items-visual h4.jp-relatedposts-post-title {
+        font-size: 1em;
+        font-weight: 400;
+        margin: 0;
+        line-height: 1.2;
+    }
+    #jp-relatedposts h3.jp-relatedposts-headline {
+        display: block;
+        float: none;
+        margin-bottom: 1em;
+        text-align: center;
+    }
+    #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-context, 
+    #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-date {
+        opacity: 1;
+    }
+    #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post-nothumbs p.jp-relatedposts-post-excerpt {
+        margin-bottom: .5em;
+    }
+    // fixes contrast for sharing buttons 
+    #sharing_email .sharing_send,
+    .sd-content ul li .option a.share-ustom,
+    .sd-content ul li a.sd-button,
+    .sd-content ul li.advanced a.share-more,
+    .sd-content ul li.preview-item div.option.option-smart-off a,
+    .sd-social-icon .sd-content ul li a.sd-button,
+    .sd-social-icon-text .sd-content ul li a.sd-button,
+    .sd-social-official .sd-content>ul>li .digg_button>a,
+    .sd-social-official .sd-content>ul>li>a.sd-button,
+    .sd-social-text .sd-content ul li a.sd-button {
+        color: $color-text-secondary !important;
+    }
+
+    div.jetpack-likes-widget-wrapper {
+        width: initial;
+    }
 }
-/* Replaced by SVG
-.tags-links:before {
-    @include dashicon($glyph-tags);
-}*/
+
+.entry-footer-wrapper > * {
+    margin-bottom: .5em;
+}
+
+@media screen and (min-width: $breakpoint-1) {
+    .single .entry-footer {
+        width: 100vw !important;
+        max-width: 100vw !important;
+        position: relative !important;
+        left: 50% !important;
+        right: 50% !important;
+        margin-left: -50vw !important;
+        margin-right: -50vw !important;
+
+        .entry-footer-wrapper {
+            max-width: $size-max-width;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .jp-relatedposts,
+        .post-navigation {
+            flex: 0 0 100%;
+            margin-right: 0; // cancel default margin
+        }
+    }
+
+    .entry-footer #jp-relatedposts {
+        margin: auto;
+    }
+}
 
 /** Post body **/
 

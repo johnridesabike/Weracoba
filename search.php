@@ -24,8 +24,8 @@ get_header();
 				 * If you want to overload this in a child theme then include a file
 				 * called content-search.php and that will be used instead.
 				 */
-                $format = get_post_format() ? : 'excerpt';
-				get_template_part( 'template-parts/content', $format );
+				$weracoba_format = get_post_format() ? get_post_format() : 'excerpt';
+				get_template_part( 'template-parts/content', $weracoba_format );
 
 			endwhile;
 

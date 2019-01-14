@@ -139,11 +139,11 @@
         color: black !important; // a hack...
     }
     .global-header,
-    .post-navigation-title,
     .nav-links,
     .tags-links,
     .comment-respond,
-    .akismet_comment_form_privacy_notice {
+    .akismet_comment_form_privacy_notice,
+    .sharedaddy {
         display: none;
     }
     .single .featured-image {

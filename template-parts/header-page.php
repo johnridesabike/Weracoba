@@ -6,17 +6,20 @@
  *
  * @package Weracoba
  */
+
 ?>
 <?php
-if ( is_active_sidebar( 'breadcrumbs-1' ) && !is_front_page() ) : ?> 
-    <nav class="breadcrumbs-nav">
-        <?php dynamic_sidebar( 'breadcrumbs-1' ); ?>
-    </nav>
-<?php 
+if ( is_active_sidebar( 'breadcrumbs-1' ) && ! is_front_page() ) :
+	?>
+	<nav id="breadcrumbs" class="breadcrumbs-nav">
+		<?php dynamic_sidebar( 'breadcrumbs-1' ); ?>
+	</nav>
+	<?php
 endif;
-if ( !is_front_page() && !is_home() ) : ?> 
-    <div class="entry-header-wrap">
-        <?php weracoba_post_thumbnail(); ?>
-        <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-    </div>
-<?php endif;?>
+if ( ! is_front_page() && ! is_home() ) :
+	?>
+	<div class="entry-header-wrap">
+		<?php weracoba_post_thumbnail(); ?>
+		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+	</div>
+<?php endif; ?>

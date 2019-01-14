@@ -17,19 +17,26 @@ object {
 /* Make sure logo link wraps around logo image. */
 .custom-logo-link {
 	display: inline-block;
+	margin-right: .1em;
+
+	img {
+		max-height: 1.5em;
+		width: auto;
+		vertical-align: middle;
+	}
 }
 
 /*--------------------------------------------------------------
 ## Alignments and Images
 --------------------------------------------------------------*/
 .alignleft {
-	display: inline;
+	// display: inline;  // IDK why this was here originally
 	float: left;
 	margin-right: 1.5em;
 }
 
 .alignright {
-	display: inline;
+	//display: inline;  // IDK why this was here originally
 	float: right;
 	margin-left: 1.5em;
 }
@@ -107,7 +114,8 @@ object {
 @media screen and (min-width: $breakpoint-3) {
     .single .featured-image.full-bleed {
         position: static;
-        width: 765px;
+        //width: 765px;
+        width: 50%;
         margin: 0;
     }
 }
@@ -165,6 +173,10 @@ object {
 .alignwide:not(.wp-block-columns):not(p) {
     /* displays as alignfull on small screens */
     @include full-bleed;
+}
+
+.alignwide.wp-block-image {
+    max-width: inherit; //override this style for regular .wp-block-image
 }
 
 .alignfull {

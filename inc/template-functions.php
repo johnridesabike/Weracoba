@@ -17,19 +17,6 @@ function weracoba_body_classes( $classes ) {
 		$classes[] = 'hfeed';
 		$classes[] = 'archive-view';
 	}
-
-    // Adds a class of no-sidebar when there is no sidebar present.
-    /*
-    if ( is_page() ) {
-		$classes[] = 'no-sidebar';
-    } elseif ( is_active_sidebar( 'sidebar-1' ) && ! is_singular() ) {
-		$classes[] = 'has-sidebar';
-    } elseif ( is_active_sidebar( 'sidebar-2' ) && is_singular() ) {
-        $classes[] = 'has-sidebar';
-	} else {
-		$classes[] = 'no-sidebar';
-	}*/
-
 	return $classes;
 }
 add_filter( 'body_class', 'weracoba_body_classes' );
@@ -45,29 +32,21 @@ function weracoba_pingback_header() {
 add_action( 'wp_head', 'weracoba_pingback_header' );
 
 /**
- * Determines if post thumbnail can be displayed.
- * Copied from Twenty Nineteen
- * @link https://github.com/WordPress/twentynineteen/blob/master/inc/template-functions.php#L124
- */
-/*function weracoba_can_show_post_thumbnail() {
-	return apply_filters( 'weracoba_can_show_post_thumbnail', 
-                         ! post_password_required() && ! is_attachment() && has_post_thumbnail() );
-}
-
-/**
  * Filters the default archive titles.
+ *
+ * @param string $title the archive title.
  */
 function weracoba_get_the_archive_title( $title ) {
-    $asploded = explode( ":", $title );
-    if ( count( $asploded ) > 1 ) {
-        return $asploded[1]; // Removes the "Category: " or "Tag: " from the title
-    } elseif ( is_search() ) {
-        /* translators: %s: search phrase */
-        return sprintf( __( 'Search Results for &#8220;%s&#8221;' ), get_search_query() );
-    } elseif ( is_404() ) {
-        return __( 'Oops! That page can&rsquo;t be found.', 'weracoba' );
-    } else {
-        return $title;
-    }
+	$asploded = explode( ':', $title );
+	if ( count( $asploded ) > 1 ) {
+		return $asploded[1]; // Removes the "Category: " or "Tag: " from the title.
+	} elseif ( is_search() ) {
+		/* translators: %s: search phrase */
+		return sprintf( __( 'Search Results for &#8220;%s&#8221;', 'weracoba' ), get_search_query() );
+	} elseif ( is_404() ) {
+		return __( 'Oops! That page can&rsquo;t be found.', 'weracoba' );
+	} else {
+		return $title;
+	}
 }
 add_filter( 'get_the_archive_title', 'weracoba_get_the_archive_title' );

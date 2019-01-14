@@ -23,8 +23,8 @@ get_header();
 				 * If you want to override this in a child theme, then include a file
 				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
 				 */
-                $format = get_post_format() ? : 'excerpt';
-                get_template_part( 'template-parts/content', $format );
+				$weracoba_format = get_post_format() ? get_post_format() : 'excerpt';
+				get_template_part( 'template-parts/content', $weracoba_format );
 
 			endwhile;
 
@@ -37,9 +37,9 @@ get_header();
 		endif;
 		?>
 
-        <div class="archive-widget-area archive-widget-area-bottom">
-            <?php the_widget( 'WP_Widget_Categories', array( 'title' => __( 'Browse another category', 'weracoba' ) ) ); ?>
-        </div> <!-- .archive-widget-area -->
+		<div class="archive-widget-area archive-widget-area-bottom">
+			<?php the_widget( 'WP_Widget_Categories', array( 'title' => __( 'Browse another category', 'weracoba' ) ) ); ?>
+		</div> <!-- .archive-widget-area -->
 		</main><!-- #main -->
 	</div><!-- #primary -->
 

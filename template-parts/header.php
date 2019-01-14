@@ -6,14 +6,25 @@
  *
  * @package Weracoba
  */
+
 ?>
 <?php weracoba_post_thumbnail(); ?>
 <div class="entry-header-wrap">
-    <?php weracoba_category_list(); ?>
-    <?php the_title( '<h1 class="entry-title">', '</h1>' );?>
-    <div class="entry-meta">
-        <?php weracoba_posted_by(); ?>
-        <?php weracoba_posted_on(); ?>
-        <?php weracoba_comments(); ?>
-    </div><!-- .entry-meta -->
+	<?php
+	if ( is_active_sidebar( 'breadcrumbs-1' ) ) :
+		?>
+		<nav id="breadcrumbs" class="breadcrumbs-nav">
+			<?php dynamic_sidebar( 'breadcrumbs-1' ); ?>
+		</nav>
+		<?php
+	else :
+		weracoba_category_list();
+	endif;
+	?>
+	<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+	<div class="entry-meta">
+		<?php weracoba_posted_by(); ?>
+		<?php weracoba_posted_on(); ?>
+		<?php weracoba_comments(); ?>
+	</div><!-- .entry-meta -->
 </div> <!-- .entry-header-wrap -->

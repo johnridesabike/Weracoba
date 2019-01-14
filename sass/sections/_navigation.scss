@@ -15,8 +15,8 @@
     a {
         display: block;
         width: 100%;
-        background: $color-bg-body;
-        font-size: 1.3em;
+        //background: $color-bg-body;
+        //font-size: 1.3em;
         //@include button-outline;
     }
 }
@@ -34,8 +34,32 @@
     }
     .page-numbers:not(.prev):not(.next) {
         margin: 0 .5em;
-        padding-left: .8rem; // make them a bit rounder
-        padding-right: .8rem; // make them a bit rounder
+        //padding-left: .8rem; // make them a bit rounder
+        //padding-right: .8rem; // make them a bit rounder
+    }
+}
+
+// Jetpack Infinite Scroll
+.infinite-scroll .pagination {
+    display: none;
+}
+
+.infinite-scroll #infinite-handle { // .infinite-scroll is just an extra specificity to override built-in CSS
+    text-align: center;
+    span {
+        background: transparent;
+        font-size: 1.3em;
+        button,
+        button:focus,
+        button:hover {
+            @include button;
+        }
+    }
+}
+.infinite-loader {
+    margin: 1em 0;
+    .spinner {
+        margin: auto;
     }
 }
 
@@ -50,28 +74,17 @@
     }
 }
 
-.post-navigation-title {
-    font-weight: 400;
-    color: $color-text-secondary;
-    
-    a {
-        text-decoration: underline;
-    }
-}
-
 .nav-links {
     margin: 0 auto;
     padding: 0 0.4em; /* ? */
 }
 .nav-previous {
-    padding-bottom: 1em;
-}
-.meta-nav:after {
-    // content: ":";
+    margin-bottom: .5em;
 }
 .breadcrumbs-nav {
-    margin-top: .5em;
-    margin-left: .5em;
+    margin-top: .2em;
+    margin-bottom: 1em;
+    font-size: .9em;
     
     .widget {
         margin: 0;
@@ -80,6 +93,8 @@
 }
 
 .single-post .post-navigation {
+    margin-top: 1em;
+    
     .meta-nav {
         color: $color-text-secondary;
     }
@@ -115,12 +130,8 @@
     .posts-navigation,
     .single-post .post-navigation {
         .nav-previous {
-            float: left;
+            //float: left;
             padding-bottom: 0;
-        }
-
-        .nav-next {
-            float: right;
         }
 
         .nav-previous,

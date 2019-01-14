@@ -14,16 +14,11 @@
     .menu-toggle {
         display: inline;
         font-size: 1em;
-        //background: $color-bg-body-alt;
-        //color: $color-link;
-        @include button;
-
-        /* Replaced by SVG
-        &::after {
-            @include dashicon($glyph-menu);
-            padding-right: 0;
-            padding-left: 6px;
-        }*/
+		@include button;
+		padding: .1em;
+		.svg-icon {
+			font-size: 2.5em;
+		}
     }
     .dismiss-icon {
         display: none;
@@ -37,12 +32,6 @@
         display: inline;
     }
 }
-/* Replaced by SVG
-.toggled .menu-toggle:after {
-    @include dashicon($glyph-x);
-    padding-right: 0;
-    padding-left: 6px;
- }*/
 .menu-item-has-children {
     a:after {
         content: $glyph-arrow-down;
@@ -121,7 +110,6 @@
         display: block;
         text-decoration: none;
         padding: .5em 0 .5em 0;
-        color: $color-link;
 	}
 	.current_page_item > a,
 	.current-menu-item > a,
@@ -165,13 +153,3 @@
         display: none;
     }
 }
-/* replaced by SVG
-.menu-item-object-category {
-    a {
-        text-indent: -24px;
-        padding-left: 16px;
-        &:before {
-            @include dashicon($glyph-category);
-        }
-    }
-}*/

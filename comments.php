@@ -33,10 +33,10 @@ if ( post_password_required() ) {
 				printf(
 					/* translators: 1: title. */
 					esc_html__( 'One comment on &ldquo;%1$s&rdquo;', 'weracoba' ),
-					'<span>' . get_the_title() . '</span>'
+					'<span>' . esc_html( get_the_title() ) . '</span>'
 				);
 			} else {
-				printf( // WPCS: XSS OK.
+				printf( // phpcs:ignore XSS OK.
 					/* translators: 1: comment count number, 2: title. */
 					esc_html( _nx( '%1$s comment on &ldquo;%2$s&rdquo;', '%1$s comments on &ldquo;%2$s&rdquo;', $weracoba_comment_count, 'comments title', 'weracoba' ) ),
 					number_format_i18n( $weracoba_comment_count ),
@@ -48,11 +48,13 @@ if ( post_password_required() ) {
 
 		<ol class="comment-list">
 			<?php
-			wp_list_comments( array(
-				'style'       => 'ol',
-				'short_ping'  => true,
-				'avatar_size' => 96,
-			) );
+			wp_list_comments(
+				array(
+					'style'       => 'ol',
+					'short_ping'  => true,
+					'avatar_size' => 96,
+				)
+			);
 			?>
 		</ol><!-- .comment-list -->
 

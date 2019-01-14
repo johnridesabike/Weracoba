@@ -33,16 +33,37 @@ ul, ol {
 
 ul {
 	list-style: disc;
+    ul {
+        list-style: circle;
+        ul {
+            list-style: square;
+            ul {
+                list-style: initial;
+            }
+        }
+    }
 }
 
 ol {
 	list-style: decimal;
+    ol {
+        list-style: upper-alpha;
+        ol {
+            list-style: lower-roman;
+            ol {
+                list-style: lower-alpha;
+                ol {
+                    list-style: initial;
+                }
+            }
+        }
+    }
 }
 
 li > ul,
 li > ol {
 	margin-bottom: 0;
-	margin-left: 1.5em;
+	margin-left: 0;//1.5em;
 }
 
 dt {

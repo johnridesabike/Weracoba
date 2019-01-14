@@ -114,6 +114,7 @@ big {
         line-height: calculate-line-height($font-reading-size, $size-content);
         h1, h2, h3, h4, h5, h6 {
             font-family: $font-reading;
+            line-height: 1.2;
         }
     }
 }
@@ -218,18 +219,20 @@ big {
 /* Media captions */
 
 %figcaption {
-    background: rgba(0, 0, 0, .5);
+    background: linear-gradient(0deg,rgba(0,0,0,.7) 0,rgba(0,0,0,.3) 80%,transparent); // rgba(0, 0, 0, .5);
     color: $color-text-light;
     padding: .2em .5em;
     font-family: $font-UI;
 }
 .wp-block-gallery .blocks-gallery-item figcaption {
     @extend %figcaption;
-    font-size: .7em;
+    font-size: .8em;
 }
 .single .featured-image figcaption {
     @extend %figcaption;
     font-size: .9em;
+    width: 100%;
+    text-align: right;
 }
 .entry-caption {
     font-size: 1.3em;
@@ -294,19 +297,38 @@ p.wp-block-subhead {
         
         &:hover,
         &:focus {
-            color: $color-bg-button;
+            color: $color-link-hover;
         }
     }
     
     &:not(.has-background) {
         background: transparent;
-        border-color: $color-border-button;
+        border-color: currentcolor;
         
         &:hover,
         &:focus {
-            border-color: $color-border-button-hover;
+            border-color: currentcolor;
         }
     }
+}
+
+.wp-block-latest-posts {
+    // copied from _widgets.scss
+    padding: 0;
+    list-style: none;
+    li {
+        border-bottom: 1px dashed $color-border;
+        padding: .75em 0;
+        a {
+            display: block;
+            text-decoration: none;
+
+            &:hover,
+            &:focus {
+                text-decoration: none;
+            }
+        }
+    } 
 }
 
 // Custom CSS attribute in Gutenberg
