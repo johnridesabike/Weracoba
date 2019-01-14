@@ -32,6 +32,7 @@ function weracoba_customize_register( $wp_customize ) {
 		);
 	}
 
+	/*
 	$wp_customize->add_section(
 		'weracoba_options',
 		array(
@@ -39,6 +40,7 @@ function weracoba_customize_register( $wp_customize ) {
 			'priority' => 120,
 		)
 	);
+	*/
 
 	/*
 	* Sets the portfolio category options

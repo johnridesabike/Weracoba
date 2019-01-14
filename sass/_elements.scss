@@ -150,7 +150,7 @@ textarea {
 	width: 100%;
 }
 
-button:not(.components-button), // Hack to not conflict with visual editor.
+button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {

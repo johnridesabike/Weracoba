@@ -7,11 +7,16 @@
 }
 .site-header-wrapper {
     padding-left: 1em;
-    padding-right: 1em;
+	padding-right: 1em;
+}
+.mobile-header-wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
 .site-branding {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-flow: row wrap;
     align-content: center;
     align-items: center;
@@ -38,8 +43,6 @@
         height: auto;
         z-index: 9;
         display: block; // this fixes a weird bug
-        .site-header-wrapper {
-        }
         .site-branding {
             flex-shrink: 0;
         }
@@ -90,8 +93,11 @@
         align-items: flex-end;
         flex-flow: row;
         justify-content: space-between;
-    }
-    .site-title{
+	}
+	.mobile-header-wrapper {
+		display: block;
+	}
+    .site-title {
         margin: 0;
     }
     .site-description {

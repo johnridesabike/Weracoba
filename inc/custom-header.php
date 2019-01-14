@@ -32,7 +32,7 @@ function weracoba_custom_header_setup() {
 		)
 	);
 }
-add_action( 'after_setup_theme', 'weracoba_custom_header_setup' );
+/* add_action( 'after_setup_theme', 'weracoba_custom_header_setup' ); */
 
 if ( ! function_exists( 'weracoba_header_style' ) ) :
 	/**

@@ -993,7 +993,7 @@ textarea {
   width: 100%;
 }
 
-button:not(.components-button),
+button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
@@ -1004,21 +1004,21 @@ input[type="submit"] {
   border-radius: 8px;
 }
 
-button:not(.components-button):not(.has-text-color),
+button:not(.has-text-color),
 input[type="button"]:not(.has-text-color),
 input[type="reset"]:not(.has-text-color),
 input[type="submit"]:not(.has-text-color) {
   color: white;
 }
 
-button:not(.components-button):not(.has-background),
+button:not(.has-background),
 input[type="button"]:not(.has-background),
 input[type="reset"]:not(.has-background),
 input[type="submit"]:not(.has-background) {
   background: #017680;
 }
 
-button:not(.components-button):hover, button:not(.components-button):focus,
+button:hover, button:focus,
 input[type="button"]:hover,
 input[type="button"]:focus,
 input[type="reset"]:hover,
@@ -1077,13 +1077,25 @@ a:hover, a:active {
   padding-right: 1em;
 }
 
+.mobile-header-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 .site-branding {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-flow: row wrap;
@@ -1193,6 +1205,9 @@ a:hover, a:active {
 }
 
 @media screen and (min-width: 735px) {
+  .mobile-header-wrapper {
+    display: block;
+  }
   .site-title {
     margin: 0;
   }
@@ -1280,6 +1295,7 @@ a:hover, a:active {
   text-decoration: none;
   border: 2px solid currentcolor;
   border-radius: 8px;
+  padding: .1em;
 }
 
 .menu-button .menu-toggle:not(.has-text-color) {
@@ -1292,6 +1308,10 @@ a:hover, a:active {
 
 .menu-button .menu-toggle:hover, .menu-button .menu-toggle:focus {
   opacity: .9;
+}
+
+.menu-button .menu-toggle .svg-icon {
+  font-size: 2.5em;
 }
 
 .menu-button .dismiss-icon {
@@ -3038,6 +3058,13 @@ object {
 /* Make sure logo link wraps around logo image. */
 .custom-logo-link {
   display: inline-block;
+  margin-right: .1em;
+}
+
+.custom-logo-link img {
+  max-height: 1.5em;
+  width: auto;
+  vertical-align: middle;
 }
 
 /*--------------------------------------------------------------

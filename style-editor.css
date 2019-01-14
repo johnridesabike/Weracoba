@@ -604,7 +604,7 @@
   width: 100%;
 }
 
-.edit-post-visual-editor .editor-rich-text button:not(.components-button),
+.edit-post-visual-editor .editor-rich-text button,
 .edit-post-visual-editor .editor-rich-text input[type="button"],
 .edit-post-visual-editor .editor-rich-text input[type="reset"],
 .edit-post-visual-editor .editor-rich-text input[type="submit"] {
@@ -615,21 +615,21 @@
   border-radius: 8px;
 }
 
-.edit-post-visual-editor .editor-rich-text button:not(.components-button):not(.has-text-color),
+.edit-post-visual-editor .editor-rich-text button:not(.has-text-color),
 .edit-post-visual-editor .editor-rich-text input[type="button"]:not(.has-text-color),
 .edit-post-visual-editor .editor-rich-text input[type="reset"]:not(.has-text-color),
 .edit-post-visual-editor .editor-rich-text input[type="submit"]:not(.has-text-color) {
   color: white;
 }
 
-.edit-post-visual-editor .editor-rich-text button:not(.components-button):not(.has-background),
+.edit-post-visual-editor .editor-rich-text button:not(.has-background),
 .edit-post-visual-editor .editor-rich-text input[type="button"]:not(.has-background),
 .edit-post-visual-editor .editor-rich-text input[type="reset"]:not(.has-background),
 .edit-post-visual-editor .editor-rich-text input[type="submit"]:not(.has-background) {
   background: #017680;
 }
 
-.edit-post-visual-editor .editor-rich-text button:not(.components-button):hover, .edit-post-visual-editor .editor-rich-text button:not(.components-button):focus,
+.edit-post-visual-editor .editor-rich-text button:hover, .edit-post-visual-editor .editor-rich-text button:focus,
 .edit-post-visual-editor .editor-rich-text input[type="button"]:hover,
 .edit-post-visual-editor .editor-rich-text input[type="button"]:focus,
 .edit-post-visual-editor .editor-rich-text input[type="reset"]:hover,

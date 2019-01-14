@@ -9,12 +9,12 @@
 
 /**
  * TODO
- * - Refactor PHP!
- * - CSS editor underline <a>
+ * - CSS editor.
  * - Customizer: colors
  * - Customizer: header image
  * - Customizer: background
  * - Customizer: Selective refresh
+ * - Responsive embeds? https://wordpress.org/gutenberg/handbook/designers-developers/developers/themes/theme-support/#responsive-embedded-content
  */
 
 if ( ! function_exists( 'weracoba_setup' ) ) :
@@ -206,9 +206,8 @@ add_action( 'wp_enqueue_scripts', 'weracoba_scripts' );
  * Registers an editor stylesheet for the theme.
  */
 function weracoba_editor_styles() {
-	wp_enqueue_style( 'mytheme-block-editor-styles', get_theme_file_uri( '/style-editor.css' ), false, '1.0', 'all' );
+	wp_enqueue_style( 'weracoba-block-editor-styles', get_theme_file_uri( '/style-editor.css' ), false, '20190113', 'all' );
 }
-
 add_action( 'enqueue_block_editor_assets', 'weracoba_editor_styles' );
 
 /**
@@ -225,7 +224,7 @@ add_filter( 'excerpt_more', 'weracoba_excerpt_more' );
 /**
  * Implement the Custom Header feature.
  */
-require get_template_directory() . '/inc/custom-header.php';
+/* require get_template_directory() . '/inc/custom-header.php'; */
 
 /**
  * Custom template tags for this theme.

@@ -14,7 +14,11 @@
     .menu-toggle {
         display: inline;
         font-size: 1em;
-        @include button;
+		@include button;
+		padding: .1em;
+		.svg-icon {
+			font-size: 2.5em;
+		}
     }
     .dismiss-icon {
         display: none;
