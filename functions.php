@@ -9,9 +9,7 @@
 
  /**
   * TODO
-  * - CSS generic figcaption
   * - CSS editor underline <a>
-  * - Fix Jetpack infinite scroll
   * - Customizer: colors
   * - Customizer: header image
   */

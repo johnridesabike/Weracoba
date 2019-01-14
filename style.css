@@ -1486,8 +1486,57 @@ a:hover, a:active {
 
 .pagination .page-numbers:not(.prev):not(.next) {
   margin: 0 .5em;
-  padding-left: .8rem;
-  padding-right: .8rem;
+}
+
+.infinite-scroll .pagination {
+  display: none;
+}
+
+.infinite-scroll #infinite-handle {
+  text-align: center;
+}
+
+.infinite-scroll #infinite-handle span {
+  background: transparent;
+  font-size: 1.3em;
+}
+
+.infinite-scroll #infinite-handle span button,
+.infinite-scroll #infinite-handle span button:focus,
+.infinite-scroll #infinite-handle span button:hover {
+  padding: .2rem .75rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  text-decoration: none;
+  border: 2px solid currentcolor;
+  border-radius: 8px;
+}
+
+.infinite-scroll #infinite-handle span button:not(.has-text-color),
+.infinite-scroll #infinite-handle span button:focus:not(.has-text-color),
+.infinite-scroll #infinite-handle span button:hover:not(.has-text-color) {
+  color: white;
+}
+
+.infinite-scroll #infinite-handle span button:not(.has-background),
+.infinite-scroll #infinite-handle span button:focus:not(.has-background),
+.infinite-scroll #infinite-handle span button:hover:not(.has-background) {
+  background: #017680;
+}
+
+.infinite-scroll #infinite-handle span button:hover, .infinite-scroll #infinite-handle span button:focus,
+.infinite-scroll #infinite-handle span button:focus:hover,
+.infinite-scroll #infinite-handle span button:focus:focus,
+.infinite-scroll #infinite-handle span button:hover:hover,
+.infinite-scroll #infinite-handle span button:hover:focus {
+  opacity: .9;
+}
+
+.infinite-loader {
+  margin: 1em 0;
+}
+
+.infinite-loader .spinner {
+  margin: auto;
 }
 
 .attachment .comment-navigation a,

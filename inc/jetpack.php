@@ -17,9 +17,11 @@
 function weracoba_jetpack_setup() {
 	// Add theme support for Infinite Scroll.
 	add_theme_support( 'infinite-scroll', array(
-		'container' => 'main',
-		'render'    => 'weracoba_infinite_scroll_render',
-		'footer'    => 'page',
+		'type'				=> 'click',
+		'footer-widgets'	=> array( 'footer-1', 'sidebar-1' ),
+		'container' 		=> 'main',
+		'render'    		=> 'weracoba_infinite_scroll_render',
+		'footer'    		=> 'page',
 	) );
 
 	// Add theme support for Responsive Videos.
@@ -46,14 +48,12 @@ add_action( 'after_setup_theme', 'weracoba_jetpack_setup' );
 
 /**
  * Custom render function for Infinite Scroll.
+ * https://jetpack.com/support/infinite-scroll/
  */
 function weracoba_infinite_scroll_render() {
 	while ( have_posts() ) {
 		the_post();
-		if ( is_search() ) :
-			get_template_part( 'template-parts/content', 'search' );
-		else :
-			get_template_part( 'template-parts/content', get_post_type() );
-		endif;
+		$format = get_post_format() ? : 'excerpt';
+		get_template_part( 'template-parts/content', $format );
 	}
 }

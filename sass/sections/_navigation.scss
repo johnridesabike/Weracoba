@@ -34,8 +34,32 @@
     }
     .page-numbers:not(.prev):not(.next) {
         margin: 0 .5em;
-        padding-left: .8rem; // make them a bit rounder
-        padding-right: .8rem; // make them a bit rounder
+        //padding-left: .8rem; // make them a bit rounder
+        //padding-right: .8rem; // make them a bit rounder
+    }
+}
+
+// Jetpack Infinite Scroll
+.infinite-scroll .pagination {
+    display: none;
+}
+
+.infinite-scroll #infinite-handle { // .infinite-scroll is just an extra specificity to override built-in CSS
+    text-align: center;
+    span {
+        background: transparent;
+        font-size: 1.3em;
+        button,
+        button:focus,
+        button:hover {
+            @include button;
+        }
+    }
+}
+.infinite-loader {
+    margin: 1em 0;
+    .spinner {
+        margin: auto;
     }
 }
 
