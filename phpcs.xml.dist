@@ -23,7 +23,8 @@
 	<arg value="ps"/>
 
 	<!-- Strip the filepaths down to the relevant bit. -->
-	<arg name="basepath" value="./"/>
+	<!-- Apparently this causes a problem? https://github.com/ikappas/vscode-phpcs/issues/132#issuecomment-431634772 -->
+	<!--<arg name="basepath" value="./"/>-->
 
 	<!-- Check up to 8 files simultanously. -->
 	<arg name="parallel" value="8"/>
@@ -54,7 +55,7 @@
 		 Multiple valid text domains can be provided as a comma-delimited list. -->
 	<rule ref="WordPress.WP.I18n">
 		<properties>
-			<property name="text_domain" type="array" value="_s"/>
+			<property name="text_domain" type="array" value="weracoba"/>
 		</properties>
 	</rule>
 
@@ -86,7 +87,7 @@
 		 Multiple valid prefixes can be provided as a comma-delimited list. -->
 	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
 		<properties>
-			<property name="prefixes" type="array" value="_s" />
+			<property name="prefixes" type="array" value="weracoba" />
 		</properties>
 	</rule>
 

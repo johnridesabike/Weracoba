@@ -16,62 +16,84 @@ function weracoba_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
 	if ( isset( $wp_customize->selective_refresh ) ) {
-		$wp_customize->selective_refresh->add_partial( 'blogname', array(
-			'selector'        => '.site-title a',
-			'render_callback' => 'weracoba_customize_partial_blogname',
-		) );
-		$wp_customize->selective_refresh->add_partial( 'blogdescription', array(
-			'selector'        => '.site-description',
-			'render_callback' => 'weracoba_customize_partial_blogdescription',
-		) );
+		$wp_customize->selective_refresh->add_partial(
+			'blogname',
+			array(
+				'selector'        => '.site-title a',
+				'render_callback' => 'weracoba_customize_partial_blogname',
+			)
+		);
+		$wp_customize->selective_refresh->add_partial(
+			'blogdescription',
+			array(
+				'selector'        => '.site-description',
+				'render_callback' => 'weracoba_customize_partial_blogdescription',
+			)
+		);
 	}
 
-    $wp_customize->add_section('weracoba_options', array(
-        'title'    => __( 'Weracoba Options', 'weracoba' ),
-        'priority' => 120,
-    ));
-    
-    /*
-    * Sets the portfolio category options
-    */
+	$wp_customize->add_section(
+		'weracoba_options',
+		array(
+			'title'    => __( 'Weracoba Options', 'weracoba' ),
+			'priority' => 120,
+		)
+	);
 
-    $wp_customize->add_setting( 'fp_cats', array(
-        'default'        => 1,
-        'capability'     => 'edit_theme_options',
-    ));
-    $wp_customize->add_control( 'fp_cats', array(
-        'settings'    => 'fp_cats',
-        'label'       => __( 'Front Page Categories', 'weracoba' ),
-        'description' => __('Input the IDs of the categories, separated by commmas.') . '<br/> <br/>(' . get_categories_cheat_sheet() . ')',
-        'section'     => 'weracoba_options',
-        'type'        => 'textarea',
-    ));
+	/*
+	* Sets the portfolio category options
+	*
+
+	$wp_customize->add_setting( 'fp_cats', array(
+		'default'        => 1,
+		'capability'     => 'edit_theme_options',
+	));
+	$wp_customize->add_control( 'fp_cats', array(
+		'settings'    => 'fp_cats',
+		'label'       => __( 'Front Page Categories', 'weracoba' ),
+		'description' => __('Input the IDs of the categories, separated by commmas.') . '<br/> <br/>(' . get_categories_cheat_sheet() . ')',
+		'section'     => 'weracoba_options',
+		'type'        => 'textarea',
+	));
+	*/
 }
 add_action( 'customize_register', 'weracoba_customize_register' );
 
-function get_categories_cheat_sheet() {
-    $cats = get_categories();
-    $results = '';
-    foreach ( $cats as $key => $cat ) {
-        $results .= sprintf('%s: %s, ', $cat->name, $cat->cat_ID);
-    }
-    return $results;
-}
-/* 
-* @link https://josephfitzsimmons.com/adding-a-select-box-with-categories-into-wordpress-theme-customizer/
-*/
+/**
+ * Test.
+ */
+
 /*
+* Test.
+function get_categories_cheat_sheet() {
+	$cats = get_categories();
+	$results = '';
+	foreach ( $cats as $key => $cat ) {
+		$results .= sprintf('%s: %s, ', $cat->name, $cat->cat_ID);
+	}
+	return $results;
+}
+*/
+
+/**
+ * Test.
+ *
+ * @link https://josephfitzsimmons.com/adding-a-select-box-with-categories-into-wordpress-theme-customizer/
+ */
+
+/*
+* Test.
 function get_categories_select() {
-    $teh_cats = get_categories();
-    $results;
-    $count = count($teh_cats);
-    for ($i=0; $i < $count; $i++) {
-        if (isset($teh_cats[$i]))
-            $results[$teh_cats[$i]->slug] = $teh_cats[$i]->name;
-        else
-            $count++;
-    }
-    return $results;
+	$teh_cats = get_categories();
+	$results;
+	$count = count($teh_cats);
+	for ($i=0; $i < $count; $i++) {
+		if (isset($teh_cats[$i]))
+			$results[$teh_cats[$i]->slug] = $teh_cats[$i]->name;
+		else
+			$count++;
+	}
+	return $results;
 }
 */
 /**
