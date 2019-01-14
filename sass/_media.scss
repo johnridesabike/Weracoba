@@ -30,14 +30,14 @@ object {
 ## Alignments and Images
 --------------------------------------------------------------*/
 .alignleft {
-	display: inline;
-	//float: left; // IDK why this was here originally
+	// display: inline;  // IDK why this was here originally
+	float: left;
 	margin-right: 1.5em;
 }
 
 .alignright {
-	display: inline;
-	//float: right; // IDK why this was here originally
+	//display: inline;  // IDK why this was here originally
+	float: right;
 	margin-left: 1.5em;
 }
 

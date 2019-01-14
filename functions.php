@@ -9,11 +9,8 @@
 
 /**
  * TODO
- * - CSS editor.
- * - Customizer: colors
- * - Customizer: header image
+ * - CSS refactor: editor styles, customizer colors, etc.
  * - Customizer: background
- * - Customizer: Selective refresh
  * - Responsive embeds? https://wordpress.org/gutenberg/handbook/designers-developers/developers/themes/theme-support/#responsive-embedded-content
  */
 
@@ -190,7 +187,7 @@ add_action( 'widgets_init', 'weracoba_widgets_init' );
  * Enqueue scripts and styles.
  */
 function weracoba_scripts() {
-	wp_enqueue_style( 'weracoba-style', get_stylesheet_uri(), array(), '20190113', 'all' );
+	wp_enqueue_style( 'weracoba-style', get_stylesheet_uri(), array(), '20190114', 'all' );
 	wp_enqueue_style( 'weracoba-print-style', get_template_directory_uri() . '/print.css', array(), '20181230', 'print' );
 	wp_enqueue_script( 'weracoba-functions', get_template_directory_uri() . '/js/functions.js', array(), '20181105', true );
 	wp_enqueue_script( 'weracoba-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
@@ -206,7 +203,7 @@ add_action( 'wp_enqueue_scripts', 'weracoba_scripts' );
  * Registers an editor stylesheet for the theme.
  */
 function weracoba_editor_styles() {
-	wp_enqueue_style( 'weracoba-block-editor-styles', get_theme_file_uri( '/style-editor.css' ), false, '20190113', 'all' );
+	wp_enqueue_style( 'weracoba-block-editor-styles', get_theme_file_uri( '/style-editor.css' ), false, '20190114', 'all' );
 }
 add_action( 'enqueue_block_editor_assets', 'weracoba_editor_styles' );
 
