@@ -104,9 +104,8 @@
     border-top: 1px solid $color-border;
     border-bottom: 1px solid $color-border;
     background: $color-bg-header;
-    padding: 1em;
+    padding: .5em 1em;
     @include full-bleed;
-
     color: $color-text-secondary;
     font-size: 1.3em;
 
@@ -166,6 +165,10 @@
     }
 }
 
+.entry-footer-wrapper > * {
+    margin-bottom: .5em;
+}
+
 @media screen and (min-width: $breakpoint-1) {
     .single .entry-footer {
         width: 100vw !important;
@@ -182,10 +185,6 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
-
-            > * {
-                //margin-right: 2em;
-            }
         }
 
         .jp-relatedposts,

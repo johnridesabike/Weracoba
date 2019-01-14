@@ -1526,7 +1526,7 @@ a:hover, a:active {
 }
 
 .nav-previous {
-  padding-bottom: 1em;
+  margin-bottom: .5em;
 }
 
 .breadcrumbs-nav {
@@ -2269,7 +2269,7 @@ a:hover, a:active {
   border-top: 1px solid #c2cfcf;
   border-bottom: 1px solid #c2cfcf;
   background: #f7f7f1;
-  padding: 1em;
+  padding: .5em 1em;
   margin-left: -1rem;
   margin-right: -1rem;
   color: #44484d;
@@ -2332,6 +2332,10 @@ a:hover, a:active {
 
 .single .entry-footer div.jetpack-likes-widget-wrapper {
   width: initial;
+}
+
+.entry-footer-wrapper > * {
+  margin-bottom: .5em;
 }
 
 @media screen and (min-width: 735px) {
