@@ -68,20 +68,22 @@
   a:focus {
     color: black !important;
   }
-  .content-area a {
+  .entry-content a {
     text-decoration: underline !important;
   }
-  .content-area a[href^=http]:after {
+  .entry-content a[href^=http]:after {
     content: " < " attr(href) "> ";
+    text-decoration: none !important;
   }
-  .content-area a:after > img {
+  .entry-content a:after > img {
     content: "";
   }
-  .content-area article a[href^="#"]:after {
+  .entry-content article a[href^="#"]:after {
     content: "";
   }
-  .content-area a:not(:local-link):after {
+  .entry-content a:not(:local-link):after {
     content: " < " attr(href) "> ";
+    text-decoration: none !important;
   }
   /**
      * Making intergated videos disappear, and removing the iframes' whitespace to zero. 
@@ -122,8 +124,11 @@
   .tags-links,
   .comment-respond,
   .akismet_comment_form_privacy_notice,
-  .sharedaddy {
-    display: none;
+  .sharedaddy,
+  .jp-relatedposts,
+  .comments-link,
+  .wp-block-file__button {
+    display: none !important;
   }
   .single .featured-image {
     display: block !important;
@@ -151,4 +156,4 @@
     display: block;
   }
 }
-/*# sourceMappingURL=print.css.map */
+/*# sourceMappingURL=style-print.css.map */

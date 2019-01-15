@@ -332,11 +332,15 @@ if ( ! function_exists( 'weracoba_get_post_page_url' ) ) :
 	}
 endif;
 
+/**
+ * This should go into a plugin sometime.
+ * Diabled this for now.
 if ( ! function_exists( 'weracoba_citation' ) ) :
 	/**
 	 * Display a citation for the current page. APA format, for no particular reason.
 	 * This could be changed to support other formats too.
 	 */
+/** Disabled this for now.
 	function weracoba_citation() {
 		if ( is_singular() ) {
 			$first_name = get_the_author_meta( 'first_name' );
@@ -381,3 +385,4 @@ if ( ! function_exists( 'weracoba_citation' ) ) :
 		);
 	}
 endif;
+*/
