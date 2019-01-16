@@ -7,13 +7,6 @@
  * @package Weracoba
  */
 
-/**
- * TODO
- * - CSS refactor: editor styles, customizer colors, etc.
- * - CSS editor, page fonts, etc.
- * - Responsive embeds? https://wordpress.org/gutenberg/handbook/designers-developers/developers/themes/theme-support/#responsive-embedded-content
- */
-
 if ( ! function_exists( 'weracoba_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
