@@ -77,12 +77,13 @@
     a:focus {
         color: black !important;
     }
-    .content-area {
+    .entry-content {
         a {
             text-decoration: underline !important;
         }
         a[href^=http]:after {
-          content:" < " attr(href) "> ";
+        	content:" < " attr(href) "> ";
+		  	text-decoration: none !important;
         }
 
         a:after > img {
@@ -94,7 +95,8 @@
         }
 
         a:not(:local-link):after {
-           content:" < " attr(href) "> ";
+			content:" < " attr(href) "> ";
+		   	text-decoration: none !important;
         }
     }
         
@@ -143,8 +145,11 @@
     .tags-links,
     .comment-respond,
     .akismet_comment_form_privacy_notice,
-    .sharedaddy {
-        display: none;
+	.sharedaddy,
+	.jp-relatedposts,
+	.comments-link,
+	.wp-block-file__button {
+        display: none !important;
     }
     .single .featured-image {
         display: block !important;
@@ -155,7 +160,8 @@
         position: static !important;
         left: auto;
     }
-    .site-footer {
+	.site-footer,
+	.entry-footer {
         box-shadow: none;
         border: none;
         background: none;

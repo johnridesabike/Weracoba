@@ -16,6 +16,8 @@
 			<div class="footer-widgets">
 				<?php dynamic_sidebar( 'footer-1' ); ?>
 				<?php
+				/**
+				 * Disabled this for now.
 				the_widget(
 					'WP_Widget_Text',
 					array(
@@ -24,6 +26,7 @@
 					),
 					array( 'before_widget' => '<div class="widget print %s">' )
 				);
+				 */
 				?>
 			</div> <!-- .footer-widgets -->
 	</footer><!-- #colophon -->

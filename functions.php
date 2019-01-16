@@ -7,13 +7,6 @@
  * @package Weracoba
  */
 
-/**
- * TODO
- * - CSS refactor: editor styles, customizer colors, etc.
- * - Customizer: background
- * - Responsive embeds? https://wordpress.org/gutenberg/handbook/designers-developers/developers/themes/theme-support/#responsive-embedded-content
- */
-
 if ( ! function_exists( 'weracoba_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -110,6 +103,12 @@ if ( ! function_exists( 'weracoba_setup' ) ) :
 		*/
 		add_theme_support( 'align-wide' );
 
+		// Add support for editor styles.
+		add_theme_support( 'editor-styles' );
+
+		// Enqueue editor styles.
+		add_editor_style( 'style-editor.css' );
+
 		/**
 		* Add support for post formats.
 		*
@@ -188,7 +187,7 @@ add_action( 'widgets_init', 'weracoba_widgets_init' );
  */
 function weracoba_scripts() {
 	wp_enqueue_style( 'weracoba-style', get_stylesheet_uri(), array(), '20190114', 'all' );
-	wp_enqueue_style( 'weracoba-print-style', get_template_directory_uri() . '/print.css', array(), '20181230', 'print' );
+	wp_enqueue_style( 'weracoba-print-style', get_template_directory_uri() . '/style-print.css', array(), '20181230', 'print' );
 	wp_enqueue_script( 'weracoba-functions', get_template_directory_uri() . '/js/functions.js', array(), '20181105', true );
 	wp_enqueue_script( 'weracoba-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 	wp_enqueue_script( 'weracoba-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
@@ -198,25 +197,6 @@ function weracoba_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'weracoba_scripts' );
-
-/**
- * Registers an editor stylesheet for the theme.
- */
-function weracoba_editor_styles() {
-	wp_enqueue_style( 'weracoba-block-editor-styles', get_theme_file_uri( '/style-editor.css' ), false, '20190114', 'all' );
-}
-add_action( 'enqueue_block_editor_assets', 'weracoba_editor_styles' );
-
-/**
- * Change the [...] to something better
- *
- * @param string $more_string The default string for more.
- */
-function weracoba_excerpt_more( $more_string ) {
-	/* return '... <a href="' . esc_url( get_permalink() ) . '" rel="bookmark" class="excerpt-more">' . __( 'read more', 'weracoba' ) . '</a>'; */
-	return '&hellip;';
-}
-add_filter( 'excerpt_more', 'weracoba_excerpt_more' );
 
 /**
  * Implement the Custom Header feature.
@@ -244,68 +224,6 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
-
-/**
- * Modifies tag cloud widget arguments to display all tags in the same font size
- * and use list format for better accessibility.
- *
- * @param   array $args Arguments for tag cloud widget.
- * @return  array The filtered arguments for tag cloud widget.
- */
-function weracoba_widget_tag_cloud_args( $args ) {
-	$args['largest']   = 1.4;
-	$args['smallest']  = 0.9;
-	$args['unit']      = 'em';
-	$args['format']    = 'flat';
-	$args['separator'] = ', ';
-	return $args;
-}
-add_filter( 'widget_tag_cloud_args', 'weracoba_widget_tag_cloud_args' );
-
-/**
- * Customize comments
- *
- * @param array $fields the default fields.
- */
-function weracoba_comment_form_default_fields( $fields ) {
-	// Replace the * in each field with plain language instead.
-	foreach ( $fields as &$field ) {
-		$field = str_replace(
-			'<span class="required">*</span>',
-			'<span class="required">' . esc_html__( '(required)', 'weracoba' ) . '</span>',
-			$field
-		);
-	}
-	// Add some SVGs.
-	$fields['author'] = str_replace(
-		'<p class="comment-form-author"><label for="author">',
-		'<p class="comment-form-author"><label for="author">' . weracoba_get_icon_svg( 'person' ) . ' ',
-		$fields['author']
-	);
-	$fields['email']  = str_replace(
-		'<p class="comment-form-email"><label for="email">',
-		'<p class="comment-form-email"><label for="email">' . weracoba_get_social_icon_svg( 'mail' ) . ' ',
-		$fields['email']
-	);
-	$fields['url']    = str_replace(
-		'<p class="comment-form-url"><label for="url">',
-		'<p class="comment-form-url"><label for="url">' . weracoba_get_icon_svg( 'link' ) . ' ',
-		$fields['url']
-	);
-	return $fields;
-}
-add_filter( 'comment_form_default_fields', 'weracoba_comment_form_default_fields' );
-
-/**
- * Remove the "*" warning at the top.
- *
- * @param array $fields the default fields.
- */
-function weracoba_comment_form_defaults( $fields ) {
-	$fields['comment_notes_before'] = '<p class="comment-notes"><span id="email-notes">' . __( 'Your email address will not be published.', 'weracoba' ) . '</span></p>';
-	return $fields;
-}
-add_filter( 'comment_form_defaults', 'weracoba_comment_form_defaults' );
 
 /**
  * SVG Icons class.
