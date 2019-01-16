@@ -112,3 +112,14 @@ function weracoba_comment_form_defaults( $fields ) {
 	return $fields;
 }
 add_filter( 'comment_form_defaults', 'weracoba_comment_form_defaults' );
+
+/**
+ * Change the [...] to something better
+ *
+ * @param string $more_string The default string for more.
+ */
+function weracoba_excerpt_more( $more_string ) {
+	/* return '... <a href="' . esc_url( get_permalink() ) . '" rel="bookmark" class="excerpt-more">' . __( 'read more', 'weracoba' ) . '</a>'; */
+	return '&hellip;';
+}
+add_filter( 'excerpt_more', 'weracoba_excerpt_more' );

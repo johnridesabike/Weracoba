@@ -1,0 +1,100 @@
+/* Media captions */
+
+%figcaption {
+    background: linear-gradient(0deg,rgba(0,0,0,.7) 0,rgba(0,0,0,.3) 80%,transparent); // rgba(0, 0, 0, .5);
+    color: $color-text-light;
+    padding: .2em .5em;
+    font-family: $font-UI;
+}
+.wp-block-gallery .blocks-gallery-item figcaption {
+    @extend %figcaption;
+    font-size: .8em;
+}
+.single .featured-image figcaption {
+    @extend %figcaption;
+    font-size: .9em;
+    width: 100%;
+    text-align: right;
+}
+.entry-caption {
+    font-size: 1.3em;
+}
+
+.wp-block-image figcaption {
+    font-size: 1em;
+}
+
+.weracoba-big,
+p.wp-block-subhead {
+    font-size: 1.25em;
+    text-align: center;
+    color: $color-text-secondary;
+    opacity: 1;
+}
+
+.wp-block-cover-image .wp-block-cover-image-text {
+    font-family: $font-headers;
+    color: $color-bg-body-alt;
+}
+
+.wp-block-button .wp-block-button__link,
+.wp-block-file .wp-block-file__button {
+    @include button;
+}
+
+.wp-block-button.is-style-squared .wp-block-button__link {
+    border-radius: 0;
+}
+
+.wp-block-button.is-style-outline .wp-block-button__link {
+    
+    &:not(.has-text-color) {
+        color: $color-bg-button;
+        
+        &:hover,
+        &:focus {
+            color: $color-link-hover;
+        }
+    }
+    
+    &:not(.has-background) {
+        background: transparent;
+        border-color: currentcolor;
+        
+        &:hover,
+        &:focus {
+            border-color: currentcolor;
+        }
+    }
+}
+
+.wp-block-latest-posts {
+    // copied from _widgets.scss
+    padding: 0;
+    list-style: none;
+    li {
+        border-bottom: 1px dashed $color-border;
+        padding: .75em 0;
+        a {
+            display: block;
+            text-decoration: none;
+
+            &:hover,
+            &:focus {
+                text-decoration: none;
+            }
+        }
+    } 
+}
+
+@media screen and (min-width: $breakpoint-1) {
+    p.wp-block-subhead {
+            font-size: 1.75em;
+    }
+}
+
+@media screen and (min-width: $breakpoint-3) {
+    .wp-block-cover-image .wp-block-cover-image-text {
+        font-size: 2.75em;
+    }
+}

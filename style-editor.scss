@@ -1,10 +1,25 @@
 @import "sass/variables";
 @import "sass/mixins";
+@import "sass/typography";
+@import "sass/blocks";
 
-.edit-post-visual-editor {
-    @import "sass/typography";
-    
-    .editor-rich-text {
-		@import "sass/elements";
-    }
+/* editor styles */
+
+.editor-post-title__block .editor-post-title__input {
+	@extend h1;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: $font-reading;
+}
+
+.editor-post-title__block .editor-post-title__input,
+.editor-styles-wrapper {
+	font-family: $font-reading;
+}
+
+p {
+	font-family: $font-reading;
+	font-size: $font-reading-size;
+	line-height: calculate-line-height($font-reading-size, $size-content);
 }

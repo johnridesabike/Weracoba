@@ -139,7 +139,8 @@
     position: static !important;
     left: auto;
   }
-  .site-footer {
+  .site-footer,
+  .entry-footer {
     -webkit-box-shadow: none;
             box-shadow: none;
     border: none;
