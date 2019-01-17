@@ -6,5 +6,5 @@
 .DS_Store
 /vendor/
 /composer-setup.php
-composer.json
 composer.lock
+.vscode/settings.json

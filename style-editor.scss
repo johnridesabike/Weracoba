@@ -52,6 +52,53 @@ p {
 	&[data-align="full"] {
 		max-width: none;
 	}
+
+
+	/* Lists. See _elements.scss */
+
+	ul,
+	ol {
+		&.mce-content-body {
+			margin: 0 0 1.5em 0;
+
+			li {
+				> ul,
+				> ol {
+					margin-bottom: 0;
+					margin-left: 0;
+				}
+			} 
+		}
+	}
+	
+	ul.mce-content-body {
+		list-style: disc;
+		ul {
+			list-style: circle;
+			ul {
+				list-style: square;
+				ul {
+					list-style: initial;
+				}
+			}
+		}
+	}
+	
+	ol.mce-content-body {
+		list-style: decimal;
+		ol {
+			list-style: upper-alpha;
+			ol {
+				list-style: lower-roman;
+				ol {
+					list-style: lower-alpha;
+					ol {
+						list-style: initial;
+					}
+				}
+			}
+		}
+	}
 }
 
 .wp-block,

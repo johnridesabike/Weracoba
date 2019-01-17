@@ -7,6 +7,10 @@
  * @package Weracoba
  */
 
+/**
+ * Todo: Asides.
+ */
+
 if ( ! function_exists( 'weracoba_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -146,7 +150,10 @@ function weracoba_widgets_init() {
 		array(
 			'name'          => esc_html__( 'Footer / Sidebar', 'weracoba' ),
 			'id'            => 'sidebar-1',
-			'description'   => esc_html__( 'This will display above the footer, or on the sidebar of the archives page.', 'weracoba' ),
+			'description'   => esc_html__(
+				'This will display above the footer, or on the sidebar of the archives page.',
+				'weracoba'
+			),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
@@ -158,7 +165,10 @@ function weracoba_widgets_init() {
 		array(
 			'name'          => esc_html__( 'Colophon', 'weracoba' ),
 			'id'            => 'footer-1',
-			'description'   => esc_html__( 'Widgets here will be shown at the very bottom of all pages.', 'weracoba' ),
+			'description'   => esc_html__(
+				'Widgets here will be shown at the very bottom of all pages.',
+				'weracoba'
+			),
 			'class'         => '',
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
@@ -171,7 +181,7 @@ function weracoba_widgets_init() {
 		array(
 			'name'          => esc_html__( 'Breadcrumbs', 'weracoba' ),
 			'id'            => 'breadcrumbs-1',
-			'description'   => esc_html__( 'This is for widgets from breadcrumb navigation plugins.', 'weracoba' ),
+			'description'   => esc_html__( 'This is only for adding a widget with breadcrumb navigation (via a plugin).', 'weracoba' ),
 			'class'         => '',
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
@@ -201,7 +211,9 @@ add_action( 'wp_enqueue_scripts', 'weracoba_scripts' );
 /**
  * Implement the Custom Header feature.
  */
-/* require get_template_directory() . '/inc/custom-header.php'; */
+/** Not using this right now.
+require get_template_directory() . '/inc/custom-header.php';
+*/
 
 /**
  * Custom template tags for this theme.

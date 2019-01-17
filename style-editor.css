@@ -436,6 +436,7 @@ p {
   max-width: 750px;
   margin-right: auto;
   margin-left: auto;
+  /* Lists. See _elements.scss */
 }
 
 .wp-block[data-align="wide"], .wp-block[data-align="right"], .wp-block[data-align="left"] {
@@ -444,6 +445,55 @@ p {
 
 .wp-block[data-align="full"] {
   max-width: none;
+}
+
+.wp-block ul.mce-content-body,
+.wp-block ol.mce-content-body {
+  margin: 0 0 1.5em 0;
+}
+
+.wp-block ul.mce-content-body li > ul,
+.wp-block ul.mce-content-body li > ol,
+.wp-block ol.mce-content-body li > ul,
+.wp-block ol.mce-content-body li > ol {
+  margin-bottom: 0;
+  margin-left: 0;
+}
+
+.wp-block ul.mce-content-body {
+  list-style: disc;
+}
+
+.wp-block ul.mce-content-body ul {
+  list-style: circle;
+}
+
+.wp-block ul.mce-content-body ul ul {
+  list-style: square;
+}
+
+.wp-block ul.mce-content-body ul ul ul {
+  list-style: initial;
+}
+
+.wp-block ol.mce-content-body {
+  list-style: decimal;
+}
+
+.wp-block ol.mce-content-body ol {
+  list-style: upper-alpha;
+}
+
+.wp-block ol.mce-content-body ol ol {
+  list-style: lower-roman;
+}
+
+.wp-block ol.mce-content-body ol ol ol {
+  list-style: lower-alpha;
+}
+
+.wp-block ol.mce-content-body ol ol ol ol {
+  list-style: initial;
 }
 
 .wp-block,
