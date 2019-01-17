@@ -12,11 +12,7 @@
 <div class="entry-header-wrap">
 	<?php
 	if ( is_active_sidebar( 'breadcrumbs-1' ) ) :
-		?>
-		<nav id="breadcrumbs" class="breadcrumbs-nav">
-			<?php dynamic_sidebar( 'breadcrumbs-1' ); ?>
-		</nav>
-		<?php
+		dynamic_sidebar( 'breadcrumbs-1' );
 	else :
 		weracoba_category_list();
 	endif;

@@ -181,10 +181,13 @@ function weracoba_widgets_init() {
 		array(
 			'name'          => esc_html__( 'Breadcrumbs', 'weracoba' ),
 			'id'            => 'breadcrumbs-1',
-			'description'   => esc_html__( 'This is only for adding a widget with breadcrumb navigation (via a plugin).', 'weracoba' ),
+			'description'   => esc_html__(
+				'This is only for adding a widget with breadcrumb navigation (via a plugin).',
+				'weracoba'
+			),
 			'class'         => '',
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
+			'before_widget' => '<nav id="%1$s" class="widget breadcrumbs-nav %2$s">',
+			'after_widget'  => '</nav>',
 			'before_title'  => '<h2 class="widget-title">',
 			'after_title'   => '</h2>',
 		)

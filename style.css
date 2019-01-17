@@ -1586,14 +1586,10 @@ a:hover, a:active {
   margin-bottom: .5em;
 }
 
-.breadcrumbs-nav {
-  margin-top: .2em;
+.widget.breadcrumbs-nav {
+  margin: .2em 0 0 0;
   margin-bottom: 1em;
   font-size: .9em;
-}
-
-.breadcrumbs-nav .widget {
-  margin: 0;
   padding: 0;
 }
 
@@ -1877,16 +1873,9 @@ a:hover, a:active {
   text-decoration: none;
 }
 
-/* Text widget */
-.textwidget {
-  /*font-size: 80%;
-	line-height: 1.3em;*/
-}
-
 /* Tag cloud widget */
 .widget_tag_cloud .tagcloud a {
   margin: 0 3px;
-  /* give them a bit of space */
 }
 
 /** Widget Area **/
@@ -2294,24 +2283,27 @@ a:hover, a:active {
   }
   .single .has-post-thumbnail .breadcrumbs-nav {
     -ms-grid-row: 1;
-        grid-row-start: 1;
-    grid-row-end: 1;
+    grid-row: 1 / 1;
+    -ms-grid-column: 1;
+    grid-column: 1 / 1;
     -ms-flex-item-align: start;
         -ms-grid-row-align: start;
         align-self: start;
   }
   .single .has-post-thumbnail .entry-title {
     -ms-grid-row: 2;
-        grid-row-start: 2;
-    grid-row-end: 2;
+    grid-row: 2 / 2;
+    -ms-grid-column: 1;
+    grid-column: 1 / 1;
     -ms-flex-item-align: end;
         -ms-grid-row-align: end;
         align-self: end;
   }
   .single .has-post-thumbnail .entry-meta {
     -ms-grid-row: 3;
-        grid-row-start: 3;
-    grid-row-end: 3;
+    grid-row: 3 / 3;
+    -ms-grid-column: 1;
+    grid-column: 1 / 1;
     -ms-flex-item-align: start;
         -ms-grid-row-align: start;
         align-self: start;
