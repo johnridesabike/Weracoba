@@ -1873,9 +1873,23 @@ a:hover, a:active {
   text-decoration: none;
 }
 
-/* Tag cloud widget */
-.widget_tag_cloud .tagcloud a {
-  margin: 0 3px;
+/* Tags */
+.tag .breadcrumb_last,
+.tags-links a,
+.tag-title,
+.tag-cloud-link {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: .4em;
+  padding: 0 .25em;
+  margin: .1em 0;
+  display: inline-block;
+}
+
+.tag .breadcrumb_last .svg-icon,
+.tags-links a .svg-icon,
+.tag-title .svg-icon,
+.tag-cloud-link .svg-icon {
+  opacity: .8;
 }
 
 /** Widget Area **/
@@ -1930,7 +1944,7 @@ a:hover, a:active {
 }
 
 .archive-view .site-content .widget .widgettitle {
-  margin: 0 0 1em 0;
+  margin: 0 0 .5em 0;
 }
 
 .archive-widget-area {
@@ -1938,7 +1952,7 @@ a:hover, a:active {
   margin-right: -1rem;
 }
 
-.archive-widget-area .widget ul {
+.archive-widget-area .widget > ul {
   list-style: none;
   font-size: 1.1em;
   display: -webkit-box;
@@ -1946,27 +1960,25 @@ a:hover, a:active {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
 }
 
-.archive-widget-area .widget ul > .cat-item {
+.archive-widget-area .widget > ul > .cat-item {
   width: 100%;
 }
 
 @media screen and (min-width: 735px) {
-  .archive-widget-area .widget ul > .cat-item {
+  .archive-widget-area .widget > ul > .cat-item {
     width: 30.79667%;
     margin-right: 3.8%;
   }
-  .archive-widget-area .widget ul > .cat-item:nth-child(3n+3) {
+  .archive-widget-area .widget > ul > .cat-item:nth-child(3n+3) {
     margin-right: 0;
   }
 }
 
-.archive-widget-area .widget ul .cat-item ul {
+.archive-widget-area .widget .cat-item ul {
   font-size: .8em;
 }
 
@@ -2322,7 +2334,15 @@ a:hover, a:active {
   margin-left: -1rem;
   margin-right: -1rem;
   color: #44484d;
-  font-size: 1.3em;
+  font-size: 1.2em;
+}
+
+.single .entry-footer .cat-links {
+  font-size: 1.3rem;
+}
+
+.single .entry-footer .tags-links {
+  font-size: 1rem;
 }
 
 .single .entry-footer h3 {
@@ -2604,7 +2624,7 @@ article.format-aside .entry-meta .avatar {
   text-align: left;
 }
 
-.archive-view .page-title {
+.archive-view .archive-title {
   text-align: center;
 }
 
@@ -2619,6 +2639,10 @@ article.format-aside .entry-meta .avatar {
     margin-left: auto;
     margin-right: auto;
   }
+}
+
+.archive-view .cat-links {
+  margin-bottom: .25em;
 }
 
 .archive-description {

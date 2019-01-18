@@ -105,19 +105,23 @@
     background: $color-bg-header;
     padding: .5em 1em;
     @include full-bleed;
-    color: $color-text-secondary;
-    font-size: 1.3em;
+	color: $color-text-secondary;
+	font-size: 1.2em;
 
+	.cat-links {
+		font-size: 1.3rem;
+	}
+	.tags-links {
+		font-size: 1rem;
+	}
     h3 {
         font-size: 1em;
         line-height: 1.2;
         margin: 0;
     }
-
     .comments-link {
         display: block;
     }
-    
     // Fix Jetpack stuff
     div.sharedaddy h3.sd-title:before,
     #jp-relatedposts h3.jp-relatedposts-headline em:before {

@@ -26,15 +26,17 @@
     .entry-title {
         text-align: left; // to cancel the center alignment on pages
     }
-    .page-title {
+    .archive-title {
         text-align: center;
-        //margin: 0 0 1em 0;
     }
     .site-header .entry-header {
         margin-left: 1em;
         margin-right: 1em;
         @include max-site-width;
-    }
+	}
+	.cat-links {
+		margin-bottom: .25em;
+	}
 }
 .archive-description {
     font-size: 1.2em;

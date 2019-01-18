@@ -171,9 +171,19 @@
     }
 }
 
-/* Tag cloud widget */
-.widget_tag_cloud .tagcloud a {
-    margin: 0 3px;
+/* Tags */
+.tag .breadcrumb_last, // Yoast breadcrumbs
+.tags-links a,
+.tag-title,
+.tag-cloud-link {
+	background-color: rgba(0, 0, 0, .1);
+	border-radius: .4em;
+	padding: 0 .25em;
+	margin: .1em 0;
+	display: inline-block;
+	.svg-icon {
+		opacity: .8;
+	}
 }
 
 /** Widget Area **/
@@ -206,7 +216,8 @@
         @include drop-shadow;
         margin-bottom: 1em;
         .widgettitle {
-            margin: 0 0 1em 0;
+			//margin: 0 0 1em 0;
+			margin: 0 0 .5em 0;
         }
     }
 }
@@ -214,23 +225,19 @@
     // for the widgets outside regular widget-area
     @include full-bleed;
     .widget {
-        ul {
+        > ul {
             list-style: none;
             font-size: 1.1em;
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-
+			display: flex;
+			flex-flow: row wrap;
             > .cat-item {
                 @include widget-columns;
             }
-
-            .cat-item ul {
-                font-size: .8em;
-            }
-        }
+		}
+		.cat-item ul {
+			font-size: .8em;
+		}
     }
-
 }
 
 /** Footer Widgets **/

@@ -209,7 +209,7 @@ if ( ! function_exists( 'weracoba_category_list' ) ) :
 				*              2: list of categories.
 				*/
 				'<div class="cat-links">' . esc_html__( '%1$s %2$s', 'weracoba' ) . '</div>',
-				weracoba_get_icon_svg( 'archive', 16 ),
+				weracoba_get_icon_svg( 'category', 16 ),
 				$categories_list
 			); // phpcs:ignore XSS OK.
 		}
@@ -221,12 +221,11 @@ if ( ! function_exists( 'weracoba_tag_list' ) ) :
 	 * Display the tag list.
 	 */
 	function weracoba_tag_list() {
-		/* translators: There is a space before and after the text. */
+		/* translators: There is a space before and after the text. Only shown to screen readers. */
 		$weracoba_tagged = esc_html__( ' Tagged ', 'weracoba' );
 		echo get_the_tag_list(
-			'<div class="tags-links"> ' . weracoba_get_icon_svg( 'tag', 16 ) . ' <span class="screen-reader-text">' . $weracoba_tagged . '</span>',
-			/* translators: used between list items, there is a space after the comma */
-			esc_html_x( ', ', 'list item separator', 'weracoba' ),
+			'<div class="tags-links"><span class="screen-reader-text">' . $weracoba_tagged . '</span>',
+			' ',
 			'</div>'
 		); // phpcs:ignore XSS OK
 	}
