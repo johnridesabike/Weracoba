@@ -172,17 +172,45 @@
 }
 
 /* Tags */
-.tag .breadcrumb_last, // Yoast breadcrumbs
 .tags-links a,
 .tag-title,
 .tag-cloud-link {
 	background-color: rgba(0, 0, 0, .1);
-	border-radius: .4em;
 	padding: 0 .25em;
 	margin: .1em 0;
 	display: inline-block;
 	.svg-icon {
 		opacity: .8;
+	}
+}
+.tags-links a,
+.tag-title {
+	border-radius: 1em .3em .3em 1em;
+}
+.tag-cloud-link {
+	border-radius: .3em;
+}
+.tags-links a,
+a.tag-cloud-link {
+	color: $color-headers; // hack
+	&:hover,
+	&:focus {
+		color: $color-link-hover;
+	}
+}
+
+/** Breadcrumbs **/
+.widget.breadcrumbs-nav {
+    margin: .2em 0 0 0;
+    margin-bottom: 1em;
+    font-size: .9em;
+	padding: 0;
+	a {
+		color: $color-headers; // Hack
+		&:hover,
+		&:focus {
+			color: $color-link-hover;
+		}
 	}
 }
 

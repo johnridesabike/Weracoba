@@ -1586,13 +1586,6 @@ a:hover, a:active {
   margin-bottom: .5em;
 }
 
-.widget.breadcrumbs-nav {
-  margin: .2em 0 0 0;
-  margin-bottom: 1em;
-  font-size: .9em;
-  padding: 0;
-}
-
 .single-post .post-navigation {
   margin-top: 1em;
 }
@@ -1874,22 +1867,55 @@ a:hover, a:active {
 }
 
 /* Tags */
-.tag .breadcrumb_last,
 .tags-links a,
 .tag-title,
 .tag-cloud-link {
   background-color: rgba(0, 0, 0, 0.1);
-  border-radius: .4em;
   padding: 0 .25em;
   margin: .1em 0;
   display: inline-block;
 }
 
-.tag .breadcrumb_last .svg-icon,
 .tags-links a .svg-icon,
 .tag-title .svg-icon,
 .tag-cloud-link .svg-icon {
   opacity: .8;
+}
+
+.tags-links a,
+.tag-title {
+  border-radius: 1em .3em .3em 1em;
+}
+
+.tag-cloud-link {
+  border-radius: .3em;
+}
+
+.tags-links a,
+a.tag-cloud-link {
+  color: #10474b;
+}
+
+.tags-links a:hover, .tags-links a:focus,
+a.tag-cloud-link:hover,
+a.tag-cloud-link:focus {
+  color: #01b0bb;
+}
+
+/** Breadcrumbs **/
+.widget.breadcrumbs-nav {
+  margin: .2em 0 0 0;
+  margin-bottom: 1em;
+  font-size: .9em;
+  padding: 0;
+}
+
+.widget.breadcrumbs-nav a {
+  color: #10474b;
+}
+
+.widget.breadcrumbs-nav a:hover, .widget.breadcrumbs-nav a:focus {
+  color: #01b0bb;
 }
 
 /** Widget Area **/
