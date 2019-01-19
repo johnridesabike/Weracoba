@@ -45,7 +45,9 @@ if ( ! function_exists( 'weracoba_setup' ) ) :
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */
 		add_theme_support( 'post-thumbnails' );
-		set_post_thumbnail_size( 640, 480, true ); // 320 x 240, times 2 for retina displays
+		// set_post_thumbnail_size( 640, 480, true ); // 320 x 240, times 2 for retina displays
+		// set_post_thumbnail_size( 960, 640, true );
+		set_post_thumbnail_size( 768, 512 );
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(

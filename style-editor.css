@@ -201,15 +201,15 @@ big {
 }
 
 /* Archive view */
-.archive-view .entry-title {
+.excerpt-entry .entry-title {
   font-size: 1.8em;
 }
 
-.archive-view .cat-links {
+.excerpt-entry .cat-links {
   font-size: 1.2em;
 }
 
-.archive-view .entry-content {
+.excerpt-entry .entry-content {
   font-size: 1.2em;
 }
 
