@@ -2184,6 +2184,11 @@ a.tag-cloud-link:focus {
   }
 }
 
+.search-results .search-form {
+  margin: 0 auto 1em auto;
+  text-align: center;
+}
+
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
@@ -2476,21 +2481,19 @@ a.tag-cloud-link:focus {
   }
 }
 
-/** Page header **/
-.page .entry-title {
+.page .page .entry-title {
   text-align: center;
 }
 
 @media screen and (min-width: 1200px) {
-  .page .entry-header {
+  .page .page .entry-header {
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
   }
 }
 
-/** Page body **/
-.page .entry-content > *:not(.alignwide):not(.alignfull) {
+.page .page .entry-content > *:not(.alignwide):not(.alignfull) {
   max-width: 750px;
   margin-right: auto;
   margin-left: auto;
@@ -2776,7 +2779,7 @@ article.format-aside .entry-meta .avatar {
         -ms-flex-align: center;
             align-items: center;
   }
-  .excerpt-entry .page .entry-footer {
+  .excerpt-entry.page .entry-footer {
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end;

@@ -213,26 +213,16 @@
     }
 }
 
-/** Page header **/
-
-.page {
+.page .page { // Doubled because the class appears twice on single pages, but once on excerpts
     .entry-title {
         text-align: center;
     }
     .entry-header {
         @include max-site-width;
     }
-}
-
-/** Page body **/
-
-.page {
     .entry-content > *:not(.alignwide):not(.alignfull) {
         @include max-page-width;
     }
-    //.entry-content h2 {
-    //    margin-top: 2em;
-    //}
 }
 
 /** Asides **/
