@@ -122,50 +122,6 @@
     .comments-link {
         display: block;
     }
-    // Fix Jetpack stuff
-    div.sharedaddy h3.sd-title:before,
-    #jp-relatedposts h3.jp-relatedposts-headline em:before {
-        content: none;
-    }
-    div.sharedaddy h3.sd-title,
-    #jp-relatedposts h3.jp-relatedposts-headline,
-    #jp-relatedposts h3.jp-relatedposts-headline em,
-    #jp-relatedposts .jp-relatedposts-items-visual h4.jp-relatedposts-post-title {
-        font-size: 1em;
-        font-weight: 400;
-        margin: 0;
-        line-height: 1.2;
-    }
-    #jp-relatedposts h3.jp-relatedposts-headline {
-        display: block;
-        float: none;
-        margin-bottom: 1em;
-        text-align: center;
-    }
-    #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-context, 
-    #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-date {
-        opacity: 1;
-    }
-    #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post-nothumbs p.jp-relatedposts-post-excerpt {
-        margin-bottom: .5em;
-    }
-    // fixes contrast for sharing buttons 
-    #sharing_email .sharing_send,
-    .sd-content ul li .option a.share-ustom,
-    .sd-content ul li a.sd-button,
-    .sd-content ul li.advanced a.share-more,
-    .sd-content ul li.preview-item div.option.option-smart-off a,
-    .sd-social-icon .sd-content ul li a.sd-button,
-    .sd-social-icon-text .sd-content ul li a.sd-button,
-    .sd-social-official .sd-content>ul>li .digg_button>a,
-    .sd-social-official .sd-content>ul>li>a.sd-button,
-    .sd-social-text .sd-content ul li a.sd-button {
-        color: $color-text-secondary !important;
-    }
-
-    div.jetpack-likes-widget-wrapper {
-        width: initial;
-    }
 }
 
 .entry-footer-wrapper > * {
@@ -189,16 +145,10 @@
             flex-wrap: wrap;
             justify-content: space-between;
         }
-
-        .jp-relatedposts,
         .post-navigation {
             flex: 0 0 100%;
             margin-right: 0; // cancel default margin
         }
-    }
-
-    .entry-footer #jp-relatedposts {
-        margin: auto;
     }
 }
 
@@ -282,17 +232,6 @@ article.format-aside {
             width: 100%;
             margin-bottom: .5em;
         }
-    }
-}
-
-/* JetPack social stuff */
-
-.sharedaddy {
-    max-width: 100% !important;
-    font-family: $font-UI;
-
-    .sd-title {
-        font-family: $font-UI !important;
     }
 }
 

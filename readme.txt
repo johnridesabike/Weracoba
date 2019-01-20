@@ -48,3 +48,4 @@ Weracoba includes support for Infinite Scroll in Jetpack.
 
 * Based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 * normalize.css https://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](https://opensource.org/licenses/MIT)
+* Icons come from [Dashicons](https://developer.wordpress.org/resource/dashicons/#star-filled) and rendering code comes from [TwentyNineteen](https://wordpress.org/themes/twentynineteen/)

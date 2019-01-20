@@ -37,7 +37,8 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
     ## Navigation
         ### Menus
         ### Content Navigation
-    ## Widgets
+	## Widgets
+	## Plugins
 # Accessibility
 # Alignments
 # Clearings
@@ -45,7 +46,6 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	## Posts and pages
     ## Archives
 	## Comments
-    ## Front Page
 # Infinite scroll
 # Media
     ## Alignments and Images
@@ -783,7 +783,52 @@ p.wp-block-subhead {
   text-decoration: none;
 }
 
-@media screen and (min-width: 735px) {
+@media (min-width: 600px) {
+  .wp-block-column {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+  }
+  .wp-block-column:nth-child(odd) {
+    margin-right: 0;
+  }
+  .wp-block-column:nth-child(even) {
+    margin-left: 0;
+  }
+  .wp-block-column:not(:first-child) {
+    margin-left: 0;
+  }
+  .wp-block-column:not(:last-child) {
+    margin-right: 0;
+  }
+}
+
+@media (min-width: 735px) {
+  .wp-block-columns {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
+  .wp-block-column {
+    -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+  }
+  .wp-block-column:nth-child(odd) {
+    margin-right: 32px;
+  }
+  .wp-block-column:nth-child(even) {
+    margin-left: 32px;
+  }
+  .wp-block-column:not(:first-child) {
+    margin-left: 32px;
+  }
+  .wp-block-column:not(:last-child) {
+    margin-right: 32px;
+  }
   p.wp-block-subhead {
     font-size: 1.75em;
   }
@@ -2086,6 +2131,89 @@ a.tag-cloud-link:focus {
 }
 
 /*--------------------------------------------------------------
+## Plugins
+--------------------------------------------------------------*/
+/**
+* Jetpack
+*/
+.entry-footer div.sharedaddy h3.sd-title:before,
+.entry-footer #jp-relatedposts h3.jp-relatedposts-headline em:before {
+  content: none;
+}
+
+.entry-footer div.sharedaddy h3.sd-title,
+.entry-footer #jp-relatedposts h3.jp-relatedposts-headline,
+.entry-footer #jp-relatedposts h3.jp-relatedposts-headline em,
+.entry-footer #jp-relatedposts .jp-relatedposts-items-visual h4.jp-relatedposts-post-title {
+  font-size: 1em;
+  font-weight: 400;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.entry-footer #jp-relatedposts h3.jp-relatedposts-headline {
+  display: block;
+  float: none;
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+.entry-footer #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-context,
+.entry-footer #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-date {
+  opacity: 1;
+}
+
+.entry-footer #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post-nothumbs p.jp-relatedposts-post-excerpt {
+  margin-bottom: .5em;
+}
+
+.entry-footer #sharing_email .sharing_send,
+.entry-footer .sd-content ul li .option a.share-ustom,
+.entry-footer .sd-content ul li a.sd-button,
+.entry-footer .sd-content ul li.advanced a.share-more,
+.entry-footer .sd-content ul li.preview-item div.option.option-smart-off a,
+.entry-footer .sd-social-icon .sd-content ul li a.sd-button,
+.entry-footer .sd-social-icon-text .sd-content ul li a.sd-button,
+.entry-footer .sd-social-official .sd-content > ul > li .digg_button > a,
+.entry-footer .sd-social-official .sd-content > ul > li > a.sd-button,
+.entry-footer .sd-social-text .sd-content ul li a.sd-button {
+  color: #44484d !important;
+}
+
+.entry-footer div.jetpack-likes-widget-wrapper {
+  width: initial;
+}
+
+.entry-footer .sharedaddy {
+  max-width: 100% !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+.entry-footer .sharedaddy .sd-title {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif !important;
+}
+
+.site .contact-form label {
+  font-weight: normal;
+}
+
+.site .contact-form label span {
+  color: darkred;
+}
+
+@media screen and (min-width: 735px) {
+  .entry-footer .jp-relatedposts {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+    margin-right: 0;
+  }
+  .entry-footer #jp-relatedposts {
+    margin: auto;
+  }
+}
+
+/*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/
 /* Text meant only for screen readers. */
@@ -2382,54 +2510,6 @@ a.tag-cloud-link:focus {
   display: block;
 }
 
-.single .entry-footer div.sharedaddy h3.sd-title:before,
-.single .entry-footer #jp-relatedposts h3.jp-relatedposts-headline em:before {
-  content: none;
-}
-
-.single .entry-footer div.sharedaddy h3.sd-title,
-.single .entry-footer #jp-relatedposts h3.jp-relatedposts-headline,
-.single .entry-footer #jp-relatedposts h3.jp-relatedposts-headline em,
-.single .entry-footer #jp-relatedposts .jp-relatedposts-items-visual h4.jp-relatedposts-post-title {
-  font-size: 1em;
-  font-weight: 400;
-  margin: 0;
-  line-height: 1.2;
-}
-
-.single .entry-footer #jp-relatedposts h3.jp-relatedposts-headline {
-  display: block;
-  float: none;
-  margin-bottom: 1em;
-  text-align: center;
-}
-
-.single .entry-footer #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-context,
-.single .entry-footer #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-date {
-  opacity: 1;
-}
-
-.single .entry-footer #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post-nothumbs p.jp-relatedposts-post-excerpt {
-  margin-bottom: .5em;
-}
-
-.single .entry-footer #sharing_email .sharing_send,
-.single .entry-footer .sd-content ul li .option a.share-ustom,
-.single .entry-footer .sd-content ul li a.sd-button,
-.single .entry-footer .sd-content ul li.advanced a.share-more,
-.single .entry-footer .sd-content ul li.preview-item div.option.option-smart-off a,
-.single .entry-footer .sd-social-icon .sd-content ul li a.sd-button,
-.single .entry-footer .sd-social-icon-text .sd-content ul li a.sd-button,
-.single .entry-footer .sd-social-official .sd-content > ul > li .digg_button > a,
-.single .entry-footer .sd-social-official .sd-content > ul > li > a.sd-button,
-.single .entry-footer .sd-social-text .sd-content ul li a.sd-button {
-  color: #44484d !important;
-}
-
-.single .entry-footer div.jetpack-likes-widget-wrapper {
-  width: initial;
-}
-
 .entry-footer-wrapper > * {
   margin-bottom: .5em;
 }
@@ -2456,15 +2536,11 @@ a.tag-cloud-link:focus {
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
-  .single .entry-footer .jp-relatedposts,
   .single .entry-footer .post-navigation {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 100%;
             flex: 0 0 100%;
     margin-right: 0;
-  }
-  .entry-footer #jp-relatedposts {
-    margin: auto;
   }
 }
 
@@ -2566,16 +2642,6 @@ article.format-aside .entry-meta .avatar {
 .error404 .page-content .search-form [type="search"] {
   width: 100%;
   margin-bottom: .5em;
-}
-
-/* JetPack social stuff */
-.sharedaddy {
-  max-width: 100% !important;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-}
-
-.sharedaddy .sd-title {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif !important;
 }
 
 /* Media queries */
@@ -2703,25 +2769,6 @@ article.format-aside .entry-meta .avatar {
 
 /** Archive Media Queries **/
 @media screen and (min-width: 735px) {
-  /**
-    .archive-view {
-        .content-area .post.has-post-thumbnail .entry-wrap,
-        .content-area .page.has-post-thumbnail .entry-wrap {
-            display: flex;
-            flex-direction: row;
-            overflow: hidden;
-        }
-        .content-area .excerpt-entry,
-        .format-aside {
-            margin-left: auto;
-            margin-right: auto;
-            padding-top: .5em; // to match the rest of the padding
-        }
-        .entry-meta {
-            margin-bottom: 0;
-        }
-	}
-	*/
   .excerpt-entry {
     margin-left: auto;
     margin-right: auto;
@@ -2731,40 +2778,50 @@ article.format-aside .entry-meta .avatar {
         grid-template-columns: 33% auto;
     -ms-grid-rows: auto;
         grid-template-rows: auto;
-        grid-template-areas: "header header" "content content" "footer footer";
-  }
-  .excerpt-entry.has-post-thumbnail {
-        grid-template-areas: "header header" "thumbnail content" "footer footer";
   }
   .excerpt-entry .entry-header {
     margin-bottom: 1rem;
     -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1 / span 1;
     -ms-grid-column: 1;
     -ms-grid-column-span: 2;
-    grid-area: header;
+    grid-column: 1 / span 2;
   }
   .excerpt-entry .featured-image {
-    -ms-grid-row: 2;
     -ms-grid-column: 1;
-    grid-area: thumbnail;
+    -ms-grid-column-span: 1;
+    grid-column: 1 / span 1;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2 / span 1;
   }
   .excerpt-entry .entry-content {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1 / span 2;
     -ms-grid-row: 2;
-    -ms-grid-column: 2;
-    grid-area: content;
+    -ms-grid-row-span: 1;
+    grid-row: 2 / span 1;
   }
   .excerpt-entry .entry-content p {
     margin: 0;
   }
   .excerpt-entry.has-post-thumbnail .entry-content {
     margin-left: 1em;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2 / span 1;
   }
   .excerpt-entry .entry-footer {
     margin-top: 1rem;
-    -ms-grid-row: 3;
     -ms-grid-column: 1;
     -ms-grid-column-span: 2;
-    grid-area: footer;
+    grid-column: 1 / span 2;
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    grid-row: 3 / span 1;
+    width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -3036,54 +3093,6 @@ article.format-aside .entry-meta .avatar {
   display: block;
   margin: auto;
   color: #10474b;
-}
-
-@media (min-width: 600px) {
-  .wp-block-column {
-    -ms-flex-preferred-size: 100%;
-        flex-basis: 100%;
-    -webkit-box-flex: 0;
-        -ms-flex-positive: 0;
-            flex-grow: 0;
-  }
-  .wp-block-column:nth-child(odd) {
-    margin-right: 0;
-  }
-  .wp-block-column:nth-child(even) {
-    margin-left: 0;
-  }
-  .wp-block-column:not(:first-child) {
-    margin-left: 0;
-  }
-  .wp-block-column:not(:last-child) {
-    margin-right: 0;
-  }
-}
-
-@media (min-width: 735px) {
-  .wp-block-columns {
-    -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
-  }
-  .wp-block-column {
-    -ms-flex-preferred-size: 50%;
-        flex-basis: 50%;
-    -webkit-box-flex: 0;
-        -ms-flex-positive: 0;
-            flex-grow: 0;
-  }
-  .wp-block-column:nth-child(odd) {
-    margin-right: 32px;
-  }
-  .wp-block-column:nth-child(even) {
-    margin-left: 32px;
-  }
-  .wp-block-column:not(:first-child) {
-    margin-left: 32px;
-  }
-  .wp-block-column:not(:last-child) {
-    margin-right: 32px;
-  }
 }
 
 /*--------------------------------------------------------------

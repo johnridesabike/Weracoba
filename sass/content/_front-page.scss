@@ -1,65 +1,8 @@
-//
-// MARKED FOR REDO
-//
 .home.page {
     .entry-header {
         display: none;
     }
 }
-
-// .cat-blocks {
-//     display: flex;
-//     justify-content: center;
-//     flex-flow: row;
-//     flex-wrap: wrap;
-
-//     .entry-title,
-//     .cat-title {
-//         font-size: 1.5em;
-//         text-align: center;
-//         margin: 0;
-//     }
-
-//     p {
-//         font-size: .9em;
-//         &.wp-block-cover-image-text {
-//             font-size: 1.2em;
-//         }
-//     }
-// }
-
-// .cat-block-wrap {
-//     border: 1px solid $color-border;
-//     margin: 0 .5em 1.5em .5em;
-//     overflow:hidden;
-//     @include drop-shadow;
-//     background: $color-bg-header;
-//     max-width: 320px;
-// }
-
-// .cat-block {
-// 	position: relative;
-//     min-height: 20em;
-//     margin: 0;
-//     height: 100%;
-//     padding-bottom: 1px; /* fixes the overlay link in Firefox */
-    
-//     p {
-//         margin-left: .5em;
-//         margin-right: .5em;
-//         font-size: 1.2em;
-//         color: $color-text-secondary;
-//         z-index: 1;
-//     }
-    
-//     img {
-//         width: 100%;
-//     }
-// }
-
-// .overlay-link {
-//     @include link-overlay;
-// }
 
 /*
  * Begin custom home page experiments
@@ -71,57 +14,5 @@
             margin: auto;
             color: $color-headers;
         }
-    }
-}
-
-// replace default css
-@media (min-width:600px) {
-    .wp-block-column {
-        flex-basis: 100%; //50%;
-        flex-grow: 0
-    }
-    
-    .wp-block-column:nth-child(odd) {
-        margin-right: 0; //32px
-    }
-
-    .wp-block-column:nth-child(even) {
-        margin-left: 0; //32px
-    }
-
-    .wp-block-column:not(:first-child) {
-        margin-left: 0; //32px
-    }
-
-    .wp-block-column:not(:last-child) {
-        margin-right: 0; //32px
-    }
-}
-
-@media (min-width: $breakpoint-1) {
-     // replaces the built-in media query with something better
-    .wp-block-columns {
-        flex-wrap: nowrap;
-    }
-
-    .wp-block-column {
-        flex-basis: 50%;
-        flex-grow: 0
-    }
-
-    .wp-block-column:nth-child(odd) {
-        margin-right: 32px
-    }
-
-    .wp-block-column:nth-child(even) {
-        margin-left: 32px
-    }
-
-    .wp-block-column:not(:first-child) {
-        margin-left: 32px
-    }
-
-    .wp-block-column:not(:last-child) {
-        margin-right: 32px
     }
 }
