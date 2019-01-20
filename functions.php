@@ -11,6 +11,7 @@
  * To-do:
  * - Asides
  * - Thumbnail dimensions
+ * - Refactor CSS colors and fonts
  */
 
 if ( ! function_exists( 'weracoba_setup' ) ) :

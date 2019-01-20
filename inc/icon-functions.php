@@ -1,6 +1,8 @@
 <?php
 /**
- * SVG icons related functions
+ * SVG icons related functions.
+ * 
+ * Almost all of this was copied from TwentyNinetween.
  *
  * @package Weracoba
  * @since 0.1
@@ -13,7 +15,7 @@
  * @param int    $size The icon size in pixels.
  */
 function weracoba_get_icon_svg( $icon, $size = 24 ) {
-	return TwentyNineteen_SVG_Icons::get_svg( 'ui', $icon, $size );
+	return Weracoba_SVG_Icons::get_svg( 'ui', $icon, $size );
 }
 
 /**
@@ -23,7 +25,7 @@ function weracoba_get_icon_svg( $icon, $size = 24 ) {
  * @param int    $size The icon size in pixels.
  */
 function weracoba_get_social_icon_svg( $icon, $size = 24 ) {
-	return TwentyNineteen_SVG_Icons::get_svg( 'social', $icon, $size );
+	return Weracoba_SVG_Icons::get_svg( 'social', $icon, $size );
 }
 
 /**
@@ -33,7 +35,7 @@ function weracoba_get_social_icon_svg( $icon, $size = 24 ) {
  * @param int    $size The icon size in pixels.
  */
 function weracoba_get_social_link_svg( $uri, $size = 24 ) {
-	return TwentyNineteen_SVG_Icons::get_social_link_svg( $uri, $size );
+	return Weracoba_SVG_Icons::get_social_link_svg( $uri, $size );
 }
 
 /**
