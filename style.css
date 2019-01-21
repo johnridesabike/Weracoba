@@ -398,14 +398,14 @@ template {
 # Typography
 --------------------------------------------------------------*/
 html {
-  font-size: 22px;
+  font-size: 20px;
+  line-height: 1.53033;
 }
 
 body {
   color: #2f2f30;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   font-size: 1rem;
-  line-height: 1.49192;
 }
 
 textarea {
@@ -424,32 +424,32 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: 2em;
-  line-height: 1.35383;
+  line-height: 1.36324;
 }
 
 h2 {
   font-size: 1.5em;
-  line-height: 1.38868;
+  line-height: 1.40541;
 }
 
 h3 {
   font-size: 1em;
-  line-height: 1.48826;
+  line-height: 1.5259;
 }
 
 h4 {
   font-size: 0.88889em;
-  line-height: 1.53587;
+  line-height: 1.58352;
 }
 
 h5 {
   font-size: 0.8em;
-  line-height: 1.58909;
+  line-height: 1.6479;
 }
 
 h6 {
   font-size: 0.66667em;
-  line-height: 1.71232;
+  line-height: 1.79701;
 }
 
 p {
@@ -561,9 +561,10 @@ big {
   color: #44484d;
 }
 
-.wp-block-cover-image .wp-block-cover-image-text {
+.wp-block-cover .wp-block-cover-text {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   color: #e0e8e7;
+  font-size: 2em;
 }
 
 .wp-block-button .wp-block-button__link,
@@ -984,7 +985,7 @@ a:hover, a:active {
 
 .site-title {
   font-family: Baskerville, "Baskerville Old Face", Garamond, Times, "Times New Roman", serif;
-  font-size: 1.5em;
+  font-size: 2em;
   margin: 0;
 }
 
@@ -1101,9 +1102,6 @@ a:hover, a:active {
   .mobile-header-wrapper {
     display: block;
   }
-  .global-header:not(.fixed-header) .site-title {
-    font-size: 2em;
-  }
   .site-title {
     margin: 0;
   }
@@ -1207,8 +1205,7 @@ a:hover, a:active {
 }
 
 .menu-button .menu-toggle .svg-icon {
-  height: 40px;
-  width: 40px;
+  font-size: 2em;
 }
 
 .menu-button .dismiss-icon {
@@ -1321,7 +1318,6 @@ a:hover, a:active {
 
 .main-navigation a {
   display: block;
-  text-decoration: none;
   padding: .5em 0 .5em 0;
 }
 
@@ -1344,12 +1340,6 @@ a:hover, a:active {
     width: auto;
     text-align: left;
     padding: 0 1em;
-  }
-  .main-navigation ul ul li a {
-    font-size: 1em;
-  }
-  .main-navigation a {
-    letter-spacing: 0.025em;
   }
   .main-navigation li {
     padding-left: 1.2em;
@@ -1589,12 +1579,12 @@ a:hover, a:active {
 ## Widgets
 --------------------------------------------------------------*/
 .widget {
-  line-height: 1.36998;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   margin: 0;
   padding: 1em;
   /* Make sure select elements fit in widgets. */
   font-size: 0.8em;
+  line-height: 1.42428;
 }
 
 .widget ul,
@@ -1811,7 +1801,7 @@ a.tag-cloud-link:focus {
 .widget.breadcrumbs-nav {
   margin: .2em 0 0 0;
   margin-bottom: 1em;
-  font-size: 0.66667em;
+  font-size: 0.8em;
   padding: 0;
 }
 
@@ -2449,7 +2439,7 @@ a.tag-cloud-link:focus {
 }
 
 .page .page .entry-content {
-  line-height: 1.49192;
+  line-height: 1.53033;
 }
 
 @media screen and (min-width: 1200px) {
@@ -2560,6 +2550,10 @@ a.tag-cloud-link:focus {
 .excerpt-entry {
   margin-left: -1rem;
   margin-right: -1rem;
+}
+
+.excerpt-entry .entry-header {
+  padding: 0;
 }
 
 .excerpt-entry .entry-title {

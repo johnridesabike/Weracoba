@@ -34,11 +34,6 @@ a {
 	}
 }
 
-p {
-	font-family: $font-reading;
-	font-size: $font-size-base;
-	line-height: calculate-line-height($font-size-base, $size-content) !important;
-}
 
 .wp-block {
 	@include max-content-width;
@@ -101,11 +96,12 @@ p {
 	}
 }
 
+p,
 .wp-block,
 .mce-content-body {
 	font-family: $font-reading;
-	font-size: $font-size-base;
-	line-height: calculate-line-height($font-size-base, $size-content);
+	font-size: $font-size-base-small;
+	line-height: calculate-line-height($font-size-base-small, $size-content);
 }
 
 /** Media queries **/
@@ -114,6 +110,12 @@ p {
     .editor-post-title__block .editor-post-title__input {
         font-size: 2.7em;
     }
+	p,
+	.wp-block,
+	.mce-content-body {
+		font-size: $font-size-base;
+		line-height: calculate-line-height($font-size-base, $size-content);
+	}
 }
 
 @media screen and (min-width: $breakpoint-3) {

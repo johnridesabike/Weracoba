@@ -4,7 +4,7 @@
 }
 
 
-%site-content {
+%smallscreen-padding {
 	padding: 0 1rem;
 	
 	@media screen and (min-width: $breakpoint-3) {
@@ -13,7 +13,7 @@
 }
 
 .site-content {
-    @extend %site-content;
+    @extend %smallscreen-padding;
     // so when .site-content gets extended elsewhere, it isn't affected by later changes
     //overflow-x: scroll;
 }

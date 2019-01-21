@@ -17,8 +17,7 @@
 		@include button;
 		padding: .1em;
 		.svg-icon {
-			height: 40px;
-			width: 40px;
+			font-size: $font-size-xl;
 		}
     }
     .dismiss-icon {
@@ -109,7 +108,6 @@
 	}
 	a {
         display: block;
-        text-decoration: none;
         padding: .5em 0 .5em 0;
 	}
 	// .current_page_item > a,
@@ -128,15 +126,7 @@
                 width: auto;
                 text-align: left;
                 padding: 0 1em;
-                li {
-                    a {
-                        font-size: 1em;
-                    }
-                }
             }
-        }
-        a {
-            letter-spacing: 0.025em;
         }
         li {
             padding-left: 1.2em;

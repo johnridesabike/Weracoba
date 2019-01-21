@@ -36,6 +36,9 @@
 
 .excerpt-entry {
 	@include full-bleed;
+	.entry-header {
+		padding: 0; // cancel the padding from the main entry-headers
+	}
     .entry-title {
         text-align: left; // to cancel the center alignment on pages
 	}

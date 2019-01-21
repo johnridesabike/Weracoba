@@ -20,9 +20,10 @@
 	color: $color-text-secondary;
 }
 
-.wp-block-cover-image .wp-block-cover-image-text {
+.wp-block-cover .wp-block-cover-text {
     font-family: $font-headers;
-    color: $color-bg-body-alt;
+	color: $color-bg-body-alt;
+	font-size: $font-size-xl;
 }
 
 .wp-block-button .wp-block-button__link,

@@ -6,7 +6,7 @@
     @include drop-shadow-bottom;
 }
 .site-header-wrapper {
-    @extend %site-content;
+    @extend %smallscreen-padding;
 }
 .mobile-header-wrapper {
 	display: flex;
@@ -23,7 +23,7 @@
 }
 .site-title {
     font-family: $font-site-title;
-	font-size: $font-size-lg;
+	font-size: $font-size-xl;
     margin: 0;
     & a {
         color: $color-headers;
@@ -108,9 +108,6 @@
 	}
 	.mobile-header-wrapper {
 		display: block;
-	}
-	.global-header:not(.fixed-header) .site-title {
-		font-size: $font-size-xl;
 	}
     .site-title {
         margin: 0;
