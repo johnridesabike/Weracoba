@@ -181,7 +181,7 @@
     }
     .entry-content > *:not(.alignwide):not(.alignfull) {
         @include max-page-width;
-    }
+	}
 }
 
 /** Error 404 **/

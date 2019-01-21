@@ -46,7 +46,6 @@ $glyph-arrow-up: "\25B2";
 $glyph-arrow-next: "\276F";
 $glyph-arrow-down-right: "\21B3";
 
-$font-size-base-small: 16px;
 $font-size-base: 20px;
 // Update editor-font-sizes in functions.php
 $font-size-xxs:   1em / 1.5;   // 13.33
@@ -69,6 +68,6 @@ $breakpoint-3: 1365px; // iPad pro landscape
 
 // Structure
 $size-max-width: 1200px; // WordPress global: $content_width
-$size-content: 750px;
-$size-content-page: 750px; //900px;
+$size-content: 680px;//750px;
+$size-content-page: $size-content;
 $size-widget: 250px;

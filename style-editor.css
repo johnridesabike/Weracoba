@@ -1,6 +1,6 @@
 html {
   font-size: 20px;
-  line-height: 1.53033;
+  line-height: 1.50967;
 }
 
 body {
@@ -11,7 +11,7 @@ body {
 
 textarea {
   font-family: Times, "Times New Roman", serif;
-  max-width: 750px;
+  max-width: 680px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -140,7 +140,50 @@ big {
   text-decoration: underline;
 }
 
-/* Media captions */
+/*--------------------------------------------------------------
+## Media Styles
+--------------------------------------------------------------*/
+.alignwide:not(.wp-block-columns):not(p) {
+  /* displays as alignfull on small screens */
+  margin-left: -1rem;
+  margin-right: -1rem;
+}
+
+.alignfull {
+  width: 100vw !important;
+  max-width: 100vw !important;
+  position: relative !important;
+  left: 50% !important;
+  right: 50% !important;
+  margin-left: -50vw !important;
+  margin-right: -50vw !important;
+}
+
+figure.wp-block-image.alignwide, .alignwide.wp-block[data-type="core/image"] {
+  max-width: initial !important;
+}
+
+.wp-block-image figcaption {
+  font-size: 0.8em;
+  color: #44484d;
+}
+
+div.wp-block-image, .wp-block[data-type="core/image"][data-align] {
+  /*
+	** Allow images to float outside of the reading area.
+	** Target the div because that's what aligned image figures are wrapped in.
+	*/
+  max-width: 100% !important;
+  text-align: center;
+}
+
+@media screen and (min-width: 1365px) {
+  .alignwide {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
 .wp-block-gallery .blocks-gallery-item figcaption, .single .featured-image figcaption {
   background: -webkit-gradient(linear, left bottom, left top, color-stop(0, rgba(0, 0, 0, 0.7)), color-stop(80%, rgba(0, 0, 0, 0.3)), to(transparent));
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.7) 0, rgba(0, 0, 0, 0.3) 80%, transparent);
@@ -152,11 +195,6 @@ big {
 .single .featured-image figcaption {
   width: 100%;
   text-align: right;
-}
-
-.wp-block-image figcaption {
-  font-size: 0.8em;
-  color: #44484d;
 }
 
 .wp-block-cover .wp-block-cover-text {
@@ -286,10 +324,6 @@ big {
 }
 
 /* editor styles */
-.editor-post-title__block .editor-post-title__input {
-  font-family: Times, "Times New Roman", serif;
-}
-
 h1, .editor-post-title__block .editor-post-title__input, h2, h3, h4, h5, h6 {
   font-family: Times, "Times New Roman", serif;
 }
@@ -315,13 +349,13 @@ a:hover, a:active {
 }
 
 .wp-block {
-  max-width: 750px;
+  max-width: 680px;
   margin-right: auto;
   margin-left: auto;
   /* Lists. See _elements.scss */
 }
 
-.wp-block[data-align="wide"], .wp-block[data-align="right"], .wp-block[data-align="left"] {
+.wp-block[data-align="wide"], .wp-block[data-align="right"], .wp-block[data-align="left"], .wp-block[data-align="center"] {
   max-width: 1200px;
 }
 
@@ -382,26 +416,7 @@ p,
 .wp-block,
 .mce-content-body {
   font-family: Times, "Times New Roman", serif;
-  font-size: 16px;
-  line-height: 1.65482;
-}
-
-/** Media queries **/
-@media screen and (min-width: 735px) {
-  .editor-post-title__block .editor-post-title__input {
-    font-size: 2.7em;
-  }
-  p,
-  .wp-block,
-  .mce-content-body {
-    font-size: 20px;
-    line-height: 1.53033;
-  }
-}
-
-@media screen and (min-width: 1365px) {
-  .editor-post-title__block .editor-post-title__input {
-    font-size: 2.5em;
-  }
+  font-size: 20px;
+  line-height: 1.50967;
 }
 /*# sourceMappingURL=style-editor.css.map */
