@@ -616,8 +616,8 @@ div.wp-block-image {
   border-radius: .625em;
   border: 0;
   font-size: 1em;
-  -webkit-box-shadow: 0 0.125em 0.125em 0.125em rgba(0, 0, 0, 0.3);
-          box-shadow: 0 0.125em 0.125em 0.125em rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 0.125em 0.125em 0.125em rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0.125em 0.125em 0.125em rgba(0, 0, 0, 0.2);
 }
 
 .wp-block-button a.wp-block-button__link:not(.has-text-color),
@@ -634,7 +634,7 @@ div.wp-block-image {
 .wp-block-file a.wp-block-file__button:hover,
 .wp-block-file a.wp-block-file__button:focus,
 .wp-block-file a.wp-block-file__button:active {
-  background: #01a5b3;
+  background: #01b0bf;
 }
 
 .wp-block-button a.wp-block-button__link:hover, .wp-block-button a.wp-block-button__link:focus, .wp-block-button a.wp-block-button__link:active, .wp-block-button a.wp-block-button__link:visited,
@@ -642,8 +642,8 @@ div.wp-block-image {
 .wp-block-file a.wp-block-file__button:focus,
 .wp-block-file a.wp-block-file__button:active,
 .wp-block-file a.wp-block-file__button:visited {
-  -webkit-box-shadow: 0 0.125em 0.125em 0.125em rgba(0, 0, 0, 0.3);
-          box-shadow: 0 0.125em 0.125em 0.125em rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 0.125em 0.125em 0.125em rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0.125em 0.125em 0.125em rgba(0, 0, 0, 0.2);
 }
 
 .wp-block-button.is-style-squared .wp-block-button__link {
@@ -667,7 +667,7 @@ div.wp-block-image {
 }
 
 .wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color):hover, .wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color):focus {
-  color: #01a5b3;
+  color: #01b0bf;
 }
 
 .wp-block-button.is-style-outline .wp-block-button__link:not(.has-background) {
@@ -973,7 +973,7 @@ input[type="reset"]:active,
 input[type="submit"]:hover,
 input[type="submit"]:focus,
 input[type="submit"]:active {
-  background: #01a5b3;
+  background: #01b0bf;
 }
 
 /*--------------------------------------------------------------
@@ -989,7 +989,7 @@ a:visited {
 }
 
 a:hover, a:focus, a:active {
-  color: #01a5b3;
+  color: #01b0bf;
 }
 
 a:focus {
@@ -1269,7 +1269,7 @@ a:hover, a:active {
 }
 
 .menu-button .menu-toggle:hover, .menu-button .menu-toggle:focus, .menu-button .menu-toggle:active {
-  background: #01a5b3;
+  background: #01b0bf;
 }
 
 .menu-button .menu-toggle .svg-icon {
@@ -1356,12 +1356,12 @@ a:hover, a:active {
 
 .main-navigation ul ul :hover > a,
 .main-navigation ul ul .focus > a {
-  color: #01a5b3;
+  color: #01b0bf;
 }
 
 .main-navigation ul ul a:hover,
 .main-navigation ul ul a.focus {
-  color: #01a5b3;
+  color: #01b0bf;
 }
 
 .main-navigation ul li:hover > ul,
@@ -1381,7 +1381,7 @@ a:hover, a:active {
 
 .main-navigation li:hover > a,
 .main-navigation li.focus > a {
-  color: #01a5b3;
+  color: #01b0bf;
 }
 
 .main-navigation a {
@@ -1505,7 +1505,7 @@ a:hover, a:active {
 .infinite-scroll #infinite-handle span button:hover:hover,
 .infinite-scroll #infinite-handle span button:hover:focus,
 .infinite-scroll #infinite-handle span button:hover:active {
-  background: #01a5b3;
+  background: #01b0bf;
 }
 
 .infinite-loader {
@@ -1653,14 +1653,14 @@ a:hover, a:active {
   display: block;
   padding: .5em 0;
   text-decoration: none;
-  border-bottom: 1px dashed #c2cfcf;
+  border-bottom: 1px dashed currentColor;
 }
 
 .widget ul li a:hover, .widget ul li a:focus,
 .widget ol li a:hover,
 .widget ol li a:focus {
   text-decoration: none;
-  border-bottom: 1px dashed #c2cfcf;
+  border-bottom: 1px dashed currentColor;
 }
 
 .widget select {
@@ -1835,7 +1835,7 @@ a.tag-cloud-link {
 .tags-links a:hover, .tags-links a:focus,
 a.tag-cloud-link:hover,
 a.tag-cloud-link:focus {
-  color: #01a5b3;
+  color: #01b0bf;
 }
 
 /** Breadcrumbs **/
@@ -2567,7 +2567,7 @@ a.tag-cloud-link:focus {
 }
 
 .continue-reading a:hover, .continue-reading a:focus, .continue-reading a:active {
-  background: #01a5b3;
+  background: #01b0bf;
 }
 
 .excerpt-entry {
@@ -2584,8 +2584,6 @@ a.tag-cloud-link:focus {
 }
 
 .excerpt-entry .entry-meta {
-  padding-top: 1em;
-  padding-top: 0;
   margin: 0;
   min-height: 0;
 }
@@ -2835,7 +2833,7 @@ a.tag-cloud-link:focus {
 }
 
 .reply a:hover, .reply a:focus, .reply a:active {
-  background: #01a5b3;
+  background: #01b0bf;
 }
 
 /** Comment Form **/
@@ -2901,7 +2899,7 @@ a.tag-cloud-link:focus {
 }
 
 .comment-respond .comment-form .form-submit input:hover, .comment-respond .comment-form .form-submit input:focus, .comment-respond .comment-form .form-submit input:active {
-  background: #01a5b3;
+  background: #01b0bf;
 }
 
 .comment-respond .comment-form label {
@@ -3048,7 +3046,7 @@ object {
   left: 0;
   bottom: 0;
   right: 0;
-  background: #01a5b3;
+  background: #01b0bf;
   opacity: 0;
   z-index: 2;
 }
@@ -3115,7 +3113,7 @@ object {
   left: 0;
   bottom: 0;
   right: 0;
-  background: #01a5b3;
+  background: #01b0bf;
   opacity: 0;
   z-index: 2;
 }

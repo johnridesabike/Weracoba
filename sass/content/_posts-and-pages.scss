@@ -46,6 +46,7 @@
 @media screen and (min-width: $breakpoint-1) and (max-width: $breakpoint-3) {
     .single .entry-meta {
         @include entry-meta-inline;
+		padding-top: 1em;
     }
 }
 @media screen and (min-width: $breakpoint-3) {
@@ -172,13 +173,13 @@
 
 .page .page { // Doubled because the class appears twice on single pages, but once on excerpts
 	.entry-content {
-		line-height: calculate-line-height($font-size-md, $size-content-page);
+		line-height: calculate-line-height($font-size-md, $size-content);
 	}
     .entry-header {
         @include max-site-width;
     }
     .entry-content > *:not(.alignwide):not(.alignfull) {
-        @include max-page-width;
+        @include max-content-width;
 	}
 }
 

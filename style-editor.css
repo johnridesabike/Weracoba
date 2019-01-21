@@ -214,8 +214,8 @@ div.wp-block-image, .wp-block[data-type="core/image"][data-align] {
   border-radius: .625em;
   border: 0;
   font-size: 1em;
-  -webkit-box-shadow: 0 0.125em 0.125em 0.125em rgba(0, 0, 0, 0.3);
-          box-shadow: 0 0.125em 0.125em 0.125em rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 0.125em 0.125em 0.125em rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0.125em 0.125em 0.125em rgba(0, 0, 0, 0.2);
 }
 
 .wp-block-button a.wp-block-button__link:not(.has-text-color),
@@ -232,7 +232,7 @@ div.wp-block-image, .wp-block[data-type="core/image"][data-align] {
 .wp-block-file a.wp-block-file__button:hover,
 .wp-block-file a.wp-block-file__button:focus,
 .wp-block-file a.wp-block-file__button:active {
-  background: #01a5b3;
+  background: #01b0bf;
 }
 
 .wp-block-button a.wp-block-button__link:hover, .wp-block-button a.wp-block-button__link:focus, .wp-block-button a.wp-block-button__link:active, .wp-block-button a.wp-block-button__link:visited,
@@ -240,8 +240,8 @@ div.wp-block-image, .wp-block[data-type="core/image"][data-align] {
 .wp-block-file a.wp-block-file__button:focus,
 .wp-block-file a.wp-block-file__button:active,
 .wp-block-file a.wp-block-file__button:visited {
-  -webkit-box-shadow: 0 0.125em 0.125em 0.125em rgba(0, 0, 0, 0.3);
-          box-shadow: 0 0.125em 0.125em 0.125em rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 0.125em 0.125em 0.125em rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0.125em 0.125em 0.125em rgba(0, 0, 0, 0.2);
 }
 
 .wp-block-button.is-style-squared .wp-block-button__link {
@@ -265,7 +265,7 @@ div.wp-block-image, .wp-block[data-type="core/image"][data-align] {
 }
 
 .wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color):hover, .wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color):focus {
-  color: #01a5b3;
+  color: #01b0bf;
 }
 
 .wp-block-button.is-style-outline .wp-block-button__link:not(.has-background) {
@@ -364,7 +364,7 @@ a:visited {
 }
 
 a:hover, a:focus, a:active {
-  color: #01a5b3;
+  color: #01b0bf;
 }
 
 a:focus {

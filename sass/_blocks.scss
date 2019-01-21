@@ -72,14 +72,14 @@ div.wp-block-image {
 .wp-block-file a.wp-block-file__button {
 	@include button;
 	font-size: $font-size-md;
-	box-shadow: 0 .125em .125em .125em rgba(0, 0, 0, 0.3);
+    box-shadow: 0 .125em .125em .125em rgba(0, 0, 0, 0.2);
 
 	&:hover,
 	&:focus,
 	&:active,
 	&:visited {
 		// This is just to cancel the built in style
-		box-shadow: 0 .125em .125em .125em rgba(0, 0, 0, 0.3);
+		box-shadow: 0 .125em .125em .125em rgba(0, 0, 0, 0.2);
 	}
 }
 

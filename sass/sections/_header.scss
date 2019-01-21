@@ -3,7 +3,7 @@
     border-bottom: 1px solid $color-border;
     display: flex; // this fixes a weird bug
     flex-flow: column; // this fixes a weird bug
-    @include drop-shadow-bottom;
+    box-shadow: 0 0 .5em rgba(0, 0, 0, 0.2);
 }
 .site-header-wrapper {
     @extend %smallscreen-padding;
