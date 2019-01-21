@@ -27,25 +27,27 @@ textarea {
 }
 
 h1, h2, h3, h4, h5, h6 {
-	clear: both;
     font-family: $font-headers;
-    color: $color-headers;
+    color: $color-text-headers;
 	font-weight: 400;
 }
 
 h1 {
 	font-size: $font-size-xl;
 	line-height: calculate-line-height( $font-size-xl, $breakpoint-1 );
+	clear: both;
 }
 
 h2 {
     font-size: $font-size-lg;
 	line-height: calculate-line-height( $font-size-lg, $breakpoint-1 );
+	clear: both;
 }
 
 h3 {
     font-size: $font-size-md;
 	line-height: calculate-line-height( $font-size-md, $breakpoint-1 );
+	clear: both;
 }
 
 h4 {

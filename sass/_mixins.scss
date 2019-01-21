@@ -1,10 +1,3 @@
-@mixin dashicon($glyph) {
-    font-family: dashicons;
-    content: $glyph;
-    padding-right: 6px;
-    vertical-align: middle;
-}
-
 ///**
 // * Calculates numbers to the mathmatical power (exponent)
 // *
@@ -65,7 +58,7 @@
 // Rem output with px fallback
 // Only used in _accessibility.scss
 @mixin font-size($sizeValue: 1) {
-	font-size: ($sizeValue * 19) * 1px;
+	font-size: ($sizeValue * $font-size-base) * 1px;
 	font-size: $sizeValue * 1rem;
 }
 
@@ -123,35 +116,36 @@ $columns-margin: 3.8%;
     padding: .2rem .75rem;
 	font-family: $font-UI;
 	text-decoration: none;
-    border: 2px solid currentcolor;
-    border-radius: .625em;
+	border-radius: .625em;
+	border: 0;
 
     &:not(.has-text-color) {
         color: $color-bg-body;
     }
 
     &:not(.has-background) {
-        background: $color-bg-button;
+        background: $color-link;
     }
 
     &:hover,
-    &:focus {
-        opacity: .9;
+	&:focus,
+	&:active {
+		background: $color-link-hover;
     }
 }
 
-@mixin button-outline {
-    //padding: 1rem;
-    padding: .2rem .5rem; // testing...
-    font-family: $font-UI;
-    text-decoration: none;
-    border: 2px solid currentcolor;
-    border-radius: .625em;
-    &:hover,
-    &:focus {
-        opacity: .9;
-    }
-}
+// @mixin button-outline {
+//     //padding: 1rem;
+//     padding: .2rem .5rem; // testing...
+//     font-family: $font-UI;
+//     text-decoration: none;
+//     border: 2px solid currentcolor;
+//     border-radius: .625em;
+//     &:hover,
+//     &:focus {
+//         color: $color-link-hover;
+//     }
+// }
 
 @mixin max-site-width {
 	@media screen and (min-width: $size-max-width) {
@@ -223,7 +217,7 @@ $opacity-overlay: .25;
     box-shadow: 0 0 .5em rgba(0, 0, 0, 0.2);
     
     @media screen and (min-width: $breakpoint-1) {
-        border-radius: 5px;
+        border-radius: .25em;
     }
 }
 

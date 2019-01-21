@@ -25,8 +25,8 @@
     font-family: $font-site-title;
 	font-size: $font-size-xl;
     margin: 0;
-    & a {
-        color: $color-headers;
+    a {
+        color: $color-text-headers;
     }
 }
 .site-description {

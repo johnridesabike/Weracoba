@@ -19,7 +19,6 @@
 
 .entry-header {
     @extend %smallscreen-padding;
-    color: $color-text-secondary;
 
     .cat-links {
         margin-bottom: .5em;
@@ -104,7 +103,6 @@
     background: $color-bg-header;
     padding: .5em 1em;
     @include full-bleed;
-	color: $color-text-secondary;
     h3 {
         margin: 0;
     }

@@ -182,7 +182,7 @@
 }
 .tags-links a,
 a.tag-cloud-link {
-	color: $color-headers; // hack
+	color: $color-text-headers; // hack
 	&:hover,
 	&:focus {
 		color: $color-link-hover;
@@ -196,13 +196,13 @@ a.tag-cloud-link {
 	font-size: $font-size-xs;
 	padding: 0;
 	@include max-site-width;
-	a {
-		color: $color-headers; // Hack
-		&:hover,
-		&:focus {
-			color: $color-link-hover;
-		}
-	}
+	// a {
+	// 	color: $color-text-headers; // Hack
+	// 	&:hover,
+	// 	&:focus {
+	// 		color: $color-link-hover;
+	// 	}
+	// }
 }
 
 /** Widget Area **/
@@ -259,7 +259,6 @@ a.tag-cloud-link {
 /** Footer Widgets **/
 .footer-widgets {
     @include max-site-width;
-    color: $color-text-secondary;
     .widget {
         margin: 0 0 1em;
         padding: 0 0 1em;

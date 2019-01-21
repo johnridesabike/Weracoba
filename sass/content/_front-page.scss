@@ -5,14 +5,14 @@
 }
 
 /*
- * Begin custom home page experiments
+ * Hack... for now.
 */
 .home {
     .wp-block-columns {
         svg {
             display: block;
             margin: auto;
-            color: $color-headers;
+            color: $color-text-headers;
         }
     }
 }

@@ -1,6 +1,3 @@
-.comments-title {
-    color: $color-tint;
-}
 .comment-content {
 	font-family: $font-reading;
 	a {
@@ -47,7 +44,6 @@
             &:before {
                 content: "| ";
                 margin: 0 0.5em;
-                color: $color-border;
             }
         }
     }
@@ -121,10 +117,6 @@
 			max-width: 100%;
 		}
 	}
-}
-
-.comments-link {
-    color: $color-text-secondary;
 }
 
 @media screen and (min-width: $breakpoint-1) {

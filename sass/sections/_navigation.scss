@@ -57,16 +57,16 @@
     }
 }
 
-.attachment {
-    .comment-navigation,
-    .posts-navigation,
-    .paging-navigation {
-        a {
-            @include drop-shadow;
-            @include button-outline;
-        }
-    }
-}
+// .attachment {
+//     .comment-navigation,
+//     .posts-navigation,
+//     .paging-navigation {
+//         a {
+//             @include drop-shadow;
+//             @include button-outline;
+//         }
+//     }
+// }
 
 .nav-links {
     margin: 0 auto;
@@ -80,7 +80,7 @@
     margin-top: 1em;
     
     .meta-nav {
-        color: $color-text-secondary;
+		color: $color-text-main;
     }
     .meta-nav,
     .post-title {
@@ -99,7 +99,7 @@
 
 .attachment .post-navigation {
     .meta-nav {
-        color: $color-text-secondary;
+		color: $color-text-main;
     }
     .post-title {
         text-decoration: underline;

@@ -25,7 +25,9 @@ figure.wp-block-image {
 
 .wp-block-image figcaption {
 	font-size: $font-size-xs;
-	color: $color-text-secondary;
+	color: initial; // cancel default
+	opacity: .7;
+	font-family: $font-UI;
 }
 
 div.wp-block-image {
@@ -47,7 +49,7 @@ div.wp-block-image {
 
 %figcaption {
     background: linear-gradient(0deg,rgba(0,0,0,.7) 0,rgba(0,0,0,.3) 80%,transparent); // rgba(0, 0, 0, .5);
-    color: $color-text-light;
+    //color: $color-text-light;
 	padding: .2em .5em;
 	font-size: $font-size-xs;
 }
@@ -62,14 +64,23 @@ div.wp-block-image {
 
 .wp-block-cover .wp-block-cover-text {
     font-family: $font-headers;
-	color: $color-bg-body-alt;
+	color: $color-bg-body;
 	font-size: $font-size-xl;
 }
 
-.wp-block-button .wp-block-button__link,
-.wp-block-file .wp-block-file__button {
+.wp-block-button a.wp-block-button__link,
+.wp-block-file a.wp-block-file__button {
 	@include button;
 	font-size: $font-size-md;
+	box-shadow: 0 .125em .125em .125em rgba(0, 0, 0, 0.3);
+
+	&:hover,
+	&:focus,
+	&:active,
+	&:visited {
+		// This is just to cancel the built in style
+		box-shadow: 0 .125em .125em .125em rgba(0, 0, 0, 0.3);
+	}
 }
 
 .wp-block-button.is-style-squared .wp-block-button__link {
@@ -77,9 +88,18 @@ div.wp-block-image {
 }
 
 .wp-block-button.is-style-outline .wp-block-button__link {
+    border: 2px solid currentcolor;
+	border-radius: .625em;
+	box-shadow: none;
+	&:hover,
+	&:active,
+	&:focus,
+	&:visited {
+		box-shadow: none;
+	}
     
     &:not(.has-text-color) {
-        color: $color-bg-button;
+        color: $color-link;
         
         &:hover,
         &:focus {

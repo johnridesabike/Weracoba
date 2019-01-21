@@ -4,7 +4,6 @@
     }
     .content-area .excerpt-entry {
         position: relative;
-        border-bottom: 1px solid $color-border;
         padding: 0 .5em .5em .5em;
         margin-bottom: 1em;
         @include drop-shadow;
@@ -13,11 +12,6 @@
             border: 0;
         }
     }
-    // .site-header .entry-header {
-    //     margin-left: 1em;
-    //     margin-right: 1em;
-    //     @include max-site-width;
-	// }
 }
 .archive-description {
 	font-size: $font-size-md;
