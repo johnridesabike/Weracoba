@@ -36,8 +36,8 @@ a {
 
 p {
 	font-family: $font-reading;
-	font-size: $font-reading-size;
-	line-height: calculate-line-height($font-reading-size, $size-content) !important;
+	font-size: $font-size-base;
+	line-height: calculate-line-height($font-size-base, $size-content) !important;
 }
 
 .wp-block {
@@ -104,8 +104,8 @@ p {
 .wp-block,
 .mce-content-body {
 	font-family: $font-reading;
-	font-size: $font-reading-size;
-	line-height: calculate-line-height($font-reading-size, $size-content);
+	font-size: $font-size-base;
+	line-height: calculate-line-height($font-size-base, $size-content);
 }
 
 /** Media queries **/

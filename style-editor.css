@@ -285,8 +285,8 @@ a:hover, a:active {
 
 p {
   font-family: Times, "Times New Roman", serif;
-  font-size: 19px;
-  line-height: 1.55424 !important;
+  font-size: 22px;
+  line-height: 1.49192 !important;
 }
 
 .wp-block {
@@ -356,8 +356,8 @@ p {
 .wp-block,
 .mce-content-body {
   font-family: Times, "Times New Roman", serif;
-  font-size: 19px;
-  line-height: 1.55424;
+  font-size: 22px;
+  line-height: 1.49192;
 }
 
 /** Media queries **/
