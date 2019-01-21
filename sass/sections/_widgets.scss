@@ -3,7 +3,7 @@
 	margin: 0;
     padding: 1em;
 	/* Make sure select elements fit in widgets. */
-	font-size: $font-size-xs;
+	font-size: $font-size-sm;
 	line-height: calculate-line-height($font-size-xs, $size-widget);
 
     ul,
@@ -185,7 +185,7 @@ a.tag-cloud-link {
 	color: $color-text-headers; // hack
 	&:hover,
 	&:focus {
-		color: $color-link-hover;
+		color: $color-link;
 	}
 }
 

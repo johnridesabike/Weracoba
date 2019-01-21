@@ -1,6 +1,6 @@
 .global-header {
     background: $color-bg-header;
-    border-bottom: 1px solid $color-border;
+	border-bottom: 1px solid $color-border;
     display: flex; // this fixes a weird bug
     flex-flow: column; // this fixes a weird bug
     box-shadow: 0 0 .5em rgba(0, 0, 0, 0.2);

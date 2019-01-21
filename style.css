@@ -681,21 +681,30 @@ div.wp-block-image {
 
 .wp-block-latest-posts {
   padding: 0;
-  list-style: none;
+  margin: 0;
+  list-style-type: none;
 }
 
 .wp-block-latest-posts li {
-  border-bottom: 1px dashed #c2cfcf;
-  padding: .75em 0;
+  display: block;
+  margin-bottom: .5em;
+}
+
+.wp-block-latest-posts li ul,
+.wp-block-latest-posts li ol {
+  margin-left: .5em;
 }
 
 .wp-block-latest-posts li a {
   display: block;
+  padding: .5em 0;
   text-decoration: none;
+  border-bottom: 1px dashed currentColor;
 }
 
 .wp-block-latest-posts li a:hover, .wp-block-latest-posts li a:focus {
   text-decoration: none;
+  border-bottom: 1px dashed currentColor;
 }
 
 @media (min-width: 600px) {
@@ -1624,7 +1633,7 @@ a:hover, a:active {
   margin: 0;
   padding: 1em;
   /* Make sure select elements fit in widgets. */
-  font-size: 0.8em;
+  font-size: 0.88889em;
   line-height: 1.42428;
 }
 
@@ -1835,7 +1844,7 @@ a.tag-cloud-link {
 .tags-links a:hover, .tags-links a:focus,
 a.tag-cloud-link:hover,
 a.tag-cloud-link:focus {
-  color: #01b0bf;
+  color: #017680;
 }
 
 /** Breadcrumbs **/
