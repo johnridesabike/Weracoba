@@ -84,7 +84,7 @@ add_filter( 'the_tags', 'weracoba_the_tags' );
  */
 function weracoba_widget_tag_cloud_args( $args ) {
 	$args['largest']   = 1.4;
-	$args['smallest']  = 0.9;
+	$args['smallest']  = 0.8;
 	$args['unit']      = 'em';
 	$args['format']    = 'flat';
 	$args['separator'] = ' ';

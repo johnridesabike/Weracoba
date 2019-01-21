@@ -124,7 +124,7 @@ $columns-margin: 3.8%;
 	font-family: $font-UI;
 	text-decoration: none;
     border: 2px solid currentcolor;
-    border-radius: 8px;
+    border-radius: .625em;
 
     &:not(.has-text-color) {
         color: $color-bg-body;
@@ -146,7 +146,7 @@ $columns-margin: 3.8%;
     font-family: $font-UI;
     text-decoration: none;
     border: 2px solid currentcolor;
-    border-radius: 8px;
+    border-radius: .625em;
     &:hover,
     &:focus {
         opacity: .9;
@@ -154,11 +154,11 @@ $columns-margin: 3.8%;
 }
 
 @mixin max-site-width {
-    @media screen and (min-width: $size-max-width) {
-        max-width: $size-max-width;
-        margin-left: auto;
-        margin-right: auto;
-    }
+	@media screen and (min-width: $size-max-width) {
+		max-width: $size-max-width;
+		margin-left: auto;
+		margin-right: auto;
+	}
 }
 
 @mixin max-content-width {

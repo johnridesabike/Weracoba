@@ -6,8 +6,7 @@
     @include drop-shadow-bottom;
 }
 .site-header-wrapper {
-    padding-left: 1em;
-	padding-right: 1em;
+    @extend %site-content;
 }
 .mobile-header-wrapper {
 	display: flex;

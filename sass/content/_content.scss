@@ -5,7 +5,11 @@
 
 
 %site-content {
-    padding: 0 1rem;
+	padding: 0 1rem;
+	
+	@media screen and (min-width: $breakpoint-3) {
+		padding: 0;
+	}
 }
 
 .site-content {

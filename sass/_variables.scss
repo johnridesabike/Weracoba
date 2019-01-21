@@ -47,18 +47,16 @@ $glyph-arrow-up: "\25B2";
 $glyph-arrow-next: "\276F";
 $glyph-arrow-down-right: "\21B3";
 
-// Copied from TwentyNineteen
 $font-size-base: 22px;
-$font-size-ratio: 1; //1.125;
-
-$font-size-xxs:   1em / (1.5 * $font-size-ratio);
-$font-size-xs:    1em / (1.25 * $font-size-ratio);
-$font-size-sm:    1em / 1.125; //(1 * $font-size-ratio);
-$font-size-md:    1em * (1 * $font-size-ratio);
-$font-size-lg:    1em * (1.5 * $font-size-ratio);
-$font-size-xl:    1em * (2 * $font-size-ratio);
-$font-size-xxl:   1em * (2.5 * $font-size-ratio);
-$font-size-xxxl:  1em * (3 * $font-size-ratio);
+// Update editor-font-sizes in functions.php
+$font-size-xxs:   1em / 1.5;   // 14.67
+$font-size-xs:    1em / 1.25;  // 17.6
+$font-size-sm:    1em / 1.125; // 19.56
+$font-size-md:    1em * 1;     // 22
+$font-size-lg:    1em * 1.5;   // 33
+$font-size-xl:    1em * 2;     // 44
+$font-size-xxl:   1em * 2.5;   // 55
+$font-size-xxxl:  1em * 3;     // 66
 
 $font-line-height-body: 1.8;
 $font-line-height-pre: 1.6;

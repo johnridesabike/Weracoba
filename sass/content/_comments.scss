@@ -86,41 +86,41 @@
 }
 .comment-respond {
 	@include max-content-width;
-    .form-submit {
-        text-align: right;
-        input {
-            @include button;
-        }
-    }
-    label {
-        display: block;
-        padding-bottom: .4em;
-    }
-    .required {
-        color: darkred;
+	.comment-form {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: flex-end;
 		font-size: $font-size-sm;
-    }
-}
-
-.comment-form {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-	align-items: flex-end;
-	font-size: $font-size-sm;
-	input:not([type="submit"]) {
-		font-size: $font-size-sm;
+		textarea,
+		.form-submit {
+			font-size: 1rem;
+		}
+		p {
+			margin-bottom: 0;
+			flex: 0 0 100%;
+		}
+		.form-submit {
+			text-align: right;
+			input {
+				@include button;
+			}
+		}
+		label {
+			display: block;
+			padding-bottom: .4em;
+		}
+		.required {
+			color: darkred;
+			font-size: $font-size-xs;
+		}
+		.comment-form-author,
+		.comment-form-email,
+		.comment-form-url {
+			flex: 0 1 33%;
+			max-width: 100%;
+		}
 	}
-    p {
-        margin-bottom: 0;
-        flex: 0 0 100%;
-    }
-    .comment-form-author,
-    .comment-form-email,
-    .comment-form-url {
-		flex: 0 1 33%;
-		max-width: 100%;
-    }
 }
 
 .comments-link {

@@ -124,6 +124,57 @@ if ( ! function_exists( 'weracoba_setup' ) ) :
 		* @link https://codex.wordpress.org/Post_Formats
 		*/
 		add_theme_support( 'post-formats', array( 'aside' ) );
+
+		/**
+		 * Gutenberg fonts. See _variables.scss
+		 * 
+		 * @link https://wordpress.org/gutenberg/handbook/designers-developers/developers/themes/theme-support/#block-font-sizes
+		 */
+		add_theme_support(
+			'editor-font-sizes',
+			array(
+				array(
+					'name' => __( 'XX-Small', 'weracoba' ),
+					'size' => 14.67,
+					'slug' => 'xxsmall',
+				),
+				array(
+					'name' => __( 'X-Small', 'weracoba' ),
+					'size' => 17.6,
+					'slug' => 'xsmall',
+				),
+				array(
+					'name' => __( 'Small', 'weracoba' ),
+					'size' => 19.56,
+					'slug' => 'small',
+				),
+				array(
+					'name' => __( 'Normal', 'weracoba' ),
+					'size' => 22,
+					'slug' => 'normal',
+				),
+				array(
+					'name' => __( 'Large', 'weracoba' ),
+					'size' => 33,
+					'slug' => 'large',
+				),
+				array(
+					'name' => __( 'X-Large', 'weracoba' ),
+					'size' => 44,
+					'slug' => 'xlarge',
+				),
+				array(
+					'name' => __( 'XX-Large', 'weracoba' ),
+					'size' => 55,
+					'slug' => 'xxlarge',
+				),
+				array(
+					'name' => __( 'XXX-Large', 'weracoba' ),
+					'size' => 66,
+					'slug' => 'xxxlarge',
+				),
+			)
+		);
 	}
 endif;
 add_action( 'after_setup_theme', 'weracoba_setup' );

@@ -17,7 +17,7 @@
 
 /** Entry header **/
 
-.single .entry-header {
+.entry-header {
     @extend %site-content;
     color: $color-text-secondary;
 
@@ -53,9 +53,6 @@
     .single .entry-meta {
         @include avatar(72px);
     }
-    .single .entry-header {
-        padding: 0;
-    }
     .single .has-post-thumbnail {
         // on big screens, stop full-bleed image and switch to side-by-side layout
         .entry-header {
@@ -66,7 +63,8 @@
             justify-content: space-between;
         }
         .entry-header-wrap {
-            width: 45%;
+			width: 45%;
+			margin: 0;
             display: grid;
             grid-template-columns: auto;
             grid-template-rows: auto auto auto auto;
