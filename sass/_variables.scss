@@ -34,19 +34,36 @@ $color-text-screen: #21759b;
 
 // Typography
 $font-reading: Times, "Times New Roman", serif;
-$font-reading-size: 19px;
+$font-reading-size: 19px; // Depreciate
 $font-UI: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 $font-site-title: Baskerville, "Baskerville Old Face", Garamond, $font-reading;
 $font-headers: $font-UI;
 $font-widget: $font-UI;
-$font-line-height-body: 1.5;
+$font-line-height-body: 1.5; // Depreciate
 $font-pre: "Courier 10 Pitch", Courier, monospace;
-$font-line-height-pre: 1.6;
 $font-code: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 $glyph-arrow-down: "\25BC";
 $glyph-arrow-up: "\25B2";
 $glyph-arrow-next: "\276F";
 $glyph-arrow-down-right: "\21B3";
+
+// Copied from TwentyNineteen
+$font-size-base: 22px;
+$font-size-ratio: 1; //1.125;
+
+$font-size-xxs:   1em / (1.5 * $font-size-ratio);
+$font-size-xs:    1em / (1.25 * $font-size-ratio);
+$font-size-sm:    1em / 1.125; //(1 * $font-size-ratio);
+$font-size-md:    1em * (1 * $font-size-ratio);
+$font-size-lg:    1em * (1.5 * $font-size-ratio);
+$font-size-xl:    1em * (2 * $font-size-ratio);
+$font-size-xxl:   1em * (2.5 * $font-size-ratio);
+$font-size-xxxl:  1em * (3 * $font-size-ratio);
+
+$font-line-height-body: 1.8;
+$font-line-height-pre: 1.6;
+$font-line-height-heading: 1.2;
+$font-line-height-double:  2 * $font-line-height-heading;
 
 // Breakpoints 
 $breakpoint-1: 735px; // big phone landscape

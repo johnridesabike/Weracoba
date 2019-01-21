@@ -1,7 +1,10 @@
 .widget {
+    line-height: calculate-line-height($font-size-base, $size-widget);
+	font-family: $font-widget;
 	margin: 0;
-    padding: 1em;//.5em .5em .5em .5em;
+    padding: 1em;
 	/* Make sure select elements fit in widgets. */
+	font-size: $font-size-xs;
 
     ul,
     ol {
@@ -11,14 +14,22 @@
 
         li {
             display: block;
-            /*line-height: 1.2em;*/
             margin-bottom: .5em;
-
             ul,
             ol {
                 margin-left: .5em;
-                font-size: .9em;
-            }
+			}
+			a {
+				display: block;
+				padding: .5em 0;
+				text-decoration: none;
+				border-bottom: 1px dashed $color-border;
+				&:hover,
+				&:focus {
+					text-decoration: none;
+					border-bottom: 1px dashed $color-border;
+				}
+			}
         }
     }
 
@@ -28,10 +39,6 @@
         padding: 10px;
         border: 1px solid #ccc;
     }
-}
-.widget-title {
-    margin: 0 0 .5em;
-	font-size: 1.4em;
 }
 /* Search widget. */
 .widget_search {
@@ -68,27 +75,10 @@
             content: $glyph-arrow-down-right + " ";
         }
     }
-
     li {
 	   padding: 0;
     }
 }
-
-.widget li a {
-    // moved from line 75 (above) to make it universal to all widgets
-    // might be a bad idea. remove if necessary.
-    display: block;
-    padding: .75em 0;
-    text-decoration: none;
-    border-bottom: 1px dashed $color-border;
-
-    &:hover,
-    &:focus {
-        text-decoration: none;
-        border-bottom: 1px dashed $color-border;
-    }
-}
-
 /* Meta widget */
 .widget_meta li {
 	padding: 0;
@@ -100,7 +90,6 @@
 	   line-height: 1.3em;
 	   padding-bottom: .5em;
     }
-
     a:hover,
     a:focus {
 	padding-left: 0;
@@ -114,18 +103,16 @@
 
 .widget li a.rsswidget {
 	padding-right: .5em;
-	font-size: 1em;
-	line-height: 1.4em;
 }
 
 .rss-date,
 .widget_rss cite {
 	color: #333;
-	font-size: .8em;
 }
 
 .rssSummary {
 	padding: .5em 0;
+	font-family: $font-reading;
 }
 
 /* Calendar widget */
@@ -150,7 +137,6 @@
 
     td {
         padding: .2em;
-        font-size: .8em;
         text-align: center;
         background: white;
         border: 1px solid #cccccc;
@@ -172,6 +158,9 @@
 }
 
 /* Tags */
+.tagcloud {
+	text-align: center;
+}
 .tags-links a,
 .tag-title,
 .tag-cloud-link {
@@ -183,6 +172,7 @@
 		opacity: .8;
 	}
 }
+// separate border radiuses
 .tags-links a,
 .tag-title {
 	border-radius: 1em .3em .3em 1em;
@@ -203,14 +193,18 @@ a.tag-cloud-link {
 .widget.breadcrumbs-nav {
     margin: .2em 0 0 0;
     margin-bottom: 1em;
-    font-size: .9em;
+	font-size: $font-size-xxs;
 	padding: 0;
+	@include max-site-width;
 	a {
 		color: $color-headers; // Hack
 		&:hover,
 		&:focus {
 			color: $color-link-hover;
 		}
+	}
+	@media screen and (min-width: $breakpoint-3) {
+		padding: 0 1rem;
 	}
 }
 
@@ -223,7 +217,6 @@ a.tag-cloud-link {
     margin-top: 1em;
     margin-left: -1em;
     margin-right: -1em;
-
     .widget {
         @include widget-columns;
     }
@@ -243,27 +236,26 @@ a.tag-cloud-link {
     .site-content .widget {
         @include drop-shadow;
         margin-bottom: 1em;
-        .widgettitle {
-			//margin: 0 0 1em 0;
-			margin: 0 0 .5em 0;
-        }
     }
+}
+
+.widget-title,
+.widgettitle {
+    margin: 0 0 .5em;
 }
 .archive-widget-area {
     // for the widgets outside regular widget-area
     @include full-bleed;
     .widget {
+		font-size: $font-size-sm; // instead of -xs
         > ul {
             list-style: none;
-            font-size: 1.1em;
+            //font-size: 1.1em;
 			display: flex;
 			flex-flow: row wrap;
             > .cat-item {
                 @include widget-columns;
             }
-		}
-		.cat-item ul {
-			font-size: .8em;
 		}
     }
 }

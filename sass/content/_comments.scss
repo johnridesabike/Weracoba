@@ -1,5 +1,11 @@
-.comment-content a {
-	word-wrap: break-word;
+.comments-title {
+    color: $color-tint;
+}
+.comment-content {
+	font-family: $font-reading;
+	a {
+		word-wrap: break-word;
+	}
 }
 .bypostauthor {
 	display: block;
@@ -27,7 +33,6 @@
 }
 .comment-meta {
 	@include avatar(48px);
-    
     .avatar {
         top: 0;
     }
@@ -52,6 +57,7 @@
 	padding-left: 0;
 }
 .comment-metadata {
+	font-size: $font-size-xs;
     margin-top: .2em;
     padding-bottom: .5em;
 }
@@ -60,7 +66,7 @@
     font-size-adjust: 1.125em;
 }
 .says {
-    font-size: .8em;
+	font-size: $font-size-xs;
 }
 
 .reply {
@@ -71,36 +77,28 @@
 	display: inline-block;
     @include button;
 }
-.comment-content a {
-	word-wrap: break-word;
-}
 /** Comment Form **/
 .comment-reply-title {
-	line-height: 1.3em;
+	margin: .5em 0;
 }
 .comment-list .comment-reply-title {
 	text-align: left;
 }
 .comment-respond {
-    @include max-content-width;
-
+	@include max-content-width;
     .form-submit {
         text-align: right;
         input {
             @include button;
         }
     }
-
     label {
-        //width: 33%;
         display: block;
-        //font-style: italic;
         padding-bottom: .4em;
     }
-
     .required {
         color: darkred;
-        font-size: smaller;
+		font-size: $font-size-sm;
     }
 }
 
@@ -108,8 +106,11 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: flex-end;
-    
+	align-items: flex-end;
+	font-size: $font-size-sm;
+	input:not([type="submit"]) {
+		font-size: $font-size-sm;
+	}
     p {
         margin-bottom: 0;
         flex: 0 0 100%;
@@ -117,7 +118,8 @@
     .comment-form-author,
     .comment-form-email,
     .comment-form-url {
-        flex: 0 1 33%;
+		flex: 0 1 33%;
+		max-width: 100%;
     }
 }
 

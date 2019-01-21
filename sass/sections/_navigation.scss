@@ -11,13 +11,9 @@
 .posts-navigation,
 .paging-navigation {
     text-align: left;
-    
     a {
         display: block;
         width: 100%;
-        //background: $color-bg-body;
-        //font-size: 1.3em;
-        //@include button-outline;
     }
 }
 
@@ -34,8 +30,6 @@
     }
     .page-numbers:not(.prev):not(.next) {
         margin: 0 .5em;
-        //padding-left: .8rem; // make them a bit rounder
-        //padding-right: .8rem; // make them a bit rounder
     }
 }
 
@@ -104,7 +98,6 @@
 }
 
 .attachment .post-navigation {
-    font-size: 1.3em;
     .meta-nav {
         color: $color-text-secondary;
     }
@@ -120,7 +113,6 @@
     .posts-navigation,
     .single-post .post-navigation {
         .nav-previous {
-            //float: left;
             padding-bottom: 0;
         }
 

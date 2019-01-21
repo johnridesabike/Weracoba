@@ -2,9 +2,9 @@
 .sticky {
 	display: block;
 }
-/*.updated:not(.published) {
+.updated:not(.published) {
 	display: none;
-}*/
+}
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
@@ -22,10 +22,8 @@
     color: $color-text-secondary;
 
     .cat-links {
-        font-size: 1.3em;
         margin-bottom: .5em;
         display: block;
-        //color: $color-text-secondary;
     }
 }
 .entry-title {
@@ -33,18 +31,15 @@
 }
 .entry-meta {
     @include avatar(48px);
-    
-    .byline {
-        font-size: 1.2em;
-    }
-    
+	font-size: $font-size-sm;
+	margin-top: .5em;
     > * {
         display: block;
     }
+}
 
-    .updated-on {
-        display: none !important;
-    }
+.updated-on {
+	display: none !important;
 }
 
 /** Entry Header Media Queries **/
@@ -71,7 +66,6 @@
             justify-content: space-between;
         }
         .entry-header-wrap {
-            //margin: 0 1em 0 0;
             width: 45%;
             display: grid;
             grid-template-columns: auto;
@@ -80,7 +74,9 @@
         .breadcrumbs-nav {
 			grid-row: 1 / 1;
 			grid-column: 1 / 1;
-            align-self: start;
+			align-self: start;
+			margin: 0; // cancel the max-width effect
+			padding: 0;
         }
         .entry-title {
             grid-row: 2 / 2;
@@ -99,6 +95,11 @@
 }
 
 /** Entry Footer **/
+.post-taxonomy {
+	>:not(:last-child) {
+		margin-bottom: .5em;
+	}
+}
 .single .entry-footer {
     border-top: 1px solid $color-border;
     border-bottom: 1px solid $color-border;
@@ -106,17 +107,7 @@
     padding: .5em 1em;
     @include full-bleed;
 	color: $color-text-secondary;
-	font-size: 1.2em;
-
-	.cat-links {
-		font-size: 1.3rem;
-	}
-	.tags-links {
-		font-size: 1rem;
-	}
     h3 {
-        font-size: 1em;
-        line-height: 1.2;
         margin: 0;
     }
     .comments-link {
@@ -163,63 +154,35 @@
     }
 }
 
-.page .page { // Doubled because the class appears twice on single pages, but once on excerpts
-    .entry-title {
-        text-align: center;
+.excerpt-entry,
+.single-post {
+    .entry-header {
+        h1, h2 {
+            font-family: $font-reading;
+        }
     }
+    .entry-content {
+        font-family: $font-reading;
+        h1, h2, h3, h4, h5, h6 {
+            font-family: $font-reading;
+        }
+    }
+}
+
+.page .page .entry-title,
+.archive-title {
+	text-align: center;
+}
+
+.page .page { // Doubled because the class appears twice on single pages, but once on excerpts
+	.entry-content {
+		line-height: calculate-line-height($font-size-md, $size-content-page);
+	}
     .entry-header {
         @include max-site-width;
     }
     .entry-content > *:not(.alignwide):not(.alignfull) {
         @include max-page-width;
-    }
-}
-
-/** Asides **/
-
-.single-format-aside .site-header .entry-header {
-    display: none;
-}
-.single article.format-aside {
-    @include max-content-width;
-    .entry-header {
-        padding: 0;
-    }
-    .entry-footer {
-        padding: 0;
-    }
-    .entry-meta {
-        margin: 0;
-    }
-}
-article.format-aside {
-    @include drop-shadow;
-    margin: 2em auto 2em auto;
-    background: white;
-    padding: .5em;
-    
-    .entry-footer {
-        border: none;
-    }
-    
-    .entry-meta {
-        .avatar {
-            // override the default avatar styling
-            position: static;
-            top: auto;
-            left: auto;
-            margin-right: .5em;
-            vertical-align: middle;
-        }
-    }
-}
-
-/** Asides Media Queries **/
-
-@media screen and (min-width: $breakpoint-1) {
-    article.format-aside {
-        padding-left: 1em;
-        padding-right: 1em;
     }
 }
 

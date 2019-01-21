@@ -17,7 +17,8 @@
 		@include button;
 		padding: .1em;
 		.svg-icon {
-			font-size: 2.5em;
+			height: 40px;
+			width: 40px;
 		}
     }
     .dismiss-icon {
@@ -111,11 +112,11 @@
         text-decoration: none;
         padding: .5em 0 .5em 0;
 	}
-	.current_page_item > a,
-	.current-menu-item > a,
-	.current_page_ancestor > a,
-	.current-menu-ancestor > a {
-	}
+	// .current_page_item > a,
+	// .current-menu-item > a,
+	// .current_page_ancestor > a,
+	// .current-menu-ancestor > a {
+	// }
     @media screen and (min-width: $breakpoint-1) {
         width: auto;
         line-height: 1.1; /* fixes vertical dropdown menu spacing */

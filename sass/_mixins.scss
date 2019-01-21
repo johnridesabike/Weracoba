@@ -54,15 +54,18 @@
 // * @return	int							The calculated line height
 // */
 @function calculate-line-height( $font-size, $content-width, $ratio: 1.61803398875 ) {
-	$font-size: strip-unit( $font-size );
+	$font-size-num: strip-unit( $font-size );
+	@if unit( $font-size ) == 'em' {
+		$font-size-num: $font-size-num * strip-unit( $font-size-base );
+	}
 	$content-width: strip-unit( $content-width );
-	@return $ratio - ( ( 1 / ( 2 * $ratio ) ) * ( 1 - ( $content-width / ( pow( ( $font-size * $ratio ), 2 ) ) ) ) );
+	@return $ratio - ( ( 1 / ( 2 * $ratio ) ) * ( 1 - ( $content-width / ( pow( ( $font-size-num * $ratio ), 2 ) ) ) ) );
 }
 
-
 // Rem output with px fallback
+// Only used in _accessibility.scss
 @mixin font-size($sizeValue: 1) {
-	font-size: ($sizeValue * 16) * 1px;
+	font-size: ($sizeValue * 19) * 1px;
 	font-size: $sizeValue * 1rem;
 }
 

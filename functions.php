@@ -11,7 +11,7 @@
  * To-do:
  * - Asides
  * - Thumbnail dimensions
- * - Refactor CSS colors and fonts
+ * - Refactor CSS colors
  */
 
 if ( ! function_exists( 'weracoba_setup' ) ) :
@@ -204,7 +204,7 @@ add_action( 'widgets_init', 'weracoba_widgets_init' );
  * Enqueue scripts and styles.
  */
 function weracoba_scripts() {
-	wp_enqueue_style( 'weracoba-style', get_stylesheet_uri(), array(), '20190119', 'all' );
+	wp_enqueue_style( 'weracoba-style', get_stylesheet_uri(), array(), '20190120', 'all' );
 	wp_enqueue_style( 'weracoba-print-style', get_template_directory_uri() . '/style-print.css', array(), '20190118', 'print' );
 	wp_enqueue_script( 'weracoba-functions', get_template_directory_uri() . '/js/functions.js', array(), '20181105', true );
 	wp_enqueue_script( 'weracoba-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );

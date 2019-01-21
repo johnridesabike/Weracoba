@@ -20,9 +20,11 @@
     flex-flow: row wrap;
     align-content: center;
     align-items: center;
-    margin: .5em 0;
+	margin: .5em 0;
 }
 .site-title {
+    font-family: $font-site-title;
+	font-size: $font-size-lg;
     margin: 0;
     & a {
         color: $color-headers;
@@ -31,8 +33,22 @@
 .site-description {
     margin: 0 0 .5em 0;
     flex: 2 100%;
+	font-size: $font-size-xs;
 }
-
+/* Make sure logo link wraps around logo image. */
+.wp-custom-logo .site-title {
+	display: flex;
+	flex-flow: row nowrap;
+}
+.custom-logo-link {
+	display: block;
+	margin: 0 12px 0 0;
+	img {
+		max-height: $font-size-lg;
+		width: auto;
+		vertical-align: middle;
+	}
+}
 /** Fixed Header **/
 /* See also: the scrolling code in functions.js */
 @media screen {
@@ -43,24 +59,26 @@
         height: auto;
         z-index: 9;
         display: block; // this fixes a weird bug
-        .site-branding {
-            flex-shrink: 0;
-        }
         .site-description {
             display: none;
         }
     }
     .sticky-top {
         margin-top: 60px;
-    }
+	}
 }
 
 /** Header Media Queries **/
 
 @media screen and (max-width: $breakpoint-1) {
    .fixed-header .site-title {
-        margin-top: 0;
+		.custom-logo-link {
+			margin: 0;
+		}
     }
+	.wp-custom-logo .fixed-header .site-title a:last-of-type { // target the title text
+		display: none;
+	}
 }
 @media screen and (max-width: $breakpoint-1) and (orientation: landscape) {
     /* When a small screen is oriented in landscape, hide the header unless the scrolling js overrides it */
@@ -77,12 +95,7 @@
     }
     .global-header {
         margin-bottom: 0;
-        padding-top: .67em;
-        padding-bottom: .67em;
         display: block; // this fixes a weird bug
-    }
-    .fixed-header {
-        padding: 0;
     }
     .sticky-top {
         margin-top: 90px;
@@ -97,9 +110,12 @@
 	.mobile-header-wrapper {
 		display: block;
 	}
+	.global-header:not(.fixed-header) .site-title {
+		font-size: $font-size-xl;
+	}
     .site-title {
         margin: 0;
-    }
+	}
     .site-description {
         margin: 0;
     }
