@@ -10,14 +10,15 @@
 .menu-button {
     margin: .25em 0;
     text-align: right;
-    position: relative;
+	position: relative;
     .menu-toggle {
         display: inline;
         font-size: 1em;
 		@include button;
+		box-shadow: none; // cancel _elements.scss
 		padding: .1em;
 		.svg-icon {
-			font-size: $font-size-xl;
+			font-size: $font-size-xxl;
 		}
     }
     .dismiss-icon {

@@ -23,8 +23,8 @@
     flex-shrink: 0;
     a {
         display: block;
-        @include button;
-		font-size: $font-size-md;
+		@include button;
+		border-radius: $border-radius-button-square;
     }
 }
 
@@ -43,8 +43,8 @@
 		> * {
 			margin-bottom: .5em;
 		}
-		> *:not(.comments-link) {
-			font-size: $font-size-sm;
+		.tags-links {
+			display: block;
 		}
     }
 }

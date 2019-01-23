@@ -155,27 +155,24 @@ if ( ! function_exists( 'weracoba_setup' ) ) :
 				),
 				array(
 					'name' => __( 'Large', 'weracoba' ),
-					'size' => 30,
+					'size' => 25,
 					'slug' => 'large',
 				),
 				array(
 					'name' => __( 'X-Large', 'weracoba' ),
-					'size' => 40,
+					'size' => 30,
 					'slug' => 'xlarge',
 				),
 				array(
 					'name' => __( 'XX-Large', 'weracoba' ),
-					'size' => 50,
+					'size' => 35,
 					'slug' => 'xxlarge',
 				),
-				/**
-				 * Don't use this please. It's too big.
 				array(
 					'name' => __( 'XXX-Large', 'weracoba' ),
-					'size' => 60,
+					'size' => 40,
 					'slug' => 'xxxlarge',
 				),
-				 */
 			)
 		);
 	}

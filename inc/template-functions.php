@@ -83,7 +83,7 @@ add_filter( 'the_tags', 'weracoba_the_tags' );
  * @return  array The filtered arguments for tag cloud widget.
  */
 function weracoba_widget_tag_cloud_args( $args ) {
-	$args['largest']   = 1.4;
+	$args['largest']   = 1.5;
 	$args['smallest']  = 0.8;
 	$args['unit']      = 'em';
 	$args['format']    = 'flat';

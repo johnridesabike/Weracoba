@@ -4,7 +4,7 @@
     padding: 1em;
 	/* Make sure select elements fit in widgets. */
 	font-size: $font-size-sm;
-	line-height: calculate-line-height($font-size-xs, $size-widget);
+	line-height: calculate-line-height($font-size-sm, $size-widget);
 
     ul,
     ol {
@@ -182,7 +182,7 @@
 }
 .tags-links a,
 a.tag-cloud-link {
-	color: $color-text-headers; // hack
+	color: $color-text-main; // hack
 	&:hover,
 	&:focus {
 		color: $color-link;
@@ -243,7 +243,7 @@ a.tag-cloud-link {
     // for the widgets outside regular widget-area
     @include full-bleed;
     .widget {
-		font-size: $font-size-sm; // instead of -xs
+		font-size: 1rem;
         > ul {
             list-style: none;
             //font-size: 1.1em;

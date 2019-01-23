@@ -173,7 +173,8 @@
 
 .page .page { // Doubled because the class appears twice on single pages, but once on excerpts
 	.entry-content {
-		line-height: calculate-line-height($font-size-md, $size-content);
+		//font-size: $font-size-sm;
+		//line-height: calculate-line-height($font-size-sm, $size-content);
 	}
     .entry-header {
         @include max-site-width;

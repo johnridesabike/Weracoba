@@ -37,10 +37,10 @@ $font-size-xxs:   1em / 1.5;   // 13.33
 $font-size-xs:    1em / 1.25;  // 16
 $font-size-sm:    1em / 1.125; // 17.78
 $font-size-md:    1em * 1;     // 20
-$font-size-lg:    1em * 1.5;   // 30
-$font-size-xl:    1em * 2;     // 40
-$font-size-xxl:   1em * 2.5;   // 50
-$font-size-xxxl:  1em * 3;     // 60
+$font-size-lg:    1em * 1.25;   // 25
+$font-size-xl:    1em * 1.5;     // 30
+$font-size-xxl:   1em * 1.75;   // 35
+$font-size-xxxl:  1em * 2;     // 40
 
 $font-line-height-pre: 1.6;
 $font-line-height-heading: 1.2;
@@ -53,3 +53,7 @@ $breakpoint-3: 1365px; // iPad pro landscape
 $size-max-width: 1200px; // WordPress global: $content_width
 $size-content: 680px;
 $size-widget: 250px;
+
+$shadow-button: $color-text-headers 0 1px 0 0;
+$border-radius-button: .625em;
+$border-radius-button-square: .125em;
