@@ -138,6 +138,16 @@ big {
 	font-size: $font-size-xxxl;
 }
 
+.has-normal-color {
+	color: $color-text-main;
+}
+.has-tint-color {
+	color: $color-tint;
+}
+.has-header-color {
+	color: $color-text-headers;
+}
+
 /* Accessibility */
 .widget p,
 .entry-content,

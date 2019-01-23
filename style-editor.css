@@ -137,6 +137,18 @@ big {
   font-size: 2em;
 }
 
+.has-normal-color {
+  color: #19191A;
+}
+
+.has-tint-color {
+  color: #017680;
+}
+
+.has-header-color {
+  color: #013c41;
+}
+
 /* Accessibility */
 .widget p a,
 .entry-content a,
@@ -350,9 +362,6 @@ div.wp-block-image, .wp-block[data-type="core/image"][data-align] {
   .wp-block-column:not(:last-child) {
     margin-right: 32px;
   }
-}
-
-@media screen and (min-width: 1365px) {
   .wp-block-cover .wp-block-cover-text {
     font-size: 2em;
   }

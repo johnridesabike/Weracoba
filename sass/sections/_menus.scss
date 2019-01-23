@@ -1,4 +1,6 @@
-/* Small menu. */
+/*
+ * Small menu.
+ */
 .menu-toggle,
 .main-navigation.toggled ul {
 	display: block;
@@ -137,6 +139,10 @@
         }
     }
 }
+
+/*
+ * Media queries
+ */
 @media screen and (min-width: $breakpoint-1) {
 	.menu-toggle {
 		display: none;

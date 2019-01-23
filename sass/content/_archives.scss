@@ -7,14 +7,9 @@
         padding: 0 .5em .5em .5em;
         margin-bottom: 1em;
         @include drop-shadow;
-
-        &:last-child {
-            border: 0;
-        }
     }
 }
 .archive-description {
-	font-size: $font-size-md;
     @include max-content-width;
     text-align: center;
 }
@@ -48,9 +43,6 @@
 		}
     }
 }
-.excerpt-more {
-    font-family: $font-UI;
-}
 
 /** Archive Media Queries **/
 
@@ -61,7 +53,7 @@
 		display: grid;
 		grid-template-columns: 33% auto;
 		grid-template-rows: auto;
-		// Doesn't work with IE
+		// Doesn't work with IE. //
 		// grid-template-areas: 
 		// 	"header header"
 		// 	"content content"

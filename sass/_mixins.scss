@@ -100,20 +100,23 @@ $columns-margin: 3.8%;
 }
 
 @mixin widget-columns {
-	// With an odd number of items, show 3 columns.
-	// With an even number of items, show 2 columns
+	// Show 3 columns of widgets
+	// With an even number of widgets, show the first one at full width;
 	@include column-width(3);
 	margin-right: $columns-margin;
 	&:nth-child(3n+3) {
 		margin-right: 0;
 	}
-	&:nth-last-child(even):first-of-type,
-	&:nth-last-child(even):first-of-type ~ .widget {
-		@include column-width(2);
-		margin-right: $columns-margin;
-		&:nth-child(2n+2) {
-			margin-right: 0;
-		}
+	// &:nth-last-child(even):first-of-type,
+	// &:nth-last-child(even):first-of-type ~ .widget {
+	// 	@include column-width(2);
+	// 	margin-right: $columns-margin;
+	// 	&:nth-child(2n+2) {
+	// 		margin-right: 0;
+	// 	}
+	// }
+	&:nth-last-child(even):first-of-type {
+		width: 100%;
 	}
 }
 
@@ -168,24 +171,6 @@ $opacity-overlay: .25;
         opacity: $opacity-overlay;
     }
 }
-
-@mixin avatar($size: 48px) {
-	position: relative;
-    margin-left: $size + 12px;
-    //margin-top: 5px;
-    min-height: $size - 5px;
-    
-    .avatar {
-        position: absolute;
-        //top: -5px;
-        top: 5px;
-        left: - $size - 12px;
-        width: $size;
-        height: $size;
-        border-radius: 50%;
-    }
-}
-
 
 @mixin entry-meta-inline {
     & > * {

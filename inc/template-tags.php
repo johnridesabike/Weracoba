@@ -61,23 +61,25 @@ endif;
 if ( ! function_exists( 'weracoba_posted_by' ) ) :
 	/**
 	 * Prints HTML with meta information for the current author.
-	 *
-	 * @param bool $with_avatar whether or not to show an avatar.
 	 */
-	function weracoba_posted_by( $with_avatar = true ) {
-		if ( $with_avatar ) {
-			$avatar = get_avatar( get_the_author_meta( 'ID' ), 144 );
-		} else {
-			$avatar = '';
-		}
+	function weracoba_posted_by() {
 		$byline = sprintf(
 			/* translators: %s: post author. */
 			esc_html_x( 'By %s', 'post author', 'weracoba' ),
-			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . $avatar . esc_html( get_the_author() ) . '</a></span>'
+			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 		);
 
 		echo '<span class="byline"> ' . $byline . '</span>'; // phpcs:ignore XSS OK.
 
+	}
+endif;
+
+if ( ! function_exists( 'weracoba_author_avatar' ) ) :
+	/**
+	 * Prints HTML with the author avatar.
+	 */
+	function weracoba_author_avatar() {
+		echo get_avatar( get_the_author_meta( 'ID' ) );
 	}
 endif;
 

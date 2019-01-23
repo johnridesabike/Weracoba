@@ -15,8 +15,9 @@
     @include max-site-width;
 }
 
-/** Entry header **/
-
+/* 
+ * Entry header
+ */
 .entry-header {
     @extend %smallscreen-padding;
 
@@ -28,30 +29,168 @@
 .entry-title {
     margin: 0;
 }
-.entry-meta {
-    @include avatar(48px);
+.single .entry-meta {
 	font-size: $font-size-sm;
 	margin-top: .5em;
     > * {
         display: block;
     }
+	.avatar {
+		height: $size-avatar-md;
+		width: $size-avatar-md;
+		display: block;
+		float: left;
+		margin-right: 1em;
+	}
 }
-
 .updated-on {
-	display: none !important;
+	display: none !important; // maybe I'll add this back later?
 }
 
-/** Entry Header Media Queries **/
+/*
+ * Entry Footer
+ */
+.post-taxonomy {
+	>:not(:last-child) {
+		margin-bottom: .5em;
+	}
+}
+.single .entry-footer {
+    border-top: 1px solid $color-border;
+    border-bottom: 1px solid $color-border;
+    background: $color-bg-footer;
+    padding: .5em 1em;
+    @include full-bleed;
+    h3 {
+        margin: 0;
+    }
+    .comments-link {
+        display: block;
+    }
+}
+.entry-footer-wrapper > * {
+    margin-bottom: .5em;
+}
 
+/*
+ * Post body
+ */
+
+.single .post .entry-content > *:not(.alignwide):not(.alignfull) {
+    @include max-content-width;
+}
+.excerpt-entry,
+.single-post {
+    .entry-header {
+        h1, h2 {
+            font-family: $font-reading;
+        }
+    }
+    .entry-content {
+        font-family: $font-reading;
+        h1, h2, h3, h4, h5, h6 {
+            font-family: $font-reading;
+        }
+    }
+}
+
+/*
+ * Pages
+ */
+.page .page .entry-title,
+.archive-title {
+	text-align: center;
+}
+
+.page .page { // Doubled because the class appears twice on single pages, but once on excerpts
+    .entry-header {
+        @include max-site-width;
+    }
+    .entry-content > *:not(.alignwide):not(.alignfull) {
+        @include max-content-width;
+	}
+}
+
+/*
+ * Error 404
+ */
+.error404 .page-content {
+    .search-form {
+        margin-bottom: 1em;
+        text-align: center;
+        [type="search"] {
+            width: 100%;
+            margin-bottom: .5em;
+        }
+    }
+}
+
+/*
+ * Media queries
+ */
 @media screen and (min-width: $breakpoint-1) and (max-width: $breakpoint-3) {
+	/*
+	 * Entry header
+	 */
     .single .entry-meta {
         @include entry-meta-inline;
 		padding-top: 1em;
+		.avatar {
+			float: none;
+			vertical-align: middle;
+			display: inline;
+		}
+    }
+}
+
+@media screen and (min-width: $breakpoint-1) {
+	/*
+	 * Entry footer
+	 */
+    .single .entry-footer {
+        width: 100vw !important;
+        max-width: 100vw !important;
+        position: relative !important;
+        left: 50% !important;
+        right: 50% !important;
+        margin-left: -50vw !important;
+        margin-right: -50vw !important;
+
+        .entry-footer-wrapper {
+            max-width: $size-max-width;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .post-navigation {
+            flex: 0 0 100%;
+            margin-right: 0; // cancel default margin
+        }
+    }
+	/*
+	 * Pages
+	 */
+    .error404 .page-content {
+        .search-form {
+            display: flex;
+            flex-direction: row;
+            label {
+                width: 70%;
+                margin-right: .5em;
+            }
+        }
     }
 }
 @media screen and (min-width: $breakpoint-3) {
+	/*
+	 * Entry header
+	 */
     .single .entry-meta {
-        @include avatar(72px);
+		.avatar {
+			height: $size-avatar-lg;
+			width: $size-avatar-lg;
+		}
     }
     .single .has-post-thumbnail {
         // on big screens, stop full-bleed image and switch to side-by-side layout
@@ -89,120 +228,5 @@
     }
     .single .entry-title {
         margin: .5em 0;
-    }
-}
-
-/** Entry Footer **/
-.post-taxonomy {
-	>:not(:last-child) {
-		margin-bottom: .5em;
-	}
-}
-.single .entry-footer {
-    border-top: 1px solid $color-border;
-    border-bottom: 1px solid $color-border;
-    background: $color-bg-header;
-    padding: .5em 1em;
-    @include full-bleed;
-    h3 {
-        margin: 0;
-    }
-    .comments-link {
-        display: block;
-    }
-}
-
-.entry-footer-wrapper > * {
-    margin-bottom: .5em;
-}
-
-@media screen and (min-width: $breakpoint-1) {
-    .single .entry-footer {
-        width: 100vw !important;
-        max-width: 100vw !important;
-        position: relative !important;
-        left: 50% !important;
-        right: 50% !important;
-        margin-left: -50vw !important;
-        margin-right: -50vw !important;
-
-        .entry-footer-wrapper {
-            max-width: $size-max-width;
-            margin: auto;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-        .post-navigation {
-            flex: 0 0 100%;
-            margin-right: 0; // cancel default margin
-        }
-    }
-}
-
-/** Post body **/
-
-.single .post .entry-content > *:not(.alignwide):not(.alignfull) {
-    @include max-content-width;
-}
-@media screen and (min-width: $breakpoint-1) {
-    .single .post .entry-content {
-        margin-top: 1em;
-    }
-}
-
-.excerpt-entry,
-.single-post {
-    .entry-header {
-        h1, h2 {
-            font-family: $font-reading;
-        }
-    }
-    .entry-content {
-        font-family: $font-reading;
-        h1, h2, h3, h4, h5, h6 {
-            font-family: $font-reading;
-        }
-    }
-}
-
-.page .page .entry-title,
-.archive-title {
-	text-align: center;
-}
-
-.page .page { // Doubled because the class appears twice on single pages, but once on excerpts
-    .entry-header {
-        @include max-site-width;
-    }
-    .entry-content > *:not(.alignwide):not(.alignfull) {
-        @include max-content-width;
-	}
-}
-
-/** Error 404 **/
-.error404 .page-content {
-    .search-form {
-        margin-bottom: 1em;
-        text-align: center;
-        [type="search"] {
-            width: 100%;
-            margin-bottom: .5em;
-        }
-    }
-}
-
-/* Media queries */
-
-@media screen and (min-width: $breakpoint-1) {
-    .error404 .page-content {
-        .search-form {
-            display: flex;
-            flex-direction: row;
-            label {
-                width: 70%;
-                margin-right: .5em;
-            }
-        }
     }
 }

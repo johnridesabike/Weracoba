@@ -203,7 +203,7 @@ a.tag-cloud-link {
 .widget-area {
     display: flex;
     flex-flow: row;
-    flex-wrap: wrap;
+	flex-wrap: wrap;
     margin-top: 1em;
     @include full-bleed;
 }
@@ -315,7 +315,15 @@ a.tag-cloud-link {
             max-width: $size-widget;
             .widget {
                 width: $size-widget !important; // cancel the column width
-                margin: 0 0 4em;
+				margin: 0 0 4em;
+				.alignleft,
+				.alignright {
+					/*
+					 * Don't align stuff on this small of a size;
+					 */
+					float: none;
+					@include center-block;
+				}
             }
         }
     }

@@ -48,8 +48,11 @@
 		vertical-align: middle;
 	}
 }
-/** Fixed Header **/
-/* See also: the scrolling code in functions.js */
+
+/*
+ * Fixed Header
+ * See also: the scrolling code in functions.js
+ */
 @media screen {
     .fixed-header {
         position: fixed;
@@ -69,9 +72,19 @@
         margin-top: 60px;
 	}
 }
-
-/** Header Media Queries **/
-
+/* Offesets values from wp-includes/css/admin-bar.css */
+.admin-bar .fixed-header {
+    top: 32px; /* admin-bar.css:84 */
+    @media screen and ( max-width: 782px ) {
+        top: 46px; /* admin-bar.css:970 */
+    }
+    @media screen and (max-width: 600px) {
+        top: 0; /* admin-bar.css:1081 */
+    }
+}
+/*
+ * Header Media Queries
+ */
 @media screen and (max-width: $breakpoint-1) {
    .fixed-header .site-title {
 		.custom-logo-link {
@@ -132,16 +145,5 @@
 @media screen and (min-width: $breakpoint-2) {
     .sticky-top {
         margin-top: 110px;
-    }
-}
-
-/* Offesets values from wp-includes/css/admin-bar.css */
-.admin-bar .fixed-header {
-    top: 32px; /* admin-bar.css:84 */
-    @media screen and ( max-width: 782px ) {
-        top: 46px; /* admin-bar.css:970 */
-    }
-    @media screen and (max-width: 600px) {
-        top: 0; /* admin-bar.css:1081 */
     }
 }

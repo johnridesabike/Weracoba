@@ -28,7 +28,7 @@
 		if ( 'post' === get_post_type() ) :
 			?>
 			<div class="entry-meta">
-				<?php weracoba_posted_by( false ); ?>
+				<?php weracoba_posted_by(); ?>
 				<?php weracoba_posted_on(); ?>
 				<?php weracoba_comments(); ?>
 				<?php weracoba_tag_list(); ?>
