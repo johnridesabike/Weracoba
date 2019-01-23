@@ -42,8 +42,8 @@ object {
     /* On small screens, display left and right alignments as if they were centered */
     .alignleft,
     .alignright {
-        float: none;
-        clear: both;
+        float: none !important;
+        clear: both !important;
         @include center-block;
     }
 }

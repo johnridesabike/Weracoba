@@ -1974,6 +1974,13 @@ a.tag-cloud-link:focus {
   }
   .widget-area .widget:nth-last-child(even):first-of-type {
     width: 100%;
+    margin-right: 0;
+  }
+  .widget-area .widget:nth-last-child(even):first-of-type ~ .widget:nth-child(3n+3) {
+    margin-right: 3.8%;
+  }
+  .widget-area .widget:nth-last-child(even):first-of-type ~ .widget:nth-child(3n+4) {
+    margin-right: 0;
   }
   .archive-widget-area {
     margin-left: 0;
@@ -2006,6 +2013,13 @@ a.tag-cloud-link:focus {
   }
   .footer-widgets .widget:nth-last-child(even):first-of-type {
     width: 100%;
+    margin-right: 0;
+  }
+  .footer-widgets .widget:nth-last-child(even):first-of-type ~ .widget:nth-child(3n+3) {
+    margin-right: 3.8%;
+  }
+  .footer-widgets .widget:nth-last-child(even):first-of-type ~ .widget:nth-child(3n+4) {
+    margin-right: 0;
   }
 }
 
@@ -2035,8 +2049,8 @@ a.tag-cloud-link:focus {
 					 */
     float: none;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 }
 
@@ -3012,19 +3026,19 @@ object {
 .aligncenter {
   clear: both;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 @media screen and (max-width: 735px) {
   /* On small screens, display left and right alignments as if they were centered */
   .alignleft,
   .alignright {
-    float: none;
-    clear: both;
+    float: none !important;
+    clear: both !important;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 }
 
@@ -3190,8 +3204,8 @@ object {
 
 .wp-caption img[class*="wp-image-"] {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 .wp-caption .wp-caption-text {
