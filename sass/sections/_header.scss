@@ -60,7 +60,10 @@
         display: block; // this fixes a weird bug
         .site-description {
             display: none;
-        }
+		}
+		.site-title {
+			font-size: $font-size-xxl;
+		}
     }
     .sticky-top {
         margin-top: 60px;
@@ -110,7 +113,8 @@
 		display: block;
 	}
     .site-title {
-        margin: 0;
+		margin: 0;
+		font-size: $font-size-xxxl;
 	}
     .site-description {
         margin: 0;

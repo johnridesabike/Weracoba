@@ -100,15 +100,21 @@ $columns-margin: 3.8%;
 }
 
 @mixin widget-columns {
-    @include column-width(1);
-
-    @media screen and (min-width: $breakpoint-1) {
-        @include column-width(3);
-        margin-right: $columns-margin;
-        &:nth-child(3n+3) {
-            margin-right: 0;
-        }
-    }
+	// With an odd number of items, show 3 columns.
+	// With an even number of items, show 2 columns
+	@include column-width(3);
+	margin-right: $columns-margin;
+	&:nth-child(3n+3) {
+		margin-right: 0;
+	}
+	&:nth-last-child(even):first-of-type,
+	&:nth-last-child(even):first-of-type ~ .widget {
+		@include column-width(2);
+		margin-right: $columns-margin;
+		&:nth-child(2n+2) {
+			margin-right: 0;
+		}
+	}
 }
 
 @mixin button {

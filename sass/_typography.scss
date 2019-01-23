@@ -38,32 +38,32 @@ h1 {
 }
 
 h2 {
-    font-size: $font-size-xxl;
-	line-height: calculate-line-height( $font-size-xxl, $size-content);
+    font-size: $font-size-xl;
+	line-height: calculate-line-height( $font-size-xl, $size-content);
 	clear: both;
 }
 
 h3 {
-    font-size: $font-size-xl;
-	line-height: calculate-line-height( $font-size-xl, $size-content );
+    font-size: $font-size-lg;
+	line-height: calculate-line-height( $font-size-lg, $size-content );
 	clear: both;
 }
 
 h4 {
-    font-size: $font-size-lg;
-	line-height: calculate-line-height( $font-size-lg, $size-content );
-	font-weight: 700;
-}
-
-h5 {
     font-size: $font-size-md;
 	line-height: calculate-line-height( $font-size-md, $size-content );
 	font-weight: 700;
 }
 
-h6 {
-	font-size: $font-size-sm;
+h5 {
+    font-size: $font-size-sm;
 	line-height: calculate-line-height( $font-size-sm, $size-content );
+	font-weight: 700;
+}
+
+h6 {
+	font-size: $font-size-xs;
+	line-height: calculate-line-height( $font-size-xs, $size-content );
 	font-weight: 700;
 }
 

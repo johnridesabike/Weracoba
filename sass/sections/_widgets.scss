@@ -5,6 +5,7 @@
 	/* Make sure select elements fit in widgets. */
 	font-size: $font-size-sm;
 	line-height: calculate-line-height($font-size-sm, $size-widget);
+	width: 100%;
 
     ul,
     ol {
@@ -64,13 +65,12 @@
 .widget_nav_menu,
 .widget_categories,
 .widget_recent_entries {
-
     .children,
     .sub-menu {
         padding-top: 0;
         padding-bottom: .5em;
-        margin-left: 1em;
-
+		margin-left: 1em;
+		font-size: $font-size-sm;
         a:before {
             content: $glyph-arrow-down-right + " ";
         }
@@ -196,13 +196,6 @@ a.tag-cloud-link {
 	font-size: $font-size-xs;
 	padding: 0;
 	@include max-site-width;
-	// a {
-	// 	color: $color-text-headers; // Hack
-	// 	&:hover,
-	// 	&:focus {
-	// 		color: $color-link-hover;
-	// 	}
-	// }
 }
 
 /** Widget Area **/
@@ -213,9 +206,6 @@ a.tag-cloud-link {
     flex-wrap: wrap;
     margin-top: 1em;
     @include full-bleed;
-    .widget {
-        @include widget-columns;
-    }
 }
 /* Page widgets */
 .page,
@@ -250,7 +240,7 @@ a.tag-cloud-link {
 			display: flex;
 			flex-flow: row wrap;
             > .cat-item {
-                @include widget-columns;
+                width: 100%;
             }
 		}
     }
@@ -279,12 +269,22 @@ a.tag-cloud-link {
     .widget-area {
         // cancels the full-bleed
         margin-left: 0;
-        margin-right: 0;
+		margin-right: 0;
+		.widget {
+			@include widget-columns;
+		}
     }
     .archive-widget-area {
         margin-left: 0;
         margin-right: 0;
-    }
+		.widget > ul > .cat-item { // category widget
+			@include column-width(3);
+			margin-right: $columns-margin;
+			&:nth-child(3n+3) {
+				margin-right: 0;
+			}
+		}
+	}
     .archive-widget-area-bottom {
         margin-top: 4em;
         margin-bottom: 4em;
@@ -292,38 +292,8 @@ a.tag-cloud-link {
     .footer-widgets {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
-        ///* If only one widget is displayed, make it full width. */
-        ///* If 2 or 3 widgets are displayed, make the second one twice as wide. */
-        ///* If 4 or more widgets are displayed, show three across when available. */
-        ///* If more than 4 widgets are displayed, the last one takes up the full width. */
         .widget {
-            @include column-width(3);
-            //&:only-of-type {
-            //    width: 100%;
-            //}
-            //&:nth-last-child(n+2):nth-last-child(-n+3):first-child ~ .widget:nth-child(2) {
-            //    flex: 2;
-            //}
-            //
-            //&:nth-last-child(n+4),
-            //&:nth-last-child(n+4) ~ .widget {
-            //    @include column-width(3);
-            //}
-            ///*&:nth-last-child(n+4) ~ .widget:last-child {
-            //    flex-grow: 1;
-            //    flex-shrink: 1;
-            //
-            //    &.widget_nav_menu {
-            //        ul {
-            //            display: flex;
-            //            flex-wrap: wrap;
-            //        }
-            //        a {
-            //            border: 0;
-            //        }
-            //    }
-            //}*/
+            @include widget-columns;
         }
     }
 }
@@ -344,7 +314,7 @@ a.tag-cloud-link {
             margin-left: 1em;
             max-width: $size-widget;
             .widget {
-                width: $size-widget;
+                width: $size-widget !important; // cancel the column width
                 margin: 0 0 4em;
             }
         }

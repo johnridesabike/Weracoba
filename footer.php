@@ -32,5 +32,8 @@
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 <?php wp_footer(); ?>
+<script>
+	console.info("This site is open source! https://github.com/johnridesabike/Weracoba");
+</script>
 </body>
 </html>

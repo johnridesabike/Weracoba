@@ -427,32 +427,32 @@ h1 {
 }
 
 h2 {
-  font-size: 1.75em;
-  line-height: 1.37454;
-  clear: both;
-}
-
-h3 {
   font-size: 1.5em;
   line-height: 1.3982;
   clear: both;
 }
 
-h4 {
+h3 {
   font-size: 1.25em;
   line-height: 1.43744;
-  font-weight: 700;
+  clear: both;
 }
 
-h5 {
+h4 {
   font-size: 1em;
   line-height: 1.50967;
   font-weight: 700;
 }
 
-h6 {
+h5 {
   font-size: 0.88889em;
   line-height: 1.56297;
+  font-weight: 700;
+}
+
+h6 {
+  font-size: 0.8em;
+  line-height: 1.62254;
   font-weight: 700;
 }
 
@@ -610,39 +610,39 @@ div.wp-block-image {
   font-size: 1.5em;
 }
 
-.wp-block-button a.wp-block-button__link,
-.wp-block-file a.wp-block-file__button {
+.wp-block-button .wp-block-button__link,
+.wp-block-file .wp-block-file__button {
   padding: .2em .75em;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   text-decoration: none;
   border-radius: 0.625em;
   border: 1px solid #003333;
-  font-size: 1em;
   -webkit-box-shadow: #003333 0 1px 0 0;
           box-shadow: #003333 0 1px 0 0;
+  font-size: 1em;
 }
 
-.wp-block-button a.wp-block-button__link:not(.has-text-color),
-.wp-block-file a.wp-block-file__button:not(.has-text-color) {
+.wp-block-button .wp-block-button__link:not(.has-text-color),
+.wp-block-file .wp-block-file__button:not(.has-text-color) {
   color: white;
 }
 
-.wp-block-button a.wp-block-button__link:not(.has-background),
-.wp-block-file a.wp-block-file__button:not(.has-background) {
+.wp-block-button .wp-block-button__link:not(.has-background),
+.wp-block-file .wp-block-file__button:not(.has-background) {
   background: #017680;
 }
 
-.wp-block-button a.wp-block-button__link:hover, .wp-block-button a.wp-block-button__link:focus, .wp-block-button a.wp-block-button__link:active, .wp-block-button a.wp-block-button__link:visited,
-.wp-block-file a.wp-block-file__button:hover,
-.wp-block-file a.wp-block-file__button:focus,
-.wp-block-file a.wp-block-file__button:active,
-.wp-block-file a.wp-block-file__button:visited {
+.wp-block-button .wp-block-button__link:hover, .wp-block-button .wp-block-button__link:focus, .wp-block-button .wp-block-button__link:active, .wp-block-button .wp-block-button__link:visited,
+.wp-block-file .wp-block-file__button:hover,
+.wp-block-file .wp-block-file__button:focus,
+.wp-block-file .wp-block-file__button:active,
+.wp-block-file .wp-block-file__button:visited {
   -webkit-box-shadow: #003333 0 1px 0 0;
           box-shadow: #003333 0 1px 0 0;
 }
 
-.wp-block-button a.wp-block-button__link:active,
-.wp-block-file a.wp-block-file__button:active {
+.wp-block-button .wp-block-button__link:active,
+.wp-block-file .wp-block-file__button:active {
   -webkit-transform: translateY(1px);
           transform: translateY(1px);
   -webkit-box-shadow: inset 0 1px 0 #003333;
@@ -756,7 +756,7 @@ div.wp-block-image {
 
 @media screen and (min-width: 1365px) {
   .wp-block-cover .wp-block-cover-text {
-    font-size: 1.75em;
+    font-size: 2em;
   }
 }
 
@@ -1102,6 +1102,9 @@ a:hover, a:active {
   .fixed-header .site-description {
     display: none;
   }
+  .fixed-header .site-title {
+    font-size: 1.75em;
+  }
   .sticky-top {
     margin-top: 60px;
   }
@@ -1169,6 +1172,7 @@ a:hover, a:active {
   }
   .site-title {
     margin: 0;
+    font-size: 2em;
   }
   .site-description {
     margin: 0;
@@ -1611,6 +1615,7 @@ a:hover, a:active {
   /* Make sure select elements fit in widgets. */
   font-size: 0.88889em;
   line-height: 1.40238;
+  width: 100%;
 }
 
 .widget ul,
@@ -1685,6 +1690,7 @@ a:hover, a:active {
   padding-top: 0;
   padding-bottom: .5em;
   margin-left: 1em;
+  font-size: 0.88889em;
 }
 
 .widget_pages .children a:before,
@@ -1855,20 +1861,6 @@ a.tag-cloud-link:focus {
   margin-right: -1rem;
 }
 
-.widget-area .widget {
-  width: 100%;
-}
-
-@media screen and (min-width: 735px) {
-  .widget-area .widget {
-    width: 30.79667%;
-    margin-right: 3.8%;
-  }
-  .widget-area .widget:nth-child(3n+3) {
-    margin-right: 0;
-  }
-}
-
 /* Page widgets */
 .page .widget-area,
 .single-attachment .widget-area {
@@ -1919,16 +1911,6 @@ a.tag-cloud-link:focus {
   width: 100%;
 }
 
-@media screen and (min-width: 735px) {
-  .archive-widget-area .widget > ul > .cat-item {
-    width: 30.79667%;
-    margin-right: 3.8%;
-  }
-  .archive-widget-area .widget > ul > .cat-item:nth-child(3n+3) {
-    margin-right: 0;
-  }
-}
-
 /** Footer Widgets **/
 @media screen and (min-width: 1200px) {
   .footer-widgets {
@@ -1958,8 +1940,31 @@ a.tag-cloud-link:focus {
     margin-left: 0;
     margin-right: 0;
   }
+  .widget-area .widget {
+    width: 30.79667%;
+    margin-right: 3.8%;
+  }
+  .widget-area .widget:nth-child(3n+3) {
+    margin-right: 0;
+  }
+  .widget-area .widget:nth-last-child(even):first-of-type,
+  .widget-area .widget:nth-last-child(even):first-of-type ~ .widget {
+    width: 48.1%;
+    margin-right: 3.8%;
+  }
+  .widget-area .widget:nth-last-child(even):first-of-type:nth-child(2n+2),
+  .widget-area .widget:nth-last-child(even):first-of-type ~ .widget:nth-child(2n+2) {
+    margin-right: 0;
+  }
   .archive-widget-area {
     margin-left: 0;
+    margin-right: 0;
+  }
+  .archive-widget-area .widget > ul > .cat-item {
+    width: 30.79667%;
+    margin-right: 3.8%;
+  }
+  .archive-widget-area .widget > ul > .cat-item:nth-child(3n+3) {
     margin-right: 0;
   }
   .archive-widget-area-bottom {
@@ -1972,12 +1977,22 @@ a.tag-cloud-link:focus {
     display: flex;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
   }
   .footer-widgets .widget {
     width: 30.79667%;
+    margin-right: 3.8%;
+  }
+  .footer-widgets .widget:nth-child(3n+3) {
+    margin-right: 0;
+  }
+  .footer-widgets .widget:nth-last-child(even):first-of-type,
+  .footer-widgets .widget:nth-last-child(even):first-of-type ~ .widget {
+    width: 48.1%;
+    margin-right: 3.8%;
+  }
+  .footer-widgets .widget:nth-last-child(even):first-of-type:nth-child(2n+2),
+  .footer-widgets .widget:nth-last-child(even):first-of-type ~ .widget:nth-child(2n+2) {
+    margin-right: 0;
   }
 }
 
@@ -1997,7 +2012,7 @@ a.tag-cloud-link:focus {
     max-width: 250px;
   }
   .archive-view .widget-area .widget {
-    width: 250px;
+    width: 250px !important;
     margin: 0 0 4em;
   }
 }

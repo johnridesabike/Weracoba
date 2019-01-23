@@ -72,7 +72,15 @@ get_header();
 		?>
 
 		<div class="archive-widget-area archive-widget-area-bottom">
-			<?php the_widget( 'WP_Widget_Categories', array( 'title' => __( 'Browse another category', 'weracoba' ) ) ); ?>
+			<?php 
+			the_widget(
+				'WP_Widget_Categories',
+				array(
+					'title'        => __( 'Browse by category', 'weracoba' ),
+					'hierarchical' => 1,
+				)
+			);
+			?>
 		</div> <!-- .archive-widget-area -->
 		</main><!-- #main -->
 	</div><!-- #primary -->
