@@ -182,7 +182,7 @@
 }
 .tags-links a,
 a.tag-cloud-link {
-	color: $color-text-main; // hack
+	color: $color-text-headers;
 	&:hover,
 	&:focus {
 		color: $color-link;

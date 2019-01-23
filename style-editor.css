@@ -9,7 +9,7 @@ body {
 }
 
 textarea {
-  font-family: Times, "Times New Roman", serif;
+  font-family: Times, "Times New Roman", Georgia, serif;
   max-width: 680px;
   margin-right: auto;
   margin-left: auto;
@@ -17,7 +17,7 @@ textarea {
 
 h1, .editor-post-title__block .editor-post-title__input, h2, h3, h4, h5, h6 {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  color: #003333;
+  color: #013c41;
   font-weight: 400;
 }
 
@@ -214,9 +214,9 @@ div.wp-block-image, .wp-block[data-type="core/image"][data-align] {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   text-decoration: none;
   border-radius: 0.625em;
-  border: 1px solid #003333;
-  -webkit-box-shadow: #003333 0 1px 0 0;
-          box-shadow: #003333 0 1px 0 0;
+  border: 1px solid #013c41;
+  -webkit-box-shadow: #013c41 0 1px 0 0;
+          box-shadow: #013c41 0 1px 0 0;
   font-size: 1em;
 }
 
@@ -235,24 +235,24 @@ div.wp-block-image, .wp-block[data-type="core/image"][data-align] {
 .wp-block-file .wp-block-file__button:focus,
 .wp-block-file .wp-block-file__button:active,
 .wp-block-file .wp-block-file__button:visited {
-  -webkit-box-shadow: #003333 0 1px 0 0;
-          box-shadow: #003333 0 1px 0 0;
+  -webkit-box-shadow: #013c41 0 1px 0 0;
+          box-shadow: #013c41 0 1px 0 0;
 }
 
 .wp-block-button .wp-block-button__link:active,
 .wp-block-file .wp-block-file__button:active {
   -webkit-transform: translateY(1px);
           transform: translateY(1px);
-  -webkit-box-shadow: inset 0 1px 0 #003333;
-          box-shadow: inset 0 1px 0 #003333;
+  -webkit-box-shadow: inset 0 1px 0 #013c41;
+          box-shadow: inset 0 1px 0 #013c41;
 }
 
 .wp-block-button.is-style-squared .wp-block-button__link {
-  border-radius: 0.125em;
+  border-radius: 0.15em;
 }
 
 .wp-block-button.is-style-outline .wp-block-button__link {
-  border: .125em solid currentColor;
+  border: 2px solid currentColor;
   border-radius: 0.625em;
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -360,7 +360,7 @@ div.wp-block-image, .wp-block[data-type="core/image"][data-align] {
 
 /* editor styles */
 h1, .editor-post-title__block .editor-post-title__input, h2, h3, h4, h5, h6 {
-  font-family: Times, "Times New Roman", serif;
+  font-family: Times, "Times New Roman", Georgia, serif;
 }
 
 a {
@@ -450,7 +450,7 @@ a:hover, a:active {
 p,
 .wp-block,
 .mce-content-body {
-  font-family: Times, "Times New Roman", serif;
+  font-family: Times, "Times New Roman", Georgia, serif;
   font-size: 20px;
   line-height: 1.50967;
 }

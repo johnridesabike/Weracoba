@@ -156,6 +156,10 @@ input[type="reset"],
 input[type="submit"] {
     @include button;
     box-shadow: $shadow-button;
+
+	&:active {
+		@include button-active;
+	}
 }
 
 /*--------------------------------------------------------------

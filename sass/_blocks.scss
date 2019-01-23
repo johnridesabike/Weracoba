@@ -72,7 +72,7 @@ div.wp-block-image {
 .wp-block-file .wp-block-file__button {
 	@include button;
     box-shadow: $shadow-button;
-	font-size: $font-size-md; // cancel built in style
+	font-size: $font-size-md; // cancel built in style for the file button
 	&:hover,
 	&:focus,
 	&:active,
@@ -92,7 +92,7 @@ div.wp-block-image {
 }
 
 .wp-block-button.is-style-outline .wp-block-button__link {
-    border: .125em solid currentColor;
+    border: 2px solid currentColor;
 	border-radius: $border-radius-button;
 	box-shadow: none;
 	&:hover,

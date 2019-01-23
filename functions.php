@@ -10,8 +10,7 @@
 /**
  * To-do:
  * - Asides
- * - Thumbnail dimensions
- * - Refactor CSS colors
+ * - Add colors to editor
  */
 
 if ( ! function_exists( 'weracoba_setup' ) ) :
@@ -48,9 +47,8 @@ if ( ! function_exists( 'weracoba_setup' ) ) :
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */
 		add_theme_support( 'post-thumbnails' );
-		// set_post_thumbnail_size( 640, 480, true ); // 320 x 240, times 2 for retina displays
-		// set_post_thumbnail_size( 960, 640, true );
-		set_post_thumbnail_size( 768, 512 );
+		set_post_thumbnail_size( 1200, 800, true );
+		
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
@@ -255,7 +253,7 @@ add_action( 'widgets_init', 'weracoba_widgets_init' );
  * Enqueue scripts and styles.
  */
 function weracoba_scripts() {
-	wp_enqueue_style( 'weracoba-style', get_stylesheet_uri(), array(), '20190122', 'all' );
+	wp_enqueue_style( 'weracoba-style', get_stylesheet_uri(), array(), '20190123', 'all' );
 	wp_enqueue_style( 'weracoba-print-style', get_template_directory_uri() . '/style-print.css', array(), '20190118', 'print' );
 	wp_enqueue_script( 'weracoba-functions', get_template_directory_uri() . '/js/functions.js', array(), '20181105', true );
 	wp_enqueue_script( 'weracoba-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );

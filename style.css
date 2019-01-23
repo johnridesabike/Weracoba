@@ -408,7 +408,7 @@ body {
 }
 
 textarea {
-  font-family: Times, "Times New Roman", serif;
+  font-family: Times, "Times New Roman", Georgia, serif;
   max-width: 680px;
   margin-right: auto;
   margin-left: auto;
@@ -416,7 +416,7 @@ textarea {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  color: #003333;
+  color: #013c41;
   font-weight: 400;
 }
 
@@ -616,9 +616,9 @@ div.wp-block-image {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   text-decoration: none;
   border-radius: 0.625em;
-  border: 1px solid #003333;
-  -webkit-box-shadow: #003333 0 1px 0 0;
-          box-shadow: #003333 0 1px 0 0;
+  border: 1px solid #013c41;
+  -webkit-box-shadow: #013c41 0 1px 0 0;
+          box-shadow: #013c41 0 1px 0 0;
   font-size: 1em;
 }
 
@@ -637,24 +637,24 @@ div.wp-block-image {
 .wp-block-file .wp-block-file__button:focus,
 .wp-block-file .wp-block-file__button:active,
 .wp-block-file .wp-block-file__button:visited {
-  -webkit-box-shadow: #003333 0 1px 0 0;
-          box-shadow: #003333 0 1px 0 0;
+  -webkit-box-shadow: #013c41 0 1px 0 0;
+          box-shadow: #013c41 0 1px 0 0;
 }
 
 .wp-block-button .wp-block-button__link:active,
 .wp-block-file .wp-block-file__button:active {
   -webkit-transform: translateY(1px);
           transform: translateY(1px);
-  -webkit-box-shadow: inset 0 1px 0 #003333;
-          box-shadow: inset 0 1px 0 #003333;
+  -webkit-box-shadow: inset 0 1px 0 #013c41;
+          box-shadow: inset 0 1px 0 #013c41;
 }
 
 .wp-block-button.is-style-squared .wp-block-button__link {
-  border-radius: 0.125em;
+  border-radius: 0.15em;
 }
 
 .wp-block-button.is-style-outline .wp-block-button__link {
-  border: .125em solid currentColor;
+  border: 2px solid currentColor;
   border-radius: 0.625em;
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -787,7 +787,7 @@ body {
 body.archive-view,
 body.attachment,
 body.single-format-aside {
-  background: #e0e8e7;
+  background: #f0f6f6;
 }
 
 hr {
@@ -954,9 +954,9 @@ input[type="submit"] {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   text-decoration: none;
   border-radius: 0.625em;
-  border: 1px solid #003333;
-  -webkit-box-shadow: #003333 0 1px 0 0;
-          box-shadow: #003333 0 1px 0 0;
+  border: 1px solid #013c41;
+  -webkit-box-shadow: #013c41 0 1px 0 0;
+          box-shadow: #013c41 0 1px 0 0;
 }
 
 button:not(.has-text-color),
@@ -971,6 +971,16 @@ input[type="button"]:not(.has-background),
 input[type="reset"]:not(.has-background),
 input[type="submit"]:not(.has-background) {
   background: #017680;
+}
+
+button:active,
+input[type="button"]:active,
+input[type="reset"]:active,
+input[type="submit"]:active {
+  -webkit-transform: translateY(1px);
+          transform: translateY(1px);
+  -webkit-box-shadow: inset 0 1px 0 #013c41;
+          box-shadow: inset 0 1px 0 #013c41;
 }
 
 /*--------------------------------------------------------------
@@ -1049,13 +1059,13 @@ a:hover, a:active {
 }
 
 .site-title {
-  font-family: Baskerville, "Baskerville Old Face", Garamond, Times, "Times New Roman", serif;
+  font-family: Baskerville, "Baskerville Old Face", Garamond, Times, "Times New Roman", Georgia, serif;
   font-size: 1.75em;
   margin: 0;
 }
 
 .site-title a {
-  color: #003333;
+  color: #013c41;
 }
 
 .site-description {
@@ -1257,7 +1267,7 @@ a:hover, a:active {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   text-decoration: none;
   border-radius: 0.625em;
-  border: 1px solid #003333;
+  border: 1px solid #013c41;
   -webkit-box-shadow: none;
           box-shadow: none;
   padding: .1em;
@@ -1482,7 +1492,7 @@ a:hover, a:active {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   text-decoration: none;
   border-radius: 0.625em;
-  border: 1px solid #003333;
+  border: 1px solid #013c41;
 }
 
 .infinite-scroll #infinite-handle span button:not(.has-text-color),
@@ -1743,7 +1753,7 @@ a:hover, a:active {
 
 .rssSummary {
   padding: .5em 0;
-  font-family: Times, "Times New Roman", serif;
+  font-family: Times, "Times New Roman", Georgia, serif;
 }
 
 /* Calendar widget */
@@ -1820,7 +1830,7 @@ a:hover, a:active {
 
 .tags-links a,
 a.tag-cloud-link {
-  color: #19191A;
+  color: #013c41;
 }
 
 .tags-links a:hover, .tags-links a:focus,
@@ -2086,6 +2096,7 @@ a.tag-cloud-link:focus {
 
 .site .contact-form label span {
   color: darkred;
+  font-size: 0.8em;
 }
 
 @media screen and (min-width: 735px) {
@@ -2439,12 +2450,12 @@ a.tag-cloud-link:focus {
 .excerpt-entry .entry-header h1, .excerpt-entry .entry-header h2,
 .single-post .entry-header h1,
 .single-post .entry-header h2 {
-  font-family: Times, "Times New Roman", serif;
+  font-family: Times, "Times New Roman", Georgia, serif;
 }
 
 .excerpt-entry .entry-content,
 .single-post .entry-content {
-  font-family: Times, "Times New Roman", serif;
+  font-family: Times, "Times New Roman", Georgia, serif;
 }
 
 .excerpt-entry .entry-content h1, .excerpt-entry .entry-content h2, .excerpt-entry .entry-content h3, .excerpt-entry .entry-content h4, .excerpt-entry .entry-content h5, .excerpt-entry .entry-content h6,
@@ -2454,7 +2465,7 @@ a.tag-cloud-link:focus {
 .single-post .entry-content h4,
 .single-post .entry-content h5,
 .single-post .entry-content h6 {
-  font-family: Times, "Times New Roman", serif;
+  font-family: Times, "Times New Roman", Georgia, serif;
 }
 
 .page .page .entry-title,
@@ -2550,8 +2561,8 @@ a.tag-cloud-link:focus {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   text-decoration: none;
   border-radius: 0.625em;
-  border: 1px solid #003333;
-  border-radius: 0.125em;
+  border: 1px solid #013c41;
+  border-radius: 0.15em;
 }
 
 .continue-reading a:not(.has-text-color) {
@@ -2701,7 +2712,7 @@ a.tag-cloud-link:focus {
 ## Comments
 --------------------------------------------------------------*/
 .comment-content {
-  font-family: Times, "Times New Roman", serif;
+  font-family: Times, "Times New Roman", Georgia, serif;
 }
 
 .comment-content a {
@@ -2813,7 +2824,7 @@ a.tag-cloud-link:focus {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   text-decoration: none;
   border-radius: 0.625em;
-  border: 1px solid #003333;
+  border: 1px solid #013c41;
 }
 
 .reply a:not(.has-text-color) {
@@ -2875,7 +2886,7 @@ a.tag-cloud-link:focus {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   text-decoration: none;
   border-radius: 0.625em;
-  border: 1px solid #003333;
+  border: 1px solid #013c41;
 }
 
 .comment-respond .comment-form .form-submit input:not(.has-text-color) {
@@ -2924,7 +2935,7 @@ a.tag-cloud-link:focus {
 .home .wp-block-columns svg {
   display: block;
   margin: auto;
-  color: #003333;
+  color: #013c41;
 }
 
 /*--------------------------------------------------------------
