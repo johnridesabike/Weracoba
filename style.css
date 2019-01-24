@@ -604,10 +604,14 @@ div.wp-block-image {
 }
 
 .wp-block-gallery .blocks-gallery-item figcaption, .single .featured-image figcaption {
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, rgba(0, 0, 0, 0.7)), color-stop(80%, rgba(0, 0, 0, 0.3)), to(transparent));
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.7) 0, rgba(0, 0, 0, 0.3) 80%, transparent);
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, rgba(0, 0, 0, 0.7)), color-stop(80%, rgba(0, 0, 0, 0.5)), to(transparent));
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.7) 0, rgba(0, 0, 0, 0.5) 80%, transparent);
+  color: white;
+  text-shadow: 0 0 6px #19191A;
   padding: .2em .5em;
   font-size: 0.8em;
+  font-style: italic;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
 
 .single .featured-image figcaption {
@@ -1260,40 +1264,21 @@ a:hover, a:active {
   display: block;
 }
 
-.main-navigation.toggled {
-  height: 100vh;
-  overflow: scroll;
-}
-
 .menu-button {
-  margin: .25em 0;
+  margin: .25em 0 .25em .25em;
   text-align: right;
   position: relative;
 }
 
 .menu-button .menu-toggle {
   display: inline;
-  font-size: 1em;
-  padding: .2em .75em;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  text-decoration: none;
-  border-radius: 0.625em;
-  border: 1px solid #013c41;
   -webkit-box-shadow: none;
           box-shadow: none;
   padding: .1em;
 }
 
-.menu-button .menu-toggle:not(.has-text-color) {
-  color: white;
-}
-
-.menu-button .menu-toggle:not(.has-background) {
-  background: #017680;
-}
-
 .menu-button .menu-toggle .svg-icon {
-  font-size: 1.75em;
+  font-size: 2em;
 }
 
 .menu-button .dismiss-icon {
@@ -1409,7 +1394,40 @@ a:hover, a:active {
   padding: .5em 0 .5em 0;
 }
 
+/*
+ * Workarounds for fixed header
+ * This stuff is all pretty hacky and I'm not sure how to make it more elegant.
+ */
+.main-navigation.toggled {
+  height: calc( 100vh - 6.4em);
+  overflow: scroll;
+}
+
+.fixed-header .main-navigation.toggled {
+  height: calc( 100vh - 3.65em);
+}
+
+/* Offesets values from wp-includes/css/admin-bar.css */
+@media screen and (max-width: 782px) {
+  /* admin-bar.css:970 */
+  .admin-bar .main-navigation.toggled {
+    height: calc( 100vh - 6.4em - 46px);
+  }
+  .admin-bar .fixed-header .main-navigation.toggled {
+    height: calc( 100vh - 3.65em);
+  }
+}
+
+/*
+ * Media queries
+ */
 @media screen and (min-width: 735px) {
+  .menu-toggle {
+    display: none;
+  }
+  .menu-button {
+    display: none;
+  }
   .main-navigation {
     width: auto;
     line-height: 1.1;
@@ -1434,18 +1452,6 @@ a:hover, a:active {
   }
   .main-navigation li:first-child {
     padding-left: 0;
-  }
-}
-
-/*
- * Media queries
- */
-@media screen and (min-width: 735px) {
-  .menu-toggle {
-    display: none;
-  }
-  .menu-button {
-    display: none;
   }
 }
 
@@ -2290,6 +2296,14 @@ a.tag-cloud-link:focus {
   margin: 0;
 }
 
+.entry-title a {
+  color: #013c41;
+}
+
+.entry-title a:active, .entry-title a:focus, .entry-title a:hover {
+  color: #01b0bf;
+}
+
 .single .entry-meta {
   font-size: 0.88889em;
   margin-top: .5em;
@@ -2619,8 +2633,9 @@ a.tag-cloud-link:focus {
 }
 
 .excerpt-entry .entry-meta {
-  margin: 0;
+  margin: 0 0 1rem 0;
   min-height: 0;
+  font-size: 0.88889em;
 }
 
 .excerpt-entry .entry-meta > * {
@@ -2629,7 +2644,7 @@ a.tag-cloud-link:focus {
 }
 
 .excerpt-entry .entry-meta > * {
-  margin-bottom: .5em;
+  margin-bottom: .25em;
 }
 
 .excerpt-entry .entry-meta .tags-links {
@@ -2711,6 +2726,7 @@ a.tag-cloud-link:focus {
   .excerpt-entry .entry-footer .entry-meta {
     -ms-flex-negative: 1;
         flex-shrink: 1;
+    margin: 0;
   }
   .excerpt-entry.page .entry-footer {
     -webkit-box-pack: end;
@@ -3057,48 +3073,12 @@ object {
 /*--------------------------------------------------------------
 ## Single Post Featured Images
 --------------------------------------------------------------*/
-.featured-image {
+.single .featured-image {
   margin: 0;
-}
-
-.single .featured-image {
+  height: 430px;
   position: relative;
-  background-size: cover;
-  background-position: 50%;
-}
-
-.single .featured-image img {
-  position: absolute;
-  left: -999em;
-}
-
-.single .featured-image a {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background: #01b0bf;
-  opacity: 0;
-  z-index: 2;
-}
-
-.single .featured-image a:hover, .single .featured-image a:focus {
-  opacity: 0.25;
-}
-
-.single .featured-image {
-  height: 16em;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  width: 100vw;
+  max-width: 100vw;
 }
 
 .single .featured-image.full-bleed {
@@ -3106,20 +3086,29 @@ object {
   margin-right: -1rem;
 }
 
-/** Featured Images Media Queries **/
-@media screen and (min-width: 735px) {
-  .single .featured-image.full-bleed {
-    min-height: 430px;
-    width: 100vw;
-  }
+.single .featured-image img {
+  height: 100%;
+  width: 100vw;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+  z-index: -1;
+}
+
+.single .featured-image figcaption {
+  position: absolute;
+  right: 0;
+  bottom: 0;
 }
 
 /* we stop full-bleeding on wide screens, but only on single posts */
 @media screen and (min-width: 1365px) {
-  .single .featured-image.full-bleed {
-    position: static;
+  .single .featured-image {
     width: 50%;
     margin: 0;
+  }
+  .single .featured-image img {
+    width: 100%;
   }
 }
 

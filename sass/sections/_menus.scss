@@ -5,22 +5,16 @@
 .main-navigation.toggled ul {
 	display: block;
 }
-.main-navigation.toggled {
-    height: 100vh;
-    overflow: scroll
-}
 .menu-button {
-    margin: .25em 0;
+    margin: .25em 0 .25em .25em;
     text-align: right;
 	position: relative;
     .menu-toggle {
         display: inline;
-        font-size: 1em;
-		@include button;
 		box-shadow: none; // cancel _elements.scss
 		padding: .1em;
 		.svg-icon {
-			font-size: $font-size-xxl;
+			font-size: $font-size-xxxl;
 		}
     }
     .dismiss-icon {
@@ -118,7 +112,41 @@
 	// .current_page_ancestor > a,
 	// .current-menu-ancestor > a {
 	// }
-    @media screen and (min-width: $breakpoint-1) {
+}
+/*
+ * Workarounds for fixed header
+ * This stuff is all pretty hacky and I'm not sure how to make it more elegant.
+ */
+.main-navigation.toggled {
+    height: calc( 100vh - 6.4em ); // 128px = size of header. Estimation, not accurate!
+	overflow: scroll;
+}
+.fixed-header .main-navigation.toggled {
+	height: calc( 100vh - 3.65em ); // 73px = size of header. Estimation, not accurate!
+}
+/* Offesets values from wp-includes/css/admin-bar.css */
+@media screen and ( max-width: 782px ) { /* admin-bar.css:970 */
+	.admin-bar {
+		.main-navigation.toggled {
+			height: calc( 100vh - 6.4em - 46px );
+		}
+		.fixed-header .main-navigation.toggled {
+			height: calc( 100vh - 3.65em);
+		}
+	}
+}
+
+/*
+ * Media queries
+ */
+@media screen and (min-width: $breakpoint-1) {
+	.menu-toggle {
+		display: none;
+	}
+    .menu-button {
+        display: none;
+	}
+	.main-navigation {
         width: auto;
         line-height: 1.1; /* fixes vertical dropdown menu spacing */
         ul {
@@ -137,17 +165,5 @@
                 padding-left: 0;
             }
         }
-    }
-}
-
-/*
- * Media queries
- */
-@media screen and (min-width: $breakpoint-1) {
-	.menu-toggle {
-		display: none;
 	}
-    .menu-button {
-        display: none;
-    }
 }

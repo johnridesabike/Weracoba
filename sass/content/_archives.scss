@@ -33,10 +33,11 @@
 	}
     .entry-meta {
 		@include entry-meta-inline;
-		margin: 0;
+		margin: 0 0 1rem 0;
 		min-height: 0;
+		font-size: $font-size-sm;
 		> * {
-			margin-bottom: .5em;
+			margin-bottom: .25em;
 		}
 		.tags-links {
 			display: block;
@@ -102,6 +103,7 @@
 			align-items: center;
 			.entry-meta {
 				flex-shrink: 1; // IE fix
+				margin: 0;
 			}
         }
         &.page .entry-footer {

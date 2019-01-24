@@ -63,52 +63,37 @@ object {
 /*--------------------------------------------------------------
 ## Single Post Featured Images
 --------------------------------------------------------------*/
-.featured-image {
-    margin: 0;
-}
-
-%featured-image {
-    position: relative;
-    background-size: cover;
-    background-position: 50%;
-    
-    img {
-        position: absolute;
-        left: -999em;
-    }
-    
-    a {
-        @include link-overlay;
-    }
-}
 .single .featured-image {
-    @extend %featured-image;
-    height: 16em;
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
-
-    &.full-bleed {
-        @include full-bleed;
-    }
-}
-
-/** Featured Images Media Queries **/
-
-@media screen and (min-width: $breakpoint-1) {
-    .single .featured-image.full-bleed {
-        min-height: 430px;
-        width: 100vw;
-    }
+	margin: 0;
+	height: 430px;
+	position: relative;
+	width: 100vw;
+	max-width: 100vw;
+	&.full-bleed {
+		@include full-bleed; // not sure why I need this as a separate class?
+	}
+	img {
+		height: 100%;
+		width: 100vw;
+		object-fit: cover;
+		position: absolute;
+		z-index: -1;
+	}
+	figcaption {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+	}
 }
 
 /* we stop full-bleeding on wide screens, but only on single posts */
 @media screen and (min-width: $breakpoint-3) {
-    .single .featured-image.full-bleed {
-        position: static;
-        //width: 765px;
+    .single .featured-image {
         width: 50%;
-        margin: 0;
+		margin: 0;
+		img {
+			width: 100%;
+		}
     }
 }
 
