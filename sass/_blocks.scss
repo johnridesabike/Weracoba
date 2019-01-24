@@ -1,6 +1,23 @@
-/*--------------------------------------------------------------
-## Media Styles
---------------------------------------------------------------*/
+/**
+ * Typography
+ */
+.wp-block-code {
+	// Extend the <code> style so it can appear in the editor,
+	// but stop the <code> font-size from being applied twice on the front end.
+	@extend code;
+	code {
+		font-size: inherit;
+	}
+}
+.wp-block-code .editor-plain-text {
+	// stops the built-in style from overriding ours
+	font-family: inherit;
+	font-size: 1em;
+}
+
+/**
+ * Media
+ */
 
 .alignwide:not(.wp-block-columns):not(p) {
     /* displays as alignfull on small screens */
@@ -71,6 +88,10 @@ div.wp-block-image {
 	font-size: $font-size-xl;
 }
 
+/**
+ * Buttons
+ */
+
 .wp-block-button .wp-block-button__link,
 .wp-block-file .wp-block-file__button {
 	@include button;
@@ -121,33 +142,16 @@ div.wp-block-image {
     }
 }
 
+/**
+ * Widgets
+ */
 .wp-block-latest-posts {
-    // copied from _widgets.scss
-	padding: 0;
-	margin: 0;
-	list-style-type: none;
-	li {
-		display: block;
-		margin-bottom: .5em;
-		ul,
-		ol {
-			margin-left: .5em;
-		}
-		a {
-			display: block;
-			padding: .5em 0;
-			text-decoration: none;
-			border-bottom: 1px dashed currentColor;
-			&:hover,
-			&:focus {
-				text-decoration: none;
-				border-bottom: 1px dashed currentColor;
-			}
-		}
-	}
+    @extend %widget-list;
 }
 
-
+/**
+ * Formatting
+ */
 // replace default css
 @media (min-width:600px) {
     .wp-block-column {

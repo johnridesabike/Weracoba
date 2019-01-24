@@ -26,7 +26,6 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 ----------------------------------------------------------------
 # Normalize
 # Typography
-# Blocks
 # Elements
     ## Forms
     ## Links
@@ -38,6 +37,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
         ### Content Navigation
 	## Widgets
 	## Plugins
+# Blocks
 # Accessibility
 # Alignments
 # Clearings
@@ -68,12 +68,6 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @import "sass/typography";
 
 /*--------------------------------------------------------------
-# Blocks
---------------------------------------------------------------*/
-
-@import "sass/blocks";
-
-/*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
 @import "sass/elements";
@@ -82,6 +76,11 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Sections
 --------------------------------------------------------------*/
 @import "sass/sections/sections";
+
+/*--------------------------------------------------------------
+# Blocks
+--------------------------------------------------------------*/
+@import "sass/blocks";
 
 /*--------------------------------------------------------------
 # Accessibility

@@ -82,7 +82,6 @@ blockquote {
 pre {
 	background: $color-bg-pre;
 	font-family: $font-pre;
-	@include font-size(0.9375); // ???
 	line-height: $font-line-height-pre;
 	margin-bottom: 1.6em;
 	max-width: 100%;
@@ -92,7 +91,8 @@ pre {
 
 code, kbd, tt, var {
 	font-family: $font-code;
-	@include font-size(0.9375); // ???
+	font-size: $font-size-base;
+	font-size: $font-size-xs;
 }
 
 abbr, acronym {
