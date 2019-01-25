@@ -63,36 +63,60 @@ object {
 /*--------------------------------------------------------------
 ## Single Post Featured Images
 --------------------------------------------------------------*/
-.single .featured-image {
-	margin: 0;
-	height: 430px;
-	position: relative;
-	width: 100vw;
-	max-width: 100vw;
+/**
+ * Browsers that don't support object-fit (IE) will display the plain image.
+ * It's possible to replicate this with transforms and overflows, but I don't
+ * have the time to test that out just to cover IE.
+ */
+.single figure.featured-image {
+	// cancel the default figure.
+	margin-top: 0;
 	&.full-bleed {
 		@include full-bleed; // not sure why I need this as a separate class?
 	}
-	img {
-		height: 100%;
-		width: 100vw;
-		object-fit: cover;
-		position: absolute;
-		z-index: -1;
-	}
+	// for browsers that don't play well with cover
 	figcaption {
-		position: absolute;
-		right: 0;
-		bottom: 0;
+		font-style: italic;
+		font-size: $font-size-xs;
+		text-align: right;
+		padding-right: 1.5em; /* to avoid scrollbars */
+	}
+}
+
+@supports (object-fit: cover) {
+	.single .featured-image {
+		margin-top: 0;
+		height: 430px;
+		position: relative;
+		width: 100vw;
+		max-width: 100vw;
+		img {
+			height: 100%;
+			width: 100vw;
+			object-fit: cover;
+			position: absolute;
+			z-index: -1;
+		}
+		figcaption {
+			@include figcaption-overlay;
+			width: 100%;
+			text-align: right;
+			position: absolute;
+			bottom: 0;
+		}
 	}
 }
 
 /* we stop full-bleeding on wide screens, but only on single posts */
 @media screen and (min-width: $breakpoint-3) {
-    .single .featured-image {
+    .single figure.featured-image {
         width: 50%;
 		margin: 0;
 		img {
 			width: 100%;
+		}
+		figcaption {
+			padding-right: .5em;
 		}
     }
 }

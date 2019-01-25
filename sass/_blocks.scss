@@ -64,22 +64,8 @@ div.wp-block-image {
     }
 }
 
-%figcaption-overlay {
-    background: linear-gradient( 0deg, rgba(0,0,0,.7) 0, rgba(0,0,0,.5) 80%, transparent);
-	color: $color-bg-body;
-	text-shadow: 0 0 6px $color-text-main;
-	padding: .2em .5em;
-	font-size: $font-size-xs;
-	font-style: italic;
-	font-family: $font-UI;
-}
 .wp-block-gallery .blocks-gallery-item figcaption {
-    @extend %figcaption-overlay;
-}
-.single .featured-image figcaption {
-    @extend %figcaption-overlay;
-    width: 100%;
-    text-align: right;
+    @include figcaption-overlay;
 }
 
 .wp-block-cover .wp-block-cover-text {

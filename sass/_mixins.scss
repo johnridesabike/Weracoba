@@ -199,3 +199,13 @@ $opacity-overlay: .25;
     margin-left: -1rem;
     margin-right: -1rem;
 }
+
+@mixin figcaption-overlay {
+    background: linear-gradient( 0deg, rgba(0,0,0,.7) 0, rgba(0,0,0,.5) 80%, transparent);
+	color: $color-bg-body;
+	text-shadow: 0 0 6px $color-text-main;
+	padding: .2em .5em;
+	font-size: $font-size-xs;
+	font-style: italic;
+	font-family: $font-UI;
+}

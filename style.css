@@ -1984,7 +1984,7 @@ div.wp-block-image {
   }
 }
 
-.wp-block-gallery .blocks-gallery-item figcaption, .single .featured-image figcaption {
+.wp-block-gallery .blocks-gallery-item figcaption {
   background: -webkit-gradient(linear, left bottom, left top, color-stop(0, rgba(0, 0, 0, 0.7)), color-stop(80%, rgba(0, 0, 0, 0.5)), to(transparent));
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.7) 0, rgba(0, 0, 0, 0.5) 80%, transparent);
   color: white;
@@ -1993,11 +1993,6 @@ div.wp-block-image {
   font-size: 0.8em;
   font-style: italic;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-}
-
-.single .featured-image figcaption {
-  width: 100%;
-  text-align: right;
 }
 
 .wp-block-cover .wp-block-cover-text {
@@ -3060,42 +3055,71 @@ object {
 /*--------------------------------------------------------------
 ## Single Post Featured Images
 --------------------------------------------------------------*/
-.single .featured-image {
-  margin: 0;
-  height: 430px;
-  position: relative;
-  width: 100vw;
-  max-width: 100vw;
+/**
+ * Browsers that don't support object-fit (IE) will display the plain image.
+ * It's possible to replicate this with transforms and overflows, but I don't
+ * have the time to test that out just to cover IE.
+ */
+.single figure.featured-image {
+  margin-top: 0;
 }
 
-.single .featured-image.full-bleed {
+.single figure.featured-image.full-bleed {
   margin-left: -1rem;
   margin-right: -1rem;
 }
 
-.single .featured-image img {
-  height: 100%;
-  width: 100vw;
-  -o-object-fit: cover;
-     object-fit: cover;
-  position: absolute;
-  z-index: -1;
+.single figure.featured-image figcaption {
+  font-style: italic;
+  font-size: 0.8em;
+  text-align: right;
+  padding-right: 1.5em;
+  /* to avoid scrollbars */
 }
 
-.single .featured-image figcaption {
-  position: absolute;
-  right: 0;
-  bottom: 0;
+@supports ((-o-object-fit: cover) or (object-fit: cover)) {
+  .single .featured-image {
+    margin-top: 0;
+    height: 430px;
+    position: relative;
+    width: 100vw;
+    max-width: 100vw;
+  }
+  .single .featured-image img {
+    height: 100%;
+    width: 100vw;
+    -o-object-fit: cover;
+       object-fit: cover;
+    position: absolute;
+    z-index: -1;
+  }
+  .single .featured-image figcaption {
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(0, rgba(0, 0, 0, 0.7)), color-stop(80%, rgba(0, 0, 0, 0.5)), to(transparent));
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.7) 0, rgba(0, 0, 0, 0.5) 80%, transparent);
+    color: white;
+    text-shadow: 0 0 6px #19191A;
+    padding: .2em .5em;
+    font-size: 0.8em;
+    font-style: italic;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    width: 100%;
+    text-align: right;
+    position: absolute;
+    bottom: 0;
+  }
 }
 
 /* we stop full-bleeding on wide screens, but only on single posts */
 @media screen and (min-width: 1365px) {
-  .single .featured-image {
+  .single figure.featured-image {
     width: 50%;
     margin: 0;
   }
-  .single .featured-image img {
+  .single figure.featured-image img {
     width: 100%;
+  }
+  .single figure.featured-image figcaption {
+    padding-right: .5em;
   }
 }
 
