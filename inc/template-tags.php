@@ -170,7 +170,7 @@ if ( ! function_exists( 'weracoba_post_thumbnail' ) ) :
 
 		if ( is_singular() && ! is_front_page() ) :
 			?>
-			<figure class="featured-image post-thumbnail full-bleed">
+			<figure class="featured-image post-thumbnail">
 				<?php
 				the_post_thumbnail( 'post-thumbnail' );
 				?>
@@ -187,7 +187,7 @@ if ( ! function_exists( 'weracoba_post_thumbnail' ) ) :
 					the_post_thumbnail( 'post-thumbnail' );
 					?>
 				</a>
-			</figure> <!--.full-bleed .featured-image -->
+			</figure> <!--.featured-image -->
 			<?php
 		endif; // End is_singular().
 	}

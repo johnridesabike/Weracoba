@@ -196,12 +196,19 @@ $opacity-overlay: .25;
 }
 
 @mixin full-bleed {
+	/* full-bleed on small screens */
     margin-left: -1rem;
     margin-right: -1rem;
 }
 
+@mixin full-bleed-cancel {
+	/* cancel full-bleed on larger screens */
+	margin-left: 0;
+	margin-right: 0;
+}
+
 @mixin figcaption-overlay {
-    background: linear-gradient( 0deg, rgba(0,0,0,.7) 0, rgba(0,0,0,.5) 80%, transparent);
+    background: linear-gradient( transparent 0, rgba(0,0,0,.5) 40%, rgba(0,0,0,.8) 100%);
 	color: $color-bg-body;
 	text-shadow: 0 0 6px $color-text-main;
 	padding: .2em .5em;

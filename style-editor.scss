@@ -110,3 +110,21 @@ p,
 	font-size: $font-size-base;
 	line-height: calculate-line-height($font-size-base, $size-content);
 }
+.wp-block-heading h1.editor-rich-text__tinymce {
+	@extend h1;
+}
+.wp-block-heading h2.editor-rich-text__tinymce {
+	@extend h2;
+}
+.wp-block-heading h3.editor-rich-text__tinymce {
+	@extend h3;
+}
+.wp-block-heading h4.editor-rich-text__tinymce {
+	@extend h4;
+}
+.wp-block-heading h5.editor-rich-text__tinymce {
+	@extend h5;
+}
+.wp-block-heading h6.editor-rich-text__tinymce {
+	@extend h6;
+}

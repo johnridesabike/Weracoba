@@ -68,12 +68,10 @@ object {
  * It's possible to replicate this with transforms and overflows, but I don't
  * have the time to test that out just to cover IE.
  */
-.single figure.featured-image {
+.single .featured-image {
 	// cancel the default figure.
 	margin-top: 0;
-	&.full-bleed {
-		@include full-bleed; // not sure why I need this as a separate class?
-	}
+	@include full-bleed;
 	// for browsers that don't play well with cover
 	figcaption {
 		font-style: italic;
@@ -107,11 +105,11 @@ object {
 	}
 }
 
-/* we stop full-bleeding on wide screens, but only on single posts */
+/* We change the style to prepare it for the grid layout in posts-and-pages */
 @media screen and (min-width: $breakpoint-3) {
-    .single figure.featured-image {
+    .single .featured-image {
+		@include full-bleed-cancel;
         width: 50%;
-		margin: 0;
 		img {
 			width: 100%;
 		}
@@ -125,11 +123,10 @@ object {
 ## Archive View Featured Images
 --------------------------------------------------------------*/
 
-.archive-view .featured-image {
+.excerpt-entry .featured-image {
     position: relative;
-    margin-left: -1em; // full-bleed
-    margin-right: -1em; // full-bleed
-
+	//@include full-bleed;
+	margin: 0 -.5em; // cancel figure padding and match the padding of .excerpt-entry
     .post-thumbnail {
         display: block;
         line-height: 0; /* fixes visual glitch with link overlay */
@@ -156,7 +153,7 @@ object {
 
 @media screen and (min-width: $breakpoint-1) {
 	.excerpt-entry .featured-image {
-		margin: 0;
+		@include full-bleed-cancel;
 	}
 }
 

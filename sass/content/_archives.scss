@@ -2,12 +2,6 @@
     .entry-wrap {
         width: 100%;
     }
-    .content-area .excerpt-entry {
-        position: relative;
-        padding: 0 .5em .5em .5em;
-        margin-bottom: 1em;
-        @include drop-shadow;
-    }
 }
 .archive-description {
     @include max-content-width;
@@ -24,7 +18,11 @@
 }
 
 .excerpt-entry {
+	position: relative;
+	padding: 0 .5em .5em .5em;
+	margin-bottom: 1em;
 	@include full-bleed;
+	@include drop-shadow;
 	.entry-header {
 		padding: 0; // cancel the padding from the main entry-headers
 	}
@@ -49,6 +47,7 @@
 
 @media screen and (min-width: $breakpoint-1) {
 	.excerpt-entry {
+		//@include full-bleed-cancel;
 		margin-left: auto;
 		margin-right: auto;
 		display: grid;

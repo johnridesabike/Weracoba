@@ -58,9 +58,7 @@ div.wp-block-image {
 
 @media screen and (min-width: $breakpoint-3) {
     .alignwide {
-        // disables the full-bleed on large screens
-        margin-left: 0;
-        margin-right: 0;
+        @include full-bleed-cancel;
     }
 }
 

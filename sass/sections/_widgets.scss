@@ -271,16 +271,13 @@ a.tag-cloud-link {
 
 @media screen and (min-width: $breakpoint-1) {
     .widget-area {
-        // cancels the full-bleed
-        margin-left: 0;
-		margin-right: 0;
+        @include full-bleed-cancel;
 		.widget {
 			@include widget-columns;
 		}
     }
     .archive-widget-area {
-        margin-left: 0;
-        margin-right: 0;
+        @include full-bleed-cancel;
 		.widget > ul > .cat-item { // category widget
 			@include column-width(3);
 			margin-right: $columns-margin;
