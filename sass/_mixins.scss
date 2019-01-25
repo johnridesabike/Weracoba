@@ -62,12 +62,6 @@
 	font-size: $sizeValue * 1rem;
 }
 
-@mixin center-block {
-	display: block; // might not be necessary
-	margin-left: auto !important;
-	margin-right: auto !important;
-}
-
 @mixin clearfix() {
 	content: "";
 	display: table;
@@ -99,120 +93,7 @@ $columns-margin: 3.8%;
 	width: map-get( $columns, $numberColumns ) - ( ( $columns-margin * ( $numberColumns - 1 ) ) / $numberColumns );
 }
 
-@mixin widget-columns {
-	// Show 3 columns of widgets
-	// With an even number of widgets, show the first one at full width;
-	@include column-width(3);
-	margin-right: $columns-margin;
-	&:nth-child(3n+3) {
-		margin-right: 0;
-	}
-	// &:nth-last-child(even):first-of-type,
-	// &:nth-last-child(even):first-of-type ~ .widget {
-	// 	@include column-width(2);
-	// 	margin-right: $columns-margin;
-	// 	&:nth-child(2n+2) {
-	// 		margin-right: 0;
-	// 	}
-	// }
-	&:nth-last-child(even):first-of-type {
-		width: 100%;
-		margin-right: 0;
-	}
-	&:nth-last-child(even):first-of-type ~ .widget:nth-child(3n+3) {
-		margin-right: $columns-margin;
-	}
-	&:nth-last-child(even):first-of-type ~ .widget:nth-child(3n+4) {
-		margin-right: 0;
-	}
-}
-
-@mixin button {
-    padding: .2em .75em;
-	font-family: $font-UI;
-	text-decoration: none;
-	border-radius: $border-radius-button;
-	border: 1px solid $color-text-headers;
-    &:not(.has-text-color) {
-        color: $color-bg-body;
-    }
-    &:not(.has-background) {
-        background: $color-link;
-    }
-}
-
-@mixin button-active {
-	transform: translateY(1px);
-	box-shadow: inset 0 1px 0 $color-text-headers;
-}
-
-@mixin max-site-width {
-	@media screen and (min-width: $size-max-width) {
-		max-width: $size-max-width;
-		margin-left: auto;
-		margin-right: auto;
-	}
-}
-
-@mixin max-content-width {
-    max-width: $size-content;
-    margin-right: auto;
-    margin-left: auto;
-}
-
-$opacity-overlay: .25;
-
-@mixin link-overlay {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background: $color-link-hover;
-    opacity: 0;
-    z-index: 2;
-
-    &:hover,
-    &:focus {
-        opacity: $opacity-overlay;
-    }
-}
-
-@mixin entry-meta-inline {
-    & > * {
-        display: inline-block;
-        margin: 0 .5em 0 0;
-    }
-}
-
-@mixin drop-shadow {
-    background: $color-bg-body;
-    box-shadow: 0 0 .5em rgba(0, 0, 0, 0.2);
-    
-    @media screen and (min-width: $breakpoint-1) {
-        border-radius: .25em;
-    }
-}
-
-@mixin full-bleed {
-	/* full-bleed on small screens */
-    margin-left: -1rem;
-    margin-right: -1rem;
-}
-
-@mixin full-bleed-cancel {
-	/* cancel full-bleed on larger screens */
-	margin-left: 0;
-	margin-right: 0;
-}
-
-@mixin figcaption-overlay {
-    background: linear-gradient( transparent 0, rgba(0,0,0,.5) 40%, rgba(0,0,0,.8) 100%);
-	color: $color-bg-body;
-	text-shadow: 0 0 6px $color-text-main;
-	padding: .2em .5em;
-	font-size: $font-size-xs;
-	font-style: italic;
-	font-family: $font-UI;
-}
+@import "mixins/content";
+@import "mixins/elements";
+@import "mixins/posts-and-pages";
+@import "mixins/widgets";

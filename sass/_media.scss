@@ -133,13 +133,26 @@ object {
 
         &:before {
             content: "";
-            @include link-overlay;
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			background: $color-link-hover;
+			opacity: 0;
+			z-index: 2;
+		
+			&:hover,
+			&:focus {
+				opacity: .25;
+			}
         }
 
         &:hover,
         &:focus {
             &:before {
-                opacity: $opacity-overlay;
+                opacity: .25;
             }
         }
     }

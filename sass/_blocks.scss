@@ -136,6 +136,22 @@ div.wp-block-image {
 /**
  * Formatting
  */
+ .wp-block-separator {
+	@include hr;
+	&:not(.is-style-wide):not(.is-style-dots) {
+		max-width: 5em !important;
+	}
+	&.is-style-dots {
+		height: 0; // cancel default hr
+		background: none; // cancel default hr
+		&:before {
+			content: "\00b7 \00b7 \00b7";
+			color: $color-text-main;
+			font-size: $font-size-base;
+			letter-spacing: 2em;
+		}
+	}
+ }
 // replace default css
 @media (min-width:600px) {
     .wp-block-column {

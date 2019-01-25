@@ -61,45 +61,22 @@ a {
 	ul,
 	ol {
 		&.mce-content-body {
-			margin: 0 0 1.5em 0;
+			@include list-margins;
 
 			li {
 				> ul,
 				> ol {
-					margin-bottom: 0;
-					margin-left: 0;
+					@include nested-list-margins;
 				}
 			} 
 		}
 	}
-	
 	ul.mce-content-body {
-		list-style: disc;
-		ul {
-			list-style: circle;
-			ul {
-				list-style: square;
-				ul {
-					list-style: initial;
-				}
-			}
-		}
+		@include unordered-list-styles;
 	}
 	
 	ol.mce-content-body {
-		list-style: decimal;
-		ol {
-			list-style: upper-alpha;
-			ol {
-				list-style: lower-roman;
-				ol {
-					list-style: lower-alpha;
-					ol {
-						list-style: initial;
-					}
-				}
-			}
-		}
+		@include ordered-list-styles;
 	}
 }
 

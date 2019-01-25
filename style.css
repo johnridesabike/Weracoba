@@ -408,9 +408,6 @@ body {
 
 textarea {
   font-family: Times, "Times New Roman", Georgia, serif;
-  max-width: 680px;
-  margin-right: auto;
-  margin-left: auto;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -582,13 +579,19 @@ body.single-format-aside {
 hr {
   background-color: #ccc;
   border: 0;
-  height: 1px;
+  height: 2px;
   margin-bottom: 1.5em;
 }
 
 /* Lists */
 ul, ol {
   margin: 0 0 1.5em 0;
+}
+
+li > ul,
+li > ol {
+  margin-bottom: 0;
+  margin-left: 0;
 }
 
 ul {
@@ -625,12 +628,6 @@ ol ol ol ol {
 
 ol ol ol ol ol {
   list-style: initial;
-}
-
-li > ul,
-li > ol {
-  margin-bottom: 0;
-  margin-left: 0;
 }
 
 dt {
@@ -2084,6 +2081,29 @@ div.wp-block-image {
 /**
  * Formatting
  */
+.wp-block-separator {
+  background-color: #ccc;
+  border: 0;
+  height: 2px;
+  margin-bottom: 1.5em;
+}
+
+.wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
+  max-width: 5em !important;
+}
+
+.wp-block-separator.is-style-dots {
+  height: 0;
+  background: none;
+}
+
+.wp-block-separator.is-style-dots:before {
+  content: "\00b7 \00b7 \00b7";
+  color: #19191A;
+  font-size: 20px;
+  letter-spacing: 2em;
+}
+
 @media (min-width: 600px) {
   .wp-block-column {
     -ms-flex-preferred-size: 100%;
@@ -3156,11 +3176,11 @@ object {
 }
 
 .excerpt-entry .featured-image .post-thumbnail:before:hover, .excerpt-entry .featured-image .post-thumbnail:before:focus {
-  opacity: 0.25;
+  opacity: .25;
 }
 
 .excerpt-entry .featured-image .post-thumbnail:hover:before, .excerpt-entry .featured-image .post-thumbnail:focus:before {
-  opacity: 0.25;
+  opacity: .25;
 }
 
 .excerpt-entry .featured-image img {

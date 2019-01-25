@@ -11,9 +11,6 @@ body {
 
 textarea {
   font-family: Times, "Times New Roman", Georgia, serif;
-  max-width: 680px;
-  margin-right: auto;
-  margin-left: auto;
 }
 
 h1, .editor-post-title__block .editor-post-title__input, .wp-block-heading h1.editor-rich-text__tinymce, h2, .wp-block-heading h2.editor-rich-text__tinymce, h3, .wp-block-heading h3.editor-rich-text__tinymce, h4, .wp-block-heading h4.editor-rich-text__tinymce, h5, .wp-block-heading h5.editor-rich-text__tinymce, h6, .wp-block-heading h6.editor-rich-text__tinymce {
@@ -730,6 +727,29 @@ div.wp-block-image, .wp-block[data-type="core/image"][data-align] {
 /**
  * Formatting
  */
+.wp-block-separator {
+  background-color: #ccc;
+  border: 0;
+  height: 2px;
+  margin-bottom: 1.5em;
+}
+
+.wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
+  max-width: 5em !important;
+}
+
+.wp-block-separator.is-style-dots {
+  height: 0;
+  background: none;
+}
+
+.wp-block-separator.is-style-dots:before {
+  content: "\00b7 \00b7 \00b7";
+  color: #19191A;
+  font-size: 20px;
+  letter-spacing: 2em;
+}
+
 @media (min-width: 600px) {
   .wp-block-column {
     -ms-flex-preferred-size: 100%;
