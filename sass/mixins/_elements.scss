@@ -71,3 +71,13 @@
 	height: 2px;
 	margin-bottom: 1.5em;
 }
+
+@mixin blockquote {
+    padding: 0 1.5em; /* use padding, not margins to avoid conflict with post content margins */
+    border-left: 4px solid $color-tint;
+}
+
+@mixin cite {
+	font-style: italic;
+	opacity: .9;
+}

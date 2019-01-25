@@ -1,6 +1,6 @@
 @mixin max-site-width {
-	@media screen and (min-width: $size-max-width) {
-		max-width: $size-max-width;
+	@media screen and (min-width: $size-site-width) {
+		max-width: $size-site-width;
 		margin-left: auto;
 		margin-right: auto;
 	}

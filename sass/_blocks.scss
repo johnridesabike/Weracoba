@@ -15,6 +15,19 @@
 	font-size: 1em;
 }
 
+.wp-block-pullquote {
+	border-top: 4px solid $color-tint;
+	border-bottom: 4px solid $color-tint;
+	padding: 2em 0;
+	blockquote {
+		border-left: none;
+	}
+	blockquote > .editor-rich-text p, // for editor
+	p {
+		font-size: $font-size-xl;
+	}
+}
+
 /**
  * Media
  */
@@ -129,8 +142,25 @@ div.wp-block-image {
 /**
  * Widgets
  */
-.wp-block-latest-posts {
-    @extend %widget-list;
+.wp-block-latest-posts,
+.wp-block-archives-list,
+.wp-block-categories-list,
+.wp-block-categories__list {
+    @include widget-list;
+}
+
+.wp-block-latest-comments__comment {
+	font-size: $font-size-md;
+}
+.wp-block-latest-comments__comment-meta {
+	font-family: $font-UI;
+	font-size: $font-size-xs;
+	a {
+		text-decoration: none;
+	}
+}
+.wp-block-latest-comments__comment-excerpt p {
+	font-size: $font-size-sm;
 }
 
 /**

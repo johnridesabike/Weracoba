@@ -4,14 +4,42 @@
 @import "sass/sections/widgets"; // necessary for blocks
 @import "sass/blocks";
 
-/* editor styles */
+/* Elements */
+
+body {
+	font-family: $font-reading;
+	font-size: $font-size-base;
+	line-height: calculate-line-height($font-size-base, $size-content);
+}
 
 h1, h2, h3, h4, h5, h6 {
 	font-family: $font-reading;
 }
+.wp-block-heading h1.editor-rich-text__tinymce {
+	@extend h1;
+}
+.wp-block-heading h2.editor-rich-text__tinymce {
+	@extend h2;
+}
+.wp-block-heading h3.editor-rich-text__tinymce {
+	@extend h3;
+}
+.wp-block-heading h4.editor-rich-text__tinymce {
+	@extend h4;
+}
+.wp-block-heading h5.editor-rich-text__tinymce {
+	@extend h5;
+}
+.wp-block-heading h6.editor-rich-text__tinymce {
+	@extend h6;
+}
 
 .editor-post-title__block .editor-post-title__input {
 	@extend h1;
+}
+
+p {
+	font-size: $font-size-md;
 }
 
 a {
@@ -34,7 +62,6 @@ a {
 	}
 }
 
-
 .wp-block {
 	@include max-content-width;
 
@@ -42,7 +69,7 @@ a {
 	&[data-align="right"],
 	&[data-align="left"],
 	&[data-align="center"] {
-		max-width: $size-max-width;
+		max-width: $size-site-width;
 	}
 
 	&[data-align="full"] {
@@ -80,28 +107,26 @@ a {
 	}
 }
 
-p,
-.wp-block,
-.mce-content-body {
-	font-family: $font-reading;
-	font-size: $font-size-base;
-	line-height: calculate-line-height($font-size-base, $size-content);
+.wp-block-quote {
+	&:not(.is-large):not(.is-style-large),
+	&.is-large,
+	&.is-style-large {
+		@include blockquote;
+	}
+	.wp-block-quote__citation {
+		@include cite;
+		font-size: $font-size-md;
+		color: $color-text-main;
+	}
 }
-.wp-block-heading h1.editor-rich-text__tinymce {
-	@extend h1;
+.wp-block-pullquote .wp-block-pullquote__citation {
+	@include cite;
+	font-size: $font-size-md;
+	color: $color-text-main;
+	text-transform: none;
 }
-.wp-block-heading h2.editor-rich-text__tinymce {
-	@extend h2;
-}
-.wp-block-heading h3.editor-rich-text__tinymce {
-	@extend h3;
-}
-.wp-block-heading h4.editor-rich-text__tinymce {
-	@extend h4;
-}
-.wp-block-heading h5.editor-rich-text__tinymce {
-	@extend h5;
-}
-.wp-block-heading h6.editor-rich-text__tinymce {
-	@extend h6;
+
+ul.wp-block-archives,
+.wp-block-categories ul {
+	padding: inherit;
 }

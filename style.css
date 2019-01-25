@@ -639,10 +639,14 @@ dd {
 }
 
 blockquote {
-  /* margin: 0 1.5em; */
   padding: 0 1.5em;
-  /* use padding to avoid conflict with post content margins */
+  /* use padding, not margins to avoid conflict with post content margins */
   border-left: 4px solid #017680;
+}
+
+cite {
+  font-style: italic;
+  opacity: .9;
 }
 
 address {
@@ -1416,37 +1420,6 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 ## Widgets
 --------------------------------------------------------------*/
-.widget ul,
-.widget ol, .wp-block-latest-posts {
-  padding: 0;
-  margin: 0;
-  list-style-type: none;
-}
-
-.widget ul li, .widget ol li, .wp-block-latest-posts li {
-  display: block;
-  margin-bottom: .5em;
-}
-
-.widget ul li ul, .widget ol li ul, .wp-block-latest-posts li ul,
-.widget ul li ol,
-.widget ol li ol,
-.wp-block-latest-posts li ol {
-  margin-left: .5em;
-}
-
-.widget ul li a, .widget ol li a, .wp-block-latest-posts li a {
-  display: block;
-  padding: .5em 0;
-  text-decoration: none;
-  border-bottom: 1px dashed currentColor;
-}
-
-.widget ul li a:hover, .widget ol li a:hover, .wp-block-latest-posts li a:hover, .widget ul li a:focus, .widget ol li a:focus, .wp-block-latest-posts li a:focus {
-  text-decoration: none;
-  border-bottom: 1px dashed currentColor;
-}
-
 .widget {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   margin: 0;
@@ -1455,6 +1428,63 @@ a:hover, a:active {
   font-size: 0.88889em;
   line-height: 1.40238;
   width: 100%;
+}
+
+.widget ul,
+.widget ol {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.widget ul li,
+.widget ol li {
+  display: block;
+  margin-bottom: .5em;
+}
+
+.widget ul li ul,
+.widget ul li ol,
+.widget ol li ul,
+.widget ol li ol {
+  margin-left: .5em;
+}
+
+.widget ul li a,
+.widget ol li a {
+  display: block;
+  padding: .5em 0;
+  text-decoration: none;
+  border-bottom: 1px dashed currentColor;
+}
+
+.widget ul li a:hover, .widget ul li a:focus,
+.widget ol li a:hover,
+.widget ol li a:focus {
+  text-decoration: none;
+  border-bottom: 1px dashed currentColor;
+}
+
+.widget ul .children,
+.widget ul .sub-menu,
+.widget ol .children,
+.widget ol .sub-menu {
+  padding-top: 0;
+  padding-bottom: .5em;
+  margin-left: 1em;
+  font-size: 0.88889em;
+}
+
+.widget ul .children a:before,
+.widget ul .sub-menu a:before,
+.widget ol .children a:before,
+.widget ol .sub-menu a:before {
+  content: "↳ ";
+}
+
+.widget ul li,
+.widget ol li {
+  padding: 0;
 }
 
 .widget select {
@@ -1481,38 +1511,6 @@ a:hover, a:active {
 /* Archive and Categories widgets */
 .widget_archive li {
   color: #7D7D7D;
-}
-
-.widget_pages .children,
-.widget_pages .sub-menu,
-.widget_nav_menu .children,
-.widget_nav_menu .sub-menu,
-.widget_categories .children,
-.widget_categories .sub-menu,
-.widget_recent_entries .children,
-.widget_recent_entries .sub-menu {
-  padding-top: 0;
-  padding-bottom: .5em;
-  margin-left: 1em;
-  font-size: 0.88889em;
-}
-
-.widget_pages .children a:before,
-.widget_pages .sub-menu a:before,
-.widget_nav_menu .children a:before,
-.widget_nav_menu .sub-menu a:before,
-.widget_categories .children a:before,
-.widget_categories .sub-menu a:before,
-.widget_recent_entries .children a:before,
-.widget_recent_entries .sub-menu a:before {
-  content: "↳ ";
-}
-
-.widget_pages li,
-.widget_nav_menu li,
-.widget_categories li,
-.widget_recent_entries li {
-  padding: 0;
 }
 
 /* Meta widget */
@@ -1939,6 +1937,21 @@ a.tag-cloud-link:focus {
   font-size: 1em;
 }
 
+.wp-block-pullquote {
+  border-top: 4px solid #017680;
+  border-bottom: 4px solid #017680;
+  padding: 2em 0;
+}
+
+.wp-block-pullquote blockquote {
+  border-left: none;
+}
+
+.wp-block-pullquote blockquote > .editor-rich-text p,
+.wp-block-pullquote p {
+  font-size: 1.5em;
+}
+
 /**
  * Media
  */
@@ -2078,6 +2091,104 @@ div.wp-block-image {
 /**
  * Widgets
  */
+.wp-block-latest-posts,
+.wp-block-archives-list,
+.wp-block-categories-list,
+.wp-block-categories__list {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.wp-block-latest-posts li,
+.wp-block-archives-list li,
+.wp-block-categories-list li,
+.wp-block-categories__list li {
+  display: block;
+  margin-bottom: .5em;
+}
+
+.wp-block-latest-posts li ul,
+.wp-block-latest-posts li ol,
+.wp-block-archives-list li ul,
+.wp-block-archives-list li ol,
+.wp-block-categories-list li ul,
+.wp-block-categories-list li ol,
+.wp-block-categories__list li ul,
+.wp-block-categories__list li ol {
+  margin-left: .5em;
+}
+
+.wp-block-latest-posts li a,
+.wp-block-archives-list li a,
+.wp-block-categories-list li a,
+.wp-block-categories__list li a {
+  display: block;
+  padding: .5em 0;
+  text-decoration: none;
+  border-bottom: 1px dashed currentColor;
+}
+
+.wp-block-latest-posts li a:hover, .wp-block-latest-posts li a:focus,
+.wp-block-archives-list li a:hover,
+.wp-block-archives-list li a:focus,
+.wp-block-categories-list li a:hover,
+.wp-block-categories-list li a:focus,
+.wp-block-categories__list li a:hover,
+.wp-block-categories__list li a:focus {
+  text-decoration: none;
+  border-bottom: 1px dashed currentColor;
+}
+
+.wp-block-latest-posts .children,
+.wp-block-latest-posts .sub-menu,
+.wp-block-archives-list .children,
+.wp-block-archives-list .sub-menu,
+.wp-block-categories-list .children,
+.wp-block-categories-list .sub-menu,
+.wp-block-categories__list .children,
+.wp-block-categories__list .sub-menu {
+  padding-top: 0;
+  padding-bottom: .5em;
+  margin-left: 1em;
+  font-size: 0.88889em;
+}
+
+.wp-block-latest-posts .children a:before,
+.wp-block-latest-posts .sub-menu a:before,
+.wp-block-archives-list .children a:before,
+.wp-block-archives-list .sub-menu a:before,
+.wp-block-categories-list .children a:before,
+.wp-block-categories-list .sub-menu a:before,
+.wp-block-categories__list .children a:before,
+.wp-block-categories__list .sub-menu a:before {
+  content: "↳ ";
+}
+
+.wp-block-latest-posts li,
+.wp-block-archives-list li,
+.wp-block-categories-list li,
+.wp-block-categories__list li {
+  padding: 0;
+}
+
+.wp-block-latest-comments__comment {
+  font-size: 1em;
+}
+
+.wp-block-latest-comments__comment-meta {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-size: 0.8em;
+}
+
+.wp-block-latest-comments__comment-meta a {
+  text-decoration: none;
+}
+
+.wp-block-latest-comments__comment-excerpt p {
+  font-size: 0.88889em;
+}
+
 /**
  * Formatting
  */
