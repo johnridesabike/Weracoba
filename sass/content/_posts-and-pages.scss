@@ -51,17 +51,18 @@
 		margin-right: 1em;
 	}
 }
-.updated-on {
-	display: none !important; // maybe I'll add this back later?
-}
 
 /*
  * Entry Footer
  */
 .post-taxonomy {
-	>:not(:last-child) {
+	> :not(:last-child) {
 		margin-bottom: .5em;
 	}
+}
+.post-time {
+	font-size: $font-size-sm;
+	font-style: italic;
 }
 .single .entry-footer {
     border-top: 1px solid $color-border;

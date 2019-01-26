@@ -18,8 +18,6 @@ if ( ! function_exists( 'weracoba_posted_on' ) ) :
 			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
 		}
 
-		$time_string_updated = '<time class="updated" datetime="%1$s">%2$s</time>';
-
 		$time_string = sprintf(
 			$time_string,
 			esc_attr( get_the_date( DATE_W3C ) ),
@@ -36,6 +34,15 @@ if ( ! function_exists( 'weracoba_posted_on' ) ) :
 		);
 
 		echo '<span class="posted-on">' . weracoba_get_icon_svg( 'calendar', 16 ) . $posted_on . '</span>'; // phpcs:ignore XSS OK.
+	}
+endif;
+
+if ( ! function_exists( 'weracoba_updated_on' ) ) {
+	/**
+	 * Prints HTML with meta information for the updated post-date/time.
+	 */
+	function weracoba_updated_on() {
+		$time_string_updated = '<time class="updated updated-date published" datetime="%1$s">%2$s</time>';
 
 		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 			$time_string_updated = sprintf(
@@ -47,16 +54,16 @@ if ( ! function_exists( 'weracoba_posted_on' ) ) :
 			$updated_on = sprintf(
 				wp_kses(
 					/* translators: %s: update date. */
-					_x( '<span class="screen-reader-text">Updated on</span> %s', 'update date', 'weracoba' ),
+					_x( 'Updated on %s', 'update date', 'weracoba' ),
 					array( 'span' => array( 'class' => array() ) )
 				),
 				$time_string_updated
 			);
 
-			echo '<span class="updated-on">' . weracoba_get_icon_svg( 'update', 16 ) . $updated_on . '</span>'; // phpcs:ignore XSS OK.
+			echo '<span class="updated-on">' . $updated_on . '</span>'; // phpcs:ignore XSS OK.
 		}
 	}
-endif;
+}
 
 if ( ! function_exists( 'weracoba_posted_by' ) ) :
 	/**
@@ -83,6 +90,31 @@ if ( ! function_exists( 'weracoba_author_avatar' ) ) :
 	}
 endif;
 
+if ( ! function_exists( 'weracoba_edit_link' ) ) {
+	/**
+	 * Prints HTML with the edit link.
+	 */
+	function weracoba_edit_link() {
+		edit_post_link(
+			sprintf(
+				wp_kses(
+					/* translators: 1: The edit SVG icon. 2: Name of current post. Only visible to screen readers */
+					__( '%1$s Edit <span class="screen-reader-text">%2$s</span>', 'weracoba' ),
+					array(
+						'span' => array(
+							'class' => array(),
+						),
+					)
+				),
+				weracoba_get_icon_svg( 'edit' ),
+				get_the_title()
+			),
+			'<span class="edit-link">',
+			'</span>'
+		);
+	}
+}
+
 if ( ! function_exists( 'weracoba_entry_footer' ) ) :
 	/**
 	 * Prints HTML with meta information for the categories, tags and comments.
@@ -99,6 +131,11 @@ if ( ! function_exists( 'weracoba_entry_footer' ) ) :
 			<?php
 		}
 		weracoba_comments();
+		?>
+		<div class="post-time">
+			<?php weracoba_updated_on(); ?>
+		</div>
+		<?php
 		/**
 		 * Jetpack sharing.
 		 *
@@ -202,11 +239,7 @@ if ( ! function_exists( 'weracoba_category_list' ) ) :
 		$categories_list = get_the_category_list( esc_html_x( ', ', 'list item separator', 'weracoba' ), esc_html( '>' ) );
 		if ( $categories_list ) {
 			printf(
-
-				/*
-				* translators: 1: SVG icon
-				*              2: list of categories.
-				*/
+				/* translators: 1: SVG icon. 2: list of categories. */
 				'<div class="cat-links">' . esc_html__( '%1$s %2$s', 'weracoba' ) . '</div>',
 				weracoba_get_icon_svg( 'category', 16 ),
 				$categories_list
@@ -237,18 +270,45 @@ if ( ! function_exists( 'weracoba_comments' ) ) :
 	function weracoba_comments() {
 		if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 			echo '<span class="comments-link">';
-			echo weracoba_get_icon_svg( 'comment', 16 ) . ' '; // phpcs:ignore XSS OK
 			comments_popup_link(
 				sprintf(
 					wp_kses(
-						/* translators: %s: post title */
-						__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'weracoba' ),
+						/* translators: 1: SVG icon. 2: post title */
+						__( '%1$s Leave a Comment<span class="screen-reader-text"> on %2$s</span>', 'weracoba' ),
 						array(
 							'span' => array(
 								'class' => array(),
 							),
 						)
 					),
+					weracoba_get_icon_svg( 'comment', 16 ),
+					get_the_title()
+				),
+				sprintf(
+					wp_kses(
+						/* translators: 1: SVG icon. 2: post title */
+						__( '%1$s 1 Comment <span class="screen-reader-text"> on %2$s</span>', 'weracoba' ),
+						array(
+							'span' => array(
+								'class' => array(),
+							),
+						)
+					),
+					weracoba_get_icon_svg( 'comment', 16 ),
+					get_the_title()
+				),
+				sprintf(
+					wp_kses(
+						/* translators: 1: SVG icon. 3: comment count. 2: post title */
+						__( '%1$s %2$s Comments <span class="screen-reader-text"> on %3$s</span>', 'weracoba' ),
+						array(
+							'span' => array(
+								'class' => array(),
+							),
+						)
+					),
+					weracoba_get_icon_svg( 'comment', 16 ),
+					number_format_i18n( get_comments_number() ),
 					get_the_title()
 				)
 			);

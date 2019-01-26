@@ -125,8 +125,9 @@ object {
 
 .excerpt-entry .featured-image {
     position: relative;
-	//@include full-bleed;
-	margin: 0 -.5em; // cancel figure padding and match the padding of .excerpt-entry
+	@include full-bleed;
+	margin-top: 0; // cancel default figure
+	margin-bottom: 0; // cancel default figure
     .post-thumbnail {
         display: block;
         line-height: 0; /* fixes visual glitch with link overlay */

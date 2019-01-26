@@ -15,6 +15,8 @@ body {
 h1, h2, h3, h4, h5, h6 {
 	font-family: $font-reading;
 }
+
+.editor-post-title__block .editor-post-title__input,
 .wp-block-heading h1.editor-rich-text__tinymce {
 	@extend h1;
 }
@@ -32,10 +34,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 .wp-block-heading h6.editor-rich-text__tinymce {
 	@extend h6;
-}
-
-.editor-post-title__block .editor-post-title__input {
-	@extend h1;
 }
 
 p {
@@ -129,4 +127,14 @@ a {
 ul.wp-block-archives,
 .wp-block-categories ul {
 	padding: inherit;
+}
+
+.wp-block-file__textlink {
+	color: $color-link;
+	text-decoration: underline;
+	&:hover,
+	&:active,
+	&:focus {
+		color: $color-link-hover;
+	}
 }

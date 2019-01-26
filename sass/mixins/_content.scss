@@ -23,8 +23,8 @@
 
 @mixin full-bleed {
 	/* full-bleed on small screens */
-    margin-left: -1rem;
-    margin-right: -1rem;
+    margin-left: -.8rem;
+    margin-right: -.8rem;
 }
 
 @mixin full-bleed-cancel {

@@ -31,6 +31,7 @@
 				<?php weracoba_posted_by(); ?>
 				<?php weracoba_posted_on(); ?>
 				<?php weracoba_comments(); ?>
+				<?php weracoba_edit_link(); ?>
 				<?php weracoba_tag_list(); ?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>

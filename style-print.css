@@ -61,6 +61,8 @@
   h5,
   h6 {
     color: black;
+    -webkit-column-break-after: avoid;
+            break-after: avoid;
   }
   a,
   a:visited,
@@ -116,9 +118,6 @@
   .continue-reading a {
     border-color: black !important;
   }
-  .home svg {
-    color: black !important;
-  }
   .global-header,
   .nav-links,
   .tags-links,
@@ -140,11 +139,11 @@
     left: auto;
   }
   .site-footer,
-  .entry-footer {
+  .single .entry-footer {
     -webkit-box-shadow: none;
             box-shadow: none;
-    border: none;
     background: none;
+    border-color: black;
   }
   .site-footer .citation {
     font-size: 1em;
@@ -155,6 +154,8 @@
   .widget.widget_text,
   .widget.widget_custom_html {
     display: block;
+    -webkit-column-break-inside: avoid;
+            break-inside: avoid;
   }
 }
 /*# sourceMappingURL=style-print.css.map */
