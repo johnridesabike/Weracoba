@@ -3,20 +3,29 @@
     overflow-x: hidden;
 }
 
-
-%site-content {
-    padding: 0 1rem;
+%smallscreen-padding {
+	padding-left: .8rem; // 16px
+	padding-right: .8rem; // 16px
+	
+	@media screen and (min-width: $breakpoint-3) {
+		padding-left: 0;
+		padding-right: 0;
+	}
 }
 
 .site-content {
-    @extend %site-content;
-    // so when .site-content gets extended elsewhere, it isn't affected by later changes
-    //overflow-x: scroll;
+    @extend %smallscreen-padding;
 }
+
 @media screen {
     .print {
         display: none;
     }
+}
+
+.search-results .search-form {
+	margin: 0 auto 1em auto;
+	text-align: center;
 }
 
 /*--------------------------------------------------------------
@@ -37,4 +46,9 @@
 /*--------------------------------------------------------------
 ## Front Page
 --------------------------------------------------------------*/
-@import "front-page";
+.home.page {
+    .entry-header {
+        display: none;
+    }
+}
+

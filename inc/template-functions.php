@@ -37,19 +37,43 @@ add_action( 'wp_head', 'weracoba_pingback_header' );
  * @param string $title the archive title.
  */
 function weracoba_get_the_archive_title( $title ) {
-	$asploded = explode( ':', $title );
-	if ( count( $asploded ) > 1 ) {
-		return $asploded[1]; // Removes the "Category: " or "Tag: " from the title.
+	if ( is_category() ) {
+		$title = single_cat_title( '', false );
+	} elseif ( is_tag() ) {
+		$title = sprintf(
+			wp_kses(
+				/* translators: Tag archive title. 1: Tag icon 2: Tag name */
+				__( 'Tagged: <span class="tag-title">%1$s %2$s</span>', 'weracoba' ),
+				array( 'span' => array( 'class' => array() ) )
+			),
+			weracoba_get_icon_svg( 'tag', 16 ),
+			single_tag_title( '', false )
+		);
 	} elseif ( is_search() ) {
 		/* translators: %s: search phrase */
-		return sprintf( __( 'Search Results for &#8220;%s&#8221;', 'weracoba' ), get_search_query() );
+		$title = sprintf( __( 'Search Results for &#8220;%s&#8221;', 'weracoba' ), get_search_query() );
 	} elseif ( is_404() ) {
-		return __( 'Oops! That page can&rsquo;t be found.', 'weracoba' );
-	} else {
-		return $title;
+		$title = __( 'Oops! That page can&rsquo;t be found.', 'weracoba' );
 	}
+
+	return $title;
 }
 add_filter( 'get_the_archive_title', 'weracoba_get_the_archive_title' );
+
+/**
+ * Add an icon to each tag.
+ * 
+ * @param string $tag_list The HTML with tag links.
+ */
+function weracoba_the_tags( $tag_list ) {
+	$tag_list = str_replace(
+		'rel="tag">',
+		'rel="tag"> ' . weracoba_get_icon_svg( 'tag', 16 ) . ' ',
+		$tag_list
+	);
+	return $tag_list;
+}
+add_filter( 'the_tags', 'weracoba_the_tags' );
 
 /**
  * Modifies tag cloud widget arguments to display all tags in the same font size
@@ -59,11 +83,11 @@ add_filter( 'get_the_archive_title', 'weracoba_get_the_archive_title' );
  * @return  array The filtered arguments for tag cloud widget.
  */
 function weracoba_widget_tag_cloud_args( $args ) {
-	$args['largest']   = 1.4;
-	$args['smallest']  = 0.9;
+	$args['largest']   = 1.5;
+	$args['smallest']  = 0.8;
 	$args['unit']      = 'em';
 	$args['format']    = 'flat';
-	$args['separator'] = ', ';
+	$args['separator'] = ' ';
 	return $args;
 }
 add_filter( 'widget_tag_cloud_args', 'weracoba_widget_tag_cloud_args' );

@@ -19,51 +19,24 @@ body.single-format-aside {
 }
 
 hr {
-	background-color: $color-bg-hr;
-	border: 0;
-	height: 1px;
-	margin-bottom: 1.5em;
+	@include hr;
 }
 
 /* Lists */
-
 ul, ol {
-	margin: 0 0 1.5em 0;//3em;
-}
-
-ul {
-	list-style: disc;
-    ul {
-        list-style: circle;
-        ul {
-            list-style: square;
-            ul {
-                list-style: initial;
-            }
-        }
-    }
-}
-
-ol {
-	list-style: decimal;
-    ol {
-        list-style: upper-alpha;
-        ol {
-            list-style: lower-roman;
-            ol {
-                list-style: lower-alpha;
-                ol {
-                    list-style: initial;
-                }
-            }
-        }
-    }
+	@include list-margins;
 }
 
 li > ul,
 li > ol {
-	margin-bottom: 0;
-	margin-left: 0;//1.5em;
+	@include nested-list-margins;
+}
+
+ul {
+	@include unordered-list-styles;
+}
+ol {
+	@include ordered-list-styles;
 }
 
 dt {
@@ -75,9 +48,11 @@ dd {
 }
 
 blockquote {
-	/* margin: 0 1.5em; */
-    padding: 0 1.5em; /* use padding to avoid conflict with post content margins */
-    border-left: 4px solid $color-tint;
+	@include blockquote;
+}
+
+cite {
+	@include cite;
 }
 
 address {
@@ -155,6 +130,11 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"] {
     @include button;
+    box-shadow: $shadow-button;
+
+	&:active {
+		@include button-active;
+	}
 }
 
 /*--------------------------------------------------------------

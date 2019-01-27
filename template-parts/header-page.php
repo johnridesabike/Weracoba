@@ -9,13 +9,9 @@
 
 ?>
 <?php
-if ( is_active_sidebar( 'breadcrumbs-1' ) && ! is_front_page() ) :
-	?>
-	<nav id="breadcrumbs" class="breadcrumbs-nav">
-		<?php dynamic_sidebar( 'breadcrumbs-1' ); ?>
-	</nav>
-	<?php
-endif;
+if ( is_active_sidebar( 'breadcrumbs-1' ) && ! is_front_page() ) {
+	dynamic_sidebar( 'breadcrumbs-1' );
+}
 if ( ! is_front_page() && ! is_home() ) :
 	?>
 	<div class="entry-header-wrap">

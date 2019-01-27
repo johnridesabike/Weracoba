@@ -20,12 +20,7 @@
 			<?php endif; ?>
 		</div><!-- .entry-attachment .entry-content -->
 		<footer class="entry-footer">
-
-			<div class="entry-meta">
-				<?php weracoba_posted_by(); ?>
-				<?php weracoba_posted_on(); ?>
-				<?php weracoba_comments(); ?>
-			</div><!-- .entry-meta -->
+			<?php weracoba_posted_on(); ?>
 			<?php
 			weracoba_entry_footer();
 			?>

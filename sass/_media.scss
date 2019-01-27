@@ -7,6 +7,12 @@
 	padding: 0;
 }
 
+.avatar {
+	border-radius: 50%;
+	border: 1px solid transparent;
+	box-shadow: 0 0 .25em rgba(0, 0, 0, 0.5);
+}
+
 /* Make sure embeds and iframes fit their containers. */
 embed,
 iframe,
@@ -14,29 +20,15 @@ object {
 	max-width: 100%;
 }
 
-/* Make sure logo link wraps around logo image. */
-.custom-logo-link {
-	display: inline-block;
-	margin-right: .1em;
-
-	img {
-		max-height: 1.5em;
-		width: auto;
-		vertical-align: middle;
-	}
-}
-
 /*--------------------------------------------------------------
 ## Alignments and Images
 --------------------------------------------------------------*/
 .alignleft {
-	// display: inline;  // IDK why this was here originally
 	float: left;
 	margin-right: 1.5em;
 }
 
 .alignright {
-	//display: inline;  // IDK why this was here originally
 	float: right;
 	margin-left: 1.5em;
 }
@@ -50,8 +42,8 @@ object {
     /* On small screens, display left and right alignments as if they were centered */
     .alignleft,
     .alignright {
-        float: none;
-        clear: both;
+        float: none !important;
+        clear: both !important;
         @include center-block;
     }
 }
@@ -71,52 +63,59 @@ object {
 /*--------------------------------------------------------------
 ## Single Post Featured Images
 --------------------------------------------------------------*/
-.featured-image {
-    margin: 0;
-}
-
-%featured-image {
-    position: relative;
-    background-size: cover;
-    background-position: 50%;
-    
-    img {
-        position: absolute;
-        left: -999em;
-    }
-    
-    a {
-        @include link-overlay;
-    }
-}
+/**
+ * Browsers that don't support object-fit (IE) will display the plain image.
+ * It's possible to replicate this with transforms and overflows, but I don't
+ * have the time to test that out just to cover IE.
+ */
 .single .featured-image {
-    @extend %featured-image;
-    height: 16em;
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
-
-    &.full-bleed {
-        @include full-bleed;
-    }
+	// cancel the default figure.
+	margin-top: 0;
+	@include full-bleed;
+	// for browsers that don't play well with cover
+	figcaption {
+		font-style: italic;
+		font-size: $font-size-xs;
+		text-align: right;
+		padding-right: 1.5em; /* to avoid scrollbars */
+	}
 }
 
-/** Featured Images Media Queries **/
-
-@media screen and (min-width: $breakpoint-1) {
-    .single .featured-image.full-bleed {
-        min-height: 430px;
-        width: 100vw;
-    }
+@supports (object-fit: cover) {
+	.single .featured-image {
+		margin-top: 0;
+		height: 430px;
+		position: relative;
+		width: 100vw;
+		max-width: 100vw;
+		img {
+			height: 100%;
+			width: 100vw;
+			object-fit: cover;
+			position: absolute;
+			z-index: -1;
+		}
+		figcaption {
+			@include figcaption-overlay;
+			width: 100%;
+			text-align: right;
+			position: absolute;
+			bottom: 0;
+		}
+	}
 }
 
-/* we stop full-bleeding on wide screens, but only on single posts */
+/* We change the style to prepare it for the grid layout in posts-and-pages */
 @media screen and (min-width: $breakpoint-3) {
-    .single .featured-image.full-bleed {
-        position: static;
-        //width: 765px;
+    .single .featured-image {
+		@include full-bleed-cancel;
         width: 50%;
-        margin: 0;
+		img {
+			width: 100%;
+		}
+		figcaption {
+			padding-right: .5em;
+		}
     }
 }
 
@@ -124,24 +123,37 @@ object {
 ## Archive View Featured Images
 --------------------------------------------------------------*/
 
-.archive-view .featured-image {
+.excerpt-entry .featured-image {
     position: relative;
-    margin-left: -1em; // full-bleed
-    margin-right: -1em; // full-bleed
-
+	@include full-bleed;
+	margin-top: 0; // cancel default figure
+	margin-bottom: 0; // cancel default figure
     .post-thumbnail {
         display: block;
         line-height: 0; /* fixes visual glitch with link overlay */
 
         &:before {
             content: "";
-            @include link-overlay;
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			background: $color-link-hover;
+			opacity: 0;
+			z-index: 2;
+		
+			&:hover,
+			&:focus {
+				opacity: .25;
+			}
         }
 
         &:hover,
         &:focus {
             &:before {
-                opacity: $opacity-overlay;
+                opacity: .25;
             }
         }
     }
@@ -154,63 +166,9 @@ object {
 /** Archive View Featured Images Media Queries **/
 
 @media screen and (min-width: $breakpoint-1) {
-    .archive-view .featured-image {
-        width: 33%;
-        flex-shrink: 0;
-        margin-right: 1em;
-        margin-left: 0; // reset the full-bleed effect
-
-        .post-thumbnail {
-            position: absolute; /* this fixes a visual quirk that keeps the link from overflowing */
-        }
-    }
-}
-
-/*--------------------------------------------------------------
-## Gutenberg Styles
---------------------------------------------------------------*/
-
-.alignwide:not(.wp-block-columns):not(p) {
-    /* displays as alignfull on small screens */
-    @include full-bleed;
-}
-
-.alignwide.wp-block-image {
-    max-width: inherit; //override this style for regular .wp-block-image
-}
-
-.alignfull {
-    width: 100vw !important;
-    max-width: 100vw !important;
-    position: relative !important;
-    left: 50% !important;
-    right: 50% !important;
-    margin-left: -50vw !important;
-    margin-right: -50vw !important;
-}
-
-/** Gutenberg Media Queries **/
-
-@media screen and (min-width: $breakpoint-1) {
-    .single .post,
-    .page {
-        .entry-content > div.wp-block-image:not(.alignwide):not(.alignfull) {
-            /*
-            ** Allow images to float outside of the reading area.
-            ** We have to select the div because Gutenberg wraps floating image figures in div.
-            ** We have to target .alignwide and .alignfull because of CSS specificity.
-            */
-            max-width: 100%;
-        }
-    }
-}
-
-@media screen and (min-width: $breakpoint-2) {
-    .alignwide {
-        // disables the full-bleed on large screens
-        margin-left: 0;
-        margin-right: 0;
-    }
+	.excerpt-entry .featured-image {
+		@include full-bleed-cancel;
+	}
 }
 
 /*--------------------------------------------------------------

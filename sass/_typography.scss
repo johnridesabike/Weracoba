@@ -1,49 +1,69 @@
-body,
-button,
-input,
-select,
-optgroup,
-textarea {
-    color: $color-text-main;
-    font-family: $font-UI;
-    @include font-size(1);
-    line-height: calculate-line-height(16, $size-content);
+html {
+	font-size: $font-size-base;
+	line-height: calculate-line-height($font-size-base, $size-content);
+}
+
+// body,
+// button,
+// input,
+// select,
+// optgroup,
+// textarea {
+    // color: $color-text-main;
+    // font-family: $font-UI;
+	// font-size: $font-size-base;
+	// font-size: 1rem;
+	// line-height: calculate-line-height($font-size-base, $size-content);
+//}
+body {
+	color: $color-text-main;
+	font-family: $font-UI;
 }
 
 textarea {
     font-family: $font-reading;
-    @include max-content-width;
 }
 
 h1, h2, h3, h4, h5, h6 {
-	clear: both;
     font-family: $font-headers;
-    color: $color-headers;
-    font-weight: 400;
+    color: $color-text-headers;
+	font-weight: 400;
 }
 
 h1 {
-    font-size: 2em;
+	font-size: $font-size-xxxl;
+	line-height: calculate-line-height( $font-size-xxxl, $size-content );
+	clear: both;
 }
 
 h2 {
-    font-size: 1.5em;
+    font-size: $font-size-xl;
+	line-height: calculate-line-height( $font-size-xl, $size-content);
+	clear: both;
 }
 
 h3 {
-    font-size: 1.4em;
+    font-size: $font-size-lg;
+	line-height: calculate-line-height( $font-size-lg, $size-content );
+	clear: both;
 }
 
 h4 {
-    font-size: 1.2em;
+    font-size: $font-size-md;
+	line-height: calculate-line-height( $font-size-md, $size-content );
+	font-weight: 700;
 }
 
 h5 {
-    font-size: 1.1em;
+    font-size: $font-size-sm;
+	line-height: calculate-line-height( $font-size-sm, $size-content );
+	font-weight: 700;
 }
 
 h6 {
-    font-size: 1em;
+	font-size: $font-size-xs;
+	line-height: calculate-line-height( $font-size-xs, $size-content );
+	font-weight: 700;
 }
 
 p {
@@ -55,13 +75,12 @@ dfn, cite, em, i {
 }
 
 blockquote {
-    font-size: .9em;
+	font-size: $font-size-sm;
 }
 
 pre {
 	background: $color-bg-pre;
 	font-family: $font-pre;
-	@include font-size(0.9375);
 	line-height: $font-line-height-pre;
 	margin-bottom: 1.6em;
 	max-width: 100%;
@@ -71,7 +90,8 @@ pre {
 
 code, kbd, tt, var {
 	font-family: $font-code;
-	@include font-size(0.9375);
+	font-size: $font-size-base;
+	font-size: $font-size-xs;
 }
 
 abbr, acronym {
@@ -87,133 +107,44 @@ mark, ins {
 big {
 	font-size: 125%;
 }
-.site-title {
-    font-family: $font-site-title;
-    font-size: 1.9em;
+
+.has-xxsmall-font-size {
+	font-size: $font-size-xxs;
 }
-.site-description {
-    font-size: .8em;
+.has-xsmall-font-size {
+	font-size: $font-size-xs;
 }
-.main-navigation {
-    font-family: $font-UI;
-    font-size: 1.1em;
+.has-small-font-size {
+	font-size: $font-size-sm;
+}
+.has-normal-font-size,
+.has-regular-font-size ,
+.has-medium-font-size {
+	font-size: $font-size-md;
+}
+.has-large-font-size {
+	font-size: $font-size-lg;
+}
+.has-xlarge-font-size,
+.has-huge-font-size,
+.has-larger-font-size {
+	font-size: $font-size-xl;
+}
+.has-xxlarge-font-size {
+	font-size: $font-size-xxl;
+}
+.has-xxxlarge-font-size {
+	font-size: $font-size-xxxl;
 }
 
-/* Posts & Pages */
-
-.excerpt-entry,
-.single-post {
-    .entry-header {
-        h1, h2 {
-            font-family: $font-reading;
-        }
-    }
-    .entry-content {
-        font-family: $font-reading;
-        font-size: $font-reading-size;
-        line-height: calculate-line-height($font-reading-size, $size-content);
-        h1, h2, h3, h4, h5, h6 {
-            font-family: $font-reading;
-            line-height: 1.2;
-        }
-    }
+.has-normal-color {
+	color: $color-text-main;
 }
-
-.page .entry-content {
-    line-height: calculate-line-height(16, $size-content-page);
+.has-tint-color {
+	color: $color-tint;
 }
-.entry-meta,
-.comment-meta {
-    font-size: 0.9em;
-}
-.entry-title,
-.page-title {
-    font-size: 2em;
-    line-height: 1.2em;
-}
-.entry-footer {
-    font-family: $font-UI;
-}
-.format-aside {
-    .cat-links {
-        font-size: 1em;
-    }
-    .entry-header a {
-        color: $color-text-secondary;
-        &:hover,
-        &:focus {
-            color: $color-link-hover;
-        }
-    }
-    h2.entry-title {
-        color: $color-text-secondary;
-        font-family: $font-UI;
-        font-size: 1.4em !important;
-        margin-top: .5em;
-        /* Replace with SVG
-        &:before {
-            @include dashicon($glyph-aside);
-            color: $color-text-secondary;
-        }*/
-    }
-    .entry-content {
-        font-family: $font-UI;
-        font-size: 1.3em;
-    }
-}
-
-/* Comments */
-
-.comments-title {
-	font-size: 2em;
-	font-weight: 400;
-    color: $color-tint;
-}
-.comment-content {
-    font-family: $font-reading;
-}
-.comment-respond {
-	line-height: 1.3em;
-	font-family: $font-headers;
-}
-
-/* Archive view */
-
-.archive-view {
-    .entry-title {
-        font-size: 1.8em;
-    }
-    .cat-links {
-        font-size: 1.2em;
-    }
-
-    .entry-content {
-        font-size: 1.2em;
-    }
-}
-.excerpt-more {
-    font-family: $font-UI;
-}
-
-
-/* Widgets */
-
-.widget {
-    line-height: calculate-line-height(16, $size-widget);
-	font-family: $font-widget;
-}
-
-.rssSummary {
-	font-family: $font-reading;
-	font-size: .8em;
-	line-height: 1.4em;
-}
-
-/* Front Page */
-
-.fp-post,
-.fp-post .entry-title {
-    font-family: $font-reading;
+.has-header-color {
+	color: $color-text-headers;
 }
 
 /* Accessibility */
@@ -222,45 +153,5 @@ big {
 .comment-content {
     a {
         text-decoration: underline;
-    }
-}
-/* Gutenberg custom CSS */
-
-// Custom CSS attribute in Gutenberg
-/* Depreciating Dashicons
-.wp-block-button.download .wp-block-button__link:before {
-    @include dashicon($glyph-download);
-}*/
-
-/** Media queries **/
-
-@media screen and (min-width: $breakpoint-1) {
-    /* Header */
-    .global-header:not(.fixed-header) .site-title {
-        font-size: 2.3em;
-    }
-    .main-navigation {
-        font-size: 1.2em;
-    }
-    /* Posts & Pages */
-    .entry-title,
-    .page-title {
-        font-size: 2.7em;
-    }
-    .entry-meta {
-        font-size: 1em;
-    }
-}
-@media screen and (min-width: $breakpoint-2) {
-    /* Header */
-    .site-description {
-        font-size: 1em;
-    }
-}
-@media screen and (min-width: $breakpoint-3) {
-    /* Posts & Pages */
-    .single .post .entry-title
-    .page-title {
-        font-size: 2.5em;
     }
 }

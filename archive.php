@@ -12,8 +12,42 @@ get_header();
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
-		<?php if ( have_posts() ) : ?>
-			<?php
+		<?php
+		if ( have_posts() ) :
+			if ( is_category() ) :
+				// Check if there's a child category.
+				$weracoba_the_cat    = get_queried_object();
+				$weracoba_child_cats = get_categories( array( 'child_of' => $weracoba_the_cat->term_id ) );
+				if ( $weracoba_child_cats ) :
+					?>
+					<div class="archive-widget-area">
+						<?php
+						/**
+						 * Filters the category widget to only show children of the current category.
+						 * This is probably WAY more complicated than just calling wp_list_categories().
+						 * 
+						 * @param array $args The arguments.
+						 */
+						function weracoba_widget_categories_args( $args ) {
+							global $weracoba_the_cat;
+							$args['child_of'] = $weracoba_the_cat->term_id;
+							return $args;
+						}
+						add_filter( 'widget_categories_args', 'weracoba_widget_categories_args' );
+						the_widget(
+							'WP_Widget_Categories',
+							array(
+								'title'        => __( 'Browse a subcategory', 'weracoba' ),
+								'hierarchical' => 1,
+							)
+						);
+						remove_filter( 'widget_categories_args', 'weracoba_widget_categories_args' );
+						?>
+					</div> <!-- .archive-widget-area -->
+					<h2><?php esc_html_e( 'Or browse the recent updates', 'weracoba' ); ?></h2>
+					<?php
+				endif;
+			endif;
 			/* Start the Loop */
 			while ( have_posts() ) :
 				the_post();
@@ -38,7 +72,15 @@ get_header();
 		?>
 
 		<div class="archive-widget-area archive-widget-area-bottom">
-			<?php the_widget( 'WP_Widget_Categories', array( 'title' => __( 'Browse another category', 'weracoba' ) ) ); ?>
+			<?php 
+			the_widget(
+				'WP_Widget_Categories',
+				array(
+					'title'        => __( 'Browse by category', 'weracoba' ),
+					'hierarchical' => 1,
+				)
+			);
+			?>
 		</div> <!-- .archive-widget-area -->
 		</main><!-- #main -->
 	</div><!-- #primary -->

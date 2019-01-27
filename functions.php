@@ -7,6 +7,12 @@
  * @package Weracoba
  */
 
+/**
+ * To-do:
+ * - Asides
+ * - Add colors to editor
+ */
+
 if ( ! function_exists( 'weracoba_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -41,7 +47,8 @@ if ( ! function_exists( 'weracoba_setup' ) ) :
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */
 		add_theme_support( 'post-thumbnails' );
-		set_post_thumbnail_size( 640, 480, true ); // 320 x 240, times 2 for retina displays
+		set_post_thumbnail_size( 1200, 800, true );
+		
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
@@ -115,6 +122,57 @@ if ( ! function_exists( 'weracoba_setup' ) ) :
 		* @link https://codex.wordpress.org/Post_Formats
 		*/
 		add_theme_support( 'post-formats', array( 'aside' ) );
+
+		/**
+		 * Gutenberg fonts. See _variables.scss
+		 * 
+		 * @link https://wordpress.org/gutenberg/handbook/designers-developers/developers/themes/theme-support/#block-font-sizes
+		 */
+		add_theme_support(
+			'editor-font-sizes',
+			array(
+				array(
+					'name' => __( 'XX-Small', 'weracoba' ),
+					'size' => 13.33,
+					'slug' => 'xxsmall',
+				),
+				array(
+					'name' => __( 'X-Small', 'weracoba' ),
+					'size' => 16,
+					'slug' => 'xsmall',
+				),
+				array(
+					'name' => __( 'Small', 'weracoba' ),
+					'size' => 17.78,
+					'slug' => 'small',
+				),
+				array(
+					'name' => __( 'Normal', 'weracoba' ),
+					'size' => 20,
+					'slug' => 'normal',
+				),
+				array(
+					'name' => __( 'Large', 'weracoba' ),
+					'size' => 25,
+					'slug' => 'large',
+				),
+				array(
+					'name' => __( 'X-Large', 'weracoba' ),
+					'size' => 30,
+					'slug' => 'xlarge',
+				),
+				array(
+					'name' => __( 'XX-Large', 'weracoba' ),
+					'size' => 35,
+					'slug' => 'xxlarge',
+				),
+				array(
+					'name' => __( 'XXX-Large', 'weracoba' ),
+					'size' => 40,
+					'slug' => 'xxxlarge',
+				),
+			)
+		);
 	}
 endif;
 add_action( 'after_setup_theme', 'weracoba_setup' );
@@ -146,7 +204,10 @@ function weracoba_widgets_init() {
 		array(
 			'name'          => esc_html__( 'Footer / Sidebar', 'weracoba' ),
 			'id'            => 'sidebar-1',
-			'description'   => esc_html__( 'This will display above the footer, or on the sidebar of the archives page.', 'weracoba' ),
+			'description'   => esc_html__(
+				'This will display above the footer, or on the sidebar of the archives page.',
+				'weracoba'
+			),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
@@ -158,7 +219,10 @@ function weracoba_widgets_init() {
 		array(
 			'name'          => esc_html__( 'Colophon', 'weracoba' ),
 			'id'            => 'footer-1',
-			'description'   => esc_html__( 'Widgets here will be shown at the very bottom of all pages.', 'weracoba' ),
+			'description'   => esc_html__(
+				'Widgets here will be shown at the very bottom of all pages.',
+				'weracoba'
+			),
 			'class'         => '',
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
@@ -171,10 +235,13 @@ function weracoba_widgets_init() {
 		array(
 			'name'          => esc_html__( 'Breadcrumbs', 'weracoba' ),
 			'id'            => 'breadcrumbs-1',
-			'description'   => esc_html__( 'This is for widgets from breadcrumb navigation plugins.', 'weracoba' ),
+			'description'   => esc_html__(
+				'This is only for adding a widget with breadcrumb navigation (via a plugin).',
+				'weracoba'
+			),
 			'class'         => '',
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
+			'before_widget' => '<nav id="%1$s" class="widget breadcrumbs-nav %2$s">',
+			'after_widget'  => '</nav>',
 			'before_title'  => '<h2 class="widget-title">',
 			'after_title'   => '</h2>',
 		)
@@ -186,8 +253,8 @@ add_action( 'widgets_init', 'weracoba_widgets_init' );
  * Enqueue scripts and styles.
  */
 function weracoba_scripts() {
-	wp_enqueue_style( 'weracoba-style', get_stylesheet_uri(), array(), '20190114', 'all' );
-	wp_enqueue_style( 'weracoba-print-style', get_template_directory_uri() . '/style-print.css', array(), '20181230', 'print' );
+	wp_enqueue_style( 'weracoba-style', get_stylesheet_uri(), array(), '20190124', 'all' );
+	wp_enqueue_style( 'weracoba-print-style', get_template_directory_uri() . '/style-print.css', array( 'weracoba-style' ), '20190118', 'print' );
 	wp_enqueue_script( 'weracoba-functions', get_template_directory_uri() . '/js/functions.js', array(), '20181105', true );
 	wp_enqueue_script( 'weracoba-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 	wp_enqueue_script( 'weracoba-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
@@ -201,7 +268,9 @@ add_action( 'wp_enqueue_scripts', 'weracoba_scripts' );
 /**
  * Implement the Custom Header feature.
  */
-/* require get_template_directory() . '/inc/custom-header.php'; */
+/** Not using this right now.
+require get_template_directory() . '/inc/custom-header.php';
+*/
 
 /**
  * Custom template tags for this theme.

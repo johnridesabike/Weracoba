@@ -18,8 +18,6 @@ if ( ! function_exists( 'weracoba_posted_on' ) ) :
 			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
 		}
 
-		$time_string_updated = '<time class="updated" datetime="%1$s">%2$s</time>';
-
 		$time_string = sprintf(
 			$time_string,
 			esc_attr( get_the_date( DATE_W3C ) ),
@@ -36,6 +34,15 @@ if ( ! function_exists( 'weracoba_posted_on' ) ) :
 		);
 
 		echo '<span class="posted-on">' . weracoba_get_icon_svg( 'calendar', 16 ) . $posted_on . '</span>'; // phpcs:ignore XSS OK.
+	}
+endif;
+
+if ( ! function_exists( 'weracoba_updated_on' ) ) {
+	/**
+	 * Prints HTML with meta information for the updated post-date/time.
+	 */
+	function weracoba_updated_on() {
+		$time_string_updated = '<time class="updated updated-date published" datetime="%1$s">%2$s</time>';
 
 		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 			$time_string_updated = sprintf(
@@ -47,39 +54,66 @@ if ( ! function_exists( 'weracoba_posted_on' ) ) :
 			$updated_on = sprintf(
 				wp_kses(
 					/* translators: %s: update date. */
-					_x( '<span class="screen-reader-text">Updated on</span> %s', 'update date', 'weracoba' ),
+					_x( 'Updated on %s', 'update date', 'weracoba' ),
 					array( 'span' => array( 'class' => array() ) )
 				),
 				$time_string_updated
 			);
 
-			echo '<span class="updated-on">' . weracoba_get_icon_svg( 'update', 16 ) . $updated_on . '</span>'; // phpcs:ignore XSS OK.
+			echo '<span class="updated-on">' . $updated_on . '</span>'; // phpcs:ignore XSS OK.
 		}
 	}
-endif;
+}
 
 if ( ! function_exists( 'weracoba_posted_by' ) ) :
 	/**
 	 * Prints HTML with meta information for the current author.
-	 *
-	 * @param bool $with_avatar whether or not to show an avatar.
 	 */
-	function weracoba_posted_by( $with_avatar = true ) {
-		if ( $with_avatar ) {
-			$avatar = get_avatar( get_the_author_meta( 'ID' ), 144 );
-		} else {
-			$avatar = '';
-		}
+	function weracoba_posted_by() {
 		$byline = sprintf(
 			/* translators: %s: post author. */
 			esc_html_x( 'By %s', 'post author', 'weracoba' ),
-			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . $avatar . esc_html( get_the_author() ) . '</a></span>'
+			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 		);
 
 		echo '<span class="byline"> ' . $byline . '</span>'; // phpcs:ignore XSS OK.
 
 	}
 endif;
+
+if ( ! function_exists( 'weracoba_author_avatar' ) ) :
+	/**
+	 * Prints HTML with the author avatar.
+	 */
+	function weracoba_author_avatar() {
+		echo get_avatar( get_the_author_meta( 'ID' ) );
+	}
+endif;
+
+if ( ! function_exists( 'weracoba_edit_link' ) ) {
+	/**
+	 * Prints HTML with the edit link.
+	 */
+	function weracoba_edit_link() {
+		edit_post_link(
+			sprintf(
+				wp_kses(
+					/* translators: 1: The edit SVG icon. 2: Name of current post. Only visible to screen readers */
+					__( '%1$s Edit <span class="screen-reader-text">%2$s</span>', 'weracoba' ),
+					array(
+						'span' => array(
+							'class' => array(),
+						),
+					)
+				),
+				weracoba_get_icon_svg( 'edit' ),
+				get_the_title()
+			),
+			'<span class="edit-link">',
+			'</span>'
+		);
+	}
+}
 
 if ( ! function_exists( 'weracoba_entry_footer' ) ) :
 	/**
@@ -97,6 +131,11 @@ if ( ! function_exists( 'weracoba_entry_footer' ) ) :
 			<?php
 		}
 		weracoba_comments();
+		?>
+		<div class="post-time">
+			<?php weracoba_updated_on(); ?>
+		</div>
+		<?php
 		/**
 		 * Jetpack sharing.
 		 *
@@ -168,29 +207,26 @@ if ( ! function_exists( 'weracoba_post_thumbnail' ) ) :
 
 		if ( is_singular() && ! is_front_page() ) :
 			?>
-			<figure class="full-bleed featured-image" style="background-image: url( <?php the_post_thumbnail_url( 'full' ); ?>)">
-				<div class="post-thumbnail">
-					<?php the_post_thumbnail( 'full' ); ?>
-				</div><!-- .post-thumbnail -->
+			<figure class="featured-image post-thumbnail">
+				<?php
+				the_post_thumbnail( 'post-thumbnail' );
+				?>
 				<?php if ( get_the_post_thumbnail_caption() ) : ?>
 					<figcaption>
 						<?php the_post_thumbnail_caption(); ?>
 					</figcaption>
 				<?php endif; ?>
-			</figure> <!--.full-bleed .featured-image -->
+			</figure> <!--.featured-image .post-thumbnail -->
 		<?php else : ?>
-		<figure class="featured-image">
-			<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
-				<?php
-				the_post_thumbnail(
-					'post-thumbnail',
-					array( 'alt' => the_title_attribute( array( 'echo' => false ) ) )
-				);
-				?>
-			</a>
-		</figure> <!--.full-bleed .featured-image -->
+			<figure class="featured-image post-thumbnail">
+				<a href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
+					<?php
+					the_post_thumbnail( 'post-thumbnail' );
+					?>
+				</a>
+			</figure> <!--.featured-image -->
 			<?php
-			endif; // End is_singular().
+		endif; // End is_singular().
 	}
 endif;
 
@@ -203,13 +239,9 @@ if ( ! function_exists( 'weracoba_category_list' ) ) :
 		$categories_list = get_the_category_list( esc_html_x( ', ', 'list item separator', 'weracoba' ), esc_html( '>' ) );
 		if ( $categories_list ) {
 			printf(
-
-				/*
-				* translators: 1: SVG icon
-				*              2: list of categories.
-				*/
+				/* translators: 1: SVG icon. 2: list of categories. */
 				'<div class="cat-links">' . esc_html__( '%1$s %2$s', 'weracoba' ) . '</div>',
-				weracoba_get_icon_svg( 'archive', 16 ),
+				weracoba_get_icon_svg( 'category', 16 ),
 				$categories_list
 			); // phpcs:ignore XSS OK.
 		}
@@ -221,12 +253,11 @@ if ( ! function_exists( 'weracoba_tag_list' ) ) :
 	 * Display the tag list.
 	 */
 	function weracoba_tag_list() {
-		/* translators: There is a space before and after the text. */
+		/* translators: There is a space before and after the text. Only shown to screen readers. */
 		$weracoba_tagged = esc_html__( ' Tagged ', 'weracoba' );
 		echo get_the_tag_list(
-			'<div class="tags-links"> ' . weracoba_get_icon_svg( 'tag', 16 ) . ' <span class="screen-reader-text">' . $weracoba_tagged . '</span>',
-			/* translators: used between list items, there is a space after the comma */
-			esc_html_x( ', ', 'list item separator', 'weracoba' ),
+			'<div class="tags-links"><span class="screen-reader-text">' . $weracoba_tagged . '</span>',
+			' ',
 			'</div>'
 		); // phpcs:ignore XSS OK
 	}
@@ -239,18 +270,45 @@ if ( ! function_exists( 'weracoba_comments' ) ) :
 	function weracoba_comments() {
 		if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 			echo '<span class="comments-link">';
-			echo weracoba_get_icon_svg( 'comment', 16 ) . ' '; // phpcs:ignore XSS OK
 			comments_popup_link(
 				sprintf(
 					wp_kses(
-						/* translators: %s: post title */
-						__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'weracoba' ),
+						/* translators: 1: SVG icon. 2: post title */
+						__( '%1$s Leave a Comment<span class="screen-reader-text"> on %2$s</span>', 'weracoba' ),
 						array(
 							'span' => array(
 								'class' => array(),
 							),
 						)
 					),
+					weracoba_get_icon_svg( 'comment', 16 ),
+					get_the_title()
+				),
+				sprintf(
+					wp_kses(
+						/* translators: 1: SVG icon. 2: post title */
+						__( '%1$s 1 Comment <span class="screen-reader-text"> on %2$s</span>', 'weracoba' ),
+						array(
+							'span' => array(
+								'class' => array(),
+							),
+						)
+					),
+					weracoba_get_icon_svg( 'comment', 16 ),
+					get_the_title()
+				),
+				sprintf(
+					wp_kses(
+						/* translators: 1: SVG icon. 3: comment count. 2: post title */
+						__( '%1$s %2$s Comments <span class="screen-reader-text"> on %3$s</span>', 'weracoba' ),
+						array(
+							'span' => array(
+								'class' => array(),
+							),
+						)
+					),
+					weracoba_get_icon_svg( 'comment', 16 ),
+					number_format_i18n( get_comments_number() ),
 					get_the_title()
 				)
 			);

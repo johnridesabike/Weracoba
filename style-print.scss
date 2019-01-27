@@ -69,7 +69,9 @@
     h4, 
     h5, 
     h6 { // elements copied from typography & elements files
-        color: black;
+		color: black;
+		page-break-after: avoid;
+		break-after: avoid;
     }
     a,
     a:visited,
@@ -98,7 +100,7 @@
 			content:" < " attr(href) "> ";
 		   	text-decoration: none !important;
         }
-    }
+	}
         
     /**
      * Making intergated videos disappear, and removing the iframes' whitespace to zero. 
@@ -137,9 +139,6 @@
             border-color: black !important;
         }
     }
-    .home svg {
-        color: black !important; // a hack...
-    }
     .global-header,
     .nav-links,
     .tags-links,
@@ -161,10 +160,10 @@
         left: auto;
     }
 	.site-footer,
-	.entry-footer {
+	.single .entry-footer {
         box-shadow: none;
-        border: none;
-        background: none;
+		background: none;
+		border-color: black;
     }
     .site-footer .citation {
         font-size: 1em;
@@ -172,9 +171,11 @@
     
     .widget {
         display: none;
-    }
+	}
     .widget.widget_text,
     .widget.widget_custom_html {
         display: block;
+		page-break-inside : avoid;
+		break-inside: avoid;
     }
 }

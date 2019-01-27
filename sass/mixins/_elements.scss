@@ -1,0 +1,83 @@
+@mixin figcaption-overlay {
+    background: linear-gradient( transparent 0, rgba(0,0,0,.5) 40%, rgba(0,0,0,.8) 100%);
+	color: $color-bg-body;
+	text-shadow: 0 0 6px $color-text-main;
+	padding: .2em .5em;
+	font-size: $font-size-xs;
+	font-style: italic;
+	font-family: $font-UI;
+}
+
+@mixin button {
+    padding: .2em .75em;
+	font-family: $font-UI;
+	text-decoration: none;
+	border-radius: $border-radius-button;
+	border: 1px solid $color-text-headers;
+    &:not(.has-text-color) {
+        color: $color-bg-body;
+    }
+    &:not(.has-background) {
+        background: $color-link;
+    }
+}
+
+@mixin button-active {
+	transform: translateY(1px);
+	box-shadow: inset 0 1px 0 $color-text-headers;
+}
+
+@mixin list-margins {
+	margin: 0 0 1.5em 0;
+}
+
+@mixin nested-list-margins {
+	margin-bottom: 0;
+	margin-left: 0;
+
+}
+
+@mixin unordered-list-styles {
+	list-style: disc;
+    ul {
+        list-style: circle;
+        ul {
+            list-style: square;
+            ul {
+                list-style: initial;
+            }
+        }
+    }
+}
+
+@mixin ordered-list-styles {
+	list-style: decimal;
+    ol {
+        list-style: upper-alpha;
+        ol {
+            list-style: lower-roman;
+            ol {
+                list-style: lower-alpha;
+                ol {
+                    list-style: initial;
+                }
+            }
+        }
+    }
+}
+@mixin hr {
+	background-color: $color-bg-hr;
+	border: 0;
+	height: 2px;
+	margin-bottom: 1.5em;
+}
+
+@mixin blockquote {
+    padding: 0 1.5em; /* use padding, not margins to avoid conflict with post content margins */
+    border-left: 4px solid $color-tint;
+}
+
+@mixin cite {
+	font-style: italic;
+	opacity: .9;
+}

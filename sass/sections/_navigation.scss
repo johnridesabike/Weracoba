@@ -11,13 +11,9 @@
 .posts-navigation,
 .paging-navigation {
     text-align: left;
-    
     a {
         display: block;
         width: 100%;
-        //background: $color-bg-body;
-        //font-size: 1.3em;
-        //@include button-outline;
     }
 }
 
@@ -34,8 +30,6 @@
     }
     .page-numbers:not(.prev):not(.next) {
         margin: 0 .5em;
-        //padding-left: .8rem; // make them a bit rounder
-        //padding-right: .8rem; // make them a bit rounder
     }
 }
 
@@ -63,17 +57,6 @@
     }
 }
 
-.attachment {
-    .comment-navigation,
-    .posts-navigation,
-    .paging-navigation {
-        a {
-            @include drop-shadow;
-            @include button-outline;
-        }
-    }
-}
-
 .nav-links {
     margin: 0 auto;
     padding: 0 0.4em; /* ? */
@@ -81,22 +64,12 @@
 .nav-previous {
     margin-bottom: .5em;
 }
-.breadcrumbs-nav {
-    margin-top: .2em;
-    margin-bottom: 1em;
-    font-size: .9em;
-    
-    .widget {
-        margin: 0;
-        padding: 0;
-    }
-}
 
 .single-post .post-navigation {
     margin-top: 1em;
     
     .meta-nav {
-        color: $color-text-secondary;
+		color: $color-text-main;
     }
     .meta-nav,
     .post-title {
@@ -114,26 +87,25 @@
 }
 
 .attachment .post-navigation {
-    font-size: 1.3em;
     .meta-nav {
-        color: $color-text-secondary;
+		color: $color-text-main;
     }
     .post-title {
         text-decoration: underline;
     }
 }
 
-/** Navigation Media Queries **/
+/*
+ * Navigation Media Queries
+ */
 
 @media screen and (min-width: $breakpoint-1) {
     .comment-navigation,
     .posts-navigation,
     .single-post .post-navigation {
         .nav-previous {
-            //float: left;
             padding-bottom: 0;
         }
-
         .nav-previous,
         .nav-next {
             width: 45%;
@@ -141,14 +113,12 @@
             align-items: stretch;
         }
     }
-
     .nav-links {
         display: flex;
         justify-content: space-between;
         align-items: stretch;
         padding: 0;
     }
-    
     .pagination {
         .nav-links {
             justify-content: center;
@@ -167,7 +137,6 @@
 }
 @media screen and (min-width: $breakpoint-2) {
     .post-navigation .post-title {
-        font-size: 18px;
-        font-size: 1.125em;
+        font-size: $font-size-lg;
     }
 }

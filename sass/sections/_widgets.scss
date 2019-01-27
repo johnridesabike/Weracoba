@@ -1,25 +1,15 @@
 .widget {
+	font-family: $font-UI;
 	margin: 0;
-    padding: 1em;//.5em .5em .5em .5em;
+    padding: 1em;
 	/* Make sure select elements fit in widgets. */
+	font-size: $font-size-sm;
+	line-height: calculate-line-height($font-size-sm, $size-widget);
+	width: 100%;
 
     ul,
     ol {
-        padding: 0;
-        margin: 0;
-        list-style-type: none;
-
-        li {
-            display: block;
-            /*line-height: 1.2em;*/
-            margin-bottom: .5em;
-
-            ul,
-            ol {
-                margin-left: .5em;
-                font-size: .9em;
-            }
-        }
+		@include widget-list;
     }
 
     select {
@@ -28,10 +18,6 @@
         padding: 10px;
         border: 1px solid #ccc;
     }
-}
-.widget-title {
-    margin: 0 0 .5em;
-	font-size: 1.4em;
 }
 /* Search widget. */
 .widget_search {
@@ -57,38 +43,7 @@
 .widget_nav_menu,
 .widget_categories,
 .widget_recent_entries {
-
-    .children,
-    .sub-menu {
-        padding-top: 0;
-        padding-bottom: .5em;
-        margin-left: 1em;
-
-        a:before {
-            content: $glyph-arrow-down-right + " ";
-        }
-    }
-
-    li {
-	   padding: 0;
-    }
 }
-
-.widget li a {
-    // moved from line 75 (above) to make it universal to all widgets
-    // might be a bad idea. remove if necessary.
-    display: block;
-    padding: .75em 0;
-    text-decoration: none;
-    border-bottom: 1px dashed $color-border;
-
-    &:hover,
-    &:focus {
-        text-decoration: none;
-        border-bottom: 1px dashed $color-border;
-    }
-}
-
 /* Meta widget */
 .widget_meta li {
 	padding: 0;
@@ -100,7 +55,6 @@
 	   line-height: 1.3em;
 	   padding-bottom: .5em;
     }
-
     a:hover,
     a:focus {
 	padding-left: 0;
@@ -114,18 +68,16 @@
 
 .widget li a.rsswidget {
 	padding-right: .5em;
-	font-size: 1em;
-	line-height: 1.4em;
 }
 
 .rss-date,
 .widget_rss cite {
 	color: #333;
-	font-size: .8em;
 }
 
 .rssSummary {
 	padding: .5em 0;
+	font-family: $font-reading;
 }
 
 /* Calendar widget */
@@ -150,7 +102,6 @@
 
     td {
         padding: .2em;
-        font-size: .8em;
         text-align: center;
         background: white;
         border: 1px solid #cccccc;
@@ -171,15 +122,45 @@
     }
 }
 
-/* Text widget */
-.textwidget {
-	/*font-size: 80%;
-	line-height: 1.3em;*/
+/* Tags */
+.tagcloud {
+	text-align: center;
+}
+.tags-links a,
+.tag-title,
+.tag-cloud-link {
+	background-color: rgba(0, 0, 0, .1);
+	padding: 0 .25em;
+	margin: .1em 0;
+	display: inline-block;
+	.svg-icon {
+		opacity: .8;
+	}
+}
+// separate border radiuses
+.tags-links a,
+.tag-title {
+	border-radius: 1em .3em .3em 1em;
+}
+.tag-cloud-link {
+	border-radius: .3em;
+}
+.tags-links a,
+a.tag-cloud-link {
+	color: $color-text-headers;
+	&:hover,
+	&:focus {
+		color: $color-link;
+	}
 }
 
-/* Tag cloud widget */
-.widget_tag_cloud .tagcloud a {
-    margin: 0 3px; /* give them a bit of space */
+/** Breadcrumbs **/
+.widget.breadcrumbs-nav {
+    margin: .2em 0 0 0;
+    margin-bottom: 1em;
+	font-size: $font-size-xs;
+	padding: 0;
+	@include max-site-width;
 }
 
 /** Widget Area **/
@@ -187,14 +168,9 @@
 .widget-area {
     display: flex;
     flex-flow: row;
-    flex-wrap: wrap;
+	flex-wrap: wrap;
     margin-top: 1em;
-    margin-left: -1em;
-    margin-right: -1em;
-
-    .widget {
-        @include widget-columns;
-    }
+    @include full-bleed;
 }
 /* Page widgets */
 .page,
@@ -211,38 +187,33 @@
     .site-content .widget {
         @include drop-shadow;
         margin-bottom: 1em;
-        .widgettitle {
-            margin: 0 0 1em 0;
-        }
     }
+}
+
+.widget-title,
+.widgettitle {
+    margin: 0 0 .5em;
 }
 .archive-widget-area {
     // for the widgets outside regular widget-area
     @include full-bleed;
     .widget {
-        ul {
+		font-size: 1rem;
+        > ul {
             list-style: none;
-            font-size: 1.1em;
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-
+            //font-size: 1.1em;
+			display: flex;
+			flex-flow: row wrap;
             > .cat-item {
-                @include widget-columns;
+                width: 100%;
             }
-
-            .cat-item ul {
-                font-size: .8em;
-            }
-        }
+		}
     }
-
 }
 
 /** Footer Widgets **/
 .footer-widgets {
     @include max-site-width;
-    color: $color-text-secondary;
     .widget {
         margin: 0 0 1em;
         padding: 0 0 1em;
@@ -261,14 +232,21 @@
 
 @media screen and (min-width: $breakpoint-1) {
     .widget-area {
-        // cancels the full-bleed
-        margin-left: 0;
-        margin-right: 0;
+        @include full-bleed-cancel;
+		.widget {
+			@include widget-columns;
+		}
     }
     .archive-widget-area {
-        margin-left: 0;
-        margin-right: 0;
-    }
+        @include full-bleed-cancel;
+		.widget > ul > .cat-item { // category widget
+			@include column-width(3);
+			margin-right: $columns-margin;
+			&:nth-child(3n+3) {
+				margin-right: 0;
+			}
+		}
+	}
     .archive-widget-area-bottom {
         margin-top: 4em;
         margin-bottom: 4em;
@@ -276,38 +254,8 @@
     .footer-widgets {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
-        ///* If only one widget is displayed, make it full width. */
-        ///* If 2 or 3 widgets are displayed, make the second one twice as wide. */
-        ///* If 4 or more widgets are displayed, show three across when available. */
-        ///* If more than 4 widgets are displayed, the last one takes up the full width. */
         .widget {
-            @include column-width(3);
-            //&:only-of-type {
-            //    width: 100%;
-            //}
-            //&:nth-last-child(n+2):nth-last-child(-n+3):first-child ~ .widget:nth-child(2) {
-            //    flex: 2;
-            //}
-            //
-            //&:nth-last-child(n+4),
-            //&:nth-last-child(n+4) ~ .widget {
-            //    @include column-width(3);
-            //}
-            ///*&:nth-last-child(n+4) ~ .widget:last-child {
-            //    flex-grow: 1;
-            //    flex-shrink: 1;
-            //
-            //    &.widget_nav_menu {
-            //        ul {
-            //            display: flex;
-            //            flex-wrap: wrap;
-            //        }
-            //        a {
-            //            border: 0;
-            //        }
-            //    }
-            //}*/
+            @include widget-columns;
         }
     }
 }
@@ -328,8 +276,16 @@
             margin-left: 1em;
             max-width: $size-widget;
             .widget {
-                width: $size-widget;
-                margin: 0 0 4em;
+                width: $size-widget !important; // cancel the column width
+				margin: 0 0 4em;
+				.alignleft,
+				.alignright {
+					/*
+					 * Don't align stuff on this small of a size;
+					 */
+					float: none;
+					@include center-block;
+				}
             }
         }
     }

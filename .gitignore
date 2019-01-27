@@ -5,6 +5,6 @@
 /node_modules/
 .DS_Store
 /vendor/
-/composer-setup.php
-composer.json
+composer-setup.php
 composer.lock
+/.vscode/

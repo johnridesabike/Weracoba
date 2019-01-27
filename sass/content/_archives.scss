@@ -2,85 +2,115 @@
     .entry-wrap {
         width: 100%;
     }
-    .content-area .excerpt-entry {
-        position: relative;
-        border-bottom: 1px solid $color-border;
-        padding: 0 .5em .5em .5em;
-        margin-bottom: 1em;
-        @include drop-shadow;
-
-        &:last-child {
-            border: 0;
-        }
-    }
-    .content-area .excerpt-entry,
-    .format-aside {
-        @include full-bleed;
-    }
-    .entry-meta {
-        @include entry-meta-inline;
-        padding-top: 0;
-        margin: 0 0 1em 0;
-        min-height: 0;
-    }
-    .entry-title {
-        text-align: left; // to cancel the center alignment on pages
-    }
-    .page-title {
-        text-align: center;
-        //margin: 0 0 1em 0;
-    }
-    .site-header .entry-header {
-        margin-left: 1em;
-        margin-right: 1em;
-        @include max-site-width;
-    }
 }
 .archive-description {
-    font-size: 1.2em;
     @include max-content-width;
     text-align: center;
 }
 .continue-reading {
     text-align: center;
-    flex-shrink: 0;
-
+	flex-shrink: 0;
     a {
         display: block;
-        @include button;
-        font-size: 1.2em;
+		@include button;
+		border-radius: $border-radius-button-square;
+    }
+}
+
+.excerpt-entry {
+	position: relative;
+	@extend %smallscreen-padding;
+	padding-bottom: .8em; // matches %smallscreen-padding
+	margin-bottom: 1em;
+	@include full-bleed;
+	@include drop-shadow;
+	.entry-header {
+		padding: 0; // cancel the padding from the main entry-headers
+	}
+    .entry-title {
+        text-align: left; // to cancel the center alignment on pages
+	}
+    .entry-meta {
+		@include entry-meta-inline;
+		margin: 0 0 1rem 0;
+		min-height: 0;
+		font-size: $font-size-sm;
+		> * {
+			margin-bottom: .25em;
+		}
+		.tags-links {
+			display: block;
+		}
     }
 }
 
 /** Archive Media Queries **/
 
 @media screen and (min-width: $breakpoint-1) {
-    .archive-view {
-        .entry-footer {
+	.excerpt-entry {
+		padding-bottom: 0; // cancel default from above
+		//@include full-bleed-cancel;
+		margin-left: auto;
+		margin-right: auto;
+		display: grid;
+		grid-template-columns: 33% auto;
+		grid-template-rows: auto;
+		// Doesn't work with IE. //
+		// grid-template-areas: 
+		// 	"header header"
+		// 	"content content"
+		// 	"footer footer";
+		// &.has-post-thumbnail {
+		// 	grid-template-areas: 
+		// 		"header header"
+		// 		"thumbnail content"
+		// 		"footer footer";
+		// }
+		.entry-header {
+			margin-bottom: 1rem;
+			// grid-area: header;
+			grid-row: 1 / span 1;
+			grid-column: 1 / span 2;
+			.cat-links {
+				margin-bottom: .25em;
+			}
+		}
+		.featured-image {
+			// grid-area: thumbnail;
+			grid-column: 1 / span 1;
+			grid-row: 2 / span 1;
+		}
+		.entry-content {
+			// grid-area: content;
+			grid-column: 1 / span 2;
+			grid-row: 2 / span 1;
+			p {
+				margin: 0;
+			}
+		}
+		&.has-post-thumbnail .entry-content {
+			margin-left: 1em;
+			grid-column: 2 / span 1;
+		}
+		.entry-footer {
+			margin-top: 1rem;
+			// grid-area: footer;
+			grid-column: 1 / span 2;
+			grid-row: 3 / span 1;
+			width: 100%;
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-            align-items: center;
+			align-items: center;
+			.entry-meta {
+				flex-shrink: 1; // IE fix
+				margin: 0;
+			}
         }
-        .page .entry-footer {
+        &.page .entry-footer {
             justify-content: flex-end;
         }
-        .content-area .post.has-post-thumbnail .entry-wrap,
-        .content-area .page.has-post-thumbnail .entry-wrap {
-            display: flex;
-            flex-direction: row;
-            overflow: hidden;
-        }
-        .content-area .excerpt-entry,
-        .format-aside {
-            margin-left: auto;
-            margin-right: auto;
-            padding-top: .5em; // to match the rest of the padding
-        }
-        .entry-meta {
-            margin-bottom: 0;
-        }
-    }
+	}
 }
 @media screen and (min-width: $breakpoint-2) {
     .archive-view .site-content {
@@ -92,4 +122,12 @@
             width: 100%;
         }
     }
+}
+
+@media screen and (min-width: $breakpoint-3) {
+	.excerpt-entry {
+		// we're keeping the padding on large screens
+		padding-left: .8rem; // matches smallscreen-padding
+		padding-right: .8rem; // matches smallscreen-padding
+	}
 }
