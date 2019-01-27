@@ -94,22 +94,29 @@ div.wp-block-image {
 	@include button;
     box-shadow: $shadow-button;
 	font-size: $font-size-md; // cancel built in style for the file button
-	&:hover,
-	&:focus,
-	&:active,
-	&:visited {
-		// This is just to cancel the built in style
-		box-shadow: $shadow-button;
-	}
 
 	&:active {
-		transform: translateY(1px);
-		box-shadow: inset 0 1px 0 $color-text-headers;
+		@include button-active;
+	}
+}
+.wp-block-file a.wp-block-file__button {
+	display: inline-block;
+	// This is just to cancel the built in style
+	&:hover,
+	&:focus,
+	&:visited {
+		opacity: 1;
+		@include button;
+		box-shadow: $shadow-button;
+	}
+	&:active {
+		opacity: 1;
+		@include button-active;
 	}
 }
 
 .wp-block-button.is-style-squared .wp-block-button__link {
-    border-radius: $border-radius-button-square;
+	border-radius: $border-radius-button-square;
 }
 
 .wp-block-button.is-style-outline .wp-block-button__link {
@@ -121,6 +128,7 @@ div.wp-block-image {
 	&:active,
 	&:visited {
 		box-shadow: none;
+		transform: none;
 	}
 	
 	&:not(.has-text-color) {

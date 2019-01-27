@@ -2042,17 +2042,39 @@ div.wp-block-image {
   background: #03727c;
 }
 
-.wp-block-button .wp-block-button__link:hover, .wp-block-button .wp-block-button__link:focus, .wp-block-button .wp-block-button__link:active, .wp-block-button .wp-block-button__link:visited,
-.wp-block-file .wp-block-file__button:hover,
-.wp-block-file .wp-block-file__button:focus,
-.wp-block-file .wp-block-file__button:active,
-.wp-block-file .wp-block-file__button:visited {
+.wp-block-button .wp-block-button__link:active,
+.wp-block-file .wp-block-file__button:active {
+  -webkit-transform: translateY(1px);
+          transform: translateY(1px);
+  -webkit-box-shadow: inset 0 1px 0 #02454b;
+          box-shadow: inset 0 1px 0 #02454b;
+}
+
+.wp-block-file a.wp-block-file__button {
+  display: inline-block;
+}
+
+.wp-block-file a.wp-block-file__button:hover, .wp-block-file a.wp-block-file__button:focus, .wp-block-file a.wp-block-file__button:visited {
+  opacity: 1;
+  padding: .2em .75em;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  text-decoration: none;
+  border-radius: 0.625em;
+  border: 1px solid #02454b;
   -webkit-box-shadow: #02454b 0 1px 0 0;
           box-shadow: #02454b 0 1px 0 0;
 }
 
-.wp-block-button .wp-block-button__link:active,
-.wp-block-file .wp-block-file__button:active {
+.wp-block-file a.wp-block-file__button:hover:not(.has-text-color), .wp-block-file a.wp-block-file__button:focus:not(.has-text-color), .wp-block-file a.wp-block-file__button:visited:not(.has-text-color) {
+  color: white;
+}
+
+.wp-block-file a.wp-block-file__button:hover:not(.has-background), .wp-block-file a.wp-block-file__button:focus:not(.has-background), .wp-block-file a.wp-block-file__button:visited:not(.has-background) {
+  background: #03727c;
+}
+
+.wp-block-file a.wp-block-file__button:active {
+  opacity: 1;
   -webkit-transform: translateY(1px);
           transform: translateY(1px);
   -webkit-box-shadow: inset 0 1px 0 #02454b;
@@ -2073,6 +2095,8 @@ div.wp-block-image {
 .wp-block-button.is-style-outline .wp-block-button__link:hover, .wp-block-button.is-style-outline .wp-block-button__link:focus, .wp-block-button.is-style-outline .wp-block-button__link:active, .wp-block-button.is-style-outline .wp-block-button__link:visited {
   -webkit-box-shadow: none;
           box-shadow: none;
+  -webkit-transform: none;
+          transform: none;
 }
 
 .wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color) {
