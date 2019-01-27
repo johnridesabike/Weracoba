@@ -128,36 +128,25 @@ object {
 	@include full-bleed;
 	margin-top: 0; // cancel default figure
 	margin-bottom: 0; // cancel default figure
-    .post-thumbnail {
-        display: block;
+	a {
         line-height: 0; /* fixes visual glitch with link overlay */
-
-        &:before {
-            content: "";
-			display: block;
-			position: absolute;
-			top: 0;
-			left: 0;
-			bottom: 0;
-			right: 0;
-			background: $color-link-hover;
-			opacity: 0;
-			z-index: 2;
-		
-			&:hover,
-			&:focus {
+		display: block;
+		&:hover,
+		&:focus {
+			&:before {
+				content: "";
+				display: block;
+				position: absolute;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				right: 0;
+				background: $color-link-hover;
 				opacity: .25;
+				z-index: 2;
 			}
-        }
-
-        &:hover,
-        &:focus {
-            &:before {
-                opacity: .25;
-            }
-        }
-    }
-
+		}
+	}
     img {
         width: 100%; // fix for IE11
     }

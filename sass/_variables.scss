@@ -1,25 +1,26 @@
 $color-text-main: #19191A;
 $color-bg-body: white;
-$color-tint:rgba(1, 118, 128, 1); // Intense Teal
-$color-bg-body-alt: lighten( desaturate( $color-tint, 70% ), 70% );
-//$color-bg-body-alt: rgba(224, 232, 231, 1); // Snowdrop
-$color-text-headers: darken($color-tint, 12.5%);
-$color-border: rgba(194, 207, 207, 1); // Tradewind
-$color-bg-header: rgba(247, 247, 241, 1); // High Reflective White;
+//$color-tint:rgba(1, 118, 128, 1); // Intense Teal
+$color-primary-hue: 185;
+$color-secondary-hue: 65;
+$color-bg-body-alt: hsl( $color-primary-hue, 15%, 90% ) ;
+$color-text-headers: hsl( $color-primary-hue, 95%, 15% );
+$color-border: hsl( $color-secondary-hue, 12%, 80% );
+$color-bg-header: hsl( $color-secondary-hue, 25%, 95% );
 $color-bg-footer: $color-bg-header;
-$color-link: $color-tint;
+//$color-link: $color-tint;
+$color-link: hsl( $color-primary-hue, 95%, 25%);
 $color-link-visited: $color-link;
-$color-link-hover: lighten($color-tint, 12.5%);
+$color-link-hover: hsl( $color-primary-hue, 95%, 40% );
 
 $color-bg-pre: #eee;
 $color-border-abbr: #666;
 $color-background-ins: #fff9c0;
 $color-text-input: #666;
-$color-border-input: #ccc;
-$color-text-input-focus: #111;
-$color-bg-hr: #ccc;
-$color-bg-screen: #f1f1f1;
-$color-text-screen: #21759b;
+$color-border-input: $color-border; //#ccc
+$color-bg-hr: $color-border; //#ccc;
+$color-bg-screen: #f1f1f1; // _accessibiliity.scss
+$color-text-screen: #21759b; // _accessibiliity.scss
 
 $font-reading: Times, "Times New Roman", Georgia, serif;
 $font-UI: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
