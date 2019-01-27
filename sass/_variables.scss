@@ -48,9 +48,10 @@ $font-line-height-pre: 1.6;
 $font-line-height-heading: 1.2;
 $font-line-height-double:  2 * $font-line-height-heading;
 
-$breakpoint-1: 735px; // big phone landscape
-$breakpoint-2: 1023px; // iPad landscape
-$breakpoint-3: 1365px; // iPad pro landscape
+$breakpoint-1: 600px;
+$breakpoint-2: 900px;
+$breakpoint-3: 1200px;
+$breakpoint-4: 1800px;
 
 $size-site-width: 1200px; // WordPress global: $content_width
 $size-content: 680px;
