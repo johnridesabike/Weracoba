@@ -132,12 +132,11 @@
     .noprint {
         display: none;
     }
-    
-    .wp-block-button,
-    .continue-reading {
-        a {
-            border-color: black !important;
-        }
+	.continue-reading a,
+	.wp-block-button .wp-block-button__link,
+	.wp-block-file .wp-block-file__button {
+		background: transparent !important;
+		border-color: black !important;
     }
     .global-header,
     .nav-links,
@@ -153,11 +152,14 @@
     .single .featured-image {
         display: block !important;
         height: auto !important;
-        min-height: inherit !important;
-    }
-    .single .featured-image img {
-        position: static !important;
-        left: auto;
+		min-height: inherit !important;
+		width: 100% !important;
+		max-width: 100% !important;
+		img {
+			position: static !important;
+			left: auto;
+			width: 100% !important;
+		}
     }
 	.site-footer,
 	.single .entry-footer {

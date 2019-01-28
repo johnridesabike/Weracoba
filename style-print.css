@@ -114,8 +114,10 @@
   .noprint {
     display: none;
   }
-  .wp-block-button a,
-  .continue-reading a {
+  .continue-reading a,
+  .wp-block-button .wp-block-button__link,
+  .wp-block-file .wp-block-file__button {
+    background: transparent !important;
     border-color: black !important;
   }
   .global-header,
@@ -133,10 +135,13 @@
     display: block !important;
     height: auto !important;
     min-height: inherit !important;
+    width: 100% !important;
+    max-width: 100% !important;
   }
   .single .featured-image img {
     position: static !important;
     left: auto;
+    width: 100% !important;
   }
   .site-footer,
   .single .entry-footer {
