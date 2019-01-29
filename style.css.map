@@ -26,7 +26,8 @@
         "sass/content/_archives.scss",
         "sass/content/_comments.scss",
         "sass/modules/_infinite-scroll.scss",
-        "sass/_media.scss"
+        "sass/_media.scss",
+        "sass/_sandbox.scss"
     ],
     "names": [],
     "file": "style.css"
