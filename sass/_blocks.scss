@@ -92,15 +92,25 @@ div.wp-block-image {
 .wp-block-button .wp-block-button__link,
 .wp-block-file .wp-block-file__button {
 	@include button;
-    box-shadow: $shadow-button;
 	font-size: $font-size-md; // cancel built in style for the file button
-
+}
+.wp-block-button:not(.is-style-outline):not(.is-style-squared) .wp-block-button__link {
+	box-shadow: $shadow-button;
 	&:active {
 		@include button-active;
 	}
 }
+.wp-block-button.is-style-squared .wp-block-button__link {
+	border: none;
+	&:hover,
+	&:focus,
+	&:active {
+		background: $color-link-hover;
+	}
+}
 .wp-block-file a.wp-block-file__button {
 	display: inline-block;
+	box-shadow: $shadow-button;
 	// This is just to cancel the built in style
 	&:hover,
 	&:focus,
@@ -123,14 +133,6 @@ div.wp-block-image {
     border: 2px solid currentColor;
 	border-radius: $border-radius-button;
 	box-shadow: none;
-	&:hover,
-	&:focus,
-	&:active,
-	&:visited {
-		box-shadow: none;
-		transform: none;
-	}
-	
 	&:not(.has-text-color) {
 		color: $color-link;
 

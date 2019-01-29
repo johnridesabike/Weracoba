@@ -671,8 +671,6 @@ div.wp-block-image, .wp-block[data-type="core/image"][data-align] {
   text-decoration: none;
   border-radius: 0.625em;
   border: 1px solid #02454b;
-  -webkit-box-shadow: #02454b 0 1px 0 0;
-          box-shadow: #02454b 0 1px 0 0;
   font-size: 1em;
 }
 
@@ -686,16 +684,30 @@ div.wp-block-image, .wp-block[data-type="core/image"][data-align] {
   background: #03727c;
 }
 
-.wp-block-button .wp-block-button__link:active,
-.wp-block-file .wp-block-file__button:active {
+.wp-block-button:not(.is-style-outline):not(.is-style-squared) .wp-block-button__link {
+  -webkit-box-shadow: #02454b 0 1px 0 0;
+          box-shadow: #02454b 0 1px 0 0;
+}
+
+.wp-block-button:not(.is-style-outline):not(.is-style-squared) .wp-block-button__link:active {
   -webkit-transform: translateY(1px);
           transform: translateY(1px);
   -webkit-box-shadow: inset 0 1px 0 #02454b;
           box-shadow: inset 0 1px 0 #02454b;
 }
 
+.wp-block-button.is-style-squared .wp-block-button__link {
+  border: none;
+}
+
+.wp-block-button.is-style-squared .wp-block-button__link:hover, .wp-block-button.is-style-squared .wp-block-button__link:focus, .wp-block-button.is-style-squared .wp-block-button__link:active {
+  background: #05b7c7;
+}
+
 .wp-block-file a.wp-block-file__button {
   display: inline-block;
+  -webkit-box-shadow: #02454b 0 1px 0 0;
+          box-shadow: #02454b 0 1px 0 0;
 }
 
 .wp-block-file a.wp-block-file__button:hover, .wp-block-file a.wp-block-file__button:focus, .wp-block-file a.wp-block-file__button:visited {
@@ -734,13 +746,6 @@ div.wp-block-image, .wp-block[data-type="core/image"][data-align] {
   border-radius: 0.625em;
   -webkit-box-shadow: none;
           box-shadow: none;
-}
-
-.wp-block-button.is-style-outline .wp-block-button__link:hover, .wp-block-button.is-style-outline .wp-block-button__link:focus, .wp-block-button.is-style-outline .wp-block-button__link:active, .wp-block-button.is-style-outline .wp-block-button__link:visited {
-  -webkit-box-shadow: none;
-          box-shadow: none;
-  -webkit-transform: none;
-          transform: none;
 }
 
 .wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color) {
