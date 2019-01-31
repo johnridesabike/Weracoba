@@ -407,7 +407,7 @@ body {
 }
 
 textarea {
-  font-family: Palatino, Athelas, Georgia, Times, "Times New Roman", serif;
+  font-family: Palatino, "Palatino Linotype", Athelas, Georgia, Times, "Times New Roman", serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -849,7 +849,7 @@ a:hover, a:active {
 }
 
 .site-title {
-  font-family: Baskerville, "Baskerville Old Face", Garamond, Palatino, Athelas, Georgia, Times, "Times New Roman", serif;
+  font-family: Baskerville, "Baskerville Old Face", Garamond, Palatino, "Palatino Linotype", Athelas, Georgia, Times, "Times New Roman", serif;
   font-size: 1.75em;
   margin: 0;
 }
@@ -1545,7 +1545,7 @@ a:hover, a:active {
 
 .rssSummary {
   padding: .5em 0;
-  font-family: Palatino, Athelas, Georgia, Times, "Times New Roman", serif;
+  font-family: Palatino, "Palatino Linotype", Athelas, Georgia, Times, "Times New Roman", serif;
 }
 
 /* Calendar widget */
@@ -2476,12 +2476,12 @@ div.wp-block-image {
 .excerpt-entry .entry-header h1, .excerpt-entry .entry-header h2,
 .single-post .entry-header h1,
 .single-post .entry-header h2 {
-  font-family: Palatino, Athelas, Georgia, Times, "Times New Roman", serif;
+  font-family: Palatino, "Palatino Linotype", Athelas, Georgia, Times, "Times New Roman", serif;
 }
 
 .excerpt-entry .entry-content,
 .single-post .entry-content {
-  font-family: Palatino, Athelas, Georgia, Times, "Times New Roman", serif;
+  font-family: Palatino, "Palatino Linotype", Athelas, Georgia, Times, "Times New Roman", serif;
 }
 
 .excerpt-entry .entry-content h1, .excerpt-entry .entry-content h2, .excerpt-entry .entry-content h3, .excerpt-entry .entry-content h4, .excerpt-entry .entry-content h5, .excerpt-entry .entry-content h6,
@@ -2491,7 +2491,7 @@ div.wp-block-image {
 .single-post .entry-content h4,
 .single-post .entry-content h5,
 .single-post .entry-content h6 {
-  font-family: Palatino, Athelas, Georgia, Times, "Times New Roman", serif;
+  font-family: Palatino, "Palatino Linotype", Athelas, Georgia, Times, "Times New Roman", serif;
 }
 
 /*
@@ -2872,7 +2872,7 @@ div.wp-block-image {
 ## Comments
 --------------------------------------------------------------*/
 .comment-content {
-  font-family: Palatino, Athelas, Georgia, Times, "Times New Roman", serif;
+  font-family: Palatino, "Palatino Linotype", Athelas, Georgia, Times, "Times New Roman", serif;
 }
 
 .comment-content a {
