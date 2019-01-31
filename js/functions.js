@@ -5,6 +5,7 @@
  * Make the header fixed when scrolling.
  * This doesn't work on IE older than 10... for now.
  */
+/*
 ( function() {
 	'use strict';
 	var lastScrollTop;
@@ -40,3 +41,4 @@
         lastScrollTop = newScrollTop;
     };
 }() );
+*/

@@ -117,6 +117,7 @@
  * Workarounds for fixed header
  * This stuff is all pretty hacky and I'm not sure how to make it more elegant.
  */
+ /*
 .main-navigation.toggled {
     height: calc( 100vh - 6.4em ); // 128px = size of header. Estimation, not accurate!
 	overflow: scroll;
@@ -125,7 +126,8 @@
 	height: calc( 100vh - 3.65em ); // 73px = size of header. Estimation, not accurate!
 }
 /* Offesets values from wp-includes/css/admin-bar.css */
-@media screen and ( max-width: 782px ) { /* admin-bar.css:970 */
+/*
+@media screen and ( max-width: 782px ) { /* admin-bar.css:970 *//*
 	.admin-bar {
 		.main-navigation.toggled {
 			height: calc( 100vh - 6.4em - 46px );
@@ -135,6 +137,7 @@
 		}
 	}
 }
+*/
 
 /*
  * Media queries
