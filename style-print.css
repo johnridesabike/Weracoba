@@ -13,7 +13,7 @@
     float: none;
   }
   body {
-    font: 13pt Times, "Times New Roman", Georgia, serif;
+    font: 13pt Palatino, Athelas, Georgia, Times, "Times New Roman", serif;
     line-height: 1.3;
     background: white !important;
     color: black !important;

@@ -17,7 +17,7 @@
             header = document.getElementById( 'global-header' ),
             page = document.getElementById( 'page' ),
             nav = document.getElementById( 'site-navigation' );
-        if ( 0 <= newScrollTop ) {
+        if ( 30 <= newScrollTop ) {
             header.classList.add( 'fixed-header' );
             page.classList.add( 'sticky-top' );
         } else {
