@@ -346,12 +346,13 @@ big {
 }
 
 .tags-links a,
+.tag-cloud-link,
 .tag-title {
   border-radius: 1em .3em .3em 1em;
 }
 
 .tag-cloud-link {
-  border-radius: .3em;
+  padding-left: .5em;
 }
 
 .tags-links a,
