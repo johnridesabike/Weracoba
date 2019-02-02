@@ -1,45 +1,44 @@
 {
-  "name": "weracoba",
-  "version": "1.0.0",
-  "description": "Weracoba WordPress theme",
-  "main": "index.js",
-  "devDependencies": {
-    "@wordpress/browserslist-config": "^2.2.2",
-    "autoprefixer": "^9.1.5",
-    "chokidar-cli": "^1.2.1",
-    "eslint": "^5.12.1",
-    "eslint-plugin-wordpress": "^0.1.0",
-    "node-sass": "^4.9.3",
-    "npm-run-all": "^4.1.5",
-    "postcss-cli": "^6.0.1",
-    "postcss-focus-within": "^3.0.0",
-    "stylelint-config-wordpress": "^13.1.0"
-  },
-  "eslintConfig": {
-    "extends": "wordpress"
-  },
-  "eslintStyle": {
-    "extends": "wordpress"
-  },
-  "browserslist": [
-    "extends @wordpress/browserslist-config"
-  ],
-  "scripts": {
-    "build:style": "node-sass style.scss style.css --output-style expanded && postcss -r style.css",
-    "build:style-editor": "node-sass style-editor.scss style-editor.css --output-style expanded && postcss -r style-editor.css",
-    "build:print": "node-sass style-print.scss print.css --output-style expanded && postcss -r style-print.css"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/johnridesabike/Weracoba.git"
-  },
-  "author": "John",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/johnridesabike/Weracoba/issues"
-  },
-  "homepage": "https://johnridesa.bike/tag/weracoba/",
-  "dependencies": {
-    "eslint-config-wordpress": "^2.0.0"
-  }
+	"name": "weracoba",
+	"version": "0.1.0",
+	"description": "Weracoba WordPress theme",
+	"homepage": "https://johnridesa.bike/tag/weracoba/",
+	"devDependencies": {
+		"@wordpress/browserslist-config": "^2.2.2",
+		"autoprefixer": "^9.1.5",
+		"chokidar-cli": "^1.2.1",
+		"eslint": "^5.12.1",
+		"eslint-plugin-wordpress": "^0.1.0",
+		"node-sass": "^4.9.3",
+		"npm-run-all": "^4.1.5",
+		"postcss-cli": "^6.1.1",
+		"postcss-focus-within": "^3.0.0",
+		"stylelint-config-wordpress": "^13.1.0",
+		"browserslist": "4.4.1"
+	},
+	"eslintConfig": {
+		"extends": "wordpress"
+	},
+	"eslintStyle": {
+		"extends": "wordpress"
+	},
+	"browserslist": [
+		"extends @wordpress/browserslist-config"
+	],
+	"scripts": {
+		"build:style": "node-sass style.scss style.css --source-map style.css.map --source-map-embed false --output-style expanded && postcss -r style.css",
+		"build:style-editor": "node-sass style-editor.scss style-editor.css --source-map style-editor.css.map --source-map-embed false  --output-style expanded && postcss -r style-editor.css",
+		"build:print": "node-sass style-print.scss style-print.css --source-map style-print.css.map --source-map-embed false  --output-style expanded && postcss -r style-print.css",
+		"build": "run-p \"build:*\"",
+		"watch": "chokidar \"**/*.scss\" -c \"npm run build\" --initial"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/johnridesabike/Weracoba.git"
+	},
+	"author": "John",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/johnridesabike/Weracoba/issues"
+	}
 }

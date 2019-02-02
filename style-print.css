@@ -61,8 +61,8 @@
   h5,
   h6 {
     color: black;
-    -webkit-column-break-after: avoid;
-            break-after: avoid;
+    page-break-after: avoid;
+    break-after: avoid;
   }
   a,
   a:visited,
@@ -145,8 +145,7 @@
   }
   .site-footer,
   .single .entry-footer {
-    -webkit-box-shadow: none;
-            box-shadow: none;
+    box-shadow: none;
     background: none;
     border-color: black;
   }
@@ -159,8 +158,8 @@
   .widget.widget_text,
   .widget.widget_custom_html {
     display: block;
-    -webkit-column-break-inside: avoid;
-            break-inside: avoid;
+    page-break-inside: avoid;
+    break-inside: avoid;
   }
 }
 /*# sourceMappingURL=style-print.css.map */
