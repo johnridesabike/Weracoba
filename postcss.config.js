@@ -8,6 +8,11 @@ module.exports = {
 
 module.exports = {
     plugins: [
-        postcssFocusWithin(/* pluginOptions */)
+		postcssFocusWithin(/* pluginOptions */)
+    ]
+};
+module.exports = {
+    plugins: [
+		require('autoprefixer')
     ]
 };
