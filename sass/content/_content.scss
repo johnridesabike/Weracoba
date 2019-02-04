@@ -4,8 +4,8 @@
 }
 
 %smallscreen-padding {
-	padding-left: .8rem; // 16px
-	padding-right: .8rem; // 16px
+	padding-left: 1rem; // 16px
+	padding-right: 1rem; // 16px
 	
 	@media screen and (min-width: $breakpoint-3) {
 		padding-left: 0;

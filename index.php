@@ -39,7 +39,7 @@ get_header();
 					);
 					?>
 				</div> <!-- .archive-widget-area -->
-				<h2><?php esc_html_e( 'Or browse the recent updates', 'weracoba' ); ?></h2>
+				<p class="has-large-font-size"><?php esc_html_e( 'Or browse the recent updates', 'weracoba' ); ?></p>
 				<?php
 			endif;
 			/* Start the Loop */

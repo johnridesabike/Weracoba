@@ -3,7 +3,7 @@
 	margin: 0;
     padding: 1em;
 	/* Make sure select elements fit in widgets. */
-	font-size: $font-size-sm;
+	//font-size: $font-size-sm;
 	line-height: calculate-line-height($font-size-sm, $size-widget);
 	width: 100%;
 
@@ -186,7 +186,8 @@ a.tag-cloud-link {
 
 .archive-view {
     .site-content .widget {
-        @include drop-shadow;
+		// test...
+        // @include drop-shadow;
         margin-bottom: 1em;
     }
 }

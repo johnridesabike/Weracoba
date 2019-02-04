@@ -23,7 +23,8 @@
 	padding-bottom: .8em; // matches %smallscreen-padding
 	margin-bottom: 1em;
 	@include full-bleed;
-	@include drop-shadow;
+	// test...
+	// @include drop-shadow;
 	.entry-header {
 		padding: 0; // cancel the padding from the main entry-headers
 	}
@@ -125,7 +126,7 @@
 @media screen and (min-width: $breakpoint-3) {
 	.excerpt-entry {
 		// we're keeping the padding on large screens
-		padding-left: .8rem; // matches smallscreen-padding
-		padding-right: .8rem; // matches smallscreen-padding
+		padding-left: 1rem; // matches smallscreen-padding
+		padding-right: 1rem; // matches smallscreen-padding
 	}
 }

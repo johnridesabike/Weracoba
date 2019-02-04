@@ -1,0 +1,17 @@
+.excerpt-entry {
+	@include max-content-width;
+	border-bottom: 4px solid $color-link;
+	margin-bottom: 2em;
+	padding-bottom: 2em;
+	.entry-header h2 {
+		border: none;
+		padding: 0;
+	}
+}
+
+.footer-widgets {
+	h2 {
+		border: none;
+		padding: 0;
+	}
+}

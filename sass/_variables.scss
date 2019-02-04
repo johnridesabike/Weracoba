@@ -4,10 +4,10 @@ $color-bg-body: white;
 $color-primary-hue: 185;
 $color-secondary-hue: 65;
 $color-bg-body-alt: hsl( $color-primary-hue, 15%, 90% ) ;
-$color-text-headers: hsl( $color-primary-hue, 95%, 15% );
+$color-text-headers: $color-text-main;//hsl( $color-primary-hue, 95%, 15% );
 $color-border: hsl( $color-secondary-hue, 12%, 80% );
-$color-bg-header: hsl( $color-secondary-hue, 25%, 95% );
-$color-bg-footer: $color-bg-header;
+$color-bg-header: $color-bg-body;
+$color-bg-footer: hsl( $color-secondary-hue, 25%, 95% );
 //$color-link: $color-tint;
 $color-link: hsl( $color-primary-hue, 95%, 25%);
 $color-link-visited: $color-link;
@@ -34,8 +34,8 @@ $glyph-arrow-next: "\276F";
 $glyph-arrow-down-right: "\21B3";
 
 $font-size-base: 20px;
+$font-size-base-mobile: 16px;
 // Update editor-font-sizes in functions.php when these change.
-$font-size-xxs:   1em / 1.5;   // 13.33
 $font-size-xs:    1em / 1.25;  // 16
 $font-size-sm:    1em / 1.125; // 17.78
 $font-size-md:    1em * 1;     // 20

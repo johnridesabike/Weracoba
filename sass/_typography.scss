@@ -3,6 +3,13 @@ html {
 	line-height: calculate-line-height($font-size-base, $size-content);
 }
 
+@media screen and (max-width: $breakpoint-1) {
+	html {
+		font-size: $font-size-base-mobile;
+		line-height: calculate-line-height($font-size-base-mobile, $breakpoint-1);
+	}
+}
+
 // body,
 // button,
 // input,
@@ -28,30 +35,37 @@ h1, h2, h3, h4, h5, h6 {
     font-family: $font-headers;
     color: $color-text-headers;
 	font-weight: 400;
+	margin-top: 1em;
+	margin-bottom: 1em;
 }
 
 h1 {
-	font-size: $font-size-xxxl;
+	font-size: $font-size-xl;
 	line-height: calculate-line-height( $font-size-xxxl, $size-content );
 	clear: both;
 }
 
 h2 {
-    font-size: $font-size-xl;
+	font-size: $font-size-lg;
 	line-height: calculate-line-height( $font-size-xl, $size-content);
 	clear: both;
+	border-top: 4px solid $color-link;
+	padding-top: .5em;
 }
 
 h3 {
-    font-size: $font-size-lg;
+    font-size: $font-size-md;
 	line-height: calculate-line-height( $font-size-lg, $size-content );
 	clear: both;
+	font-weight: 700;
+	text-transform: uppercase;
 }
 
 h4 {
     font-size: $font-size-md;
 	line-height: calculate-line-height( $font-size-md, $size-content );
 	font-weight: 700;
+	font-style: italic;
 }
 
 h5 {
@@ -108,9 +122,6 @@ big {
 	font-size: 125%;
 }
 
-.has-xxsmall-font-size {
-	font-size: $font-size-xxs;
-}
 .has-xsmall-font-size {
 	font-size: $font-size-xs;
 }

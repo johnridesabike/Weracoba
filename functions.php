@@ -132,11 +132,6 @@ if ( ! function_exists( 'weracoba_setup' ) ) :
 			'editor-font-sizes',
 			array(
 				array(
-					'name' => __( 'XX-Small', 'weracoba' ),
-					'size' => 13.33,
-					'slug' => 'xxsmall',
-				),
-				array(
 					'name' => __( 'X-Small', 'weracoba' ),
 					'size' => 16,
 					'slug' => 'xsmall',
@@ -257,6 +252,7 @@ function weracoba_scripts() {
 	wp_enqueue_style( 'weracoba-print-style', get_template_directory_uri() . '/style-print.css', array( 'weracoba-style' ), '20190204', 'print' );
 
 	/* 
+	* phpcs ignore
 	* Disabling the fixed-header function.
 	wp_enqueue_script( 'weracoba-functions', get_template_directory_uri() . '/js/functions.js', array(), '20181105', true );
 	*/

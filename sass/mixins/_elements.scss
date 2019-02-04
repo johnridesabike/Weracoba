@@ -29,6 +29,7 @@
 
 @mixin list-margins {
 	margin: 0 0 1.5em 0;
+	padding-left: 1.5em;
 }
 
 @mixin nested-list-margins {
@@ -66,7 +67,7 @@
     }
 }
 @mixin hr {
-	background-color: $color-bg-hr;
+	background-color: $color-link;
 	border: 0;
 	height: 2px;
 	margin-bottom: 1.5em;
