@@ -95,7 +95,7 @@
 		display: none;
 	}
 }
-@media screen and (max-width: $breakpoint-1) and (orientation: landscape) {
+@media screen and (max-width: $breakpoint-2) and (orientation: landscape) {
     /* When a small screen is oriented in landscape, hide the header unless the scrolling js overrides it */
     .fixed-header:not(.header-visible) {
         position: relative;

@@ -13,7 +13,7 @@
     float: none;
   }
   body {
-    font: 13pt Times, "Times New Roman", Georgia, serif;
+    font: 13pt Palatino, "Palatino Linotype", Athelas, Georgia, Times, "Times New Roman", serif;
     line-height: 1.3;
     background: white !important;
     color: black !important;
@@ -61,8 +61,8 @@
   h5,
   h6 {
     color: black;
-    -webkit-column-break-after: avoid;
-            break-after: avoid;
+    page-break-after: avoid;
+    break-after: avoid;
   }
   a,
   a:visited,
@@ -114,8 +114,10 @@
   .noprint {
     display: none;
   }
-  .wp-block-button a,
-  .continue-reading a {
+  .continue-reading a,
+  .wp-block-button .wp-block-button__link,
+  .wp-block-file .wp-block-file__button {
+    background: transparent !important;
     border-color: black !important;
   }
   .global-header,
@@ -133,15 +135,17 @@
     display: block !important;
     height: auto !important;
     min-height: inherit !important;
+    width: 100% !important;
+    max-width: 100% !important;
   }
   .single .featured-image img {
     position: static !important;
     left: auto;
+    width: 100% !important;
   }
   .site-footer,
   .single .entry-footer {
-    -webkit-box-shadow: none;
-            box-shadow: none;
+    box-shadow: none;
     background: none;
     border-color: black;
   }
@@ -154,8 +158,8 @@
   .widget.widget_text,
   .widget.widget_custom_html {
     display: block;
-    -webkit-column-break-inside: avoid;
-            break-inside: avoid;
+    page-break-inside: avoid;
+    break-inside: avoid;
   }
 }
 /*# sourceMappingURL=style-print.css.map */

@@ -39,11 +39,11 @@
 .widget_archive li {
 	color: #7D7D7D;
 }
-.widget_pages,
-.widget_nav_menu,
-.widget_categories,
-.widget_recent_entries {
-}
+// .widget_pages,
+// .widget_nav_menu,
+// .widget_categories,
+// .widget_recent_entries {
+// }
 /* Meta widget */
 .widget_meta li {
 	padding: 0;
@@ -139,11 +139,12 @@
 }
 // separate border radiuses
 .tags-links a,
+.tag-cloud-link,
 .tag-title {
 	border-radius: 1em .3em .3em 1em;
 }
 .tag-cloud-link {
-	border-radius: .3em;
+	padding-left: .5em;
 }
 .tags-links a,
 a.tag-cloud-link {
