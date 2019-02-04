@@ -5,19 +5,19 @@
 	"homepage": "https://johnridesa.bike/tag/weracoba/",
 	"devDependencies": {
 		"@wordpress/browserslist-config": "^2.2.2",
-		"autoprefixer": "^9.1.5",
+		"autoprefixer": "^9.4.7",
+		"browserslist": "4.4.1",
 		"chokidar-cli": "^1.2.1",
 		"eslint": "^5.12.1",
-		"stylelint-config-wordpress": "^13.1.0",
 		"eslint-config-wordpress": "^2.0.0",
 		"eslint-plugin-wordpress": "^0.1.0",
-		"stylelint": "^9.5.0",
-		"node-sass": "^4.9.3",
+		"node-sass": "^4.11.0",
 		"npm-run-all": "^4.1.5",
 		"postcss-cli": "^6.1.1",
 		"postcss-focus-within": "^3.0.0",
-		"browserslist": "4.4.1",
-		"rtlcss": "^2.4.0"
+		"rtlcss": "^2.4.0",
+		"stylelint": "^9.5.0",
+		"stylelint-config-wordpress": "^13.1.0"
 	},
 	"rtlcssConfig": {
 		"options": {

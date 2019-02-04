@@ -1,18 +1,13 @@
-var postcssFocusWithin = require('postcss-focus-within');
-
-module.exports = {
-    plugins: {
-        autoprefixer: {}
-    }
-};
+var postcssFocusWithin = require( 'postcss-focus-within' );
+var autoPrefixer = require( 'autoprefixer' );
 
 module.exports = {
     plugins: [
-		postcssFocusWithin(/* pluginOptions */)
-    ]
-};
-module.exports = {
-    plugins: [
-		require('autoprefixer')
+		postcssFocusWithin( /* pluginOptions */ ),
+		autoPrefixer(
+			{
+				grid: 'no-autoplace'
+			}
+		)
     ]
 };

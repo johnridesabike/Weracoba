@@ -2523,26 +2523,38 @@ div.wp-block-image {
   .single .has-post-thumbnail .entry-header-wrap {
     width: 45%;
     margin: 0;
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: auto;
     grid-template-columns: auto;
+    -ms-grid-rows: auto auto auto auto;
     grid-template-rows: auto auto auto auto;
   }
   .single .has-post-thumbnail .breadcrumbs-nav {
+    -ms-grid-row: 1;
     grid-row: 1 / 1;
+    -ms-grid-column: 1;
     grid-column: 1 / 1;
-    align-self: start;
+    -ms-grid-row-align: start;
+        align-self: start;
     margin: 0;
     padding: 0;
   }
   .single .has-post-thumbnail .entry-title {
+    -ms-grid-row: 2;
     grid-row: 2 / 2;
+    -ms-grid-column: 1;
     grid-column: 1 / 1;
-    align-self: end;
+    -ms-grid-row-align: end;
+        align-self: end;
   }
   .single .has-post-thumbnail .entry-meta {
+    -ms-grid-row: 3;
     grid-row: 3 / 3;
+    -ms-grid-column: 1;
     grid-column: 1 / 1;
-    align-self: start;
+    -ms-grid-row-align: start;
+        align-self: start;
   }
   .single .entry-title {
     margin: .5em 0;
@@ -2635,24 +2647,39 @@ div.wp-block-image {
   .excerpt-entry {
     margin-left: auto;
     margin-right: auto;
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: 33% auto;
     grid-template-columns: 33% auto;
+    -ms-grid-rows: auto;
     grid-template-rows: auto;
   }
   .excerpt-entry .entry-header {
     margin-bottom: 1rem;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
     grid-row: 1 / span 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
     grid-column: 1 / span 2;
   }
   .excerpt-entry .entry-header .cat-links {
     margin-bottom: .25em;
   }
   .excerpt-entry .featured-image {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
     grid-column: 1 / span 1;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
     grid-row: 2 / span 1;
   }
   .excerpt-entry .entry-content {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
     grid-column: 1 / span 2;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
     grid-row: 2 / span 1;
   }
   .excerpt-entry .entry-content p {
@@ -2660,11 +2687,17 @@ div.wp-block-image {
   }
   .excerpt-entry.has-post-thumbnail .entry-content {
     margin-left: 1em;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
     grid-column: 2 / span 1;
   }
   .excerpt-entry .entry-footer {
     margin-top: 1rem;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
     grid-column: 1 / span 2;
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
     grid-row: 3 / span 1;
     width: 100%;
     display: flex;
