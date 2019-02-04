@@ -6,7 +6,10 @@ module.exports = {
 		postcssFocusWithin( /* pluginOptions */ ),
 		autoPrefixer(
 			{
-				grid: 'no-autoplace'
+				grid: 'no-autoplace',
+				map: {
+					prev: true
+				}
 			}
 		)
     ]
