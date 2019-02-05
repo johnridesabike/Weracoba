@@ -1,5 +1,5 @@
 {
-	"name" : "johnridesabike/Weracoba",
+	"name" : "johnridesabike/weracoba",
 	"description": "The JohnRidesA.Bike WordPress theme.",
     "require-dev": {
         "phpcompatibility/php-compatibility": "*"
@@ -7,8 +7,7 @@
     "prefer-stable" : true,
     "require": {
         "squizlabs/php_codesniffer": "*",
-        "wptrt/wpthemereview": "^0.1.0",
         "dealerdirect/phpcodesniffer-composer-installer": "^0.5.0",
-        "wp-coding-standards/wpcs": "*"
+        "wp-coding-standards/wpcs": "^2.0.0"
     }
 }
