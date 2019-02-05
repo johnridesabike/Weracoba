@@ -19,7 +19,10 @@
     }
     &:not(.has-background) {
         background: $color-link;
-    }
+	}
+	&:hover {
+		text-decoration: none;
+	}
 }
 
 @mixin button-active {

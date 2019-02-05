@@ -21,44 +21,51 @@ textarea {
 }
 
 h1, .editor-post-title__block .editor-post-title__input,
-.wp-block-heading h1.editor-rich-text__tinymce, h2, .wp-block-heading h2.editor-rich-text__tinymce, h3, .wp-block-heading h3.editor-rich-text__tinymce, h4, .wp-block-heading h4.editor-rich-text__tinymce, h5, .wp-block-heading h5.editor-rich-text__tinymce, h6, .wp-block-heading h6.editor-rich-text__tinymce {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+.wp-block-heading h1.editor-rich-text__tinymce, h2, .wp-block-heading h2.editor-rich-text__tinymce, h3, .widget-area h2, .widget-area .wp-block-heading h2.editor-rich-text__tinymce, .wp-block-heading .widget-area h2.editor-rich-text__tinymce,
+.footer-widgets h2, .footer-widgets .wp-block-heading h2.editor-rich-text__tinymce, .wp-block-heading .footer-widgets h2.editor-rich-text__tinymce, .wp-block-heading h3.editor-rich-text__tinymce, h4, .wp-block-heading h4.editor-rich-text__tinymce, h5, .wp-block-heading h5.editor-rich-text__tinymce, h6, .wp-block-heading h6.editor-rich-text__tinymce {
   color: #19191A;
   font-weight: 400;
   margin-top: 1em;
   margin-bottom: 1em;
+  -webkit-hyphens: none;
+      -ms-hyphens: none;
+          hyphens: none;
 }
 
+/* Only use h1 for title */
 h1, .editor-post-title__block .editor-post-title__input,
 .wp-block-heading h1.editor-rich-text__tinymce {
   font-size: 1.5em;
-  line-height: 1.35918;
+  line-height: 1.3982;
   clear: both;
 }
 
+/* Use h2, h3, h4 in document bodies */
 h2, .wp-block-heading h2.editor-rich-text__tinymce {
   font-size: 1.25em;
-  line-height: 1.3982;
+  line-height: 1.43744;
   clear: both;
   border-top: 4px solid #03727c;
   padding-top: .5em;
 }
 
-h3, .wp-block-heading h3.editor-rich-text__tinymce {
+h3, .widget-area h2, .widget-area .wp-block-heading h2.editor-rich-text__tinymce, .wp-block-heading .widget-area h2.editor-rich-text__tinymce,
+.footer-widgets h2, .footer-widgets .wp-block-heading h2.editor-rich-text__tinymce, .wp-block-heading .footer-widgets h2.editor-rich-text__tinymce, .wp-block-heading h3.editor-rich-text__tinymce {
   font-size: 1em;
-  line-height: 1.43744;
+  line-height: 1.50967;
   clear: both;
   font-weight: 700;
   text-transform: uppercase;
 }
 
 h4, .wp-block-heading h4.editor-rich-text__tinymce {
-  font-size: 1em;
-  line-height: 1.50967;
+  font-size: 0.88889em;
+  line-height: 1.56297;
   font-weight: 700;
-  font-style: italic;
+  text-transform: uppercase;
 }
 
+/* Please don't use h5 or h6... why do we need them, anyway? */
 h5, .wp-block-heading h5.editor-rich-text__tinymce {
   font-size: 0.88889em;
   line-height: 1.56297;
@@ -157,10 +164,28 @@ big {
   color: #19191A;
 }
 
+.widget-area,
+.footer-widgets {
+  opacity: .75;
+}
+
+.widget-area h2, .widget-area .wp-block-heading h2.editor-rich-text__tinymce, .wp-block-heading .widget-area h2.editor-rich-text__tinymce,
+.footer-widgets h2,
+.footer-widgets .wp-block-heading h2.editor-rich-text__tinymce,
+.wp-block-heading .footer-widgets h2.editor-rich-text__tinymce {
+  border: none;
+}
+
 /* Accessibility */
-.widget p a,
-.entry-content a,
-.comment-content a {
+.widget p a:hover,
+.widget p a:active,
+.widget p a:focus,
+.entry-content a:hover,
+.entry-content a:active,
+.entry-content a:focus,
+.comment-content a:hover,
+.comment-content a:active,
+.comment-content a:focus {
   text-decoration: underline;
 }
 
@@ -376,18 +401,13 @@ a.tag-cloud-link:focus {
 
 /** Breadcrumbs **/
 .widget.breadcrumbs-nav {
-  margin: .2em 0 0 0;
-  margin-bottom: 1em;
   font-size: 0.8em;
   padding: 0;
+  opacity: .7;
 }
 
-@media screen and (min-width: 1200px) {
-  .widget.breadcrumbs-nav {
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-  }
+.widget.breadcrumbs-nav:hover {
+  opacity: 1;
 }
 
 /** Widget Area **/
@@ -669,6 +689,11 @@ div.wp-block-image, .wp-block[data-type="core/image"][data-align] {
   background: #03727c;
 }
 
+.wp-block-button .wp-block-button__link:hover,
+.wp-block-file .wp-block-file__button:hover {
+  text-decoration: none;
+}
+
 .wp-block-button:not(.is-style-outline):not(.is-style-squared) .wp-block-button__link {
   box-shadow: #19191A 0 1px 0 0;
 }
@@ -707,6 +732,10 @@ div.wp-block-image, .wp-block[data-type="core/image"][data-align] {
 
 .wp-block-file a.wp-block-file__button:hover:not(.has-background), .wp-block-file a.wp-block-file__button:focus:not(.has-background), .wp-block-file a.wp-block-file__button:visited:not(.has-background) {
   background: #03727c;
+}
+
+.wp-block-file a.wp-block-file__button:hover:hover, .wp-block-file a.wp-block-file__button:focus:hover, .wp-block-file a.wp-block-file__button:visited:hover {
+  text-decoration: none;
 }
 
 .wp-block-file a.wp-block-file__button:active {
@@ -882,7 +911,8 @@ body {
 }
 
 h1, .editor-post-title__block .editor-post-title__input,
-.wp-block-heading h1.editor-rich-text__tinymce, h2, .wp-block-heading h2.editor-rich-text__tinymce, h3, .wp-block-heading h3.editor-rich-text__tinymce, h4, .wp-block-heading h4.editor-rich-text__tinymce, h5, .wp-block-heading h5.editor-rich-text__tinymce, h6, .wp-block-heading h6.editor-rich-text__tinymce {
+.wp-block-heading h1.editor-rich-text__tinymce, h2, .wp-block-heading h2.editor-rich-text__tinymce, h3, .widget-area h2, .widget-area .wp-block-heading h2.editor-rich-text__tinymce, .wp-block-heading .widget-area h2.editor-rich-text__tinymce,
+.footer-widgets h2, .footer-widgets .wp-block-heading h2.editor-rich-text__tinymce, .wp-block-heading .footer-widgets h2.editor-rich-text__tinymce, .wp-block-heading h3.editor-rich-text__tinymce, h4, .wp-block-heading h4.editor-rich-text__tinymce, h5, .wp-block-heading h5.editor-rich-text__tinymce, h6, .wp-block-heading h6.editor-rich-text__tinymce {
   font-family: Palatino, "Palatino Linotype", Athelas, Georgia, Times, "Times New Roman", serif;
 }
 

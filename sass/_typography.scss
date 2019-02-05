@@ -32,22 +32,27 @@ textarea {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: $font-headers;
+    //font-family: $font-headers;
     color: $color-text-headers;
 	font-weight: 400;
 	margin-top: 1em;
 	margin-bottom: 1em;
+	hyphens: none;
 }
+
+/* Only use h1 for title */
 
 h1 {
 	font-size: $font-size-xl;
-	line-height: calculate-line-height( $font-size-xxxl, $size-content );
+	line-height: calculate-line-height( $font-size-xl, $size-content );
 	clear: both;
 }
 
+/* Use h2, h3, h4 in document bodies */
+
 h2 {
 	font-size: $font-size-lg;
-	line-height: calculate-line-height( $font-size-xl, $size-content);
+	line-height: calculate-line-height( $font-size-lg, $size-content);
 	clear: both;
 	border-top: 4px solid $color-link;
 	padding-top: .5em;
@@ -55,18 +60,20 @@ h2 {
 
 h3 {
     font-size: $font-size-md;
-	line-height: calculate-line-height( $font-size-lg, $size-content );
+	line-height: calculate-line-height( $font-size-md, $size-content );
 	clear: both;
 	font-weight: 700;
 	text-transform: uppercase;
 }
 
 h4 {
-    font-size: $font-size-md;
-	line-height: calculate-line-height( $font-size-md, $size-content );
+    font-size: $font-size-sm;
+	line-height: calculate-line-height( $font-size-sm, $size-content );
 	font-weight: 700;
-	font-style: italic;
+	text-transform: uppercase;
 }
+
+/* Please don't use h5 or h6... why do we need them, anyway? */
 
 h5 {
     font-size: $font-size-sm;
@@ -158,11 +165,22 @@ big {
 	color: $color-text-headers;
 }
 
+.widget-area,
+.footer-widgets {
+	opacity: .75;
+	h2 {
+		@extend h3;
+		border: none;
+	}
+}
+
 /* Accessibility */
 .widget p,
 .entry-content,
 .comment-content {
-    a {
+	a:hover,
+	a:active,
+	a:focus {
         text-decoration: underline;
     }
 }

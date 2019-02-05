@@ -26,7 +26,6 @@
 	</a>
 	<header id="masthead" <?php is_singular() ? post_class( 'site-header' ) : print( 'class="site-header"' ); ?>>
 		<div id="global-header" class="global-header">
-			<div class="site-header-wrapper">
 				<div class="mobile-header-wrapper">
 					<div class="site-branding">
 						<?php
@@ -71,17 +70,27 @@
 						</button>
 					</div>
 				</div><!-- .mobile-header-wrapper -->
-				<nav id="site-navigation" class="main-navigation">
+				<div class="header-nav-wrapper">
+					<nav id="site-navigation" class="main-navigation">
+						<?php
+						wp_nav_menu(
+							array(
+								'theme_location' => 'menu-1',
+								'menu_id'        => 'primary-menu',
+							)
+						);
+						?>
+					</nav><!-- #site-navigation -->
 					<?php
-					wp_nav_menu(
-						array(
-							'theme_location' => 'menu-1',
-							'menu_id'        => 'primary-menu',
-						)
-					);
+					if ( ! is_single() ) :
+						if ( is_active_sidebar( 'breadcrumbs-1' ) && ! is_front_page() ) :
+							dynamic_sidebar( 'breadcrumbs-1' );
+						else :
+							weracoba_category_list();
+						endif;
+					endif;
 					?>
-				</nav><!-- #site-navigation -->
-			</div><!-- .site-header-wrapper -->
+				</div><!-- .header-nav-wrapper -->
 		</div><!-- .global-header -->
 		<div class="entry-header">
 			<?php
@@ -96,5 +105,5 @@
 			get_template_part( 'template-parts/header', $weracoba_type );
 			?>
 		</div>
-	</header><!-- #masthead -->
+	</header><!-- #masthead .site-header -->
 	<div id="content" class="site-content">

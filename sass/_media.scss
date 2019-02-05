@@ -84,7 +84,8 @@ object {
 @supports (object-fit: cover) {
 	.single .featured-image {
 		margin-top: 0;
-		height: 430px;
+		// height: 430px;
+		height: 67vw; // aspect ratio kept intact for small screens
 		position: relative;
 		width: 100vw;
 		max-width: 100vw;
@@ -101,6 +102,12 @@ object {
 			text-align: right;
 			position: absolute;
 			bottom: 0;
+		}
+	}
+
+	@media screen and (min-width: $breakpoint-1) {
+		.single .featured-image {
+			height: 430px;
 		}
 	}
 }

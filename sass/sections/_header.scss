@@ -1,12 +1,13 @@
+.site-header {
+	@extend %smallscreen-padding;
+}
 .global-header {
     background: $color-bg-header;
-	border-bottom: 1px solid $color-border;
-    display: flex; // this fixes a weird bug
-    flex-flow: column; // this fixes a weird bug
-    box-shadow: 0 0 .5em rgba(0, 0, 0, 0.2);
-}
-.site-header-wrapper {
-    @extend %smallscreen-padding;
+    // display: flex; // this fixes a weird bug
+	// flex-flow: column; // this fixes a weird bug
+	// test...
+	//border-bottom: 1px solid $color-border;
+    // box-shadow: 0 0 .5em rgba(0, 0, 0, 0.2);
 }
 .mobile-header-wrapper {
 	display: flex;
@@ -14,25 +15,31 @@
 	justify-content: space-between;
 }
 .site-branding {
-    display: flex;
-    justify-content: flex-start;
-    flex-flow: row wrap;
-    align-content: center;
+    // display: flex;
+    // justify-content: flex-start;
+    // flex-flow: row wrap;
+    // align-content: center;
     align-items: center;
-	margin: .5em 0;
+	margin-top: 1em;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
 }
 .site-title {
     font-family: $font-site-title;
 	font-size: $font-size-xxl;
-    margin: 0;
+	margin: 0;
+	display: inline;
     a {
         color: $color-text-headers;
     }
 }
 .site-description {
+	display: inline;
     margin: 0 0 .5em 0;
-    flex: 2 100%;
+    // flex: 2 100%;
 	font-size: $font-size-xs;
+	opacity: .7;
 }
 /* Make sure logo link wraps around logo image. */
 .wp-custom-logo .site-title {
@@ -110,17 +117,17 @@
     }
     .global-header {
         margin-bottom: 0;
-        display: block; // this fixes a weird bug
+        // display: block; // this fixes a weird bug
     }
     .sticky-top {
         margin-top: 90px;
     }
-    .site-header-wrapper {
+    .site-header {
         @include max-site-width;
-        display: flex;
-        align-items: flex-end;
-        flex-flow: row;
-        justify-content: space-between;
+        // display: flex;
+        // align-items: flex-end;
+        // flex-flow: row;
+        // justify-content: space-between;
 	}
 	.mobile-header-wrapper {
 		display: block;
@@ -136,7 +143,7 @@
         text-align: left;
     }
     .site-branding {
-        margin-right: 2em;
+        // margin-right: 2em;
     }
     .main-navigation {
         display: block;
@@ -145,5 +152,9 @@
 @media screen and (min-width: $breakpoint-2) {
     .sticky-top {
         margin-top: 110px;
-    }
+	}
+	.header-nav-wrapper {
+		display: flex;
+		flex-flow: row-reverse nowrap;
+	}
 }

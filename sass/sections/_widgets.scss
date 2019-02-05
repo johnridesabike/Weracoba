@@ -157,11 +157,15 @@ a.tag-cloud-link {
 
 /** Breadcrumbs **/
 .widget.breadcrumbs-nav {
-    margin: .2em 0 0 0;
-    margin-bottom: 1em;
+    // margin: .2em 0 0 0;
+    // margin-bottom: 1em;
 	font-size: $font-size-xs;
 	padding: 0;
-	@include max-site-width;
+	//@include max-site-width;
+	opacity: .7;
+	&:hover {
+		opacity: 1;
+	}
 }
 
 /** Widget Area **/

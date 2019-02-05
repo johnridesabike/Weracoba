@@ -11,11 +11,7 @@
 <?php weracoba_post_thumbnail(); ?>
 <div class="entry-header-wrap">
 	<?php
-	if ( is_active_sidebar( 'breadcrumbs-1' ) ) :
-		dynamic_sidebar( 'breadcrumbs-1' );
-	else :
-		weracoba_category_list();
-	endif;
+	weracoba_category_list();
 	?>
 	<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	<div class="entry-meta">
