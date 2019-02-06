@@ -207,8 +207,8 @@
             justify-content: space-between;
         }
         .entry-header-wrap {
-			width: 45%;
-			margin: 0;
+			margin: 0 1em 0 0;
+			flex: 1 1 50%;
 			display: flex;
 			flex-flow: column;
 			justify-content: center;

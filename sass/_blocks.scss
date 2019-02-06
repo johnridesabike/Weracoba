@@ -53,11 +53,26 @@ figure.wp-block-image {
 	}
 }
 
-.wp-block-image figcaption {
-	font-size: $font-size-xs;
-	color: initial; // cancel default
-	opacity: .7;
-	font-family: $font-UI;
+.wp-block-image {
+	figcaption {
+		font-size: $font-size-xs;
+		color: initial; // cancel default
+		opacity: $opacity-aside;
+		font-family: $font-UI;
+	}
+
+	.aligncenter,
+	.alignleft,
+	.alignright,
+	&.is-resized {
+		// WP has these displayed as tables and table captions for some reason.
+		// It wouldn't matter except that when you lazy-load images it makes the layout go haywire while they load.
+		// I don't see the benefit?
+		display: block; // cancel display: table
+		> figcaption {
+			display: block; // cancel display: table-caption
+		}
+	}
 }
 
 div.wp-block-image {

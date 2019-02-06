@@ -414,8 +414,8 @@ textarea {
   font-family: Palatino, "Palatino Linotype", Athelas, Georgia, Times, "Times New Roman", serif;
 }
 
-h1, h2, h3, .widget-area h2,
-.footer-widgets h2, h4, .entry-header .cat-links, h5, h6 {
+h1, h2, h3, h4, .widget-area h2,
+.footer-widgets h2, .entry-header .cat-links, h5, h6 {
   color: #19191A;
   font-weight: 400;
   margin-top: 1em;
@@ -437,24 +437,27 @@ h2 {
   font-size: 1.25em;
   line-height: 1.43744;
   clear: both;
-  border-top: 4px solid #03727c;
+  border-top-width: 4px;
+  border-top-style: solid;
   padding-top: .5em;
 }
 
-h3, .widget-area h2,
-.footer-widgets h2 {
+h3 {
   font-size: 1em;
   line-height: 1.50967;
   clear: both;
   font-weight: 700;
   text-transform: uppercase;
+  letter-spacing: .06em;
 }
 
-h4, .entry-header .cat-links {
+h4, .widget-area h2,
+.footer-widgets h2, .entry-header .cat-links {
   font-size: 0.88889em;
   line-height: 1.56297;
   font-weight: 700;
   text-transform: uppercase;
+  letter-spacing: .06em;
 }
 
 /* Please don't use h5 or h6... why do we need them, anyway? */
@@ -556,14 +559,15 @@ big {
   color: #19191A;
 }
 
-.widget-area,
-.footer-widgets {
-  opacity: .75;
+.widget-area .widget,
+.footer-widgets .widget {
+  opacity: 0.8;
 }
 
 .widget-area h2,
 .footer-widgets h2 {
   border: none;
+  padding: 0;
 }
 
 /* Accessibility */
@@ -591,6 +595,10 @@ html {
 *:after {
   /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
   box-sizing: inherit;
+}
+
+* {
+  border-color: #03727c;
 }
 
 body {
@@ -842,16 +850,13 @@ a:hover, a:active {
 .site-branding {
   align-items: center;
   margin-top: 1em;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
 }
 
 .site-title {
   font-family: Baskerville, "Baskerville Old Face", Garamond, Palatino, "Palatino Linotype", Athelas, Georgia, Times, "Times New Roman", serif;
   font-size: 1.75em;
   margin: 0;
-  display: inline;
+  display: inline-block;
 }
 
 .site-title a {
@@ -859,10 +864,10 @@ a:hover, a:active {
 }
 
 .site-description {
-  display: inline;
+  display: inline-block;
   margin: 0 0 .5em 0;
   font-size: 0.8em;
-  opacity: .7;
+  opacity: 0.8;
 }
 
 /* Make sure logo link wraps around logo image. */
@@ -977,7 +982,7 @@ a:hover, a:active {
     font-size: 1.75em;
   }
   .site-description {
-    margin: 0;
+    margin: 0 0 0 1em;
   }
   .site-header {
     text-align: left;
@@ -1228,7 +1233,11 @@ a:hover, a:active {
 
 .pagination {
   text-align: center;
-  font-size: 1.3em;
+  font-size: 1.25em;
+  border-top-width: 4px;
+  border-top-style: solid;
+  padding-top: 1em;
+  margin-top: 2em;
 }
 
 .pagination .next {
@@ -1600,7 +1609,7 @@ a.tag-cloud-link:focus {
 .widget.breadcrumbs-nav {
   font-size: 0.8em;
   padding: 0;
-  opacity: .7;
+  opacity: 0.8;
 }
 
 .widget.breadcrumbs-nav:hover {
@@ -1695,6 +1704,7 @@ a.tag-cloud-link:focus {
   .widget-area .widget:nth-last-child(even):first-of-type {
     width: 100%;
     margin-right: 0;
+    opacity: 1;
   }
   .widget-area .widget:nth-last-child(even):first-of-type ~ .widget:nth-child(3n+3) {
     margin-right: 3.8%;
@@ -1732,6 +1742,7 @@ a.tag-cloud-link:focus {
   .footer-widgets .widget:nth-last-child(even):first-of-type {
     width: 100%;
     margin-right: 0;
+    opacity: 1;
   }
   .footer-widgets .widget:nth-last-child(even):first-of-type ~ .widget:nth-child(3n+3) {
     margin-right: 3.8%;
@@ -1778,29 +1789,19 @@ a.tag-cloud-link:focus {
 /*
  * Jetpack
  */
-.entry-footer div.sharedaddy h3.sd-title:before, .entry-footer div.sharedaddy .widget-area h2.sd-title:before, .widget-area .entry-footer div.sharedaddy h2.sd-title:before,
-.entry-footer div.sharedaddy .footer-widgets h2.sd-title:before, .footer-widgets .entry-footer div.sharedaddy h2.sd-title:before,
-.entry-footer #jp-relatedposts h3.jp-relatedposts-headline em:before,
-.entry-footer #jp-relatedposts .widget-area h2.jp-relatedposts-headline em:before,
-.widget-area .entry-footer #jp-relatedposts h2.jp-relatedposts-headline em:before,
-.entry-footer #jp-relatedposts .footer-widgets h2.jp-relatedposts-headline em:before,
-.footer-widgets .entry-footer #jp-relatedposts h2.jp-relatedposts-headline em:before {
+.entry-footer div.sharedaddy h3.sd-title:before,
+.entry-footer #jp-relatedposts h3.jp-relatedposts-headline em:before {
   content: none;
 }
 
-.entry-footer div.sharedaddy h3.sd-title, .entry-footer div.sharedaddy .widget-area h2.sd-title, .widget-area .entry-footer div.sharedaddy h2.sd-title,
-.entry-footer div.sharedaddy .footer-widgets h2.sd-title, .footer-widgets .entry-footer div.sharedaddy h2.sd-title,
+.entry-footer div.sharedaddy h3.sd-title,
 .entry-footer #jp-relatedposts h3.jp-relatedposts-headline,
-.entry-footer #jp-relatedposts .widget-area h2.jp-relatedposts-headline,
-.widget-area .entry-footer #jp-relatedposts h2.jp-relatedposts-headline,
-.entry-footer #jp-relatedposts .footer-widgets h2.jp-relatedposts-headline,
-.footer-widgets .entry-footer #jp-relatedposts h2.jp-relatedposts-headline,
 .entry-footer #jp-relatedposts h3.jp-relatedposts-headline em,
-.entry-footer #jp-relatedposts .widget-area h2.jp-relatedposts-headline em,
-.widget-area .entry-footer #jp-relatedposts h2.jp-relatedposts-headline em,
-.entry-footer #jp-relatedposts .footer-widgets h2.jp-relatedposts-headline em,
-.footer-widgets .entry-footer #jp-relatedposts h2.jp-relatedposts-headline em,
 .entry-footer #jp-relatedposts .jp-relatedposts-items-visual h4.jp-relatedposts-post-title,
+.entry-footer #jp-relatedposts .jp-relatedposts-items-visual .widget-area h2.jp-relatedposts-post-title,
+.widget-area .entry-footer #jp-relatedposts .jp-relatedposts-items-visual h2.jp-relatedposts-post-title,
+.entry-footer #jp-relatedposts .jp-relatedposts-items-visual .footer-widgets h2.jp-relatedposts-post-title,
+.footer-widgets .entry-footer #jp-relatedposts .jp-relatedposts-items-visual h2.jp-relatedposts-post-title,
 .entry-footer #jp-relatedposts .jp-relatedposts-items-visual .entry-header .jp-relatedposts-post-title.cat-links,
 .entry-header .entry-footer #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post-title.cat-links {
   font-size: 1em;
@@ -1809,12 +1810,7 @@ a.tag-cloud-link:focus {
   line-height: 1.2;
 }
 
-
-.entry-footer #jp-relatedposts h3.jp-relatedposts-headline,
-.entry-footer #jp-relatedposts .widget-area h2.jp-relatedposts-headline,
-.widget-area .entry-footer #jp-relatedposts h2.jp-relatedposts-headline,
-.entry-footer #jp-relatedposts .footer-widgets h2.jp-relatedposts-headline,
-.footer-widgets .entry-footer #jp-relatedposts h2.jp-relatedposts-headline {
+.entry-footer #jp-relatedposts h3.jp-relatedposts-headline {
   display: block;
   float: none;
   margin-bottom: 1em;
@@ -1935,8 +1931,20 @@ figure.wp-block-image.alignwide {
 .wp-block-image figcaption {
   font-size: 0.8em;
   color: initial;
-  opacity: .7;
+  opacity: 0.8;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+.wp-block-image .aligncenter,
+.wp-block-image .alignleft,
+.wp-block-image .alignright, .wp-block-image.is-resized {
+  display: block;
+}
+
+.wp-block-image .aligncenter > figcaption,
+.wp-block-image .alignleft > figcaption,
+.wp-block-image .alignright > figcaption, .wp-block-image.is-resized > figcaption {
+  display: block;
 }
 
 div.wp-block-image {
@@ -2297,13 +2305,13 @@ div.wp-block-image {
   overflow-x: hidden;
 }
 
-.site-header, .site-content, .excerpt-entry {
+.site-header, .site-content {
   padding-left: 1rem;
   padding-right: 1rem;
 }
 
 @media screen and (min-width: 1200px) {
-  .site-header, .site-content, .excerpt-entry {
+  .site-header, .site-content {
     padding-left: 0;
     padding-right: 0;
   }
@@ -2401,8 +2409,7 @@ div.wp-block-image {
   margin-right: -1rem;
 }
 
-.single .entry-footer h3, .single .entry-footer .widget-area h2, .widget-area .single .entry-footer h2,
-.single .entry-footer .footer-widgets h2, .footer-widgets .single .entry-footer h2 {
+.single .entry-footer h3 {
   margin: 0;
 }
 
@@ -2553,8 +2560,8 @@ div.wp-block-image {
 
 @media screen and (min-width: 1200px) {
   .single .has-post-thumbnail .entry-header-wrap {
-    width: 45%;
-    margin: 0;
+    margin: 0 1em 0 0;
+    flex: 1 1 50%;
     display: flex;
     flex-flow: column;
     justify-content: center;
@@ -2607,14 +2614,24 @@ div.wp-block-image {
 
 .excerpt-entry {
   position: relative;
-  padding-bottom: .8em;
-  margin-bottom: 1em;
-  /* full-bleed on small screens */
-  margin-left: -1rem;
-  margin-right: -1rem;
+  max-width: 680px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.excerpt-entry:not(:last-of-type) {
+  border-bottom-style: solid;
+  border-bottom-width: 4px;
+  margin-bottom: 2em;
+  padding-bottom: 2em;
 }
 
 .excerpt-entry .entry-header {
+  padding: 0;
+}
+
+.excerpt-entry .entry-header h2 {
+  border: none;
   padding: 0;
 }
 
@@ -3101,7 +3118,7 @@ object {
     /* cancel full-bleed on larger screens */
     margin-left: 0;
     margin-right: 0;
-    width: 50%;
+    flex: 1 1 50%;
   }
   .single .featured-image img {
     width: 100%;
@@ -3259,24 +3276,5 @@ object {
   vertical-align: middle;
   height: 1em;
   width: 1em;
-}
-
-.excerpt-entry {
-  max-width: 680px;
-  margin-right: auto;
-  margin-left: auto;
-  border-bottom: 4px solid #03727c;
-  margin-bottom: 2em;
-  padding-bottom: 2em;
-}
-
-.excerpt-entry .entry-header h2 {
-  border: none;
-  padding: 0;
-}
-
-.footer-widgets h2 {
-  border: none;
-  padding: 0;
 }
 /*# sourceMappingURL=style.css.map */

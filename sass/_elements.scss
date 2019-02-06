@@ -8,6 +8,10 @@ html {
 	box-sizing: inherit;
 }
 
+* {
+	border-color: $color-link;
+}
+
 body {
 	background: $color-bg-body; /* Fallback for when there is no custom background color defined. */
 }

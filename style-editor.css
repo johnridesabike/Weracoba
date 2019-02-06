@@ -21,8 +21,8 @@ textarea {
 }
 
 h1, .editor-post-title__block .editor-post-title__input,
-.wp-block-heading h1.editor-rich-text__tinymce, h2, .wp-block-heading h2.editor-rich-text__tinymce, h3, .widget-area h2, .widget-area .wp-block-heading h2.editor-rich-text__tinymce, .wp-block-heading .widget-area h2.editor-rich-text__tinymce,
-.footer-widgets h2, .footer-widgets .wp-block-heading h2.editor-rich-text__tinymce, .wp-block-heading .footer-widgets h2.editor-rich-text__tinymce, .wp-block-heading h3.editor-rich-text__tinymce, h4, .wp-block-heading h4.editor-rich-text__tinymce, h5, .wp-block-heading h5.editor-rich-text__tinymce, h6, .wp-block-heading h6.editor-rich-text__tinymce {
+.wp-block-heading h1.editor-rich-text__tinymce, h2, .wp-block-heading h2.editor-rich-text__tinymce, h3, .wp-block-heading h3.editor-rich-text__tinymce, h4, .widget-area h2, .widget-area .wp-block-heading h2.editor-rich-text__tinymce, .wp-block-heading .widget-area h2.editor-rich-text__tinymce,
+.footer-widgets h2, .footer-widgets .wp-block-heading h2.editor-rich-text__tinymce, .wp-block-heading .footer-widgets h2.editor-rich-text__tinymce, .wp-block-heading h4.editor-rich-text__tinymce, h5, .wp-block-heading h5.editor-rich-text__tinymce, h6, .wp-block-heading h6.editor-rich-text__tinymce {
   color: #19191A;
   font-weight: 400;
   margin-top: 1em;
@@ -45,24 +45,27 @@ h2, .wp-block-heading h2.editor-rich-text__tinymce {
   font-size: 1.25em;
   line-height: 1.43744;
   clear: both;
-  border-top: 4px solid #03727c;
+  border-top-width: 4px;
+  border-top-style: solid;
   padding-top: .5em;
 }
 
-h3, .widget-area h2, .widget-area .wp-block-heading h2.editor-rich-text__tinymce, .wp-block-heading .widget-area h2.editor-rich-text__tinymce,
-.footer-widgets h2, .footer-widgets .wp-block-heading h2.editor-rich-text__tinymce, .wp-block-heading .footer-widgets h2.editor-rich-text__tinymce, .wp-block-heading h3.editor-rich-text__tinymce {
+h3, .wp-block-heading h3.editor-rich-text__tinymce {
   font-size: 1em;
   line-height: 1.50967;
   clear: both;
   font-weight: 700;
   text-transform: uppercase;
+  letter-spacing: .06em;
 }
 
-h4, .wp-block-heading h4.editor-rich-text__tinymce {
+h4, .widget-area h2, .widget-area .wp-block-heading h2.editor-rich-text__tinymce, .wp-block-heading .widget-area h2.editor-rich-text__tinymce,
+.footer-widgets h2, .footer-widgets .wp-block-heading h2.editor-rich-text__tinymce, .wp-block-heading .footer-widgets h2.editor-rich-text__tinymce, .wp-block-heading h4.editor-rich-text__tinymce {
   font-size: 0.88889em;
   line-height: 1.56297;
   font-weight: 700;
   text-transform: uppercase;
+  letter-spacing: .06em;
 }
 
 /* Please don't use h5 or h6... why do we need them, anyway? */
@@ -164,9 +167,9 @@ big {
   color: #19191A;
 }
 
-.widget-area,
-.footer-widgets {
-  opacity: .75;
+.widget-area .widget,
+.footer-widgets .widget {
+  opacity: 0.8;
 }
 
 .widget-area h2, .widget-area .wp-block-heading h2.editor-rich-text__tinymce, .wp-block-heading .widget-area h2.editor-rich-text__tinymce,
@@ -174,6 +177,7 @@ big {
 .footer-widgets .wp-block-heading h2.editor-rich-text__tinymce,
 .wp-block-heading .footer-widgets h2.editor-rich-text__tinymce {
   border: none;
+  padding: 0;
 }
 
 /* Accessibility */
@@ -403,7 +407,7 @@ a.tag-cloud-link:focus {
 .widget.breadcrumbs-nav {
   font-size: 0.8em;
   padding: 0;
-  opacity: .7;
+  opacity: 0.8;
 }
 
 .widget.breadcrumbs-nav:hover {
@@ -498,6 +502,7 @@ a.tag-cloud-link:focus {
   .widget-area .widget:nth-last-child(even):first-of-type {
     width: 100%;
     margin-right: 0;
+    opacity: 1;
   }
   .widget-area .widget:nth-last-child(even):first-of-type ~ .widget:nth-child(3n+3) {
     margin-right: 3.8%;
@@ -535,6 +540,7 @@ a.tag-cloud-link:focus {
   .footer-widgets .widget:nth-last-child(even):first-of-type {
     width: 100%;
     margin-right: 0;
+    opacity: 1;
   }
   .footer-widgets .widget:nth-last-child(even):first-of-type ~ .widget:nth-child(3n+3) {
     margin-right: 3.8%;
@@ -629,8 +635,20 @@ figure.wp-block-image.alignwide, .alignwide.wp-block[data-type="core/image"] {
 .wp-block-image figcaption {
   font-size: 0.8em;
   color: initial;
-  opacity: .7;
+  opacity: 0.8;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+.wp-block-image .aligncenter,
+.wp-block-image .alignleft,
+.wp-block-image .alignright, .wp-block-image.is-resized {
+  display: block;
+}
+
+.wp-block-image .aligncenter > figcaption,
+.wp-block-image .alignleft > figcaption,
+.wp-block-image .alignright > figcaption, .wp-block-image.is-resized > figcaption {
+  display: block;
 }
 
 div.wp-block-image, .wp-block[data-type="core/image"][data-align] {
@@ -911,8 +929,8 @@ body {
 }
 
 h1, .editor-post-title__block .editor-post-title__input,
-.wp-block-heading h1.editor-rich-text__tinymce, h2, .wp-block-heading h2.editor-rich-text__tinymce, h3, .widget-area h2, .widget-area .wp-block-heading h2.editor-rich-text__tinymce, .wp-block-heading .widget-area h2.editor-rich-text__tinymce,
-.footer-widgets h2, .footer-widgets .wp-block-heading h2.editor-rich-text__tinymce, .wp-block-heading .footer-widgets h2.editor-rich-text__tinymce, .wp-block-heading h3.editor-rich-text__tinymce, h4, .wp-block-heading h4.editor-rich-text__tinymce, h5, .wp-block-heading h5.editor-rich-text__tinymce, h6, .wp-block-heading h6.editor-rich-text__tinymce {
+.wp-block-heading h1.editor-rich-text__tinymce, h2, .wp-block-heading h2.editor-rich-text__tinymce, h3, .wp-block-heading h3.editor-rich-text__tinymce, h4, .widget-area h2, .widget-area .wp-block-heading h2.editor-rich-text__tinymce, .wp-block-heading .widget-area h2.editor-rich-text__tinymce,
+.footer-widgets h2, .footer-widgets .wp-block-heading h2.editor-rich-text__tinymce, .wp-block-heading .footer-widgets h2.editor-rich-text__tinymce, .wp-block-heading h4.editor-rich-text__tinymce, h5, .wp-block-heading h5.editor-rich-text__tinymce, h6, .wp-block-heading h6.editor-rich-text__tinymce {
   font-family: Palatino, "Palatino Linotype", Athelas, Georgia, Times, "Times New Roman", serif;
 }
 

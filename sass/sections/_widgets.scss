@@ -162,7 +162,7 @@ a.tag-cloud-link {
 	font-size: $font-size-xs;
 	padding: 0;
 	//@include max-site-width;
-	opacity: .7;
+	opacity: $opacity-aside;
 	&:hover {
 		opacity: 1;
 	}

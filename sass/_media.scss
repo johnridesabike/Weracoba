@@ -116,7 +116,7 @@ object {
 @media screen and (min-width: $breakpoint-3) {
     .single .featured-image {
 		@include full-bleed-cancel;
-        width: 50%;
+        flex: 1 1 50%;
 		img {
 			width: 100%;
 		}

@@ -62,7 +62,7 @@ add_filter( 'get_the_archive_title', 'weracoba_get_the_archive_title' );
 
 /**
  * Add an icon to each tag.
- * 
+ *
  * @param string $tag_list The HTML with tag links.
  */
 function weracoba_the_tags( $tag_list ) {

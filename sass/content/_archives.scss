@@ -19,14 +19,19 @@
 
 .excerpt-entry {
 	position: relative;
-	@extend %smallscreen-padding;
-	padding-bottom: .8em; // matches %smallscreen-padding
-	margin-bottom: 1em;
-	@include full-bleed;
-	// test...
-	// @include drop-shadow;
+	@include max-content-width;
+	&:not(:last-of-type) {
+		border-bottom-style: solid;
+		border-bottom-width: 4px;
+		margin-bottom: 2em;
+		padding-bottom: 2em;
+	}
 	.entry-header {
 		padding: 0; // cancel the padding from the main entry-headers
+		h2 {
+			border: none;
+			padding: 0;
+		}
 	}
     .entry-title {
         text-align: left; // to cancel the center alignment on pages

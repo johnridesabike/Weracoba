@@ -54,7 +54,8 @@ h2 {
 	font-size: $font-size-lg;
 	line-height: calculate-line-height( $font-size-lg, $size-content);
 	clear: both;
-	border-top: 4px solid $color-link;
+	border-top-width: 4px;
+	border-top-style: solid;
 	padding-top: .5em;
 }
 
@@ -64,6 +65,7 @@ h3 {
 	clear: both;
 	font-weight: 700;
 	text-transform: uppercase;
+	@include allcaps-letterspacing;
 }
 
 h4 {
@@ -71,6 +73,7 @@ h4 {
 	line-height: calculate-line-height( $font-size-sm, $size-content );
 	font-weight: 700;
 	text-transform: uppercase;
+	@include allcaps-letterspacing
 }
 
 /* Please don't use h5 or h6... why do we need them, anyway? */
@@ -167,10 +170,13 @@ big {
 
 .widget-area,
 .footer-widgets {
-	opacity: .75;
+	.widget {
+		opacity: $opacity-aside;
+	}
 	h2 {
-		@extend h3;
+		@extend h4;
 		border: none;
+		padding: 0;
 	}
 }
 

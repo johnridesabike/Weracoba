@@ -48,7 +48,6 @@ if ( ! function_exists( 'weracoba_setup' ) ) :
 		 */
 		add_theme_support( 'post-thumbnails' );
 		set_post_thumbnail_size( 1200, 800, true );
-		
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
@@ -125,7 +124,7 @@ if ( ! function_exists( 'weracoba_setup' ) ) :
 
 		/**
 		 * Gutenberg fonts. See _variables.scss
-		 * 
+		 *
 		 * @link https://wordpress.org/gutenberg/handbook/designers-developers/developers/themes/theme-support/#block-font-sizes
 		 */
 		add_theme_support(
@@ -248,10 +247,10 @@ add_action( 'widgets_init', 'weracoba_widgets_init' );
  * Enqueue scripts and styles.
  */
 function weracoba_scripts() {
-	wp_enqueue_style( 'weracoba-style', get_stylesheet_uri(), array(), '20190204', 'all' );
-	wp_enqueue_style( 'weracoba-print-style', get_template_directory_uri() . '/style-print.css', array( 'weracoba-style' ), '20190204', 'print' );
+	wp_enqueue_style( 'weracoba-style', get_stylesheet_uri(), array(), '20190205', 'all' );
+	wp_enqueue_style( 'weracoba-print-style', get_template_directory_uri() . '/style-print.css', array( 'weracoba-style' ), '20190205', 'print' );
 
-	/* 
+	/*
 	* phpcs ignore
 	* Disabling the fixed-header function.
 	wp_enqueue_script( 'weracoba-functions', get_template_directory_uri() . '/js/functions.js', array(), '20181105', true );

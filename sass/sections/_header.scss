@@ -21,25 +21,21 @@
     // align-content: center;
     align-items: center;
 	margin-top: 1em;
-	display: flex;
-	flex-flow: row wrap;
-	justify-content: space-between;
 }
 .site-title {
     font-family: $font-site-title;
 	font-size: $font-size-xxl;
 	margin: 0;
-	display: inline;
+	display: inline-block;
     a {
         color: $color-text-headers;
     }
 }
 .site-description {
-	display: inline;
+	display: inline-block;
     margin: 0 0 .5em 0;
-    // flex: 2 100%;
 	font-size: $font-size-xs;
-	opacity: .7;
+	opacity: $opacity-aside;
 }
 /* Make sure logo link wraps around logo image. */
 .wp-custom-logo .site-title {
@@ -137,7 +133,7 @@
 		font-size: $font-size-xxl;
 	}
     .site-description {
-        margin: 0;
+        margin: 0 0 0 1em;
     }
     .site-header {
         text-align: left;
