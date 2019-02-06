@@ -1791,12 +1791,7 @@ a.tag-cloud-link:focus {
 .entry-footer #jp-relatedposts h3.jp-relatedposts-headline {
   display: block;
   float: none;
-  margin-right: auto;
-  margin-left: auto;
-  width: intrinsic;
-  padding: .5em 2em 0 2em;
-  border-top-width: 2px;
-  border-top-style: solid;
+  text-align: center;
 }
 
 .entry-footer #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-context,
@@ -2605,19 +2600,26 @@ div.wp-block-image {
 }
 
 .excerpt-entry:not(:last-of-type) {
-  border-bottom-style: solid;
-  border-bottom-width: 4px;
   margin-bottom: 2em;
-  padding-bottom: 2em;
 }
 
 .excerpt-entry .entry-header {
   padding: 0;
 }
 
-.excerpt-entry .entry-header h2 {
-  border: none;
-  padding: 0;
+.excerpt-entry .cat-links {
+  display: inline-block;
+  border-top-left-radius: 0.15em;
+  border-top-right-radius: 0.15em;
+  background: #03727c;
+  color: white;
+  padding: 0 .5em;
+  margin: 0;
+  align-self: flex-start;
+}
+
+.excerpt-entry .cat-links a {
+  color: white;
 }
 
 .excerpt-entry .entry-title {
@@ -2663,9 +2665,6 @@ div.wp-block-image {
     -ms-grid-column: 1;
     -ms-grid-column-span: 2;
     grid-column: 1 / span 2;
-  }
-  .excerpt-entry .entry-header .cat-links {
-    margin-bottom: .25em;
   }
   .excerpt-entry .featured-image {
     -ms-grid-column: 1;
