@@ -2622,6 +2622,8 @@ div.wp-block-image {
   color: white;
   padding: 0 .5em;
   margin: 0;
+  font-weight: 400;
+  border-bottom-style: solid;
 }
 
 .excerpt-entry .cat-links a {
@@ -2634,6 +2636,7 @@ div.wp-block-image {
 
 .excerpt-entry .entry-title {
   text-align: left;
+  margin-bottom: .5em;
 }
 
 .excerpt-entry .entry-meta {
@@ -2655,6 +2658,10 @@ div.wp-block-image {
   display: block;
 }
 
+.excerpt-entry .entry-content p {
+  margin: 0;
+}
+
 /** Archive Media Queries **/
 @media screen and (min-width: 600px) {
   .excerpt-entry {
@@ -2668,7 +2675,6 @@ div.wp-block-image {
     grid-template-rows: auto;
   }
   .excerpt-entry .entry-header {
-    margin-bottom: 1rem;
     -ms-grid-row: 1;
     -ms-grid-row-span: 1;
     grid-row: 1 / span 1;

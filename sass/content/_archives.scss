@@ -33,9 +33,12 @@
 	}
 	.cat-links {
 		@include tab-head;
+		font-weight: 400;
+		border-bottom-style: solid;
 	}
     .entry-title {
-        text-align: left; // to cancel the center alignment on pages
+		text-align: left; // to cancel the center alignment on pages
+		margin-bottom: .5em;
 	}
     .entry-meta {
 		@include entry-meta-inline;
@@ -48,7 +51,10 @@
 		.tags-links {
 			display: block;
 		}
-    }
+	}
+	.entry-content p {
+		margin: 0;
+	}
 }
 
 /** Archive Media Queries **/
@@ -72,7 +78,7 @@
 		// 		"footer footer";
 		// }
 		.entry-header {
-			margin-bottom: 1rem;
+			// margin-bottom: 1rem;
 			// grid-area: header;
 			grid-row: 1 / span 1;
 			grid-column: 1 / span 2;

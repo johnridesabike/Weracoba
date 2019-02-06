@@ -9,7 +9,6 @@
 
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'excerpt-entry' ); ?>>
-	<?php weracoba_post_thumbnail(); ?>
 	<header class="entry-header">
 		<?php weracoba_category_list(); ?>
 		<?php
@@ -20,6 +19,7 @@
 		endif;
 		?>
 	</header><!-- .entry-header -->
+	<?php weracoba_post_thumbnail(); ?>
 	<div class="entry-content">
 		<?php the_excerpt(); ?>
 	</div><!-- .entry-content -->
