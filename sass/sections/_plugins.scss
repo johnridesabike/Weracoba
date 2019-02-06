@@ -8,22 +8,24 @@
 	}
 	div.sharedaddy h3.sd-title,
 	#jp-relatedposts h3.jp-relatedposts-headline,
-	#jp-relatedposts h3.jp-relatedposts-headline em,
 	#jp-relatedposts .jp-relatedposts-items-visual h4.jp-relatedposts-post-title {
-		font-size: $font-size-md;
-		font-weight: 400;
-		margin: 0;
-		line-height: 1.2;
+		@extend h5;
+		margin-top: 0;
 	}
 	#jp-relatedposts h3.jp-relatedposts-headline {
 		display: block;
 		float: none;
-		margin-bottom: 1em;
-		text-align: center;
+		margin-right: auto;
+		margin-left: auto;
+		width: intrinsic;
+		padding: .5em 2em 0 2em;
+		border-top-width: 2px;
+		border-top-style: solid;
 	}
 	#jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-context, 
-	#jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-date {
-		opacity: 1;
+	#jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-date,
+	#jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post {
+		opacity: $opacity-aside;
 	}
 	#jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post-nothumbs p.jp-relatedposts-post-excerpt {
 		margin-bottom: .5em;

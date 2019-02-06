@@ -415,7 +415,10 @@ textarea {
 }
 
 h1, h2, h3, h4, .widget-area h2,
-.footer-widgets h2, .entry-header .cat-links, h5, h6 {
+.footer-widgets h2, .entry-header .cat-links, h5, .entry-footer div.sharedaddy h3.sd-title,
+.entry-footer #jp-relatedposts h3.jp-relatedposts-headline,
+.entry-footer #jp-relatedposts .jp-relatedposts-items-visual h4.jp-relatedposts-post-title, .entry-footer #jp-relatedposts .jp-relatedposts-items-visual .widget-area h2.jp-relatedposts-post-title, .widget-area .entry-footer #jp-relatedposts .jp-relatedposts-items-visual h2.jp-relatedposts-post-title,
+.entry-footer #jp-relatedposts .jp-relatedposts-items-visual .footer-widgets h2.jp-relatedposts-post-title, .footer-widgets .entry-footer #jp-relatedposts .jp-relatedposts-items-visual h2.jp-relatedposts-post-title, .entry-footer #jp-relatedposts .jp-relatedposts-items-visual .entry-header .jp-relatedposts-post-title.cat-links, .entry-header .entry-footer #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post-title.cat-links, h6 {
   color: #19191A;
   font-weight: 400;
   margin-top: 1em;
@@ -461,7 +464,10 @@ h4, .widget-area h2,
 }
 
 /* Please don't use h5 or h6... why do we need them, anyway? */
-h5 {
+h5, .entry-footer div.sharedaddy h3.sd-title,
+.entry-footer #jp-relatedposts h3.jp-relatedposts-headline,
+.entry-footer #jp-relatedposts .jp-relatedposts-items-visual h4.jp-relatedposts-post-title, .entry-footer #jp-relatedposts .jp-relatedposts-items-visual .widget-area h2.jp-relatedposts-post-title, .widget-area .entry-footer #jp-relatedposts .jp-relatedposts-items-visual h2.jp-relatedposts-post-title,
+.entry-footer #jp-relatedposts .jp-relatedposts-items-visual .footer-widgets h2.jp-relatedposts-post-title, .footer-widgets .entry-footer #jp-relatedposts .jp-relatedposts-items-visual h2.jp-relatedposts-post-title, .entry-footer #jp-relatedposts .jp-relatedposts-items-visual .entry-header .jp-relatedposts-post-title.cat-links, .entry-header .entry-footer #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post-title.cat-links {
   font-size: 0.88889em;
   line-height: 1.56297;
   font-weight: 700;
@@ -836,22 +842,28 @@ a:hover, a:active {
 --------------------------------------------------------------*/
 .global-header {
   background: white;
-}
-
-.mobile-header-wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-flow: row wrap;
 }
 
-.site-branding {
-  align-items: center;
-  margin: 1em 0 .5em 0;
+.global-header .site-branding {
+  flex: 1 1 0;
+}
+
+.global-header .menu-button {
+  flex: 0 0 auto;
+}
+
+.global-header .main-navigation {
+  flex: 1 0 100%;
 }
 
 .site-title {
   font-family: Baskerville, "Baskerville Old Face", Garamond, Palatino, "Palatino Linotype", Athelas, Georgia, Times, "Times New Roman", serif;
   font-size: 1.75em;
+  line-height: 1.36683;
   margin: 0;
   display: inline-block;
 }
@@ -861,7 +873,6 @@ a:hover, a:active {
 }
 
 .site-description {
-  display: inline-block;
   margin: 0 0 .5em 0;
   font-size: 0.8em;
   font-family: Palatino, "Palatino Linotype", Athelas, Georgia, Times, "Times New Roman", serif;
@@ -957,7 +968,13 @@ a:hover, a:active {
     text-align: left;
   }
   .global-header {
-    margin-bottom: 0;
+    margin: 1em 0 .5em 0;
+    flex-flow: row nowrap;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+  .global-header .main-navigation {
+    flex: 0 1 auto;
   }
   .sticky-top {
     margin-top: 90px;
@@ -973,26 +990,18 @@ a:hover, a:active {
 }
 
 @media screen and (min-width: 600px) {
-  .mobile-header-wrapper {
-    display: block;
-  }
   .site-title {
     margin: 0;
     font-size: 1.75em;
   }
-  .site-description {
-    margin: 0 0 0 1em;
-  }
   .site-header {
     text-align: left;
   }
+  .site-branding {
+    margin: 0;
+  }
   .main-navigation {
     display: block;
-  }
-  .header-nav-wrapper {
-    display: flex;
-    flex-flow: row-reverse nowrap;
-    align-items: center;
   }
 }
 
@@ -1769,7 +1778,6 @@ a.tag-cloud-link:focus {
 
 .entry-footer div.sharedaddy h3.sd-title,
 .entry-footer #jp-relatedposts h3.jp-relatedposts-headline,
-.entry-footer #jp-relatedposts h3.jp-relatedposts-headline em,
 .entry-footer #jp-relatedposts .jp-relatedposts-items-visual h4.jp-relatedposts-post-title,
 .entry-footer #jp-relatedposts .jp-relatedposts-items-visual .widget-area h2.jp-relatedposts-post-title,
 .widget-area .entry-footer #jp-relatedposts .jp-relatedposts-items-visual h2.jp-relatedposts-post-title,
@@ -1777,22 +1785,24 @@ a.tag-cloud-link:focus {
 .footer-widgets .entry-footer #jp-relatedposts .jp-relatedposts-items-visual h2.jp-relatedposts-post-title,
 .entry-footer #jp-relatedposts .jp-relatedposts-items-visual .entry-header .jp-relatedposts-post-title.cat-links,
 .entry-header .entry-footer #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post-title.cat-links {
-  font-size: 1em;
-  font-weight: 400;
-  margin: 0;
-  line-height: 1.2;
+  margin-top: 0;
 }
 
 .entry-footer #jp-relatedposts h3.jp-relatedposts-headline {
   display: block;
   float: none;
-  margin-bottom: 1em;
-  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+  width: intrinsic;
+  padding: .5em 2em 0 2em;
+  border-top-width: 2px;
+  border-top-style: solid;
 }
 
 .entry-footer #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-context,
-.entry-footer #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-date {
-  opacity: 1;
+.entry-footer #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-date,
+.entry-footer #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post {
+  opacity: 0.8;
 }
 
 .entry-footer #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post-nothumbs p.jp-relatedposts-post-excerpt {
@@ -2181,6 +2191,10 @@ div.wp-block-image {
   color: #19191A;
   font-size: 20px;
   letter-spacing: 2em;
+}
+
+.wp-block-column {
+  margin-bottom: 0;
 }
 
 @media (min-width: 600px) {

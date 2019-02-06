@@ -193,7 +193,7 @@ div.wp-block-image {
 /**
  * Formatting
  */
- .wp-block-separator {
+.wp-block-separator {
 	@include hr;
 	&:not(.is-style-wide):not(.is-style-dots) {
 		max-width: 5em !important;
@@ -208,7 +208,10 @@ div.wp-block-image {
 			letter-spacing: 2em;
 		}
 	}
- }
+}
+.wp-block-column {
+	margin-bottom: 0;
+}
 // // replace default css
 // @media (min-width:600px) {
 //     .wp-block-column {

@@ -3,23 +3,24 @@
 }
 .global-header {
     background: $color-bg-header;
-}
-.mobile-header-wrapper {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-}
-.site-branding {
-    // display: flex;
-    // justify-content: flex-start;
-    // flex-flow: row wrap;
-    // align-content: center;
-    align-items: center;
-	margin: 1em 0 .5em 0;
+	flex-flow: row wrap;
+	.site-branding {
+		flex: 1 1 0;
+	}
+	.menu-button {
+		flex: 0 0 auto;
+	}
+	.main-navigation {
+		flex: 1 0 100%;
+	}
 }
 .site-title {
     font-family: $font-site-title;
 	font-size: $font-size-xxl;
+	line-height: calculate-line-height( $font-size-xxl, $breakpoint-1 );
 	margin: 0;
 	display: inline-block;
     a {
@@ -27,7 +28,6 @@
     }
 }
 .site-description {
-	display: inline-block;
     margin: 0 0 .5em 0;
 	font-size: $font-size-xs;
 	font-family: $font-reading;
@@ -109,8 +109,13 @@
         text-align: left;
     }
     .global-header {
-        margin-bottom: 0;
-        // display: block; // this fixes a weird bug
+		margin: 1em 0 .5em 0;
+		flex-flow: row nowrap;
+		align-items: flex-end;
+		justify-content: space-between;
+		.main-navigation {
+			flex: 0 1 auto;
+		}
     }
     .sticky-top {
         margin-top: 90px;
@@ -122,30 +127,19 @@
         // flex-flow: row;
         // justify-content: space-between;
 	}
-	.mobile-header-wrapper {
-		display: block;
-	}
     .site-title {
 		margin: 0;
 		font-size: $font-size-xxl;
 	}
-    .site-description {
-        margin: 0 0 0 1em;
-    }
     .site-header {
         text-align: left;
     }
     .site-branding {
-        // margin-right: 2em;
+        margin: 0;
     }
     .main-navigation {
         display: block;
     }
-	.header-nav-wrapper {
-		display: flex;
-		flex-flow: row-reverse nowrap;
-		align-items: center;
-	}
 }
 @media screen and (min-width: $breakpoint-2) {
     .sticky-top {

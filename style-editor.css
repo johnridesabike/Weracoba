@@ -887,6 +887,10 @@ div.wp-block-image, .wp-block[data-type="core/image"][data-align] {
   letter-spacing: 2em;
 }
 
+.wp-block-column {
+  margin-bottom: 0;
+}
+
 @media (min-width: 600px) {
   .wp-block-columns {
     flex-wrap: nowrap;
