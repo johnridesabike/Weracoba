@@ -14,6 +14,11 @@
         display: block;
 		@include button;
 		border-radius: $border-radius-button-square;
+		&:hover,
+		&:focus,
+		&:active {
+			background: $color-link-hover;
+		}
     }
 }
 
@@ -132,7 +137,7 @@
 @media screen and (min-width: $breakpoint-3) {
 	.excerpt-entry {
 		// we're keeping the padding on large screens
-		padding-left: 1rem; // matches smallscreen-padding
-		padding-right: 1rem; // matches smallscreen-padding
+		// padding-left: 1rem; // matches smallscreen-padding
+		// padding-right: 1rem; // matches smallscreen-padding
 	}
 }

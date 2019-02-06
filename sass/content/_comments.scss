@@ -25,7 +25,8 @@
     }
 }
 .comment-body {
-	border-bottom: 1px solid $color-border;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
 	margin-bottom: 3em;
 }
 .comment-meta {

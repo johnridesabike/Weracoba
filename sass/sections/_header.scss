@@ -3,11 +3,6 @@
 }
 .global-header {
     background: $color-bg-header;
-    // display: flex; // this fixes a weird bug
-	// flex-flow: column; // this fixes a weird bug
-	// test...
-	//border-bottom: 1px solid $color-border;
-    // box-shadow: 0 0 .5em rgba(0, 0, 0, 0.2);
 }
 .mobile-header-wrapper {
 	display: flex;
@@ -20,7 +15,7 @@
     // flex-flow: row wrap;
     // align-content: center;
     align-items: center;
-	margin-top: 1em;
+	margin: 1em 0 .5em 0;
 }
 .site-title {
     font-family: $font-site-title;
@@ -35,7 +30,9 @@
 	display: inline-block;
     margin: 0 0 .5em 0;
 	font-size: $font-size-xs;
+	font-family: $font-reading;
 	opacity: $opacity-aside;
+	font-style: italic;
 }
 /* Make sure logo link wraps around logo image. */
 .wp-custom-logo .site-title {
@@ -144,13 +141,14 @@
     .main-navigation {
         display: block;
     }
+	.header-nav-wrapper {
+		display: flex;
+		flex-flow: row-reverse nowrap;
+		align-items: center;
+	}
 }
 @media screen and (min-width: $breakpoint-2) {
     .sticky-top {
         margin-top: 110px;
-	}
-	.header-nav-wrapper {
-		display: flex;
-		flex-flow: row-reverse nowrap;
 	}
 }

@@ -12,8 +12,8 @@ body {
 	line-height: calculate-line-height($font-size-base, $size-content);
 }
 
-h1, h2, h3, h4, h5, h6 {
-	font-family: $font-reading;
+* {
+	border-color: $color-link; // from elements
 }
 
 .editor-post-title__block .editor-post-title__input,

@@ -1,10 +1,7 @@
 .widget {
 	font-family: $font-UI;
 	margin: 0;
-    padding: 1em;
-	/* Make sure select elements fit in widgets. */
-	//font-size: $font-size-sm;
-	line-height: calculate-line-height($font-size-sm, $size-widget);
+    // padding: 1em;
 	width: 100%;
 
     ul,
@@ -175,13 +172,11 @@ a.tag-cloud-link {
     flex-flow: row;
 	flex-wrap: wrap;
     margin-top: 1em;
-    @include full-bleed;
 }
 /* Page widgets */
 .page,
 .single-attachment {
     .widget-area {
-        border-top: 1px solid $color-border;
         margin-top: 2em;
     }
 }
@@ -190,8 +185,6 @@ a.tag-cloud-link {
 
 .archive-view {
     .site-content .widget {
-		// test...
-        // @include drop-shadow;
         margin-bottom: 1em;
     }
 }
@@ -202,7 +195,6 @@ a.tag-cloud-link {
 }
 .archive-widget-area {
     // for the widgets outside regular widget-area
-    @include full-bleed;
     .widget {
 		font-size: 1rem;
         > ul {
@@ -238,13 +230,11 @@ a.tag-cloud-link {
 
 @media screen and (min-width: $breakpoint-1) {
     .widget-area {
-        @include full-bleed-cancel;
 		.widget {
 			@include widget-columns;
 		}
     }
     .archive-widget-area {
-        @include full-bleed-cancel;
 		.widget > ul > .cat-item { // category widget
 			@include column-width(3);
 			margin-right: $columns-margin;
@@ -279,8 +269,8 @@ a.tag-cloud-link {
         }
         .widget-area {
             display: block;
-            margin-left: 1em;
-            max-width: $size-widget;
+            margin-left: 2em;
+            width: $size-widget;
             .widget {
                 width: $size-widget !important; // cancel the column width
 				margin: 0 0 4em;

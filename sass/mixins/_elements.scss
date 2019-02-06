@@ -82,7 +82,8 @@
 
 @mixin blockquote {
     padding: 0 1.5em; /* use padding, not margins to avoid conflict with post content margins */
-    border-left: 4px solid $color-link;
+	border-left-width: 4px;
+	border-left-style: solid;
 }
 
 @mixin cite {

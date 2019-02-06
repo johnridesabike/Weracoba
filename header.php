@@ -82,13 +82,11 @@
 						?>
 					</nav><!-- #site-navigation -->
 					<?php
-					if ( ! is_single() ) :
 						if ( is_active_sidebar( 'breadcrumbs-1' ) && ! is_front_page() ) :
 							dynamic_sidebar( 'breadcrumbs-1' );
 						else :
 							weracoba_category_list();
 						endif;
-					endif;
 					?>
 				</div><!-- .header-nav-wrapper -->
 		</div><!-- .global-header -->

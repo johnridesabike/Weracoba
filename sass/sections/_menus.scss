@@ -14,7 +14,7 @@
 		box-shadow: none; // cancel _elements.scss
 		padding: .1em;
 		.svg-icon {
-			font-size: $font-size-xxxl;
+			font-size: 40px;
 		}
     }
     .dismiss-icon {
@@ -45,30 +45,36 @@
 	// float: left;
     position: relative;
     text-align: center;
-	width: 100%;
+	//width: 100%;
 	ul {
         display: none;
         list-style: none;
         margin: 0;
         position: relative;
-        padding: 0;
+		border-top-width: 2px;
+		border-top-style: solid;
+		padding: 0 1em;
 		ul {
-            @include drop-shadow;
+            // @include drop-shadow;
             float: left;
             position: absolute;
             top: 100%;
             left: -999em;
             z-index: 99999;
             background: $color-bg-header;
-            border: 1px solid $color-border;
             display: block;
             width: 100%;
+			border-width: 1px;
+			border-style: solid;
+			border-radius: .25em;
+			box-shadow: 0 0 .25em rgba(0, 0, 0, 0.2);
 			ul {
 				left: -999em;
 				top: 0;
 			}
             li {
-                border-bottom: 1px solid $color-border;
+				border-bottom-width: 1px;
+				border-bottom-style: solid;
                 &:last-child {
                     border-bottom: none;
                 }

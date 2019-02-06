@@ -16,8 +16,10 @@
 }
 
 .wp-block-pullquote {
-	border-top: 4px solid $color-link;
-	border-bottom: 4px solid $color-link;
+	border-top-width: 4px;
+	border-top-style: solid;
+	border-bottom-width: 4px;
+	border-bottom-style: solid;
 	padding: 2em 0;
 	blockquote {
 		border-left: none;
@@ -97,7 +99,7 @@ div.wp-block-image {
 .wp-block-cover .wp-block-cover-text {
     font-family: $font-headers;
 	color: $color-bg-body;
-	font-size: $font-size-xl;
+	font-size: $font-size-xxl;
 }
 
 /**
@@ -253,7 +255,4 @@ div.wp-block-image {
     //     margin-right: 32px
 	// }
 	// block cover
-    .wp-block-cover .wp-block-cover-text {
-		font-size: $font-size-xxxl;
-    }
 }
