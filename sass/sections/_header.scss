@@ -111,7 +111,7 @@
     .global-header {
 		margin: 1em 0 .5em 0;
 		flex-flow: row nowrap;
-		align-items: flex-end;
+		align-items: flex-start;
 		justify-content: space-between;
 		.main-navigation {
 			flex: 0 1 auto;

@@ -398,13 +398,20 @@ a.tag-cloud-link:focus {
 
 /** Breadcrumbs **/
 .widget.breadcrumbs-nav {
-  font-size: 0.8em;
-  padding: 0;
   opacity: 0.8;
+  font-size: 0.88889em;
+  margin-bottom: .25em;
 }
 
-.widget.breadcrumbs-nav:hover {
-  opacity: 1;
+.widget.breadcrumbs-nav > div {
+  display: inline-block;
+  overflow: hidden;
+  max-width: 300px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  padding: .25em;
 }
 
 /** Widget Area **/

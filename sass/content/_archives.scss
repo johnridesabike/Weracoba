@@ -32,17 +32,7 @@
 		padding: 0; // cancel the padding from the main entry-headers
 	}
 	.cat-links {
-		display: inline-block;
-		border-top-left-radius: $border-radius-button-square;
-		border-top-right-radius: $border-radius-button-square;
-		background: $color-link;
-		color: $color-bg-body;
-		padding: 0 .5em;
-		margin: 0;
-		align-self: flex-start; // keeps it from growing
-		a {
-			color: $color-bg-body;
-		}
+		@include tab-head;
 	}
     .entry-title {
         text-align: left; // to cancel the center alignment on pages

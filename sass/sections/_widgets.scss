@@ -154,14 +154,19 @@ a.tag-cloud-link {
 
 /** Breadcrumbs **/
 .widget.breadcrumbs-nav {
-    // margin: .2em 0 0 0;
-    // margin-bottom: 1em;
-	font-size: $font-size-xs;
-	padding: 0;
-	//@include max-site-width;
 	opacity: $opacity-aside;
-	&:hover {
-		opacity: 1;
+	font-size: $font-size-sm;
+	margin-bottom: .25em;
+	> div {
+		// @include tab-head;
+		display: inline-block;
+		overflow: hidden;
+		max-width: $breakpoint-1 / 2;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		border-bottom-style: solid;
+		border-bottom-width: 2px;
+		padding: .25em;
 	}
 }
 

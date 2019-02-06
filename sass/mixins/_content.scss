@@ -35,3 +35,21 @@
 	margin-left: auto !important;
 	margin-right: auto !important;
 }
+
+@mixin tab-head {
+	display: inline-block;
+	border-top-left-radius: $border-radius-button-square;
+	border-top-right-radius: $border-radius-button-square;
+	background: $color-link;
+	color: $color-bg-body;
+	padding: 0 .5em;
+	margin: 0;
+	a {
+		color: $color-bg-body;
+		&:hover,
+		&:active,
+		&:focus {
+			background: $color-link-hover;
+		}
+	}
+}
