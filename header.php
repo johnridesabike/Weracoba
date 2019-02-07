@@ -17,6 +17,31 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 	<?php wp_head(); ?>
+	<style>
+		.wp-block-latest-posts li a {
+			font-family: Palatino, "Palatino Linotype", Athelas, Georgia, Times, "Times New Roman", serif;
+		}
+		.continue-reading a {
+			line-height: 1;
+		}
+		.excerpt-entry .entry-footer {
+			align-items: flex-start;
+		}
+		input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], input[type="number"], input[type="tel"], input[type="range"], input[type="date"], input[type="month"], input[type="week"], input[type="time"], input[type="datetime"], input[type="datetime-local"], input[type="color"], textarea {
+			color: black;
+		}
+		input[type="text"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="number"]:focus, input[type="tel"]:focus, input[type="range"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="week"]:focus, input[type="time"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="color"]:focus, textarea:focus {
+			color: black;
+		}
+		form .required { /* this causes problems with input fields with the .required class */
+			font-size: 1em;
+			opacity: 1;
+		}
+		form label .required { /* this is what we actually want to style */
+			font-size: .8em;
+			opacity: .8;
+		}
+	</style>
 </head>
 
 <body <?php body_class(); ?>>
