@@ -400,7 +400,7 @@ a.tag-cloud-link:focus {
 .widget.breadcrumbs-nav {
   opacity: 0.8;
   font-size: 0.88889em;
-  margin-bottom: .25em;
+  margin-bottom: .5em;
 }
 
 .widget.breadcrumbs-nav > div {

@@ -850,6 +850,7 @@ a:hover, a:active {
 
 .global-header .site-branding {
   flex: 1 1 0;
+  margin-bottom: .5em;
 }
 
 .global-header .menu-button {
@@ -873,7 +874,7 @@ a:hover, a:active {
 }
 
 .site-description {
-  margin: 0 0 .5em 0;
+  margin: 0;
   font-size: 0.8em;
   font-family: Palatino, "Palatino Linotype", Athelas, Georgia, Times, "Times New Roman", serif;
   opacity: 0.8;
@@ -968,7 +969,7 @@ a:hover, a:active {
     text-align: left;
   }
   .global-header {
-    margin: 1em 0 .5em 0;
+    margin: 1em 0 0 0;
     flex-flow: row nowrap;
     align-items: flex-start;
     justify-content: space-between;
@@ -996,9 +997,6 @@ a:hover, a:active {
   }
   .site-header {
     text-align: left;
-  }
-  .site-branding {
-    margin: 0;
   }
   .main-navigation {
     display: block;
@@ -1611,7 +1609,7 @@ a.tag-cloud-link:focus {
 .widget.breadcrumbs-nav {
   opacity: 0.8;
   font-size: 0.88889em;
-  margin-bottom: .25em;
+  margin-bottom: .5em;
 }
 
 .widget.breadcrumbs-nav > div {
@@ -1804,7 +1802,7 @@ a.tag-cloud-link:focus {
 .entry-footer #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-context,
 .entry-footer #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-date,
 .entry-footer #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post {
-  opacity: 0.8;
+  opacity: 1;
 }
 
 .entry-footer #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post-nothumbs p.jp-relatedposts-post-excerpt {
@@ -2390,6 +2388,8 @@ div.wp-block-image {
   /* full-bleed on small screens */
   margin-left: -1rem;
   margin-right: -1rem;
+  box-shadow: inset 0 1em 1.5em -1em rgba(0, 0, 0, 0.2), inset 0 -1em 1.5em -1em rgba(0, 0, 0, 0.2);
+  opacity: 0.8;
 }
 
 .single .entry-footer h3 {

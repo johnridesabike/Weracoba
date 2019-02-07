@@ -9,6 +9,7 @@
 	flex-flow: row wrap;
 	.site-branding {
 		flex: 1 1 0;
+		margin-bottom: .5em;
 	}
 	.menu-button {
 		flex: 0 0 auto;
@@ -28,7 +29,7 @@
     }
 }
 .site-description {
-    margin: 0 0 .5em 0;
+    margin: 0;
 	font-size: $font-size-xs;
 	font-family: $font-reading;
 	opacity: $opacity-aside;
@@ -109,7 +110,7 @@
         text-align: left;
     }
     .global-header {
-		margin: 1em 0 .5em 0;
+		margin: 1em 0 0 0;
 		flex-flow: row nowrap;
 		align-items: flex-start;
 		justify-content: space-between;
@@ -133,9 +134,6 @@
 	}
     .site-header {
         text-align: left;
-    }
-    .site-branding {
-        margin: 0;
     }
     .main-navigation {
         display: block;
