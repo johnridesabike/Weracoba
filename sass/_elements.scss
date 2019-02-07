@@ -135,6 +135,14 @@ input[type="submit"] {
 	}
 }
 
+%required {
+	font-size: $font-size-xs;
+	opacity: $opacity-aside;
+}
+form .required {
+	@extend %required;
+}
+
 /*--------------------------------------------------------------
 ## Links
 --------------------------------------------------------------*/

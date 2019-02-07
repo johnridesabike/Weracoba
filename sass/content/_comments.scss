@@ -90,20 +90,23 @@
 		p {
 			margin-bottom: 0;
 			flex: 0 0 100%;
+			&:empty {
+				display: none;
+			}
 		}
+		.submit, // The Jetpack button
 		.form-submit {
 			text-align: right;
 			input {
 				@include button;
 			}
 		}
+		.submit { // The Jetpack button
+			margin-top: 1em;
+		}
 		label {
 			display: block;
 			padding-bottom: .4em;
-		}
-		.required {
-			color: darkred;
-			font-size: $font-size-xs;
 		}
 		.comment-form-author,
 		.comment-form-email,
