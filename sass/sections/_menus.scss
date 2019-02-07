@@ -30,13 +30,10 @@
     }
 }
 .menu-item-has-children {
-    a:after {
+    > a:after {
         content: $glyph-arrow-down;
-        font-size: .7em;
-        padding-left: .5em;
-    }
-    ul a:after {
-        content: "";
+        font-size: $font-size-xs;
+		margin-left: .25em;
     }
 }
 .main-navigation {
@@ -64,8 +61,8 @@
             background: $color-bg-header;
             display: block;
             width: 100%;
-			border-width: 1px;
-			border-style: solid;
+			// border-width: 1px;
+			border-style: none;
 			border-radius: .25em;
 			box-shadow: 0 0 .25em rgba(0, 0, 0, 0.2);
 			ul {
@@ -73,11 +70,11 @@
 				top: 0;
 			}
             li {
-				border-bottom-width: 1px;
-				border-bottom-style: solid;
-                &:last-child {
-                    border-bottom: none;
-                }
+				// border-bottom-width: 1px;
+				// // border-bottom-style: solid;
+                // &:last-child {
+                //     border-bottom: none;
+                // }
 				&:hover > ul,
 				&.focus > ul {
 					left: 100%;
@@ -113,11 +110,14 @@
         display: block;
         padding: .5em 0 .5em 0;
 	}
-	// .current_page_item > a,
-	// .current-menu-item > a,
-	// .current_page_ancestor > a,
-	// .current-menu-ancestor > a {
-	// }
+	.current_page_item > a,
+	.current-menu-item > a,
+	.current_page_ancestor > a,
+	.current-menu-ancestor > a {
+		border-bottom-width: 2px;
+		border-bottom-style: solid;
+		border-color: $color-link-hover;
+	}
 }
 /*
  * Workarounds for fixed header

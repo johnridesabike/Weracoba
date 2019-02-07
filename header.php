@@ -80,7 +80,7 @@
 			</nav><!-- #site-navigation -->
 		</div><!-- .global-header -->
 		<?php
-		if ( is_active_sidebar( 'breadcrumbs-1' )) :
+		if ( is_active_sidebar( 'breadcrumbs-1' ) ) :
 			dynamic_sidebar( 'breadcrumbs-1' );
 		else :
 			weracoba_category_list();
