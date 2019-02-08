@@ -60,7 +60,6 @@
 /** Archive Media Queries **/
 @media screen and (min-width: $breakpoint-1) {
 	.excerpt-entry {
-		//@include full-bleed-cancel;
 		margin-left: auto;
 		margin-right: auto;
 		display: grid;
@@ -110,7 +109,7 @@
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-			align-items: center;
+			align-items: flex-start;
 			.entry-meta {
 				flex-shrink: 1; // IE fix
 				margin: 0;
@@ -131,12 +130,4 @@
             width: 100%;
         }
     }
-}
-
-@media screen and (min-width: $breakpoint-3) {
-	.excerpt-entry {
-		// we're keeping the padding on large screens
-		// padding-left: 1rem; // matches smallscreen-padding
-		// padding-right: 1rem; // matches smallscreen-padding
-	}
 }

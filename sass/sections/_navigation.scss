@@ -16,7 +16,7 @@
         width: 100%;
     }
 }
-
+.page-links,
 .pagination {
     text-align: center;
 	font-size: $font-size-lg;
@@ -32,9 +32,18 @@
         display: block;
         margin-bottom: .5em;
     }
-    .page-numbers:not(.prev):not(.next) {
-        margin: 0 .5em;
-    }
+	.page-numbers,
+	.post-page-numbers{
+		&:not(.prev):not(.next) {
+			margin: 0 .5em;
+		}
+	}
+	.post-page-numbers.current,
+	.page-numbers.current {
+		@include current-page;
+		opacity: $opacity-aside;
+		padding-bottom: .25em;
+	}
 }
 
 // Jetpack Infinite Scroll

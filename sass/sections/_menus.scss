@@ -39,10 +39,8 @@
 .main-navigation {
 	clear: both;
 	display: block;
-	// float: left;
     position: relative;
     text-align: center;
-	//width: 100%;
 	ul {
         display: none;
         list-style: none;
@@ -52,7 +50,6 @@
 		border-top-style: solid;
 		padding: 0 1em;
 		ul {
-            // @include drop-shadow;
             float: left;
             position: absolute;
             top: 100%;
@@ -60,8 +57,8 @@
             z-index: 99999;
             background: $color-bg-header;
             display: block;
-            width: 100%;
-			// border-width: 1px;
+			width: 100%;
+			border-width: 0;
 			border-style: none;
 			border-radius: .25em;
 			box-shadow: 0 0 .25em rgba(0, 0, 0, 0.2);
@@ -70,11 +67,6 @@
 				top: 0;
 			}
             li {
-				// border-bottom-width: 1px;
-				// // border-bottom-style: solid;
-                // &:last-child {
-                //     border-bottom: none;
-                // }
 				&:hover > ul,
 				&.focus > ul {
 					left: 100%;
@@ -114,36 +106,32 @@
 	.current-menu-item > a,
 	.current_page_ancestor > a,
 	.current-menu-ancestor > a {
-		border-bottom-width: 2px;
-		border-bottom-style: solid;
-		border-color: $color-link-hover;
+		@include current-page;
 	}
 }
-/*
- * Workarounds for fixed header
- * This stuff is all pretty hacky and I'm not sure how to make it more elegant.
- */
- /*
-.main-navigation.toggled {
-    height: calc( 100vh - 6.4em ); // 128px = size of header. Estimation, not accurate!
-	overflow: scroll;
-}
-.fixed-header .main-navigation.toggled {
-	height: calc( 100vh - 3.65em ); // 73px = size of header. Estimation, not accurate!
-}
-/* Offesets values from wp-includes/css/admin-bar.css */
-/*
-@media screen and ( max-width: 782px ) { /* admin-bar.css:970 *//*
-	.admin-bar {
-		.main-navigation.toggled {
-			height: calc( 100vh - 6.4em - 46px );
-		}
-		.fixed-header .main-navigation.toggled {
-			height: calc( 100vh - 3.65em);
-		}
-	}
-}
-*/
+// /*
+//  * Workarounds for fixed header
+//  * This stuff is all pretty hacky and I'm not sure how to make it more elegant.
+//  */
+ 
+// .main-navigation.toggled {
+//     height: calc( 100vh - 6.4em ); // 128px = size of header. Estimation, not accurate!
+// 	overflow: scroll;
+// }
+// .fixed-header .main-navigation.toggled {
+// 	height: calc( 100vh - 3.65em ); // 73px = size of header. Estimation, not accurate!
+// }
+// /* Offesets values from wp-includes/css/admin-bar.css */
+// @media screen and ( max-width: 782px ) { /* admin-bar.css:970 *//*
+// 	.admin-bar {
+// 		.main-navigation.toggled {
+// 			height: calc( 100vh - 6.4em - 46px );
+// 		}
+// 		.fixed-header .main-navigation.toggled {
+// 			height: calc( 100vh - 3.65em);
+// 		}
+// 	}
+// }
 
 /*
  * Media queries
@@ -156,7 +144,6 @@
         display: none;
 	}
 	.main-navigation {
-        // width: auto;
         line-height: 1.1; /* fixes vertical dropdown menu spacing */
         ul {
             display: flex;
@@ -168,11 +155,11 @@
                 padding: 0 1em;
             }
         }
-        li {
-            padding-left: 1.2em;
-            &:first-child {
-                padding-left: 0;
-            }
-        }
+		li {
+			padding-left: 1.2em;
+			&:first-child {
+				padding-left: 0;
+			}
+		}
 	}
 }

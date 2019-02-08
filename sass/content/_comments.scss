@@ -95,7 +95,7 @@
 			}
 		}
 		.submit, // The Jetpack button
-		.form-submit {
+		.form-submit { // The default button
 			text-align: right;
 			input {
 				@include button;

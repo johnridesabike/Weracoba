@@ -38,6 +38,15 @@ object {
 	@include center-block;
 }
 
+.entry-content figure {
+	// This ensures that long captions don't stretch the width of the figure.
+	display: table;
+	> figcaption {
+		display: table-caption;
+		caption-side: bottom;
+	}
+}
+
 @media screen and (max-width: $breakpoint-1) {
     /* On small screens, display left and right alignments as if they were centered */
     .alignleft,
@@ -78,6 +87,7 @@ object {
 		font-size: $font-size-xs;
 		text-align: right;
 		padding-right: 1.5em; /* to avoid scrollbars */
+		margin-bottom: 0; // cancel default style
 	}
 }
 
@@ -241,4 +251,6 @@ object {
     vertical-align: middle;
     height: 1em;
     width: 1em;
+	transition: fill 120ms ease-in-out;
+	fill: currentColor;
 }

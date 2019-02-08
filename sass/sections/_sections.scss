@@ -9,7 +9,9 @@
 .site-footer {
 	background: $color-bg-footer;
     position: relative;
-    padding: 0.5em 1em 0.5em 1em;
+	@extend %smallscreen-padding;
+	padding-top: .5em;
+	padding-bottom: .5em;
     margin-top: 1em;
     box-shadow: inset 0 1em 1.5em -1em rgba(0, 0, 0, 0.2);
 }

@@ -32,8 +32,6 @@ textarea {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    //font-family: $font-headers;
-    color: $color-text-headers;
 	font-weight: 400;
 	margin-top: 1em;
 	margin-bottom: 1em;
@@ -92,6 +90,10 @@ h6 {
 
 p {
 	margin-bottom: 1em;
+}
+
+figcaption {
+	@include figcaption;
 }
 
 dfn, cite, em, i {
@@ -159,9 +161,6 @@ big {
 }
 .has-link-color {
 	color: $color-link;
-}
-.has-header-color {
-	color: $color-text-headers;
 }
 
 .widget-area,

@@ -93,7 +93,8 @@ $columns-margin: 3.8%;
 	width: map-get( $columns, $numberColumns ) - ( ( $columns-margin * ( $numberColumns - 1 ) ) / $numberColumns );
 }
 
-@import "mixins/content";
-@import "mixins/elements";
-@import "mixins/posts-and-pages";
-@import "mixins/widgets";
+@import "content";
+@import "elements";
+@import "posts-and-pages";
+@import "widgets";
+@import "media";

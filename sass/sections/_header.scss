@@ -1,5 +1,6 @@
 .site-header {
 	@extend %smallscreen-padding;
+	@include max-site-width;
 }
 .global-header {
     background: $color-bg-header;
@@ -25,7 +26,7 @@
 	margin: 0;
 	display: inline-block;
     a {
-        color: $color-text-headers;
+        color: $color-text-main;
     }
 }
 .site-description {
@@ -54,57 +55,57 @@
  * Fixed Header
  * See also: the scrolling code in functions.js
  */
-@media screen {
-    .fixed-header {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        height: auto;
-        z-index: 9;
-        display: block; // this fixes a weird bug
-        .site-description {
-            display: none;
-		}
-		.site-title {
-			font-size: $font-size-xxl;
-		}
-    }
-    .sticky-top {
-        margin-top: 60px;
-	}
-}
+// @media screen {
+//     .fixed-header {
+//         position: fixed;
+//         top: 0;
+//         width: 100%;
+//         height: auto;
+//         z-index: 9;
+//         display: block; // this fixes a weird bug
+//         .site-description {
+//             display: none;
+// 		}
+// 		.site-title {
+// 			font-size: $font-size-xxl;
+// 		}
+//     }
+//     .sticky-top {
+//         margin-top: 60px;
+// 	}
+// }
 /* Offesets values from wp-includes/css/admin-bar.css */
-.admin-bar .fixed-header {
-    top: 32px; /* admin-bar.css:84 */
-    @media screen and ( max-width: 782px ) {
-        top: 46px; /* admin-bar.css:970 */
-    }
-    @media screen and (max-width: 600px) {
-        top: 0; /* admin-bar.css:1081 */
-    }
-}
+// .admin-bar .fixed-header {
+//     top: 32px; /* admin-bar.css:84 */
+//     @media screen and ( max-width: 782px ) {
+//         top: 46px; /* admin-bar.css:970 */
+//     }
+//     @media screen and (max-width: 600px) {
+//         top: 0; /* admin-bar.css:1081 */
+//     }
+// }
 /*
  * Header Media Queries
  */
-@media screen and (max-width: $breakpoint-1) {
-   .fixed-header .site-title {
-		.custom-logo-link {
-			margin: 0;
-		}
-    }
-	.wp-custom-logo .fixed-header .site-title a:last-of-type { // target the title text
-		display: none;
-	}
-}
-@media screen and (max-width: $breakpoint-2) and (orientation: landscape) {
-    /* When a small screen is oriented in landscape, hide the header unless the scrolling js overrides it */
-    .fixed-header:not(.header-visible) {
-        position: relative;
-    }
-    .sticky-top:not(.header-visible) {
-        margin-top: 0;
-    }
-}
+// @media screen and (max-width: $breakpoint-1) {
+//    .fixed-header .site-title {
+// 		.custom-logo-link {
+// 			margin: 0;
+// 		}
+//     }
+// 	.wp-custom-logo .fixed-header .site-title a:last-of-type { // target the title text
+// 		display: none;
+// 	}
+// }
+// @media screen and (max-width: $breakpoint-2) and (orientation: landscape) {
+//     /* When a small screen is oriented in landscape, hide the header unless the scrolling js overrides it */
+//     .fixed-header:not(.header-visible) {
+//         position: relative;
+//     }
+//     .sticky-top:not(.header-visible) {
+//         margin-top: 0;
+//     }
+// }
 @media screen and (min-width: $breakpoint-1) {
     .site-branding {
         text-align: left;
@@ -118,16 +119,9 @@
 			flex: 0 1 auto;
 		}
     }
-    .sticky-top {
-        margin-top: 90px;
-    }
-    .site-header {
-        @include max-site-width;
-        // display: flex;
-        // align-items: flex-end;
-        // flex-flow: row;
-        // justify-content: space-between;
-	}
+    // .sticky-top {
+    //     margin-top: 90px;
+    // }
     .site-title {
 		margin: 0;
 		font-size: $font-size-xxl;
@@ -139,8 +133,8 @@
         display: block;
     }
 }
-@media screen and (min-width: $breakpoint-2) {
-    .sticky-top {
-        margin-top: 110px;
-	}
-}
+// @media screen and (min-width: $breakpoint-2) {
+//     .sticky-top {
+//         margin-top: 110px;
+// 	}
+// }

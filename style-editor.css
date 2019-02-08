@@ -23,7 +23,6 @@ textarea {
 h1, .editor-post-title__block .editor-post-title__input,
 .wp-block-heading h1.editor-rich-text__tinymce, h2, .wp-block-heading h2.editor-rich-text__tinymce, h3, .wp-block-heading h3.editor-rich-text__tinymce, h4, .widget-area h2, .widget-area .wp-block-heading h2.editor-rich-text__tinymce, .wp-block-heading .widget-area h2.editor-rich-text__tinymce,
 .footer-widgets h2, .footer-widgets .wp-block-heading h2.editor-rich-text__tinymce, .wp-block-heading .footer-widgets h2.editor-rich-text__tinymce, .wp-block-heading h4.editor-rich-text__tinymce, h5, .wp-block-heading h5.editor-rich-text__tinymce, h6, .wp-block-heading h6.editor-rich-text__tinymce {
-  color: #19191A;
   font-weight: 400;
   margin-top: 1em;
   margin-bottom: 1em;
@@ -83,6 +82,15 @@ h6, .wp-block-heading h6.editor-rich-text__tinymce {
 
 p {
   margin-bottom: 1em;
+}
+
+figcaption {
+  font-size: 0.88889em;
+  opacity: 0.8;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: .5em;
+  font-style: italic;
 }
 
 dfn, cite, em, i {
@@ -157,10 +165,6 @@ big {
 
 .has-link-color {
   color: #03727c;
-}
-
-.has-header-color {
-  color: #19191A;
 }
 
 .widget-area .widget,
@@ -268,7 +272,7 @@ big {
   box-sizing: border-box;
   width: 100%;
   padding: .5em 1em;
-  border: 1px solid #c3c3c3;
+  border: 1px solid #ccc;
   border-radius: 0;
 }
 
@@ -401,12 +405,13 @@ a.tag-cloud-link:focus {
   opacity: 0.8;
   font-size: 0.88889em;
   margin-bottom: .5em;
+  max-width: 20rem;
 }
 
 .widget.breadcrumbs-nav > div {
+  max-width: 100%;
   display: inline-block;
   overflow: hidden;
-  max-width: 300px;
   white-space: nowrap;
   text-overflow: ellipsis;
   border-bottom-style: solid;
@@ -542,11 +547,11 @@ a.tag-cloud-link:focus {
   }
   .archive-view .widget-area {
     display: block;
-    margin-left: 2em;
-    width: 250px;
+    margin-left: 3.8%;
+    width: 30.79667%;
   }
   .archive-view .widget-area .widget {
-    width: 250px !important;
+    width: 100%;
     margin: 0 0 4em;
   }
   .archive-view .widget-area .widget .alignleft,
@@ -615,22 +620,13 @@ figure.wp-block-image.alignwide, .alignwide.wp-block[data-type="core/image"] {
 }
 
 .wp-block-image figcaption {
-  font-size: 0.8em;
-  color: initial;
+  color: #19191A;
+  font-size: 0.88889em;
   opacity: 0.8;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-}
-
-.wp-block-image .aligncenter,
-.wp-block-image .alignleft,
-.wp-block-image .alignright, .wp-block-image.is-resized {
-  display: block;
-}
-
-.wp-block-image .aligncenter > figcaption,
-.wp-block-image .alignleft > figcaption,
-.wp-block-image .alignright > figcaption, .wp-block-image.is-resized > figcaption {
-  display: block;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: .5em;
+  font-style: italic;
 }
 
 div.wp-block-image, .wp-block[data-type="core/image"][data-align] {
@@ -661,7 +657,6 @@ div.wp-block-image, .wp-block[data-type="core/image"][data-align] {
 }
 
 .wp-block-cover .wp-block-cover-text {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   color: white;
   font-size: 1.75em;
 }
@@ -676,6 +671,7 @@ div.wp-block-image, .wp-block[data-type="core/image"][data-align] {
   text-decoration: none;
   border-radius: 0.625em;
   border: 1px solid #19191A;
+  text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.5), 0 1px 1px rgba(0, 0, 0, 0.5), 1px 0 1px rgba(0, 0, 0, 0.5), -1px 0 1px rgba(0, 0, 0, 0.5);
   font-size: 1em;
 }
 
@@ -695,12 +691,12 @@ div.wp-block-image, .wp-block[data-type="core/image"][data-align] {
 }
 
 .wp-block-button:not(.is-style-outline):not(.is-style-squared) .wp-block-button__link {
-  box-shadow: #19191A 0 1px 0 0;
+  box-shadow: rgba(0, 0, 0, 0.8) 0 1px 0 0;
 }
 
 .wp-block-button:not(.is-style-outline):not(.is-style-squared) .wp-block-button__link:active {
   transform: translateY(1px);
-  box-shadow: inset 0 1px 0 #19191A;
+  box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.8);
 }
 
 .wp-block-button.is-style-squared .wp-block-button__link {
@@ -713,7 +709,7 @@ div.wp-block-image, .wp-block[data-type="core/image"][data-align] {
 
 .wp-block-file a.wp-block-file__button {
   display: inline-block;
-  box-shadow: #19191A 0 1px 0 0;
+  box-shadow: rgba(0, 0, 0, 0.8) 0 1px 0 0;
 }
 
 .wp-block-file a.wp-block-file__button:hover, .wp-block-file a.wp-block-file__button:focus, .wp-block-file a.wp-block-file__button:visited {
@@ -723,7 +719,8 @@ div.wp-block-image, .wp-block[data-type="core/image"][data-align] {
   text-decoration: none;
   border-radius: 0.625em;
   border: 1px solid #19191A;
-  box-shadow: #19191A 0 1px 0 0;
+  text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.5), 0 1px 1px rgba(0, 0, 0, 0.5), 1px 0 1px rgba(0, 0, 0, 0.5), -1px 0 1px rgba(0, 0, 0, 0.5);
+  box-shadow: rgba(0, 0, 0, 0.8) 0 1px 0 0;
 }
 
 .wp-block-file a.wp-block-file__button:hover:not(.has-text-color), .wp-block-file a.wp-block-file__button:focus:not(.has-text-color), .wp-block-file a.wp-block-file__button:visited:not(.has-text-color) {
@@ -741,7 +738,7 @@ div.wp-block-image, .wp-block[data-type="core/image"][data-align] {
 .wp-block-file a.wp-block-file__button:active {
   opacity: 1;
   transform: translateY(1px);
-  box-shadow: inset 0 1px 0 #19191A;
+  box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.8);
 }
 
 .wp-block-button.is-style-squared .wp-block-button__link {
@@ -752,6 +749,7 @@ div.wp-block-image, .wp-block[data-type="core/image"][data-align] {
   border: 2px solid currentColor;
   border-radius: 0.625em;
   box-shadow: none;
+  text-shadow: none;
 }
 
 .wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color) {
@@ -851,6 +849,10 @@ div.wp-block-image, .wp-block[data-type="core/image"][data-align] {
   padding: 0;
 }
 
+.wp-block-latest-posts li a {
+  font-family: Palatino, "Palatino Linotype", Athelas, Georgia, Times, "Times New Roman", serif;
+}
+
 .wp-block-latest-comments__comment {
   font-size: 1em;
 }
@@ -898,7 +900,7 @@ div.wp-block-image, .wp-block[data-type="core/image"][data-align] {
   margin-bottom: 0;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 600px) and (max-width: 900px) {
   .wp-block-columns {
     flex-wrap: nowrap;
   }

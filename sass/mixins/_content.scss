@@ -53,3 +53,9 @@
 		}
 	}
 }
+
+@mixin current-page {
+	border-bottom-width: 2px;
+	border-bottom-style: solid;
+	border-color: $color-link-hover;
+}

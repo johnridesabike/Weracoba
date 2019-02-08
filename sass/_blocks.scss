@@ -40,13 +40,7 @@
 }
 
 .alignfull {
-    width: 100vw !important;
-    max-width: 100vw !important;
-    position: relative !important;
-    left: 50% !important;
-    right: 50% !important;
-    margin-left: -50vw !important;
-    margin-right: -50vw !important;
+    @include alignfull;
 }
 
 figure.wp-block-image {
@@ -55,26 +49,9 @@ figure.wp-block-image {
 	}
 }
 
-.wp-block-image {
-	figcaption {
-		font-size: $font-size-xs;
-		color: initial; // cancel default
-		opacity: $opacity-aside;
-		font-family: $font-UI;
-	}
-
-	.aligncenter,
-	.alignleft,
-	.alignright,
-	&.is-resized {
-		// WP has these displayed as tables and table captions for some reason.
-		// It wouldn't matter except that when you lazy-load images it makes the layout go haywire while they load.
-		// I don't see the benefit?
-		display: block; // cancel display: table
-		> figcaption {
-			display: block; // cancel display: table-caption
-		}
-	}
+.wp-block-image figcaption { // greater specificity = override built-in style
+	color: $color-text-main; // cancel built-in color
+	@include figcaption;
 }
 
 div.wp-block-image {
@@ -97,7 +74,6 @@ div.wp-block-image {
 }
 
 .wp-block-cover .wp-block-cover-text {
-    font-family: $font-headers;
 	color: $color-bg-body;
 	font-size: $font-size-xxl;
 }
@@ -150,6 +126,7 @@ div.wp-block-image {
     border: 2px solid currentColor;
 	border-radius: $border-radius-button;
 	box-shadow: none;
+	text-shadow: none;
 	&:not(.has-text-color) {
 		color: $color-link;
 
@@ -174,6 +151,9 @@ div.wp-block-image {
 .wp-block-categories-list,
 .wp-block-categories__list {
     @include widget-list;
+}
+.wp-block-latest-posts li a {
+	font-family: $font-reading;
 }
 
 .wp-block-latest-comments__comment {
@@ -236,7 +216,7 @@ div.wp-block-image {
 //     }
 // }
 
-@media (min-width: $breakpoint-1) {
+@media (min-width: $breakpoint-1) and (max-width: $breakpoint-2) {
      // replaces the built-in media query with something better
     .wp-block-columns {
         flex-wrap: nowrap;

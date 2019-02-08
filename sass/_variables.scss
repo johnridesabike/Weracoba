@@ -2,37 +2,29 @@ $color-text-main: #19191A;
 $color-bg-body: white;
 //$color-tint:rgba(1, 118, 128, 1); // Intense Teal
 $color-primary-hue: 185;
-$color-secondary-hue: 65;
-$color-bg-body-alt: hsl( $color-primary-hue, 15%, 90% ) ;
-$color-text-headers: $color-text-main;//hsl( $color-primary-hue, 95%, 15% );
-$color-border: hsl( $color-secondary-hue, 12%, 80% );
 $color-bg-header: $color-bg-body;
-$color-bg-footer: $color-bg-body;// hsl( $color-secondary-hue, 25%, 95% );
-//$color-link: $color-tint;
+$color-bg-footer: $color-bg-body;
 $color-link: hsl( $color-primary-hue, 95%, 25%);
 $color-link-visited: $color-link;
 $color-link-hover: hsl( $color-primary-hue, 95%, 40% );
 
 $color-bg-pre: #eee;
+$color-border: #ccc;
 $color-border-abbr: #666;
 $color-background-ins: #fff9c0;
-$color-text-input: #666;
-$color-border-input: $color-border; //#ccc
-$color-bg-hr: $color-border; //#ccc;
+$color-text-input: rgba($color-text-main, .8);
 $color-bg-screen: #f1f1f1; // _accessibiliity.scss
 $color-text-screen: #21759b; // _accessibiliity.scss
 
 $font-reading: Palatino, "Palatino Linotype", Athelas, Georgia, Times, "Times New Roman", serif;
 $font-UI: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 $font-site-title: Baskerville, "Baskerville Old Face", Garamond, $font-reading;
-$font-headers: $font-UI;
 $font-pre: "Courier 10 Pitch", Courier, monospace;
 $font-code: Menlo, Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 $glyph-arrow-down: "\25BC";
 $glyph-arrow-up: "\25B2";
 $glyph-arrow-next: "\276F";
 $glyph-arrow-down-right: "\21B3";
-$glyph-more-ellipsis: "⋯";
 
 $font-size-base: 20px;
 $font-size-base-mobile: 16px;
@@ -45,24 +37,21 @@ $font-size-xl:    1em * 1.5;     // 30
 $font-size-xxl:   1em * 1.75;   // 35
 
 $font-line-height-pre: 1.6;
-$font-line-height-heading: 1.2;
-$font-line-height-double:  2 * $font-line-height-heading;
 
 $opacity-aside: .8;
 
-$breakpoint-1: 600px;
-$breakpoint-2: 900px;
-$breakpoint-3: 1200px;
-$breakpoint-4: 1800px;
+$breakpoint-1: 600px; // Phone
+$breakpoint-2: 900px; // Tablet
+$breakpoint-3: 1200px; // Desktop
+$breakpoint-4: 1800px; // Big desktop
 
 $size-site-width: 1200px; // WordPress global: $content_width
 $size-content: 680px;
-$size-widget: 250px;
 
 $size-avatar-lg: 96px;
 $size-avatar-md: 72px;
 $size-avatar-sm: 48px;
 
-$shadow-button: $color-text-headers 0 1px 0 0;
+$shadow-button: rgba(0, 0, 0, .8) 0 1px 0 0;
 $border-radius-button: .625em;
 $border-radius-button-square: .15em;

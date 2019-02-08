@@ -57,7 +57,7 @@
 	.contact-form label {
 		font-weight: normal;
 		span {
-			color: initial;
+			color: $color-text-main;
 			@extend %required;
 		}
 	}
