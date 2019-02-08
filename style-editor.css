@@ -629,15 +629,6 @@ figure.wp-block-image.alignwide, .alignwide.wp-block[data-type="core/image"] {
   font-style: italic;
 }
 
-div.wp-block-image, .wp-block[data-type="core/image"][data-align] {
-  /*
-	** Allow images to float outside of the reading area.
-	** Target the div because that's what aligned image figures are wrapped in.
-	*/
-  max-width: 100% !important;
-  text-align: center;
-}
-
 @media screen and (min-width: 1200px) {
   .alignwide {
     /* cancel full-bleed on larger screens */

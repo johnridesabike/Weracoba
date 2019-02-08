@@ -54,14 +54,14 @@ figure.wp-block-image {
 	@include figcaption;
 }
 
-div.wp-block-image {
-	/*
-	** Allow images to float outside of the reading area.
-	** Target the div because that's what aligned image figures are wrapped in.
-	*/
-	max-width: 100% !important;
-	text-align: center;
-}
+// div.wp-block-image {
+// 	/*
+// 	** Allow images to float outside of the reading area.
+// 	** Target the div because that's what aligned image figures are wrapped in.
+// 	*/
+// 	max-width: 100% !important;
+// 	text-align: center;
+// }
 
 @media screen and (min-width: $breakpoint-3) {
     .alignwide {

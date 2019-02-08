@@ -76,9 +76,9 @@ a {
 
 	&[data-type="core/image"] {
 		@extend figure.wp-block-image;
-		&[data-align] {
-			@extend div.wp-block-image;
-		}
+		// &[data-align] {
+		// 	@extend div.wp-block-image;
+		// }
 	}
 
 	/* Lists. See _elements.scss */
