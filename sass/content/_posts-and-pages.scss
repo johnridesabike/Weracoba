@@ -79,7 +79,9 @@
 	border-top-style: solid;
 	border-bottom-width: 1px;
 	border-bottom-style: solid;
-    background: $color-bg-footer;
+	background: $color-bg-footer;
+	margin-top: 1em;
+	margin-bottom: 1em;
 	padding-top: .5em;
 	padding-bottom: .5em;
 	@extend %smallscreen-padding;

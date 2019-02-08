@@ -2322,6 +2322,8 @@ div.wp-block-image {
   border-bottom-width: 1px;
   border-bottom-style: solid;
   background: white;
+  margin-top: 1em;
+  margin-bottom: 1em;
   padding-top: .5em;
   padding-bottom: .5em;
   width: 100vw !important;
