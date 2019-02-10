@@ -676,7 +676,7 @@ figure.wp-block-image.alignwide, .alignwide.wp-block[data-type="core/image"] {
 
 .wp-block-button .wp-block-button__link svg,
 .wp-block-file .wp-block-file__button svg {
-  filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(0 0 1px black);
 }
 
 .wp-block-button .wp-block-button__link:not(.has-text-color),
@@ -727,7 +727,7 @@ figure.wp-block-image.alignwide, .alignwide.wp-block[data-type="core/image"] {
 }
 
 .wp-block-file a.wp-block-file__button:hover svg, .wp-block-file a.wp-block-file__button:focus svg, .wp-block-file a.wp-block-file__button:visited svg {
-  filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(0 0 1px black);
 }
 
 .wp-block-file a.wp-block-file__button:hover:not(.has-text-color), .wp-block-file a.wp-block-file__button:focus:not(.has-text-color), .wp-block-file a.wp-block-file__button:visited:not(.has-text-color) {

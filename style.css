@@ -423,8 +423,7 @@ input[type="submit"], .main-navigation, .infinite-scroll #infinite-handle span b
 .tag-title,
 .tag-cloud-link, .widget.breadcrumbs-nav, .site .contact-form, .wp-block-button .wp-block-button__link,
 .wp-block-file .wp-block-file__button, .wp-block-file a.wp-block-file__button:hover, .wp-block-file a.wp-block-file__button:focus, .wp-block-file a.wp-block-file__button:visited, .wp-block-latest-comments__comment-meta, .page-links, .entry-header,
-.entry-footer, .continue-reading a, .comment-meta, .reply a, .comment-respond, .comment-respond .comment-form .submit input,
-.comment-respond .comment-form .form-submit input {
+.entry-footer, .continue-reading a, .comment-meta, .reply a, .comment-respond {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
 
@@ -803,7 +802,7 @@ button svg,
 input[type="button"] svg,
 input[type="reset"] svg,
 input[type="submit"] svg {
-  filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(0 0 1px black);
 }
 
 button:not(.has-text-color),
@@ -1230,7 +1229,7 @@ a:hover, a:active {
 .infinite-scroll #infinite-handle span button svg,
 .infinite-scroll #infinite-handle span button:focus svg,
 .infinite-scroll #infinite-handle span button:hover svg {
-  filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(0 0 1px black);
 }
 
 .infinite-scroll #infinite-handle span button:not(.has-text-color),
@@ -1920,7 +1919,7 @@ figure.wp-block-image.alignwide {
 
 .wp-block-button .wp-block-button__link svg,
 .wp-block-file .wp-block-file__button svg {
-  filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(0 0 1px black);
 }
 
 .wp-block-button .wp-block-button__link:not(.has-text-color),
@@ -1971,7 +1970,7 @@ figure.wp-block-image.alignwide {
 }
 
 .wp-block-file a.wp-block-file__button:hover svg, .wp-block-file a.wp-block-file__button:focus svg, .wp-block-file a.wp-block-file__button:visited svg {
-  filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(0 0 1px black);
 }
 
 .wp-block-file a.wp-block-file__button:hover:not(.has-text-color), .wp-block-file a.wp-block-file__button:focus:not(.has-text-color), .wp-block-file a.wp-block-file__button:visited:not(.has-text-color) {
@@ -2506,7 +2505,7 @@ figure.wp-block-image.alignwide {
 }
 
 .continue-reading a svg {
-  filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(0 0 1px black);
 }
 
 .continue-reading a:not(.has-text-color) {
@@ -2554,7 +2553,7 @@ figure.wp-block-image.alignwide {
 }
 
 .excerpt-entry .cat-links svg {
-  filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(0 0 1px black);
 }
 
 .excerpt-entry .cat-links a {
@@ -2771,7 +2770,7 @@ figure.wp-block-image.alignwide {
 }
 
 .reply a svg {
-  filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(0 0 1px black);
 }
 
 .reply a:not(.has-text-color) {
@@ -2823,38 +2822,8 @@ figure.wp-block-image.alignwide {
   display: none;
 }
 
-.comment-respond .comment-form .submit,
 .comment-respond .comment-form .form-submit {
   text-align: right;
-}
-
-.comment-respond .comment-form .submit input,
-.comment-respond .comment-form .form-submit input {
-  padding: .2em .75em;
-  text-decoration: none;
-  border-radius: 0.625em;
-  border: 1px solid #19191A;
-  text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.5), 0 1px 1px rgba(0, 0, 0, 0.5), 1px 0 1px rgba(0, 0, 0, 0.5), -1px 0 1px rgba(0, 0, 0, 0.5);
-}
-
-.comment-respond .comment-form .submit input svg,
-.comment-respond .comment-form .form-submit input svg {
-  filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.5));
-}
-
-.comment-respond .comment-form .submit input:not(.has-text-color),
-.comment-respond .comment-form .form-submit input:not(.has-text-color) {
-  color: white;
-}
-
-.comment-respond .comment-form .submit input:not(.has-background),
-.comment-respond .comment-form .form-submit input:not(.has-background) {
-  background: #03727c;
-}
-
-.comment-respond .comment-form .submit input:hover,
-.comment-respond .comment-form .form-submit input:hover {
-  text-decoration: none;
 }
 
 .comment-respond .comment-form .submit {

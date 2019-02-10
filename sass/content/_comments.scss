@@ -98,12 +98,8 @@
 				display: none;
 			}
 		}
-		.submit, // The Jetpack button
-		.form-submit { // The default button
+		.form-submit {
 			text-align: right;
-			input {
-				@include button;
-			}
 		}
 		.submit { // The Jetpack button
 			margin-top: 1em;
