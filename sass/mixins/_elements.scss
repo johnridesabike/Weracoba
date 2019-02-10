@@ -5,7 +5,6 @@
 @mixin figcaption {
 	font-size: $font-size-sm;
 	opacity: $opacity-aside;
-	// font-family: $font-UI;
 	text-align: center;
 	margin-top: 0;
 	margin-bottom: .5em;
@@ -19,19 +18,17 @@
 	padding: .2em .5em;
 	font-size: $font-size-xs;
 	font-style: italic;
-	font-family: $font-UI;
+	margin-bottom: 0; // cancel default style
+	opacity: 1;
 }
 
 @mixin button {
     padding: .2em .75em;
-	font-family: $font-UI;
+	@extend %font-UI;
 	text-decoration: none;
 	border-radius: $border-radius-button;
 	border: 1px solid $color-text-main;
-	text-shadow: 0   -1px 1px rgba(0,0,0,.5),
-				 0    1px 1px rgba(0,0,0,.5),
-				 1px  0   1px rgba(0,0,0,.5),
-				 -1px 0   1px rgba(0,0,0,.5);
+	@include button-text-shadow;
     &:not(.has-text-color) {
         color: $color-bg-body;
     }

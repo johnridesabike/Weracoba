@@ -10,25 +10,26 @@ html {
 	}
 }
 
-// body,
-// button,
-// input,
-// select,
-// optgroup,
-// textarea {
-    // color: $color-text-main;
-    // font-family: $font-UI;
-	// font-size: $font-size-base;
-	// font-size: 1rem;
-	// line-height: calculate-line-height($font-size-base, $size-content);
-//}
-body {
-	color: $color-text-main;
+%font-reading {
+	font-family: $font-reading;
+}
+
+/* Interactive buttons and widgets use the system font. */
+%font-UI {
 	font-family: $font-UI;
 }
 
+body {
+	color: $color-text-main;
+}
+
+body,
 textarea {
-    font-family: $font-reading;
+	@extend %font-reading;
+}
+
+input {
+	@extend %font-UI;
 }
 
 h1, h2, h3, h4, h5, h6 {

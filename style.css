@@ -405,13 +405,31 @@ html {
   }
 }
 
-body {
-  color: #19191A;
+body,
+textarea, .entry-title,
+.post-title, .archive-title, .archive-description {
+  font-family: Palatino, "Palatino Linotype", Athelas, Georgia, Times, "Times New Roman", serif;
+}
+
+/* Interactive buttons and widgets use the system font. */
+input, button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"], .main-navigation, .infinite-scroll #infinite-handle span button,
+.infinite-scroll #infinite-handle span button:focus,
+.infinite-scroll #infinite-handle span button:hover, .widget-area li a,
+.footer-widgets li a,
+.archive-widget-area li a, .tags-links a,
+.tag-title,
+.tag-cloud-link, .widget.breadcrumbs-nav, .site .contact-form, .wp-block-button .wp-block-button__link,
+.wp-block-file .wp-block-file__button, .wp-block-file a.wp-block-file__button:hover, .wp-block-file a.wp-block-file__button:focus, .wp-block-file a.wp-block-file__button:visited, .wp-block-latest-comments__comment-meta, .page-links, .entry-header,
+.entry-footer, .continue-reading a, .comment-meta, .reply a, .comment-respond, .comment-respond .comment-form .submit input,
+.comment-respond .comment-form .form-submit input {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
 
-textarea {
-  font-family: Palatino, "Palatino Linotype", Athelas, Georgia, Times, "Times New Roman", serif;
+body {
+  color: #19191A;
 }
 
 h1, h2, h3, h4, .widget-area h2,
@@ -774,12 +792,18 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"] {
   padding: .2em .75em;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   text-decoration: none;
   border-radius: 0.625em;
   border: 1px solid #19191A;
   text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.5), 0 1px 1px rgba(0, 0, 0, 0.5), 1px 0 1px rgba(0, 0, 0, 0.5), -1px 0 1px rgba(0, 0, 0, 0.5);
   box-shadow: rgba(0, 0, 0, 0.8) 0 1px 0 0;
+}
+
+button svg,
+input[type="button"] svg,
+input[type="reset"] svg,
+input[type="submit"] svg {
+  filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.5));
 }
 
 button:not(.has-text-color),
@@ -890,7 +914,6 @@ a:hover, a:active {
 .site-description {
   margin: 0;
   font-size: 0.8em;
-  font-family: Palatino, "Palatino Linotype", Athelas, Georgia, Times, "Times New Roman", serif;
   opacity: 0.8;
   font-style: italic;
 }
@@ -1198,11 +1221,16 @@ a:hover, a:active {
 .infinite-scroll #infinite-handle span button:focus,
 .infinite-scroll #infinite-handle span button:hover {
   padding: .2em .75em;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   text-decoration: none;
   border-radius: 0.625em;
   border: 1px solid #19191A;
   text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.5), 0 1px 1px rgba(0, 0, 0, 0.5), 1px 0 1px rgba(0, 0, 0, 0.5), -1px 0 1px rgba(0, 0, 0, 0.5);
+}
+
+.infinite-scroll #infinite-handle span button svg,
+.infinite-scroll #infinite-handle span button:focus svg,
+.infinite-scroll #infinite-handle span button:hover svg {
+  filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.5));
 }
 
 .infinite-scroll #infinite-handle span button:not(.has-text-color),
@@ -1324,7 +1352,6 @@ a:hover, a:active {
 ## Widgets
 --------------------------------------------------------------*/
 .widget {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   margin: 0;
   width: 100%;
 }
@@ -1443,7 +1470,6 @@ a:hover, a:active {
 
 .rssSummary {
   padding: .5em 0;
-  font-family: Palatino, "Palatino Linotype", Athelas, Georgia, Times, "Times New Roman", serif;
 }
 
 /* Calendar widget */
@@ -1870,7 +1896,8 @@ figure.wp-block-image.alignwide {
   padding: .2em .5em;
   font-size: 0.8em;
   font-style: italic;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  margin-bottom: 0;
+  opacity: 1;
 }
 
 .wp-block-cover .wp-block-cover-text {
@@ -1884,12 +1911,16 @@ figure.wp-block-image.alignwide {
 .wp-block-button .wp-block-button__link,
 .wp-block-file .wp-block-file__button {
   padding: .2em .75em;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   text-decoration: none;
   border-radius: 0.625em;
   border: 1px solid #19191A;
   text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.5), 0 1px 1px rgba(0, 0, 0, 0.5), 1px 0 1px rgba(0, 0, 0, 0.5), -1px 0 1px rgba(0, 0, 0, 0.5);
   font-size: 1em;
+}
+
+.wp-block-button .wp-block-button__link svg,
+.wp-block-file .wp-block-file__button svg {
+  filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.5));
 }
 
 .wp-block-button .wp-block-button__link:not(.has-text-color),
@@ -1932,12 +1963,15 @@ figure.wp-block-image.alignwide {
 .wp-block-file a.wp-block-file__button:hover, .wp-block-file a.wp-block-file__button:focus, .wp-block-file a.wp-block-file__button:visited {
   opacity: 1;
   padding: .2em .75em;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   text-decoration: none;
   border-radius: 0.625em;
   border: 1px solid #19191A;
   text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.5), 0 1px 1px rgba(0, 0, 0, 0.5), 1px 0 1px rgba(0, 0, 0, 0.5), -1px 0 1px rgba(0, 0, 0, 0.5);
   box-shadow: rgba(0, 0, 0, 0.8) 0 1px 0 0;
+}
+
+.wp-block-file a.wp-block-file__button:hover svg, .wp-block-file a.wp-block-file__button:focus svg, .wp-block-file a.wp-block-file__button:visited svg {
+  filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.5));
 }
 
 .wp-block-file a.wp-block-file__button:hover:not(.has-text-color), .wp-block-file a.wp-block-file__button:focus:not(.has-text-color), .wp-block-file a.wp-block-file__button:visited:not(.has-text-color) {
@@ -2066,16 +2100,11 @@ figure.wp-block-image.alignwide {
   padding: 0;
 }
 
-.wp-block-latest-posts li a {
-  font-family: Palatino, "Palatino Linotype", Athelas, Georgia, Times, "Times New Roman", serif;
-}
-
 .wp-block-latest-comments__comment {
   font-size: 1em;
 }
 
 .wp-block-latest-comments__comment-meta {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   font-size: 0.8em;
 }
 
@@ -2237,7 +2266,6 @@ figure.wp-block-image.alignwide {
 .page-links {
   clear: both;
   margin: 0 0 1.5em;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   border-style: none;
   padding-top: 0;
 }
@@ -2347,16 +2375,6 @@ figure.wp-block-image.alignwide {
   max-width: 680px;
   margin-right: auto;
   margin-left: auto;
-}
-
-.excerpt-entry .entry-header .entry-title,
-.single-post .entry-header .entry-title {
-  font-family: Palatino, "Palatino Linotype", Athelas, Georgia, Times, "Times New Roman", serif;
-}
-
-.excerpt-entry .entry-content,
-.single-post .entry-content {
-  font-family: Palatino, "Palatino Linotype", Athelas, Georgia, Times, "Times New Roman", serif;
 }
 
 /*
@@ -2470,7 +2488,6 @@ figure.wp-block-image.alignwide {
   max-width: 680px;
   margin-right: auto;
   margin-left: auto;
-  text-align: center;
 }
 
 .continue-reading {
@@ -2481,12 +2498,15 @@ figure.wp-block-image.alignwide {
 .continue-reading a {
   display: block;
   padding: .2em .75em;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   text-decoration: none;
   border-radius: 0.625em;
   border: 1px solid #19191A;
   text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.5), 0 1px 1px rgba(0, 0, 0, 0.5), 1px 0 1px rgba(0, 0, 0, 0.5), -1px 0 1px rgba(0, 0, 0, 0.5);
   border-radius: 0.15em;
+}
+
+.continue-reading a svg {
+  filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.5));
 }
 
 .continue-reading a:not(.has-text-color) {
@@ -2528,8 +2548,13 @@ figure.wp-block-image.alignwide {
   color: white;
   padding: 0 .5em;
   margin: 0;
+  text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.5), 0 1px 1px rgba(0, 0, 0, 0.5), 1px 0 1px rgba(0, 0, 0, 0.5), -1px 0 1px rgba(0, 0, 0, 0.5);
   font-weight: 400;
   border-bottom-style: solid;
+}
+
+.excerpt-entry .cat-links svg {
+  filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.5));
 }
 
 .excerpt-entry .cat-links a {
@@ -2652,12 +2677,12 @@ figure.wp-block-image.alignwide {
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/
-.comment-content {
-  font-family: Palatino, "Palatino Linotype", Athelas, Georgia, Times, "Times New Roman", serif;
-}
-
 .comment-content a {
   word-wrap: break-word;
+}
+
+.comments-title {
+  border-style: none;
 }
 
 .bypostauthor {
@@ -2739,11 +2764,14 @@ figure.wp-block-image.alignwide {
 
 .reply a {
   padding: .2em .75em;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   text-decoration: none;
   border-radius: 0.625em;
   border: 1px solid #19191A;
   text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.5), 0 1px 1px rgba(0, 0, 0, 0.5), 1px 0 1px rgba(0, 0, 0, 0.5), -1px 0 1px rgba(0, 0, 0, 0.5);
+}
+
+.reply a svg {
+  filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.5));
 }
 
 .reply a:not(.has-text-color) {
@@ -2803,11 +2831,15 @@ figure.wp-block-image.alignwide {
 .comment-respond .comment-form .submit input,
 .comment-respond .comment-form .form-submit input {
   padding: .2em .75em;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   text-decoration: none;
   border-radius: 0.625em;
   border: 1px solid #19191A;
   text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.5), 0 1px 1px rgba(0, 0, 0, 0.5), 1px 0 1px rgba(0, 0, 0, 0.5), -1px 0 1px rgba(0, 0, 0, 0.5);
+}
+
+.comment-respond .comment-form .submit input svg,
+.comment-respond .comment-form .form-submit input svg {
+  filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.5));
 }
 
 .comment-respond .comment-form .submit input:not(.has-text-color),
@@ -2988,7 +3020,6 @@ object {
   text-align: right;
   padding-right: 1.5em;
   /* to avoid scrollbars */
-  margin-bottom: 0;
 }
 
 @supports ((-o-object-fit: cover) or (object-fit: cover)) {
@@ -3014,7 +3045,8 @@ object {
     padding: .2em .5em;
     font-size: 0.8em;
     font-style: italic;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    margin-bottom: 0;
+    opacity: 1;
     width: 100%;
     text-align: right;
     position: absolute;

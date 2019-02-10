@@ -54,11 +54,14 @@
 }
 
 .site { // Greater specificity = override Jetpack default CSS
-	.contact-form label {
-		font-weight: normal;
-		span {
-			color: $color-text-main;
-			@extend %required;
+	.contact-form {
+		@extend %font-UI;
+		label {
+			font-weight: normal;
+			span {
+				color: $color-text-main;
+				@extend %required;
+			}
 		}
 	}
 }

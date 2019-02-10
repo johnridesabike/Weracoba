@@ -1,5 +1,5 @@
 .widget {
-	font-family: $font-UI;
+	// font-family: $font-UI;
 	margin: 0;
 	width: 100%;
     ul,
@@ -12,6 +12,13 @@
         padding: 10px;
         border: 1px solid #ccc;
     }
+}
+.widget-area,
+.footer-widgets,
+.archive-widget-area { // so this doesn't apply to blocks embeded in the body
+	li a {
+		@extend %font-UI;
+	}
 }
 /* Search widget. */
 .widget_search {
@@ -69,7 +76,6 @@
 
 .rssSummary {
 	padding: .5em 0;
-	font-family: $font-reading;
 }
 
 /* Calendar widget */
@@ -121,6 +127,7 @@
 .tags-links a,
 .tag-title,
 .tag-cloud-link {
+	@extend %font-UI;
 	background-color: rgba(0, 0, 0, .1);
 	padding: 0 .25em;
 	margin: .1em 0;
@@ -149,6 +156,7 @@ a.tag-cloud-link {
 
 /** Breadcrumbs **/
 .widget.breadcrumbs-nav {
+	@extend %font-UI;
 	opacity: $opacity-aside;
 	font-size: $font-size-sm;
 	margin-bottom: .5em;

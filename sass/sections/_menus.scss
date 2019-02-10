@@ -37,6 +37,7 @@
     }
 }
 .main-navigation {
+	@extend %font-UI;
 	clear: both;
 	display: block;
     position: relative;

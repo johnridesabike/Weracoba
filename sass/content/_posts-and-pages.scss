@@ -8,7 +8,7 @@
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
-	font-family: $font-UI;
+	@extend %font-UI;
 	border-style: none; // cancel _navication.scss
 	padding-top: 0; // cancel _navication.scss
 	a:hover,
@@ -62,6 +62,15 @@
 	}
 }
 
+.entry-header,
+.entry-footer {
+	@extend %font-UI;
+}
+.entry-title,
+.post-title { // nav links
+	@extend %font-reading;
+}
+
 /*
  * Entry Footer
  */
@@ -106,17 +115,6 @@
 
 .single .post .entry-content > *:not(.alignwide):not(.alignfull) {
     @include max-content-width;
-}
-.excerpt-entry,
-.single-post {
-    .entry-header {
-        .entry-title {
-            font-family: $font-reading;
-        }
-    }
-    .entry-content {
-        font-family: $font-reading;
-    }
 }
 
 /*

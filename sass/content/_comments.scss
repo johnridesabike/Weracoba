@@ -1,8 +1,10 @@
 .comment-content {
-	font-family: $font-reading;
 	a {
 		word-wrap: break-word;
 	}
+}
+.comments-title {
+	border-style: none;
 }
 .bypostauthor {
 	display: block;
@@ -30,6 +32,7 @@
 	margin-bottom: 3em;
 }
 .comment-meta {
+	@extend %font-UI;
     .avatar {
 		height: $size-avatar-sm;
 		width: $size-avatar-sm;
@@ -77,6 +80,7 @@
 }
 .comment-respond {
 	@include max-content-width;
+	@extend %font-UI;
 	.comment-form {
 		display: flex;
 		flex-wrap: wrap;

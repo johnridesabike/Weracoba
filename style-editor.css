@@ -11,13 +11,23 @@ html {
   }
 }
 
-body {
-  color: #19191A;
+body,
+textarea {
+  font-family: Palatino, "Palatino Linotype", Athelas, Georgia, Times, "Times New Roman", serif;
+}
+
+/* Interactive buttons and widgets use the system font. */
+input, .widget-area li a,
+.footer-widgets li a,
+.archive-widget-area li a, .tags-links a,
+.tag-title,
+.tag-cloud-link, .widget.breadcrumbs-nav, .wp-block-button .wp-block-button__link,
+.wp-block-file .wp-block-file__button, .wp-block-file a.wp-block-file__button:hover, .wp-block-file a.wp-block-file__button:focus, .wp-block-file a.wp-block-file__button:visited, .wp-block-latest-comments__comment-meta {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
 
-textarea {
-  font-family: Palatino, "Palatino Linotype", Athelas, Georgia, Times, "Times New Roman", serif;
+body {
+  color: #19191A;
 }
 
 h1, .editor-post-title__block .editor-post-title__input,
@@ -194,7 +204,6 @@ big {
 }
 
 .widget {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   margin: 0;
   width: 100%;
 }
@@ -313,7 +322,6 @@ big {
 
 .rssSummary {
   padding: .5em 0;
-  font-family: Palatino, "Palatino Linotype", Athelas, Georgia, Times, "Times New Roman", serif;
 }
 
 /* Calendar widget */
@@ -644,7 +652,8 @@ figure.wp-block-image.alignwide, .alignwide.wp-block[data-type="core/image"] {
   padding: .2em .5em;
   font-size: 0.8em;
   font-style: italic;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  margin-bottom: 0;
+  opacity: 1;
 }
 
 .wp-block-cover .wp-block-cover-text {
@@ -658,12 +667,16 @@ figure.wp-block-image.alignwide, .alignwide.wp-block[data-type="core/image"] {
 .wp-block-button .wp-block-button__link,
 .wp-block-file .wp-block-file__button {
   padding: .2em .75em;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   text-decoration: none;
   border-radius: 0.625em;
   border: 1px solid #19191A;
   text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.5), 0 1px 1px rgba(0, 0, 0, 0.5), 1px 0 1px rgba(0, 0, 0, 0.5), -1px 0 1px rgba(0, 0, 0, 0.5);
   font-size: 1em;
+}
+
+.wp-block-button .wp-block-button__link svg,
+.wp-block-file .wp-block-file__button svg {
+  filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.5));
 }
 
 .wp-block-button .wp-block-button__link:not(.has-text-color),
@@ -706,12 +719,15 @@ figure.wp-block-image.alignwide, .alignwide.wp-block[data-type="core/image"] {
 .wp-block-file a.wp-block-file__button:hover, .wp-block-file a.wp-block-file__button:focus, .wp-block-file a.wp-block-file__button:visited {
   opacity: 1;
   padding: .2em .75em;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   text-decoration: none;
   border-radius: 0.625em;
   border: 1px solid #19191A;
   text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.5), 0 1px 1px rgba(0, 0, 0, 0.5), 1px 0 1px rgba(0, 0, 0, 0.5), -1px 0 1px rgba(0, 0, 0, 0.5);
   box-shadow: rgba(0, 0, 0, 0.8) 0 1px 0 0;
+}
+
+.wp-block-file a.wp-block-file__button:hover svg, .wp-block-file a.wp-block-file__button:focus svg, .wp-block-file a.wp-block-file__button:visited svg {
+  filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.5));
 }
 
 .wp-block-file a.wp-block-file__button:hover:not(.has-text-color), .wp-block-file a.wp-block-file__button:focus:not(.has-text-color), .wp-block-file a.wp-block-file__button:visited:not(.has-text-color) {
@@ -840,16 +856,11 @@ figure.wp-block-image.alignwide, .alignwide.wp-block[data-type="core/image"] {
   padding: 0;
 }
 
-.wp-block-latest-posts li a {
-  font-family: Palatino, "Palatino Linotype", Athelas, Georgia, Times, "Times New Roman", serif;
-}
-
 .wp-block-latest-comments__comment {
   font-size: 1em;
 }
 
 .wp-block-latest-comments__comment-meta {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   font-size: 0.8em;
 }
 
@@ -895,13 +906,6 @@ figure.wp-block-image.alignwide, .alignwide.wp-block[data-type="core/image"] {
   .wp-block-columns {
     flex-wrap: nowrap;
   }
-}
-
-/* Elements */
-body {
-  font-family: Palatino, "Palatino Linotype", Athelas, Georgia, Times, "Times New Roman", serif;
-  font-size: 20px;
-  line-height: 1.50967;
 }
 
 * {

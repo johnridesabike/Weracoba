@@ -4,14 +4,6 @@
 @import "sass/sections/widgets"; // necessary for blocks
 @import "sass/blocks";
 
-/* Elements */
-
-body {
-	font-family: $font-reading;
-	font-size: $font-size-base;
-	line-height: calculate-line-height($font-size-base, $size-content);
-}
-
 * {
 	border-color: $color-link; // from elements
 }
@@ -76,9 +68,6 @@ a {
 
 	&[data-type="core/image"] {
 		@extend figure.wp-block-image;
-		// &[data-align] {
-		// 	@extend div.wp-block-image;
-		// }
 	}
 
 	/* Lists. See _elements.scss */

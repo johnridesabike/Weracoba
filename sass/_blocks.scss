@@ -70,7 +70,7 @@ figure.wp-block-image {
 }
 
 .wp-block-gallery .blocks-gallery-item figcaption {
-    @include figcaption-overlay;
+	@include figcaption-overlay;
 }
 
 .wp-block-cover .wp-block-cover-text {
@@ -152,15 +152,12 @@ figure.wp-block-image {
 .wp-block-categories__list {
     @include widget-list;
 }
-.wp-block-latest-posts li a {
-	font-family: $font-reading;
-}
 
 .wp-block-latest-comments__comment {
 	font-size: $font-size-md;
 }
 .wp-block-latest-comments__comment-meta {
-	font-family: $font-UI;
+	@extend %font-UI;
 	font-size: $font-size-xs;
 	a {
 		text-decoration: none;

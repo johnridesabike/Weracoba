@@ -3,9 +3,12 @@
         width: 100%;
     }
 }
+.archive-title {
+	@extend %font-reading;
+}
 .archive-description {
+	@extend %font-reading;
     @include max-content-width;
-    text-align: center;
 }
 .continue-reading {
     text-align: center;

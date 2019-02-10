@@ -44,6 +44,7 @@
 	color: $color-bg-body;
 	padding: 0 .5em;
 	margin: 0;
+	@include button-text-shadow;
 	a {
 		color: $color-bg-body;
 		&:hover,
