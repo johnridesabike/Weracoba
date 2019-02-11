@@ -10,9 +10,9 @@
 	#jp-relatedposts h3.jp-relatedposts-headline,
 	#jp-relatedposts .jp-relatedposts-items-visual h4.jp-relatedposts-post-title {
 		@extend h5;
-		margin-top: 0;
 	}
 	#jp-relatedposts h3.jp-relatedposts-headline {
+		margin: 0;
 		display: block;
 		float: none;
 		text-align: center;
@@ -71,6 +71,7 @@
  */
 .akismet_comment_form_privacy_notice {
 	font-size: $font-size-xs;
+	@extend %font-UI;
 }
 
 /*

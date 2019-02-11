@@ -119,6 +119,31 @@ textarea {
 	width: 100%;
 }
 
+/*--------------------------------------------------------------
+## Links
+--------------------------------------------------------------*/
+a {
+	color: $color-link;
+    text-decoration: none;
+
+	&:visited {
+		color: $color-link-visited;
+	}
+	&:hover,
+	&:focus,
+	&:active {
+		color: $color-link-hover;
+	}
+	&:focus {
+		outline: thin dotted;
+	}
+	&:hover,
+	&:active {
+		outline: 0;
+	}
+}
+
+
 /* All of the buttons and button-like elements */
 
 @import "placeholders/buttons";
@@ -143,28 +168,4 @@ input[type="submit"] {
 }
 form span.required {
 	@extend %required;
-}
-
-/*--------------------------------------------------------------
-## Links
---------------------------------------------------------------*/
-a {
-	color: $color-link;
-    text-decoration: none;
-
-	&:visited {
-		color: $color-link-visited;
-	}
-	&:hover,
-	&:focus,
-	&:active {
-		color: $color-link-hover;
-	}
-	&:focus {
-		outline: thin dotted;
-	}
-	&:hover,
-	&:active {
-		outline: 0;
-	}
 }

@@ -19,14 +19,10 @@
 		@extend %button;
 		@extend %button-background;
 		@extend %button-color;
-		&:visited {
-			color: $color-bg-body;
-		}
 		&:hover,
 		&:focus,
 		&:active {
-			color: $color-bg-body;
-			background: $color-link-hover;
+			@extend %button-hover;
 		}
 	}
 }

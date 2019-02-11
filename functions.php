@@ -7,26 +7,13 @@
  * @package Weracoba
  */
 
-/**
- * To-do:
- * - Asides
- * - Add colors to editor
- */
-
 if ( ! function_exists( 'weracoba_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
-	 *
-	 * Note that this function is hooked into the after_setup_theme hook, which
-	 * runs before the init hook. The init hook is too late for some features, such
-	 * as indicating support for post thumbnails.
 	 */
 	function weracoba_setup() {
 		/*
 		 * Make theme available for translation.
-		 * Translations can be filed in the /languages/ directory.
-		 * If you're building a theme based on Weracoba, use a find and replace
-		 * to change 'weracoba' to the name of your theme in all the template files.
 		 */
 		load_theme_textdomain( 'weracoba', get_template_directory() . '/languages' );
 
@@ -35,9 +22,6 @@ if ( ! function_exists( 'weracoba_setup' ) ) :
 
 		/*
 		 * Let WordPress manage the document title.
-		 * By adding theme support, we declare that this theme does not use a
-		 * hard-coded <title> tag in the document head, and expect WordPress to
-		 * provide it for us.
 		 */
 		add_theme_support( 'title-tag' );
 
@@ -49,7 +33,6 @@ if ( ! function_exists( 'weracoba_setup' ) ) :
 		add_theme_support( 'post-thumbnails' );
 		set_post_thumbnail_size( 1200, 800, true );
 
-		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
 			array(
 				'menu-1' => esc_html__( 'Primary', 'weracoba' ),
@@ -245,9 +228,7 @@ function weracoba_scripts() {
 	wp_enqueue_style( 'weracoba-style', get_stylesheet_uri(), array(), '20190211', 'all' );
 	wp_enqueue_style( 'weracoba-print-style', get_template_directory_uri() . '/style-print.css', array( 'weracoba-style' ), '20190211', 'print' );
 
-	/*
-	* phpcs ignore
-	* Disabling the fixed-header function.
+	/* phpcs:ignore
 	wp_enqueue_script( 'weracoba-functions', get_template_directory_uri() . '/js/functions.js', array(), '20181105', true );
 	*/
 
