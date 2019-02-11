@@ -84,13 +84,19 @@ figure.wp-block-image {
 
 .wp-block-button .wp-block-button__link,
 .wp-block-file .wp-block-file__button {
-	@include button;
+	@extend %button;
+    &:not(.has-background) {
+        @extend %button-background;
+	}
+    &:not(.has-text-color) {
+        @extend %button-color;
+    }
 	font-size: $font-size-md; // cancel built in style for the file button
 }
 .wp-block-button:not(.is-style-outline):not(.is-style-squared) .wp-block-button__link {
-	box-shadow: $shadow-button;
+	@extend %button-shadow;
 	&:active {
-		@include button-active;
+		@extend %button-active;
 	}
 }
 .wp-block-button.is-style-squared .wp-block-button__link {
@@ -103,18 +109,18 @@ figure.wp-block-image {
 }
 .wp-block-file a.wp-block-file__button {
 	display: inline-block;
-	box-shadow: $shadow-button;
+    @extend %button-shadow;
 	// This is just to cancel the built in style
 	&:hover,
 	&:focus,
 	&:visited {
 		opacity: 1;
-		@include button;
-		box-shadow: $shadow-button;
+		// @extend %button;
+    	@extend %button-shadow;
 	}
 	&:active {
 		opacity: 1;
-		@include button-active;
+		@extend %button-active;
 	}
 }
 

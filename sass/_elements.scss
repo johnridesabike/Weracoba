@@ -119,15 +119,21 @@ textarea {
 	width: 100%;
 }
 
+/* All of the buttons and button-like elements */
+
+@import "placeholders/buttons";
+
 button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-    @include button;
-    box-shadow: $shadow-button;
+    @extend %button;
+	@extend %button-background;
+	@extend %button-color;
+    @extend %button-shadow;
 
 	&:active {
-		@include button-active;
+		@extend %button-active;
 	}
 }
 

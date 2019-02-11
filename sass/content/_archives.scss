@@ -15,14 +15,20 @@
 	flex-shrink: 0;
     a {
         display: block;
-		@include button;
 		border-radius: $border-radius-button-square;
+		@extend %button;
+		@extend %button-background;
+		@extend %button-color;
+		&:visited {
+			color: $color-bg-body;
+		}
 		&:hover,
 		&:focus,
 		&:active {
+			color: $color-bg-body;
 			background: $color-link-hover;
 		}
-    }
+	}
 }
 
 .excerpt-entry {

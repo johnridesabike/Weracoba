@@ -59,7 +59,9 @@
         button,
         button:focus,
         button:hover {
-            @include button;
+            @extend %button;
+			@extend %button-background;
+			@extend %button-color;
         }
     }
 }

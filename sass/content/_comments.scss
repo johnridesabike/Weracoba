@@ -69,7 +69,9 @@
 	font-size: $font-size-sm;
 }
 .reply a {
-    @include button;
+    @extend %button;
+	@extend %button-background;
+	@extend %button-color;
 }
 /** Comment Form **/
 .comment-reply-title {
