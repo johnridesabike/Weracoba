@@ -164,6 +164,14 @@ big {
 	color: $color-link;
 }
 
+.has-ui-font {
+	@extend %font-UI;
+}
+
+.has-body-font {
+	@extend %font-reading;
+}
+
 .widget-area,
 .footer-widgets {
 	.widget {

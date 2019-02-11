@@ -406,13 +406,13 @@ html {
 }
 
 body,
-textarea, .entry-title,
+textarea, .has-body-font, .entry-title,
 .post-title, .archive-title, .archive-description {
   font-family: Palatino, "Palatino Linotype", Athelas, Georgia, Times, "Times New Roman", serif;
 }
 
 /* Interactive buttons and widgets use the system font. */
-input, button,
+input, .has-ui-font, button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"], .infinite-scroll #infinite-handle span button,

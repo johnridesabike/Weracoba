@@ -12,12 +12,12 @@ html {
 }
 
 body,
-textarea {
+textarea, .has-body-font {
   font-family: Palatino, "Palatino Linotype", Athelas, Georgia, Times, "Times New Roman", serif;
 }
 
 /* Interactive buttons and widgets use the system font. */
-input, .widget-area li a,
+input, .has-ui-font, .widget-area li a,
 .footer-widgets li a,
 .archive-widget-area li a, .tags-links a,
 .tag-title,
