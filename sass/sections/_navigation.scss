@@ -16,8 +16,9 @@
         width: 100%;
     }
 }
-.page-links,
+.post-nav-links,
 .pagination {
+	@extend %font-UI;
     text-align: center;
 	font-size: $font-size-lg;
 	border-top-width: 4px;

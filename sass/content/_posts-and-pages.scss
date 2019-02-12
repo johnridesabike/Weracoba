@@ -5,12 +5,11 @@
 .updated:not(.published) {
 	display: none;
 }
-.page-links {
+.post-nav-links {
 	clear: both;
-	margin: 0 0 1.5em;
-	@extend %font-UI;
-	border-style: none; // cancel _navication.scss
-	padding-top: 0; // cancel _navication.scss
+	margin: 0 0 1.5em; // cancel _navigation.scss
+	border-style: none; // cancel _navigation.scss
+	padding-top: 0; // cancel _navigation.scss
 	a:hover,
 	a:active,
 	a:focus {

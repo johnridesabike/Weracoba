@@ -76,7 +76,7 @@ get_header();
 			the_widget(
 				'WP_Widget_Categories',
 				array(
-					'title'        => __( 'Browse by category', 'weracoba' ),
+					'title'        => __( 'Browse another category', 'weracoba' ),
 					'hierarchical' => 1,
 				)
 			);

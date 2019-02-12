@@ -14,8 +14,8 @@
 		<div class="entry-content">
 		<?php
 		$weracoba_link_page_args = array(
-			'before'      => '<div class="page-links">',
-			'after'       => '</div>',
+			'before'      => '<p class="post-nav-links">',
+			'after'       => '</p>',
 			'link_before' => esc_html_x( 'Page ', 'Single pagination', 'weracoba' ),
 		);
 		if ( 1 < $wp_query->get( 'page' ) ) {

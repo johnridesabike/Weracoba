@@ -15,6 +15,12 @@
         border: 1px solid #ccc;
     }
 }
+
+.widget-title,
+.widgettitle {
+    margin: 0 0 .5em;
+}
+
 .widget-area,
 .footer-widgets,
 .archive-widget-area { // so this doesn't apply to blocks embeded in the body
@@ -22,6 +28,7 @@
 		@extend %font-UI;
 	}
 }
+
 /* Search widget. */
 .widget_search {
     .search-submit {
@@ -199,14 +206,9 @@ a.tag-cloud-link {
     }
 }
 
-.widget-title,
-.widgettitle {
-    margin: 0 0 .5em;
-}
+// for the widgets outside regular widget-area
 .archive-widget-area {
-    // for the widgets outside regular widget-area
     .widget {
-		font-size: 1rem;
         > ul {
             list-style: none;
             //font-size: 1.1em;
@@ -217,6 +219,10 @@ a.tag-cloud-link {
             }
 		}
     }
+}
+
+.archive-widget-area-bottom {
+	margin-top: 2em;
 }
 
 /** Footer Widgets **/
