@@ -38,6 +38,9 @@
 	.sd-social-text .sd-content ul li a.sd-button {
 		color: $color-text-main !important;
 	}
+	.sd-content ul li {
+		text-align: left;
+	}
 
 	div.jetpack-likes-widget-wrapper {
 		width: initial;

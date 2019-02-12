@@ -1,8 +1,8 @@
 @import "sass/variables";
 @import "sass/mixins/mixins";
 @import "sass/typography";
-@import "sass/sections/widgets"; // necessary for blocks
-@import "sass/placeholders/buttons"; // necessary for blocks
+@import "sass/placeholders/widgets";
+@import "sass/placeholders/buttons";
 @import "sass/blocks";
 
 * {

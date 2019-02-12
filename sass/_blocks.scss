@@ -156,7 +156,7 @@ figure.wp-block-image {
 .wp-block-archives-list,
 .wp-block-categories-list,
 .wp-block-categories__list {
-    @include widget-list;
+    @extend %widget-list;
 }
 
 .wp-block-latest-comments__comment {

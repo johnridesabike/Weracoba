@@ -1,10 +1,12 @@
+@import "../placeholders/widgets";
+
 .widget {
 	// font-family: $font-UI;
 	margin: 0;
 	width: 100%;
     ul,
     ol {
-		@include widget-list;
+		@extend %widget-list;
     }
     select {
         width: 100%;
