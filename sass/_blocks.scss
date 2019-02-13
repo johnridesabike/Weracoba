@@ -149,6 +149,10 @@ figure.wp-block-image {
     }
 }
 
+.wp-block-file {
+	@extend %font-UI;
+}
+
 /**
  * Widgets
  */
