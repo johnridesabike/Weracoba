@@ -163,6 +163,10 @@ figure.wp-block-image {
     @extend %widget-list;
 }
 
+.wp-block-latest-posts__post-date {
+	@extend %font-UI;
+}
+
 .wp-block-latest-comments__comment {
 	font-size: $font-size-md;
 }
@@ -199,50 +203,10 @@ figure.wp-block-image {
 .wp-block-column {
 	margin-bottom: 0;
 }
-// // replace default css
-// @media (min-width:600px) {
-//     .wp-block-column {
-//         flex-basis: 100%; //50%;
-//         flex-grow: 0
-//     }
-    
-//     .wp-block-column:nth-child(odd) {
-//         margin-right: 0; //32px
-//     }
-
-//     .wp-block-column:nth-child(even) {
-//         margin-left: 0; //32px
-//     }
-
-//     .wp-block-column:not(:first-child) {
-//         margin-left: 0; //32px
-//     }
-
-//     .wp-block-column:not(:last-child) {
-//         margin-right: 0; //32px
-//     }
-// }
 
 @media (min-width: $breakpoint-1) and (max-width: $breakpoint-2) {
      // replaces the built-in media query with something better
     .wp-block-columns {
         flex-wrap: nowrap;
     }
-    // .wp-block-column {
-    //     flex-basis: 50%;
-    //     flex-grow: 0
-    // }
-    // .wp-block-column:nth-child(odd) {
-    //     margin-right: 32px
-    // }
-    // .wp-block-column:nth-child(even) {
-    //     margin-left: 32px
-    // }
-    // .wp-block-column:not(:first-child) {
-    //     margin-left: 32px
-    // }
-    // .wp-block-column:not(:last-child) {
-    //     margin-right: 32px
-	// }
-	// block cover
 }

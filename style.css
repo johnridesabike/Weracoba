@@ -423,7 +423,7 @@ input[type="submit"], .infinite-scroll #infinite-handle span button,
 .footer-widgets li a,
 .archive-widget-area li a, .tags-links a,
 .tag-title,
-.tag-cloud-link, .widget.breadcrumbs-nav, .site .contact-form, .akismet_comment_form_privacy_notice, .wp-block-file, .wp-block-latest-comments__comment-meta, .entry-header,
+.tag-cloud-link, .widget.breadcrumbs-nav, .site .contact-form, .akismet_comment_form_privacy_notice, .wp-block-file, .wp-block-latest-posts__post-date, .wp-block-latest-comments__comment-meta, .entry-header,
 .entry-footer, .comment-meta, .comment-respond {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
@@ -822,7 +822,7 @@ input[type="submit"], .infinite-scroll #infinite-handle span button,
   text-decoration: none;
   border-radius: 0.625em;
   border: 1px solid #19191A;
-  text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.5), 0 1px 1px rgba(0, 0, 0, 0.5), 1px 0 1px rgba(0, 0, 0, 0.5), -1px 0 1px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 0 2px black;
 }
 
 button svg, input[type="button"] svg, input[type="reset"] svg, input[type="submit"] svg, .infinite-scroll #infinite-handle span button svg, .infinite-scroll #infinite-handle span button:focus svg, .infinite-scroll #infinite-handle span button:hover svg, .wp-block-button .wp-block-button__link svg, .wp-block-file .wp-block-file__button svg, .single .entry-footer .comments-link a svg, .continue-reading a svg, .reply a svg {
@@ -1021,11 +1021,19 @@ form span.required, .site .contact-form label span {
 .menu-button .menu-toggle {
   display: inline;
   box-shadow: none;
+  border-style: none;
+  background: none;
+  color: #03727c;
   padding: .1em;
+}
+
+.menu-button .menu-toggle:active {
+  transform: none;
 }
 
 .menu-button .menu-toggle .svg-icon {
   font-size: 40px;
+  filter: none;
 }
 
 .menu-button .dismiss-icon {
@@ -1119,7 +1127,7 @@ form span.required, .site .contact-form label span {
 }
 
 .main-navigation a {
-  display: block;
+  display: inline-block;
   padding: .5em 0 .5em 0;
 }
 
@@ -2370,7 +2378,7 @@ figure.wp-block-image.alignwide {
   color: white;
   padding: 0 .5em;
   margin: 0;
-  text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.5), 0 1px 1px rgba(0, 0, 0, 0.5), 1px 0 1px rgba(0, 0, 0, 0.5), -1px 0 1px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 0 2px black;
   font-weight: 400;
   border-bottom-style: solid;
 }

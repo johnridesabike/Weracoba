@@ -12,9 +12,16 @@
     .menu-toggle {
         display: inline;
 		box-shadow: none; // cancel _elements.scss
+		border-style: none; // cancel _elements.scss
+		background: none; // cancel _elements.scss
+		color: $color-link;
 		padding: .1em;
+		&:active {
+			transform: none; // cancel _elements.scss
+		}
 		.svg-icon {
 			font-size: 40px;
+			filter: none; // cancel _elements.scss
 		}
     }
     .dismiss-icon {
@@ -100,7 +107,7 @@
 		}
 	}
 	a {
-        display: block;
+        display: inline-block;
         padding: .5em 0 .5em 0;
 	}
 	.current_page_item > a,
