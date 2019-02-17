@@ -226,7 +226,7 @@ add_action( 'widgets_init', 'weracoba_widgets_init' );
  */
 function weracoba_scripts() {
 	wp_enqueue_style( 'weracoba-style', get_stylesheet_uri(), array(), '20190216', 'all' );
-	wp_enqueue_style( 'weracoba-print-style', get_template_directory_uri() . '/style-print.css', array( 'weracoba-style' ), '20190216', 'print' );
+	wp_enqueue_style( 'weracoba-print-style', get_template_directory_uri() . '/style-print.css', array( 'weracoba-style' ), '20190217', 'print' );
 
 	/* phpcs:ignore
 	wp_enqueue_script( 'weracoba-functions', get_template_directory_uri() . '/js/functions.js', array(), '20181105', true );
