@@ -86,7 +86,7 @@ if ( ! function_exists( 'weracoba_author_avatar' ) ) :
 	 * Prints HTML with the author avatar.
 	 */
 	function weracoba_author_avatar() {
-		echo get_avatar( get_the_author_meta( 'ID' ) );
+		echo get_avatar( get_the_author_meta( 'ID' ), 96, '', __( 'Author avatar', 'weracoba' ) );
 	}
 endif;
 
