@@ -27,12 +27,18 @@
 	}
 }
 
+.archive-view article:not(:last-of-type) {
+	margin-bottom: 2em;
+}
+
+.archive-view .format-aside .entry-header {
+	border-top-style: solid; // matches h2
+	border-top-width: 4px; // matches h2
+}
+
 .excerpt-entry {
 	position: relative;
 	@include max-content-width;
-	&:not(:last-of-type) {
-		margin-bottom: 2em;
-	}
 	.entry-header {
 		padding: 0; // cancel the padding from the main entry-headers
 	}
@@ -50,9 +56,6 @@
 		margin: 0 0 1rem 0;
 		min-height: 0;
 		font-size: $font-size-sm;
-		> * {
-			margin-bottom: .25em;
-		}
 		.tags-links {
 			display: block;
 		}

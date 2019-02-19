@@ -71,6 +71,8 @@
     padding: 0 1.5em; /* use padding, not margins to avoid conflict with post content margins */
 	border-left-width: 4px;
 	border-left-style: solid;
+	margin-left: 0;
+	margin-right: 0;
 }
 
 @mixin cite {

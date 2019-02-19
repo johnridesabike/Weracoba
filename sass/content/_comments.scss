@@ -12,10 +12,6 @@
 .comments-area {
     @include max-content-width;
 }
-.attachment .comments-area {
-    @include drop-shadow;
-    padding: .5em 1em;
-}
 .comment-list {
 	padding: 0;
 	margin: 0;

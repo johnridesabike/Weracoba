@@ -174,14 +174,14 @@ big {
 
 .widget-area,
 .footer-widgets {
-	.widget {
-		opacity: $opacity-aside;
-	}
 	h2 {
 		@extend h4;
 		border: none;
 		padding: 0;
 	}
+}
+.footer-widgets {
+	opacity: $opacity-aside;
 }
 
 /* Accessibility */

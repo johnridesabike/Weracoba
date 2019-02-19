@@ -41,7 +41,7 @@
 		}
 	}
 }
-.single .entry-meta {
+.single .entry-header .entry-meta {
 	font-size: $font-size-sm;
 	margin-top: .5em;
 	display: flex;
@@ -106,7 +106,8 @@
 			@extend %button-hover;
 		}
 	}
-	> * {
+	> *,
+	.entry-footer-wrapper > * {
 		margin-bottom: .5em;
 	}
 }
@@ -116,6 +117,68 @@
 
 .single .post .entry-content > *:not(.alignwide):not(.alignfull) {
     @include max-content-width;
+}
+
+/*
+ * Asides
+ */
+article.format-aside {
+	@include max-content-width;
+}
+.format-aside {
+	.entry-header {
+		display: flex;
+		align-items: center;
+		padding-top: .5em; // matches h2
+	}
+	.entry-header-wrapper > * {
+		display: block;
+	}
+	.avatar {
+		height: $size-avatar-md;
+		width: $size-avatar-md;
+		margin-right: 1em;
+	}
+	.entry-footer {
+		font-size: $font-size-sm;
+		border-style: none; // cancel default single footer style
+		opacity: 1; // cancel default single footer style
+
+		> * {
+			margin-bottom: .5em;
+		}
+	}
+	.entry-meta {
+		@include entry-meta-inline;
+		margin-bottom: 1rem;
+	}
+	.comments-link {
+		display: block;
+	}
+    .comments-link a {
+		display: block;
+		border-radius: $border-radius-button-square;
+		@extend %button;
+		@extend %button-color;
+		@extend %button-background;
+		&:hover,
+		&:active,
+		&:focus {
+			@extend %button-hover;
+		}
+	}
+	a[rel="bookmark"] {
+		font-size: $font-size-sm;
+		color: currentColor;
+		opacity: $opacity-aside;
+
+		&:hover,
+		&:active,
+		&:focus {
+			color: $color-link-hover;
+			opacity: 1;
+		}
+	}
 }
 
 /*
@@ -138,16 +201,15 @@
 /*
  * Error 404 & Search Page
  */
-.search-results,
-.error404 {
-	.page-content .search-form {
-        margin-bottom: 1em;
-        text-align: center;
-        [type="search"] {
-            width: 100%;
-            margin-bottom: .5em;
-        }
-    }
+.search-results .entry-header,
+.error404 .page-content {
+	.search-form {
+		margin-bottom: 1em;
+		text-align: center;
+		[type="search"] {
+			margin-bottom: .5em;
+		}
+	}
 }
 
 /*
@@ -160,16 +222,6 @@
     .single .entry-footer {
 		max-width: $size-site-width;
 		margin: auto;
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
-		> * {
-			flex: 1 0 100%;
-		}
-		.post-taxonomy,
-		.post-social {
-			flex: 0 1 50%;
-		}
 		.post-social {
 			text-align: right;
 		}
@@ -177,23 +229,28 @@
             margin-right: 0; // cancel default margin
         }
 	}
+	.single .entry-footer-wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
 	/*
-	 * Error 404 & Search Page
+	 * Asides
 	 */
-	.search-results,
-    .error404 {
-		.page-content .search-form {
-            display: flex;
-            flex-direction: row;
-            label {
-                width: 70%;
-                margin-right: .5em;
-            }
-			[type="search"] {
-				margin-bottom: 0;
-			}
-        }
-    }
+	.format-aside {
+		.entry-footer {
+			display: flex;
+			flex-flow: row nowrap;
+			justify-content: space-between;
+		}
+		.entry-meta {
+			margin-bottom: 0;
+			flex-shrink: 1;
+		}
+		.comments-link {
+			flex-shrink: 0;
+		}
+	}
 }
 @media screen and (min-width: $breakpoint-3) {
 	/*

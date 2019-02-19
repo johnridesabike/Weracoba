@@ -124,32 +124,32 @@ if ( ! function_exists( 'weracoba_entry_footer' ) ) :
 		<div class="post-time">
 			<?php weracoba_updated_on(); ?>
 		</div>
-		<div class="post-taxonomy">
-			<?php
-			weracoba_category_list();
-			weracoba_tag_list();
-			?>
-		</div><!--.post-taxonomy-->
-		<div class="post-social">
-			<div class="comment-link-wrapper">
+		<div class="entry-footer-wrapper">
+			<div class="post-taxonomy">
+				<?php
+				weracoba_category_list();
+				weracoba_tag_list();
+				?>
+			</div><!--.post-taxonomy-->
+			<div class="post-social">
 				<?php weracoba_comments(); ?>
-			</div><!-- .comment-link-wrapper -->
-			<?php
-			/**
-			 * Jetpack sharing.
-			 *
-			 * @link https://jetpack.com/support/sharing/
-			 */
-			if ( function_exists( 'sharing_display' ) ) {
-				sharing_display( '', true );
-			}
+				<?php
+				/**
+				 * Jetpack sharing.
+				 *
+				 * @link https://jetpack.com/support/sharing/
+				 */
+				if ( function_exists( 'sharing_display' ) ) {
+					sharing_display( '', true );
+				}
 
-			if ( class_exists( 'Jetpack_Likes' ) ) {
-				$custom_likes = new Jetpack_Likes();
-				echo $custom_likes->post_likes( '' ); // phpcs:ignore XSS OK
-			}
-			?>
-		</div><!-- .post-social -->
+				if ( class_exists( 'Jetpack_Likes' ) ) {
+					$custom_likes = new Jetpack_Likes();
+					echo $custom_likes->post_likes( '' ); // phpcs:ignore XSS OK
+				}
+				?>
+			</div><!-- .post-social -->
+		</div><!-- .entry-footer-wrapper -->
 		<?php
 		/**
 		 * Jetpack Related posts.

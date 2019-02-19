@@ -418,7 +418,7 @@ input[type="reset"],
 input[type="submit"], .infinite-scroll #infinite-handle span button,
 .infinite-scroll #infinite-handle span button:focus,
 .infinite-scroll #infinite-handle span button:hover, .wp-block-button .wp-block-button__link,
-.wp-block-file .wp-block-file__button, .single .entry-footer .comments-link a, .continue-reading a, .reply a, .main-navigation, .post-nav-links,
+.wp-block-file .wp-block-file__button, .single .entry-footer .comments-link a, .format-aside .comments-link a, .continue-reading a, .reply a, .main-navigation, .post-nav-links,
 .pagination, .widget-area li a,
 .footer-widgets li a,
 .archive-widget-area li a, .tags-links a,
@@ -582,15 +582,14 @@ big {
   color: #03727c;
 }
 
-.widget-area .widget,
-.footer-widgets .widget {
-  opacity: 0.8;
-}
-
 .widget-area h2,
 .footer-widgets h2 {
   border: none;
   padding: 0;
+}
+
+.footer-widgets {
+  opacity: 0.8;
 }
 
 /* Accessibility */
@@ -697,6 +696,8 @@ blockquote {
   /* use padding, not margins to avoid conflict with post content margins */
   border-left-width: 4px;
   border-left-style: solid;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 cite {
@@ -817,7 +818,7 @@ input[type="reset"],
 input[type="submit"], .infinite-scroll #infinite-handle span button,
 .infinite-scroll #infinite-handle span button:focus,
 .infinite-scroll #infinite-handle span button:hover, .wp-block-button .wp-block-button__link,
-.wp-block-file .wp-block-file__button, .single .entry-footer .comments-link a, .continue-reading a, .reply a {
+.wp-block-file .wp-block-file__button, .single .entry-footer .comments-link a, .format-aside .comments-link a, .continue-reading a, .reply a {
   padding: .2em .75em;
   text-decoration: none;
   border-radius: 0.625em;
@@ -825,7 +826,7 @@ input[type="submit"], .infinite-scroll #infinite-handle span button,
   text-shadow: 0 0 2px black;
 }
 
-button svg, input[type="button"] svg, input[type="reset"] svg, input[type="submit"] svg, .infinite-scroll #infinite-handle span button svg, .infinite-scroll #infinite-handle span button:focus svg, .infinite-scroll #infinite-handle span button:hover svg, .wp-block-button .wp-block-button__link svg, .wp-block-file .wp-block-file__button svg, .single .entry-footer .comments-link a svg, .continue-reading a svg, .reply a svg {
+button svg, input[type="button"] svg, input[type="reset"] svg, input[type="submit"] svg, .infinite-scroll #infinite-handle span button svg, .infinite-scroll #infinite-handle span button:focus svg, .infinite-scroll #infinite-handle span button:hover svg, .wp-block-button .wp-block-button__link svg, .wp-block-file .wp-block-file__button svg, .single .entry-footer .comments-link a svg, .format-aside .comments-link a svg, .continue-reading a svg, .reply a svg {
   filter: drop-shadow(0 0 1px black);
 }
 
@@ -834,7 +835,7 @@ input:hover[type="button"],
 input:hover[type="reset"],
 input:hover[type="submit"],
 .infinite-scroll #infinite-handle span button:hover, .wp-block-button .wp-block-button__link:hover,
-.wp-block-file .wp-block-file__button:hover, .single .entry-footer .comments-link a:hover, .continue-reading a:hover, .reply a:hover {
+.wp-block-file .wp-block-file__button:hover, .single .entry-footer .comments-link a:hover, .format-aside .comments-link a:hover, .continue-reading a:hover, .reply a:hover {
   text-decoration: none;
 }
 
@@ -844,7 +845,7 @@ input[type="reset"],
 input[type="submit"], .infinite-scroll #infinite-handle span button,
 .infinite-scroll #infinite-handle span button:focus,
 .infinite-scroll #infinite-handle span button:hover, .wp-block-button .wp-block-button__link:not(.has-text-color),
-.wp-block-file .wp-block-file__button:not(.has-text-color), .single .entry-footer .comments-link a, .continue-reading a, .reply a {
+.wp-block-file .wp-block-file__button:not(.has-text-color), .single .entry-footer .comments-link a, .format-aside .comments-link a, .continue-reading a, .reply a {
   color: white;
 }
 
@@ -854,7 +855,7 @@ input[type="reset"],
 input[type="submit"], .infinite-scroll #infinite-handle span button,
 .infinite-scroll #infinite-handle span button:focus,
 .infinite-scroll #infinite-handle span button:hover, .wp-block-button .wp-block-button__link:not(.has-background),
-.wp-block-file .wp-block-file__button:not(.has-background), .single .entry-footer .comments-link a, .continue-reading a, .reply a {
+.wp-block-file .wp-block-file__button:not(.has-background), .single .entry-footer .comments-link a, .format-aside .comments-link a, .continue-reading a, .reply a {
   background: #03727c;
 }
 
@@ -873,7 +874,7 @@ input[type="submit"]:active, .wp-block-button:not(.is-style-outline):not(.is-sty
   box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.8);
 }
 
-.single .entry-footer .comments-link a:hover, .single .entry-footer .comments-link a:active, .single .entry-footer .comments-link a:focus, .continue-reading a:hover, .continue-reading a:focus, .continue-reading a:active {
+.single .entry-footer .comments-link a:hover, .single .entry-footer .comments-link a:active, .single .entry-footer .comments-link a:focus, .format-aside .comments-link a:hover, .format-aside .comments-link a:active, .format-aside .comments-link a:focus, .continue-reading a:hover, .continue-reading a:focus, .continue-reading a:active {
   background: #05b7c7;
 }
 
@@ -1652,7 +1653,6 @@ a.tag-cloud-link:focus {
   .widget-area .widget:nth-last-child(even):first-of-type {
     width: 100%;
     margin-right: 0;
-    opacity: 1;
   }
   .widget-area .widget:nth-last-child(even):first-of-type ~ .widget:nth-child(3n+3) {
     margin-right: 3.8%;
@@ -1685,7 +1685,6 @@ a.tag-cloud-link:focus {
   .footer-widgets .widget:nth-last-child(even):first-of-type {
     width: 100%;
     margin-right: 0;
-    opacity: 1;
   }
   .footer-widgets .widget:nth-last-child(even):first-of-type ~ .widget:nth-child(3n+3) {
     margin-right: 3.8%;
@@ -2157,22 +2156,22 @@ figure.wp-block-image.alignwide {
   color: #05b7c7;
 }
 
-.single .entry-meta {
+.single .entry-header .entry-meta {
   font-size: 0.88889em;
   margin-top: .5em;
   display: flex;
   flex-flow: row nowrap;
 }
 
-.single .entry-meta > * {
+.single .entry-header .entry-meta > * {
   display: block;
 }
 
-.single .entry-meta .entry-meta-wrapper > * {
+.single .entry-header .entry-meta .entry-meta-wrapper > * {
   display: block;
 }
 
-.single .entry-meta .avatar {
+.single .entry-header .entry-meta .avatar {
   height: 72px;
   width: 72px;
   display: block;
@@ -2210,7 +2209,8 @@ figure.wp-block-image.alignwide {
   border-radius: 0.15em;
 }
 
-.single .entry-footer > * {
+.single .entry-footer > *,
+.single .entry-footer .entry-footer-wrapper > * {
   margin-bottom: .5em;
 }
 
@@ -2221,6 +2221,70 @@ figure.wp-block-image.alignwide {
   max-width: 680px;
   margin-right: auto;
   margin-left: auto;
+}
+
+/*
+ * Asides
+ */
+article.format-aside {
+  max-width: 680px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.format-aside .entry-header {
+  display: flex;
+  align-items: center;
+  padding-top: .5em;
+}
+
+.format-aside .entry-header-wrapper > * {
+  display: block;
+}
+
+.format-aside .avatar {
+  height: 72px;
+  width: 72px;
+  margin-right: 1em;
+}
+
+.format-aside .entry-footer {
+  font-size: 0.88889em;
+  border-style: none;
+  opacity: 1;
+}
+
+.format-aside .entry-footer > * {
+  margin-bottom: .5em;
+}
+
+.format-aside .entry-meta {
+  margin-bottom: 1rem;
+}
+
+.format-aside .entry-meta > * {
+  display: inline-block;
+  margin: 0 .5em .25em 0;
+}
+
+.format-aside .comments-link {
+  display: block;
+}
+
+.format-aside .comments-link a {
+  display: block;
+  border-radius: 0.15em;
+}
+
+.format-aside a[rel="bookmark"] {
+  font-size: 0.88889em;
+  color: currentColor;
+  opacity: 0.8;
+}
+
+.format-aside a[rel="bookmark"]:hover, .format-aside a[rel="bookmark"]:active, .format-aside a[rel="bookmark"]:focus {
+  color: #05b7c7;
+  opacity: 1;
 }
 
 /*
@@ -2248,15 +2312,14 @@ figure.wp-block-image.alignwide {
 /*
  * Error 404 & Search Page
  */
-.search-results .page-content .search-form,
+.search-results .entry-header .search-form,
 .error404 .page-content .search-form {
   margin-bottom: 1em;
   text-align: center;
 }
 
-.search-results .page-content .search-form [type="search"],
+.search-results .entry-header .search-form [type="search"],
 .error404 .page-content .search-form [type="search"] {
-  width: 100%;
   margin-bottom: .5em;
 }
 
@@ -2270,16 +2333,6 @@ figure.wp-block-image.alignwide {
   .single .entry-footer {
     max-width: 1200px;
     margin: auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  .single .entry-footer > * {
-    flex: 1 0 100%;
-  }
-  .single .entry-footer .post-taxonomy,
-  .single .entry-footer .post-social {
-    flex: 0 1 50%;
   }
   .single .entry-footer .post-social {
     text-align: right;
@@ -2287,22 +2340,25 @@ figure.wp-block-image.alignwide {
   .single .entry-footer .post-navigation {
     margin-right: 0;
   }
-  /*
-	 * Error 404 & Search Page
-	 */
-  .search-results .page-content .search-form,
-  .error404 .page-content .search-form {
+  .single .entry-footer-wrapper {
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
-  .search-results .page-content .search-form label,
-  .error404 .page-content .search-form label {
-    width: 70%;
-    margin-right: .5em;
+  /*
+	 * Asides
+	 */
+  .format-aside .entry-footer {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
   }
-  .search-results .page-content .search-form [type="search"],
-  .error404 .page-content .search-form [type="search"] {
+  .format-aside .entry-meta {
     margin-bottom: 0;
+    flex-shrink: 1;
+  }
+  .format-aside .comments-link {
+    flex-shrink: 0;
   }
 }
 
@@ -2355,15 +2411,20 @@ figure.wp-block-image.alignwide {
   border-radius: 0.15em;
 }
 
+.archive-view article:not(:last-of-type) {
+  margin-bottom: 2em;
+}
+
+.archive-view .format-aside .entry-header {
+  border-top-style: solid;
+  border-top-width: 4px;
+}
+
 .excerpt-entry {
   position: relative;
   max-width: 680px;
   margin-right: auto;
   margin-left: auto;
-}
-
-.excerpt-entry:not(:last-of-type) {
-  margin-bottom: 2em;
 }
 
 .excerpt-entry .entry-header {
@@ -2408,11 +2469,7 @@ figure.wp-block-image.alignwide {
 
 .excerpt-entry .entry-meta > * {
   display: inline-block;
-  margin: 0 .5em 0 0;
-}
-
-.excerpt-entry .entry-meta > * {
-  margin-bottom: .25em;
+  margin: 0 .5em .25em 0;
 }
 
 .excerpt-entry .entry-meta .tags-links {
@@ -2519,13 +2576,6 @@ figure.wp-block-image.alignwide {
   max-width: 680px;
   margin-right: auto;
   margin-left: auto;
-}
-
-.attachment .comments-area {
-  background: white;
-  box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.2);
-  border-radius: .25em;
-  padding: .5em 1em;
 }
 
 .comment-list {

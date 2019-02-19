@@ -172,17 +172,16 @@ big {
   color: #03727c;
 }
 
-.widget-area .widget,
-.footer-widgets .widget {
-  opacity: 0.8;
-}
-
 .widget-area h2, .widget-area .wp-block-heading h2.editor-rich-text__tinymce, .wp-block-heading .widget-area h2.editor-rich-text__tinymce,
 .footer-widgets h2,
 .footer-widgets .wp-block-heading h2.editor-rich-text__tinymce,
 .wp-block-heading .footer-widgets h2.editor-rich-text__tinymce {
   border: none;
   padding: 0;
+}
+
+.footer-widgets {
+  opacity: 0.8;
 }
 
 /* Accessibility */
@@ -583,6 +582,9 @@ a:hover, a:active {
   /* use padding, not margins to avoid conflict with post content margins */
   border-left-width: 4px;
   border-left-style: solid;
+  margin-left: 0;
+  margin-right: 0;
+  border-color: #03727c;
 }
 
 .wp-block-quote .wp-block-quote__citation {
