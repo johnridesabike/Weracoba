@@ -15,16 +15,13 @@
 @mixin drop-shadow {
     background: $color-bg-body;
     box-shadow: 0 0 .5em rgba(0, 0, 0, 0.2);
-    
-    @media screen and (min-width: $breakpoint-1) {
-        border-radius: .25em;
-    }
+	border-radius: .25em;
 }
 
 @mixin full-bleed {
 	/* full-bleed on small screens */
-    margin-left: -.8rem;
-    margin-right: -.8rem;
+    margin-left: -1rem;
+    margin-right: -1rem;
 }
 
 @mixin full-bleed-cancel {
@@ -37,4 +34,29 @@
 	display: block; // might not be necessary
 	margin-left: auto !important;
 	margin-right: auto !important;
+}
+
+@mixin tab-head {
+	display: inline-block;
+	border-top-left-radius: $border-radius-button-square;
+	border-top-right-radius: $border-radius-button-square;
+	background: $color-link;
+	color: $color-bg-body;
+	padding: 0 .5em;
+	margin: 0;
+	@include button-text-shadow;
+	a {
+		color: $color-bg-body;
+		&:hover,
+		&:active,
+		&:focus {
+			background: $color-link-hover;
+		}
+	}
+}
+
+@mixin current-page {
+	border-bottom-width: 2px;
+	border-bottom-style: solid;
+	border-color: $color-link-hover;
 }

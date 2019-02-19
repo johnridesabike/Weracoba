@@ -51,7 +51,8 @@
 	-->
 
 	<rule ref="WordPress-Docs" />
-	<rule ref="WPThemeReview" />
+	<!-- Not compatible with latest coding standards? -->
+	<!-- <rule ref="WPThemeReview" /> -->
 
 
 	<!--

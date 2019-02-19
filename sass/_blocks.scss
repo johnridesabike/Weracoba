@@ -16,8 +16,10 @@
 }
 
 .wp-block-pullquote {
-	border-top: 4px solid $color-link;
-	border-bottom: 4px solid $color-link;
+	border-top-width: 4px;
+	border-top-style: solid;
+	border-bottom-width: 4px;
+	border-bottom-style: solid;
 	padding: 2em 0;
 	blockquote {
 		border-left: none;
@@ -38,13 +40,7 @@
 }
 
 .alignfull {
-    width: 100vw !important;
-    max-width: 100vw !important;
-    position: relative !important;
-    left: 50% !important;
-    right: 50% !important;
-    margin-left: -50vw !important;
-    margin-right: -50vw !important;
+    @include alignfull;
 }
 
 figure.wp-block-image {
@@ -53,21 +49,19 @@ figure.wp-block-image {
 	}
 }
 
-.wp-block-image figcaption {
-	font-size: $font-size-xs;
-	color: initial; // cancel default
-	opacity: .7;
-	font-family: $font-UI;
+.wp-block-image figcaption { // greater specificity = override built-in style
+	color: $color-text-main; // cancel built-in color
+	@include figcaption;
 }
 
-div.wp-block-image {
-	/*
-	** Allow images to float outside of the reading area.
-	** Target the div because that's what aligned image figures are wrapped in.
-	*/
-	max-width: 100% !important;
-	text-align: center;
-}
+// div.wp-block-image {
+// 	/*
+// 	** Allow images to float outside of the reading area.
+// 	** Target the div because that's what aligned image figures are wrapped in.
+// 	*/
+// 	max-width: 100% !important;
+// 	text-align: center;
+// }
 
 @media screen and (min-width: $breakpoint-3) {
     .alignwide {
@@ -76,13 +70,12 @@ div.wp-block-image {
 }
 
 .wp-block-gallery .blocks-gallery-item figcaption {
-    @include figcaption-overlay;
+	@include figcaption-overlay;
 }
 
 .wp-block-cover .wp-block-cover-text {
-    font-family: $font-headers;
 	color: $color-bg-body;
-	font-size: $font-size-xl;
+	font-size: $font-size-xxl;
 }
 
 /**
@@ -91,13 +84,19 @@ div.wp-block-image {
 
 .wp-block-button .wp-block-button__link,
 .wp-block-file .wp-block-file__button {
-	@include button;
+	@extend %button;
+    &:not(.has-background) {
+        @extend %button-background;
+	}
+    &:not(.has-text-color) {
+        @extend %button-color;
+    }
 	font-size: $font-size-md; // cancel built in style for the file button
 }
 .wp-block-button:not(.is-style-outline):not(.is-style-squared) .wp-block-button__link {
-	box-shadow: $shadow-button;
+	@extend %button-shadow;
 	&:active {
-		@include button-active;
+		@extend %button-active;
 	}
 }
 .wp-block-button.is-style-squared .wp-block-button__link {
@@ -110,18 +109,18 @@ div.wp-block-image {
 }
 .wp-block-file a.wp-block-file__button {
 	display: inline-block;
-	box-shadow: $shadow-button;
+    @extend %button-shadow;
 	// This is just to cancel the built in style
 	&:hover,
 	&:focus,
 	&:visited {
 		opacity: 1;
-		@include button;
-		box-shadow: $shadow-button;
+		// @extend %button;
+    	@extend %button-shadow;
 	}
 	&:active {
 		opacity: 1;
-		@include button-active;
+		@extend %button-active;
 	}
 }
 
@@ -133,6 +132,7 @@ div.wp-block-image {
     border: 2px solid currentColor;
 	border-radius: $border-radius-button;
 	box-shadow: none;
+	text-shadow: none;
 	&:not(.has-text-color) {
 		color: $color-link;
 
@@ -149,6 +149,10 @@ div.wp-block-image {
     }
 }
 
+.wp-block-file {
+	@extend %font-UI;
+}
+
 /**
  * Widgets
  */
@@ -156,14 +160,18 @@ div.wp-block-image {
 .wp-block-archives-list,
 .wp-block-categories-list,
 .wp-block-categories__list {
-    @include widget-list;
+    @extend %widget-list;
+}
+
+.wp-block-latest-posts__post-date {
+	@extend %font-UI;
 }
 
 .wp-block-latest-comments__comment {
 	font-size: $font-size-md;
 }
 .wp-block-latest-comments__comment-meta {
-	font-family: $font-UI;
+	@extend %font-UI;
 	font-size: $font-size-xs;
 	a {
 		text-decoration: none;
@@ -176,7 +184,7 @@ div.wp-block-image {
 /**
  * Formatting
  */
- .wp-block-separator {
+.wp-block-separator {
 	@include hr;
 	&:not(.is-style-wide):not(.is-style-dots) {
 		max-width: 5em !important;
@@ -191,54 +199,14 @@ div.wp-block-image {
 			letter-spacing: 2em;
 		}
 	}
- }
-// // replace default css
-// @media (min-width:600px) {
-//     .wp-block-column {
-//         flex-basis: 100%; //50%;
-//         flex-grow: 0
-//     }
-    
-//     .wp-block-column:nth-child(odd) {
-//         margin-right: 0; //32px
-//     }
+}
+.wp-block-column {
+	margin-bottom: 0;
+}
 
-//     .wp-block-column:nth-child(even) {
-//         margin-left: 0; //32px
-//     }
-
-//     .wp-block-column:not(:first-child) {
-//         margin-left: 0; //32px
-//     }
-
-//     .wp-block-column:not(:last-child) {
-//         margin-right: 0; //32px
-//     }
-// }
-
-@media (min-width: $breakpoint-1) {
+@media (min-width: $breakpoint-1) and (max-width: $breakpoint-2) {
      // replaces the built-in media query with something better
     .wp-block-columns {
         flex-wrap: nowrap;
-    }
-    // .wp-block-column {
-    //     flex-basis: 50%;
-    //     flex-grow: 0
-    // }
-    // .wp-block-column:nth-child(odd) {
-    //     margin-right: 32px
-    // }
-    // .wp-block-column:nth-child(even) {
-    //     margin-left: 32px
-    // }
-    // .wp-block-column:not(:first-child) {
-    //     margin-left: 32px
-    // }
-    // .wp-block-column:not(:last-child) {
-    //     margin-right: 32px
-	// }
-	// block cover
-    .wp-block-cover .wp-block-cover-text {
-		font-size: $font-size-xxxl;
     }
 }

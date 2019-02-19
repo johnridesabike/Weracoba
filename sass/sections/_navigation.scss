@@ -16,10 +16,15 @@
         width: 100%;
     }
 }
-
+.post-nav-links,
 .pagination {
+	@extend %font-UI;
     text-align: center;
-    font-size: 1.3em;
+	font-size: $font-size-lg;
+	border-top-width: 4px;
+	border-top-style: solid;
+	padding-top: 1em;
+	margin-top: 2em;
     .next {
         display: block;
         margin-top: .5em;
@@ -28,9 +33,18 @@
         display: block;
         margin-bottom: .5em;
     }
-    .page-numbers:not(.prev):not(.next) {
-        margin: 0 .5em;
-    }
+	.page-numbers,
+	.post-page-numbers{
+		&:not(.prev):not(.next) {
+			margin: 0 .5em;
+		}
+	}
+	.post-page-numbers.current,
+	.page-numbers.current {
+		@include current-page;
+		opacity: $opacity-aside;
+		padding-bottom: .25em;
+	}
 }
 
 // Jetpack Infinite Scroll
@@ -46,7 +60,9 @@
         button,
         button:focus,
         button:hover {
-            @include button;
+            @extend %button;
+			@extend %button-background;
+			@extend %button-color;
         }
     }
 }
@@ -110,8 +126,11 @@
         .nav-next {
             width: 45%;
             display: flex;
-            align-items: stretch;
-        }
+			align-items: stretch;
+		}
+		.nav-next:only-child {
+			width: 100%;
+		}
     }
     .nav-links {
         display: flex;

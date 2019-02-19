@@ -1,3 +1,15 @@
+@mixin allcaps-letterspacing {
+	letter-spacing: .06em;
+}
+
+@mixin figcaption {
+	font-size: $font-size-sm;
+	opacity: $opacity-aside;
+	text-align: center;
+	margin-top: 0;
+	margin-bottom: .5em;
+}
+
 @mixin figcaption-overlay {
     background: linear-gradient( transparent 0, rgba(0,0,0,.5) 40%, rgba(0,0,0,.8) 100%);
 	color: $color-bg-body;
@@ -5,30 +17,13 @@
 	padding: .2em .5em;
 	font-size: $font-size-xs;
 	font-style: italic;
-	font-family: $font-UI;
-}
-
-@mixin button {
-    padding: .2em .75em;
-	font-family: $font-UI;
-	text-decoration: none;
-	border-radius: $border-radius-button;
-	border: 1px solid $color-text-headers;
-    &:not(.has-text-color) {
-        color: $color-bg-body;
-    }
-    &:not(.has-background) {
-        background: $color-link;
-    }
-}
-
-@mixin button-active {
-	transform: translateY(1px);
-	box-shadow: inset 0 1px 0 $color-text-headers;
+	margin-bottom: 0; // cancel default style
+	opacity: 1;
 }
 
 @mixin list-margins {
 	margin: 0 0 1.5em 0;
+	padding-left: 1.5em;
 }
 
 @mixin nested-list-margins {
@@ -66,7 +61,7 @@
     }
 }
 @mixin hr {
-	background-color: $color-bg-hr;
+	background-color: $color-link;
 	border: 0;
 	height: 2px;
 	margin-bottom: 1.5em;
@@ -74,7 +69,8 @@
 
 @mixin blockquote {
     padding: 0 1.5em; /* use padding, not margins to avoid conflict with post content margins */
-    border-left: 4px solid $color-link;
+	border-left-width: 4px;
+	border-left-style: solid;
 }
 
 @mixin cite {

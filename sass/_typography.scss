@@ -3,56 +3,79 @@ html {
 	line-height: calculate-line-height($font-size-base, $size-content);
 }
 
-// body,
-// button,
-// input,
-// select,
-// optgroup,
-// textarea {
-    // color: $color-text-main;
-    // font-family: $font-UI;
-	// font-size: $font-size-base;
-	// font-size: 1rem;
-	// line-height: calculate-line-height($font-size-base, $size-content);
-//}
-body {
-	color: $color-text-main;
+@media screen and (max-width: $breakpoint-1) {
+	html {
+		font-size: $font-size-base-mobile;
+		line-height: calculate-line-height($font-size-base-mobile, $breakpoint-1);
+	}
+}
+
+%font-reading {
+	font-family: $font-reading;
+}
+
+/* Interactive buttons and widgets use the system font. */
+%font-UI {
 	font-family: $font-UI;
 }
 
+body {
+	color: $color-text-main;
+}
+
+body,
 textarea {
-    font-family: $font-reading;
+	@extend %font-reading;
+}
+
+input {
+	@extend %font-UI;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: $font-headers;
-    color: $color-text-headers;
 	font-weight: 400;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	hyphens: none;
 }
+
+/* Only use h1 for title */
 
 h1 {
-	font-size: $font-size-xxxl;
-	line-height: calculate-line-height( $font-size-xxxl, $size-content );
+	font-size: $font-size-xl;
+	line-height: calculate-line-height( $font-size-xl, $size-content );
 	clear: both;
 }
 
+/* Use h2, h3, h4 in document bodies */
+
 h2 {
-    font-size: $font-size-xl;
-	line-height: calculate-line-height( $font-size-xl, $size-content);
+	font-size: $font-size-lg;
+	line-height: calculate-line-height( $font-size-lg, $size-content);
 	clear: both;
+	border-top-width: 4px;
+	border-top-style: solid;
+	padding-top: .5em;
 }
 
 h3 {
-    font-size: $font-size-lg;
-	line-height: calculate-line-height( $font-size-lg, $size-content );
+    font-size: $font-size-md;
+	line-height: calculate-line-height( $font-size-md, $size-content );
 	clear: both;
+	font-weight: 700;
+	text-transform: uppercase;
+	@include allcaps-letterspacing;
 }
 
 h4 {
-    font-size: $font-size-md;
-	line-height: calculate-line-height( $font-size-md, $size-content );
+    font-size: $font-size-sm;
+	line-height: calculate-line-height( $font-size-sm, $size-content );
 	font-weight: 700;
+	text-transform: uppercase;
+	@include allcaps-letterspacing
 }
+
+/* Please don't use h5 or h6... why do we need them, anyway? */
 
 h5 {
     font-size: $font-size-sm;
@@ -68,6 +91,10 @@ h6 {
 
 p {
 	margin-bottom: 1em;
+}
+
+figcaption {
+	@include figcaption;
 }
 
 dfn, cite, em, i {
@@ -108,9 +135,6 @@ big {
 	font-size: 125%;
 }
 
-.has-xxsmall-font-size {
-	font-size: $font-size-xxs;
-}
 .has-xsmall-font-size {
 	font-size: $font-size-xs;
 }
@@ -133,25 +157,40 @@ big {
 .has-xxlarge-font-size {
 	font-size: $font-size-xxl;
 }
-.has-xxxlarge-font-size {
-	font-size: $font-size-xxxl;
-}
-
 .has-normal-color {
 	color: $color-text-main;
 }
 .has-link-color {
 	color: $color-link;
 }
-.has-header-color {
-	color: $color-text-headers;
+
+.has-ui-font {
+	@extend %font-UI;
+}
+
+.has-body-font {
+	@extend %font-reading;
+}
+
+.widget-area,
+.footer-widgets {
+	.widget {
+		opacity: $opacity-aside;
+	}
+	h2 {
+		@extend h4;
+		border: none;
+		padding: 0;
+	}
 }
 
 /* Accessibility */
 .widget p,
 .entry-content,
 .comment-content {
-    a {
+	a:hover,
+	a:active,
+	a:focus {
         text-decoration: underline;
     }
 }

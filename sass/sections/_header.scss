@@ -1,38 +1,39 @@
+.site-header {
+	@extend %smallscreen-padding;
+	@include max-site-width;
+}
 .global-header {
     background: $color-bg-header;
-	border-bottom: 1px solid $color-border;
-    display: flex; // this fixes a weird bug
-    flex-flow: column; // this fixes a weird bug
-    box-shadow: 0 0 .5em rgba(0, 0, 0, 0.2);
-}
-.site-header-wrapper {
-    @extend %smallscreen-padding;
-}
-.mobile-header-wrapper {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-}
-.site-branding {
-    display: flex;
-    justify-content: flex-start;
-    flex-flow: row wrap;
-    align-content: center;
-    align-items: center;
-	margin: .5em 0;
+	flex-flow: row wrap;
+	.site-branding {
+		flex: 1 1 0;
+		margin-bottom: .5em;
+	}
+	.menu-button {
+		flex: 0 0 auto;
+	}
+	.main-navigation {
+		flex: 1 0 100%;
+	}
 }
 .site-title {
     font-family: $font-site-title;
 	font-size: $font-size-xxl;
-    margin: 0;
+	line-height: calculate-line-height( $font-size-xxl, $breakpoint-1 );
+	margin: 0;
+	display: inline-block;
     a {
-        color: $color-text-headers;
+        color: $color-text-main;
     }
 }
 .site-description {
-    margin: 0 0 .5em 0;
-    flex: 2 100%;
+    margin: 0;
 	font-size: $font-size-xs;
+	opacity: $opacity-aside;
+	font-style: italic;
 }
 /* Make sure logo link wraps around logo image. */
 .wp-custom-logo .site-title {
@@ -53,97 +54,86 @@
  * Fixed Header
  * See also: the scrolling code in functions.js
  */
-@media screen {
-    .fixed-header {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        height: auto;
-        z-index: 9;
-        display: block; // this fixes a weird bug
-        .site-description {
-            display: none;
-		}
-		.site-title {
-			font-size: $font-size-xxl;
-		}
-    }
-    .sticky-top {
-        margin-top: 60px;
-	}
-}
+// @media screen {
+//     .fixed-header {
+//         position: fixed;
+//         top: 0;
+//         width: 100%;
+//         height: auto;
+//         z-index: 9;
+//         display: block; // this fixes a weird bug
+//         .site-description {
+//             display: none;
+// 		}
+// 		.site-title {
+// 			font-size: $font-size-xxl;
+// 		}
+//     }
+//     .sticky-top {
+//         margin-top: 60px;
+// 	}
+// }
 /* Offesets values from wp-includes/css/admin-bar.css */
-.admin-bar .fixed-header {
-    top: 32px; /* admin-bar.css:84 */
-    @media screen and ( max-width: 782px ) {
-        top: 46px; /* admin-bar.css:970 */
-    }
-    @media screen and (max-width: 600px) {
-        top: 0; /* admin-bar.css:1081 */
-    }
-}
+// .admin-bar .fixed-header {
+//     top: 32px; /* admin-bar.css:84 */
+//     @media screen and ( max-width: 782px ) {
+//         top: 46px; /* admin-bar.css:970 */
+//     }
+//     @media screen and (max-width: 600px) {
+//         top: 0; /* admin-bar.css:1081 */
+//     }
+// }
 /*
  * Header Media Queries
  */
-@media screen and (max-width: $breakpoint-1) {
-   .fixed-header .site-title {
-		.custom-logo-link {
-			margin: 0;
-		}
-    }
-	.wp-custom-logo .fixed-header .site-title a:last-of-type { // target the title text
-		display: none;
-	}
-}
-@media screen and (max-width: $breakpoint-2) and (orientation: landscape) {
-    /* When a small screen is oriented in landscape, hide the header unless the scrolling js overrides it */
-    .fixed-header:not(.header-visible) {
-        position: relative;
-    }
-    .sticky-top:not(.header-visible) {
-        margin-top: 0;
-    }
-}
+// @media screen and (max-width: $breakpoint-1) {
+//    .fixed-header .site-title {
+// 		.custom-logo-link {
+// 			margin: 0;
+// 		}
+//     }
+// 	.wp-custom-logo .fixed-header .site-title a:last-of-type { // target the title text
+// 		display: none;
+// 	}
+// }
+// @media screen and (max-width: $breakpoint-2) and (orientation: landscape) {
+//     /* When a small screen is oriented in landscape, hide the header unless the scrolling js overrides it */
+//     .fixed-header:not(.header-visible) {
+//         position: relative;
+//     }
+//     .sticky-top:not(.header-visible) {
+//         margin-top: 0;
+//     }
+// }
 @media screen and (min-width: $breakpoint-1) {
     .site-branding {
         text-align: left;
     }
     .global-header {
-        margin-bottom: 0;
-        display: block; // this fixes a weird bug
+		margin: 1em 0 0 0;
+		flex-flow: row nowrap;
+		align-items: flex-start;
+		justify-content: space-between;
+		.main-navigation {
+			flex: 0 1 auto;
+		}
     }
-    .sticky-top {
-        margin-top: 90px;
-    }
-    .site-header-wrapper {
-        @include max-site-width;
-        display: flex;
-        align-items: flex-end;
-        flex-flow: row;
-        justify-content: space-between;
-	}
-	.mobile-header-wrapper {
-		display: block;
-	}
+    // .sticky-top {
+    //     margin-top: 90px;
+    // }
     .site-title {
 		margin: 0;
-		font-size: $font-size-xxxl;
+		font-size: $font-size-xxl;
 	}
-    .site-description {
-        margin: 0;
-    }
     .site-header {
         text-align: left;
-    }
-    .site-branding {
-        margin-right: 2em;
     }
     .main-navigation {
         display: block;
     }
 }
-@media screen and (min-width: $breakpoint-2) {
-    .sticky-top {
-        margin-top: 110px;
-    }
-}
+// @media screen and (min-width: $breakpoint-2) {
+//     .sticky-top {
+//         margin-top: 110px;
+// 	}
+// }

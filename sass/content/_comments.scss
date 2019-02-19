@@ -1,8 +1,10 @@
 .comment-content {
-	font-family: $font-reading;
 	a {
 		word-wrap: break-word;
 	}
+}
+.comments-title {
+	border-style: none;
 }
 .bypostauthor {
 	display: block;
@@ -25,10 +27,12 @@
     }
 }
 .comment-body {
-	border-bottom: 1px solid $color-border;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
 	margin-bottom: 3em;
 }
 .comment-meta {
+	@extend %font-UI;
     .avatar {
 		height: $size-avatar-sm;
 		width: $size-avatar-sm;
@@ -65,7 +69,9 @@
 	font-size: $font-size-sm;
 }
 .reply a {
-    @include button;
+    @extend %button;
+	@extend %button-background;
+	@extend %button-color;
 }
 /** Comment Form **/
 .comment-reply-title {
@@ -76,6 +82,7 @@
 }
 .comment-respond {
 	@include max-content-width;
+	@extend %font-UI;
 	.comment-form {
 		display: flex;
 		flex-wrap: wrap;
@@ -89,20 +96,19 @@
 		p {
 			margin-bottom: 0;
 			flex: 0 0 100%;
+			&:empty {
+				display: none;
+			}
 		}
 		.form-submit {
 			text-align: right;
-			input {
-				@include button;
-			}
+		}
+		.submit { // The Jetpack button
+			margin-top: 1em;
 		}
 		label {
 			display: block;
 			padding-bottom: .4em;
-		}
-		.required {
-			color: darkred;
-			font-size: $font-size-xs;
 		}
 		.comment-form-author,
 		.comment-form-email,

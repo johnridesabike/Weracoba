@@ -4,13 +4,8 @@
 }
 
 %smallscreen-padding {
-	padding-left: .8rem; // 16px
-	padding-right: .8rem; // 16px
-	
-	@media screen and (min-width: $breakpoint-3) {
-		padding-left: 0;
-		padding-right: 0;
-	}
+	padding-left: 1rem; // 16px
+	padding-right: 1rem; // 16px
 }
 
 .site-content {
@@ -21,11 +16,6 @@
     .print {
         display: none;
     }
-}
-
-.search-results .search-form {
-	margin: 0 auto 1em auto;
-	text-align: center;
 }
 
 /*--------------------------------------------------------------

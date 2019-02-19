@@ -26,63 +26,66 @@
 	</a>
 	<header id="masthead" <?php is_singular() ? post_class( 'site-header' ) : print( 'class="site-header"' ); ?>>
 		<div id="global-header" class="global-header">
-			<div class="site-header-wrapper">
-				<div class="mobile-header-wrapper">
-					<div class="site-branding">
-						<?php
-						if ( is_front_page() ) :
-							?>
-							<h1 class="site-title">
-								<?php the_custom_logo(); ?>
-								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-									<?php bloginfo( 'name' ); ?>
-								</a>
-							</h1>
-							<?php
-						else :
-							?>
-							<p class="site-title">
-								<?php the_custom_logo(); ?>
-								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-									<?php bloginfo( 'name' ); ?>
-								</a>
-							</p>
-							<?php
-						endif;
-						$weracoba_description = get_bloginfo( 'description', 'display' );
-						if ( $weracoba_description || is_customize_preview() ) :
-							?>
-							<p class="site-description">
-								<?php echo $weracoba_description; /* phpcs:ignore xss ok. */ ?>
-							</p>
-						<?php endif; ?>
-					</div><!-- .site-branding -->
-					<div class="menu-button" id="toggle-button">
-						<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
-							<span class="screen-reader-text">
-								<?php esc_html_e( 'Menu', 'weracoba' ); ?>
-							</span>
-							<span class="menu-icon">
-								<?php echo weracoba_get_icon_svg( 'menu', 24 ); /* phpcs:ignore XSS OK. */ ?>
-							</span>
-							<span class="dismiss-icon">
-								<?php echo weracoba_get_icon_svg( 'dismiss', 24 ); /* phpcs:ignore XSS OK. */ ?>
-							</span>
-						</button>
-					</div>
-				</div><!-- .mobile-header-wrapper -->
-				<nav id="site-navigation" class="main-navigation">
-					<?php
-					wp_nav_menu(
-						array(
-							'theme_location' => 'menu-1',
-							'menu_id'        => 'primary-menu',
-						)
-					);
+			<div class="site-branding">
+				<?php
+				if ( is_front_page() ) :
 					?>
-				</nav><!-- #site-navigation -->
-			</div><!-- .site-header-wrapper -->
+					<h1 class="site-title">
+						<?php the_custom_logo(); ?>
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+							<?php bloginfo( 'name' ); ?>
+						</a>
+					</h1>
+					<?php
+				else :
+					?>
+					<p class="site-title">
+						<?php the_custom_logo(); ?>
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+							<?php bloginfo( 'name' ); ?>
+						</a>
+					</p>
+					<?php
+				endif;
+				$weracoba_description = get_bloginfo( 'description', 'display' );
+				if ( $weracoba_description || is_customize_preview() ) :
+					?>
+					<p class="site-description">
+						<?php echo $weracoba_description; /* phpcs:ignore xss ok. */ ?>
+					</p>
+				<?php endif; ?>
+			</div><!-- .site-branding -->
+			<div class="menu-button" id="toggle-button">
+				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+					<span class="screen-reader-text">
+						<?php esc_html_e( 'Menu', 'weracoba' ); ?>
+					</span>
+					<span class="menu-icon">
+						<?php echo weracoba_get_icon_svg( 'menu', 24 ); /* phpcs:ignore XSS OK. */ ?>
+					</span>
+					<span class="dismiss-icon">
+						<?php echo weracoba_get_icon_svg( 'dismiss', 24 ); /* phpcs:ignore XSS OK. */ ?>
+					</span>
+				</button>
+			</div> <!-- #toggle-button .menu-button -->
+			<nav id="site-navigation" class="main-navigation">
+				<?php
+				wp_nav_menu(
+					array(
+						'theme_location' => 'menu-1',
+						'menu_id'        => 'primary-menu',
+					)
+				);
+				?>
+			</nav><!-- #site-navigation -->
 		</div><!-- .global-header -->
+		<?php
+		if ( is_active_sidebar( 'breadcrumbs-1' ) ) :
+			dynamic_sidebar( 'breadcrumbs-1' );
+		else :
+			weracoba_category_list();
+		endif;
+		?>
 		<div class="entry-header">
 			<?php
 			if ( is_singular() ) :
@@ -96,5 +99,5 @@
 			get_template_part( 'template-parts/header', $weracoba_type );
 			?>
 		</div>
-	</header><!-- #masthead -->
+	</header><!-- #masthead .site-header -->
 	<div id="content" class="site-content">

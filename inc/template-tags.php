@@ -120,36 +120,37 @@ if ( ! function_exists( 'weracoba_entry_footer' ) ) :
 	 * Prints HTML with meta information for the categories, tags and comments.
 	 */
 	function weracoba_entry_footer() {
-		if ( 'post' === get_post_type() ) {
-			?>
-			<div class="post-taxonomy">
-				<?php
-				weracoba_category_list();
-				weracoba_tag_list();
-				?>
-			</div><!--.post-taxonomy-->
-			<?php
-		}
-		weracoba_comments();
 		?>
 		<div class="post-time">
 			<?php weracoba_updated_on(); ?>
 		</div>
+		<div class="post-taxonomy">
+			<?php
+			weracoba_category_list();
+			weracoba_tag_list();
+			?>
+		</div><!--.post-taxonomy-->
+		<div class="post-social">
+			<div class="comment-link-wrapper">
+				<?php weracoba_comments(); ?>
+			</div><!-- .comment-link-wrapper -->
+			<?php
+			/**
+			 * Jetpack sharing.
+			 *
+			 * @link https://jetpack.com/support/sharing/
+			 */
+			if ( function_exists( 'sharing_display' ) ) {
+				sharing_display( '', true );
+			}
+
+			if ( class_exists( 'Jetpack_Likes' ) ) {
+				$custom_likes = new Jetpack_Likes();
+				echo $custom_likes->post_likes( '' ); // phpcs:ignore XSS OK
+			}
+			?>
+		</div><!-- .post-social -->
 		<?php
-		/**
-		 * Jetpack sharing.
-		 *
-		 * @link https://jetpack.com/support/sharing/
-		 */
-		if ( function_exists( 'sharing_display' ) ) {
-			sharing_display( '', true );
-		}
-
-		if ( class_exists( 'Jetpack_Likes' ) ) {
-			$custom_likes = new Jetpack_Likes();
-			echo $custom_likes->post_likes( '' ); // phpcs:ignore XSS OK
-		}
-
 		/**
 		 * Jetpack Related posts.
 		 *

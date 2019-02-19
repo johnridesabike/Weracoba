@@ -8,21 +8,18 @@
 	}
 	div.sharedaddy h3.sd-title,
 	#jp-relatedposts h3.jp-relatedposts-headline,
-	#jp-relatedposts h3.jp-relatedposts-headline em,
 	#jp-relatedposts .jp-relatedposts-items-visual h4.jp-relatedposts-post-title {
-		font-size: $font-size-md;
-		font-weight: 400;
-		margin: 0;
-		line-height: 1.2;
+		@extend h5;
 	}
 	#jp-relatedposts h3.jp-relatedposts-headline {
+		margin: 0;
 		display: block;
 		float: none;
-		margin-bottom: 1em;
 		text-align: center;
 	}
 	#jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-context, 
-	#jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-date {
+	#jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-date,
+	#jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post {
 		opacity: 1;
 	}
 	#jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post-nothumbs p.jp-relatedposts-post-excerpt {
@@ -41,6 +38,9 @@
 	.sd-social-text .sd-content ul li a.sd-button {
 		color: $color-text-main !important;
 	}
+	.sd-content ul li {
+		text-align: left;
+	}
 
 	div.jetpack-likes-widget-wrapper {
 		width: initial;
@@ -57,13 +57,24 @@
 }
 
 .site { // Greater specificity = override Jetpack default CSS
-	.contact-form label {
-		font-weight: normal;
-		span {
-			color: darkred; // See comment form
-			font-size: $font-size-xs; // See comment form
+	.contact-form {
+		@extend %font-UI;
+		label {
+			font-weight: normal;
+			span {
+				color: $color-text-main;
+				@extend %required;
+			}
 		}
 	}
+}
+
+/*
+ * Akismet
+ */
+.akismet_comment_form_privacy_notice {
+	font-size: $font-size-xs;
+	@extend %font-UI;
 }
 
 /*

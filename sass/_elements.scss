@@ -8,14 +8,12 @@ html {
 	box-sizing: inherit;
 }
 
-body {
-	background: $color-bg-body; /* Fallback for when there is no custom background color defined. */
+* {
+	border-color: $color-link;
 }
 
-body.archive-view,
-body.attachment,
-body.single-format-aside {
-    background: $color-bg-body-alt;
+body {
+	background: $color-bg-body; /* Fallback for when there is no custom background color defined. */
 }
 
 hr {
@@ -59,19 +57,15 @@ address {
 	margin: 0 0 1.5em;
 }
 
-img {
+img,
+svg {
 	height: auto; /* Make sure images are scaled correctly. */
 	max-width: 100%; /* Adhere to container width. */
 }
 
-
-svg {
-  transition: fill 120ms ease-in-out;
-  fill: currentColor;
-}
-
 figure {
-	margin: 1em 0; /* Extra wide images within figure tags don't overflow the content area. */
+	//margin: 1em 0; /* Extra wide images within figure tags don't overflow the content area. */
+	margin: 0 0 1em 0; /* Extra wide images within figure tags don't overflow the content area. */
 }
 
 /* Tables */
@@ -107,7 +101,7 @@ input[type="datetime-local"],
 input[type="color"],
 textarea {
 	color: $color-text-input;
-	border: 1px solid $color-border-input;
+	border: 1px solid $color-border;
 	border-radius: 3px;
 	padding: 3px;
     max-width: 100%;
@@ -118,23 +112,11 @@ textarea {
 }
 
 select {
-	border: 1px solid $color-border-input;
+	border: 1px solid $color-border;
 }
 
 textarea {
 	width: 100%;
-}
-
-button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-    @include button;
-    box-shadow: $shadow-button;
-
-	&:active {
-		@include button-active;
-	}
 }
 
 /*--------------------------------------------------------------
@@ -159,4 +141,31 @@ a {
 	&:active {
 		outline: 0;
 	}
+}
+
+
+/* All of the buttons and button-like elements */
+
+@import "placeholders/buttons";
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    @extend %button;
+	@extend %button-background;
+	@extend %button-color;
+    @extend %button-shadow;
+
+	&:active {
+		@extend %button-active;
+	}
+}
+
+%required {
+	font-size: $font-size-xs;
+	opacity: $opacity-aside;
+}
+form span.required {
+	@extend %required;
 }

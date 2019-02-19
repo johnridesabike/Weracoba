@@ -13,6 +13,14 @@
 	<div class="post-content">
 		<div class="entry-content">
 		<?php
+		$weracoba_link_page_args = array(
+			'before'      => '<p class="post-nav-links">',
+			'after'       => '</p>',
+			'link_before' => esc_html_x( 'Page ', 'Single pagination', 'weracoba' ),
+		);
+		if ( 1 < $wp_query->get( 'page' ) ) {
+			wp_link_pages( $weracoba_link_page_args );
+		}
 		the_content(
 			sprintf(
 				wp_kses(
@@ -23,19 +31,11 @@
 				get_the_title()
 			)
 		);
-
-		wp_link_pages(
-			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'weracoba' ),
-				'after'  => '</div>',
-			)
-		);
+		wp_link_pages( $weracoba_link_page_args );
 		?>
 		</div><!-- .entry-content -->
 		<footer class="entry-footer">
-			<div class="entry-footer-wrapper">
 			<?php weracoba_entry_footer(); ?>
-			</div><!-- .entry-footer-wrapper -->
 		</footer><!-- .entry-footer -->
 	</div> <!-- .post-content -->
 </article><!-- #post-<?php the_ID(); ?> -->

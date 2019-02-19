@@ -1,19 +1,12 @@
 @import "sass/variables";
-@import "sass/mixins";
+@import "sass/mixins/mixins";
 @import "sass/typography";
-@import "sass/sections/widgets"; // necessary for blocks
+@import "sass/placeholders/widgets";
+@import "sass/placeholders/buttons";
 @import "sass/blocks";
 
-/* Elements */
-
-body {
-	font-family: $font-reading;
-	font-size: $font-size-base;
-	line-height: calculate-line-height($font-size-base, $size-content);
-}
-
-h1, h2, h3, h4, h5, h6 {
-	font-family: $font-reading;
+* {
+	border-color: $color-link; // from elements
 }
 
 .editor-post-title__block .editor-post-title__input,
@@ -76,9 +69,6 @@ a {
 
 	&[data-type="core/image"] {
 		@extend figure.wp-block-image;
-		&[data-align] {
-			@extend div.wp-block-image;
-		}
 	}
 
 	/* Lists. See _elements.scss */

@@ -25,7 +25,7 @@ get_header();
 						/**
 						 * Filters the category widget to only show children of the current category.
 						 * This is probably WAY more complicated than just calling wp_list_categories().
-						 * 
+						 *
 						 * @param array $args The arguments.
 						 */
 						function weracoba_widget_categories_args( $args ) {
@@ -44,7 +44,7 @@ get_header();
 						remove_filter( 'widget_categories_args', 'weracoba_widget_categories_args' );
 						?>
 					</div> <!-- .archive-widget-area -->
-					<h2><?php esc_html_e( 'Or browse the recent updates', 'weracoba' ); ?></h2>
+					<p class="has-large-font-size"><?php esc_html_e( 'Or browse the recent updates', 'weracoba' ); ?></p>
 					<?php
 				endif;
 			endif;
@@ -72,11 +72,11 @@ get_header();
 		?>
 
 		<div class="archive-widget-area archive-widget-area-bottom">
-			<?php 
+			<?php
 			the_widget(
 				'WP_Widget_Categories',
 				array(
-					'title'        => __( 'Browse by category', 'weracoba' ),
+					'title'        => __( 'Browse another category', 'weracoba' ),
 					'hierarchical' => 1,
 				)
 			);
