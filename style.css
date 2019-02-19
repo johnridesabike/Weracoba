@@ -2259,7 +2259,6 @@ article.format-aside {
 }
 
 .format-aside .entry-footer {
-  font-size: 0.88889em;
   border-style: none;
   opacity: 1;
 }
@@ -2270,6 +2269,7 @@ article.format-aside {
 
 .format-aside .comments-link {
   display: block;
+  font-size: 0.88889em;
 }
 
 .format-aside a[rel="bookmark"] {

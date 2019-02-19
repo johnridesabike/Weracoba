@@ -142,7 +142,6 @@ article.format-aside {
 		margin-right: 1em;
 	}
 	.entry-footer {
-		font-size: $font-size-sm;
 		border-style: none; // cancel default single footer style
 		opacity: 1; // cancel default single footer style
 
@@ -152,6 +151,7 @@ article.format-aside {
 	}
 	.comments-link {
 		display: block;
+		font-size: $font-size-sm;
 	}
 	a[rel="bookmark"] {
 		font-size: $font-size-xs;
