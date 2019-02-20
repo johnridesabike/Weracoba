@@ -195,25 +195,23 @@ article.format-aside {
 	}
 }
 
+.format-aside .comments-link,
 .continue-reading {
     text-align: center;
 	flex-shrink: 0;
-}
-
-.continue-reading a,
-.format-aside .comments-link a {
-	display: block;
-	border-radius: $border-radius-button-square;
-	@extend %button;
-	@extend %button-background;
-	@extend %button-color;
-	&:hover,
-	&:focus,
-	&:active {
-		@extend %button-hover;
+	a {
+		display: block;
+		border-radius: $border-radius-button-square;
+		@extend %button;
+		@extend %button-background;
+		@extend %button-color;
+		&:hover,
+		&:focus,
+		&:active {
+			@extend %button-hover;
+		}
 	}
 }
-
 /*
  * Pages
  */

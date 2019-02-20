@@ -580,7 +580,7 @@ a:hover, a:active {
 .wp-block-quote:not(.is-large):not(.is-style-large), .wp-block-quote.is-large, .wp-block-quote.is-style-large {
   padding: 0 1.5em;
   /* use padding, not margins to avoid conflict with post content margins */
-  border-left-width: 4px;
+  border-left-width: 2px;
   border-left-style: solid;
   margin-left: 0;
   margin-right: 0;
