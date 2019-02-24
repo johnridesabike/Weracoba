@@ -419,7 +419,7 @@ input[type="submit"], .infinite-scroll #infinite-handle span button,
 .infinite-scroll #infinite-handle span button:focus,
 .infinite-scroll #infinite-handle span button:hover, .wp-block-button .wp-block-button__link,
 .wp-block-file .wp-block-file__button, .single .entry-footer .comments-link a, .format-aside .comments-link a,
-.continue-reading a, .reply a, .main-navigation, .post-nav-links,
+.continue-reading a, .reply a, .site-footer, .main-navigation, .post-nav-links,
 .pagination, .widget-area li a,
 .footer-widgets li a,
 .archive-widget-area li a, .tags-links a,
@@ -999,6 +999,7 @@ form span.required, .site .contact-form label span {
 ## Footer
 --------------------------------------------------------------*/
 .site-footer {
+  font-size: 0.88889em;
   background: white;
   position: relative;
   padding-top: .5em;
