@@ -406,7 +406,7 @@ html {
 }
 
 body,
-textarea, .has-body-font, .entry-title,
+textarea, .has-body-font, .widget-area .textwidget, .entry-title,
 .post-title, .archive-title, .archive-description {
   font-family: Palatino, "Palatino Linotype", Athelas, Georgia, Times, "Times New Roman", serif;
 }
@@ -419,10 +419,9 @@ input[type="submit"], .infinite-scroll #infinite-handle span button,
 .infinite-scroll #infinite-handle span button:focus,
 .infinite-scroll #infinite-handle span button:hover, .wp-block-button .wp-block-button__link,
 .wp-block-file .wp-block-file__button, .single .entry-footer .comments-link a, .format-aside .comments-link a,
-.continue-reading a, .reply a, .site-footer, .main-navigation, .post-nav-links,
-.pagination, .widget-area li a,
-.footer-widgets li a,
-.archive-widget-area li a, .tags-links a,
+.continue-reading a, .reply a, .main-navigation, .post-nav-links,
+.pagination, .widget-area,
+.footer-widgets, .archive-widget-area li a, .tags-links a,
 .tag-title,
 .tag-cloud-link, .widget.breadcrumbs-nav, .site .contact-form, .akismet_comment_form_privacy_notice, .wp-block-file, .wp-block-latest-posts__post-date, .wp-block-latest-comments__comment-meta, .entry-header,
 .entry-footer, .comment-meta, .comment-respond {
@@ -1439,6 +1438,7 @@ form span.required, .site .contact-form label span {
   margin: 0 0 .5em;
 }
 
+/* Text widget. */
 /* Search widget. */
 .widget_search .search-submit {
   display: none;

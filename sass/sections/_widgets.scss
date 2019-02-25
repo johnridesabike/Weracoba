@@ -22,11 +22,18 @@
 }
 
 .widget-area,
-.footer-widgets,
-.archive-widget-area { // so this doesn't apply to blocks embeded in the body
+.footer-widgets {
+	@extend %font-UI;
+}
+.archive-widget-area {
 	li a {
 		@extend %font-UI;
 	}
+}
+
+/* Text widget. */
+.widget-area .textwidget {
+	@extend %font-reading;
 }
 
 /* Search widget. */
