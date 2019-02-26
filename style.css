@@ -3046,4 +3046,9 @@ object {
   transition: fill 120ms ease-in-out;
   fill: currentColor;
 }
+
+.test {
+  float: right !important;
+  top: .2em;
+}
 /*# sourceMappingURL=style.css.map */

@@ -7,7 +7,7 @@
 		"@wordpress/browserslist-config": "^2.2.2",
 		"autoprefixer": "^9.4.7",
 		"browserslist": "4.4.1",
-		"chokidar-cli": "^1.2.1",
+		"chokidar-cli": "^1.2.2",
 		"eslint": "^5.12.1",
 		"eslint-config-wordpress": "^2.0.0",
 		"eslint-plugin-wordpress": "^0.1.0",
@@ -17,7 +17,11 @@
 		"postcss-focus-within": "^3.0.0",
 		"rtlcss": "^2.4.0",
 		"stylelint": "^9.5.0",
-		"stylelint-config-wordpress": "^13.1.0"
+		"stylelint-config-wordpress": "^13.1.0",
+		"stylelint-order": "^0.8.1",
+		"prettier": "^1.12.1",
+		"prettier-eslint": "^8.8.1",
+		"prettier-stylelint": "^0.4.2"
 	},
 	"rtlcssConfig": {
 		"options": {
@@ -36,7 +40,10 @@
 		"extends": "wordpress"
 	},
 	"eslintStyle": {
-		"extends": "wordpress"
+		"extends": [
+			"wordpress",
+			"stylelint-config-wordpress/scss"
+		]
 	},
 	"browserslist": [
 		"extends @wordpress/browserslist-config"
