@@ -1,9 +1,10 @@
 "use strict";
 
 module.exports = {
-	extends: ["stylelint-config-wordpress", "prettier-stylelint/config.js"],
-	plugins: "stylelint-order",
+	extends: ["stylelint-config-wordpress/scss", "prettier-stylelint/config.js"],
+	plugins: ["stylelint-order", "stylelint-scss"],
 	rules: {
+		"comment-empty-line-before": null,
 		"max-line-length": 255,
 		"declaration-block-no-duplicate-properties": [
 			true,

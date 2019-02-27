@@ -1,122 +1,153 @@
-/*
- * Small menu.
- */
-.menu-toggle,
-.main-navigation.toggled ul {
-	display: block;
-}
 .menu-button {
-    margin: .25em 0 .25em .25em;
-    text-align: right;
 	position: relative;
-    .menu-toggle {
-        display: inline;
-		box-shadow: none; // cancel _elements.scss
+	margin: 0.25em 0 0.25em 0.25em;
+	text-align: right;
+
+	.menu-toggle {
+		display: inline;
+		padding: 0.1em;
 		border-style: none; // cancel _elements.scss
-		background: none; // cancel _elements.scss
 		color: $color-link;
-		padding: .1em;
+		background: none; // cancel _elements.scss
+		box-shadow: none; // cancel _elements.scss
+		
 		&:active {
 			transform: none; // cancel _elements.scss
 		}
+		
 		.svg-icon {
 			font-size: 40px;
 			filter: none; // cancel _elements.scss
 		}
-    }
-    .dismiss-icon {
-        display: none;
-    }
+	}
+	
+	.dismiss-icon {
+		display: none;
+	}
 }
-.menu-button.toggled {
-    .menu-icon {
-        display: none;
-    }
-    .dismiss-icon {
-        display: inline;
-    }
-}
-.menu-item-has-children {
-    > a:after {
-        content: $glyph-arrow-down;
-        font-size: $font-size-xs;
-		margin-left: .25em;
-    }
-}
-.main-navigation {
-	@extend %font-UI;
-	clear: both;
+
+/*
+ * Small menu.
+ */
+/* stylelint-disable-next-line no-descending-specificity */
+.menu-button .menu-toggle,
+.main-navigation.toggled ul {
 	display: block;
-    position: relative;
-    text-align: center;
+}
+
+.menu-button.toggled {
+
+	.menu-icon {
+		display: none;
+	}
+
+	.dismiss-icon {
+		display: inline;
+	}
+}
+
+.menu-item-has-children {
+
+	> a::after {
+		margin-left: 0.25em;
+		font-size: $font-size-xs;
+		content: $glyph-arrow-down;
+	}
+}
+
+.main-navigation {
+	display: block;
+	clear: both;
+	position: relative;
+	text-align: center;
+
+	@extend %font-UI;
+
+	a {
+		display: inline-block;
+		padding: 0.5em 0 0.5em 0;
+	}
+
+	.current_page_item > a,
+	.current-menu-item > a,
+	.current_page_ancestor > a,
+	.current-menu-ancestor > a {
+
+		@include current-page;
+	}
+
+	li {
+		float: none;
+		position: relative;
+
+		li {
+			padding: 0;
+		}
+
+		&:hover > a,
+		&.focus > a {
+			color: $color-link-hover;
+		}
+	}
+	
+	/* stylelint-disable-next-line no-descending-specificity */
 	ul {
-        display: none;
-        list-style: none;
-        margin: 0;
-        position: relative;
+		display: none;
+		position: relative;
+		margin: 0;
+		padding: 0 1em;
 		border-top-width: 2px;
 		border-top-style: solid;
-		padding: 0 1em;
+		list-style: none;
+
+		/* stylelint-disable-next-line no-descending-specificity */
 		ul {
-            float: left;
-            position: absolute;
-            top: 100%;
-            left: -999em;
-            z-index: 99999;
-            background: $color-bg-header;
-            display: block;
+			display: block;
+			float: left;
+			position: absolute;
+			z-index: 99999;
+			top: 100%;
+			left: -999em;
 			width: 100%;
 			border-width: 0;
 			border-style: none;
-			border-radius: .25em;
-			box-shadow: 0 0 .25em rgba(0, 0, 0, 0.2);
+			border-radius: 0.25em;
+			background: $color-bg-header;
+			box-shadow: 0 0 0.25em rgba(0, 0, 0, 0.2);
+			
+			/* stylelint-disable-next-line no-descending-specificity */
 			ul {
-				left: -999em;
 				top: 0;
+				left: -999em;
 			}
-            li {
+
+			li {
+
 				&:hover > ul,
 				&.focus > ul {
 					left: 100%;
 				}
 			}
+
 			:hover > a,
 			.focus > a {
-                color: $color-link-hover;
+				color: $color-link-hover;
 			}
+
 			a:hover,
 			a.focus {
-                color: $color-link-hover;
+				color: $color-link-hover;
 			}
 		}
-		li:hover > ul,
-		li.focus > ul {
-			left: auto;
-            right: 0;
-		}
 	}
-	li {
-		float: none;
-		position: relative;
-        li {
-            padding: 0;
-        }
-		&:hover > a,
-		&.focus > a {
-            color: $color-link-hover;
-		}
-	}
-	a {
-        display: inline-block;
-        padding: .5em 0 .5em 0;
-	}
-	.current_page_item > a,
-	.current-menu-item > a,
-	.current_page_ancestor > a,
-	.current-menu-ancestor > a {
-		@include current-page;
+	/* stylelint-disable-next-line no-descending-specificity */
+	li:hover > ul,/* stylelint-disable-next-line no-descending-specificity */
+	li.focus > ul {
+		right: 0;
+		left: auto;
 	}
 }
+
 // /*
 //  * Workarounds for fixed header
 //  * This stuff is all pretty hacky and I'm not sure how to make it more elegant.
@@ -145,26 +176,33 @@
  * Media queries
  */
 @media screen and (min-width: $breakpoint-1) {
+
 	.menu-toggle {
 		display: none;
 	}
-    .menu-button {
-        display: none;
+
+	.menu-button {
+		display: none;
 	}
+
 	.main-navigation {
-        line-height: 1.1; /* fixes vertical dropdown menu spacing */
-        ul {
-            display: flex;
-            justify-content: flex-end;
-            ul {
-                margin-left: 0;
-                width: auto;
-                text-align: left;
-                padding: 0 1em;
-            }
-        }
+		line-height: 1.1; /* fixes vertical dropdown menu spacing */
+
+		ul {
+			display: flex;
+			justify-content: flex-end;
+
+			ul {
+				width: auto;
+				margin-left: 0;
+				padding: 0 1em;
+				text-align: left;
+			}
+		}
+
 		li {
 			padding-left: 1.2em;
+
 			&:first-child {
 				padding-left: 0;
 			}

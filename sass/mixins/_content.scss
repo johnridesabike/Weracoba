@@ -1,52 +1,58 @@
 @mixin max-site-width {
+
 	@media screen and (min-width: $size-site-width) {
 		max-width: $size-site-width;
-		margin-left: auto;
 		margin-right: auto;
+		margin-left: auto;
 	}
 }
 
 @mixin max-content-width {
-    max-width: $size-content;
-    margin-right: auto;
-    margin-left: auto;
+	max-width: $size-content;
+	margin-right: auto;
+	margin-left: auto;
 }
 
 @mixin drop-shadow {
-    background: $color-bg-body;
-    box-shadow: 0 0 .5em rgba(0, 0, 0, 0.2);
-	border-radius: .25em;
+	border-radius: 0.25em;
+	background: $color-bg-body;
+	box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.2);
 }
 
 @mixin full-bleed {
+	
 	/* full-bleed on small screens */
-    margin-left: -1rem;
-    margin-right: -1rem;
+	margin-right: -1rem;
+	margin-left: -1rem;
 }
 
 @mixin full-bleed-cancel {
+
 	/* cancel full-bleed on larger screens */
-	margin-left: 0;
 	margin-right: 0;
+	margin-left: 0;
 }
 
 @mixin center-block {
 	display: block; // might not be necessary
-	margin-left: auto !important;
 	margin-right: auto !important;
+	margin-left: auto !important;
 }
 
 @mixin tab-head {
 	display: inline-block;
+	margin: 0;
+	padding: 0 0.5em;
 	border-top-left-radius: $border-radius-button-square;
 	border-top-right-radius: $border-radius-button-square;
-	background: $color-link;
 	color: $color-bg-body;
-	padding: 0 .5em;
-	margin: 0;
+	background: $color-link;
+	
 	@include button-text-shadow;
+	
 	a {
 		color: $color-bg-body;
+	
 		&:hover,
 		&:active,
 		&:focus {
@@ -56,7 +62,7 @@
 }
 
 @mixin current-page {
+	border-color: $color-link-hover;
 	border-bottom-width: 2px;
 	border-bottom-style: solid;
-	border-color: $color-link-hover;
 }

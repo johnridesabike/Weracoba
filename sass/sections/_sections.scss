@@ -7,14 +7,15 @@
 ## Footer
 --------------------------------------------------------------*/
 .site-footer {
-	font-size: $font-size-sm;
+	position: relative;
+	margin-top: 1em;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
 	background: $color-bg-footer;
-    position: relative;
+	box-shadow: inset 0 1em 1.5em -1em rgba(0, 0, 0, 0.2);
+	font-size: $font-size-sm;
+	
 	@extend %smallscreen-padding;
-	padding-top: .5em;
-	padding-bottom: .5em;
-    margin-top: 1em;
-    box-shadow: inset 0 1em 1.5em -1em rgba(0, 0, 0, 0.2);
 }
 
 /*--------------------------------------------------------------

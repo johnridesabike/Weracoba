@@ -1,43 +1,52 @@
 /*
  * Jetpack
  */
+
+/* stylelint-disable no-descending-specificity */
 .entry-footer { // Greater specificity = override Jetpack default CSS
-	div.sharedaddy h3.sd-title:before,
-	#jp-relatedposts h3.jp-relatedposts-headline em:before {
+	div.sharedaddy h3.sd-title::before,
+	#jp-relatedposts h3.jp-relatedposts-headline em::before {
 		content: none;
 	}
+	
 	div.sharedaddy h3.sd-title,
 	#jp-relatedposts h3.jp-relatedposts-headline,
 	#jp-relatedposts .jp-relatedposts-items-visual h4.jp-relatedposts-post-title {
+	
 		@extend h5;
 	}
+	
 	#jp-relatedposts h3.jp-relatedposts-headline {
-		margin: 0;
 		display: block;
 		float: none;
+		margin: 0;
 		text-align: center;
 	}
+	
 	#jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-context, 
 	#jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-date,
 	#jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post {
 		opacity: 1;
 	}
+	
 	#jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post-nothumbs p.jp-relatedposts-post-excerpt {
-		margin-bottom: .5em;
+		margin-bottom: 0.5em;
 	}
+	
 	// fixes contrast for sharing buttons 
 	#sharing_email .sharing_send,
 	.sd-content ul li .option a.share-ustom,
 	.sd-content ul li a.sd-button,
 	.sd-content ul li.advanced a.share-more,
 	.sd-content ul li.preview-item div.option.option-smart-off a,
-	.sd-social-icon .sd-content ul li a.sd-button,
+	.sd-social-icon .sd-content ul li a.sd-button, 
 	.sd-social-icon-text .sd-content ul li a.sd-button,
-	.sd-social-official .sd-content>ul>li .digg_button>a,
-	.sd-social-official .sd-content>ul>li>a.sd-button,
+	.sd-social-official .sd-content > ul > li .digg_button > a,
+	.sd-social-official .sd-content > ul > li > a.sd-button,
 	.sd-social-text .sd-content ul li a.sd-button {
 		color: $color-text-main !important;
 	}
+	
 	.sd-content ul li {
 		text-align: left;
 	}
@@ -58,11 +67,15 @@
 
 .site { // Greater specificity = override Jetpack default CSS
 	.contact-form {
+	
 		@extend %font-UI;
+	
 		label {
-			font-weight: normal;
+			font-weight: 400;
+	
 			span {
 				color: $color-text-main;
+				
 				@extend %required;
 			}
 		}
@@ -74,6 +87,7 @@
  */
 .akismet_comment_form_privacy_notice {
 	font-size: $font-size-xs;
+	
 	@extend %font-UI;
 }
 
@@ -81,13 +95,17 @@
  * Plugin media queries
 */
 @media screen and (min-width: $breakpoint-1) {
+
 	.entry-footer {
+
 		.jp-relatedposts {
 			flex: 0 0 100%;
 			margin-right: 0; // cancel default margin
 		}
+
 		#jp-relatedposts {
 			margin: auto;
 		}
 	}
 }
+/* stylelint-enable no-descending-specificity */

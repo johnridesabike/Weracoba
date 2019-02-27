@@ -5,10 +5,12 @@
 	// Extend the <code> style so it can appear in the editor,
 	// but stop the <code> font-size from being applied twice on the front end.
 	@extend code;
+
 	code {
 		font-size: inherit;
 	}
 }
+
 .wp-block-code .editor-plain-text {
 	// stops the built-in style from overriding ours
 	font-family: inherit;
@@ -16,16 +18,18 @@
 }
 
 .wp-block-pullquote {
+	padding: 2em 0;
 	border-top-width: 4px;
 	border-top-style: solid;
 	border-bottom-width: 4px;
 	border-bottom-style: solid;
-	padding: 2em 0;
+
 	blockquote {
 		border-left: none;
 	}
-	blockquote > .editor-rich-text p, // for editor
-	p {
+
+	p,
+	blockquote > .editor-rich-text p { // for editor
 		font-size: $font-size-xl;
 	}
 }
@@ -35,15 +39,18 @@
  */
 
 .alignwide:not(.wp-block-columns):not(p) {
-    /* displays as alignfull on small screens */
-    @include full-bleed;
+
+	/* displays as alignfull on small screens */
+	@include full-bleed;
 }
 
 .alignfull {
-    @include alignfull;
+
+	@include alignfull;
 }
 
 figure.wp-block-image {
+
 	&.alignwide {
 		max-width: initial !important;
 	}
@@ -51,6 +58,7 @@ figure.wp-block-image {
 
 .wp-block-image figcaption { // greater specificity = override built-in style
 	color: $color-text-main; // cancel built-in color
+
 	@include figcaption;
 }
 
@@ -64,12 +72,15 @@ figure.wp-block-image {
 // }
 
 @media screen and (min-width: $breakpoint-3) {
-    .alignwide {
-        @include full-bleed-cancel;
-    }
+
+	.alignwide {
+
+		@include full-bleed-cancel;
+	}
 }
 
 .wp-block-gallery .blocks-gallery-item figcaption {
+
 	@include figcaption-overlay;
 }
 
@@ -84,55 +95,53 @@ figure.wp-block-image {
 
 .wp-block-button .wp-block-button__link,
 .wp-block-file .wp-block-file__button {
+
 	@extend %button;
-    &:not(.has-background) {
-        @extend %button-background;
+
+	&:not(.has-background) {
+
+		@extend %button-background;
 	}
-    &:not(.has-text-color) {
-        @extend %button-color;
-    }
+
+	&:not(.has-text-color) {
+
+		@extend %button-color;
+	}
 	font-size: $font-size-md; // cancel built in style for the file button
 }
-.wp-block-button:not(.is-style-outline):not(.is-style-squared) .wp-block-button__link {
-	@extend %button-shadow;
-	&:active {
-		@extend %button-active;
-	}
-}
+
 .wp-block-button.is-style-squared .wp-block-button__link {
 	border: none;
+	border-radius: $border-radius-button-square;
+
 	&:hover,
 	&:focus,
 	&:active {
 		background: $color-link-hover;
 	}
 }
-.wp-block-file a.wp-block-file__button {
-	display: inline-block;
-    @extend %button-shadow;
-	// This is just to cancel the built in style
-	&:hover,
-	&:focus,
-	&:visited {
-		opacity: 1;
-		// @extend %button;
-    	@extend %button-shadow;
-	}
+
+.wp-block-button:not(.is-style-outline):not(.is-style-squared) .wp-block-button__link {
+
+	@extend %button-shadow;
+
 	&:active {
-		opacity: 1;
+
 		@extend %button-active;
 	}
 }
-
-.wp-block-button.is-style-squared .wp-block-button__link {
-	border-radius: $border-radius-button-square;
-}
-
+/* stylelint-disable no-descending-specificity */
 .wp-block-button.is-style-outline .wp-block-button__link {
-    border: 2px solid currentColor;
+	border: 2px solid currentColor;
 	border-radius: $border-radius-button;
 	box-shadow: none;
 	text-shadow: none;
+	
+	&:not(.has-background) {
+		border-color: currentColor;
+		background: transparent;
+	}
+
 	&:not(.has-text-color) {
 		color: $color-link;
 
@@ -142,15 +151,32 @@ figure.wp-block-image {
 			color: $color-link-hover;
 		}
 	}
-    
-    &:not(.has-background) {
-        background: transparent;
-        border-color: currentcolor;
-    }
 }
+/* stylelint-enable no-descending-specificity */
 
 .wp-block-file {
+
 	@extend %font-UI;
+	
+	a.wp-block-file__button {
+		display: inline-block;
+
+		@extend %button-shadow;
+		// This is just to cancel the built in style
+		&:hover,
+		&:focus,
+		&:visited {
+			opacity: 1;
+			// @extend %button;
+			@extend %button-shadow;
+		}
+
+		&:active {
+			opacity: 1;
+
+			@extend %button-active;
+		}
+	}
 }
 
 /**
@@ -160,23 +186,30 @@ figure.wp-block-image {
 .wp-block-archives-list,
 .wp-block-categories-list,
 .wp-block-categories__list {
-    @extend %widget-list;
+
+	@extend %widget-list;
 }
 
 .wp-block-latest-posts__post-date {
+
 	@extend %font-UI;
 }
 
 .wp-block-latest-comments__comment {
 	font-size: $font-size-md;
 }
+
 .wp-block-latest-comments__comment-meta {
+
 	@extend %font-UI;
 	font-size: $font-size-xs;
+
 	a {
 		text-decoration: none;
 	}
 }
+
+/* stylelint-disable-next-line no-descending-specificity */
 .wp-block-latest-comments__comment-excerpt p {
 	font-size: $font-size-sm;
 }
@@ -185,28 +218,33 @@ figure.wp-block-image {
  * Formatting
  */
 .wp-block-separator {
+
 	@include hr;
+
 	&:not(.is-style-wide):not(.is-style-dots) {
 		max-width: 5em !important;
 	}
+
 	&.is-style-dots {
 		height: 0; // cancel default hr
 		background: none; // cancel default hr
-		&:before {
-			content: "\00b7 \00b7 \00b7";
+
+		&::before {
 			color: $color-text-main;
 			font-size: $font-size-base;
 			letter-spacing: 2em;
+			content: "\00b7 \00b7 \00b7";
 		}
 	}
 }
+
 .wp-block-column {
 	margin-bottom: 0;
 }
 
 @media (min-width: $breakpoint-1) and (max-width: $breakpoint-2) {
-     // replaces the built-in media query with something better
-    .wp-block-columns {
-        flex-wrap: nowrap;
-    }
+	// replaces the built-in media query with something better
+	.wp-block-columns {
+		flex-wrap: nowrap;
+	}
 }

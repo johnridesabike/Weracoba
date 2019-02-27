@@ -1,111 +1,140 @@
 .comment-content {
+
 	a {
 		word-wrap: break-word;
 	}
 }
+
 .comments-title {
 	border-style: none;
 }
+
 .bypostauthor {
 	display: block;
 }
-.comments-area {
-    @include max-content-width;
-}
-.comment-list {
-	padding: 0;
-	margin: 0;
-	list-style-type: none;
-    @include max-content-width;
 
-    ol {
-        list-style-type: none;
-    }
+.comments-area {
+
+	@include max-content-width;
 }
+
+.comment-list {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+
+	@include max-content-width;
+
+	ol {
+		list-style-type: none;
+	}
+}
+
 .comment-body {
+	margin-bottom: 3em;
 	border-bottom-width: 1px;
 	border-bottom-style: solid;
-	margin-bottom: 3em;
 }
+
 .comment-meta {
+
 	@extend %font-UI;
-    .avatar {
-		height: $size-avatar-sm;
+
+	.avatar {
 		width: $size-avatar-sm;
+		height: $size-avatar-sm;
 		margin-right: 1em;
-    }
+	}
 }
+
 .comment-metadata {
+	margin-top: 0.2em;
+	padding-bottom: 0.5em;
+	font-size: $font-size-xs;
 	text-align: right;
 }
+
 .comment .edit-link {
 	display: block;
 }
+
 .children {
 	margin-left: 1.5em;
 	padding-left: 0;
 }
-.comment-metadata {
-	font-size: $font-size-xs;
-    margin-top: .2em;
-    padding-bottom: .5em;
-}
+
 .comment-author {
 	display: flex;
 	align-items: center;
 	margin-bottom: 1em;
 }
+
 .says {
 	//font-size: $font-size-xs;
 	display: none;
 }
+
 .reply {
 	margin-bottom: 1.5em;
-	text-align: right;
 	font-size: $font-size-sm;
+	text-align: right;
+
+	a {
+
+		@extend %button;
+		@extend %button-background;
+		@extend %button-color;
+	}
 }
-.reply a {
-    @extend %button;
-	@extend %button-background;
-	@extend %button-color;
-}
+
 /** Comment Form **/
 .comment-reply-title {
-	margin: .5em 0;
+	margin: 0.5em 0;
 }
+
 .comment-list .comment-reply-title {
 	text-align: left;
 }
+
 .comment-respond {
+
 	@include max-content-width;
 	@extend %font-UI;
+
 	.comment-form {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
 		align-items: flex-end;
 		font-size: $font-size-sm;
+
 		textarea,
 		.form-submit {
 			font-size: 1rem;
 		}
+
 		p {
 			margin-bottom: 0;
 			flex: 0 0 100%;
+
 			&:empty {
 				display: none;
 			}
 		}
+
 		.form-submit {
 			text-align: right;
 		}
+
 		.submit { // The Jetpack button
 			margin-top: 1em;
 		}
+
 		label {
 			display: block;
-			padding-bottom: .4em;
+			padding-bottom: 0.4em;
 		}
+
 		.comment-form-author,
 		.comment-form-email,
 		.comment-form-url {
@@ -116,26 +145,32 @@
 }
 
 @media screen and (min-width: $breakpoint-1) {
+
 	.children {
 		margin-left: 2em;
 	}
+
 	.comment-meta {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+
 		.avatar {
-			height: $size-avatar-md;
-			width: $size-avatar-md;
 			display: inline-block;
+			width: $size-avatar-md;
+			height: $size-avatar-md;
 		}
 	}
+
 	.comment .edit-link {
 		display: inline;
-		&:before {
-			content: "| ";
+
+		&::before {
 			margin: 0 0.5em;
+			content: "| ";
 		}
 	}
+
 	.comment-author {
 		margin-bottom: 0;
 	}

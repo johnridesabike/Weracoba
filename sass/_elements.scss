@@ -3,8 +3,10 @@ html {
 }
 
 *,
-*:before,
-*:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+*::before,
+*::after {
+	
+	/* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
 	box-sizing: inherit;
 }
 
@@ -17,24 +19,30 @@ body {
 }
 
 hr {
+
 	@include hr;
 }
 
 /* Lists */
 ul, ol {
+
 	@include list-margins;
+}
+
+ul {
+
+	@include unordered-list-styles;
+}
+
+ol {
+
+	@include ordered-list-styles;
 }
 
 li > ul,
 li > ol {
-	@include nested-list-margins;
-}
 
-ul {
-	@include unordered-list-styles;
-}
-ol {
-	@include ordered-list-styles;
+	@include nested-list-margins;
 }
 
 dt {
@@ -46,10 +54,12 @@ dd {
 }
 
 blockquote {
+
 	@include blockquote;
 }
 
 cite {
+
 	@include cite;
 }
 
@@ -59,31 +69,34 @@ address {
 
 img,
 svg {
-	height: auto; /* Make sure images are scaled correctly. */
 	max-width: 100%; /* Adhere to container width. */
+	height: auto; /* Make sure images are scaled correctly. */
 }
 
 figure {
-	//margin: 1em 0; /* Extra wide images within figure tags don't overflow the content area. */
 	margin: 0 0 1em 0; /* Extra wide images within figure tags don't overflow the content area. */
 }
 
 /* Tables */
 
 table {
-	margin: 0 0 1.5em;
 	width: 100%;
-    border-collapse: collapse;
+	margin: 0 0 1.5em;
+	border-collapse: collapse;
 }
 
 th, td {
-    border: 1px solid black;
-    padding: 0 6px;
+	padding: 0 6px;
+	border: 1px solid #000;
 }
 
 /*--------------------------------------------------------------
 ## Forms
 --------------------------------------------------------------*/
+textarea {
+	width: 100%;
+}
+
 input[type="text"],
 input[type="email"],
 input[type="url"],
@@ -100,11 +113,11 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
 textarea {
-	color: $color-text-input;
+	max-width: 100%;
+	padding: 3px;
 	border: 1px solid $color-border;
 	border-radius: 3px;
-	padding: 3px;
-    max-width: 100%;
+	color: $color-text-input;
 
 	&:focus {
 		color: $color-text-main;
@@ -115,28 +128,27 @@ select {
 	border: 1px solid $color-border;
 }
 
-textarea {
-	width: 100%;
-}
-
 /*--------------------------------------------------------------
 ## Links
 --------------------------------------------------------------*/
 a {
 	color: $color-link;
-    text-decoration: none;
+	text-decoration: none;
 
 	&:visited {
 		color: $color-link-visited;
 	}
+	
 	&:hover,
 	&:focus,
 	&:active {
 		color: $color-link-hover;
 	}
+	
 	&:focus {
 		outline: thin dotted;
 	}
+	
 	&:hover,
 	&:active {
 		outline: 0;
@@ -152,20 +164,24 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-    @extend %button;
+	
+	@extend %button;
 	@extend %button-background;
 	@extend %button-color;
-    @extend %button-shadow;
+	@extend %button-shadow;
 
 	&:active {
+	
 		@extend %button-active;
 	}
 }
 
 %required {
-	font-size: $font-size-xs;
 	opacity: $opacity-aside;
+	font-size: $font-size-xs;
 }
+
 form span.required {
+	
 	@extend %required;
 }

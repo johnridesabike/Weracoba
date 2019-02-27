@@ -1,16 +1,16 @@
 .page-content .wp-smiley,
 .entry-content .wp-smiley,
 .comment-content .wp-smiley {
-	border: none;
-	margin-bottom: 0;
 	margin-top: 0;
+	margin-bottom: 0;
 	padding: 0;
+	border: none;
 }
 
 .avatar {
-	border-radius: 50%;
 	border: 1px solid transparent;
-	box-shadow: 0 0 .25em rgba(0, 0, 0, 0.5);
+	border-radius: 50%;
+	box-shadow: 0 0 0.25em rgba(0, 0, 0, 0.5);
 }
 
 /* Make sure embeds and iframes fit their containers. */
@@ -35,12 +35,14 @@ object {
 
 .aligncenter {
 	clear: both;
+
 	@include center-block;
 }
 
 .entry-content figure {
 	// This ensures that long captions don't stretch the width of the figure.
 	display: table;
+
 	> figcaption {
 		display: table-caption;
 		caption-side: bottom;
@@ -48,30 +50,34 @@ object {
 }
 
 @media screen and (max-width: $breakpoint-1) {
-    /* On small screens, display left and right alignments as if they were centered */
-    .alignleft,
-    .alignright {
-        float: none !important;
-        clear: both !important;
-        @include center-block;
-    }
+
+	/* On small screens, display left and right alignments as if they were centered */
+	.alignleft,
+	.alignright {
+		float: none !important;
+		clear: both !important;
+
+		@include center-block;
+	}
 }
 
 .centered-image {
-    max-width: 100vw;
-    margin: 0 -1em;
-    border: none;
+	max-width: 100vw;
+	margin: 0 -1em;
+	border: none;
 }
 
 @media screen and (min-width: $breakpoint-1) {
-    .centered-image {
-        margin: 0 -2em;
-    }
+
+	.centered-image {
+		margin: 0 -2em;
+	}
 }
 
 /*--------------------------------------------------------------
 ## Single Post Featured Images
 --------------------------------------------------------------*/
+
 /**
  * Browsers that don't support object-fit (IE) will display the plain image.
  * It's possible to replicate this with transforms and overflows, but I don't
@@ -80,41 +86,47 @@ object {
 .single .featured-image {
 	// cancel the default figure.
 	margin-top: 0;
+
 	@include full-bleed;
 	// for browsers that don't play well with cover
 	figcaption {
-		font-style: italic;
-		font-size: $font-size-xs;
-		text-align: right;
 		padding-right: 1.5em; /* to avoid scrollbars */
+		font-size: $font-size-xs;
+		font-style: italic;
+		text-align: right;
 	}
 }
 
 @supports (object-fit: cover) {
+
 	.single .featured-image {
-		margin-top: 0;
-		// height: 430px;
-		height: 67vw; // aspect ratio kept intact for small screens
 		position: relative;
 		width: 100vw;
 		max-width: 100vw;
+		height: 67vw; // aspect ratio kept intact for small screens
+		margin-top: 0;
+
 		img {
-			height: 100%;
-			width: 100vw;
-			object-fit: cover;
 			position: absolute;
 			z-index: -1;
+			width: 100vw;
+			height: 100%;
+			object-fit: cover;
 		}
-		figcaption {
+
+		figcaption { 
+
 			@include figcaption-overlay;
-			width: 100%;
-			text-align: right;
+
 			position: absolute;
 			bottom: 0;
+			width: 100%;
+			text-align: right;
 		}
 	}
 
 	@media screen and (min-width: $breakpoint-1) {
+
 		.single .featured-image {
 			height: 430px;
 		}
@@ -123,16 +135,21 @@ object {
 
 /* We change the style to prepare it for the grid layout in posts-and-pages */
 @media screen and (min-width: $breakpoint-3) {
-    .single .featured-image {
+
+	.single .featured-image {
+
 		@include full-bleed-cancel;
-        flex: 1 1 50%;
+
+		flex: 1 1 50%;
+
 		img {
 			width: 100%;
 		}
+
 		figcaption {
-			padding-right: .5em;
+			padding-right: 0.5em;
 		}
-    }
+	}
 }
 
 /*--------------------------------------------------------------
@@ -140,38 +157,46 @@ object {
 --------------------------------------------------------------*/
 
 .excerpt-entry .featured-image {
-    position: relative;
+
 	@include full-bleed;
+
+	position: relative;
 	margin-top: 0; // cancel default figure
 	margin-bottom: 0; // cancel default figure
+
 	a {
-        line-height: 0; /* fixes visual glitch with link overlay */
 		display: block;
+		line-height: 0; /* fixes visual glitch with link overlay */
+
 		&:hover,
 		&:focus {
-			&:before {
-				content: "";
+
+			&::before {
 				display: block;
 				position: absolute;
-				top: 0;
-				left: 0;
-				bottom: 0;
-				right: 0;
-				background: $color-link-hover;
-				opacity: .25;
 				z-index: 2;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				opacity: 0.25;
+				background: $color-link-hover;
+				content: "";
 			}
 		}
 	}
-    img {
-        width: 100%; // fix for IE11
-    }
+
+	img {
+		width: 100%; // fix for IE11
+	}
 }
 
 /** Archive View Featured Images Media Queries **/
 
 @media screen and (min-width: $breakpoint-1) {
+
 	.excerpt-entry .featured-image {
+
 		@include full-bleed-cancel;
 	}
 }
@@ -180,41 +205,45 @@ object {
 ## Attachment pages
 --------------------------------------------------------------*/
 .single-attachment {
-    .entry-title {
-        text-align: center;
-    }
-    .comments-area {
-        margin-top: 1em;
-    }
-    .site-content {
-        margin-top: 1em;
-    }
-    .entry-content {
-        @include full-bleed;
-    }
+
+	.entry-title {
+		text-align: center;
+	}
+
+	.comments-area {
+		margin-top: 1em;
+	}
+
+	.site-content {
+		margin-top: 1em;
+	}
+
+	.entry-content {
+
+		@include full-bleed;
+	}
 }
+
 .entry-attachment {
-    text-align: center;
+	text-align: center;
 }
 
 /*--------------------------------------------------------------
 ## Captions
 --------------------------------------------------------------*/
 .wp-caption {
-	margin-bottom: 1.5em;
 	max-width: 100%;
+	margin-bottom: 1.5em;
 
 	img[class*="wp-image-"] {
+		
 		@include center-block;
 	}
 
 	.wp-caption-text {
 		margin: 0.8075em 0;
+		text-align: center;
 	}
-}
-
-.wp-caption-text {
-	text-align: center;
 }
 
 /*--------------------------------------------------------------
@@ -226,12 +255,13 @@ object {
 
 .gallery-item {
 	display: inline-block;
+	width: 100%;
 	text-align: center;
 	vertical-align: top;
-	width: 100%;
 
 	// Loops to enumerate the classes for gallery columns.
 	@for $i from 2 through 9 {
+
 		.gallery-columns-#{$i} & {
 			max-width: map-get( $columns, $i );
 		}
@@ -247,9 +277,9 @@ object {
 --------------------------------------------------------------*/
 
 .svg-icon {
-    vertical-align: middle;
-    height: 1em;
-    width: 1em;
+	width: 1em;
+	height: 1em;
+	vertical-align: middle;
 	transition: fill 120ms ease-in-out;
 	fill: currentColor;
 }
