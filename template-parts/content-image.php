@@ -19,7 +19,7 @@
 				</div><!-- .entry-caption -->
 			<?php endif; ?>
 		</div><!-- .entry-attachment .entry-content -->
-		<footer class="entry-footer">
+		<footer class="entry-footer has-ui-font">
 			<?php weracoba_posted_on(); ?>
 			<?php
 			weracoba_entry_footer();

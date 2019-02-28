@@ -10,7 +10,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
+	<header class="entry-header has-ui-font">
 		<?php weracoba_author_avatar(); ?>
 		<div class="entry-header-wrapper">
 			<?php weracoba_posted_by(); ?>
@@ -33,7 +33,7 @@
 	<div class="entry-content">
 		<?php the_content(); ?>
 	</div><!-- .entry-content -->
-	<footer class="entry-footer">
+	<footer class="entry-footer has-ui-font">
 		<div class="entry-meta">
 			<?php weracoba_posted_on(); ?>
 			<?php weracoba_edit_link(); ?>

@@ -12,7 +12,7 @@
 ?>
 		<?php get_sidebar(); ?>
 	</div><!-- #content -->
-	<footer id="colophon" class="site-footer">
+	<footer id="colophon" class="site-footer has-ui-font">
 			<div class="footer-widgets">
 				<?php dynamic_sidebar( 'footer-1' ); ?>
 				<?php

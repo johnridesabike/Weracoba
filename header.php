@@ -68,7 +68,7 @@
 					</span>
 				</button>
 			</div> <!-- #toggle-button .menu-button -->
-			<nav id="site-navigation" class="main-navigation">
+			<nav id="site-navigation" class="main-navigation has-ui-font">
 				<?php
 				wp_nav_menu(
 					array(
@@ -86,7 +86,7 @@
 			weracoba_category_list();
 		endif;
 		?>
-		<div class="entry-header">
+		<div class="entry-header has-ui-font">
 			<?php
 			if ( is_singular() ) :
 				while ( have_posts() ) :

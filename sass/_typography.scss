@@ -11,28 +11,17 @@ html {
 	}
 }
 
-%font-reading {
-	font-family: $font-reading;
-}
-
-/* Interactive buttons and widgets use the system font. */
-%font-UI {
-	font-family: $font-UI;
-}
-
 body {
 	color: $color-text-main;
 }
 
 body,
 textarea {
-
-	@extend %font-reading;
+	font-family: $font-reading;
 }
 
 input {
-
-	@extend %font-UI;
+	font-family: $font-UI;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -178,13 +167,11 @@ big {
 }
 
 .has-ui-font {
-
-	@extend %font-UI;
+	font-family: $font-UI;
 }
 
 .has-body-font {
-
-	@extend %font-reading;
+	font-family: $font-reading;
 }
 
 .widget-area,

@@ -212,7 +212,7 @@ function weracoba_widgets_init() {
 				'weracoba'
 			),
 			'class'         => '',
-			'before_widget' => '<nav id="%1$s" class="widget breadcrumbs-nav %2$s">',
+			'before_widget' => '<nav id="%1$s" class="widget breadcrumbs-nav has-ui-font %2$s">',
 			'after_widget'  => '</nav>',
 			'before_title'  => '<h2 class="widget-title">',
 			'after_title'   => '</h2>',

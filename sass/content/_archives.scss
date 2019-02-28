@@ -1,11 +1,5 @@
-.archive-title {
-
-	@extend %font-reading;
-}
-
 .archive-description {
-
-	@extend %font-reading;
+	
 	@include max-content-width;
 }
 

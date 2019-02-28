@@ -24,10 +24,9 @@
 	padding-top: 1em;
 	border-top-width: 4px;
 	border-top-style: solid;
+	font-family: $font-UI;
 	font-size: $font-size-lg;
 	text-align: center;
-
-	@extend %font-UI;
 
 	.next {
 		display: block;
@@ -72,9 +71,9 @@
 		button:focus,
 		button:hover {
 
-			@extend %button;
-			@extend %button-background;
-			@extend %button-color;
+			@include button;
+			@include button-background;
+			@include button-color;
 		}
 	}
 }

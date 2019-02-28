@@ -1,14 +1,6 @@
-@import "../placeholders/widgets";
-
 .widget {
 	width: 100%;
 	margin: 0;
-
-	ul,
-	ol {
-
-		@extend %widget-list;
-	}
 
 	select {
 		width: 100%;
@@ -23,16 +15,9 @@
 	margin: 0 0 0.5em;
 }
 
-.widget-area,
-.footer-widgets {
-
-	@extend %font-UI;
-}
-
 /* Text widget. */
 .widget-area .textwidget {
-
-	@extend %font-reading;
+	font-family: $font-reading;
 }
 
 /* Search widget. */
@@ -157,8 +142,7 @@
 	padding: 0 0.25em;
 	border-radius: 1em 0.3em 0.3em 1em;
 	background-color: rgba(0, 0, 0, 0.1);
-
-	@extend %font-UI;
+	font-family: $font-UI;
 
 	.svg-icon {
 		opacity: 0.8;
@@ -187,8 +171,6 @@ a.tag-cloud-link {
 	margin-bottom: 0.5em;
 	opacity: $opacity-aside;
 	font-size: $font-size-sm;
-	
-	@extend %font-UI;
 
 	> div { // specifies Yoast breadcrumb markup
 		display: inline-block;
@@ -248,8 +230,7 @@ a.tag-cloud-link {
 	}
 
 	li a {
-
-		@extend %font-UI;
+		font-family: $font-UI;
 	}
 }
 /* stylelint-enable no-descending-specificity */

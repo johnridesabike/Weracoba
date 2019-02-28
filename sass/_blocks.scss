@@ -96,16 +96,16 @@ figure.wp-block-image {
 .wp-block-button .wp-block-button__link,
 .wp-block-file .wp-block-file__button {
 
-	@extend %button;
+	@include button;
 
 	&:not(.has-background) {
 
-		@extend %button-background;
+		@include button-background;
 	}
 
 	&:not(.has-text-color) {
 
-		@extend %button-color;
+		@include button-color;
 	}
 	font-size: $font-size-md; // cancel built in style for the file button
 }
@@ -123,14 +123,14 @@ figure.wp-block-image {
 
 .wp-block-button:not(.is-style-outline):not(.is-style-squared) .wp-block-button__link {
 
-	@extend %button-shadow;
+	@include button-shadow;
 
 	&:active {
 
-		@extend %button-active;
+		@include button-active;
 	}
 }
-/* stylelint-disable no-descending-specificity */
+
 .wp-block-button.is-style-outline .wp-block-button__link {
 	border: 2px solid currentColor;
 	border-radius: $border-radius-button;
@@ -152,29 +152,27 @@ figure.wp-block-image {
 		}
 	}
 }
-/* stylelint-enable no-descending-specificity */
 
 .wp-block-file {
-
-	@extend %font-UI;
+	font-family: $font-UI;
 	
 	a.wp-block-file__button {
 		display: inline-block;
 
-		@extend %button-shadow;
+		@include button-shadow;
 		// This is just to cancel the built in style
 		&:hover,
 		&:focus,
 		&:visited {
 			opacity: 1;
-			// @extend %button;
-			@extend %button-shadow;
+
+			@include button-shadow;
 		}
 
 		&:active {
 			opacity: 1;
 
-			@extend %button-active;
+			@include button-active;
 		}
 	}
 }
@@ -182,26 +180,13 @@ figure.wp-block-image {
 /**
  * Widgets
  */
-.wp-block-latest-posts,
-.wp-block-archives-list,
-.wp-block-categories-list,
-.wp-block-categories__list {
-
-	@extend %widget-list;
-}
-
-.wp-block-latest-posts__post-date {
-
-	@extend %font-UI;
-}
 
 .wp-block-latest-comments__comment {
 	font-size: $font-size-md;
 }
 
 .wp-block-latest-comments__comment-meta {
-
-	@extend %font-UI;
+	font-family: $font-UI;
 	font-size: $font-size-xs;
 
 	a {
@@ -209,7 +194,57 @@ figure.wp-block-image {
 	}
 }
 
-/* stylelint-disable-next-line no-descending-specificity */
+.wp-block-latest-posts,
+.wp-block-archives-list,
+.wp-block-categories-list,
+.wp-block-categories__list,
+.widget ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	
+	li {
+		display: block;
+		margin-bottom: 0.5em;
+		padding: 0;
+
+		ul,
+		ol {
+			margin-left: 0.5em;
+		}
+	}
+
+	a {
+		display: block;
+		padding: 0.5em 0;
+		border-bottom: 1px dashed currentColor;
+		text-decoration: none;
+
+		&:hover,
+		&:active,
+		&:focus {
+			border-bottom: 1px dashed currentColor;
+			text-decoration: none;
+		}
+	}
+	
+	.children,
+	.sub-menu {
+		margin-left: 1em;
+		padding-top: 0;
+		padding-bottom: 0.5em;
+		font-size: $font-size-sm;
+
+		a::before {
+			content: $glyph-arrow-down-right + " ";
+		}
+	}
+}
+
+.wp-block-latest-posts__post-date {
+	font-family: $font-UI;
+}
+
 .wp-block-latest-comments__comment-excerpt p {
 	font-size: $font-size-sm;
 }

@@ -40,8 +40,6 @@
 
 	.entry-title {
 		margin: 0;
-
-		@extend %font-reading;
 	
 		a {
 			color: $color-text-main;
@@ -77,17 +75,6 @@
 	}
 }
 
-.entry-header,
-.entry-footer {
-
-	@extend %font-UI;
-}
-
-.post-title { // nav links
-
-	@extend %font-reading;
-}
-
 /*
  * Entry Footer
  */
@@ -121,15 +108,15 @@
 	.comments-link a {
 		border-radius: $border-radius-button-square;
 
-		@extend %button;
-		@extend %button-color;
-		@extend %button-background;
+		@include button;
+		@include button-color;
+		@include button-background;
 
 		&:hover,
 		&:active,
 		&:focus {
 
-			@extend %button-hover;
+			@include button-hover;
 		}
 	}
 
@@ -255,15 +242,15 @@ article.format-aside {
 		display: block;
 		border-radius: $border-radius-button-square;
 
-		@extend %button;
-		@extend %button-background;
-		@extend %button-color;
+		@include button;
+		@include button-background;
+		@include button-color;
 
 		&:hover,
 		&:focus,
 		&:active {
 
-			@extend %button-hover;
+			@include button-hover;
 		}
 	}
 }

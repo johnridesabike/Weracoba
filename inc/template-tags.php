@@ -329,10 +329,10 @@ if ( ! function_exists( 'weracoba_post_navigation' ) ) :
 			array(
 				'next_text'    => '<span class="meta-nav" aria-hidden="true">' . __( 'Next Post', 'weracoba' ) . $next_icon . '</span> ' .
 					'<span class="screen-reader-text">' . __( 'Next post:', 'weracoba' ) . '</span>' .
-					'<span class="post-title">%title</span>',
+					'<span class="post-title has-body-font">%title</span>',
 				'prev_text'    => '<span class="meta-nav" aria-hidden="true">' . $prev_icon . __( 'Previous Post', 'weracoba' ) . '</span> ' .
 					'<span class="screen-reader-text">' . __( 'Previous post:', 'weracoba' ) . '</span>' .
-					'<span class="post-title">%title</span>',
+					'<span class="post-title  has-body-font">%title</span>',
 				'in_same_term' => true,
 			)
 		);

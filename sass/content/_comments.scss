@@ -37,8 +37,7 @@
 }
 
 .comment-meta {
-
-	@extend %font-UI;
+	font-family: $font-UI;
 
 	.avatar {
 		width: $size-avatar-sm;
@@ -81,9 +80,9 @@
 
 	a {
 
-		@extend %button;
-		@extend %button-background;
-		@extend %button-color;
+		@include button;
+		@include button-background;
+		@include button-color;
 	}
 }
 
@@ -99,7 +98,7 @@
 .comment-respond {
 
 	@include max-content-width;
-	@extend %font-UI;
+	font-family: $font-UI;
 
 	.comment-form {
 		display: flex;

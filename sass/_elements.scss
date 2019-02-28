@@ -158,21 +158,49 @@ a {
 
 /* All of the buttons and button-like elements */
 
-@import "placeholders/buttons";
+// .button {
+	
+// 	@include button;
+// }
+
+// .button-color {
+	
+// 	@include button-color;
+// }
+
+// .button-background {
+	
+// 	@include button-background;
+// }
+
+// .button-shadow {
+	
+// 	@include button-shadow;
+// }
+
+// .button-active {
+	
+// 	@include button-active;
+// }
+
+// .button-hover {
+	
+// 	@include button-hover;
+// }
 
 button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
 	
-	@extend %button;
-	@extend %button-background;
-	@extend %button-color;
-	@extend %button-shadow;
+	@include button;
+	@include button-background;
+	@include button-color;
+	@include button-shadow;
 
 	&:active {
 	
-		@extend %button-active;
+		@include button-active;
 	}
 }
 
