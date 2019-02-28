@@ -5,6 +5,7 @@ module.exports = {
 	plugins: ["stylelint-order", "stylelint-scss"],
 	rules: {
 		"comment-empty-line-before": null,
+		"no-descending-specificity": null,
 		"max-line-length": 255,
 		"declaration-block-no-duplicate-properties": [
 			true,

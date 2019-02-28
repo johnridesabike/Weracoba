@@ -1,6 +1,7 @@
 @charset "UTF-8";
 /* stylelint-disable value-keyword-case */
 /* stylelint-enable value-keyword-case */
+/* stylelint-disable-next-line no-duplicate-selectors */
 html {
 	font-size: 20px;
 	line-height: 1.50967;
@@ -13,6 +14,7 @@ html {
 	}
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors */
 body {
 	color: #19191a;
 }
@@ -27,8 +29,7 @@ input {
 }
 
 h1, .editor-post-title__block .editor-post-title__input,
-.wp-block-heading h1.editor-rich-text__tinymce, h2, .wp-block-heading h2.editor-rich-text__tinymce, h3, .wp-block-heading h3.editor-rich-text__tinymce, h4, .widget-area h2, .widget-area .wp-block-heading h2.editor-rich-text__tinymce, .wp-block-heading .widget-area h2.editor-rich-text__tinymce,
-.footer-widgets h2, .footer-widgets .wp-block-heading h2.editor-rich-text__tinymce, .wp-block-heading .footer-widgets h2.editor-rich-text__tinymce, .wp-block-heading h4.editor-rich-text__tinymce, h5, .wp-block-heading h5.editor-rich-text__tinymce, h6, .wp-block-heading h6.editor-rich-text__tinymce {
+.wp-block-heading h1.editor-rich-text__tinymce, h2, .wp-block-heading h2.editor-rich-text__tinymce, h3, .wp-block-heading h3.editor-rich-text__tinymce, h4, .wp-block-heading h4.editor-rich-text__tinymce, h5, .wp-block-heading h5.editor-rich-text__tinymce, h6, .wp-block-heading h6.editor-rich-text__tinymce {
 	margin-top: 1em;
 	margin-bottom: 1em;
 	font-weight: 400;
@@ -38,6 +39,7 @@ h1, .editor-post-title__block .editor-post-title__input,
 }
 
 /* Only use h1 for title */
+/* stylelint-disable-next-line no-duplicate-selectors */
 h1, .editor-post-title__block .editor-post-title__input,
 .wp-block-heading h1.editor-rich-text__tinymce {
 	clear: both;
@@ -64,8 +66,7 @@ h3, .wp-block-heading h3.editor-rich-text__tinymce {
 	letter-spacing: 0.06em;
 }
 
-h4, .widget-area h2, .widget-area .wp-block-heading h2.editor-rich-text__tinymce, .wp-block-heading .widget-area h2.editor-rich-text__tinymce,
-.footer-widgets h2, .footer-widgets .wp-block-heading h2.editor-rich-text__tinymce, .wp-block-heading .footer-widgets h2.editor-rich-text__tinymce, .wp-block-heading h4.editor-rich-text__tinymce {
+h4, .wp-block-heading h4.editor-rich-text__tinymce {
 	font-size: 0.88889em;
 	font-weight: 700;
 	line-height: 1.56297;
@@ -106,6 +107,7 @@ blockquote {
 	font-size: 0.88889em;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors */
 pre {
 	overflow: auto;
 	max-width: 100%;
@@ -180,20 +182,11 @@ big {
 	font-family: Palatino, "Palatino Linotype", Athelas, Georgia, Times, "Times New Roman", serif;
 }
 
-.widget-area h2, .widget-area .wp-block-heading h2.editor-rich-text__tinymce, .wp-block-heading .widget-area h2.editor-rich-text__tinymce,
-.footer-widgets h2,
-.footer-widgets .wp-block-heading h2.editor-rich-text__tinymce,
-.wp-block-heading .footer-widgets h2.editor-rich-text__tinymce {
-	padding: 0;
-	border: none;
-}
-
 .footer-widgets {
 	opacity: 0.8;
 }
 
 /* Accessibility */
-/* stylelint-disable no-descending-specificity */
 .entry-content a:hover,
 .entry-content a:active,
 .entry-content a:focus,
@@ -206,7 +199,6 @@ big {
 	text-decoration: underline;
 }
 
-/* stylelint-enable no-descending-specificity */
 /**
  * Typography
  */
@@ -416,7 +408,7 @@ figure.wp-block-image.alignwide, .alignwide.wp-block[data-type="core/image"] {
 .wp-block-archives-list li,
 .wp-block-categories-list li,
 .wp-block-categories__list li,
-.widget ul li {
+.widget li {
 	display: block;
 	margin-bottom: 0.5em;
 	padding: 0;
@@ -430,35 +422,35 @@ figure.wp-block-image.alignwide, .alignwide.wp-block[data-type="core/image"] {
 .wp-block-categories-list li ol,
 .wp-block-categories__list li ul,
 .wp-block-categories__list li ol,
-.widget ul li ul,
-.widget ul li ol {
+.widget li ul,
+.widget li ol {
 	margin-left: 0.5em;
 }
 
-.wp-block-latest-posts a,
-.wp-block-archives-list a,
-.wp-block-categories-list a,
-.wp-block-categories__list a,
-.widget ul a {
+.wp-block-latest-posts li a,
+.wp-block-archives-list li a,
+.wp-block-categories-list li a,
+.wp-block-categories__list li a,
+.widget li a {
 	display: block;
 	padding: 0.5em 0;
 	border-bottom: 1px dashed currentColor;
 	text-decoration: none;
 }
 
-.wp-block-latest-posts a:hover, .wp-block-latest-posts a:active, .wp-block-latest-posts a:focus,
-.wp-block-archives-list a:hover,
-.wp-block-archives-list a:active,
-.wp-block-archives-list a:focus,
-.wp-block-categories-list a:hover,
-.wp-block-categories-list a:active,
-.wp-block-categories-list a:focus,
-.wp-block-categories__list a:hover,
-.wp-block-categories__list a:active,
-.wp-block-categories__list a:focus,
-.widget ul a:hover,
-.widget ul a:active,
-.widget ul a:focus {
+.wp-block-latest-posts li a:hover, .wp-block-latest-posts li a:active, .wp-block-latest-posts li a:focus,
+.wp-block-archives-list li a:hover,
+.wp-block-archives-list li a:active,
+.wp-block-archives-list li a:focus,
+.wp-block-categories-list li a:hover,
+.wp-block-categories-list li a:active,
+.wp-block-categories-list li a:focus,
+.wp-block-categories__list li a:hover,
+.wp-block-categories__list li a:active,
+.wp-block-categories__list li a:focus,
+.widget li a:hover,
+.widget li a:active,
+.widget li a:focus {
 	border-bottom: 1px dashed currentColor;
 	text-decoration: none;
 }
@@ -471,8 +463,8 @@ figure.wp-block-image.alignwide, .alignwide.wp-block[data-type="core/image"] {
 .wp-block-categories-list .sub-menu,
 .wp-block-categories__list .children,
 .wp-block-categories__list .sub-menu,
-.widget ul .children,
-.widget ul .sub-menu {
+.widget .children,
+.widget .sub-menu {
 	margin-left: 1em;
 	padding-top: 0;
 	padding-bottom: 0.5em;
@@ -487,8 +479,8 @@ figure.wp-block-image.alignwide, .alignwide.wp-block[data-type="core/image"] {
 .wp-block-categories-list .sub-menu a::before,
 .wp-block-categories__list .children a::before,
 .wp-block-categories__list .sub-menu a::before,
-.widget ul .children a::before,
-.widget ul .sub-menu a::before {
+.widget .children a::before,
+.widget .sub-menu a::before {
 	content: "↳ ";
 }
 
@@ -504,6 +496,7 @@ figure.wp-block-image.alignwide, .alignwide.wp-block[data-type="core/image"] {
  * Formatting
  */
 .wp-block-separator {
+	clear: both;
 	height: 2px;
 	margin-bottom: 1.5em;
 	border: 0;

@@ -6,19 +6,27 @@
 /*--------------------------------------------------------------
 ### Content navigation
 --------------------------------------------------------------*/
-.comment-navigation,
-.posts-navigation,
-.paging-navigation,
-.single-post .post-navigation {
-	text-align: left;
 
-	a {
-		display: block;
-		width: 100%;
-	}
+/**
+* 1. Comment navigation
+* 2. ???
+* 3. The previous and next posts in entry-footer
+*/
+.comment-navigation, /* 1 */
+.posts-navigation, /* 2 */
+.paging-navigation, /* 2 */
+.post-navigation /* 3 */ {
+	text-align: left;
 }
 
+/**
+* 1. Paginated single entries
+* 2. Archive view page links
+*/
+
+/* 1 */
 .post-nav-links,
+/* 2 */
 .pagination {
 	margin-top: 2em;
 	padding-top: 1em;
@@ -27,63 +35,40 @@
 	font-family: $font-UI;
 	font-size: $font-size-lg;
 	text-align: center;
+}
 
-	.next {
-		display: block;
-		margin-top: 0.5em;
+/* 2 */ 
+.page-numbers {
+	display: block;
+	width: 100%;
+}
+
+/* 1 */
+.post-page-numbers,
+/* 2 */
+.page-numbers {
+
+	&:not(.prev):not(.next) {
+		margin: 0 0.5em;
 	}
 
-	.prev {
-		display: block;
-		margin-bottom: 0.5em;
-	}
-
-	.page-numbers,
-	.post-page-numbers{
-
-		&:not(.prev):not(.next) {
-			margin: 0 0.5em;
-		}
-	}
-
-	.post-page-numbers.current,
-	.page-numbers.current {
+	&.current {
 
 		@include current-page;
+
 		padding-bottom: 0.25em;
 		opacity: $opacity-aside;
 	}
 }
 
-// Jetpack Infinite Scroll
-.infinite-scroll .pagination {
-	display: none;
+.next {
+	display: block;
+	margin-top: 0.5em;
 }
 
-.infinite-scroll #infinite-handle { // .infinite-scroll is just an extra specificity to override built-in CSS
-	text-align: center;
-
-	span {
-		background: transparent;
-		font-size: 1.3em;
-
-		button,
-		button:focus,
-		button:hover {
-
-			@include button;
-			@include button-background;
-			@include button-color;
-		}
-	}
-}
-
-.infinite-loader {
-	margin: 1em 0;
-
-	.spinner {
-		margin: auto;
-	}
+.prev {
+	display: block;
+	margin-bottom: 0.5em;
 }
 
 .nav-links {
@@ -93,6 +78,18 @@
 
 .nav-previous {
 	margin-bottom: 0.5em;
+}
+
+/* The previous and next posts in entry-footer */
+.attachment .post-navigation {
+
+	.meta-nav {
+		color: $color-text-main;
+	}
+
+	.post-title {
+		text-decoration: underline;
+	}
 }
 
 .single-post .post-navigation {
@@ -120,15 +117,34 @@
 	}
 }
 
-/* stylelint-disable no-descending-specificity */
-.attachment .post-navigation {
+/** Jetpack Infinite Scroll **/
+.infinite-scroll .pagination {
+	display: none;
+}
 
-	.meta-nav {
-		color: $color-text-main;
+.infinite-scroll #infinite-handle { // .infinite-scroll is just an extra specificity to override built-in CSS
+	text-align: center;
+
+	span {
+		background: transparent;
+		font-size: 1.3em;
+
+		button,
+		button:focus,
+		button:hover {
+
+			@include button;
+			@include button-background;
+			@include button-color;
+		}
 	}
+}
 
-	.post-title {
-		text-decoration: underline;
+.infinite-loader {
+	margin: 1em 0;
+
+	.spinner {
+		margin: auto;
 	}
 }
 
@@ -187,7 +203,6 @@
 		}
 	}
 }
-/* stylelint-enable no-descending-specificity */
 
 @media screen and (min-width: $breakpoint-2) {
 

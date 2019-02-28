@@ -2,27 +2,27 @@
 	position: relative;
 	margin: 0.25em 0 0.25em 0.25em;
 	text-align: right;
-
-	.menu-toggle {
-		display: inline;
-		padding: 0.1em;
-		border-style: none; // cancel _elements.scss
-		color: $color-link;
-		background: none; // cancel _elements.scss
-		box-shadow: none; // cancel _elements.scss
-		
-		&:active {
-			transform: none; // cancel _elements.scss
-		}
-		
-		.svg-icon {
-			font-size: 40px;
-			filter: none; // cancel _elements.scss
-		}
-	}
 	
 	.dismiss-icon {
 		display: none;
+	}
+}
+
+.menu-toggle {
+	display: inline;
+	padding: 0.1em;
+	border-style: none; // cancel _elements.scss
+	color: $color-link;
+	background: none; // cancel _elements.scss
+	box-shadow: none; // cancel _elements.scss
+	
+	&:active {
+		transform: none; // cancel _elements.scss
+	}
+	
+	.svg-icon {
+		font-size: 40px;
+		filter: none; // cancel _elements.scss
 	}
 }
 
@@ -88,7 +88,6 @@
 		}
 	}
 	
-	/* stylelint-disable-next-line no-descending-specificity */
 	ul {
 		display: none;
 		position: relative;
@@ -98,7 +97,6 @@
 		border-top-style: solid;
 		list-style: none;
 
-		/* stylelint-disable-next-line no-descending-specificity */
 		ul {
 			display: block;
 			float: left;
@@ -113,33 +111,32 @@
 			background: $color-bg-header;
 			box-shadow: 0 0 0.25em rgba(0, 0, 0, 0.2);
 			
-			/* stylelint-disable-next-line no-descending-specificity */
 			ul {
 				top: 0;
 				left: -999em;
 			}
 
 			li {
-
+	
 				&:hover > ul,
 				&.focus > ul {
 					left: 100%;
 				}
 			}
+		}
 
-			:hover > a,
-			.focus > a {
-				color: $color-link-hover;
-			}
+		:hover > a,
+		.focus > a {
+			color: $color-link-hover;
+		}
 
-			a:hover,
-			a.focus {
-				color: $color-link-hover;
-			}
+		a:hover,
+		a.focus {
+			color: $color-link-hover;
 		}
 	}
-	/* stylelint-disable-next-line no-descending-specificity */
-	li:hover > ul,/* stylelint-disable-next-line no-descending-specificity */
+
+	li:hover > ul,
 	li.focus > ul {
 		right: 0;
 		left: auto;

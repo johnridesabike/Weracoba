@@ -1,4 +1,5 @@
-html {
+/* stylelint-disable-next-line no-duplicate-selectors */
+html { 
 	font-size: $font-size-base;
 	line-height: calculate-line-height($font-size-base, $size-content);
 }
@@ -11,6 +12,7 @@ html {
 	}
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors */
 body {
 	color: $color-text-main;
 }
@@ -32,7 +34,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Only use h1 for title */
-
+/* stylelint-disable-next-line no-duplicate-selectors */
 h1 {
 	clear: both;
 	font-size: $font-size-xl;
@@ -100,6 +102,7 @@ blockquote {
 	font-size: $font-size-sm;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors */
 pre {
 	overflow: auto;
 	max-width: 100%;
@@ -174,24 +177,11 @@ big {
 	font-family: $font-reading;
 }
 
-.widget-area,
-.footer-widgets {
-
-	h2 {
-
-		@extend h4;
-
-		padding: 0;
-		border: none;
-	}
-}
-
 .footer-widgets {
 	opacity: $opacity-aside;
 }
 
 /* Accessibility */
-/* stylelint-disable no-descending-specificity */
 .entry-content,
 .comment-content,
 .widget p {
@@ -202,4 +192,3 @@ big {
 		text-decoration: underline;
 	}
 }
-/* stylelint-enable no-descending-specificity */

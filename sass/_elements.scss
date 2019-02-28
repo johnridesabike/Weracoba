@@ -1,3 +1,4 @@
+/* stylelint-disable-next-line no-duplicate-selectors */
 html {
 	box-sizing: border-box;
 }
@@ -14,10 +15,12 @@ html {
 	border-color: $color-link;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors */
 body {
 	background: $color-bg-body; /* Fallback for when there is no custom background color defined. */
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors */
 hr {
 
 	@include hr;
@@ -53,6 +56,7 @@ dd {
 	margin: 0 1.5em 1.5em;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors */
 blockquote {
 
 	@include blockquote;
@@ -93,6 +97,7 @@ th, td {
 /*--------------------------------------------------------------
 ## Forms
 --------------------------------------------------------------*/
+/* stylelint-disable-next-line no-duplicate-selectors */
 textarea {
 	width: 100%;
 }
@@ -131,6 +136,7 @@ select {
 /*--------------------------------------------------------------
 ## Links
 --------------------------------------------------------------*/
+/* stylelint-disable-next-line no-duplicate-selectors */
 a {
 	color: $color-link;
 	text-decoration: none;
@@ -155,38 +161,7 @@ a {
 	}
 }
 
-
 /* All of the buttons and button-like elements */
-
-// .button {
-	
-// 	@include button;
-// }
-
-// .button-color {
-	
-// 	@include button-color;
-// }
-
-// .button-background {
-	
-// 	@include button-background;
-// }
-
-// .button-shadow {
-	
-// 	@include button-shadow;
-// }
-
-// .button-active {
-	
-// 	@include button-active;
-// }
-
-// .button-hover {
-	
-// 	@include button-hover;
-// }
 
 button,
 input[type="button"],
@@ -218,12 +193,7 @@ input[type="submit"] {
 	}
 }
 
-%required {
+form span.required {
 	opacity: $opacity-aside;
 	font-size: $font-size-xs;
-}
-
-form span.required {
-	
-	@extend %required;
 }

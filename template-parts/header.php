@@ -12,7 +12,7 @@ if ( 'aside' !== get_post_format() ) :
 	<?php weracoba_post_thumbnail(); ?>
 	<div class="entry-header-wrap">
 		<?php the_title( '<h1 class="entry-title has-body-font">', '</h1>' ); ?>
-		<div class="entry-meta">
+		<div class="entry-meta entry-meta__single">
 			<?php weracoba_author_avatar(); ?>
 			<div class="entry-meta-wrapper">
 				<?php weracoba_posted_by(); ?>

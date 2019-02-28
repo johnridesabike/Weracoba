@@ -29,17 +29,23 @@ get_header();
 						array(
 							'title'        => __( 'Browse by category', 'weracoba' ),
 							'hierarchical' => 1,
+						),
+						array(
+							'before_widget' => '<div class="widget has-ui-font %s">',
 						)
 					);
 					the_widget(
 						'WP_Widget_Tag_Cloud',
 						array(
-							'title'     => __( 'Browse by tag', 'weracoba' ),
+							'title' => __( 'Browse by tag', 'weracoba' ),
+						),
+						array(
+							'before_widget' => '<div class="widget has-ui-font %s">',
 						)
 					);
 					?>
 				</div> <!-- .archive-widget-area -->
-				<p class="has-large-font-size"><?php esc_html_e( 'Or browse the recent updates', 'weracoba' ); ?></p>
+				<p class="has-large-font-size has-ui-font"><?php esc_html_e( 'Or browse the recent updates:', 'weracoba' ); ?></p>
 				<?php
 			endif;
 			/* Start the Loop */

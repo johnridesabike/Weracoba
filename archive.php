@@ -78,6 +78,9 @@ get_header();
 				array(
 					'title'        => __( 'Browse another category', 'weracoba' ),
 					'hierarchical' => 1,
+				),
+				array(
+					'before_widget' => '<div class="widget has-ui-font %s">',
 				)
 			);
 			?>

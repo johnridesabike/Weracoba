@@ -7,26 +7,23 @@
 	display: none;
 }
 
+/** Nav links under paginated posts. **/
 .post-nav-links {
 	clear: both;
 	margin: 0 0 1.5em; // cancel _navigation.scss
 	padding-top: 0; // cancel _navigation.scss
 	border-style: none; // cancel _navigation.scss
 
-	a,
-	a:hover,
-	a:active,
-	a:focus {
+	a.post-page-numbers {
 		text-decoration: none;
 	}
 }
 
-.site-content,
-.entry-header-wrap,
-.content-wrap {
+// .entry-header-wrap,
+// .content-wrap {
 
-	@include max-site-width;
-}
+// 	@include max-site-width;
+// }
 
 /* 
  * Entry header
@@ -40,20 +37,20 @@
 
 	.entry-title {
 		margin: 0;
+	}
 	
-		a {
-			color: $color-text-main;
-	
-			&:active,
-			&:focus,
-			&:hover {
-				color: $color-link-hover;
-			}
+	a[rel="bookmark"] {
+		color: $color-text-main;
+
+		&:active,
+		&:focus,
+		&:hover {
+			color: $color-link-hover;
 		}
 	}
 }
 
-.single .entry-header .entry-meta {
+.entry-meta__single {
 	display: flex;
 	margin-top: 0.5em;
 	font-size: $font-size-sm;
@@ -91,7 +88,7 @@
 	// text-align: right;
 }
 
-.single .entry-footer {
+.entry-footer__single {
 	margin-top: 1em;
 	margin-bottom: 1em;
 	padding-top: 0.5em;
@@ -101,10 +98,6 @@
 	opacity: $opacity-aside;
 	background: $color-bg-footer;
 
-	h3 {
-		margin: 0;
-	}
-
 	.comments-link {
 		
 		@extend .button-link;
@@ -112,11 +105,9 @@
 		a {
 			border-radius: $border-radius-button-square;
 		}
-
 	}
 
-	/* stylelint-disable-next-line no-descending-specificity */
-	> *, /* stylelint-disable-next-line no-descending-specificity */
+	> *,
 	.entry-footer-wrapper > * {
 		margin-bottom: 0.5em;
 	}
@@ -142,8 +133,6 @@ article.format-aside {
 	@include max-content-width;
 }
 
-
-/* stylelint-disable no-descending-specificity */
 .format-aside {
 
 	.entry-header {
@@ -189,8 +178,6 @@ article.format-aside {
 		}
 	}
 }
-
-/* stylelint-enable no-descending-specificity */
 
 .excerpt-entry {
 
@@ -286,7 +273,7 @@ article.format-aside {
 	/*
 	 * Entry footer
 	 */
-	.single .entry-footer {
+	.entry-footer__single {
 		max-width: $size-site-width;
 		margin: auto;
 
@@ -408,7 +395,7 @@ article.format-aside {
 	/*
 	 * Entry header
 	 */
-	.single .entry-meta {
+	.entry-meta__single {
 
 		.avatar {
 			width: $size-avatar-lg;

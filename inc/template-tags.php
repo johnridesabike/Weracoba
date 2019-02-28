@@ -220,7 +220,7 @@ if ( ! function_exists( 'weracoba_post_thumbnail' ) ) :
 			</figure> <!--.featured-image .post-thumbnail -->
 		<?php else : ?>
 			<figure class="featured-image post-thumbnail">
-				<a href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
+				<a href="<?php the_permalink(); ?>" class="featured-image__link" aria-hidden="true" tabindex="-1">
 					<?php
 					the_post_thumbnail( 'post-thumbnail' );
 					?>

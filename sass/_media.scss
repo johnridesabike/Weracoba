@@ -1,6 +1,7 @@
-.page-content .wp-smiley,
-.entry-content .wp-smiley,
-.comment-content .wp-smiley {
+// .page-content .wp-smiley,
+// .entry-content .wp-smiley,
+// .comment-content .wp-smiley {
+.wp-smiliey {
 	margin-top: 0;
 	margin-bottom: 0;
 	padding: 0;
@@ -50,7 +51,6 @@ object {
 }
 
 @media screen and (max-width: $breakpoint-1) {
-
 	/* On small screens, display left and right alignments as if they were centered */
 	.alignleft,
 	.alignright {
@@ -142,7 +142,7 @@ object {
 
 		flex: 1 1 50%;
 
-		img {
+		.wp-post-image {
 			width: 100%;
 		}
 
@@ -156,15 +156,18 @@ object {
 ## Archive View Featured Images
 --------------------------------------------------------------*/
 
-.excerpt-entry .featured-image {
+.excerpt-entry {
 
-	@include full-bleed;
+	.featured-image {
 
-	position: relative;
-	margin-top: 0; // cancel default figure
-	margin-bottom: 0; // cancel default figure
+		@include full-bleed;
 
-	a {
+		position: relative;
+		margin-top: 0; // cancel default figure
+		margin-bottom: 0; // cancel default figure
+	}
+
+	.featured-image__link {
 		display: block;
 		line-height: 0; /* fixes visual glitch with link overlay */
 
@@ -186,7 +189,7 @@ object {
 		}
 	}
 
-	img {
+	.wp-post-image {
 		width: 100%; // fix for IE11
 	}
 }

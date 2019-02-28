@@ -2,7 +2,6 @@
  * Jetpack
  */
 
-/* stylelint-disable no-descending-specificity */
 .entry-footer { // Greater specificity = override Jetpack default CSS
 	div.sharedaddy h3.sd-title::before,
 	#jp-relatedposts h3.jp-relatedposts-headline em::before {
@@ -12,8 +11,10 @@
 	div.sharedaddy h3.sd-title,
 	#jp-relatedposts h3.jp-relatedposts-headline,
 	#jp-relatedposts .jp-relatedposts-items-visual h4.jp-relatedposts-post-title {
-	
-		@extend h5;
+		/** Copied from h5 */
+		font-size: $font-size-sm;
+		font-weight: 700;
+		line-height: calculate-line-height( $font-size-sm, $size-content );
 	}
 	
 	#jp-relatedposts h3.jp-relatedposts-headline {
@@ -38,10 +39,10 @@
 	.sd-content ul li .option a.share-ustom,
 	.sd-content ul li a.sd-button,
 	.sd-content ul li.advanced a.share-more,
-	.sd-content ul li.preview-item div.option.option-smart-off a,
 	.sd-social-icon .sd-content ul li a.sd-button, 
 	.sd-social-icon-text .sd-content ul li a.sd-button,
 	.sd-social-official .sd-content > ul > li .digg_button > a,
+	.sd-content ul li.preview-item div.option.option-smart-off a,
 	.sd-social-official .sd-content > ul > li > a.sd-button,
 	.sd-social-text .sd-content ul li a.sd-button {
 		color: $color-text-main !important;
@@ -73,9 +74,10 @@
 			font-weight: 400;
 	
 			span {
+				/** Copied from _elements.scss **/
+				opacity: $opacity-aside;
 				color: $color-text-main;
-				
-				@extend %required;
+				font-size: $font-size-xs;
 			}
 		}
 	}
@@ -106,4 +108,3 @@
 		}
 	}
 }
-/* stylelint-enable no-descending-specificity */

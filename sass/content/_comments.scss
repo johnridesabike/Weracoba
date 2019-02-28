@@ -1,8 +1,5 @@
 .comment-content {
-
-	a {
-		word-wrap: break-word;
-	}
+	word-wrap: break-word;
 }
 
 .comments-title {
@@ -18,14 +15,16 @@
 	@include max-content-width;
 }
 
-.comment-list {
+ol.comment-list {
 	margin: 0;
 	padding: 0;
 	list-style-type: none;
 
 	@include max-content-width;
 
-	ol {
+	ol.children {
+		margin-left: 1.5em;
+		padding-left: 0;
 		list-style-type: none;
 	}
 }
@@ -57,11 +56,6 @@
 	display: block;
 }
 
-.children {
-	margin-left: 1.5em;
-	padding-left: 0;
-}
-
 .comment-author {
 	display: flex;
 	align-items: center;
@@ -91,56 +85,54 @@
 }
 
 .comment-respond {
-
-	@include max-content-width;
 	font-family: $font-UI;
+}
 
-	.comment-form {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
-		align-items: flex-end;
-		font-size: $font-size-sm;
+.comment-form {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: flex-end;
+	font-size: $font-size-sm;
 
-		textarea,
-		.form-submit {
-			font-size: 1rem;
+	textarea,
+	.form-submit {
+		font-size: 1rem;
+	}
+
+	p {
+		margin-bottom: 0;
+		flex: 0 0 100%;
+
+		&:empty {
+			display: none;
 		}
+	}
 
-		p {
-			margin-bottom: 0;
-			flex: 0 0 100%;
+	.form-submit {
+		text-align: right;
+	}
 
-			&:empty {
-				display: none;
-			}
-		}
+	.submit { // The Jetpack button
+		margin-top: 1em;
+	}
 
-		.form-submit {
-			text-align: right;
-		}
+	label {
+		display: block;
+		padding-bottom: 0.4em;
+	}
 
-		.submit { // The Jetpack button
-			margin-top: 1em;
-		}
-
-		label {
-			display: block;
-			padding-bottom: 0.4em;
-		}
-
-		.comment-form-author,
-		.comment-form-email,
-		.comment-form-url {
-			flex: 0 1 33%;
-			max-width: 100%;
-		}
+	.comment-form-author,
+	.comment-form-email,
+	.comment-form-url {
+		flex: 0 1 33%;
+		max-width: 100%;
 	}
 }
 
 @media screen and (min-width: $breakpoint-1) {
 
-	.children {
+	ol.children {
 		margin-left: 2em;
 	}
 

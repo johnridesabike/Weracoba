@@ -32,7 +32,7 @@
 	font-size: $font-size-xxl;
 	line-height: calculate-line-height( $font-size-xxl, $breakpoint-1 );
 	
-	a {
+	a[rel="home"] {
 		color: $color-text-main;
 	}
 }
@@ -61,10 +61,10 @@
 	}
 }
 
-/*
- * Fixed Header
- * See also: the scrolling code in functions.js
- */
+// /*
+//  * Fixed Header
+//  * See also: the scrolling code in functions.js
+//  */
 // @media screen {
 //     .fixed-header {
 //         position: fixed;

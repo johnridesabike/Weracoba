@@ -34,7 +34,7 @@
 		wp_link_pages( $weracoba_link_page_args );
 		?>
 		</div><!-- .entry-content -->
-		<footer class="entry-footer has-ui-font">
+		<footer class="entry-footer entry-footer__single has-ui-font">
 			<?php weracoba_entry_footer(); ?>
 		</footer><!-- .entry-footer -->
 	</div> <!-- .post-content -->

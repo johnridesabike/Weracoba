@@ -202,6 +202,13 @@ figure.wp-block-image {
 	margin: 0;
 	padding: 0;
 	list-style-type: none;
+}
+
+.wp-block-latest-posts,
+.wp-block-archives-list,
+.wp-block-categories-list,
+.wp-block-categories__list,
+.widget {
 	
 	li {
 		display: block;
@@ -212,19 +219,19 @@ figure.wp-block-image {
 		ol {
 			margin-left: 0.5em;
 		}
-	}
 
-	a {
-		display: block;
-		padding: 0.5em 0;
-		border-bottom: 1px dashed currentColor;
-		text-decoration: none;
-
-		&:hover,
-		&:active,
-		&:focus {
+		a {
+			display: block;
+			padding: 0.5em 0;
 			border-bottom: 1px dashed currentColor;
 			text-decoration: none;
+	
+			&:hover,
+			&:active,
+			&:focus {
+				border-bottom: 1px dashed currentColor;
+				text-decoration: none;
+			}
 		}
 	}
 	
@@ -253,6 +260,7 @@ figure.wp-block-image {
  * Formatting
  */
 .wp-block-separator {
+	clear: both;
 
 	@include hr;
 
