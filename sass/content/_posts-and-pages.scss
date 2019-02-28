@@ -105,19 +105,14 @@
 		margin: 0;
 	}
 
-	.comments-link a {
-		border-radius: $border-radius-button-square;
+	.comments-link {
+		
+		@extend .button-link;
 
-		@include button;
-		@include button-color;
-		@include button-background;
-
-		&:hover,
-		&:active,
-		&:focus {
-
-			@include button-hover;
+		a {
+			border-radius: $border-radius-button-square;
 		}
+
 	}
 
 	/* stylelint-disable-next-line no-descending-specificity */
@@ -233,25 +228,13 @@ article.format-aside {
 	}
 }
 
-.format-aside .comments-link,
+.aside-comments-link ,
 .continue-reading {
 	text-align: center;
 	flex-shrink: 0;
 
 	a {
-		display: block;
 		border-radius: $border-radius-button-square;
-
-		@include button;
-		@include button-background;
-		@include button-color;
-
-		&:hover,
-		&:focus,
-		&:active {
-
-			@include button-hover;
-		}
 	}
 }
 /* stylelint-enable no-descending-specificity */

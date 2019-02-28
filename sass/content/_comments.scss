@@ -77,13 +77,8 @@
 	margin-bottom: 1.5em;
 	font-size: $font-size-sm;
 	text-align: right;
-
-	a {
-
-		@include button;
-		@include button-background;
-		@include button-color;
-	}
+	
+	@extend .button-link;
 }
 
 /** Comment Form **/

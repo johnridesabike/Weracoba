@@ -90,6 +90,7 @@
 
 
 @mixin button {
+	display: inline-block;
 	padding: 0.2em 0.75em;
 	border: 1px solid $color-text-main;
 	border-radius: $border-radius-button;

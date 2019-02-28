@@ -298,6 +298,7 @@ figure.wp-block-image.alignwide, .alignwide.wp-block[data-type="core/image"] {
  */
 .wp-block-button .wp-block-button__link,
 .wp-block-file .wp-block-file__button {
+	display: inline-block;
 	padding: 0.2em 0.75em;
 	border: 1px solid #19191a;
 	border-radius: 0.625em;

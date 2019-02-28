@@ -35,7 +35,7 @@
 				<?php weracoba_tag_list(); ?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
-		<div class="continue-reading">
+		<div class="continue-reading button-link">
 			<?php
 			$weracoba_read_more_link = sprintf(
 				wp_kses(

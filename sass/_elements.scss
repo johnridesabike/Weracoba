@@ -204,6 +204,20 @@ input[type="submit"] {
 	}
 }
 
+.button-link a {
+
+	@include button;
+	@include button-background;
+	@include button-color;
+
+	&:hover,
+	&:focus,
+	&:active {
+
+		@include button-hover;
+	}
+}
+
 %required {
 	opacity: $opacity-aside;
 	font-size: $font-size-xs;

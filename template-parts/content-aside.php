@@ -39,6 +39,8 @@
 			<?php weracoba_edit_link(); ?>
 			<?php weracoba_tag_list(); ?>
 		</div><!-- .entry-meta -->
-		<?php weracoba_comments(); ?>
+		<div class="aside-comments-link button-link">
+			<?php weracoba_comments(); ?>
+		</div><!-- .button-link -->
 	</footer>
 </article><!-- #post-<?php the_ID(); ?> -->
