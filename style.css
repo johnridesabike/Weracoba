@@ -805,6 +805,7 @@ input[type="submit"] {
 	border-radius: 0.625em;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 	text-decoration: none;
+	cursor: pointer;
 	text-shadow: 0 0 2px black;
 	background: #03727c;
 	color: #fff;
@@ -844,6 +845,7 @@ input[type="submit"]:active {
 	border-radius: 0.625em;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 	text-decoration: none;
+	cursor: pointer;
 	text-shadow: 0 0 2px black;
 	background: #03727c;
 	color: #fff;
@@ -996,7 +998,7 @@ form span.required {
 }
 
 .menu-toggle {
-	display: inline;
+	display: block;
 	padding: 0.1em;
 	border-style: none;
 	color: #03727c;
@@ -1004,7 +1006,8 @@ form span.required {
 	box-shadow: none;
 }
 
-.menu-toggle:active {
+.menu-toggle:hover, .menu-toggle:focus, .menu-toggle:active {
+	background: none;
 	transform: none;
 }
 
@@ -1282,6 +1285,7 @@ form span.required {
 	border-radius: 0.625em;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 	text-decoration: none;
+	cursor: pointer;
 	text-shadow: 0 0 2px black;
 	background: #03727c;
 	color: #fff;
@@ -1879,6 +1883,7 @@ a.tag-cloud-link:focus {
 	border-radius: 0.625em;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 	text-decoration: none;
+	cursor: pointer;
 	text-shadow: 0 0 2px black;
 	background: #03727c;
 	color: #fff;

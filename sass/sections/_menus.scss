@@ -9,14 +9,17 @@
 }
 
 .menu-toggle {
-	display: inline;
+	display: block;
 	padding: 0.1em;
 	border-style: none; // cancel _elements.scss
 	color: $color-link;
 	background: none; // cancel _elements.scss
 	box-shadow: none; // cancel _elements.scss
-	
+
+	&:hover,
+	&:focus,
 	&:active {
+		background: none; // cancel _elements.scss
 		transform: none; // cancel _elements.scss
 	}
 	
