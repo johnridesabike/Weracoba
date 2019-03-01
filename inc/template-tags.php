@@ -311,7 +311,8 @@ if ( ! function_exists( 'weracoba_comments' ) ) :
 					weracoba_get_icon_svg( 'comment', 16 ),
 					number_format_i18n( get_comments_number() ),
 					get_the_title()
-				)
+				),
+				'comments-link__link'
 			);
 			echo '</span> ';
 		}

@@ -109,13 +109,10 @@
 	opacity: $opacity-aside;
 	background: $color-bg-footer;
 
-	.comments-link {
+	.comments-link__link {
 		
-		@extend .button-link;
-
-		a {
-			border-radius: $border-radius-button-square;
-		}
+		@extend .button-link__link;
+		border-radius: $border-radius-button-square;
 	}
 
 	> *,

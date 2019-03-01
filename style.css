@@ -457,16 +457,16 @@ h3 {
 	font-size: 1em;
 	font-weight: 700;
 	line-height: 1.50967;
-	text-transform: uppercase;
 	letter-spacing: 0.06em;
+	text-transform: uppercase;
 }
 
 h4, .entry-header .cat-links {
 	font-size: 0.88889em;
 	font-weight: 700;
 	line-height: 1.56297;
-	text-transform: uppercase;
 	letter-spacing: 0.06em;
+	text-transform: uppercase;
 }
 
 /* Please don't use h5 or h6... why do we need them, anyway? */
@@ -656,12 +656,14 @@ ol ol ol ol ol {
 	list-style: initial;
 }
 
+/* stylelint-disable no-descending-specificity */
 li > ul,
 li > ol {
 	margin-bottom: 0;
 	margin-left: 0;
 }
 
+/* stylelint-enable no-descending-specificity */
 dt {
 	font-weight: 700;
 }
@@ -806,7 +808,7 @@ input[type="submit"] {
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 	text-decoration: none;
 	cursor: pointer;
-	text-shadow: 0 0 2px black;
+	text-shadow: 0 0 2px #000000;
 	background: #03727c;
 	color: #fff;
 }
@@ -815,7 +817,7 @@ button svg,
 input[type="button"] svg,
 input[type="reset"] svg,
 input[type="submit"] svg {
-	filter: drop-shadow(0 0 1px black);
+	filter: drop-shadow(0 0 1px #000000);
 }
 
 button:hover,
@@ -838,7 +840,9 @@ input[type="submit"]:active {
 	background: #05b7c7;
 }
 
-.button-link a, .entry-footer__single .comments-link a, .reply a {
+.button-link__link, .entry-footer__single .comments-link__link,
+.button-link a,
+.reply a {
 	display: inline-block;
 	padding: 0.2em 0.75em;
 	border: 1px solid #19191a;
@@ -846,20 +850,30 @@ input[type="submit"]:active {
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 	text-decoration: none;
 	cursor: pointer;
-	text-shadow: 0 0 2px black;
+	text-shadow: 0 0 2px #000000;
 	background: #03727c;
 	color: #fff;
 }
 
-.button-link a svg, .entry-footer__single .comments-link a svg, .reply a svg {
-	filter: drop-shadow(0 0 1px black);
+.button-link__link svg, .entry-footer__single .comments-link__link svg,
+.button-link a svg,
+.reply a svg {
+	filter: drop-shadow(0 0 1px #000000);
 }
 
-.button-link a:hover, .entry-footer__single .comments-link a:hover, .reply a:hover {
+.button-link__link:hover, .entry-footer__single .comments-link__link:hover,
+.button-link a:hover,
+.reply a:hover {
 	text-decoration: none;
 }
 
-.button-link a:hover, .entry-footer__single .comments-link a:hover, .reply a:hover, .button-link a:focus, .entry-footer__single .comments-link a:focus, .reply a:focus, .button-link a:active, .entry-footer__single .comments-link a:active, .reply a:active {
+.button-link__link:hover, .entry-footer__single .comments-link__link:hover, .button-link__link:focus, .entry-footer__single .comments-link__link:focus, .button-link__link:active, .entry-footer__single .comments-link__link:active,
+.button-link a:hover,
+.reply a:hover,
+.button-link a:focus,
+.reply a:focus,
+.button-link a:active,
+.reply a:active {
 	background: #05b7c7;
 }
 
@@ -1286,7 +1300,7 @@ form span.required {
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 	text-decoration: none;
 	cursor: pointer;
-	text-shadow: 0 0 2px black;
+	text-shadow: 0 0 2px #000000;
 	background: #03727c;
 	color: #fff;
 }
@@ -1294,7 +1308,7 @@ form span.required {
 .infinite-scroll #infinite-handle span button svg,
 .infinite-scroll #infinite-handle span button:focus svg,
 .infinite-scroll #infinite-handle span button:hover svg {
-	filter: drop-shadow(0 0 1px black);
+	filter: drop-shadow(0 0 1px #000000);
 }
 
 .infinite-scroll #infinite-handle span button:hover,
@@ -1884,13 +1898,13 @@ a.tag-cloud-link:focus {
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 	text-decoration: none;
 	cursor: pointer;
-	text-shadow: 0 0 2px black;
+	text-shadow: 0 0 2px #000000;
 	background: #03727c;
 	color: #fff;
 }
 
 .wp-block-button__link svg, .wp-block-file .wp-block-file__button svg {
-	filter: drop-shadow(0 0 1px black);
+	filter: drop-shadow(0 0 1px #000000);
 }
 
 .wp-block-button__link:hover, .wp-block-file .wp-block-file__button:hover {
@@ -2296,7 +2310,7 @@ a.tag-cloud-link:focus {
 	background: #fff;
 }
 
-.entry-footer__single .comments-link a {
+.entry-footer__single .comments-link__link {
 	border-radius: 0.15em;
 }
 
@@ -2378,13 +2392,13 @@ article.format-aside {
 	border-top-right-radius: 0.15em;
 	color: #fff;
 	background: #03727c;
-	text-shadow: 0 0 2px black;
+	text-shadow: 0 0 2px #000000;
 	border-bottom-style: solid;
 	font-weight: 400;
 }
 
 .excerpt-entry .cat-links svg {
-	filter: drop-shadow(0 0 1px black);
+	filter: drop-shadow(0 0 1px #000000);
 }
 
 .excerpt-entry .cat-links a {

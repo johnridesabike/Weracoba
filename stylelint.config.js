@@ -6,6 +6,7 @@ module.exports = {
 	rules: {
 		"comment-empty-line-before": null,
 		"no-descending-specificity": null,
+		"color-hex-length": null,
 		"max-line-length": 255,
 		"declaration-block-no-duplicate-properties": [
 			true,

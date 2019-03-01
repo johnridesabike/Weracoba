@@ -42,11 +42,13 @@ ol {
 	@include ordered-list-styles;
 }
 
+/* stylelint-disable no-descending-specificity */
 li > ul,
 li > ol {
 
 	@include nested-list-margins;
 }
+/* stylelint-enable no-descending-specificity */
 
 dt {
 	font-weight: 700;
@@ -181,6 +183,7 @@ input[type="submit"] {
 	}
 }
 
+.button-link__link,
 .button-link a {
 
 	@include button;

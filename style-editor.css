@@ -62,16 +62,16 @@ h3, .wp-block-heading h3.editor-rich-text__tinymce {
 	font-size: 1em;
 	font-weight: 700;
 	line-height: 1.50967;
-	text-transform: uppercase;
 	letter-spacing: 0.06em;
+	text-transform: uppercase;
 }
 
 h4, .wp-block-heading h4.editor-rich-text__tinymce {
 	font-size: 0.88889em;
 	font-weight: 700;
 	line-height: 1.56297;
-	text-transform: uppercase;
 	letter-spacing: 0.06em;
+	text-transform: uppercase;
 }
 
 /* Please don't use h5 or h6... why do we need them, anyway? */
@@ -252,13 +252,13 @@ big {
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 	text-decoration: none;
 	cursor: pointer;
-	text-shadow: 0 0 2px black;
+	text-shadow: 0 0 2px #000000;
 	background: #03727c;
 	color: #fff;
 }
 
 .wp-block-button__link svg, .wp-block-file .wp-block-file__button svg {
-	filter: drop-shadow(0 0 1px black);
+	filter: drop-shadow(0 0 1px #000000);
 }
 
 .wp-block-button__link:hover, .wp-block-file .wp-block-file__button:hover {

@@ -57,18 +57,16 @@ h3 {
 	font-size: $font-size-md;
 	font-weight: 700;
 	line-height: calculate-line-height( $font-size-md, $size-content );
+	letter-spacing: $letter-spacing-allcaps;
 	text-transform: uppercase;
-
-	@include allcaps-letterspacing;
 }
 
 h4 {
 	font-size: $font-size-sm;
 	font-weight: 700;
 	line-height: calculate-line-height( $font-size-sm, $size-content );
+	letter-spacing: $letter-spacing-allcaps;
 	text-transform: uppercase;
-
-	@include allcaps-letterspacing;
 }
 
 /* Please don't use h5 or h6... why do we need them, anyway? */
