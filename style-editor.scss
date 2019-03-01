@@ -1,8 +1,11 @@
 @import "sass/variables";
 @import "sass/mixins/mixins";
 @import "sass/typography";
-@import "sass/mixins/elements";
 @import "sass/blocks";
+
+/**
+* Typography & Elements 
+*/
 
 * {
 	border-color: $color-link; // from elements
@@ -86,10 +89,10 @@ ul.wp-block-archives,
 		max-width: none;
 	}
 
-	&[data-type="core/image"] {
+	// &[data-type="core/image"] {
 
-		@extend figure.wp-block-image;
-	}
+	// 	@extend figure.wp-block-image;
+	// }
 
 	/* Lists. See _elements.scss */
 

@@ -48,6 +48,10 @@
 			color: $color-link-hover;
 		}
 	}
+
+	a {
+		text-decoration: none;
+	}
 }
 
 .entry-meta__single {
@@ -86,6 +90,13 @@
 	font-size: $font-size-sm;
 	font-style: italic;
 	// text-align: right;
+}
+
+.entry-footer {
+
+	a {
+		text-decoration: none;
+	}
 }
 
 .entry-footer__single {

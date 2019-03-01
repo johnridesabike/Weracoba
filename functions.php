@@ -145,6 +145,11 @@ if ( ! function_exists( 'weracoba_setup' ) ) :
 				),
 			)
 		);
+
+		/**
+		 * We're not using theme styles.
+		 */
+		/* add_theme_support( 'wp-block-styles' ); */
 	}
 endif;
 add_action( 'after_setup_theme', 'weracoba_setup' );
@@ -225,7 +230,7 @@ add_action( 'widgets_init', 'weracoba_widgets_init' );
  * Enqueue scripts and styles.
  */
 function weracoba_scripts() {
-	wp_enqueue_style( 'weracoba-style', get_stylesheet_uri(), array(), '20190225', 'all' );
+	wp_enqueue_style( 'weracoba-style', get_stylesheet_uri(), array(), '20190301', 'all' );
 	wp_enqueue_style( 'weracoba-print-style', get_template_directory_uri() . '/style-print.css', array( 'weracoba-style' ), '20190217', 'print' );
 
 	/* phpcs:ignore

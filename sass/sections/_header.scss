@@ -2,6 +2,10 @@
 
 	@extend %smallscreen-padding;
 	@include max-site-width;
+
+	a {
+		text-decoration: none;
+	}
 }
 
 .global-header {

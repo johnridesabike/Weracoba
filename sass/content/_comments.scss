@@ -43,6 +43,10 @@ ol.comment-list {
 		height: $size-avatar-sm;
 		margin-right: 1em;
 	}
+
+	a {
+		text-decoration: none;
+	}
 }
 
 .comment-metadata {
@@ -127,6 +131,10 @@ ol.comment-list {
 	.comment-form-url {
 		flex: 0 1 33%;
 		max-width: 100%;
+	}
+
+	a {
+		text-decoration: none;
 	}
 }
 

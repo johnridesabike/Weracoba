@@ -149,6 +149,7 @@ a {
 	&:focus,
 	&:active {
 		color: $color-link-hover;
+		text-decoration: underline;
 	}
 	
 	&:focus {
@@ -171,11 +172,12 @@ input[type="submit"] {
 	@include button;
 	@include button-background;
 	@include button-color;
-	@include button-shadow;
 
+	&:hover,
+	&:focus,
 	&:active {
 	
-		@include button-active;
+		@include button-hover;
 	}
 }
 
