@@ -160,3 +160,16 @@ ul.wp-block-archives,
 		color: $color-link-hover;
 	}
 }
+
+.wp-block-code {
+	// Extend the <code> style so it can appear in the editor,
+	// but stop the <code> font-size from being applied twice on the front end.
+	
+	@extend code;
+	
+	.editor-plain-text {
+		// stop the built-in style from overriding ours
+		font-family: inherit;
+		font-size: 1em;
+	}
+}

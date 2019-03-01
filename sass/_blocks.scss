@@ -1,21 +1,6 @@
 /**
  * Typography
  */
-.wp-block-code {
-	// Extend the <code> style so it can appear in the editor,
-	// but stop the <code> font-size from being applied twice on the front end.
-	@extend code;
-
-	code {
-		font-size: inherit;
-	}
-}
-
-.wp-block-code .editor-plain-text {
-	// stops the built-in style from overriding ours
-	font-family: inherit;
-	font-size: 1em;
-}
 
 .wp-block-pullquote {
 	padding: 2em 0;

@@ -1,0 +1,154 @@
+/**
+ * Audio
+ */
+/**
+ * edit-panel
+ */
+/**
+ * block/indicator
+ */
+/**
+ * button
+ */
+
+.wp-block-button__link {
+
+	@include button;
+	@include button-background;
+	@include button-color;
+}
+
+.is-style-squared .wp-block-button__link {
+	border: none;
+	border-radius: $border-radius-button-square;
+
+	&:hover,
+	&:focus,
+	&:active {
+		background: $color-link-hover;
+	}
+}
+
+.is-style-outline {
+	color: $color-link;
+
+	.wp-block-button__link {
+		border: 2px solid currentColor;
+		box-shadow: none;
+		text-shadow: none;
+		border-color: currentColor;
+		background: transparent;
+
+		&:hover,
+		&:focus,
+		&:active {
+			color: $color-link-hover;
+		}
+	}
+}
+/**
+ * calendar
+ */
+/**
+ * categories
+ */
+/**
+ * columns
+ */
+/**
+ * cover
+ */
+/**
+ * embed
+ */
+/**
+ * file
+ */
+ .wp-block-file {
+	font-family: $font-UI;
+
+	.wp-block-file__button {
+		background: $dark-gray-700;
+		border-radius: 2em;
+		color: $white;
+		font-size: $default-font-size;
+		padding: 0.5em 1em;
+	}
+
+	a.wp-block-file__button {
+		
+		// This is just to cancel the built in style
+		&:hover,
+		&:visited,
+		&:focus,
+		&:active {
+			opacity: 1;
+
+			@include button-shadow;
+		}
+	}
+}
+/**
+ * gallery
+ */
+/**
+ * image
+ */
+/**
+ * latest-comments
+ */
+/**
+ * latest-posts
+ */
+/**
+ * media-text
+ */
+/**
+ * paragraph
+ */
+/**
+ * pullquote
+ */
+ .wp-block-pullquote {
+	padding: 2em 0;
+	border-top-width: 4px;
+	border-top-style: solid;
+	border-bottom-width: 4px;
+	border-bottom-style: solid;
+
+	blockquote {
+		border-left: none;
+	}
+
+	p,
+	blockquote > .editor-rich-text p { // for editor
+		font-size: $font-size-xl;
+	}
+}
+/**
+ * quote
+ */
+/**
+ * rss
+ */
+/**
+ * /search
+ */
+/**
+ * /separator
+ */
+/**
+ * subhead
+ */
+/**
+ * table
+ */
+/**
+ * text-columns
+ */
+/**
+ * verse
+ */
+/**
+ * video
+ */
