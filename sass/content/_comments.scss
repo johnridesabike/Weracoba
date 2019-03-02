@@ -75,8 +75,11 @@ ol.comment-list {
 	margin-bottom: 1.5em;
 	font-size: $font-size-sm;
 	text-align: right;
-	
-	@extend .button-link;
+}
+
+.comment-reply-link {
+
+	@extend .button-link__link;
 }
 
 /** Comment Form **/

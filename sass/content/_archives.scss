@@ -19,6 +19,11 @@
 	}
 }
 
+.button-open,
+.button-open a {
+	display: block;
+}
+
 /** Archive Media Queries **/
 @media screen and (min-width: $breakpoint-2) {
 

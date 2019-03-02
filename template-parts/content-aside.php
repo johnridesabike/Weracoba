@@ -24,7 +24,7 @@
 				the_title( '<span class="screen-reader-text">"', '"</span>', false )
 			);
 			?>
-			<a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark">
+			<a href="<?php echo esc_url( get_permalink() ); ?>" class="aside-permalink" rel="bookmark">
 				<?php echo weracoba_get_icon_svg( 'link', 16 ); /* phpcs:ignore XSS OK */ ?>
 				<?php echo $weracoba_read_more_link; /* phpcs:ignore XSS OK */ ?>
 			</a>
@@ -39,7 +39,7 @@
 			<?php weracoba_edit_link(); ?>
 			<?php weracoba_tag_list(); ?>
 		</div><!-- .entry-meta -->
-		<div class="aside-comments-link button-link">
+		<div class="aside-comments-link button-link button-open">
 			<?php weracoba_comments(); ?>
 		</div><!-- .button-link -->
 	</footer>

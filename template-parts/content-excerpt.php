@@ -35,7 +35,7 @@
 				<?php weracoba_tag_list(); ?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
-		<div class="continue-reading button-link">
+		<div class="continue-reading">
 			<?php
 			$weracoba_read_more_link = sprintf(
 				wp_kses(
@@ -46,7 +46,7 @@
 				the_title( '<span class="screen-reader-text">"', '"</span>', false )
 			);
 			?>
-			<a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark">
+			<a href="<?php echo esc_url( get_permalink() ); ?>" class="button-link__link button-open" rel="bookmark">
 				<?php echo $weracoba_read_more_link; /* phpcs:ignore XSS OK */ ?>
 				<?php echo weracoba_get_icon_svg( 'chevron_right', 24 ); /* phpcs:ignore XSS OK */ ?>
 			</a>
