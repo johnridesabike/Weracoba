@@ -36,7 +36,6 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
         ### Menus
         ### Content Navigation
 	## Widgets
-	## Plugins
 # Blocks
 # Accessibility
 # Alignments
@@ -53,11 +52,10 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
     ## Gutenberg Styles
 	## Captions
 	## Galleries
+# Plugins
 --------------------------------------------------------------*/
 @import "sass/variables";
 @import "sass/mixins/mixins";
-
-/* stylelint-disable rule-empty-line-before */
 
 /*--------------------------------------------------------------
 # Normalize
@@ -108,6 +106,11 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Media
 --------------------------------------------------------------*/
 @import "sass/media";
+
+/*--------------------------------------------------------------
+# Plugins
+--------------------------------------------------------------*/
+@import "sass/plugins";
 
 // Tests and other experiments
 @import "sass/sandbox";
