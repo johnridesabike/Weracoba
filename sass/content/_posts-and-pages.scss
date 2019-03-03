@@ -218,11 +218,14 @@ article.format-aside {
 .format-aside {
 
 	.entry-meta {
-
-		@include entry-meta-inline;
 		min-height: 0;
 		margin-bottom: 1rem;
 		font-size: $font-size-sm;
+
+		> * {
+			display: inline-block;
+			margin: 0 0.5em 0.25em 0;
+		}
 	}
 }
 

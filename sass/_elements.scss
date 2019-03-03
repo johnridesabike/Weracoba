@@ -183,6 +183,10 @@ input[type="submit"] {
 	}
 }
 
+/**
+** Targeting the link directly (<a class="button-link__link">) is preferred. In cases where modifying the <a> markup isn't feasible, use `button-link` instead.
+**/
+
 .button-link__link,
 .button-link a {
 
