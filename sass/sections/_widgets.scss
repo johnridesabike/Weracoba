@@ -252,11 +252,39 @@ a.tag-cloud-link {
 
 @media screen and (min-width: $breakpoint-1) {
 
-	.widget-area {
+	.widget-area,
+	.footer-widgets {
 
 		.widget {
+			/* Show 3 columns of widgets
+			** With an even number of widgets, show the first one at full width; */
+			@include column-width(3);
+			margin-right: $columns-margin;
 
-			@include widget-columns;
+			&:nth-child(3n+3) {
+				margin-right: 0;
+			}
+			// &:nth-last-child(even):first-of-type,
+			// &:nth-last-child(even):first-of-type ~ .widget {
+			// 	@include column-width(2);
+			// 	margin-right: $columns-margin;
+			// 	&:nth-child(2n+2) {
+			// 		margin-right: 0;
+			// 	}
+			// }
+
+			&:nth-last-child(even):first-of-type {
+				width: 100%;
+				margin-right: 0;
+			}
+
+			&:nth-last-child(even):first-of-type ~ .widget:nth-child(3n+3) {
+				margin-right: $columns-margin;
+			}
+
+			&:nth-last-child(even):first-of-type ~ .widget:nth-child(3n+4) {
+				margin-right: 0;
+			}
 		}
 	}
 
@@ -271,21 +299,16 @@ a.tag-cloud-link {
 				margin-right: 0;
 			}
 		}
-	}
 
-	.archive-widget-area-bottom {
-		margin-top: 4em;
-		margin-bottom: 4em;
+		&__bottom {
+			margin-top: 4em;
+			margin-bottom: 4em;
+		}
 	}
 
 	.footer-widgets {
 		display: flex;
 		flex-wrap: wrap;
-
-		.widget {
-
-			@include widget-columns;
-		}
 	}
 }
 

@@ -71,7 +71,7 @@ get_header();
 		endif;
 		?>
 
-		<div class="archive-widget-area archive-widget-area-bottom">
+		<div class="archive-widget-area archive-widget-area__bottom">
 			<?php
 			the_widget(
 				'WP_Widget_Categories',
