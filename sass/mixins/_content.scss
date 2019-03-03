@@ -13,21 +13,13 @@
 	margin-left: auto;
 }
 
-@mixin drop-shadow {
-	border-radius: 0.25em;
-	background: $color-bg-body;
-	box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.2);
-}
-
 @mixin full-bleed {
-	
 	/* full-bleed on small screens */
 	margin-right: -1rem;
 	margin-left: -1rem;
 }
 
 @mixin full-bleed-cancel {
-
 	/* cancel full-bleed on larger screens */
 	margin-right: 0;
 	margin-left: 0;
@@ -37,32 +29,4 @@
 	display: block; // might not be necessary
 	margin-right: auto !important;
 	margin-left: auto !important;
-}
-
-@mixin tab-head {
-	display: inline-block;
-	margin: 0;
-	padding: 0 0.5em;
-	border-top-left-radius: $border-radius-button-square;
-	border-top-right-radius: $border-radius-button-square;
-	color: $color-bg-body;
-	background: $color-link;
-	
-	@include button-text-shadow;
-	
-	a {
-		color: $color-bg-body;
-	
-		&:hover,
-		&:active,
-		&:focus {
-			background: $color-link-hover;
-		}
-	}
-}
-
-@mixin current-page {
-	border-color: $color-link-hover;
-	border-bottom-width: 2px;
-	border-bottom-style: solid;
 }

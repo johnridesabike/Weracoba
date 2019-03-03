@@ -9,13 +9,13 @@
 		padding: 0.5em 0 0.5em 0;
 	}
 
-	.current_page_item > a,
-	.current-menu-item > a,
-	.current_page_ancestor > a,
-	.current-menu-ancestor > a {
+	// .current_page_item > a,
+	// .current-menu-item > a,
+	// .current_page_ancestor > a,
+	// .current-menu-ancestor > a {
 
-		@include current-page;
-	}
+	// 	@include current-page;
+	// }
 
 	.menu-item {
 		float: none;

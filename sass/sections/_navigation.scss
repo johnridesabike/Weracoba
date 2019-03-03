@@ -22,6 +22,7 @@
 /**
 * 1. Paginated single entries
 * 2. Archive view page links
+* 3. Menu item
 */
 
 /* 1 */
@@ -52,12 +53,23 @@
 	}
 
 	&.current {
-
-		@include current-page;
-
 		padding-bottom: 0.25em;
 		opacity: $opacity-aside;
 	}
+}
+
+/* 1 */
+.post-page-numbers.current,
+/* 2 */
+.page-numbers.current,
+ /* 3 */
+.current_page_item > a,
+.current-menu-item > a,
+.current_page_ancestor > a,
+.current-menu-ancestor > a {
+	border-color: $color-link-hover;
+	border-bottom-width: 2px;
+	border-bottom-style: solid;
 }
 
 .next {
@@ -113,37 +125,6 @@
 
 	.nav-next .post-title {
 		padding-right: 24px;
-	}
-}
-
-/** Jetpack Infinite Scroll **/
-.infinite-scroll .pagination {
-	display: none;
-}
-
-.infinite-scroll #infinite-handle { // .infinite-scroll is just an extra specificity to override built-in CSS
-	text-align: center;
-
-	span {
-		background: transparent;
-		font-size: 1.3em;
-
-		button,
-		button:focus,
-		button:hover {
-
-			@include button;
-			@include button-background;
-			@include button-color;
-		}
-	}
-}
-
-.infinite-loader {
-	margin: 1em 0;
-
-	.spinner {
-		margin: auto;
 	}
 }
 

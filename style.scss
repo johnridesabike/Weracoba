@@ -44,7 +44,6 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	## Posts and pages
     ## Archives
 	## Comments
-# Infinite scroll
 # Media
     ## Alignments and Images
     ## Single Post Featured Images
@@ -53,6 +52,8 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	## Captions
 	## Galleries
 # Plugins
+	## Jetpack
+	## Akismet
 --------------------------------------------------------------*/
 @import "sass/variables";
 @import "sass/mixins/mixins";
@@ -97,10 +98,6 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 --------------------------------------------------------------*/
 @import "sass/content/content";
 
-/*--------------------------------------------------------------
-# Infinite scroll
---------------------------------------------------------------*/
-@import "sass/modules/infinite-scroll";
 
 /*--------------------------------------------------------------
 # Media

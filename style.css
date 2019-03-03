@@ -36,7 +36,6 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
         ### Menus
         ### Content Navigation
 	## Widgets
-	## Plugins
 # Blocks
 # Accessibility
 # Alignments
@@ -45,7 +44,6 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	## Posts and pages
     ## Archives
 	## Comments
-# Infinite scroll
 # Media
     ## Alignments and Images
     ## Single Post Featured Images
@@ -53,10 +51,12 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
     ## Gutenberg Styles
 	## Captions
 	## Galleries
+# Plugins
+	## Jetpack
+	## Akismet
 --------------------------------------------------------------*/
 /* stylelint-disable value-keyword-case */
 /* stylelint-enable value-keyword-case */
-/* stylelint-disable rule-empty-line-before */
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
@@ -425,7 +425,7 @@ input {
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
 
-h1, h2, h3, h4, .entry-header .cat-links, h5, h6 {
+h1, h2, h3, h4, h5, h6 {
 	margin-top: 1em;
 	margin-bottom: 1em;
 	font-weight: 400;
@@ -461,7 +461,7 @@ h3 {
 	text-transform: uppercase;
 }
 
-h4, .entry-header .cat-links {
+h4 {
 	font-size: 0.88889em;
 	font-weight: 700;
 	line-height: 1.56297;
@@ -1013,15 +1013,6 @@ form span.required {
 	padding: 0.5em 0 0.5em 0;
 }
 
-.main-navigation .current_page_item > a,
-.main-navigation .current-menu-item > a,
-.main-navigation .current_page_ancestor > a,
-.main-navigation .current-menu-ancestor > a {
-	border-color: #05b7c7;
-	border-bottom-width: 2px;
-	border-bottom-style: solid;
-}
-
 .main-navigation .menu-item {
 	float: none;
 	position: relative;
@@ -1194,6 +1185,7 @@ form span.required {
 /**
 * 1. Paginated single entries
 * 2. Archive view page links
+* 3. Menu item
 */
 /* 1 */
 .post-nav-links,
@@ -1220,11 +1212,20 @@ form span.required {
 
 .post-page-numbers.current,
 .page-numbers.current {
+	padding-bottom: 0.25em;
+	opacity: 0.8;
+}
+
+/* 1 */
+.post-page-numbers.current,
+.page-numbers.current,
+.current_page_item > a,
+.current-menu-item > a,
+.current_page_ancestor > a,
+.current-menu-ancestor > a {
 	border-color: #05b7c7;
 	border-bottom-width: 2px;
 	border-bottom-style: solid;
-	padding-bottom: 0.25em;
-	opacity: 0.8;
 }
 
 .next {
@@ -1279,55 +1280,6 @@ form span.required {
 
 .single-post .post-navigation .nav-next .post-title {
 	padding-right: 24px;
-}
-
-/** Jetpack Infinite Scroll **/
-.infinite-scroll .pagination {
-	display: none;
-}
-
-.infinite-scroll #infinite-handle {
-	text-align: center;
-}
-
-.infinite-scroll #infinite-handle span {
-	background: transparent;
-	font-size: 1.3em;
-}
-
-.infinite-scroll #infinite-handle span button,
-.infinite-scroll #infinite-handle span button:focus,
-.infinite-scroll #infinite-handle span button:hover {
-	display: inline-block;
-	padding: 0.2em 0.75em;
-	border: 1px solid #19191a;
-	border-radius: 0.625em;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-	text-decoration: none;
-	cursor: pointer;
-	text-shadow: 0 0 2px #000000;
-	background: #03727c;
-	color: #fff;
-}
-
-.infinite-scroll #infinite-handle span button svg,
-.infinite-scroll #infinite-handle span button:focus svg,
-.infinite-scroll #infinite-handle span button:hover svg {
-	filter: drop-shadow(0 0 1px #000000);
-}
-
-.infinite-scroll #infinite-handle span button:hover,
-.infinite-scroll #infinite-handle span button:focus:hover,
-.infinite-scroll #infinite-handle span button:hover:hover {
-	text-decoration: none;
-}
-
-.infinite-loader {
-	margin: 1em 0;
-}
-
-.infinite-loader .spinner {
-	margin: auto;
 }
 
 /*
@@ -1726,111 +1678,6 @@ a.tag-cloud-link:focus {
 		display: block;
 		margin-right: auto !important;
 		margin-left: auto !important;
-	}
-}
-
-/*--------------------------------------------------------------
-## Plugins
---------------------------------------------------------------*/
-/*
- * Jetpack
- */
-.entry-footer div.sharedaddy h3.sd-title::before,
-.entry-footer #jp-relatedposts h3.jp-relatedposts-headline em::before {
-	content: none;
-}
-
-.entry-footer div.sharedaddy h3.sd-title,
-.entry-footer #jp-relatedposts h3.jp-relatedposts-headline,
-.entry-footer #jp-relatedposts .jp-relatedposts-items-visual h4.jp-relatedposts-post-title,
-.entry-footer #jp-relatedposts .jp-relatedposts-items-visual .entry-header .jp-relatedposts-post-title.cat-links,
-.entry-header .entry-footer #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post-title.cat-links {
-	/** Copied from h5 */
-	font-size: 0.88889em;
-	font-weight: 700;
-	line-height: 1.56297;
-}
-
-.entry-footer #jp-relatedposts h3.jp-relatedposts-headline {
-	display: block;
-	float: none;
-	margin: 0;
-	text-align: center;
-}
-
-.entry-footer #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-context,
-.entry-footer #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-date,
-.entry-footer #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post {
-	opacity: 1;
-}
-
-.entry-footer #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post-nothumbs p.jp-relatedposts-post-excerpt {
-	margin-bottom: 0.5em;
-}
-
-.entry-footer #sharing_email .sharing_send,
-.entry-footer .sd-content ul li .option a.share-ustom,
-.entry-footer .sd-content ul li a.sd-button,
-.entry-footer .sd-content ul li.advanced a.share-more,
-.entry-footer .sd-social-icon .sd-content ul li a.sd-button,
-.entry-footer .sd-social-icon-text .sd-content ul li a.sd-button,
-.entry-footer .sd-social-official .sd-content > ul > li .digg_button > a,
-.entry-footer .sd-content ul li.preview-item div.option.option-smart-off a,
-.entry-footer .sd-social-official .sd-content > ul > li > a.sd-button,
-.entry-footer .sd-social-text .sd-content ul li a.sd-button {
-	color: #19191a !important;
-}
-
-.entry-footer .sd-content ul li {
-	text-align: left;
-}
-
-.entry-footer div.jetpack-likes-widget-wrapper {
-	width: initial;
-}
-
-.entry-footer .sharedaddy {
-	max-width: 100% !important;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-}
-
-.entry-footer .sharedaddy .sd-title {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif !important;
-}
-
-.site .contact-form {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-}
-
-.site .contact-form label {
-	font-weight: 400;
-}
-
-.site .contact-form label span {
-	/** Copied from _elements.scss **/
-	opacity: 0.8;
-	color: #19191a;
-	font-size: 0.8em;
-}
-
-/*
- * Akismet
- */
-.akismet_comment_form_privacy_notice {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-	font-size: 0.8em;
-}
-
-/*
- * Plugin media queries
-*/
-@media screen and (min-width: 600px) {
-	.entry-footer .jp-relatedposts {
-		flex: 0 0 100%;
-		margin-right: 0;
-	}
-	.entry-footer #jp-relatedposts {
-		margin: auto;
 	}
 }
 
@@ -2250,6 +2097,12 @@ a.tag-cloud-link:focus {
 /* 
  * Entry header
  */
+.entry-header .cat-links {
+	font-size: 0.88889em;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+}
+
 .entry-header .entry-title {
 	margin: 0;
 }
@@ -2379,16 +2232,16 @@ article.format-aside {
 }
 
 .excerpt-entry .cat-links {
+	/* Give it a "tab-head" look */
 	display: inline-block;
 	margin: 0;
 	padding: 0 0.5em;
+	border-bottom-style: solid;
 	border-top-left-radius: 0.15em;
 	border-top-right-radius: 0.15em;
 	color: #fff;
 	background: #03727c;
 	text-shadow: 0 0 2px #000000;
-	border-bottom-style: solid;
-	font-weight: 400;
 }
 
 .excerpt-entry .cat-links svg {
@@ -2824,21 +2677,6 @@ ol.comment-list ol.children {
 }
 
 /*--------------------------------------------------------------
-# Infinite scroll
---------------------------------------------------------------*/
-/* Globally hidden elements when Infinite Scroll is supported and in use. */
-.infinite-scroll .posts-navigation,
-.infinite-scroll.neverending .site-footer {
-	/* Theme Footer (when set to scrolling) */
-	display: none;
-}
-
-/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
-.infinity-end.neverending .site-footer {
-	display: block;
-}
-
-/*--------------------------------------------------------------
 # Media
 --------------------------------------------------------------*/
 .wp-smiliey {
@@ -2890,46 +2728,27 @@ object {
 	caption-side: bottom;
 }
 
-@media screen and (max-width: 600px) {
-	/* On small screens, display left and right alignments as if they were centered */
-	.alignleft,
-	.alignright {
-		float: none !important;
-		clear: both !important;
-		display: block;
-		margin-right: auto !important;
-		margin-left: auto !important;
-	}
-}
-
 .centered-image {
 	max-width: 100vw;
 	margin: 0 -1em;
 	border: none;
 }
 
-@media screen and (min-width: 600px) {
-	.centered-image {
-		margin: 0 -2em;
-	}
-}
-
 /*--------------------------------------------------------------
 ## Single Post Featured Images
 --------------------------------------------------------------*/
+/* Note: `featured-image` is the class applied to <figure> and `post-thumbnail` is the class applied to <img> */
 /**
  * Browsers that don't support object-fit (IE) will display the plain image.
  * It's possible to replicate this with transforms and overflows, but I don't
  * have the time to test that out just to cover IE.
  */
-.single .featured-image {
+.featured-image__single {
 	margin-top: 0;
-	/* full-bleed on small screens */
-	margin-right: -1rem;
-	margin-left: -1rem;
 }
 
-.single .featured-image figcaption {
+/* for browsers that don't play well with cover */
+.featured-image__caption {
 	padding-right: 1.5em;
 	/* to avoid scrollbars */
 	font-size: 0.8em;
@@ -2938,22 +2757,15 @@ object {
 }
 
 @supports ((-o-object-fit: cover) or (object-fit: cover)) {
-	.single .featured-image {
+	.featured-image__single {
 		position: relative;
 		width: 100vw;
 		max-width: 100vw;
 		height: 67vw;
+		/* aspect ratio kept intact for small screens */
 		margin-top: 0;
 	}
-	.single .featured-image img {
-		position: absolute;
-		z-index: -1;
-		width: 100vw;
-		height: 100%;
-		-o-object-fit: cover;
-		   object-fit: cover;
-	}
-	.single .featured-image figcaption {
+	.featured-image__caption {
 		margin-bottom: 0;
 		padding: 0.2em 0.5em;
 		opacity: 1;
@@ -2966,26 +2778,18 @@ object {
 		width: 100%;
 		text-align: right;
 	}
+	.post-thumbnail__single {
+		position: absolute;
+		z-index: -1;
+		width: 100vw;
+		height: 100%;
+		-o-object-fit: cover;
+		   object-fit: cover;
+	}
 	@media screen and (min-width: 600px) {
-		.single .featured-image {
+		.featured-image__single {
 			height: 430px;
 		}
-	}
-}
-
-/* We change the style to prepare it for the grid layout in posts-and-pages */
-@media screen and (min-width: 1200px) {
-	.single .featured-image {
-		/* cancel full-bleed on larger screens */
-		margin-right: 0;
-		margin-left: 0;
-		flex: 1 1 50%;
-	}
-	.single .featured-image .wp-post-image {
-		width: 100%;
-	}
-	.single .featured-image figcaption {
-		padding-right: 0.5em;
 	}
 }
 
@@ -2993,9 +2797,6 @@ object {
 ## Archive View Featured Images
 --------------------------------------------------------------*/
 .excerpt-entry .featured-image {
-	/* full-bleed on small screens */
-	margin-right: -1rem;
-	margin-left: -1rem;
 	position: relative;
 	margin-top: 0;
 	margin-bottom: 0;
@@ -3022,15 +2823,6 @@ object {
 
 .excerpt-entry .wp-post-image {
 	width: 100%;
-}
-
-/** Archive View Featured Images Media Queries **/
-@media screen and (min-width: 600px) {
-	.excerpt-entry .featured-image {
-		/* cancel full-bleed on larger screens */
-		margin-right: 0;
-		margin-left: 0;
-	}
 }
 
 /*--------------------------------------------------------------
@@ -3136,5 +2928,218 @@ object {
 	vertical-align: middle;
 	transition: fill 120ms ease-in-out;
 	fill: currentColor;
+}
+
+/*
+** Media Queries
+**/
+@media screen and (max-width: 600px) {
+	/* On small screens, display left and right alignments as if they were centered */
+	.alignleft,
+	.alignright {
+		float: none !important;
+		clear: both !important;
+		display: block;
+		margin-right: auto !important;
+		margin-left: auto !important;
+	}
+}
+
+@media screen and (max-width: 1200px) {
+	.full-bleed {
+		/* full-bleed on small screens */
+		margin-right: -1rem;
+		margin-left: -1rem;
+	}
+}
+
+@media screen and (min-width: 600px) {
+	/* Alignments */
+	.centered-image {
+		margin: 0 -2em;
+	}
+	.featured-image__archive.full-bleed {
+		/* cancel full-bleed on larger screens */
+		margin-right: 0;
+		margin-left: 0;
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	/* We change the style to prepare it for the grid layout in posts-and-pages */
+	.featured-image__single {
+		flex: 1 1 50%;
+	}
+	.post-thumbnail__single {
+		width: 100%;
+	}
+	.featured-image__caption {
+		padding-right: 0.5em;
+	}
+}
+
+/*--------------------------------------------------------------
+# Plugins
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Jetpack
+--------------------------------------------------------------*/
+.entry-footer div.sharedaddy h3.sd-title::before,
+.entry-footer #jp-relatedposts h3.jp-relatedposts-headline em::before {
+	content: none;
+}
+
+.entry-footer div.sharedaddy h3.sd-title,
+.entry-footer #jp-relatedposts h3.jp-relatedposts-headline,
+.entry-footer #jp-relatedposts .jp-relatedposts-items-visual h4.jp-relatedposts-post-title {
+	/** Copied from h5 */
+	font-size: 0.88889em;
+	font-weight: 700;
+	line-height: 1.56297;
+}
+
+.entry-footer #jp-relatedposts h3.jp-relatedposts-headline {
+	display: block;
+	float: none;
+	margin: 0;
+	text-align: center;
+}
+
+.entry-footer #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-context,
+.entry-footer #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-date,
+.entry-footer #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post {
+	opacity: 1;
+}
+
+.entry-footer #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post-nothumbs p.jp-relatedposts-post-excerpt {
+	margin-bottom: 0.5em;
+}
+
+.entry-footer #sharing_email .sharing_send,
+.entry-footer .sd-content ul li .option a.share-ustom,
+.entry-footer .sd-content ul li a.sd-button,
+.entry-footer .sd-content ul li.advanced a.share-more,
+.entry-footer .sd-social-icon .sd-content ul li a.sd-button,
+.entry-footer .sd-social-icon-text .sd-content ul li a.sd-button,
+.entry-footer .sd-social-official .sd-content > ul > li .digg_button > a,
+.entry-footer .sd-content ul li.preview-item div.option.option-smart-off a,
+.entry-footer .sd-social-official .sd-content > ul > li > a.sd-button,
+.entry-footer .sd-social-text .sd-content ul li a.sd-button {
+	color: #19191a !important;
+}
+
+.entry-footer .sd-content ul li {
+	text-align: left;
+}
+
+.entry-footer div.jetpack-likes-widget-wrapper {
+	width: initial;
+}
+
+.entry-footer .sharedaddy {
+	max-width: 100% !important;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+.entry-footer .sharedaddy .sd-title {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif !important;
+}
+
+.site .contact-form {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+.site .contact-form label {
+	font-weight: 400;
+}
+
+.site .contact-form label span {
+	/** Copied from _elements.scss **/
+	opacity: 0.8;
+	color: #19191a;
+	font-size: 0.8em;
+}
+
+/** Jetpack Infinite Scroll **/
+/* Globally hidden elements when Infinite Scroll is supported and in use. */
+.infinite-scroll .posts-navigation,
+.infinite-scroll.neverending .site-footer {
+	/* Theme Footer (when set to scrolling) */
+	display: none;
+}
+
+/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
+.infinity-end.neverending .site-footer {
+	display: block;
+}
+
+/* ----- */
+.infinite-scroll .pagination {
+	display: none;
+}
+
+.infinite-scroll #infinite-handle {
+	text-align: center;
+}
+
+.infinite-scroll #infinite-handle span {
+	background: transparent;
+	font-size: 1.3em;
+}
+
+.infinite-scroll #infinite-handle span button,
+.infinite-scroll #infinite-handle span button:focus,
+.infinite-scroll #infinite-handle span button:hover {
+	display: inline-block;
+	padding: 0.2em 0.75em;
+	border: 1px solid #19191a;
+	border-radius: 0.625em;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	text-decoration: none;
+	cursor: pointer;
+	text-shadow: 0 0 2px #000000;
+	background: #03727c;
+	color: #fff;
+}
+
+.infinite-scroll #infinite-handle span button svg,
+.infinite-scroll #infinite-handle span button:focus svg,
+.infinite-scroll #infinite-handle span button:hover svg {
+	filter: drop-shadow(0 0 1px #000000);
+}
+
+.infinite-scroll #infinite-handle span button:hover,
+.infinite-scroll #infinite-handle span button:focus:hover,
+.infinite-scroll #infinite-handle span button:hover:hover {
+	text-decoration: none;
+}
+
+.infinite-loader {
+	margin: 1em 0;
+}
+
+.infinite-loader .spinner {
+	margin: auto;
+}
+
+/*--------------------------------------------------------------
+## Akismet
+--------------------------------------------------------------*/
+.akismet_comment_form_privacy_notice {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-size: 0.8em;
+}
+
+/*
+ * Plugin media queries
+*/
+@media screen and (min-width: 600px) {
+	.entry-footer .jp-relatedposts {
+		flex: 0 0 100%;
+		margin-right: 0;
+	}
+	.entry-footer #jp-relatedposts {
+		margin: auto;
+	}
 }
 /*# sourceMappingURL=style.css.map */

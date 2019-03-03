@@ -1,6 +1,6 @@
-/*
- * Jetpack
- */
+/*--------------------------------------------------------------
+## Jetpack
+--------------------------------------------------------------*/
 
 .entry-footer { // Greater specificity = override Jetpack default CSS
 	div.sharedaddy h3.sd-title::before,
@@ -83,9 +83,54 @@
 	}
 }
 
-/*
- * Akismet
- */
+/** Jetpack Infinite Scroll **/
+
+/* Globally hidden elements when Infinite Scroll is supported and in use. */
+.infinite-scroll .posts-navigation, /* Older / Newer Posts Navigation (always hidden) */
+.infinite-scroll.neverending .site-footer { /* Theme Footer (when set to scrolling) */
+	display: none;
+}
+
+/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
+.infinity-end.neverending .site-footer {
+	display: block;
+}
+/* ----- */
+
+
+.infinite-scroll .pagination {
+	display: none;
+}
+
+.infinite-scroll #infinite-handle { // .infinite-scroll is just an extra specificity to override built-in CSS
+	text-align: center;
+
+	span {
+		background: transparent;
+		font-size: 1.3em;
+
+		button,
+		button:focus,
+		button:hover {
+
+			@include button;
+			@include button-background;
+			@include button-color;
+		}
+	}
+}
+
+.infinite-loader {
+	margin: 1em 0;
+
+	.spinner {
+		margin: auto;
+	}
+}
+
+/*--------------------------------------------------------------
+## Akismet
+--------------------------------------------------------------*/
 .akismet_comment_form_privacy_notice {
 	font-family: $font-UI;
 	font-size: $font-size-xs;

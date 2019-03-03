@@ -50,104 +50,69 @@ object {
 	}
 }
 
-@media screen and (max-width: $breakpoint-1) {
-	/* On small screens, display left and right alignments as if they were centered */
-	.alignleft,
-	.alignright {
-		float: none !important;
-		clear: both !important;
-
-		@include center-block;
-	}
-}
-
 .centered-image {
 	max-width: 100vw;
 	margin: 0 -1em;
 	border: none;
 }
 
-@media screen and (min-width: $breakpoint-1) {
-
-	.centered-image {
-		margin: 0 -2em;
-	}
-}
-
 /*--------------------------------------------------------------
 ## Single Post Featured Images
 --------------------------------------------------------------*/
+
+/* Note: `featured-image` is the class applied to <figure> and `post-thumbnail` is the class applied to <img> */
 
 /**
  * Browsers that don't support object-fit (IE) will display the plain image.
  * It's possible to replicate this with transforms and overflows, but I don't
  * have the time to test that out just to cover IE.
  */
-.single .featured-image {
-	// cancel the default figure.
+.featured-image__single {
+	// cancel the default figure margin
 	margin-top: 0;
+}
 
-	@include full-bleed;
-	// for browsers that don't play well with cover
-	figcaption {
-		padding-right: 1.5em; /* to avoid scrollbars */
-		font-size: $font-size-xs;
-		font-style: italic;
-		text-align: right;
-	}
+/* for browsers that don't play well with cover */
+.featured-image__caption {
+	padding-right: 1.5em; /* to avoid scrollbars */
+	font-size: $font-size-xs;
+	font-style: italic;
+	text-align: right;
+
 }
 
 @supports (object-fit: cover) {
 
-	.single .featured-image {
+	.featured-image__single {
 		position: relative;
 		width: 100vw;
 		max-width: 100vw;
-		height: 67vw; // aspect ratio kept intact for small screens
+		height: 67vw; /* aspect ratio kept intact for small screens */
 		margin-top: 0;
+	}
 
-		img {
-			position: absolute;
-			z-index: -1;
-			width: 100vw;
-			height: 100%;
-			object-fit: cover;
-		}
+	.featured-image__caption { 
 
-		figcaption { 
+		@include figcaption-overlay;
 
-			@include figcaption-overlay;
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		text-align: right;
+	}
 
-			position: absolute;
-			bottom: 0;
-			width: 100%;
-			text-align: right;
-		}
+	.post-thumbnail__single {
+		position: absolute;
+		z-index: -1;
+		width: 100vw;
+		height: 100%;
+		object-fit: cover;
 	}
 
 	@media screen and (min-width: $breakpoint-1) {
 
-		.single .featured-image {
+		.featured-image__single {
 			height: 430px;
-		}
-	}
-}
-
-/* We change the style to prepare it for the grid layout in posts-and-pages */
-@media screen and (min-width: $breakpoint-3) {
-
-	.single .featured-image {
-
-		@include full-bleed-cancel;
-
-		flex: 1 1 50%;
-
-		.wp-post-image {
-			width: 100%;
-		}
-
-		figcaption {
-			padding-right: 0.5em;
 		}
 	}
 }
@@ -159,9 +124,6 @@ object {
 .excerpt-entry {
 
 	.featured-image {
-
-		@include full-bleed;
-
 		position: relative;
 		margin-top: 0; // cancel default figure
 		margin-bottom: 0; // cancel default figure
@@ -191,16 +153,6 @@ object {
 
 	.wp-post-image {
 		width: 100%; // fix for IE11
-	}
-}
-
-/** Archive View Featured Images Media Queries **/
-
-@media screen and (min-width: $breakpoint-1) {
-
-	.excerpt-entry .featured-image {
-
-		@include full-bleed-cancel;
 	}
 }
 
@@ -285,4 +237,58 @@ object {
 	vertical-align: middle;
 	transition: fill 120ms ease-in-out;
 	fill: currentColor;
+}
+
+
+/*
+** Media Queries
+**/
+
+@media screen and (max-width: $breakpoint-1) {
+	/* On small screens, display left and right alignments as if they were centered */
+	.alignleft,
+	.alignright {
+		float: none !important;
+		clear: both !important;
+
+		@include center-block;
+	}
+}
+
+@media screen and (max-width: $breakpoint-3) {
+
+	.full-bleed {
+
+		@include full-bleed;
+	}
+}
+
+@media screen and (min-width: $breakpoint-1) {
+
+	/* Alignments */
+
+	.centered-image {
+		margin: 0 -2em;
+	}
+
+	.featured-image__archive.full-bleed {
+
+		@include full-bleed-cancel;
+	}
+}
+
+@media screen and (min-width: $breakpoint-3) {
+
+	/* We change the style to prepare it for the grid layout in posts-and-pages */
+	.featured-image__single {
+		flex: 1 1 50%;
+	}
+
+	.post-thumbnail__single {
+		width: 100%;
+	}
+
+	.featured-image__caption {
+		padding-right: 0.5em;
+	}
 }

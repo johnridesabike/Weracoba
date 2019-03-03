@@ -19,20 +19,15 @@
 	}
 }
 
-// .entry-header-wrap,
-// .content-wrap {
-
-// 	@include max-site-width;
-// }
-
 /* 
  * Entry header
  */
 .entry-header {
 
 	.cat-links {
-
-		@extend h4;
+		font-size: $font-size-sm;
+		letter-spacing: $letter-spacing-allcaps;
+		text-transform: uppercase;
 	}
 
 	.entry-title {
@@ -185,10 +180,27 @@ article.format-aside {
 	}
 
 	.cat-links {
-
-		@include tab-head;
+		/* Give it a "tab-head" look */
+		display: inline-block;
+		margin: 0;
+		padding: 0 0.5em;
 		border-bottom-style: solid;
-		font-weight: 400;
+		border-top-left-radius: $border-radius-button-square;
+		border-top-right-radius: $border-radius-button-square;
+		color: $color-bg-body;
+		background: $color-link;
+		
+		@include button-text-shadow;
+		
+		a {
+			color: $color-bg-body;
+		
+			&:hover,
+			&:active,
+			&:focus {
+				background: $color-link-hover;
+			}
+		}
 	}
 
 	.entry-title {
