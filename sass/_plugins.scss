@@ -95,14 +95,12 @@
 .infinity-end.neverending .site-footer {
 	display: block;
 }
-/* ----- */
-
 
 .infinite-scroll .pagination {
 	display: none;
 }
 
-.infinite-scroll #infinite-handle { // .infinite-scroll is just an extra specificity to override built-in CSS
+#infinite-handle#infinite-handle {
 	text-align: center;
 
 	span {

@@ -234,10 +234,17 @@ article.format-aside {
 	text-align: center;
 	flex-shrink: 0;
 
-	a {
+	.comments-link__link,
+	.button-link__link {
 		border-radius: $border-radius-button-square;
 	}
 }
+
+.aside-comments-link .comments-link__link {
+	
+	@extend .button-link__link;
+}
+
 /* stylelint-enable no-descending-specificity */
 
 /*

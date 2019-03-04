@@ -190,9 +190,6 @@
 **/
 
 .wp-block-separator {
-	// clear: both;
-
-	@include hr;
 
 	&:not(.is-style-wide):not(.is-style-dots) {
 		width: 5em;

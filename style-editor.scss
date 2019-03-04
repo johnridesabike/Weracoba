@@ -176,3 +176,9 @@ ul.wp-block-archives,
 		font-size: 1em;
 	}
 }
+
+
+.wp-block-separator {
+
+	@include hr;
+}

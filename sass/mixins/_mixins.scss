@@ -110,6 +110,12 @@ $columns-margin: 3.8%;
 	}
 }
 
+///////////////////////////////////////////////////////////////////////////////
+// Several basic element styles have been moved to mixins so they can be easily
+// imported to the separate style-editor.scss without importing the other
+// styles.
+///////////////////////////////////////////////////////////////////////////////
+
 @import "content";
 @import "elements";
 @import "widgets";

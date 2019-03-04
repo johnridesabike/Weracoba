@@ -1,6 +1,4 @@
 @charset "UTF-8";
-/* stylelint-disable value-keyword-case */
-/* stylelint-enable value-keyword-case */
 /* stylelint-disable-next-line no-duplicate-selectors */
 html {
 	font-size: 20px;
@@ -114,12 +112,12 @@ pre {
 	margin-bottom: 1.6em;
 	padding: 1.6em;
 	background: #eee;
-	font-family: "Courier 10 Pitch", Courier, monospace;
+	font-family: "Courier 10 Pitch", "Courier", monospace;
 	line-height: 1.6;
 }
 
 code, .wp-block-code, kbd, tt, var {
-	font-family: Menlo, Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+	font-family: "Menlo", "Monaco", "Consolas", "Andale Mono", "DejaVu Sans Mono", monospace;
 	font-size: 20px;
 	font-size: 0.8em;
 }
@@ -261,16 +259,13 @@ big {
 	filter: drop-shadow(0 0 1px #000000);
 }
 
-.wp-block-button__link:hover, .wp-block-file .wp-block-file__button:hover {
+.wp-block-button__link:hover, .wp-block-file .wp-block-file__button:hover, .wp-block-button__link:focus, .wp-block-file .wp-block-file__button:focus, .wp-block-button__link:active, .wp-block-file .wp-block-file__button:active {
+	background: #05b7c7;
 	text-decoration: none;
 }
 
-.wp-block-button__link:hover, .wp-block-file .wp-block-file__button:hover, .wp-block-button__link:focus, .wp-block-file .wp-block-file__button:focus, .wp-block-button__link:active, .wp-block-file .wp-block-file__button:active {
-	background: #05b7c7;
-}
-
 .wp-block-button__link:visited, .wp-block-file .wp-block-file__button:visited {
-	color: inherit;
+	color: #fff;
 }
 
 .is-style-squared .wp-block-button__link, .is-style-squared .wp-block-file .wp-block-file__button, .wp-block-file .is-style-squared .wp-block-file__button {
@@ -334,6 +329,7 @@ big {
 	color: #fff;
 	background: linear-gradient(transparent 0, rgba(0, 0, 0, 0.5) 40%, rgba(0, 0, 0, 0.8) 100%);
 	text-shadow: 0 0 6px #19191a;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 	font-size: 0.8em;
 }
 
@@ -402,13 +398,6 @@ big {
 /**
 ** separator
 **/
-.wp-block-separator {
-	height: 2px;
-	margin-bottom: 1.5em;
-	border: 0;
-	background-color: #03727c;
-}
-
 .wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
 	width: 5em;
 }
@@ -607,5 +596,12 @@ ul.wp-block-archives,
 .wp-block-code .editor-plain-text {
 	font-family: inherit;
 	font-size: 1em;
+}
+
+.wp-block-separator {
+	height: 2px;
+	margin-bottom: 1.5em;
+	border: 0;
+	background-color: #03727c;
 }
 /*# sourceMappingURL=style-editor.css.map */

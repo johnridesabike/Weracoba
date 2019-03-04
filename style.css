@@ -55,8 +55,6 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	## Jetpack
 	## Akismet
 --------------------------------------------------------------*/
-/* stylelint-disable value-keyword-case */
-/* stylelint-enable value-keyword-case */
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
@@ -509,12 +507,12 @@ pre {
 	margin-bottom: 1.6em;
 	padding: 1.6em;
 	background: #eee;
-	font-family: "Courier 10 Pitch", Courier, monospace;
+	font-family: "Courier 10 Pitch", "Courier", monospace;
 	line-height: 1.6;
 }
 
 code, kbd, tt, var {
-	font-family: Menlo, Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+	font-family: "Menlo", "Monaco", "Consolas", "Andale Mono", "DejaVu Sans Mono", monospace;
 	font-size: 20px;
 	font-size: 0.8em;
 }
@@ -797,6 +795,34 @@ a:hover, a:active {
 }
 
 /* All of the buttons and button-like elements */
+/* This can be used in the HTML templates or extended to produce more buttons */
+.button-link__link, .aside-comments-link .comments-link__link, .comment-reply-link {
+	display: inline-block;
+	padding: 0.2em 0.75em;
+	border: 1px solid #19191a;
+	border-radius: 0.625em;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	text-decoration: none;
+	cursor: pointer;
+	text-shadow: 0 0 2px #000000;
+	background: #03727c;
+	color: #fff;
+}
+
+.button-link__link svg, .aside-comments-link .comments-link__link svg, .comment-reply-link svg {
+	filter: drop-shadow(0 0 1px #000000);
+}
+
+.button-link__link:hover, .aside-comments-link .comments-link__link:hover, .comment-reply-link:hover, .button-link__link:focus, .aside-comments-link .comments-link__link:focus, .comment-reply-link:focus, .button-link__link:active, .aside-comments-link .comments-link__link:active, .comment-reply-link:active {
+	color: #fff;
+	background: #05b7c7;
+	text-decoration: none;
+}
+
+.button-link__link:visited, .aside-comments-link .comments-link__link:visited, .comment-reply-link:visited {
+	color: #fff;
+}
+
 button,
 input[type="button"],
 input[type="reset"],
@@ -820,13 +846,6 @@ input[type="submit"] svg {
 	filter: drop-shadow(0 0 1px #000000);
 }
 
-button:hover,
-input[type="button"]:hover,
-input[type="reset"]:hover,
-input[type="submit"]:hover {
-	text-decoration: none;
-}
-
 button:hover, button:focus, button:active,
 input[type="button"]:hover,
 input[type="button"]:focus,
@@ -838,43 +857,7 @@ input[type="submit"]:hover,
 input[type="submit"]:focus,
 input[type="submit"]:active {
 	background: #05b7c7;
-}
-
-.button-link__link, .comment-reply-link,
-.button-link a {
-	display: inline-block;
-	padding: 0.2em 0.75em;
-	border: 1px solid #19191a;
-	border-radius: 0.625em;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 	text-decoration: none;
-	cursor: pointer;
-	text-shadow: 0 0 2px #000000;
-	background: #03727c;
-	color: #fff;
-}
-
-.button-link__link svg, .comment-reply-link svg,
-.button-link a svg {
-	filter: drop-shadow(0 0 1px #000000);
-}
-
-.button-link__link:hover, .comment-reply-link:hover,
-.button-link a:hover {
-	text-decoration: none;
-}
-
-.button-link__link:hover, .comment-reply-link:hover, .button-link__link:focus, .comment-reply-link:focus, .button-link__link:active, .comment-reply-link:active,
-.button-link a:hover,
-.button-link a:focus,
-.button-link a:active {
-	color: #fff;
-	background: #05b7c7;
-}
-
-.button-link__link:visited, .comment-reply-link:visited,
-.button-link a:visited {
-	color: #fff;
 }
 
 form span.required {
@@ -1390,8 +1373,8 @@ form span.required {
 	border: 1px solid #ccc;
 }
 
-.widget-title,
 .widgettitle {
+	/* Change the default h* margin */
 	margin: 0 0 0.5em;
 }
 
@@ -1413,62 +1396,25 @@ form span.required {
 	border-radius: 0;
 }
 
-/* Archive and Categories widgets */
-.widget_archive li {
-	color: #7d7d7d;
-}
-
-/* Meta widget */
-.widget_meta li {
-	padding: 0;
-}
-
-/* Recent comments */
-.widget_recent_comments .recentcomments {
-	padding-bottom: 0.5em;
-	line-height: 1.3;
-}
-
 /* RSS widget */
-.widget li a.rsswidget {
-	padding-right: 0.5em;
-}
-
-.rss-date,
-.widget_rss cite {
-	color: #333;
-}
-
 .rssSummary {
-	padding: 0.5em 0;
+	opacity: 0.8;
+	font-size: 0.8em;
 }
 
 /* Calendar widget */
 .widget_calendar {
 	max-width: 250px;
-	font-weight: 400;
-	/* stylelint-disable-next-line no-descending-specificity */
 }
 
 .widget_calendar caption {
 	padding: 0.5em 0;
-	font-size: 1em;
-	font-weight: 500;
 	text-align: left;
 }
 
 .widget_calendar th {
 	border: none;
 	text-align: center;
-}
-
-.widget_calendar thead {
-	color: #000;
-	background: transparent;
-}
-
-.widget_calendar thead th {
-	border-bottom-width: 2px;
 }
 
 .widget_calendar td {
@@ -1483,7 +1429,7 @@ form span.required {
 }
 
 .widget_calendar a {
-	font-weight: 900;
+	font-weight: 700;
 	text-decoration: none;
 }
 
@@ -1493,8 +1439,8 @@ form span.required {
 }
 
 .tag-title,
-.tag-cloud-link,
-.tags-links a {
+a.tag-cloud-link,
+a[rel="tag"] {
 	display: inline-block;
 	margin: 0.1em 0;
 	padding: 0 0.25em;
@@ -1504,24 +1450,36 @@ form span.required {
 }
 
 .tag-title .svg-icon,
-.tag-cloud-link .svg-icon,
-.tags-links a .svg-icon {
+a.tag-cloud-link .svg-icon,
+a[rel="tag"] .svg-icon {
 	opacity: 0.8;
 }
 
-.tag-cloud-link {
+a.tag-cloud-link {
 	padding-left: 0.5em;
 }
 
-.tags-links a,
+a[rel="tag"],
 a.tag-cloud-link {
 	color: #19191a;
 }
 
-.tags-links a:hover, .tags-links a:focus,
+a[rel="tag"]:hover, a[rel="tag"]:focus,
 a.tag-cloud-link:hover,
 a.tag-cloud-link:focus {
 	color: #03727c;
+	text-decoration: none;
+}
+
+/* Recent comments */
+/* Chaining classes to override specificity */
+.widget_recent_comments.widget_recent_comments a {
+	border: none;
+}
+
+.widget_recent_comments.widget_recent_comments a:hover, .widget_recent_comments.widget_recent_comments a:active, .widget_recent_comments.widget_recent_comments a:focus {
+	border: none;
+	text-decoration: underline;
 }
 
 /** Breadcrumbs **/
@@ -1544,6 +1502,7 @@ a.tag-cloud-link:focus {
 }
 
 /** Widget Area **/
+/* .widget-area is the "main" widget area. It displays at the end of the content, or as a sidebar for archive pages */
 .widget-area {
 	display: flex;
 	flex-flow: row;
@@ -1554,25 +1513,6 @@ a.tag-cloud-link:focus {
 /* Page widgets */
 .page .widget-area,
 .single-attachment .widget-area {
-	margin-top: 2em;
-}
-
-/** Archive View Widgets **/
-.archive-view .site-content .widget {
-	margin-bottom: 1em;
-}
-
-.archive-widget-area .widget > ul {
-	display: flex;
-	list-style: none;
-	flex-flow: row wrap;
-}
-
-.archive-widget-area .widget > ul > .cat-item {
-	width: 100%;
-}
-
-.archive-widget-area-bottom {
 	margin-top: 2em;
 }
 
@@ -1599,56 +1539,66 @@ a.tag-cloud-link:focus {
 	color: #000;
 }
 
+/** Archive View Widgets **/
+/* Don't target widgets in the header or footer */
+.archive-view .site-content .widget {
+	margin-bottom: 1em;
+}
+
+.archive-widget-area .widget > ul {
+	display: flex;
+	list-style: none;
+	flex-flow: row wrap;
+}
+
+.archive-widget-area .widget > ul > .cat-item {
+	width: 100%;
+}
+
+.archive-widget-area__bottom {
+	margin-top: 2em;
+}
+
 /** Widget Media Queries **/
 @media screen and (min-width: 600px) {
-	.widget-area .widget {
+	.widget-area .widget,
+	.footer-widgets .widget {
+		/* Show 3 columns of widgets
+			** With an even number of widgets, show the first one at full width; */
 		width: 30.79667%;
 		margin-right: 3.8%;
 	}
-	.widget-area .widget:nth-child(3n+3) {
+	.widget-area .widget:nth-child(3n+3),
+	.footer-widgets .widget:nth-child(3n+3) {
 		margin-right: 0;
 	}
-	.widget-area .widget:nth-last-child(even):first-of-type {
+	.widget-area .widget:nth-last-child(even):first-of-type,
+	.footer-widgets .widget:nth-last-child(even):first-of-type {
 		width: 100%;
 		margin-right: 0;
 	}
-	.widget-area .widget:nth-last-child(even):first-of-type ~ .widget:nth-child(3n+3) {
+	.widget-area .widget:nth-last-child(even):first-of-type ~ .widget:nth-child(3n+3),
+	.footer-widgets .widget:nth-last-child(even):first-of-type ~ .widget:nth-child(3n+3) {
 		margin-right: 3.8%;
 	}
-	.widget-area .widget:nth-last-child(even):first-of-type ~ .widget:nth-child(3n+4) {
+	.widget-area .widget:nth-last-child(even):first-of-type ~ .widget:nth-child(3n+4),
+	.footer-widgets .widget:nth-last-child(even):first-of-type ~ .widget:nth-child(3n+4) {
 		margin-right: 0;
 	}
-	.archive-widget-area .widget > ul > .cat-item {
+	.archive-widget-area ul:not(.children) > .cat-item {
 		width: 30.79667%;
 		margin-right: 3.8%;
 	}
-	.archive-widget-area .widget > ul > .cat-item:nth-child(3n+3) {
+	.archive-widget-area ul:not(.children) > .cat-item:nth-child(3n+3) {
 		margin-right: 0;
 	}
-	.archive-widget-area-bottom {
+	.archive-widget-area__bottom {
 		margin-top: 4em;
 		margin-bottom: 4em;
 	}
 	.footer-widgets {
 		display: flex;
 		flex-wrap: wrap;
-	}
-	.footer-widgets .widget {
-		width: 30.79667%;
-		margin-right: 3.8%;
-	}
-	.footer-widgets .widget:nth-child(3n+3) {
-		margin-right: 0;
-	}
-	.footer-widgets .widget:nth-last-child(even):first-of-type {
-		width: 100%;
-		margin-right: 0;
-	}
-	.footer-widgets .widget:nth-last-child(even):first-of-type ~ .widget:nth-child(3n+3) {
-		margin-right: 3.8%;
-	}
-	.footer-widgets .widget:nth-last-child(even):first-of-type ~ .widget:nth-child(3n+4) {
-		margin-right: 0;
 	}
 }
 
@@ -1671,8 +1621,8 @@ a.tag-cloud-link:focus {
 		width: 100%;
 		margin: 0 0 4em;
 	}
-	.archive-view .widget-area .widget .alignleft,
-	.archive-view .widget-area .widget .alignright {
+	.archive-view .widget-area .alignleft,
+	.archive-view .widget-area .alignright {
 		/* Don't align stuff on this small size, */
 		float: none;
 		display: block;
@@ -1759,16 +1709,13 @@ a.tag-cloud-link:focus {
 	filter: drop-shadow(0 0 1px #000000);
 }
 
-.wp-block-button__link:hover, .wp-block-file .wp-block-file__button:hover {
+.wp-block-button__link:hover, .wp-block-file .wp-block-file__button:hover, .wp-block-button__link:focus, .wp-block-file .wp-block-file__button:focus, .wp-block-button__link:active, .wp-block-file .wp-block-file__button:active {
+	background: #05b7c7;
 	text-decoration: none;
 }
 
-.wp-block-button__link:hover, .wp-block-file .wp-block-file__button:hover, .wp-block-button__link:focus, .wp-block-file .wp-block-file__button:focus, .wp-block-button__link:active, .wp-block-file .wp-block-file__button:active {
-	background: #05b7c7;
-}
-
 .wp-block-button__link:visited, .wp-block-file .wp-block-file__button:visited {
-	color: inherit;
+	color: #fff;
 }
 
 .is-style-squared .wp-block-button__link, .is-style-squared .wp-block-file .wp-block-file__button, .wp-block-file .is-style-squared .wp-block-file__button {
@@ -1832,6 +1779,7 @@ a.tag-cloud-link:focus {
 	color: #fff;
 	background: linear-gradient(transparent 0, rgba(0, 0, 0, 0.5) 40%, rgba(0, 0, 0, 0.8) 100%);
 	text-shadow: 0 0 6px #19191a;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 	font-size: 0.8em;
 }
 
@@ -1900,13 +1848,6 @@ a.tag-cloud-link:focus {
 /**
 ** separator
 **/
-.wp-block-separator {
-	height: 2px;
-	margin-bottom: 1.5em;
-	border: 0;
-	background-color: #03727c;
-}
-
 .wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
 	width: 5em;
 }
@@ -2285,8 +2226,15 @@ article.format-aside {
 	flex-shrink: 0;
 }
 
-.aside-comments-link a,
-.continue-reading a {
+.aside-comments-link .comments-link__link,
+.aside-comments-link .button-link__link,
+.aside-comments-link .comments-link__link,
+.aside-comments-link .comment-reply-link,
+.continue-reading .comments-link__link,
+.continue-reading .button-link__link,
+.continue-reading .aside-comments-link .comments-link__link,
+.aside-comments-link .continue-reading .comments-link__link,
+.continue-reading .comment-reply-link {
 	border-radius: 0.15em;
 }
 
@@ -2772,6 +2720,7 @@ object {
 		color: #fff;
 		background: linear-gradient(transparent 0, rgba(0, 0, 0, 0.5) 40%, rgba(0, 0, 0, 0.8) 100%);
 		text-shadow: 0 0 6px #19191a;
+		font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 		font-size: 0.8em;
 		position: absolute;
 		bottom: 0;
@@ -3073,23 +3022,22 @@ object {
 	display: block;
 }
 
-/* ----- */
 .infinite-scroll .pagination {
 	display: none;
 }
 
-.infinite-scroll #infinite-handle {
+#infinite-handle#infinite-handle {
 	text-align: center;
 }
 
-.infinite-scroll #infinite-handle span {
+#infinite-handle#infinite-handle span {
 	background: transparent;
 	font-size: 1.3em;
 }
 
-.infinite-scroll #infinite-handle span button,
-.infinite-scroll #infinite-handle span button:focus,
-.infinite-scroll #infinite-handle span button:hover {
+#infinite-handle#infinite-handle span button,
+#infinite-handle#infinite-handle span button:focus,
+#infinite-handle#infinite-handle span button:hover {
 	display: inline-block;
 	padding: 0.2em 0.75em;
 	border: 1px solid #19191a;
@@ -3102,16 +3050,10 @@ object {
 	color: #fff;
 }
 
-.infinite-scroll #infinite-handle span button svg,
-.infinite-scroll #infinite-handle span button:focus svg,
-.infinite-scroll #infinite-handle span button:hover svg {
+#infinite-handle#infinite-handle span button svg,
+#infinite-handle#infinite-handle span button:focus svg,
+#infinite-handle#infinite-handle span button:hover svg {
 	filter: drop-shadow(0 0 1px #000000);
-}
-
-.infinite-scroll #infinite-handle span button:hover,
-.infinite-scroll #infinite-handle span button:focus:hover,
-.infinite-scroll #infinite-handle span button:hover:hover {
-	text-decoration: none;
 }
 
 .infinite-loader {

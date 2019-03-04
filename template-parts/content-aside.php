@@ -39,7 +39,7 @@
 			<?php weracoba_edit_link(); ?>
 			<?php weracoba_tag_list(); ?>
 		</div><!-- .entry-meta -->
-		<div class="aside-comments-link button-link button-open">
+		<div class="aside-comments-link button-open">
 			<?php weracoba_comments(); ?>
 		</div><!-- .button-link -->
 	</footer>

@@ -166,29 +166,8 @@ a {
 
 /* All of the buttons and button-like elements */
 
-button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-	
-	@include button;
-	@include button-background;
-	@include button-color;
-
-	&:hover,
-	&:focus,
-	&:active {
-	
-		@include button-hover;
-	}
-}
-
-/**
-** Targeting the link directly (<a class="button-link__link">) is preferred. In cases where modifying the <a> markup isn't feasible, use `button-link` instead.
-**/
-
-.button-link__link,
-.button-link a {
+/* This can be used in the HTML templates or extended to produce more buttons */
+.button-link__link {
 
 	@include button;
 	@include button-background;
@@ -205,6 +184,23 @@ input[type="submit"] {
 	&:visited {
 
 		@include button-color;
+	}
+}
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	
+	@include button;
+	@include button-background;
+	@include button-color;
+
+	&:hover,
+	&:focus,
+	&:active {
+	
+		@include button-hover;
 	}
 }
 

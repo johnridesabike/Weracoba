@@ -24,7 +24,7 @@ get_header();
 					?>
 
 					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'weracoba' ); ?></h2>
+						<h2 class="widgettitle"><?php esc_html_e( 'Most Used Categories', 'weracoba' ); ?></h2>
 						<ul>
 							<?php
 							wp_list_categories(

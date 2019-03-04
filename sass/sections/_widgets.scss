@@ -15,8 +15,8 @@
 	}
 }
 
-.widget-title,
 .widgettitle {
+	/* Change the default h* margin */
 	margin: 0 0 0.5em;
 }
 
@@ -41,63 +41,25 @@
 	}
 }
 
-/* Archive and Categories widgets */
-.widget_archive li {
-	color: #7d7d7d;
-}
 // .widget_pages,
 // .widget_nav_menu,
 // .widget_categories,
 // .widget_recent_entries {
 // }
 
-/* Meta widget */
-.widget_meta li {
-	padding: 0;
-}
-
-/* Recent comments */
-.widget_recent_comments {
-
-	.recentcomments {
-		padding-bottom: 0.5em;
-		line-height: 1.3;
-	}
-
-	// a:hover,
-	// a:focus {
-	// 	padding-left: 0;
-	// }
-}
-
 /* RSS widget */
 
-// .widget_rss li {
-// 	margin-bottom: 1em;
-// }
-
-.widget li a.rsswidget {
-	padding-right: 0.5em;
-}
-
-.rss-date,
-.widget_rss cite {
-	color: #333;
-}
-
 .rssSummary {
-	padding: 0.5em 0;
+	opacity: $opacity-aside;
+	font-size: $font-size-xs;
 }
 
 /* Calendar widget */
 .widget_calendar {
 	max-width: 250px;
-	font-weight: 400;
 
 	caption {
 		padding: 0.5em 0;
-		font-size: 1em;
-		font-weight: 500;
 		text-align: left;
 	}
 
@@ -105,15 +67,6 @@
 	th {
 		border: none;
 		text-align: center;
-	}
-	
-	thead {
-		color: #000;
-		background: transparent;
-
-		th {
-			border-bottom-width: 2px;
-		}
 	}
 
 	td {
@@ -127,9 +80,8 @@
 		background: #eaeaea;
 	}
 
-	/* stylelint-disable-next-line no-descending-specificity */
 	a {
-		font-weight: 900;
+		font-weight: 700;
 		text-decoration: none;
 	}
 }
@@ -140,8 +92,8 @@
 }
 
 .tag-title,
-.tag-cloud-link,
-.tags-links a {
+a.tag-cloud-link,
+a[rel="tag"] {
 	display: inline-block;
 	margin: 0.1em 0;
 	padding: 0 0.25em;
@@ -154,17 +106,34 @@
 	}
 }
 
-.tag-cloud-link {
+a.tag-cloud-link {
 	padding-left: 0.5em;
 }
 
-.tags-links a,
+a[rel="tag"],
 a.tag-cloud-link {
 	color: $color-text-main;
 	
 	&:hover,
 	&:focus {
 		color: $color-link;
+		text-decoration: none;
+	}
+}
+
+/* Recent comments */
+/* Chaining classes to override specificity */
+.widget_recent_comments.widget_recent_comments {
+
+	a {
+		border: none;
+
+		&:hover,
+		&:active,
+		&:focus {
+			border: none;
+			text-decoration: underline;
+		}
 	}
 }
 
@@ -189,6 +158,7 @@ a.tag-cloud-link {
 
 /** Widget Area **/
 
+/* .widget-area is the "main" widget area. It displays at the end of the content, or as a sidebar for archive pages */
 .widget-area {
 	display: flex;
 	flex-flow: row;
@@ -203,28 +173,6 @@ a.tag-cloud-link {
 	.widget-area {
 		margin-top: 2em;
 	}
-}
-
-/** Archive View Widgets **/
-
-.archive-view .site-content .widget {
-	margin-bottom: 1em;
-}
-
-// for the widgets outside regular widget-area
-
-.archive-widget-area .widget > ul {
-	display: flex;
-	list-style: none;
-	flex-flow: row wrap;
-
-	> .cat-item {
-		width: 100%;
-	}
-}
-
-.archive-widget-area-bottom {
-	margin-top: 2em;
 }
 
 /** Footer Widgets **/
@@ -245,6 +193,30 @@ a.tag-cloud-link {
 	.widget_calendar td,
 	.footer-widgets .widget_calendar a {
 		color: #000;
+	}
+}
+
+/** Archive View Widgets **/
+
+/* Don't target widgets in the header or footer */
+.archive-view .site-content .widget {
+	margin-bottom: 1em;
+}
+
+.archive-widget-area {
+
+	.widget > ul {
+		display: flex;
+		list-style: none;
+		flex-flow: row wrap;
+	
+		> .cat-item {
+			width: 100%;
+		}
+	}
+
+	&__bottom {
+		margin-top: 2em;
 	}
 }
 
@@ -290,7 +262,7 @@ a.tag-cloud-link {
 
 	.archive-widget-area {
 
-		.widget > ul > .cat-item { // category widget
+		ul:not(.children) > .cat-item { // category widget
 
 			@include column-width(3);
 			margin-right: $columns-margin;
@@ -337,14 +309,14 @@ a.tag-cloud-link {
 			.widget {
 				width: 100%; // cancel the column width
 				margin: 0 0 4em;
+			}
 
-				.alignleft,
-				.alignright {
-					/* Don't align stuff on this small size, */
-					float: none;
-					
-					@include center-block;
-				}
+			.alignleft,
+			.alignright {
+				/* Don't align stuff on this small size, */
+				float: none;
+				
+				@include center-block;
 			}
 		}
 	}

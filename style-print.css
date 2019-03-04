@@ -3,8 +3,6 @@
 * thanks to https://www.jotform.com/blog/css-perfect-print-stylesheet-98272/
 * @version	1.0
 */
-/* stylelint-disable value-keyword-case */
-/* stylelint-enable value-keyword-case */
 @media print {
 	@page {
 		margin: 2cm;
