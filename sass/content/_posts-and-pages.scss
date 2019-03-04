@@ -101,8 +101,7 @@
 	opacity: $opacity-aside;
 	background: $color-bg-footer;
 
-	> *,
-	.entry-footer-wrapper > * {
+	.entry-footer__item {
 		margin-bottom: 0.5em;
 	}
 }
@@ -149,10 +148,6 @@ article.format-aside {
 	.entry-footer {
 		border-style: none; // cancel default single footer style
 		opacity: 1; // cancel default single footer style
-
-		// > * {
-		// 	margin-bottom: 0.5em;
-		// }
 	}
 
 	.comments-link {
@@ -222,7 +217,7 @@ article.format-aside {
 		margin-bottom: 1rem;
 		font-size: $font-size-sm;
 
-		> * {
+		&__item {
 			display: inline-block;
 			margin: 0 0.5em 0.25em 0;
 		}

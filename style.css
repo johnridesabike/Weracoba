@@ -2106,8 +2106,7 @@ a.tag-cloud-link:focus {
 	background: #fff;
 }
 
-.entry-footer__single > *,
-.entry-footer__single .entry-footer-wrapper > * {
+.entry-footer__single .entry-footer__item {
 	margin-bottom: 0.5em;
 }
 
@@ -2214,8 +2213,8 @@ article.format-aside {
 	font-size: 0.88889em;
 }
 
-.excerpt-entry .entry-meta > *,
-.format-aside .entry-meta > * {
+.excerpt-entry .entry-meta__item,
+.format-aside .entry-meta__item {
 	display: inline-block;
 	margin: 0 0.5em 0.25em 0;
 }

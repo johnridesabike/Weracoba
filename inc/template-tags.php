@@ -33,7 +33,7 @@ if ( ! function_exists( 'weracoba_posted_on' ) ) :
 			$time_string
 		);
 
-		echo '<span class="posted-on">' . weracoba_get_icon_svg( 'calendar', 16 ) . $posted_on . '</span>'; // phpcs:ignore XSS OK.
+		echo '<span class="posted-on entry-meta__item">' . weracoba_get_icon_svg( 'calendar', 16 ) . $posted_on . '</span>'; // phpcs:ignore XSS OK.
 	}
 endif;
 
@@ -76,7 +76,7 @@ if ( ! function_exists( 'weracoba_posted_by' ) ) :
 			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 		);
 
-		echo '<span class="byline"> ' . $byline . '</span>'; // phpcs:ignore XSS OK.
+		echo '<span class="byline entry-meta__item"> ' . $byline . '</span>'; // phpcs:ignore XSS OK.
 
 	}
 endif;
@@ -109,7 +109,7 @@ if ( ! function_exists( 'weracoba_edit_link' ) ) {
 				weracoba_get_icon_svg( 'edit' ),
 				get_the_title()
 			),
-			'<span class="edit-link">',
+			'<span class="edit-link entry-meta__item">',
 			'</span>'
 		);
 	}
@@ -121,17 +121,17 @@ if ( ! function_exists( 'weracoba_entry_footer' ) ) :
 	 */
 	function weracoba_entry_footer() {
 		?>
-		<div class="post-time">
+		<div class="post-time entry-footer__item">
 			<?php weracoba_updated_on(); ?>
 		</div>
-		<div class="entry-footer-wrapper">
-			<div class="post-taxonomy">
+		<div class="entry-footer-wrapper entry-footer__item">
+			<div class="post-taxonomy entry-footer__item">
 				<?php
 				weracoba_category_list();
 				weracoba_tag_list();
 				?>
 			</div><!--.post-taxonomy-->
-			<div class="post-social">
+			<div class="post-social entry-footer__item">
 				<?php weracoba_comments(); ?>
 				<?php
 				/**
@@ -257,7 +257,7 @@ if ( ! function_exists( 'weracoba_tag_list' ) ) :
 		/* translators: There is a space before and after the text. Only shown to screen readers. */
 		$weracoba_tagged = esc_html__( ' Tagged ', 'weracoba' );
 		echo get_the_tag_list(
-			'<div class="tags-links"><span class="screen-reader-text">' . $weracoba_tagged . '</span>',
+			'<div class="tags-links entry-meta__item"><span class="screen-reader-text">' . $weracoba_tagged . '</span>',
 			' ',
 			'</div>'
 		); // phpcs:ignore XSS OK
@@ -270,7 +270,7 @@ if ( ! function_exists( 'weracoba_comments' ) ) :
 	 */
 	function weracoba_comments() {
 		if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-			echo '<span class="comments-link">';
+			echo '<span class="comments-link entry-meta__item">';
 			comments_popup_link(
 				sprintf(
 					wp_kses(
