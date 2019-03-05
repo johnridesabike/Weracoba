@@ -2152,7 +2152,8 @@ article.format-aside {
 	opacity: 1;
 }
 
-.format-aside .comments-link {
+.format-aside .entry-meta__item.comments-link,
+.format-aside .comments-link__link {
 	display: block;
 	font-size: 0.88889em;
 }
@@ -2205,7 +2206,6 @@ article.format-aside {
 	display: block;
 }
 
-/* stylelint-disable no-descending-specificity */
 .excerpt-entry .entry-meta,
 .format-aside .entry-meta {
 	min-height: 0;
@@ -2237,7 +2237,6 @@ article.format-aside {
 	border-radius: 0.15em;
 }
 
-/* stylelint-enable no-descending-specificity */
 /*
  * Pages
  */
@@ -2263,7 +2262,6 @@ article.format-aside {
 /*
  * Error 404 & Search Page
  */
-/* stylelint-disable-next-line no-descending-specificity */
 .search-results .entry-header .search-form,
 .error404 .page-content .search-form {
 	margin-bottom: 1em;

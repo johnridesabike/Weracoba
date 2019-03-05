@@ -150,7 +150,8 @@ article.format-aside {
 		opacity: 1; // cancel default single footer style
 	}
 
-	.comments-link {
+	.entry-meta__item.comments-link,
+	.comments-link__link {
 		display: block;
 		font-size: $font-size-sm;
 	}
@@ -208,7 +209,6 @@ article.format-aside {
 	}
 }
 
-/* stylelint-disable no-descending-specificity */
 .excerpt-entry,
 .format-aside {
 
@@ -216,11 +216,11 @@ article.format-aside {
 		min-height: 0;
 		margin-bottom: 1rem;
 		font-size: $font-size-sm;
+	}
 
-		&__item {
-			display: inline-block;
-			margin: 0 0.5em 0.25em 0;
-		}
+	.entry-meta__item {
+		display: inline-block;
+		margin: 0 0.5em 0.25em 0;
 	}
 }
 
@@ -239,8 +239,6 @@ article.format-aside {
 	
 	@extend .button-link__link;
 }
-
-/* stylelint-enable no-descending-specificity */
 
 /*
  * Pages
@@ -266,17 +264,13 @@ article.format-aside {
  * Error 404 & Search Page
  */
 
-/* stylelint-disable-next-line no-descending-specificity */
-.search-results .entry-header,
-.error404 .page-content {
+.search-results .entry-header .search-form,
+.error404 .page-content .search-form {
+	margin-bottom: 1em;
+	text-align: center;
 
-	.search-form {
-		margin-bottom: 1em;
-		text-align: center;
-
-		[type="search"] {
-			margin-bottom: 0.5em;
-		}
+	[type="search"] {
+		margin-bottom: 0.5em;
 	}
 }
 
