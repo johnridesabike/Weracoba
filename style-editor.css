@@ -251,7 +251,7 @@ big {
 	text-decoration: none;
 	cursor: pointer;
 	text-shadow: 0 0 2px #000000;
-	background: #03727c;
+	background-color: #03727c;
 	color: #fff;
 }
 
@@ -260,7 +260,7 @@ big {
 }
 
 .wp-block-button__link:hover, .wp-block-file .wp-block-file__button:hover, .wp-block-button__link:focus, .wp-block-file .wp-block-file__button:focus, .wp-block-button__link:active, .wp-block-file .wp-block-file__button:active {
-	background: #05b7c7;
+	background-color: #05b7c7;
 	text-decoration: none;
 }
 

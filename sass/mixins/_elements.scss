@@ -102,10 +102,10 @@
 }
 
 @mixin button-background {
-	background: $color-link;
+	background-color: $color-link;
 }
 
 @mixin button-hover {
-	background: $color-link-hover;
+	background-color: $color-link-hover;
 	text-decoration: none;
 }

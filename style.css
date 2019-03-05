@@ -805,7 +805,7 @@ a:hover, a:active {
 	text-decoration: none;
 	cursor: pointer;
 	text-shadow: 0 0 2px #000000;
-	background: #03727c;
+	background-color: #03727c;
 	color: #fff;
 }
 
@@ -815,7 +815,7 @@ a:hover, a:active {
 
 .button-link__link:hover, .aside-comments-link .comments-link__link:hover, .comment-reply-link:hover, .button-link__link:focus, .aside-comments-link .comments-link__link:focus, .comment-reply-link:focus, .button-link__link:active, .aside-comments-link .comments-link__link:active, .comment-reply-link:active {
 	color: #fff;
-	background: #05b7c7;
+	background-color: #05b7c7;
 	text-decoration: none;
 }
 
@@ -835,7 +835,7 @@ input[type="submit"] {
 	text-decoration: none;
 	cursor: pointer;
 	text-shadow: 0 0 2px #000000;
-	background: #03727c;
+	background-color: #03727c;
 	color: #fff;
 }
 
@@ -856,7 +856,7 @@ input[type="reset"]:active,
 input[type="submit"]:hover,
 input[type="submit"]:focus,
 input[type="submit"]:active {
-	background: #05b7c7;
+	background-color: #05b7c7;
 	text-decoration: none;
 }
 
@@ -1464,9 +1464,10 @@ a.tag-cloud-link {
 	color: #19191a;
 }
 
-a[rel="tag"]:hover, a[rel="tag"]:focus,
+a[rel="tag"]:hover, a[rel="tag"]:focus, a[rel="tag"]:active,
 a.tag-cloud-link:hover,
-a.tag-cloud-link:focus {
+a.tag-cloud-link:focus,
+a.tag-cloud-link:active {
 	color: #03727c;
 	text-decoration: none;
 }
@@ -1701,7 +1702,7 @@ a.tag-cloud-link:focus {
 	text-decoration: none;
 	cursor: pointer;
 	text-shadow: 0 0 2px #000000;
-	background: #03727c;
+	background-color: #03727c;
 	color: #fff;
 }
 
@@ -1710,7 +1711,7 @@ a.tag-cloud-link:focus {
 }
 
 .wp-block-button__link:hover, .wp-block-file .wp-block-file__button:hover, .wp-block-button__link:focus, .wp-block-file .wp-block-file__button:focus, .wp-block-button__link:active, .wp-block-file .wp-block-file__button:active {
-	background: #05b7c7;
+	background-color: #05b7c7;
 	text-decoration: none;
 }
 
@@ -2048,16 +2049,20 @@ a.tag-cloud-link:focus {
 	margin: 0;
 }
 
-.entry-header a[rel="bookmark"] {
+.entry-header a {
+	text-decoration: none;
+}
+
+.entry-title__link {
 	color: #19191a;
 }
 
-.entry-header a[rel="bookmark"]:active, .entry-header a[rel="bookmark"]:focus, .entry-header a[rel="bookmark"]:hover {
-	color: #05b7c7;
+.entry-title__link:visited {
+	color: #19191a;
 }
 
-.entry-header a {
-	text-decoration: none;
+.entry-title__link:active, .entry-title__link:focus, .entry-title__link:hover {
+	color: #05b7c7;
 }
 
 .entry-meta__single {
@@ -2172,8 +2177,16 @@ article.format-aside {
 	padding: 0;
 }
 
-.excerpt-entry .cat-links {
-	/* Give it a "tab-head" look */
+.excerpt-entry .entry-title {
+	margin-bottom: 0.5em;
+	text-align: left;
+}
+
+.excerpt-entry .tags-links {
+	display: block;
+}
+
+.tab-head {
 	display: inline-block;
 	margin: 0;
 	padding: 0 0.5em;
@@ -2185,25 +2198,16 @@ article.format-aside {
 	text-shadow: 0 0 2px #000000;
 }
 
-.excerpt-entry .cat-links svg {
+.tab-head svg {
 	filter: drop-shadow(0 0 1px #000000);
 }
 
-.excerpt-entry .cat-links a {
+.tab-head a {
 	color: #fff;
 }
 
-.excerpt-entry .cat-links a:hover, .excerpt-entry .cat-links a:active, .excerpt-entry .cat-links a:focus {
+.tab-head a:hover, .tab-head a:active, .tab-head a:focus {
 	background: #05b7c7;
-}
-
-.excerpt-entry .entry-title {
-	margin-bottom: 0.5em;
-	text-align: left;
-}
-
-.excerpt-entry .tags-links {
-	display: block;
 }
 
 .excerpt-entry .entry-meta,
@@ -3043,7 +3047,7 @@ object {
 	text-decoration: none;
 	cursor: pointer;
 	text-shadow: 0 0 2px #000000;
-	background: #03727c;
+	background-color: #03727c;
 	color: #fff;
 }
 

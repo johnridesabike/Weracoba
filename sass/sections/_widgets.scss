@@ -115,7 +115,8 @@ a.tag-cloud-link {
 	color: $color-text-main;
 	
 	&:hover,
-	&:focus {
+	&:focus,
+	&:active {
 		color: $color-link;
 		text-decoration: none;
 	}

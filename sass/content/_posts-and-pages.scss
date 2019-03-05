@@ -33,19 +33,23 @@
 	.entry-title {
 		margin: 0;
 	}
-	
-	a[rel="bookmark"] {
-		color: $color-text-main;
-
-		&:active,
-		&:focus,
-		&:hover {
-			color: $color-link-hover;
-		}
-	}
 
 	a {
 		text-decoration: none;
+	}
+}
+
+.entry-title__link {
+	color: $color-text-main;
+
+	&:visited {
+		color: $color-text-main;
+	}
+
+	&:active,
+	&:focus,
+	&:hover {
+		color: $color-link-hover;
 	}
 }
 
@@ -175,30 +179,6 @@ article.format-aside {
 		padding: 0; // cancel the padding from the main entry-headers
 	}
 
-	.cat-links {
-		/* Give it a "tab-head" look */
-		display: inline-block;
-		margin: 0;
-		padding: 0 0.5em;
-		border-bottom-style: solid;
-		border-top-left-radius: $border-radius-button-square;
-		border-top-right-radius: $border-radius-button-square;
-		color: $color-bg-body;
-		background: $color-link;
-		
-		@include button-text-shadow;
-		
-		a {
-			color: $color-bg-body;
-		
-			&:hover,
-			&:active,
-			&:focus {
-				background: $color-link-hover;
-			}
-		}
-	}
-
 	.entry-title {
 		margin-bottom: 0.5em;
 		text-align: left; // to cancel the center alignment on pages
@@ -206,6 +186,29 @@ article.format-aside {
 
 	.tags-links {
 		display: block;
+	}
+}
+
+.tab-head {
+	display: inline-block;
+	margin: 0;
+	padding: 0 0.5em;
+	border-bottom-style: solid;
+	border-top-left-radius: $border-radius-button-square;
+	border-top-right-radius: $border-radius-button-square;
+	color: $color-bg-body;
+	background: $color-link;
+	
+	@include button-text-shadow;
+	
+	a {
+		color: $color-bg-body;
+	
+		&:hover,
+		&:active,
+		&:focus {
+			background: $color-link-hover;
+		}
 	}
 }
 
