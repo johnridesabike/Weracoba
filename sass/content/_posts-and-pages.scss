@@ -166,10 +166,15 @@ article.format-aside {
 	color: currentColor;
 	font-size: $font-size-xs;
 
+	&:visited {
+		color: currentColor;
+	}
+
 	&:hover,
 	&:active,
 	&:focus {
 		opacity: 1;
+		color: $color-link-hover;
 	}
 }
 

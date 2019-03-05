@@ -2169,8 +2169,13 @@ article.format-aside {
 	font-size: 0.8em;
 }
 
+.aside-permalink:visited {
+	color: currentColor;
+}
+
 .aside-permalink:hover, .aside-permalink:active, .aside-permalink:focus {
 	opacity: 1;
+	color: #05b7c7;
 }
 
 .excerpt-entry .entry-header {
