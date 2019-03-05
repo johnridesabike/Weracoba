@@ -21,7 +21,7 @@
 }
 
 /* Text widget. */
-.widget-area .textwidget {
+.widget__main .textwidget {
 	font-family: $font-reading;
 }
 
@@ -138,7 +138,7 @@ a.tag-cloud-link {
 }
 
 /** Breadcrumbs **/
-.widget.breadcrumbs-nav {
+.widget__breadcrumbs {
 	max-width: 20rem;
 	margin-bottom: 0.5em;
 	opacity: $opacity-aside;
@@ -203,20 +203,17 @@ a.tag-cloud-link {
 	margin-bottom: 1em;
 }
 
-.archive-widget-area {
+.archive-widget-area__bottom {
+	margin-top: 2em;
+}
 
-	.widget > ul {
-		display: flex;
-		list-style: none;
-		flex-flow: row wrap;
-	
-		> .cat-item {
-			width: 100%;
-		}
-	}
+.widget__archive > ul {
+	display: flex;
+	list-style: none;
+	flex-flow: row wrap;
 
-	&__bottom {
-		margin-top: 2em;
+	> .cat-item {
+		width: 100%;
 	}
 }
 
@@ -224,39 +221,36 @@ a.tag-cloud-link {
 
 @media screen and (min-width: $breakpoint-1) {
 
-	.widget-area,
-	.footer-widgets {
+	.widget__main,
+	.widget__footer {
+		/* Show 3 columns of widgets
+		** With an even number of widgets, show the first one at full width; */
+		@include column-width(3);
+		margin-right: $columns-margin;
 
-		.widget {
-			/* Show 3 columns of widgets
-			** With an even number of widgets, show the first one at full width; */
-			@include column-width(3);
+		&:nth-child(3n+3) {
+			margin-right: 0;
+		}
+		// &:nth-last-child(even):first-of-type,
+		// &:nth-last-child(even):first-of-type ~ .widget {
+		// 	@include column-width(2);
+		// 	margin-right: $columns-margin;
+		// 	&:nth-child(2n+2) {
+		// 		margin-right: 0;
+		// 	}
+		// }
+
+		&:nth-last-child(even):first-of-type {
+			width: 100%;
+			margin-right: 0;
+		}
+
+		&:nth-last-child(even):first-of-type ~ .widget:nth-child(3n+3) {
 			margin-right: $columns-margin;
+		}
 
-			&:nth-child(3n+3) {
-				margin-right: 0;
-			}
-			// &:nth-last-child(even):first-of-type,
-			// &:nth-last-child(even):first-of-type ~ .widget {
-			// 	@include column-width(2);
-			// 	margin-right: $columns-margin;
-			// 	&:nth-child(2n+2) {
-			// 		margin-right: 0;
-			// 	}
-			// }
-
-			&:nth-last-child(even):first-of-type {
-				width: 100%;
-				margin-right: 0;
-			}
-
-			&:nth-last-child(even):first-of-type ~ .widget:nth-child(3n+3) {
-				margin-right: $columns-margin;
-			}
-
-			&:nth-last-child(even):first-of-type ~ .widget:nth-child(3n+4) {
-				margin-right: 0;
-			}
+		&:nth-last-child(even):first-of-type ~ .widget:nth-child(3n+4) {
+			margin-right: 0;
 		}
 	}
 
@@ -306,11 +300,6 @@ a.tag-cloud-link {
 
 			@include column-width(3);
 
-			.widget {
-				width: 100%; // cancel the column width
-				margin: 0 0 4em;
-			}
-
 			.alignleft,
 			.alignright {
 				/* Don't align stuff on this small size, */
@@ -318,6 +307,11 @@ a.tag-cloud-link {
 				
 				@include center-block;
 			}
+		}
+
+		.widget__main {
+			width: 100%; // cancel the column width
+			margin: 0 0 4em;
 		}
 	}
 }

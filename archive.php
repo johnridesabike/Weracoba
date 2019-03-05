@@ -39,12 +39,15 @@ get_header();
 							array(
 								'title'        => __( 'Browse a subcategory', 'weracoba' ),
 								'hierarchical' => 1,
+							),
+							array(
+								'before_widget' => '<div class="widget widget__archive has-ui-font %s">',
 							)
 						);
 						remove_filter( 'widget_categories_args', 'weracoba_widget_categories_args' );
 						?>
 					</div> <!-- .archive-widget-area -->
-					<p class="has-large-font-size"><?php esc_html_e( 'Or browse the recent updates', 'weracoba' ); ?></p>
+					<p class="has-large-font-size has-ui-font"><?php esc_html_e( 'Or browse the recent updates', 'weracoba' ); ?></p>
 					<?php
 				endif;
 			endif;
@@ -80,7 +83,7 @@ get_header();
 					'hierarchical' => 1,
 				),
 				array(
-					'before_widget' => '<div class="widget has-ui-font %s">',
+					'before_widget' => '<div class="widget widget__archive has-ui-font %s">',
 				)
 			);
 			?>

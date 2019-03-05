@@ -31,7 +31,7 @@ get_header();
 							'hierarchical' => 1,
 						),
 						array(
-							'before_widget' => '<div class="widget has-ui-font %s">',
+							'before_widget' => '<div class="widget widget__archive has-ui-font %s">',
 						)
 					);
 					the_widget(
@@ -40,7 +40,7 @@ get_header();
 							'title' => __( 'Browse by tag', 'weracoba' ),
 						),
 						array(
-							'before_widget' => '<div class="widget has-ui-font %s">',
+							'before_widget' => '<div class="widget widget__archive has-ui-font %s">',
 						)
 					);
 					?>

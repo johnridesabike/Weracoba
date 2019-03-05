@@ -185,7 +185,7 @@ function weracoba_widgets_init() {
 				'This will display above the footer, or on the sidebar of the archives page.',
 				'weracoba'
 			),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'before_widget' => '<section id="%1$s" class="widget widget__main %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h4 class="widgettitle">',
 			'after_title'   => '</h4>',
@@ -201,7 +201,7 @@ function weracoba_widgets_init() {
 				'weracoba'
 			),
 			'class'         => '',
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'before_widget' => '<section id="%1$s" class="widget widget__footer %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h4 class="widgettitle">',
 			'after_title'   => '</h4>',
@@ -217,7 +217,7 @@ function weracoba_widgets_init() {
 				'weracoba'
 			),
 			'class'         => '',
-			'before_widget' => '<nav id="%1$s" class="widget breadcrumbs-nav has-ui-font %2$s">',
+			'before_widget' => '<nav id="%1$s" class="widget widget__breadcrumbs has-ui-font %2$s">',
 			'after_widget'  => '</nav>',
 			'before_title'  => '<h2 class="widgettitle">',
 			'after_title'   => '</h2>',
@@ -230,7 +230,7 @@ add_action( 'widgets_init', 'weracoba_widgets_init' );
  * Enqueue scripts and styles.
  */
 function weracoba_scripts() {
-	wp_enqueue_style( 'weracoba-style', get_stylesheet_uri(), array(), '20190304.2', 'all' );
+	wp_enqueue_style( 'weracoba-style', get_stylesheet_uri(), array(), '20190305', 'all' );
 	wp_enqueue_style( 'weracoba-print-style', get_template_directory_uri() . '/style-print.css', array( 'weracoba-style' ), '20190217', 'print' );
 
 	/* phpcs:ignore
