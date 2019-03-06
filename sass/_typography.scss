@@ -1,92 +1,86 @@
-html {
+/* stylelint-disable-next-line no-duplicate-selectors */
+html { 
 	font-size: $font-size-base;
 	line-height: calculate-line-height($font-size-base, $size-content);
 }
 
 @media screen and (max-width: $breakpoint-1) {
+
 	html {
 		font-size: $font-size-base-mobile;
 		line-height: calculate-line-height($font-size-base-mobile, $breakpoint-1);
 	}
 }
 
-%font-reading {
-	font-family: $font-reading;
-}
-
-/* Interactive buttons and widgets use the system font. */
-%font-UI {
-	font-family: $font-UI;
-}
-
+/* stylelint-disable-next-line no-duplicate-selectors */
 body {
 	color: $color-text-main;
 }
 
 body,
 textarea {
-	@extend %font-reading;
+	font-family: $font-reading;
 }
 
 input {
-	@extend %font-UI;
+	font-family: $font-UI;
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-weight: 400;
 	margin-top: 1em;
 	margin-bottom: 1em;
+	font-weight: 400;
 	hyphens: none;
 }
 
 /* Only use h1 for title */
-
+/* stylelint-disable-next-line no-duplicate-selectors */
 h1 {
+	clear: both;
 	font-size: $font-size-xl;
 	line-height: calculate-line-height( $font-size-xl, $size-content );
-	clear: both;
 }
 
 /* Use h2, h3, h4 in document bodies */
 
 h2 {
-	font-size: $font-size-lg;
-	line-height: calculate-line-height( $font-size-lg, $size-content);
 	clear: both;
+	padding-top: 0.5em;
 	border-top-width: 4px;
 	border-top-style: solid;
-	padding-top: .5em;
+	font-size: $font-size-lg;
+	line-height: calculate-line-height( $font-size-lg, $size-content);
 }
 
 h3 {
-    font-size: $font-size-md;
-	line-height: calculate-line-height( $font-size-md, $size-content );
 	clear: both;
+	font-size: $font-size-md;
 	font-weight: 700;
+	line-height: calculate-line-height( $font-size-md, $size-content );
+	letter-spacing: $letter-spacing-allcaps;
 	text-transform: uppercase;
-	@include allcaps-letterspacing;
 }
 
 h4 {
-    font-size: $font-size-sm;
-	line-height: calculate-line-height( $font-size-sm, $size-content );
+	font-size: $font-size-sm;
 	font-weight: 700;
+	line-height: calculate-line-height( $font-size-sm, $size-content );
+	letter-spacing: $letter-spacing-allcaps;
 	text-transform: uppercase;
-	@include allcaps-letterspacing
 }
 
 /* Please don't use h5 or h6... why do we need them, anyway? */
 
 h5 {
-    font-size: $font-size-sm;
-	line-height: calculate-line-height( $font-size-sm, $size-content );
+	font-size: $font-size-sm;
 	font-weight: 700;
+	line-height: calculate-line-height( $font-size-sm, $size-content );
 }
 
 h6 {
 	font-size: $font-size-xs;
-	line-height: calculate-line-height( $font-size-xs, $size-content );
 	font-weight: 700;
+	line-height: calculate-line-height( $font-size-xs, $size-content );
 }
 
 p {
@@ -94,6 +88,7 @@ p {
 }
 
 figcaption {
+
 	@include figcaption;
 }
 
@@ -105,14 +100,15 @@ blockquote {
 	font-size: $font-size-sm;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors */
 pre {
+	overflow: auto;
+	max-width: 100%;
+	margin-bottom: 1.6em;
+	padding: 1.6em;
 	background: $color-bg-pre;
 	font-family: $font-pre;
 	line-height: $font-line-height-pre;
-	margin-bottom: 1.6em;
-	max-width: 100%;
-	overflow: auto;
-	padding: 1.6em;
 }
 
 code, kbd, tt, var {
@@ -138,59 +134,59 @@ big {
 .has-xsmall-font-size {
 	font-size: $font-size-xs;
 }
+
 .has-small-font-size {
 	font-size: $font-size-sm;
 }
+
 .has-normal-font-size,
 .has-regular-font-size ,
 .has-medium-font-size {
 	font-size: $font-size-md;
 }
+
 .has-large-font-size {
 	font-size: $font-size-lg;
 }
+
 .has-xlarge-font-size,
 .has-huge-font-size,
 .has-larger-font-size {
 	font-size: $font-size-xl;
 }
+
 .has-xxlarge-font-size {
 	font-size: $font-size-xxl;
 }
+
 .has-normal-color {
 	color: $color-text-main;
 }
+
 .has-link-color {
 	color: $color-link;
 }
 
 .has-ui-font {
-	@extend %font-UI;
+	font-family: $font-UI;
 }
 
 .has-body-font {
-	@extend %font-reading;
+	font-family: $font-reading;
 }
 
-.widget-area,
-.footer-widgets {
-	h2 {
-		@extend h4;
-		border: none;
-		padding: 0;
-	}
-}
 .footer-widgets {
 	opacity: $opacity-aside;
 }
 
-/* Accessibility */
-.widget p,
-.entry-content,
-.comment-content {
-	a:hover,
-	a:active,
-	a:focus {
-        text-decoration: underline;
-    }
-}
+// /* Accessibility */
+// .entry-content,
+// .comment-content,
+// .widget p {
+
+// 	a:hover,
+// 	a:active,
+// 	a:focus {
+// 		text-decoration: underline;
+// 	}
+// }

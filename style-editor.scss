@@ -1,9 +1,11 @@
 @import "sass/variables";
 @import "sass/mixins/mixins";
 @import "sass/typography";
-@import "sass/placeholders/widgets";
-@import "sass/placeholders/buttons";
 @import "sass/blocks";
+
+/**
+* Typography & Elements 
+*/
 
 * {
 	border-color: $color-link; // from elements
@@ -11,21 +13,32 @@
 
 .editor-post-title__block .editor-post-title__input,
 .wp-block-heading h1.editor-rich-text__tinymce {
+
 	@extend h1;
 }
+
 .wp-block-heading h2.editor-rich-text__tinymce {
+
 	@extend h2;
 }
+
 .wp-block-heading h3.editor-rich-text__tinymce {
+
 	@extend h3;
 }
+
 .wp-block-heading h4.editor-rich-text__tinymce {
+
 	@extend h4;
 }
+
 .wp-block-heading h5.editor-rich-text__tinymce {
+
 	@extend h5;
 }
+
 .wp-block-heading h6.editor-rich-text__tinymce {
+
 	@extend h6;
 }
 
@@ -39,21 +52,30 @@ a {
 	&:visited {
 		color: $color-link-visited;
 	}
+
 	&:hover,
 	&:focus,
 	&:active {
 		color: $color-link-hover;
 	}
+
 	&:focus {
 		outline: thin dotted;
 	}
+
 	&:hover,
 	&:active {
 		outline: 0;
 	}
 }
 
+ul.wp-block-archives,
+.wp-block-categories ul {
+	padding: inherit;
+}
+
 .wp-block {
+
 	@include max-content-width;
 
 	&[data-align="wide"],
@@ -67,65 +89,96 @@ a {
 		max-width: none;
 	}
 
-	&[data-type="core/image"] {
-		@extend figure.wp-block-image;
-	}
+	// &[data-type="core/image"] {
+
+	// 	@extend figure.wp-block-image;
+	// }
 
 	/* Lists. See _elements.scss */
 
 	ul,
 	ol {
+
 		&.mce-content-body {
+
 			@include list-margins;
 
 			li {
+
 				> ul,
 				> ol {
+
 					@include nested-list-margins;
 				}
 			} 
 		}
 	}
+
 	ul.mce-content-body {
+
 		@include unordered-list-styles;
 	}
 	
 	ol.mce-content-body {
+
 		@include ordered-list-styles;
 	}
 }
 
 .wp-block-quote {
+
 	&:not(.is-large):not(.is-style-large),
 	&.is-large,
 	&.is-style-large {
-		@include blockquote;
 		border-color: $color-link;
+
+		@include blockquote;
 	}
+
 	.wp-block-quote__citation {
+
 		@include cite;
-		font-size: $font-size-md;
+
 		color: $color-text-main;
+		font-size: $font-size-md;
 	}
-}
-.wp-block-pullquote .wp-block-pullquote__citation {
-	@include cite;
-	font-size: $font-size-md;
-	color: $color-text-main;
-	text-transform: none;
 }
 
-ul.wp-block-archives,
-.wp-block-categories ul {
-	padding: inherit;
+.wp-block-pullquote .wp-block-pullquote__citation {
+
+	@include cite;
+	
+	color: $color-text-main;
+	font-size: $font-size-md;
+	text-transform: none;
 }
 
 .wp-block-file__textlink {
 	color: $color-link;
 	text-decoration: underline;
+
 	&:hover,
 	&:active,
 	&:focus {
 		color: $color-link-hover;
 	}
+}
+
+.wp-block-code {
+	// Extend the <code> style so it can appear in the editor,
+	// but stop the <code> font-size from being applied twice on the front end.
+	
+	@extend code;
+	
+	.editor-plain-text {
+		// stop the built-in style from overriding ours
+		font-family: inherit;
+		font-size: 1em;
+	}
+}
+
+
+.wp-block-separator {
+
+	@include hr;
 }

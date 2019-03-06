@@ -1,21 +1,24 @@
 .site {
-    /* fixes bug where full-bleed content creates horizontal scrollbar. May have undesireable side effects...? */
-    overflow-x: hidden;
+	/* fixes bug where full-bleed content creates horizontal scrollbar. May have undesireable side effects...? */
+	overflow-x: hidden;
 }
 
 %smallscreen-padding {
-	padding-left: 1rem; // 16px
 	padding-right: 1rem; // 16px
+	padding-left: 1rem; // 16px
 }
 
 .site-content {
-    @extend %smallscreen-padding;
+
+	@include max-site-width;
+	@extend %smallscreen-padding;
 }
 
 @media screen {
-    .print {
-        display: none;
-    }
+
+	.print {
+		display: none;
+	}
 }
 
 /*--------------------------------------------------------------
@@ -37,8 +40,9 @@
 ## Front Page
 --------------------------------------------------------------*/
 .home.page {
-    .entry-header {
-        display: none;
-    }
+
+	.entry-header {
+		display: none;
+	}
 }
 

@@ -1,59 +1,74 @@
 .site-header {
+
 	@extend %smallscreen-padding;
 	@include max-site-width;
+
+	a {
+		text-decoration: none;
+	}
 }
+
 .global-header {
-    background: $color-bg-header;
 	display: flex;
+	background: $color-bg-header;
 	align-items: center;
 	justify-content: space-between;
 	flex-flow: row wrap;
+
 	.site-branding {
 		flex: 1 1 0;
-		margin-bottom: .5em;
+		margin-bottom: 0.5em;
 	}
+
 	.menu-button {
 		flex: 0 0 auto;
 	}
+
 	.main-navigation {
 		flex: 1 0 100%;
 	}
 }
+
 .site-title {
-    font-family: $font-site-title;
+	display: inline-block;
+	margin: 0;
+	font-family: $font-site-title;
 	font-size: $font-size-xxl;
 	line-height: calculate-line-height( $font-size-xxl, $breakpoint-1 );
-	margin: 0;
-	display: inline-block;
-    a {
-        color: $color-text-main;
-    }
+	
+	a[rel="home"] {
+		color: $color-text-main;
+	}
 }
+
 .site-description {
-    margin: 0;
-	font-size: $font-size-sm;
+	margin: 0;
 	opacity: $opacity-aside;
+	font-size: $font-size-sm;
 	font-style: italic;
 }
+
 /* Make sure logo link wraps around logo image. */
 .wp-custom-logo .site-title {
 	display: flex;
 	flex-flow: row nowrap;
 }
+
 .custom-logo-link {
 	display: block;
 	margin: 0 12px 0 0;
+
 	img {
-		max-height: $font-size-lg;
 		width: auto;
+		max-height: $font-size-lg;
 		vertical-align: middle;
 	}
 }
 
-/*
- * Fixed Header
- * See also: the scrolling code in functions.js
- */
+// /*
+//  * Fixed Header
+//  * See also: the scrolling code in functions.js
+//  */
 // @media screen {
 //     .fixed-header {
 //         position: fixed;
@@ -73,7 +88,7 @@
 //         margin-top: 60px;
 // 	}
 // }
-/* Offesets values from wp-includes/css/admin-bar.css */
+// /* Offesets values from wp-includes/css/admin-bar.css */
 // .admin-bar .fixed-header {
 //     top: 32px; /* admin-bar.css:84 */
 //     @media screen and ( max-width: 782px ) {
@@ -83,9 +98,11 @@
 //         top: 0; /* admin-bar.css:1081 */
 //     }
 // }
+
 /*
  * Header Media Queries
  */
+
 // @media screen and (max-width: $breakpoint-1) {
 //    .fixed-header .site-title {
 // 		.custom-logo-link {
@@ -106,31 +123,33 @@
 //     }
 // }
 @media screen and (min-width: $breakpoint-1) {
-    .site-branding {
-        text-align: left;
-    }
-    .global-header {
+
+	.site-branding {
+		text-align: left;
+	}
+
+	.global-header {
 		margin: 1em 0 0 0;
 		flex-flow: row nowrap;
 		align-items: flex-start;
 		justify-content: space-between;
+
 		.main-navigation {
 			flex: 0 1 auto;
 		}
-    }
-    // .sticky-top {
-    //     margin-top: 90px;
-    // }
-    .site-title {
+	}
+	// .sticky-top {
+	//     margin-top: 90px;
+	// }
+
+	.site-title {
 		margin: 0;
 		font-size: $font-size-xxl;
 	}
-    .site-header {
-        text-align: left;
-    }
-    .main-navigation {
-        display: block;
-    }
+
+	.site-header {
+		text-align: left;
+	}
 }
 // @media screen and (min-width: $breakpoint-2) {
 //     .sticky-top {

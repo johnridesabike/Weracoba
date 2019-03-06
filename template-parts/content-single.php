@@ -14,7 +14,7 @@
 		<div class="entry-content">
 		<?php
 		$weracoba_link_page_args = array(
-			'before'      => '<p class="post-nav-links">',
+			'before'      => '<p class="post-nav-links has-ui-font">',
 			'after'       => '</p>',
 			'link_before' => esc_html_x( 'Page ', 'Single pagination', 'weracoba' ),
 		);
@@ -34,7 +34,7 @@
 		wp_link_pages( $weracoba_link_page_args );
 		?>
 		</div><!-- .entry-content -->
-		<footer class="entry-footer">
+		<footer class="entry-footer entry-footer__single has-ui-font">
 			<?php weracoba_entry_footer(); ?>
 		</footer><!-- .entry-footer -->
 	</div> <!-- .post-content -->

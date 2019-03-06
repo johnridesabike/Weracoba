@@ -1,66 +1,42 @@
-@mixin widget-columns {
-	// Show 3 columns of widgets
-	// With an even number of widgets, show the first one at full width;
-	@include column-width(3);
-	margin-right: $columns-margin;
-	&:nth-child(3n+3) {
-		margin-right: 0;
-	}
-	// &:nth-last-child(even):first-of-type,
-	// &:nth-last-child(even):first-of-type ~ .widget {
-	// 	@include column-width(2);
-	// 	margin-right: $columns-margin;
-	// 	&:nth-child(2n+2) {
-	// 		margin-right: 0;
-	// 	}
-	// }
-	&:nth-last-child(even):first-of-type {
-		width: 100%;
-		margin-right: 0;
-	}
-	&:nth-last-child(even):first-of-type ~ .widget:nth-child(3n+3) {
-		margin-right: $columns-margin;
-	}
-	&:nth-last-child(even):first-of-type ~ .widget:nth-child(3n+4) {
-		margin-right: 0;
-	}
-}
-
-@mixin widget-list {
-	padding: 0;
+@mixin widget-ul {
 	margin: 0;
+	padding: 0;
 	list-style-type: none;
-
+	
 	li {
 		display: block;
-		margin-bottom: .5em;
+		margin-bottom: 0.5em;
+		padding: 0;
+
 		ul,
 		ol {
-			margin-left: .5em;
+			margin-left: 0.5em;
 		}
+
 		a {
 			display: block;
-			padding: .5em 0;
-			text-decoration: none;
+			padding: 0.5em 0;
 			border-bottom: 1px dashed currentColor;
+			text-decoration: none;
+	
 			&:hover,
+			&:active,
 			&:focus {
-				text-decoration: none;
 				border-bottom: 1px dashed currentColor;
+				text-decoration: none;
 			}
 		}
 	}
-    .children,
-    .sub-menu {
-        padding-top: 0;
-        padding-bottom: .5em;
+	
+	.children,
+	.sub-menu {
 		margin-left: 1em;
+		padding-top: 0;
+		padding-bottom: 0.5em;
 		font-size: $font-size-sm;
-        a:before {
-            content: $glyph-arrow-down-right + " ";
-        }
-    }
-    li {
-	   padding: 0;
-    }
+
+		a::before {
+			content: $glyph-arrow-down-right + " ";
+		}
+	}
 }

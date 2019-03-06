@@ -10,7 +10,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
+	<header class="entry-header has-ui-font">
 		<?php weracoba_author_avatar(); ?>
 		<div class="entry-header-wrapper">
 			<?php weracoba_posted_by(); ?>
@@ -24,7 +24,7 @@
 				the_title( '<span class="screen-reader-text">"', '"</span>', false )
 			);
 			?>
-			<a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark">
+			<a href="<?php echo esc_url( get_permalink() ); ?>" class="aside-permalink" rel="bookmark">
 				<?php echo weracoba_get_icon_svg( 'link', 16 ); /* phpcs:ignore XSS OK */ ?>
 				<?php echo $weracoba_read_more_link; /* phpcs:ignore XSS OK */ ?>
 			</a>
@@ -33,12 +33,14 @@
 	<div class="entry-content">
 		<?php the_content(); ?>
 	</div><!-- .entry-content -->
-	<footer class="entry-footer">
+	<footer class="entry-footer has-ui-font">
 		<div class="entry-meta">
 			<?php weracoba_posted_on(); ?>
 			<?php weracoba_edit_link(); ?>
 			<?php weracoba_tag_list(); ?>
 		</div><!-- .entry-meta -->
-		<?php weracoba_comments(); ?>
+		<div class="aside-comments-link button-open">
+			<?php weracoba_comments(); ?>
+		</div><!-- .button-link -->
 	</footer>
 </article><!-- #post-<?php the_ID(); ?> -->
