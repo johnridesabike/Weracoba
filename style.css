@@ -1378,11 +1378,6 @@ form span.required {
 	margin: 0 0 0.5em;
 }
 
-/* Text widget. */
-.widget__main .textwidget {
-	font-family: Palatino, "Palatino Linotype", Athelas, Georgia, Times, "Times New Roman", serif;
-}
-
 /* Search widget. */
 .widget_search .search-submit {
 	display: none;
