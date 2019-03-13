@@ -284,3 +284,9 @@ require get_template_directory() . '/classes/class-weracoba-svg-icons.php';
  * SVG Icons related functions.
  */
 require get_template_directory() . '/inc/icon-functions.php';
+
+/**
+ * Custom color additions.
+ */
+
+require get_template_directory() . '/custom-colors/custom-colors.php';
