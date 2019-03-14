@@ -6,21 +6,24 @@
  * Contains handlers to make Theme Customizer preview reload changes asynchronously.
  */
 
-(function( $ ) {
+( function( $ ) {
 
 	// Primary color.
 	wp.customize( 'primary_color', function( value ) {
 		value.bind( function( to ) {
+
 			// Update custom color CSS.
 			var style = $( '#custom-theme-colors' ),
 				hue = style.data( 'hue' ),
 				css = style.html(),
 				color;
 
-			if( 'custom' === to ){
+			if ( 'custom' === to ) {
+
 				// If a custom primary color is selected, use the currently set primary_color_hue
 				color = wp.customize.get().primary_color_hue;
 			} else {
+
 				// If the "default" option is selected, get the default primary_color_hue
 				color = 199;
 			}
@@ -46,15 +49,4 @@
 		});
 	});
 
-	// Image filter.
-	wp.customize( 'image_filter', function( value ) {
-		value.bind( function( to ) {
-			if ( to ) {
-				$( 'body' ).addClass( 'image-filters-enabled' );
-			} else {
-				$( 'body' ).removeClass( 'image-filters-enabled' );
-			}
-		} );
-	} );
-
-})( jQuery );
+}( jQuery ) );

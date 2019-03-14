@@ -1725,6 +1725,7 @@ a.tag-cloud-link:active {
 
 .is-style-outline .wp-block-button__link, .is-style-outline .wp-block-file .wp-block-file__button, .wp-block-file .is-style-outline .wp-block-file__button {
 	border: 2px solid;
+	color: currentColor;
 	background: transparent;
 	text-shadow: none;
 }

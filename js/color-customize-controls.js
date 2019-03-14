@@ -6,8 +6,7 @@
  * Contains handlers to make Theme Customizer preview reload changes asynchronously.
  */
 
-(function() {
-
+( function() {
 	wp.customize.bind( 'ready', function() {
 
 		// Only show the color hue control when there's a custom primary color.
@@ -26,5 +25,4 @@
 			});
 		});
 	});
-
-})( jQuery );
+}( jQuery ) );

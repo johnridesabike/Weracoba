@@ -21,7 +21,7 @@ function weracoba_custom_colors_css() {
 	 *
 	 * @param int $saturation Color saturation level.
 	 */
-	$saturation = apply_filters( 'weracoba_custom_colors_saturation', 100 );
+	$saturation = apply_filters( 'weracoba_custom_colors_saturation', 95 );
 	$saturation = absint( $saturation ) . '%';
 
 	/**
@@ -37,7 +37,7 @@ function weracoba_custom_colors_css() {
 	 *
 	 * @param int $lightness Color lightness level.
 	 */
-	$lightness = apply_filters( 'weracoba_custom_colors_lightness', 33 );
+	$lightness = apply_filters( 'weracoba_custom_colors_lightness', 25 );
 	$lightness = absint( $lightness ) . '%';
 
 	/**
@@ -45,7 +45,7 @@ function weracoba_custom_colors_css() {
 	 *
 	 * @param int $lightness_hover Hover color lightness level.
 	 */
-	$lightness_hover = apply_filters( 'weracoba_custom_colors_lightness_hover', 23 );
+	$lightness_hover = apply_filters( 'weracoba_custom_colors_lightness_hover', 40 );
 	$lightness_hover = absint( $lightness_hover ) . '%';
 
 	/**
@@ -57,6 +57,32 @@ function weracoba_custom_colors_css() {
 	$lightness_selection = absint( $lightness_selection ) . '%';
 
 	$theme_css = '
+		* {
+			border-color: hsl( ' . $primary_color . ', ' . $saturation . ', ' . $lightness . ' ); 
+		}
+
+		a,
+		a:visited,
+		.has-link-color,
+		.menu-toggle,
+		a[rel="tag"]:hover,
+		a[rel="tag"]:focus,
+		a[rel="tag"]:active,
+		a.tag-cloud-link:hover,
+		a.tag-cloud-link:focus,
+		a.tag-cloud-link:active,
+		.is-style-outline {
+			color: hsl( ' . $primary_color . ', ' . $saturation . ', ' . $lightness . ' ); 
+		}
+
+		a:hover,
+		a:focus,
+		a:active {
+			color: hsl( ' . $primary_color . ', ' . $saturation . ', ' . $lightness_hover . ' );
+		}
+	';
+
+	$theme_css_2019 = '
 		/*
 		 * Set background for:
 		 * - featured image :before

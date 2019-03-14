@@ -60,28 +60,8 @@ function weracoba_colors_customize_register( $wp_customize ) {
 			)
 		)
 	);
-
-	// Add image filter setting and control.
-	$wp_customize->add_setting(
-		'image_filter',
-		array(
-			'default'           => 1,
-			'sanitize_callback' => 'absint',
-			'transport'         => 'postMessage',
-		)
-	);
-
-	$wp_customize->add_control(
-		'image_filter',
-		array(
-			'label'   => __( 'Apply a filter to featured images using the primary color', 'weracoba' ),
-			'section' => 'colors',
-			'type'    => 'checkbox',
-		)
-	);
 }
 add_action( 'customize_register', 'weracoba_colors_customize_register' );
-
 
 /**
  * Bind JS handlers to instantly live-preview changes.
