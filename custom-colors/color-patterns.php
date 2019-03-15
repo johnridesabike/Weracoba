@@ -77,8 +77,42 @@ function weracoba_custom_colors_css() {
 
 		a:hover,
 		a:focus,
-		a:active {
+		a:active,
+		.main-navigation:hover > a,
+		.main-navigation.focus > a, 
+		.main-navigation .menu:focus > a,
+		.main-navigation .menu .focus > a,
+		.main-navigation a:hover,
+		.main-navigation a.focus,
+		.entry-title__link:active,
+		.entry-title__link:focus,
+		.entry-title__link:hover,
+		.aside-permalink:active,
+		.aside-permalink:focus,
+		.aside-permalink:hover,
+		.is-style-outline .wp-block-button__link:hover,
+		.is-style-outline .wp-block-button__link:focus,
+		.is-style-outline .wp-block-button__link:active, {
 			color: hsl( ' . $primary_color . ', ' . $saturation . ', ' . $lightness_hover . ' );
+		}
+
+		.tab-head a:active,
+		.tab-head a:focus,
+		.tab-head a:hover,
+		.excerpt-entry .featured-image__link:hover::before,
+		.excerpt-entry .featured-image__link:focus::before,
+		.excerpt-entry .featured-image__link:active::before {
+			background: hsl( ' . $primary_color . ', ' . $saturation . ', ' . $lightness_hover . ' );
+		}
+
+
+		.post-page-numbers.current,
+		.page-numbers.current,
+		.current_page_item > a,
+		.current-menu-item > a,
+		.current_page_ancestor > a,
+		.current-menu-ancestor > a {
+			border-color: hsl( ' . $primary_color . ', ' . $saturation . ', ' . $lightness_hover . ' );
 		}
 	';
 

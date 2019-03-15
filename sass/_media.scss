@@ -134,6 +134,7 @@ object {
 		line-height: 0; /* fixes visual glitch with link overlay */
 
 		&:hover,
+		&:active,
 		&:focus {
 
 			&::before {

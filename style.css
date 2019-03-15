@@ -2759,7 +2759,7 @@ object {
 	/* fixes visual glitch with link overlay */
 }
 
-.excerpt-entry .featured-image__link:hover::before, .excerpt-entry .featured-image__link:focus::before {
+.excerpt-entry .featured-image__link:hover::before, .excerpt-entry .featured-image__link:active::before, .excerpt-entry .featured-image__link:focus::before {
 	display: block;
 	position: absolute;
 	z-index: 2;
