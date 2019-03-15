@@ -40,7 +40,7 @@
 			<?php weracoba_tag_list(); ?>
 		</div><!-- .entry-meta -->
 		<div class="aside-comments-link button-open">
-			<?php weracoba_comments(); ?>
+			<?php weracoba_comments( array( 'class' => 'button-link__link' ) ); ?>
 		</div><!-- .button-link -->
 	</footer>
 </article><!-- #post-<?php the_ID(); ?> -->

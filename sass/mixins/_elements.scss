@@ -84,6 +84,13 @@
 	font-style: italic;
 }
 
+@mixin button-text-shadow {
+	text-shadow: 0 0 2px rgba(0,0,0,1);
+
+	svg {
+		filter: drop-shadow(0 0 1px rgba(0, 0, 0, 1));
+	}
+}
 
 @mixin button {
 	display: inline-block;
@@ -95,17 +102,25 @@
 	cursor: pointer;
 
 	@include button-text-shadow;
+
+	&:hover,
+	&:focus,
+	&:active {
+		color: $color-button-text;
+		background-color: $color-link-hover;
+		text-decoration: none;
+	}
 }
 
-@mixin button-color {
-	color: $color-bg-body;
-}
+// @mixin button-color {
+// 	color: $color-bg-body;
+// }
 
-@mixin button-background {
-	background-color: $color-link;
-}
+// @mixin button-background {
+// 	background-color: $color-link;
+// }
 
-@mixin button-hover {
-	background-color: $color-link-hover;
-	text-decoration: none;
-}
+// @mixin button-hover {
+// 	background-color: $color-link-hover;
+// 	text-decoration: none;
+// }

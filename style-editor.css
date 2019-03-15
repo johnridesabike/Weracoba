@@ -243,6 +243,8 @@ big {
 ** button
 **/
 .wp-block-button__link, .wp-block-file .wp-block-file__button {
+	color: #fff;
+	background-color: #03727c;
 	display: inline-block;
 	padding: 0.2em 0.75em;
 	border: 1px solid #19191a;
@@ -251,8 +253,6 @@ big {
 	text-decoration: none;
 	cursor: pointer;
 	text-shadow: 0 0 2px #000000;
-	background-color: #03727c;
-	color: #fff;
 }
 
 .wp-block-button__link svg, .wp-block-file .wp-block-file__button svg {
@@ -260,6 +260,7 @@ big {
 }
 
 .wp-block-button__link:hover, .wp-block-file .wp-block-file__button:hover, .wp-block-button__link:focus, .wp-block-file .wp-block-file__button:focus, .wp-block-button__link:active, .wp-block-file .wp-block-file__button:active {
+	color: #fff;
 	background-color: #05b7c7;
 	text-decoration: none;
 }
@@ -280,12 +281,13 @@ big {
 .is-style-outline .wp-block-button__link, .is-style-outline .wp-block-file .wp-block-file__button, .wp-block-file .is-style-outline .wp-block-file__button {
 	border: 2px solid;
 	color: currentColor;
-	background: transparent;
+	background-color: transparent;
 	text-shadow: none;
 }
 
 .is-style-outline .wp-block-button__link:hover, .is-style-outline .wp-block-file .wp-block-file__button:hover, .wp-block-file .is-style-outline .wp-block-file__button:hover, .is-style-outline .wp-block-button__link:focus, .is-style-outline .wp-block-file .wp-block-file__button:focus, .wp-block-file .is-style-outline .wp-block-file__button:focus, .is-style-outline .wp-block-button__link:active, .is-style-outline .wp-block-file .wp-block-file__button:active, .wp-block-file .is-style-outline .wp-block-file__button:active {
 	color: #05b7c7;
+	background-color: transparent;
 }
 
 /**

@@ -16,21 +16,13 @@
 **/
 
 .wp-block-button__link {
+	color: $color-button-text;
+	background-color: $color-link;
 
 	@include button;
-	@include button-background;
-	@include button-color;
-
-	&:hover,
-	&:focus,
-	&:active {
-		
-		@include button-hover;
-	}
 
 	&:visited {
-
-		@include button-color;
+		color: $color-button-text;
 	}
 }
 
@@ -45,13 +37,14 @@
 	.wp-block-button__link {
 		border: 2px solid;
 		color: currentColor;
-		background: transparent;
+		background-color: transparent;
 		text-shadow: none;
 
 		&:hover,
 		&:focus,
 		&:active {
 			color: $color-link-hover;
+			background-color: transparent;
 		}
 	}
 }

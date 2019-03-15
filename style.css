@@ -796,7 +796,9 @@ a:hover, a:active {
 
 /* All of the buttons and button-like elements */
 /* This can be used in the HTML templates or extended to produce more buttons */
-.button-link__link, .aside-comments-link .comments-link__link, .comment-reply-link {
+.button-link__link {
+	color: #fff;
+	background-color: #03727c;
 	display: inline-block;
 	padding: 0.2em 0.75em;
 	border: 1px solid #19191a;
@@ -805,21 +807,19 @@ a:hover, a:active {
 	text-decoration: none;
 	cursor: pointer;
 	text-shadow: 0 0 2px #000000;
-	background-color: #03727c;
-	color: #fff;
 }
 
-.button-link__link svg, .aside-comments-link .comments-link__link svg, .comment-reply-link svg {
+.button-link__link svg {
 	filter: drop-shadow(0 0 1px #000000);
 }
 
-.button-link__link:hover, .aside-comments-link .comments-link__link:hover, .comment-reply-link:hover, .button-link__link:focus, .aside-comments-link .comments-link__link:focus, .comment-reply-link:focus, .button-link__link:active, .aside-comments-link .comments-link__link:active, .comment-reply-link:active {
+.button-link__link:hover, .button-link__link:focus, .button-link__link:active {
 	color: #fff;
 	background-color: #05b7c7;
 	text-decoration: none;
 }
 
-.button-link__link:visited, .aside-comments-link .comments-link__link:visited, .comment-reply-link:visited {
+.button-link__link:visited {
 	color: #fff;
 }
 
@@ -827,6 +827,8 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
+	color: #fff;
+	background-color: #03727c;
 	display: inline-block;
 	padding: 0.2em 0.75em;
 	border: 1px solid #19191a;
@@ -835,8 +837,6 @@ input[type="submit"] {
 	text-decoration: none;
 	cursor: pointer;
 	text-shadow: 0 0 2px #000000;
-	background-color: #03727c;
-	color: #fff;
 }
 
 button svg,
@@ -856,6 +856,7 @@ input[type="reset"]:active,
 input[type="submit"]:hover,
 input[type="submit"]:focus,
 input[type="submit"]:active {
+	color: #fff;
 	background-color: #05b7c7;
 	text-decoration: none;
 }
@@ -885,7 +886,6 @@ form span.required {
 
 .global-header {
 	display: flex;
-	background: #fff;
 	align-items: center;
 	justify-content: space-between;
 	flex-flow: row wrap;
@@ -973,7 +973,6 @@ form span.required {
 	margin-top: 1em;
 	padding-top: 0.5em;
 	padding-bottom: 0.5em;
-	background: #fff;
 	box-shadow: inset 0 1em 1.5em -1em rgba(0, 0, 0, 0.2);
 	font-size: 0.88889em;
 }
@@ -1459,6 +1458,11 @@ a.tag-cloud-link {
 	color: #19191a;
 }
 
+a[rel="tag"]:visited,
+a.tag-cloud-link:visited {
+	color: #19191a;
+}
+
 a[rel="tag"]:hover, a[rel="tag"]:focus, a[rel="tag"]:active,
 a.tag-cloud-link:hover,
 a.tag-cloud-link:focus,
@@ -1689,6 +1693,8 @@ a.tag-cloud-link:active {
 ** button
 **/
 .wp-block-button__link, .wp-block-file .wp-block-file__button {
+	color: #fff;
+	background-color: #03727c;
 	display: inline-block;
 	padding: 0.2em 0.75em;
 	border: 1px solid #19191a;
@@ -1697,8 +1703,6 @@ a.tag-cloud-link:active {
 	text-decoration: none;
 	cursor: pointer;
 	text-shadow: 0 0 2px #000000;
-	background-color: #03727c;
-	color: #fff;
 }
 
 .wp-block-button__link svg, .wp-block-file .wp-block-file__button svg {
@@ -1706,6 +1710,7 @@ a.tag-cloud-link:active {
 }
 
 .wp-block-button__link:hover, .wp-block-file .wp-block-file__button:hover, .wp-block-button__link:focus, .wp-block-file .wp-block-file__button:focus, .wp-block-button__link:active, .wp-block-file .wp-block-file__button:active {
+	color: #fff;
 	background-color: #05b7c7;
 	text-decoration: none;
 }
@@ -1726,12 +1731,13 @@ a.tag-cloud-link:active {
 .is-style-outline .wp-block-button__link, .is-style-outline .wp-block-file .wp-block-file__button, .wp-block-file .is-style-outline .wp-block-file__button {
 	border: 2px solid;
 	color: currentColor;
-	background: transparent;
+	background-color: transparent;
 	text-shadow: none;
 }
 
 .is-style-outline .wp-block-button__link:hover, .is-style-outline .wp-block-file .wp-block-file__button:hover, .wp-block-file .is-style-outline .wp-block-file__button:hover, .is-style-outline .wp-block-button__link:focus, .is-style-outline .wp-block-file .wp-block-file__button:focus, .wp-block-file .is-style-outline .wp-block-file__button:focus, .is-style-outline .wp-block-button__link:active, .is-style-outline .wp-block-file .wp-block-file__button:active, .wp-block-file .is-style-outline .wp-block-file__button:active {
 	color: #05b7c7;
+	background-color: transparent;
 }
 
 /**
@@ -2104,7 +2110,6 @@ a.tag-cloud-link:active {
 	border-top-style: double;
 	border-bottom-style: double;
 	opacity: 0.8;
-	background: #fff;
 }
 
 .entry-footer__single .entry-footer__item {
@@ -2195,7 +2200,7 @@ article.format-aside {
 	border-top-left-radius: 0.15em;
 	border-top-right-radius: 0.15em;
 	color: #fff;
-	background: #03727c;
+	background-color: #03727c;
 	text-shadow: 0 0 2px #000000;
 }
 
@@ -2203,12 +2208,16 @@ article.format-aside {
 	filter: drop-shadow(0 0 1px #000000);
 }
 
-.tab-head a {
+.tab-head [rel~="tag"],
+.tab-head [rel~="category"] {
 	color: #fff;
 }
 
-.tab-head a:hover, .tab-head a:active, .tab-head a:focus {
-	background: #05b7c7;
+.tab-head [rel~="tag"]:hover, .tab-head [rel~="tag"]:active, .tab-head [rel~="tag"]:focus,
+.tab-head [rel~="category"]:hover,
+.tab-head [rel~="category"]:active,
+.tab-head [rel~="category"]:focus {
+	background-color: #05b7c7;
 }
 
 .excerpt-entry .entry-meta,
@@ -2230,15 +2239,8 @@ article.format-aside {
 	flex-shrink: 0;
 }
 
-.aside-comments-link .comments-link__link,
 .aside-comments-link .button-link__link,
-.aside-comments-link .comments-link__link,
-.aside-comments-link .comment-reply-link,
-.continue-reading .comments-link__link,
-.continue-reading .button-link__link,
-.continue-reading .aside-comments-link .comments-link__link,
-.aside-comments-link .continue-reading .comments-link__link,
-.continue-reading .comment-reply-link {
+.continue-reading .button-link__link {
 	border-radius: 0.15em;
 }
 
@@ -2768,7 +2770,7 @@ object {
 	bottom: 0;
 	left: 0;
 	opacity: 0.25;
-	background: #05b7c7;
+	background-color: #05b7c7;
 	content: "";
 }
 
@@ -3037,9 +3039,7 @@ object {
 	font-size: 1.3em;
 }
 
-#infinite-handle#infinite-handle span button,
-#infinite-handle#infinite-handle span button:focus,
-#infinite-handle#infinite-handle span button:hover {
+#infinite-handle#infinite-handle span button {
 	display: inline-block;
 	padding: 0.2em 0.75em;
 	border: 1px solid #19191a;
@@ -3048,14 +3048,16 @@ object {
 	text-decoration: none;
 	cursor: pointer;
 	text-shadow: 0 0 2px #000000;
-	background-color: #03727c;
-	color: #fff;
 }
 
-#infinite-handle#infinite-handle span button svg,
-#infinite-handle#infinite-handle span button:focus svg,
-#infinite-handle#infinite-handle span button:hover svg {
+#infinite-handle#infinite-handle span button svg {
 	filter: drop-shadow(0 0 1px #000000);
+}
+
+#infinite-handle#infinite-handle span button:hover, #infinite-handle#infinite-handle span button:focus, #infinite-handle#infinite-handle span button:active {
+	color: #fff;
+	background-color: #05b7c7;
+	text-decoration: none;
 }
 
 .infinite-loader {

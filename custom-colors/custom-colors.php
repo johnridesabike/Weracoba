@@ -1,9 +1,11 @@
 <?php
 /**
- * Weracoba color functions and definitions
+ * Weracoba color functions and definitions.
  *
  * @package Weracoba
  */
+
+$weracoba_default_hue = 185;
 
 /**
  * Enqueue supplemental block editor styles.
@@ -32,9 +34,9 @@ function weracoba_colors_css_wrap() {
 
 	require_once get_parent_theme_file_path( '/custom-colors/color-patterns.php' );
 
-	$primary_color = 199;
+	$primary_color = $weracoba_default_hue;
 	if ( 'default' !== get_theme_mod( 'primary_color', 'default' ) ) {
-		$primary_color = get_theme_mod( 'primary_color_hue', 199 );
+		$primary_color = get_theme_mod( 'primary_color_hue', $weracoba_default_hue );
 	}
 	?>
 

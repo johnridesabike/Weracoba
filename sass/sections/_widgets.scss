@@ -113,6 +113,10 @@ a.tag-cloud-link {
 a[rel="tag"],
 a.tag-cloud-link {
 	color: $color-text-main;
+
+	&:visited {
+		color: $color-text-main;
+	}
 	
 	&:hover,
 	&:focus,

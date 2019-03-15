@@ -25,7 +25,7 @@
 			} else {
 
 				// If the "default" option is selected, get the default primary_color_hue
-				color = 199;
+				color = 185;
 			}
 
 			// Equivalent to css.replaceAll, with hue followed by comma to prevent values with units from being changed.

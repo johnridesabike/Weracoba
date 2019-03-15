@@ -43,7 +43,7 @@ function weracoba_colors_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'primary_color_hue',
 		array(
-			'default'           => 199,
+			'default'           => $weracoba_default_hue,
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'absint',
 		)
@@ -54,7 +54,7 @@ function weracoba_colors_customize_register( $wp_customize ) {
 			$wp_customize,
 			'primary_color_hue',
 			array(
-				'description' => __( 'Apply a custom color for buttons, links, featured images, etc.', 'weracoba' ),
+				'description' => __( 'Apply a custom color for buttons, links, etc.', 'weracoba' ),
 				'section'     => 'colors',
 				'mode'        => 'hue',
 			)
