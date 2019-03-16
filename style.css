@@ -563,8 +563,61 @@ big {
 	color: #19191a;
 }
 
+.has-primary-color,
 .has-link-color {
 	color: #03727c;
+}
+
+.has-primary-light-color {
+	color: #05b7c7;
+}
+
+.has-complementary-color {
+	color: #7c0372;
+}
+
+.has-complementary-light-color {
+	color: #c705b7;
+}
+
+.has-dark-gray-color {
+	color: #111;
+}
+
+.has-light-gray-color {
+	color: #767676;
+}
+
+.has-white-color {
+	color: #fff;
+}
+
+.has-primary-background-color {
+	background-color: #03727c;
+}
+
+.has-primary-light-background-color {
+	background-color: #05b7c7;
+}
+
+.has-complementary-background-color {
+	background-color: #7c0372;
+}
+
+.has-complementary-light-background-color {
+	background-color: #c705b7;
+}
+
+.has-dark-gray-background-color {
+	background-color: #111;
+}
+
+.has-light-gray-background-color {
+	background-color: #767676;
+}
+
+.has-white-background-color {
+	background-color: #fff;
 }
 
 .has-ui-font {
@@ -872,6 +925,10 @@ form span.required {
 /*--------------------------------------------------------------
 ## Header
 --------------------------------------------------------------*/
+.site-header {
+	background-color: #fff;
+}
+
 @media screen and (min-width: 1200px) {
 	.site-header {
 		max-width: 1200px;
@@ -970,7 +1027,6 @@ form span.required {
 --------------------------------------------------------------*/
 .site-footer {
 	position: relative;
-	margin-top: 1em;
 	padding-top: 0.5em;
 	padding-bottom: 0.5em;
 	box-shadow: inset 0 1em 1.5em -1em rgba(0, 0, 0, 0.2);
@@ -1599,6 +1655,7 @@ a.tag-cloud-link:active {
 	.footer-widgets {
 		display: flex;
 		flex-wrap: wrap;
+		justify-content: space-between;
 	}
 }
 
@@ -1998,6 +2055,12 @@ a.tag-cloud-link:active {
 .site-header, .site-footer, .site-content {
 	padding-right: 1rem;
 	padding-left: 1rem;
+}
+
+.site-content {
+	padding-bottom: 1em;
+	/* give some space for the footer */
+	background-color: #fff;
 }
 
 @media screen and (min-width: 1200px) {

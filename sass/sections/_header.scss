@@ -1,7 +1,8 @@
 .site-header {
-
-	@extend %smallscreen-padding;
+	background-color: $color-bg-body;
+	
 	@include max-site-width;
+	@extend %smallscreen-padding;
 
 	a {
 		text-decoration: none;
