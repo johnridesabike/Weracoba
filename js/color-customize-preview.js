@@ -16,7 +16,9 @@
 			var style = $( '#custom-theme-colors' ),
 				hue = style.data( 'hue' ),
 				css = style.html(),
-				color;
+				color,
+				complementColor,
+				complementHue;
 
 			if ( 'custom' === to ) {
 
@@ -28,8 +30,19 @@
 				color = 185;
 			}
 
+			complementColor = color + 180;
+			if ( 360 < complementColor ) {
+				complementColor = color - 180;
+			}
+
+			complementHue = hue + 180;
+			if ( 360 < complementHue ) {
+				complementHue = hue - 180;
+			}
+
 			// Equivalent to css.replaceAll, with hue followed by comma to prevent values with units from being changed.
-			css = css.split( hue + ',' ).join( color + ',' );
+			css = css.split( '( ' + hue + ',' ).join( '( ' + color + ',' );
+			css = css.split( '( ' + complementHue + ',' ).join( '( ' + complementColor + ',' );
 			style.html( css ).data( 'hue', color );
 		});
 	});
@@ -41,10 +54,23 @@
 			// Update custom color CSS.
 			var style = $( '#custom-theme-colors' ),
 				hue = style.data( 'hue' ),
-				css = style.html();
+				css = style.html(),
+				complementHue,
+				complementTo;
+
+			complementHue = hue + 180;
+			if ( 360 < complementHue ) {
+				complementHue = hue - 180;
+			}
+
+			complementTo = to + 180;
+			if ( 360 < complementTo ) {
+				complementTo = to - 180;
+			}
 
 			// Equivalent to css.replaceAll, with hue followed by comma to prevent values with units from being changed.
-			css = css.split( hue + ',' ).join( to + ',' );
+			css = css.split( '( ' +  complementHue + ',' ).join( '( ' +  complementTo + ',' );
+			css = css.split( '( ' + hue + ',' ).join( '( ' +  to + ',' );
 			style.html( css ).data( 'hue', to );
 		});
 	});

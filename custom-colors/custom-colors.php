@@ -144,7 +144,7 @@ function weracoba_hsl_hex( $h, $s, $l, $to_hex = true ) {
  * @param int $h the Hue.
  */
 function weracoba_complementary_hue( $h ) {
-	$h = $h + 120;
+	$h = $h + 180;
 	if ( 360 < $h ) {
 		$h = $h - 360;
 	}

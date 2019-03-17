@@ -1,5 +1,7 @@
 This code is based on Twenty Nineteen's custom color feature. Most of the code has been extracted from its original files and consolidated into this directory for easier hacking. 
 
+This version adds a built-in complementary color in addition to the primary color.
+
 The files `style-editor-customizer.css`, `/js/color-customize-controls.js`, and `/js/color-customize-preview.js` are also necessary to complete this feature.
 
 To add this to your own theme, add this line to your `functions.php`:
