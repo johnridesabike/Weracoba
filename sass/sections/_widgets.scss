@@ -20,10 +20,10 @@
 	margin: 0 0 0.5em;
 }
 
-/* Text widget. */
-.widget__main .textwidget {
-	font-family: $font-reading;
-}
+// /* Text widget. */
+// .widget__main .textwidget {
+// 	font-family: $font-reading;
+// }
 
 /* Search widget. */
 .widget_search {
@@ -113,6 +113,10 @@ a.tag-cloud-link {
 a[rel="tag"],
 a.tag-cloud-link {
 	color: $color-text-main;
+
+	&:visited {
+		color: $color-text-main;
+	}
 	
 	&:hover,
 	&:focus,
@@ -276,6 +280,7 @@ a.tag-cloud-link {
 	.footer-widgets {
 		display: flex;
 		flex-wrap: wrap;
+		justify-content: space-between;
 	}
 }
 

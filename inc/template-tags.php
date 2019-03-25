@@ -267,8 +267,11 @@ endif;
 if ( ! function_exists( 'weracoba_comments' ) ) :
 	/**
 	 * Display the comments.
+	 *
+	 * @param array $args 'class': additional CSS classes.
 	 */
-	function weracoba_comments() {
+	function weracoba_comments( $args = array() ) {
+		$args = wp_parse_args( $args, array( 'class' => '' ) );
 		if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 			echo '<span class="comments-link entry-meta__item">';
 			comments_popup_link(
@@ -312,7 +315,7 @@ if ( ! function_exists( 'weracoba_comments' ) ) :
 					number_format_i18n( get_comments_number() ),
 					get_the_title()
 				),
-				'comments-link__link'
+				'comments-link__link ' . $args['class']
 			);
 			echo '</span> ';
 		}

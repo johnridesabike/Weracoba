@@ -107,13 +107,16 @@
 		background: transparent;
 		font-size: 1.3em;
 
-		button,
-		button:focus,
-		button:hover {
+		button {
 
 			@include button;
-			@include button-background;
-			@include button-color;
+			
+			// &:active,
+			// &:focus,
+			// &:hover {
+			// 	color: $color-button-text;
+			// 	background-color: $color-link;
+			// }
 		}
 	}
 }

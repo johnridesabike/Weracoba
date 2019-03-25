@@ -147,3 +147,15 @@ function weracoba_excerpt_more( $more_string ) {
 	return '&hellip;';
 }
 add_filter( 'excerpt_more', 'weracoba_excerpt_more' );
+
+/**
+ * Add the button class to the comment replies.
+ *
+ * @param string $link The HTML markup for the comment reply link.
+ */
+function weracoba_reply_button_style( $link ) {
+	$link = str_replace( 'comment-reply-link', 'comment-reply-link button-link__link', $link );
+	return $link;
+}
+
+add_filter( 'comment_reply_link', 'weracoba_reply_button_style' );

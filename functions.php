@@ -146,6 +146,60 @@ if ( ! function_exists( 'weracoba_setup' ) ) :
 			)
 		);
 
+		// Editor color palette.
+		add_theme_support(
+			'editor-color-palette',
+			array(
+				array(
+					'name'  => __( 'Primary', 'weracoba' ),
+					'slug'  => 'primary',
+					// 185 = $weracoba_default_hue in /custom-colors/custom-colors.php.
+					// 95 = default saturation  in /custom-colors/color-patterns.php.
+					// 25 = default lightness  in /custom-colors/color-patterns.php.
+					'color' => weracoba_hsl_hex( 'default' === get_theme_mod( 'primary_color' ) ? 185 : get_theme_mod( 'primary_color_hue', 185 ), 95, 25 ),
+				),
+				array(
+					'name'  => __( 'Primary Light', 'weracoba' ),
+					'slug'  => 'primary-light',
+					// 40 = default hover lightness  in /custom-colors/color-patterns.php.
+					'color' => weracoba_hsl_hex( 'default' === get_theme_mod( 'primary_color' ) ? 185 : get_theme_mod( 'primary_color_hue', 185 ), 95, 40 ),
+				),
+				array(
+					'name'  => __( 'Complementary', 'weracoba' ),
+					'slug'  => 'complementary',
+					'color' => weracoba_hsl_hex(
+						weracoba_complementary_hue( 'default' === get_theme_mod( 'primary_color' ) ? 185 : get_theme_mod( 'primary_color_hue', 185 ) ),
+						95,
+						25
+					),
+				),
+				array(
+					'name'  => __( 'Complementary Light', 'weracoba' ),
+					'slug'  => 'complementary-light',
+					'color' => weracoba_hsl_hex(
+						weracoba_complementary_hue( 'default' === get_theme_mod( 'primary_color' ) ? 185 : get_theme_mod( 'primary_color_hue', 185 ) ),
+						95,
+						40
+					),
+				),
+				array(
+					'name'  => __( 'Dark Gray', 'weracoba' ),
+					'slug'  => 'dark-gray',
+					'color' => '#111',
+				),
+				array(
+					'name'  => __( 'Light Gray', 'weracoba' ),
+					'slug'  => 'light-gray',
+					'color' => '#767676',
+				),
+				array(
+					'name'  => __( 'White', 'weracoba' ),
+					'slug'  => 'white',
+					'color' => '#FFF',
+				),
+			)
+		);
+
 		/**
 		 * We're not using theme styles.
 		 */
@@ -230,7 +284,7 @@ add_action( 'widgets_init', 'weracoba_widgets_init' );
  * Enqueue scripts and styles.
  */
 function weracoba_scripts() {
-	wp_enqueue_style( 'weracoba-style', get_stylesheet_uri(), array(), '20190305', 'all' );
+	wp_enqueue_style( 'weracoba-style', get_stylesheet_uri(), array(), '20190317', 'all' );
 	wp_enqueue_style( 'weracoba-print-style', get_template_directory_uri() . '/style-print.css', array( 'weracoba-style' ), '20190217', 'print' );
 
 	/* phpcs:ignore
@@ -284,3 +338,9 @@ require get_template_directory() . '/classes/class-weracoba-svg-icons.php';
  * SVG Icons related functions.
  */
 require get_template_directory() . '/inc/icon-functions.php';
+
+/**
+ * Custom color additions.
+ */
+
+require get_template_directory() . '/custom-colors/custom-colors.php';

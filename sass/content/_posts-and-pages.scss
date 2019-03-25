@@ -103,7 +103,6 @@
 	border-top-style: double;
 	border-bottom-style: double;
 	opacity: $opacity-aside;
-	background: $color-bg-footer;
 
 	.entry-footer__item {
 		margin-bottom: 0.5em;
@@ -202,17 +201,18 @@ article.format-aside {
 	border-top-left-radius: $border-radius-button-square;
 	border-top-right-radius: $border-radius-button-square;
 	color: $color-bg-body;
-	background: $color-link;
+	background-color: $color-link;
 	
 	@include button-text-shadow;
 	
-	a {
-		color: $color-bg-body;
+	[rel~="tag"],
+	[rel~="category"] {
+		color: $color-button-text;
 	
 		&:hover,
 		&:active,
 		&:focus {
-			background: $color-link-hover;
+			background-color: $color-link-hover;
 		}
 	}
 }
@@ -237,15 +237,9 @@ article.format-aside {
 	text-align: center;
 	flex-shrink: 0;
 
-	.comments-link__link,
 	.button-link__link {
 		border-radius: $border-radius-button-square;
 	}
-}
-
-.aside-comments-link .comments-link__link {
-	
-	@extend .button-link__link;
 }
 
 /*

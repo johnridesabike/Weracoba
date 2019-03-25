@@ -1,7 +1,8 @@
 .site-header {
-
-	@extend %smallscreen-padding;
+	background-color: $color-bg-body;
+	
 	@include max-site-width;
+	@extend %smallscreen-padding;
 
 	a {
 		text-decoration: none;
@@ -10,7 +11,6 @@
 
 .global-header {
 	display: flex;
-	background: $color-bg-header;
 	align-items: center;
 	justify-content: space-between;
 	flex-flow: row wrap;
