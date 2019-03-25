@@ -2,11 +2,13 @@ $color-text-main: #19191a;
 $color-bg-body: #fff;
 //$color-tint:rgba(1, 118, 128, 1); // Intense Teal
 $color-primary-hue: 185;
-$color-bg-header: $color-bg-body;
-$color-bg-footer: $color-bg-body;
-$color-link: hsl( $color-primary-hue, 95%, 25%);
-$color-link-visited: $color-link;
-$color-link-hover: hsl( $color-primary-hue, 95%, 40% );
+$color-complementary-hue: 305;
+$color-saturation: 95%;
+$color-lightness: 25%;
+$color-lightness-hover: 40%;
+$color-link: hsl( $color-primary-hue, $color-saturation, $color-lightness);
+$color-link-hover: hsl( $color-primary-hue, $color-saturation, $color-lightness-hover);
+$color-button-text: $color-bg-body;
 
 $color-bg-pre: #eee;
 $color-border: #ccc;

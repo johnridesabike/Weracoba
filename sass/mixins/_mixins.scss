@@ -102,14 +102,6 @@ $columns-margin: 3.8%;
 	width: map-get( $columns, $numberColumns ) - ( ( $columns-margin * ( $numberColumns - 1 ) ) / $numberColumns );
 }
 
-@mixin button-text-shadow {
-	text-shadow: 0 0 2px rgba(0,0,0,1);
-
-	svg {
-		filter: drop-shadow(0 0 1px rgba(0, 0, 0, 1));
-	}
-}
-
 ///////////////////////////////////////////////////////////////////////////////
 // Several basic element styles have been moved to mixins so they can be easily
 // imported to the separate style-editor.scss without importing the other

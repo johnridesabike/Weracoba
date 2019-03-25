@@ -144,7 +144,7 @@ a {
 	text-decoration: none;
 
 	&:visited {
-		color: $color-link-visited;
+		color: $color-link;
 	}
 	
 	&:hover,
@@ -168,22 +168,13 @@ a {
 
 /* This can be used in the HTML templates or extended to produce more buttons */
 .button-link__link {
+	color: $color-button-text;
+	background-color: $color-link;
 
 	@include button;
-	@include button-background;
-	@include button-color;
-
-	&:hover,
-	&:focus,
-	&:active {
-
-		@include button-color;
-		@include button-hover;
-	}
 
 	&:visited {
-
-		@include button-color;
+		color: $color-button-text;
 	}
 }
 
@@ -191,17 +182,10 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
+	color: $color-button-text;
+	background-color: $color-link;
 	
 	@include button;
-	@include button-background;
-	@include button-color;
-
-	&:hover,
-	&:focus,
-	&:active {
-	
-		@include button-hover;
-	}
 }
 
 form span.required {

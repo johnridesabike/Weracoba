@@ -9,6 +9,8 @@
 }
 
 .site-content {
+	padding-bottom: 1em; /* give some space for the footer */
+	background-color: $color-bg-body;
 
 	@include max-site-width;
 	@extend %smallscreen-padding;

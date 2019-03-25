@@ -9,6 +9,11 @@ module.exports = {
 		'stylelint-order',
 		'stylelint-scss'
 	],
+	ignoreFiles: [
+		'style.css',
+		'style-editor.css',
+		'style-print.css'
+	],
 	rules: {
 		'comment-empty-line-before': null,
 		'color-hex-length': null,
